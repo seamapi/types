@@ -150,12 +150,24 @@ const provider_service_unavailable = common_acs_system_error.extend({
     Indicates that the access control system provider's service is temporarily unavailable. Seam will automatically retry and reconnect when the service becomes available again.
     `)
 
+const insufficient_permissions = common_acs_system_error.extend({
+  error_code: z
+    .literal('insufficient_permissions')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: acs_system
+    ---
+    Indicates that Seam's integration user does not have sufficient permissions on the provider's system backing this [access control system](https://docs.seam.co/low-level-apis/access-systems). Access cannot be managed until permissions are restored. See the error message for specifics, then either reauthorize the connected account in Seam or grant the integration user the required permissions in the provider's system.
+    `)
+
 const acs_system_error = z
   .discriminatedUnion('error_code', [
     seam_bridge_disconnected,
     bridge_disconnected,
     visionline_instance_unreachable,
     salto_ks_subscription_limit_exceeded,
+    insufficient_permissions,
     acs_system_disconnected,
     account_disconnected,
     salto_ks_certification_expired,
@@ -174,6 +186,7 @@ const _acs_system_error_map = z.object({
   salto_ks_subscription_limit_exceeded: salto_ks_subscription_limit_exceeded
     .optional()
     .nullable(),
+  insufficient_permissions: insufficient_permissions.optional().nullable(),
   acs_system_disconnected: acs_system_disconnected.optional().nullable(),
   account_disconnected: account_disconnected.optional().nullable(),
   salto_ks_certification_expired: salto_ks_certification_expired

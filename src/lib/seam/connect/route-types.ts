@@ -15123,6 +15123,18 @@ export type Routes = {
                     /** Date and time at which Seam created the error. */
                     created_at: string
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'insufficient_permissions'
+                    /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+                    is_connected_account_error: true
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Indicates that the error is not a device error. */
+                    is_device_error: false
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'dormakaba_sites_disconnected'
                     /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
                     is_connected_account_error: true
@@ -16163,6 +16175,14 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'salto_ks_subscription_limit_exceeded'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'insufficient_permissions'
                   }
                 | {
                     /** Date and time at which Seam created the error. */
@@ -23511,6 +23531,18 @@ export type Routes = {
                     created_at: string
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'salto_ks_subscription_limit_exceeded'
+                    /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+                    is_connected_account_error: true
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Indicates that the error is not a device error. */
+                    is_device_error: false
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'insufficient_permissions'
                     /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
                     is_connected_account_error: true
                   }
@@ -40615,6 +40647,14 @@ export type Routes = {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'acs_system_disconnected'
             }
           | {
@@ -40825,6 +40865,14 @@ export type Routes = {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'acs_system_disconnected'
             }
           | {
@@ -41024,6 +41072,14 @@ export type Routes = {
               message: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -51449,6 +51505,18 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'dormakaba_sites_disconnected'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
@@ -53569,6 +53637,18 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'dormakaba_sites_disconnected'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
@@ -55674,6 +55754,18 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'dormakaba_sites_disconnected'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
@@ -56490,6 +56582,18 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
             }
@@ -68237,6 +68341,18 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'dormakaba_sites_disconnected'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
@@ -70100,6 +70216,18 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
             }
@@ -72184,6 +72312,18 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'dormakaba_sites_disconnected'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
@@ -74046,6 +74186,18 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
             }
@@ -84371,6 +84523,18 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'dormakaba_sites_disconnected'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
@@ -86233,6 +86397,18 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
             }
@@ -106134,6 +106310,18 @@ export type Routes = {
                     /** Date and time at which Seam created the error. */
                     created_at: string
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'insufficient_permissions'
+                    /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+                    is_connected_account_error: true
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Indicates that the error is not a device error. */
+                    is_device_error: false
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'dormakaba_sites_disconnected'
                     /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
                     is_connected_account_error: true
@@ -107174,6 +107362,14 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'salto_ks_subscription_limit_exceeded'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'insufficient_permissions'
                   }
                 | {
                     /** Date and time at which Seam created the error. */
@@ -115466,6 +115662,18 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'dormakaba_sites_disconnected'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
@@ -121649,6 +121857,18 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'dormakaba_sites_disconnected'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
@@ -123511,6 +123731,18 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
             }
@@ -134777,6 +135009,18 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'dormakaba_sites_disconnected'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
@@ -136652,6 +136896,18 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
+              /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'dormakaba_sites_disconnected'
               /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
               is_connected_account_error: true
@@ -137483,6 +137739,14 @@ export type Routes = {
               message: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -140092,6 +140356,18 @@ export type Routes = {
                     /** Date and time at which Seam created the error. */
                     created_at: string
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'insufficient_permissions'
+                    /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+                    is_connected_account_error: true
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Indicates that the error is not a device error. */
+                    is_device_error: false
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'dormakaba_sites_disconnected'
                     /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
                     is_connected_account_error: true
@@ -140910,6 +141186,14 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'salto_ks_subscription_limit_exceeded'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'insufficient_permissions'
                   }
                 | {
                     /** Date and time at which Seam created the error. */
@@ -144279,6 +144563,18 @@ export type Routes = {
                     created_at: string
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'salto_ks_subscription_limit_exceeded'
+                    /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
+                    is_connected_account_error: true
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Indicates that the error is not a device error. */
+                    is_device_error: false
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'insufficient_permissions'
                     /** Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error. */
                     is_connected_account_error: true
                   }
