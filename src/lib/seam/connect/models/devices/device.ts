@@ -285,10 +285,33 @@ const subscription_required = common_device_error.extend({
     Indicates that a subscription is required to connect.
     `)
 
+// Named with an `_error` suffix because a device *warning* of the same code
+// already exists further down this file (Kwikset member-level access). Both are
+// valid: they live in separate maps, and the wire value is identical.
+const insufficient_permissions_error = common_device_error.extend({
+  error_code: z
+    .literal('insufficient_permissions')
+    .describe(error_code_description),
+  is_connected_account_error: z
+    .literal(true)
+    .describe(
+      'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+    ),
+  is_device_error: z
+    .literal(false)
+    .describe('Indicates that the error is not a device error.'),
+}).describe(`
+    ---
+    resource_type: connected_account
+    ---
+    Indicates that Seam's integration user does not have sufficient permissions on the provider's system to which this device belongs, so Seam cannot manage access codes or unlock the device. See the error message for specifics, then either reauthorize the connected account in Seam or grant the integration user the required permissions in the provider's system.
+    `)
+
 export const device_error = z
   .discriminatedUnion('error_code', [
     account_disconnected,
     salto_ks_subscription_limit_exceeded,
+    insufficient_permissions_error,
     dormakaba_sites_disconnected,
     device_offline,
     device_removed,
@@ -315,6 +338,9 @@ export const device_error_map = z.object({
     .nullable(),
   august_lock_not_authorized: august_lock_not_authorized.optional().nullable(),
   salto_ks_subscription_limit_exceeded: salto_ks_subscription_limit_exceeded
+    .optional()
+    .nullable(),
+  insufficient_permissions: insufficient_permissions_error
     .optional()
     .nullable(),
   dormakaba_sites_disconnected: dormakaba_sites_disconnected

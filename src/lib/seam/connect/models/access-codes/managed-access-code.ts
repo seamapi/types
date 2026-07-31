@@ -460,9 +460,21 @@ export const access_code = z.object({
     .datetime()
     .describe('Date and time at which the access code was created.'),
   errors: z.array(
+    // Deduped on error_code, mirroring how device_and_connected_account_error_options
+    // already dedupes connected_account against device: a code defined for both an
+    // access code and a device/connected account would otherwise be a duplicate
+    // discriminator value and make zod throw at module load. The access-code
+    // variant wins, since this array hangs off an access code.
     z.discriminatedUnion('error_code', [
       ...access_code_error.options,
-      ...device_and_connected_account_error_options,
+      ...device_and_connected_account_error_options.filter(
+        (_device_or_connected_account_error) =>
+          !access_code_error.options.some(
+            (_access_code_error) =>
+              _access_code_error.shape.error_code.value ===
+              _device_or_connected_account_error.shape.error_code.value,
+          ),
+      ),
     ]),
   ).describe(`
         ---
