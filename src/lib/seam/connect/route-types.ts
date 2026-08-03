@@ -94867,6 +94867,7 @@ export type Routes = {
         | 'AUTOMATION_IMMINENT_CHECK_IN_QUEUE'
         | 'ACCESS_METHOD_DEADLINE_ERRORS'
         | 'GUARD_MATERIALIZATION_ON_UNREACHABLE_DEVICE'
+        | 'TARGETED_ACCESS_GRANT_ISSUANCE'
       /** Whether the feature flag should be enabled for the workspace. */
       enabled: boolean
     }
@@ -94887,6 +94888,7 @@ export type Routes = {
           | 'AUTOMATION_IMMINENT_CHECK_IN_QUEUE'
           | 'ACCESS_METHOD_DEADLINE_ERRORS'
           | 'GUARD_MATERIALIZATION_ON_UNREACHABLE_DEVICE'
+          | 'TARGETED_ACCESS_GRANT_ISSUANCE'
         enabled: boolean
       }
     }
