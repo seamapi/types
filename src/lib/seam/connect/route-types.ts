@@ -10887,27 +10887,10 @@ export type Routes = {
       /**  */
       sync?: boolean
       attempt_for_offline_device?: boolean
-      /** Indicates whether [native scheduling](https://docs.seam.co/low-level-apis/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`. */
-      prefer_native_scheduling?: boolean | undefined
-      /** Indicates whether to use a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code). */
-      use_backup_access_code_pool?: boolean | undefined
       /** Indicates whether [external modification](https://docs.seam.co/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`. */
       allow_external_modification?: boolean | undefined
       /** Indicates whether [external modification](https://docs.seam.co/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`. */
       is_external_modification_allowed?: boolean | undefined
-      /** Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length. */
-      preferred_code_length?: number | undefined
-      /**
-       * @deprecated Use `is_offline_access_code` instead.*/
-      use_offline_access_code?: boolean | undefined
-      /** Indicates whether the access code is an [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes). */
-      is_offline_access_code?: boolean | undefined
-      /** Indicates whether the [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes) is a single-use access code. */
-      is_one_time_use?: boolean | undefined
-      /** Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`. */
-      max_time_rounding?:
-        | (('1hour' | '1day' | '1h' | '1d') | undefined)
-        | undefined
       /** ID of the access code that you want to update. */
       access_code_id: string
       /** ID of the device containing the access code that you want to update. */
@@ -56384,14 +56367,6 @@ export type Routes = {
       device_ids?: string[] | undefined
       /** Timestamp by which to limit returned devices. Returns devices created before this timestamp. */
       created_before?: Date | undefined
-      /** Your own internal user ID for the user for which you want to list devices. */
-      user_identifier_key?: string | undefined
-      /** Set of key:value [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices. */
-      custom_metadata_has?:
-        | {
-            [x: string]: string | boolean
-          }
-        | undefined
       /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
       page_cursor?: (string | undefined) | null
       /**  */
@@ -56444,11 +56419,6 @@ export type Routes = {
             | 'can_configure_auto_lock'
           )[]
         | undefined
-      /**
-       * @deprecated Use `space_id`.*/
-      unstable_location_id?: (string | null) | undefined
-      /** ID of the space for which you want to list devices. */
-      space_id?: string | undefined
       /** String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`. */
       search?: string | undefined
       /** Numerical limit on the number of devices to return. */
@@ -70619,8 +70589,6 @@ export type Routes = {
       customer_key?: string | undefined
       /** ID of the connected account for which you want to list devices. */
       connected_account_id?: string | undefined
-      /** Array of IDs of the connected accounts for which you want to list devices. */
-      connected_account_ids?: string[] | undefined
       /** ID of the Connect Webview for which you want to list devices. */
       connect_webview_id?: string | undefined
       /** Device type of the locks that you want to list. */
@@ -70730,79 +70698,6 @@ export type Routes = {
             | 'kisi'
           )
         | undefined
-      /** Array of device IDs for which you want to list devices. */
-      device_ids?: string[] | undefined
-      /** Numerical limit on the number of devices to return. */
-      limit?: number
-      /** Timestamp by which to limit returned devices. Returns devices created before this timestamp. */
-      created_before?: Date | undefined
-      /** Your own internal user ID for the user for which you want to list devices. */
-      user_identifier_key?: string | undefined
-      /** Set of key:value [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices. */
-      custom_metadata_has?:
-        | {
-            [x: string]: string | boolean
-          }
-        | undefined
-      /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
-      page_cursor?: (string | undefined) | null
-      /**  */
-      include_if?:
-        | (
-            | 'can_remotely_unlock'
-            | 'can_remotely_lock'
-            | 'can_program_offline_access_codes'
-            | 'can_program_online_access_codes'
-            | 'can_hvac_heat'
-            | 'can_hvac_cool'
-            | 'can_hvac_heat_cool'
-            | 'can_turn_off_hvac'
-            | 'can_simulate_removal'
-            | 'can_simulate_connection'
-            | 'can_simulate_disconnection'
-            | 'can_unlock_with_code'
-            | 'can_run_thermostat_programs'
-            | 'can_program_thermostat_programs_as_weekday_weekend'
-            | 'can_program_thermostat_programs_as_different_each_day'
-            | 'can_program_thermostat_programs_as_same_each_day'
-            | 'can_simulate_hub_connection'
-            | 'can_simulate_hub_disconnection'
-            | 'can_simulate_paid_subscription'
-            | 'can_configure_auto_lock'
-          )[]
-        | undefined
-      /**  */
-      exclude_if?:
-        | (
-            | 'can_remotely_unlock'
-            | 'can_remotely_lock'
-            | 'can_program_offline_access_codes'
-            | 'can_program_online_access_codes'
-            | 'can_hvac_heat'
-            | 'can_hvac_cool'
-            | 'can_hvac_heat_cool'
-            | 'can_turn_off_hvac'
-            | 'can_simulate_removal'
-            | 'can_simulate_connection'
-            | 'can_simulate_disconnection'
-            | 'can_unlock_with_code'
-            | 'can_run_thermostat_programs'
-            | 'can_program_thermostat_programs_as_weekday_weekend'
-            | 'can_program_thermostat_programs_as_different_each_day'
-            | 'can_program_thermostat_programs_as_same_each_day'
-            | 'can_simulate_hub_connection'
-            | 'can_simulate_hub_disconnection'
-            | 'can_simulate_paid_subscription'
-            | 'can_configure_auto_lock'
-          )[]
-        | undefined
-      /**
-       * @deprecated Use `space_id`.*/
-      unstable_location_id?: (string | null) | undefined
-      /** ID of the space for which you want to list devices. */
-      space_id?: string | undefined
-      /** String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`. */
-      search?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -82915,8 +82810,6 @@ export type Routes = {
       customer_key?: string | undefined
       /** ID of the connected account for which you want to list devices. */
       connected_account_id?: string | undefined
-      /** Array of IDs of the connected accounts for which you want to list devices. */
-      connected_account_ids?: string[] | undefined
       /** ID of the Connect Webview for which you want to list devices. */
       connect_webview_id?: string | undefined
       /** Device type of the noise sensors that you want to list. */
@@ -82925,79 +82818,6 @@ export type Routes = {
       device_types?: ('noiseaware_activity_zone' | 'minut_sensor')[] | undefined
       /** Manufacturers of the noise sensors that you want to list. */
       manufacturer?: ('minut' | 'noiseaware') | undefined
-      /** Array of device IDs for which you want to list devices. */
-      device_ids?: string[] | undefined
-      /** Numerical limit on the number of devices to return. */
-      limit?: number
-      /** Timestamp by which to limit returned devices. Returns devices created before this timestamp. */
-      created_before?: Date | undefined
-      /** Your own internal user ID for the user for which you want to list devices. */
-      user_identifier_key?: string | undefined
-      /** Set of key:value [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices. */
-      custom_metadata_has?:
-        | {
-            [x: string]: string | boolean
-          }
-        | undefined
-      /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
-      page_cursor?: (string | undefined) | null
-      /**  */
-      include_if?:
-        | (
-            | 'can_remotely_unlock'
-            | 'can_remotely_lock'
-            | 'can_program_offline_access_codes'
-            | 'can_program_online_access_codes'
-            | 'can_hvac_heat'
-            | 'can_hvac_cool'
-            | 'can_hvac_heat_cool'
-            | 'can_turn_off_hvac'
-            | 'can_simulate_removal'
-            | 'can_simulate_connection'
-            | 'can_simulate_disconnection'
-            | 'can_unlock_with_code'
-            | 'can_run_thermostat_programs'
-            | 'can_program_thermostat_programs_as_weekday_weekend'
-            | 'can_program_thermostat_programs_as_different_each_day'
-            | 'can_program_thermostat_programs_as_same_each_day'
-            | 'can_simulate_hub_connection'
-            | 'can_simulate_hub_disconnection'
-            | 'can_simulate_paid_subscription'
-            | 'can_configure_auto_lock'
-          )[]
-        | undefined
-      /**  */
-      exclude_if?:
-        | (
-            | 'can_remotely_unlock'
-            | 'can_remotely_lock'
-            | 'can_program_offline_access_codes'
-            | 'can_program_online_access_codes'
-            | 'can_hvac_heat'
-            | 'can_hvac_cool'
-            | 'can_hvac_heat_cool'
-            | 'can_turn_off_hvac'
-            | 'can_simulate_removal'
-            | 'can_simulate_connection'
-            | 'can_simulate_disconnection'
-            | 'can_unlock_with_code'
-            | 'can_run_thermostat_programs'
-            | 'can_program_thermostat_programs_as_weekday_weekend'
-            | 'can_program_thermostat_programs_as_different_each_day'
-            | 'can_program_thermostat_programs_as_same_each_day'
-            | 'can_simulate_hub_connection'
-            | 'can_simulate_hub_disconnection'
-            | 'can_simulate_paid_subscription'
-            | 'can_configure_auto_lock'
-          )[]
-        | undefined
-      /**
-       * @deprecated Use `space_id`.*/
-      unstable_location_id?: (string | null) | undefined
-      /** ID of the space for which you want to list devices. */
-      space_id?: string | undefined
-      /** String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`. */
-      search?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -120192,8 +120012,6 @@ export type Routes = {
       customer_key?: string | undefined
       /** ID of the connected account for which you want to list devices. */
       connected_account_id?: string | undefined
-      /** Array of IDs of the connected accounts for which you want to list devices. */
-      connected_account_ids?: string[] | undefined
       /** ID of the Connect Webview for which you want to list devices. */
       connect_webview_id?: string | undefined
       /** Device type by which you want to filter thermostat devices. */
@@ -120229,79 +120047,6 @@ export type Routes = {
             | 'tado'
           )
         | undefined
-      /** Array of device IDs for which you want to list devices. */
-      device_ids?: string[] | undefined
-      /** Numerical limit on the number of devices to return. */
-      limit?: number
-      /** Timestamp by which to limit returned devices. Returns devices created before this timestamp. */
-      created_before?: Date | undefined
-      /** Your own internal user ID for the user for which you want to list devices. */
-      user_identifier_key?: string | undefined
-      /** Set of key:value [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices. */
-      custom_metadata_has?:
-        | {
-            [x: string]: string | boolean
-          }
-        | undefined
-      /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
-      page_cursor?: (string | undefined) | null
-      /**  */
-      include_if?:
-        | (
-            | 'can_remotely_unlock'
-            | 'can_remotely_lock'
-            | 'can_program_offline_access_codes'
-            | 'can_program_online_access_codes'
-            | 'can_hvac_heat'
-            | 'can_hvac_cool'
-            | 'can_hvac_heat_cool'
-            | 'can_turn_off_hvac'
-            | 'can_simulate_removal'
-            | 'can_simulate_connection'
-            | 'can_simulate_disconnection'
-            | 'can_unlock_with_code'
-            | 'can_run_thermostat_programs'
-            | 'can_program_thermostat_programs_as_weekday_weekend'
-            | 'can_program_thermostat_programs_as_different_each_day'
-            | 'can_program_thermostat_programs_as_same_each_day'
-            | 'can_simulate_hub_connection'
-            | 'can_simulate_hub_disconnection'
-            | 'can_simulate_paid_subscription'
-            | 'can_configure_auto_lock'
-          )[]
-        | undefined
-      /**  */
-      exclude_if?:
-        | (
-            | 'can_remotely_unlock'
-            | 'can_remotely_lock'
-            | 'can_program_offline_access_codes'
-            | 'can_program_online_access_codes'
-            | 'can_hvac_heat'
-            | 'can_hvac_cool'
-            | 'can_hvac_heat_cool'
-            | 'can_turn_off_hvac'
-            | 'can_simulate_removal'
-            | 'can_simulate_connection'
-            | 'can_simulate_disconnection'
-            | 'can_unlock_with_code'
-            | 'can_run_thermostat_programs'
-            | 'can_program_thermostat_programs_as_weekday_weekend'
-            | 'can_program_thermostat_programs_as_different_each_day'
-            | 'can_program_thermostat_programs_as_same_each_day'
-            | 'can_simulate_hub_connection'
-            | 'can_simulate_hub_disconnection'
-            | 'can_simulate_paid_subscription'
-            | 'can_configure_auto_lock'
-          )[]
-        | undefined
-      /**
-       * @deprecated Use `space_id`.*/
-      unstable_location_id?: (string | null) | undefined
-      /** ID of the space for which you want to list devices. */
-      space_id?: string | undefined
-      /** String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`. */
-      search?: string | undefined
     }
     formData: {}
     jsonResponse: {

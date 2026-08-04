@@ -38856,37 +38856,10 @@ const openapi: OpenAPISpec = {
                       'Indicates whether the access code is managed through Seam. Note that to convert an unmanaged access code into a managed access code, use `/access_codes/unmanaged/convert_to_managed`.',
                     type: 'boolean',
                   },
-                  is_offline_access_code: {
-                    description:
-                      'Indicates whether the access code is an [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes).',
-                    type: 'boolean',
-                  },
-                  is_one_time_use: {
-                    description:
-                      'Indicates whether the [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes) is a single-use access code.',
-                    type: 'boolean',
-                  },
-                  max_time_rounding: {
-                    description:
-                      'Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.',
-                    enum: ['1hour', '1day', '1h', '1d'],
-                    type: 'string',
-                  },
                   name: {
                     description:
                       "Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.\n\n       Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.\n\n       To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.\n\n       To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).",
                     type: 'string',
-                  },
-                  prefer_native_scheduling: {
-                    description:
-                      'Indicates whether [native scheduling](https://docs.seam.co/low-level-apis/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.',
-                    type: 'boolean',
-                  },
-                  preferred_code_length: {
-                    description:
-                      'Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length.',
-                    format: 'float',
-                    type: 'number',
                   },
                   starts_at: {
                     description:
@@ -38903,16 +38876,6 @@ const openapi: OpenAPISpec = {
                       'Type to which you want to convert the access code. To convert a time-bound access code to an ongoing access code, set `type` to `ongoing`. See also [Changing a time-bound access code to permanent access](https://docs.seam.co/low-level-apis/smart-locks/access-codes/modifying-access-codes#special-case-2-changing-a-time-bound-access-code-to-permanent-access).',
                     enum: ['ongoing', 'time_bound'],
                     type: 'string',
-                  },
-                  use_backup_access_code_pool: {
-                    description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).',
-                    type: 'boolean',
-                  },
-                  use_offline_access_code: {
-                    deprecated: true,
-                    type: 'boolean',
-                    'x-deprecated': 'Use `is_offline_access_code` instead.',
                   },
                 },
                 required: ['access_code_id'],
@@ -39009,37 +38972,10 @@ const openapi: OpenAPISpec = {
                       'Indicates whether the access code is managed through Seam. Note that to convert an unmanaged access code into a managed access code, use `/access_codes/unmanaged/convert_to_managed`.',
                     type: 'boolean',
                   },
-                  is_offline_access_code: {
-                    description:
-                      'Indicates whether the access code is an [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes).',
-                    type: 'boolean',
-                  },
-                  is_one_time_use: {
-                    description:
-                      'Indicates whether the [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes) is a single-use access code.',
-                    type: 'boolean',
-                  },
-                  max_time_rounding: {
-                    description:
-                      'Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.',
-                    enum: ['1hour', '1day', '1h', '1d'],
-                    type: 'string',
-                  },
                   name: {
                     description:
                       "Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.\n\n       Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.\n\n       To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.\n\n       To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).",
                     type: 'string',
-                  },
-                  prefer_native_scheduling: {
-                    description:
-                      'Indicates whether [native scheduling](https://docs.seam.co/low-level-apis/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.',
-                    type: 'boolean',
-                  },
-                  preferred_code_length: {
-                    description:
-                      'Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length.',
-                    format: 'float',
-                    type: 'number',
                   },
                   starts_at: {
                     description:
@@ -39056,16 +38992,6 @@ const openapi: OpenAPISpec = {
                       'Type to which you want to convert the access code. To convert a time-bound access code to an ongoing access code, set `type` to `ongoing`. See also [Changing a time-bound access code to permanent access](https://docs.seam.co/low-level-apis/smart-locks/access-codes/modifying-access-codes#special-case-2-changing-a-time-bound-access-code-to-permanent-access).',
                     enum: ['ongoing', 'time_bound'],
                     type: 'string',
-                  },
-                  use_backup_access_code_pool: {
-                    description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).',
-                    type: 'boolean',
-                  },
-                  use_offline_access_code: {
-                    deprecated: true,
-                    type: 'boolean',
-                    'x-deprecated': 'Use `is_offline_access_code` instead.',
                   },
                 },
                 required: ['access_code_id'],
@@ -39162,37 +39088,10 @@ const openapi: OpenAPISpec = {
                       'Indicates whether the access code is managed through Seam. Note that to convert an unmanaged access code into a managed access code, use `/access_codes/unmanaged/convert_to_managed`.',
                     type: 'boolean',
                   },
-                  is_offline_access_code: {
-                    description:
-                      'Indicates whether the access code is an [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes).',
-                    type: 'boolean',
-                  },
-                  is_one_time_use: {
-                    description:
-                      'Indicates whether the [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes) is a single-use access code.',
-                    type: 'boolean',
-                  },
-                  max_time_rounding: {
-                    description:
-                      'Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.',
-                    enum: ['1hour', '1day', '1h', '1d'],
-                    type: 'string',
-                  },
                   name: {
                     description:
                       "Name of the new access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.\n\n       Note that the name provided on Seam is used to identify the code on Seam and is not necessarily the name that will appear in the lock provider's app or on the device. This is because lock providers may have constraints on names, such as length, uniqueness, or characters that can be used. In addition, some lock providers may break down names into components such as `first_name` and `last_name`.\n\n       To provide a consistent experience, Seam identifies the code on Seam by its name but may modify the name that appears on the lock provider's app or on the device. For example, Seam may add additional characters or truncate the name to meet provider constraints.\n\n       To help your users identify codes set by Seam, Seam provides the name exactly as it appears on the lock provider's app or on the device as a separate property called `appearance`. This is an object with a `name` property and, optionally, `first_name` and `last_name` properties (for providers that break down a name into components).",
                     type: 'string',
-                  },
-                  prefer_native_scheduling: {
-                    description:
-                      'Indicates whether [native scheduling](https://docs.seam.co/low-level-apis/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.',
-                    type: 'boolean',
-                  },
-                  preferred_code_length: {
-                    description:
-                      'Preferred code length. Only applicable if you do not specify a `code`. If the affected device does not support the preferred code length, Seam reverts to using the shortest supported code length.',
-                    format: 'float',
-                    type: 'number',
                   },
                   starts_at: {
                     description:
@@ -39209,16 +39108,6 @@ const openapi: OpenAPISpec = {
                       'Type to which you want to convert the access code. To convert a time-bound access code to an ongoing access code, set `type` to `ongoing`. See also [Changing a time-bound access code to permanent access](https://docs.seam.co/low-level-apis/smart-locks/access-codes/modifying-access-codes#special-case-2-changing-a-time-bound-access-code-to-permanent-access).',
                     enum: ['ongoing', 'time_bound'],
                     type: 'string',
-                  },
-                  use_backup_access_code_pool: {
-                    description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).',
-                    type: 'boolean',
-                  },
-                  use_offline_access_code: {
-                    deprecated: true,
-                    type: 'boolean',
-                    'x-deprecated': 'Use `is_offline_access_code` instead.',
                   },
                 },
                 required: ['access_code_id'],
@@ -57748,27 +57637,6 @@ const openapi: OpenAPISpec = {
           },
           {
             in: 'query',
-            name: 'user_identifier_key',
-            schema: {
-              description:
-                'Your own internal user ID for the user for which you want to list devices.',
-              type: 'string',
-            },
-          },
-          {
-            in: 'query',
-            name: 'custom_metadata_has',
-            schema: {
-              additionalProperties: {
-                oneOf: [{ type: 'string' }, { type: 'boolean' }],
-              },
-              description:
-                'Set of key:value [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
-              type: 'object',
-            },
-          },
-          {
-            in: 'query',
             name: 'page_cursor',
             schema: {
               description:
@@ -57841,27 +57709,6 @@ const openapi: OpenAPISpec = {
               },
               type: 'array',
               'x-undocumented': 'Only used internally.',
-            },
-          },
-          {
-            in: 'query',
-            name: 'unstable_location_id',
-            schema: {
-              deprecated: true,
-              format: 'uuid',
-              nullable: true,
-              type: 'string',
-              'x-deprecated': 'Use `space_id`.',
-            },
-          },
-          {
-            in: 'query',
-            name: 'space_id',
-            schema: {
-              description:
-                'ID of the space for which you want to list devices.',
-              format: 'uuid',
-              type: 'string',
             },
           },
           {
@@ -57957,14 +57804,6 @@ const openapi: OpenAPISpec = {
                       'Timestamp by which to limit returned devices. Returns devices created before this timestamp.',
                     format: 'date-time',
                     type: 'string',
-                  },
-                  custom_metadata_has: {
-                    additionalProperties: {
-                      oneOf: [{ type: 'string' }, { type: 'boolean' }],
-                    },
-                    description:
-                      'Set of key:value [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
-                    type: 'object',
                   },
                   customer_key: {
                     description:
@@ -58265,24 +58104,6 @@ const openapi: OpenAPISpec = {
                     description:
                       'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
                     minLength: 1,
-                    type: 'string',
-                  },
-                  space_id: {
-                    description:
-                      'ID of the space for which you want to list devices.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                  unstable_location_id: {
-                    deprecated: true,
-                    format: 'uuid',
-                    nullable: true,
-                    type: 'string',
-                    'x-deprecated': 'Use `space_id`.',
-                  },
-                  user_identifier_key: {
-                    description:
-                      'Your own internal user ID for the user for which you want to list devices.',
                     type: 'string',
                   },
                 },
@@ -60335,16 +60156,6 @@ const openapi: OpenAPISpec = {
           },
           {
             in: 'query',
-            name: 'connected_account_ids',
-            schema: {
-              description:
-                'Array of IDs of the connected accounts for which you want to list devices.',
-              items: { format: 'uuid', type: 'string' },
-              type: 'array',
-            },
-          },
-          {
-            in: 'query',
             name: 'connect_webview_id',
             schema: {
               description:
@@ -60479,165 +60290,6 @@ const openapi: OpenAPISpec = {
               type: 'string',
             },
           },
-          {
-            in: 'query',
-            name: 'device_ids',
-            schema: {
-              description:
-                'Array of device IDs for which you want to list devices.',
-              items: { format: 'uuid', type: 'string' },
-              type: 'array',
-            },
-          },
-          {
-            in: 'query',
-            name: 'limit',
-            schema: {
-              default: 500,
-              description:
-                'Numerical limit on the number of devices to return.',
-              format: 'float',
-              type: 'number',
-            },
-          },
-          {
-            in: 'query',
-            name: 'created_before',
-            schema: {
-              description:
-                'Timestamp by which to limit returned devices. Returns devices created before this timestamp.',
-              format: 'date-time',
-              type: 'string',
-            },
-          },
-          {
-            in: 'query',
-            name: 'user_identifier_key',
-            schema: {
-              description:
-                'Your own internal user ID for the user for which you want to list devices.',
-              type: 'string',
-            },
-          },
-          {
-            in: 'query',
-            name: 'custom_metadata_has',
-            schema: {
-              additionalProperties: {
-                oneOf: [{ type: 'string' }, { type: 'boolean' }],
-              },
-              description:
-                'Set of key:value [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
-              type: 'object',
-            },
-          },
-          {
-            in: 'query',
-            name: 'page_cursor',
-            schema: {
-              description:
-                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
-              nullable: true,
-              type: 'string',
-            },
-          },
-          {
-            in: 'query',
-            name: 'include_if',
-            schema: {
-              items: {
-                enum: [
-                  'can_remotely_unlock',
-                  'can_remotely_lock',
-                  'can_program_offline_access_codes',
-                  'can_program_online_access_codes',
-                  'can_hvac_heat',
-                  'can_hvac_cool',
-                  'can_hvac_heat_cool',
-                  'can_turn_off_hvac',
-                  'can_simulate_removal',
-                  'can_simulate_connection',
-                  'can_simulate_disconnection',
-                  'can_unlock_with_code',
-                  'can_run_thermostat_programs',
-                  'can_program_thermostat_programs_as_weekday_weekend',
-                  'can_program_thermostat_programs_as_different_each_day',
-                  'can_program_thermostat_programs_as_same_each_day',
-                  'can_simulate_hub_connection',
-                  'can_simulate_hub_disconnection',
-                  'can_simulate_paid_subscription',
-                  'can_configure_auto_lock',
-                ],
-                type: 'string',
-              },
-              type: 'array',
-              'x-undocumented': 'Only used internally.',
-            },
-          },
-          {
-            in: 'query',
-            name: 'exclude_if',
-            schema: {
-              items: {
-                enum: [
-                  'can_remotely_unlock',
-                  'can_remotely_lock',
-                  'can_program_offline_access_codes',
-                  'can_program_online_access_codes',
-                  'can_hvac_heat',
-                  'can_hvac_cool',
-                  'can_hvac_heat_cool',
-                  'can_turn_off_hvac',
-                  'can_simulate_removal',
-                  'can_simulate_connection',
-                  'can_simulate_disconnection',
-                  'can_unlock_with_code',
-                  'can_run_thermostat_programs',
-                  'can_program_thermostat_programs_as_weekday_weekend',
-                  'can_program_thermostat_programs_as_different_each_day',
-                  'can_program_thermostat_programs_as_same_each_day',
-                  'can_simulate_hub_connection',
-                  'can_simulate_hub_disconnection',
-                  'can_simulate_paid_subscription',
-                  'can_configure_auto_lock',
-                ],
-                type: 'string',
-              },
-              type: 'array',
-              'x-undocumented': 'Only used internally.',
-            },
-          },
-          {
-            in: 'query',
-            name: 'unstable_location_id',
-            schema: {
-              deprecated: true,
-              format: 'uuid',
-              nullable: true,
-              type: 'string',
-              'x-deprecated': 'Use `space_id`.',
-            },
-          },
-          {
-            in: 'query',
-            name: 'space_id',
-            schema: {
-              description:
-                'ID of the space for which you want to list devices.',
-              format: 'uuid',
-              type: 'string',
-            },
-          },
-          {
-            in: 'query',
-            name: 'search',
-            schema: {
-              description:
-                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
-              minLength: 1,
-              type: 'string',
-            },
-          },
         ],
         responses: {
           200: {
@@ -60701,36 +60353,10 @@ const openapi: OpenAPISpec = {
                     format: 'uuid',
                     type: 'string',
                   },
-                  connected_account_ids: {
-                    description:
-                      'Array of IDs of the connected accounts for which you want to list devices.',
-                    items: { format: 'uuid', type: 'string' },
-                    type: 'array',
-                  },
-                  created_before: {
-                    description:
-                      'Timestamp by which to limit returned devices. Returns devices created before this timestamp.',
-                    format: 'date-time',
-                    type: 'string',
-                  },
-                  custom_metadata_has: {
-                    additionalProperties: {
-                      oneOf: [{ type: 'string' }, { type: 'boolean' }],
-                    },
-                    description:
-                      'Set of key:value [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
-                    type: 'object',
-                  },
                   customer_key: {
                     description:
                       'Customer key for which you want to list devices.',
                     type: 'string',
-                  },
-                  device_ids: {
-                    description:
-                      'Array of device IDs for which you want to list devices.',
-                    items: { format: 'uuid', type: 'string' },
-                    type: 'array',
                   },
                   device_type: {
                     description:
@@ -60810,71 +60436,6 @@ const openapi: OpenAPISpec = {
                     },
                     type: 'array',
                   },
-                  exclude_if: {
-                    items: {
-                      enum: [
-                        'can_remotely_unlock',
-                        'can_remotely_lock',
-                        'can_program_offline_access_codes',
-                        'can_program_online_access_codes',
-                        'can_hvac_heat',
-                        'can_hvac_cool',
-                        'can_hvac_heat_cool',
-                        'can_turn_off_hvac',
-                        'can_simulate_removal',
-                        'can_simulate_connection',
-                        'can_simulate_disconnection',
-                        'can_unlock_with_code',
-                        'can_run_thermostat_programs',
-                        'can_program_thermostat_programs_as_weekday_weekend',
-                        'can_program_thermostat_programs_as_different_each_day',
-                        'can_program_thermostat_programs_as_same_each_day',
-                        'can_simulate_hub_connection',
-                        'can_simulate_hub_disconnection',
-                        'can_simulate_paid_subscription',
-                        'can_configure_auto_lock',
-                      ],
-                      type: 'string',
-                    },
-                    type: 'array',
-                    'x-undocumented': 'Only used internally.',
-                  },
-                  include_if: {
-                    items: {
-                      enum: [
-                        'can_remotely_unlock',
-                        'can_remotely_lock',
-                        'can_program_offline_access_codes',
-                        'can_program_online_access_codes',
-                        'can_hvac_heat',
-                        'can_hvac_cool',
-                        'can_hvac_heat_cool',
-                        'can_turn_off_hvac',
-                        'can_simulate_removal',
-                        'can_simulate_connection',
-                        'can_simulate_disconnection',
-                        'can_unlock_with_code',
-                        'can_run_thermostat_programs',
-                        'can_program_thermostat_programs_as_weekday_weekend',
-                        'can_program_thermostat_programs_as_different_each_day',
-                        'can_program_thermostat_programs_as_same_each_day',
-                        'can_simulate_hub_connection',
-                        'can_simulate_hub_disconnection',
-                        'can_simulate_paid_subscription',
-                        'can_configure_auto_lock',
-                      ],
-                      type: 'string',
-                    },
-                    type: 'array',
-                    'x-undocumented': 'Only used internally.',
-                  },
-                  limit: {
-                    default: 500,
-                    description:
-                      'Numerical limit on the number of devices to return.',
-                    format: 'float',
-                    type: 'number',
-                  },
                   manufacturer: {
                     description:
                       'Manufacturer of the locks that you want to list.',
@@ -60912,36 +60473,6 @@ const openapi: OpenAPISpec = {
                       'omnitec',
                       'kisi',
                     ],
-                    type: 'string',
-                  },
-                  page_cursor: {
-                    description:
-                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
-                    nullable: true,
-                    type: 'string',
-                  },
-                  search: {
-                    description:
-                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
-                    minLength: 1,
-                    type: 'string',
-                  },
-                  space_id: {
-                    description:
-                      'ID of the space for which you want to list devices.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                  unstable_location_id: {
-                    deprecated: true,
-                    format: 'uuid',
-                    nullable: true,
-                    type: 'string',
-                    'x-deprecated': 'Use `space_id`.',
-                  },
-                  user_identifier_key: {
-                    description:
-                      'Your own internal user ID for the user for which you want to list devices.',
                     type: 'string',
                   },
                 },
@@ -61271,16 +60802,6 @@ const openapi: OpenAPISpec = {
           },
           {
             in: 'query',
-            name: 'connected_account_ids',
-            schema: {
-              description:
-                'Array of IDs of the connected accounts for which you want to list devices.',
-              items: { format: 'uuid', type: 'string' },
-              type: 'array',
-            },
-          },
-          {
-            in: 'query',
             name: 'connect_webview_id',
             schema: {
               description:
@@ -61320,165 +60841,6 @@ const openapi: OpenAPISpec = {
               description:
                 'Manufacturers of the noise sensors that you want to list.',
               enum: ['minut', 'noiseaware'],
-              type: 'string',
-            },
-          },
-          {
-            in: 'query',
-            name: 'device_ids',
-            schema: {
-              description:
-                'Array of device IDs for which you want to list devices.',
-              items: { format: 'uuid', type: 'string' },
-              type: 'array',
-            },
-          },
-          {
-            in: 'query',
-            name: 'limit',
-            schema: {
-              default: 500,
-              description:
-                'Numerical limit on the number of devices to return.',
-              format: 'float',
-              type: 'number',
-            },
-          },
-          {
-            in: 'query',
-            name: 'created_before',
-            schema: {
-              description:
-                'Timestamp by which to limit returned devices. Returns devices created before this timestamp.',
-              format: 'date-time',
-              type: 'string',
-            },
-          },
-          {
-            in: 'query',
-            name: 'user_identifier_key',
-            schema: {
-              description:
-                'Your own internal user ID for the user for which you want to list devices.',
-              type: 'string',
-            },
-          },
-          {
-            in: 'query',
-            name: 'custom_metadata_has',
-            schema: {
-              additionalProperties: {
-                oneOf: [{ type: 'string' }, { type: 'boolean' }],
-              },
-              description:
-                'Set of key:value [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
-              type: 'object',
-            },
-          },
-          {
-            in: 'query',
-            name: 'page_cursor',
-            schema: {
-              description:
-                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
-              nullable: true,
-              type: 'string',
-            },
-          },
-          {
-            in: 'query',
-            name: 'include_if',
-            schema: {
-              items: {
-                enum: [
-                  'can_remotely_unlock',
-                  'can_remotely_lock',
-                  'can_program_offline_access_codes',
-                  'can_program_online_access_codes',
-                  'can_hvac_heat',
-                  'can_hvac_cool',
-                  'can_hvac_heat_cool',
-                  'can_turn_off_hvac',
-                  'can_simulate_removal',
-                  'can_simulate_connection',
-                  'can_simulate_disconnection',
-                  'can_unlock_with_code',
-                  'can_run_thermostat_programs',
-                  'can_program_thermostat_programs_as_weekday_weekend',
-                  'can_program_thermostat_programs_as_different_each_day',
-                  'can_program_thermostat_programs_as_same_each_day',
-                  'can_simulate_hub_connection',
-                  'can_simulate_hub_disconnection',
-                  'can_simulate_paid_subscription',
-                  'can_configure_auto_lock',
-                ],
-                type: 'string',
-              },
-              type: 'array',
-              'x-undocumented': 'Only used internally.',
-            },
-          },
-          {
-            in: 'query',
-            name: 'exclude_if',
-            schema: {
-              items: {
-                enum: [
-                  'can_remotely_unlock',
-                  'can_remotely_lock',
-                  'can_program_offline_access_codes',
-                  'can_program_online_access_codes',
-                  'can_hvac_heat',
-                  'can_hvac_cool',
-                  'can_hvac_heat_cool',
-                  'can_turn_off_hvac',
-                  'can_simulate_removal',
-                  'can_simulate_connection',
-                  'can_simulate_disconnection',
-                  'can_unlock_with_code',
-                  'can_run_thermostat_programs',
-                  'can_program_thermostat_programs_as_weekday_weekend',
-                  'can_program_thermostat_programs_as_different_each_day',
-                  'can_program_thermostat_programs_as_same_each_day',
-                  'can_simulate_hub_connection',
-                  'can_simulate_hub_disconnection',
-                  'can_simulate_paid_subscription',
-                  'can_configure_auto_lock',
-                ],
-                type: 'string',
-              },
-              type: 'array',
-              'x-undocumented': 'Only used internally.',
-            },
-          },
-          {
-            in: 'query',
-            name: 'unstable_location_id',
-            schema: {
-              deprecated: true,
-              format: 'uuid',
-              nullable: true,
-              type: 'string',
-              'x-deprecated': 'Use `space_id`.',
-            },
-          },
-          {
-            in: 'query',
-            name: 'space_id',
-            schema: {
-              description:
-                'ID of the space for which you want to list devices.',
-              format: 'uuid',
-              type: 'string',
-            },
-          },
-          {
-            in: 'query',
-            name: 'search',
-            schema: {
-              description:
-                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
-              minLength: 1,
               type: 'string',
             },
           },
@@ -61545,36 +60907,10 @@ const openapi: OpenAPISpec = {
                     format: 'uuid',
                     type: 'string',
                   },
-                  connected_account_ids: {
-                    description:
-                      'Array of IDs of the connected accounts for which you want to list devices.',
-                    items: { format: 'uuid', type: 'string' },
-                    type: 'array',
-                  },
-                  created_before: {
-                    description:
-                      'Timestamp by which to limit returned devices. Returns devices created before this timestamp.',
-                    format: 'date-time',
-                    type: 'string',
-                  },
-                  custom_metadata_has: {
-                    additionalProperties: {
-                      oneOf: [{ type: 'string' }, { type: 'boolean' }],
-                    },
-                    description:
-                      'Set of key:value [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
-                    type: 'object',
-                  },
                   customer_key: {
                     description:
                       'Customer key for which you want to list devices.',
                     type: 'string',
-                  },
-                  device_ids: {
-                    description:
-                      'Array of device IDs for which you want to list devices.',
-                    items: { format: 'uuid', type: 'string' },
-                    type: 'array',
                   },
                   device_type: {
                     description:
@@ -61592,105 +60928,10 @@ const openapi: OpenAPISpec = {
                     },
                     type: 'array',
                   },
-                  exclude_if: {
-                    items: {
-                      enum: [
-                        'can_remotely_unlock',
-                        'can_remotely_lock',
-                        'can_program_offline_access_codes',
-                        'can_program_online_access_codes',
-                        'can_hvac_heat',
-                        'can_hvac_cool',
-                        'can_hvac_heat_cool',
-                        'can_turn_off_hvac',
-                        'can_simulate_removal',
-                        'can_simulate_connection',
-                        'can_simulate_disconnection',
-                        'can_unlock_with_code',
-                        'can_run_thermostat_programs',
-                        'can_program_thermostat_programs_as_weekday_weekend',
-                        'can_program_thermostat_programs_as_different_each_day',
-                        'can_program_thermostat_programs_as_same_each_day',
-                        'can_simulate_hub_connection',
-                        'can_simulate_hub_disconnection',
-                        'can_simulate_paid_subscription',
-                        'can_configure_auto_lock',
-                      ],
-                      type: 'string',
-                    },
-                    type: 'array',
-                    'x-undocumented': 'Only used internally.',
-                  },
-                  include_if: {
-                    items: {
-                      enum: [
-                        'can_remotely_unlock',
-                        'can_remotely_lock',
-                        'can_program_offline_access_codes',
-                        'can_program_online_access_codes',
-                        'can_hvac_heat',
-                        'can_hvac_cool',
-                        'can_hvac_heat_cool',
-                        'can_turn_off_hvac',
-                        'can_simulate_removal',
-                        'can_simulate_connection',
-                        'can_simulate_disconnection',
-                        'can_unlock_with_code',
-                        'can_run_thermostat_programs',
-                        'can_program_thermostat_programs_as_weekday_weekend',
-                        'can_program_thermostat_programs_as_different_each_day',
-                        'can_program_thermostat_programs_as_same_each_day',
-                        'can_simulate_hub_connection',
-                        'can_simulate_hub_disconnection',
-                        'can_simulate_paid_subscription',
-                        'can_configure_auto_lock',
-                      ],
-                      type: 'string',
-                    },
-                    type: 'array',
-                    'x-undocumented': 'Only used internally.',
-                  },
-                  limit: {
-                    default: 500,
-                    description:
-                      'Numerical limit on the number of devices to return.',
-                    format: 'float',
-                    type: 'number',
-                  },
                   manufacturer: {
                     description:
                       'Manufacturers of the noise sensors that you want to list.',
                     enum: ['minut', 'noiseaware'],
-                    type: 'string',
-                  },
-                  page_cursor: {
-                    description:
-                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
-                    nullable: true,
-                    type: 'string',
-                  },
-                  search: {
-                    description:
-                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
-                    minLength: 1,
-                    type: 'string',
-                  },
-                  space_id: {
-                    description:
-                      'ID of the space for which you want to list devices.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                  unstable_location_id: {
-                    deprecated: true,
-                    format: 'uuid',
-                    nullable: true,
-                    type: 'string',
-                    'x-deprecated': 'Use `space_id`.',
-                  },
-                  user_identifier_key: {
-                    description:
-                      'Your own internal user ID for the user for which you want to list devices.',
                     type: 'string',
                   },
                 },
@@ -81774,16 +81015,6 @@ const openapi: OpenAPISpec = {
           },
           {
             in: 'query',
-            name: 'connected_account_ids',
-            schema: {
-              description:
-                'Array of IDs of the connected accounts for which you want to list devices.',
-              items: { format: 'uuid', type: 'string' },
-              type: 'array',
-            },
-          },
-          {
-            in: 'query',
             name: 'connect_webview_id',
             schema: {
               description:
@@ -81844,165 +81075,6 @@ const openapi: OpenAPISpec = {
                 'smartthings',
                 'tado',
               ],
-              type: 'string',
-            },
-          },
-          {
-            in: 'query',
-            name: 'device_ids',
-            schema: {
-              description:
-                'Array of device IDs for which you want to list devices.',
-              items: { format: 'uuid', type: 'string' },
-              type: 'array',
-            },
-          },
-          {
-            in: 'query',
-            name: 'limit',
-            schema: {
-              default: 500,
-              description:
-                'Numerical limit on the number of devices to return.',
-              format: 'float',
-              type: 'number',
-            },
-          },
-          {
-            in: 'query',
-            name: 'created_before',
-            schema: {
-              description:
-                'Timestamp by which to limit returned devices. Returns devices created before this timestamp.',
-              format: 'date-time',
-              type: 'string',
-            },
-          },
-          {
-            in: 'query',
-            name: 'user_identifier_key',
-            schema: {
-              description:
-                'Your own internal user ID for the user for which you want to list devices.',
-              type: 'string',
-            },
-          },
-          {
-            in: 'query',
-            name: 'custom_metadata_has',
-            schema: {
-              additionalProperties: {
-                oneOf: [{ type: 'string' }, { type: 'boolean' }],
-              },
-              description:
-                'Set of key:value [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
-              type: 'object',
-            },
-          },
-          {
-            in: 'query',
-            name: 'page_cursor',
-            schema: {
-              description:
-                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
-              nullable: true,
-              type: 'string',
-            },
-          },
-          {
-            in: 'query',
-            name: 'include_if',
-            schema: {
-              items: {
-                enum: [
-                  'can_remotely_unlock',
-                  'can_remotely_lock',
-                  'can_program_offline_access_codes',
-                  'can_program_online_access_codes',
-                  'can_hvac_heat',
-                  'can_hvac_cool',
-                  'can_hvac_heat_cool',
-                  'can_turn_off_hvac',
-                  'can_simulate_removal',
-                  'can_simulate_connection',
-                  'can_simulate_disconnection',
-                  'can_unlock_with_code',
-                  'can_run_thermostat_programs',
-                  'can_program_thermostat_programs_as_weekday_weekend',
-                  'can_program_thermostat_programs_as_different_each_day',
-                  'can_program_thermostat_programs_as_same_each_day',
-                  'can_simulate_hub_connection',
-                  'can_simulate_hub_disconnection',
-                  'can_simulate_paid_subscription',
-                  'can_configure_auto_lock',
-                ],
-                type: 'string',
-              },
-              type: 'array',
-              'x-undocumented': 'Only used internally.',
-            },
-          },
-          {
-            in: 'query',
-            name: 'exclude_if',
-            schema: {
-              items: {
-                enum: [
-                  'can_remotely_unlock',
-                  'can_remotely_lock',
-                  'can_program_offline_access_codes',
-                  'can_program_online_access_codes',
-                  'can_hvac_heat',
-                  'can_hvac_cool',
-                  'can_hvac_heat_cool',
-                  'can_turn_off_hvac',
-                  'can_simulate_removal',
-                  'can_simulate_connection',
-                  'can_simulate_disconnection',
-                  'can_unlock_with_code',
-                  'can_run_thermostat_programs',
-                  'can_program_thermostat_programs_as_weekday_weekend',
-                  'can_program_thermostat_programs_as_different_each_day',
-                  'can_program_thermostat_programs_as_same_each_day',
-                  'can_simulate_hub_connection',
-                  'can_simulate_hub_disconnection',
-                  'can_simulate_paid_subscription',
-                  'can_configure_auto_lock',
-                ],
-                type: 'string',
-              },
-              type: 'array',
-              'x-undocumented': 'Only used internally.',
-            },
-          },
-          {
-            in: 'query',
-            name: 'unstable_location_id',
-            schema: {
-              deprecated: true,
-              format: 'uuid',
-              nullable: true,
-              type: 'string',
-              'x-deprecated': 'Use `space_id`.',
-            },
-          },
-          {
-            in: 'query',
-            name: 'space_id',
-            schema: {
-              description:
-                'ID of the space for which you want to list devices.',
-              format: 'uuid',
-              type: 'string',
-            },
-          },
-          {
-            in: 'query',
-            name: 'search',
-            schema: {
-              description:
-                'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
-              minLength: 1,
               type: 'string',
             },
           },
@@ -82069,36 +81141,10 @@ const openapi: OpenAPISpec = {
                     format: 'uuid',
                     type: 'string',
                   },
-                  connected_account_ids: {
-                    description:
-                      'Array of IDs of the connected accounts for which you want to list devices.',
-                    items: { format: 'uuid', type: 'string' },
-                    type: 'array',
-                  },
-                  created_before: {
-                    description:
-                      'Timestamp by which to limit returned devices. Returns devices created before this timestamp.',
-                    format: 'date-time',
-                    type: 'string',
-                  },
-                  custom_metadata_has: {
-                    additionalProperties: {
-                      oneOf: [{ type: 'string' }, { type: 'boolean' }],
-                    },
-                    description:
-                      'Set of key:value [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices.',
-                    type: 'object',
-                  },
                   customer_key: {
                     description:
                       'Customer key for which you want to list devices.',
                     type: 'string',
-                  },
-                  device_ids: {
-                    description:
-                      'Array of device IDs for which you want to list devices.',
-                    items: { format: 'uuid', type: 'string' },
-                    type: 'array',
                   },
                   device_type: {
                     description:
@@ -82130,71 +81176,6 @@ const openapi: OpenAPISpec = {
                     },
                     type: 'array',
                   },
-                  exclude_if: {
-                    items: {
-                      enum: [
-                        'can_remotely_unlock',
-                        'can_remotely_lock',
-                        'can_program_offline_access_codes',
-                        'can_program_online_access_codes',
-                        'can_hvac_heat',
-                        'can_hvac_cool',
-                        'can_hvac_heat_cool',
-                        'can_turn_off_hvac',
-                        'can_simulate_removal',
-                        'can_simulate_connection',
-                        'can_simulate_disconnection',
-                        'can_unlock_with_code',
-                        'can_run_thermostat_programs',
-                        'can_program_thermostat_programs_as_weekday_weekend',
-                        'can_program_thermostat_programs_as_different_each_day',
-                        'can_program_thermostat_programs_as_same_each_day',
-                        'can_simulate_hub_connection',
-                        'can_simulate_hub_disconnection',
-                        'can_simulate_paid_subscription',
-                        'can_configure_auto_lock',
-                      ],
-                      type: 'string',
-                    },
-                    type: 'array',
-                    'x-undocumented': 'Only used internally.',
-                  },
-                  include_if: {
-                    items: {
-                      enum: [
-                        'can_remotely_unlock',
-                        'can_remotely_lock',
-                        'can_program_offline_access_codes',
-                        'can_program_online_access_codes',
-                        'can_hvac_heat',
-                        'can_hvac_cool',
-                        'can_hvac_heat_cool',
-                        'can_turn_off_hvac',
-                        'can_simulate_removal',
-                        'can_simulate_connection',
-                        'can_simulate_disconnection',
-                        'can_unlock_with_code',
-                        'can_run_thermostat_programs',
-                        'can_program_thermostat_programs_as_weekday_weekend',
-                        'can_program_thermostat_programs_as_different_each_day',
-                        'can_program_thermostat_programs_as_same_each_day',
-                        'can_simulate_hub_connection',
-                        'can_simulate_hub_disconnection',
-                        'can_simulate_paid_subscription',
-                        'can_configure_auto_lock',
-                      ],
-                      type: 'string',
-                    },
-                    type: 'array',
-                    'x-undocumented': 'Only used internally.',
-                  },
-                  limit: {
-                    default: 500,
-                    description:
-                      'Numerical limit on the number of devices to return.',
-                    format: 'float',
-                    type: 'number',
-                  },
                   manufacturer: {
                     description:
                       'Manufacturer by which you want to filter thermostat devices.',
@@ -82206,36 +81187,6 @@ const openapi: OpenAPISpec = {
                       'smartthings',
                       'tado',
                     ],
-                    type: 'string',
-                  },
-                  page_cursor: {
-                    description:
-                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
-                    nullable: true,
-                    type: 'string',
-                  },
-                  search: {
-                    description:
-                      'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
-                    minLength: 1,
-                    type: 'string',
-                  },
-                  space_id: {
-                    description:
-                      'ID of the space for which you want to list devices.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                  unstable_location_id: {
-                    deprecated: true,
-                    format: 'uuid',
-                    nullable: true,
-                    type: 'string',
-                    'x-deprecated': 'Use `space_id`.',
-                  },
-                  user_identifier_key: {
-                    description:
-                      'Your own internal user ID for the user for which you want to list devices.',
                     type: 'string',
                   },
                 },
