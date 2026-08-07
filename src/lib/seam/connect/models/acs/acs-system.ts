@@ -251,11 +251,23 @@ const setup_required = common_acs_system_warning
     'Indicates that the access control system requires additional setup before it can be fully operational. Follow the instructions in the warning message to complete the setup.',
   )
 
+const unknown_issue_with_acs_system = common_acs_system_warning.extend({
+  warning_code: z
+    .literal('unknown_issue_with_acs_system')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    resource_type: acs_system
+    ---
+    Indicates that Seam encountered an unexpected error while syncing this [access control system](https://docs.seam.co/low-level-apis/access-systems), so its users, credentials, and access groups may be out of date. Seam retries on every sync cycle and clears this warning once a sync succeeds; if it persists, contact [support](mailto:support@seam.co).
+    `)
+
 const acs_system_warning = z
   .discriminatedUnion('warning_code', [
     salto_ks_subscription_limit_almost_reached,
     time_zone_does_not_match_location,
     setup_required,
+    unknown_issue_with_acs_system,
   ])
   .describe(
     'Warning associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
@@ -268,6 +280,9 @@ const _acs_system_warning_map = z.object({
     .optional()
     .nullable(),
   setup_required: setup_required.optional().nullable(),
+  unknown_issue_with_acs_system: unknown_issue_with_acs_system
+    .optional()
+    .nullable(),
 })
 
 export type AcsSystemWarningMap = z.infer<typeof _acs_system_warning_map>
