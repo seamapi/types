@@ -4925,6 +4925,32 @@ const openapi: OpenAPISpec = {
                   required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Indicates that Seam encountered an unexpected error while syncing this [access control system](https://docs.seam.co/low-level-apis/access-systems), so its users, credentials, and access groups may be out of date. Seam retries on every sync cycle and clears this warning once a sync succeeds; if it persists, contact [support](mailto:support@seam.co).',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['unknown_issue_with_acs_system'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                  'x-resource-type': 'acs_system',
+                },
               ],
             },
             type: 'array',
