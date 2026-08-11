@@ -36446,7 +36446,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -36464,8 +36464,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -36567,7 +36567,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -36585,8 +36585,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -36685,7 +36685,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -36703,8 +36703,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -36761,7 +36761,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -36778,8 +36778,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -36830,7 +36830,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -36847,8 +36847,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -36885,7 +36885,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -36902,8 +36902,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -36943,7 +36943,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -36960,8 +36960,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -37016,7 +37016,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -37031,8 +37031,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -37085,7 +37085,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -37100,8 +37100,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -37214,7 +37214,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -37356,8 +37356,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -37452,7 +37452,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -37594,8 +37594,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -37721,7 +37721,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -37740,8 +37740,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -37835,7 +37835,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -37854,8 +37854,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -37900,7 +37900,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -37918,8 +37918,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -37982,7 +37982,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -37994,8 +37994,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -38046,7 +38046,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -38063,8 +38063,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -38125,7 +38125,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -38137,8 +38137,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -38198,7 +38198,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -38210,8 +38210,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -38258,7 +38258,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -38275,8 +38275,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -38321,7 +38321,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -38338,8 +38338,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -38394,7 +38394,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -38411,8 +38411,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -38465,7 +38465,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -38482,8 +38482,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -38567,7 +38567,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -38588,8 +38588,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -38655,7 +38655,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -38676,8 +38676,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -38737,7 +38737,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -38749,8 +38749,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -38805,7 +38805,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -38817,8 +38817,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -38917,7 +38917,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -38934,8 +38934,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -39033,7 +39033,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -39050,8 +39050,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -39149,7 +39149,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -39166,8 +39166,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -39223,7 +39223,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -39235,8 +39235,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -39289,7 +39289,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -39301,8 +39301,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -39519,7 +39519,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -39534,8 +39534,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -39569,7 +39569,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -39581,8 +39581,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -39618,7 +39618,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -39630,8 +39630,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -39652,7 +39652,7 @@ const openapi: OpenAPISpec = {
         description: 'Get an Access Grant.',
         operationId: 'accessGrantsGetGet',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -39667,8 +39667,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -39721,7 +39721,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -39736,8 +39736,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -39824,7 +39824,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -39881,8 +39881,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -39969,7 +39969,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -40026,8 +40026,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -40189,7 +40189,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -40208,8 +40208,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -40317,7 +40317,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -40336,8 +40336,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -40412,7 +40412,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -40427,8 +40427,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -40463,7 +40463,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -40480,8 +40480,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -40521,7 +40521,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -40538,8 +40538,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -40624,7 +40624,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -40645,8 +40645,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -40715,7 +40715,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -40736,8 +40736,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -40790,7 +40790,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -40802,8 +40802,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -40851,7 +40851,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -40863,8 +40863,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -40926,7 +40926,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -40938,8 +40938,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -41000,7 +41000,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -41012,8 +41012,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -41058,7 +41058,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -41075,8 +41075,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -41098,7 +41098,7 @@ const openapi: OpenAPISpec = {
         description: 'Deletes an access method.',
         operationId: 'accessMethodsDeleteDelete',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -41110,8 +41110,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -41174,7 +41174,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -41186,8 +41186,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -41233,7 +41233,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -41250,8 +41250,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -41285,7 +41285,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -41302,8 +41302,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -41340,7 +41340,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -41357,8 +41357,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -41436,7 +41436,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -41493,8 +41493,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -41577,7 +41577,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -41634,8 +41634,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -41751,7 +41751,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -41770,8 +41770,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -41856,7 +41856,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -41875,8 +41875,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -41925,7 +41925,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -41942,8 +41942,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -41978,7 +41978,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -41995,8 +41995,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -42034,7 +42034,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -42051,8 +42051,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -42121,7 +42121,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -42141,8 +42141,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -42201,7 +42201,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -42221,8 +42221,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -42277,7 +42277,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -42289,8 +42289,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -42339,7 +42339,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -42351,8 +42351,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -42385,7 +42385,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -42397,8 +42397,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -42436,7 +42436,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -42448,8 +42448,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -42483,7 +42483,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -42500,8 +42500,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -42539,7 +42539,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -42556,8 +42556,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -42622,7 +42622,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -42640,8 +42640,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -42697,7 +42697,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -42715,8 +42715,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -42752,7 +42752,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -42770,8 +42770,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -42810,7 +42810,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -42828,8 +42828,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -42865,7 +42865,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -42883,8 +42883,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -42923,7 +42923,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -42941,8 +42941,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -43000,7 +43000,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -43012,8 +43012,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -43062,7 +43062,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -43074,8 +43074,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -43109,7 +43109,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -43126,8 +43126,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -43167,7 +43167,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -43184,8 +43184,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -43241,7 +43241,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -43261,8 +43261,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -43313,7 +43313,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -43333,8 +43333,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -43370,7 +43370,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -43390,8 +43390,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -43431,7 +43431,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -43451,8 +43451,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -43520,7 +43520,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -43537,8 +43537,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -43593,7 +43593,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -43610,8 +43610,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -43660,7 +43660,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -43677,8 +43677,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -43849,7 +43849,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -43866,8 +43866,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -43931,7 +43931,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -43948,8 +43948,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -43984,7 +43984,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -43996,8 +43996,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -44034,7 +44034,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -44046,8 +44046,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -44080,7 +44080,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -44097,8 +44097,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -44136,7 +44136,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -44153,8 +44153,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -44177,7 +44177,7 @@ const openapi: OpenAPISpec = {
           'Returns a list of all [credentials](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
         operationId: 'acsCredentialsListGet',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -44196,8 +44196,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -44322,7 +44322,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -44341,8 +44341,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -44379,7 +44379,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -44397,8 +44397,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -44437,7 +44437,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -44455,8 +44455,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -44509,7 +44509,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -44526,8 +44526,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -44576,7 +44576,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -44593,8 +44593,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -44628,7 +44628,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -44645,8 +44645,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -44685,7 +44685,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -44702,8 +44702,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -44726,7 +44726,7 @@ const openapi: OpenAPISpec = {
           'Returns a list of all unmanaged [credentials](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
         operationId: 'acsCredentialsUnmanagedListGet',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -44746,8 +44746,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -44855,7 +44855,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -44875,8 +44875,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -44928,7 +44928,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -44945,8 +44945,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -44994,7 +44994,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -45011,8 +45011,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -45063,7 +45063,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -45080,8 +45080,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -45117,7 +45117,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -45132,8 +45132,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -45171,7 +45171,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -45186,8 +45186,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -45210,7 +45210,7 @@ const openapi: OpenAPISpec = {
           'Returns a list of all [encoders](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
         operationId: 'acsEncodersListGet',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -45229,8 +45229,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -45320,7 +45320,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -45339,8 +45339,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -45395,7 +45395,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -45412,8 +45412,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -45479,7 +45479,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -45496,8 +45496,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -45577,7 +45577,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -45589,8 +45589,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -45636,7 +45636,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -45648,8 +45648,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -45720,7 +45720,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -45732,8 +45732,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -45828,7 +45828,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -45840,8 +45840,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -45874,7 +45874,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -45889,8 +45889,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -45931,7 +45931,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -45946,8 +45946,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -46003,7 +46003,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -46015,8 +46015,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -46149,7 +46149,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -46168,8 +46168,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -46272,7 +46272,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -46291,8 +46291,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -46342,7 +46342,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -46360,8 +46360,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -46410,7 +46410,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -46428,8 +46428,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -46476,7 +46476,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -46493,8 +46493,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -46529,7 +46529,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -46544,8 +46544,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -46584,7 +46584,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -46599,8 +46599,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -46654,7 +46654,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -46672,8 +46672,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -46725,7 +46725,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -46743,8 +46743,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -46783,7 +46783,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -46801,8 +46801,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -46842,7 +46842,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -46860,8 +46860,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -46966,7 +46966,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -46978,8 +46978,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -47024,7 +47024,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -47036,8 +47036,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -47080,7 +47080,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -47092,8 +47092,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -47186,7 +47186,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -47201,8 +47201,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -47256,7 +47256,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -47268,8 +47268,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -47318,7 +47318,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -47330,8 +47330,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -47385,7 +47385,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -47400,8 +47400,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -47452,7 +47452,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -47467,8 +47467,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -47573,7 +47573,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -47592,8 +47592,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -47674,7 +47674,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -47693,8 +47693,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -47750,7 +47750,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -47768,8 +47768,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -47821,7 +47821,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -47839,8 +47839,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -47900,7 +47900,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -47912,8 +47912,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -47962,7 +47962,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -47974,8 +47974,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -48025,7 +48025,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -48037,8 +48037,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -48089,7 +48089,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -48101,8 +48101,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -48137,7 +48137,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -48154,8 +48154,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -48194,7 +48194,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -48211,8 +48211,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -48295,7 +48295,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -48315,8 +48315,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -48383,7 +48383,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -48403,8 +48403,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -48456,7 +48456,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -48468,8 +48468,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -48570,7 +48570,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -48582,8 +48582,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -48682,7 +48682,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -48694,8 +48694,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -48729,7 +48729,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -48746,8 +48746,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -48789,7 +48789,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -48806,8 +48806,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -48875,7 +48875,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -48894,8 +48894,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -48953,7 +48953,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -48972,8 +48972,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -49008,7 +49008,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -49049,8 +49049,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -49088,7 +49088,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -49129,8 +49129,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -49154,7 +49154,7 @@ const openapi: OpenAPISpec = {
         operationId: 'bridgesListGet',
         parameters: [],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -49198,8 +49198,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -49225,7 +49225,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -49269,8 +49269,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -49355,7 +49355,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -49372,8 +49372,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { publishable_key: [] },
@@ -49456,7 +49456,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -49473,8 +49473,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { publishable_key: [] },
@@ -49509,7 +49509,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -49521,8 +49521,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -49559,7 +49559,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -49571,8 +49571,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -49613,7 +49613,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -49630,8 +49630,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -49674,7 +49674,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -49691,8 +49691,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -49766,7 +49766,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -49783,8 +49783,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { publishable_key: [] },
@@ -49855,7 +49855,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -49872,8 +49872,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -49941,7 +49941,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -49958,8 +49958,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -50028,7 +50028,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -50046,8 +50046,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -50103,7 +50103,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -50121,8 +50121,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -50162,7 +50162,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -50174,8 +50174,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -50367,7 +50367,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -50384,8 +50384,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -50427,7 +50427,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -50439,8 +50439,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -50477,7 +50477,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -50489,8 +50489,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -50523,7 +50523,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -50540,8 +50540,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -50583,7 +50583,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -50600,8 +50600,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -50689,7 +50689,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -50708,8 +50708,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -50781,7 +50781,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -50800,8 +50800,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -50850,7 +50850,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -50862,8 +50862,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -50906,7 +50906,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -50918,8 +50918,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -50941,7 +50941,7 @@ const openapi: OpenAPISpec = {
           'Returns a specified [connected account](https://docs.seam.co/core-concepts/connected-accounts).',
         operationId: 'connectedAccountsGetGet',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -50958,8 +50958,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -51017,7 +51017,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -51034,8 +51034,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -51134,7 +51134,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -51153,8 +51153,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -51232,7 +51232,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -51251,8 +51251,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -51295,7 +51295,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -51307,8 +51307,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -51348,7 +51348,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -51360,8 +51360,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -51447,7 +51447,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -51464,8 +51464,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -51549,7 +51549,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -51566,8 +51566,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -52951,7 +52951,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -52969,8 +52969,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -53165,7 +53165,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -53177,8 +53177,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -53305,7 +53305,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -53317,8 +53317,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -54247,7 +54247,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -54259,8 +54259,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -54303,7 +54303,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -54339,8 +54339,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -54375,7 +54375,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -54387,8 +54387,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -54428,7 +54428,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -54440,8 +54440,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -54485,7 +54485,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -54500,8 +54500,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -54546,7 +54546,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -54561,8 +54561,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -55007,7 +55007,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -55026,8 +55026,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -55413,7 +55413,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -55432,8 +55432,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -55479,7 +55479,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -55497,8 +55497,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -55546,7 +55546,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -55564,8 +55564,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -56946,7 +56946,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -56958,8 +56958,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -56998,7 +56998,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -57010,8 +57010,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -57051,7 +57051,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -57063,8 +57063,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -57104,7 +57104,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -57116,8 +57116,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -57157,7 +57157,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -57169,8 +57169,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -57206,7 +57206,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -57218,8 +57218,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -57259,7 +57259,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -57271,8 +57271,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -57313,7 +57313,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -57328,8 +57328,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -57374,7 +57374,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -57389,8 +57389,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -57791,7 +57791,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -57810,8 +57810,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -58170,7 +58170,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -58189,8 +58189,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -58251,7 +58251,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -58263,8 +58263,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -58319,7 +58319,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -58331,8 +58331,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -58408,7 +58408,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -58420,8 +58420,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -58497,7 +58497,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -58509,8 +58509,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -58563,7 +58563,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -58579,8 +58579,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -58632,7 +58632,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -58648,8 +58648,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -59183,7 +59183,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -59201,8 +59201,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -59634,7 +59634,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -59652,8 +59652,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -59692,7 +59692,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -59704,8 +59704,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -59742,7 +59742,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -59754,8 +59754,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -59796,7 +59796,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -59811,8 +59811,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -59855,7 +59855,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -59870,8 +59870,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -59907,7 +59907,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -59925,8 +59925,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -59964,7 +59964,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -59982,8 +59982,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -60036,7 +60036,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -60053,8 +60053,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -60097,7 +60097,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -60113,8 +60113,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -60158,7 +60158,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -60174,8 +60174,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -60357,7 +60357,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -60379,8 +60379,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -60547,7 +60547,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -60569,8 +60569,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -60616,7 +60616,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -60633,8 +60633,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -60682,7 +60682,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -60699,8 +60699,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -60741,7 +60741,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -60758,8 +60758,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -60804,7 +60804,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -60821,8 +60821,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -60911,7 +60911,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -60933,8 +60933,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -61006,7 +61006,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -61028,8 +61028,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -61102,7 +61102,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -61122,8 +61122,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -61175,7 +61175,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -61192,8 +61192,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -61242,7 +61242,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -61259,8 +61259,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -61294,7 +61294,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -61311,8 +61311,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -61351,7 +61351,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -61368,8 +61368,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -61417,7 +61417,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -61435,8 +61435,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -61483,7 +61483,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -61501,8 +61501,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -61582,7 +61582,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -61599,8 +61599,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -61676,7 +61676,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -61693,8 +61693,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -61770,7 +61770,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -61787,8 +61787,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -61828,7 +61828,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -61840,8 +61840,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -61879,7 +61879,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -61891,8 +61891,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -61929,7 +61929,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -61941,8 +61941,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -61976,7 +61976,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -61991,8 +61991,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -62030,7 +62030,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -62045,8 +62045,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -62091,7 +62091,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -62109,8 +62109,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -62154,7 +62154,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -62172,8 +62172,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -62297,7 +62297,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -62312,8 +62312,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -62366,7 +62366,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -62383,8 +62383,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ certified_client: [] }],
         summary: '/seam/bridge/v1/bridge_client_sessions/create',
@@ -62408,7 +62408,7 @@ const openapi: OpenAPISpec = {
           'Returns the [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) client session associated with the client session token used for authentication.',
         operationId: 'seamBridgeV1BridgeClientSessionsGetGet',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -62425,8 +62425,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ bridge_client_session: [] }],
         summary: '/seam/bridge/v1/bridge_client_sessions/get',
@@ -62448,7 +62448,7 @@ const openapi: OpenAPISpec = {
           'Returns the [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) client session associated with the client session token used for authentication.',
         operationId: 'seamBridgeV1BridgeClientSessionsGetPost',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -62465,8 +62465,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ bridge_client_session: [] }],
         summary: '/seam/bridge/v1/bridge_client_sessions/get',
@@ -62491,7 +62491,7 @@ const openapi: OpenAPISpec = {
         operationId:
           'seamBridgeV1BridgeClientSessionsRefreshTailscaleAuthKeyPost',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -62508,8 +62508,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ bridge_client_session: [] }],
         summary:
@@ -62536,7 +62536,7 @@ const openapi: OpenAPISpec = {
         operationId:
           'seamBridgeV1BridgeClientSessionsRefreshTelemetryTokenPost',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -62553,8 +62553,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ bridge_client_session: [] }],
         summary:
@@ -62581,7 +62581,7 @@ const openapi: OpenAPISpec = {
         operationId:
           'seamBridgeV1BridgeClientSessionsRegeneratePairingCodePost',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -62598,8 +62598,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ bridge_client_session: [] }],
         summary:
@@ -62646,7 +62646,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -62658,8 +62658,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ bridge_client_session: [] }],
         summary: '/seam/bridge/v1/bridge_client_sessions/report_status',
@@ -62682,7 +62682,7 @@ const openapi: OpenAPISpec = {
           'Returns the [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge)-connected systems associated with the client session token used for authentication.',
         operationId: 'seamBridgeV1BridgeConnectedSystemsListGet',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -62702,8 +62702,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ bridge_client_session: [] }],
         summary: '/seam/bridge/v1/bridge_connected_systems/list',
@@ -62725,7 +62725,7 @@ const openapi: OpenAPISpec = {
           'Returns the [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge)-connected systems associated with the client session token used for authentication.',
         operationId: 'seamBridgeV1BridgeConnectedSystemsListPost',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -62745,8 +62745,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ bridge_client_session: [] }],
         summary: '/seam/bridge/v1/bridge_connected_systems/list',
@@ -62778,7 +62778,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -62793,8 +62793,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_with_workspace: [] }],
         summary: '/seam/connect_webview/v1/get_current_pane',
@@ -62825,7 +62825,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -62840,8 +62840,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_with_workspace: [] }],
         summary: '/seam/connect_webview/v1/get_current_pane',
@@ -62874,7 +62874,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -62886,8 +62886,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_with_workspace: [] }],
         summary: '/seam/connect_webview/v1/reset',
@@ -62925,7 +62925,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -62937,8 +62937,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_with_workspace: [] }],
         summary: '/seam/connect_webview/v1/submit',
@@ -62966,7 +62966,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -62989,8 +62989,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -63020,7 +63020,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -63043,8 +63043,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -63081,7 +63081,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -63124,8 +63124,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -63165,7 +63165,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -63208,8 +63208,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -63247,7 +63247,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -63334,8 +63334,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -63376,7 +63376,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -63463,8 +63463,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -63501,7 +63501,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -63563,8 +63563,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -63603,7 +63603,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -63665,8 +63665,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -63706,7 +63706,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -63738,8 +63738,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -63775,7 +63775,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -63830,8 +63830,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/create',
@@ -63875,7 +63875,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -63892,8 +63892,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/customization_profiles/copy',
@@ -63930,7 +63930,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -63985,8 +63985,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/delete',
@@ -64012,7 +64012,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -64136,8 +64136,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/get',
@@ -64166,7 +64166,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -64290,8 +64290,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/get',
@@ -64325,7 +64325,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -64366,8 +64366,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/invitations/revoke',
@@ -64391,7 +64391,7 @@ const openapi: OpenAPISpec = {
         description: 'Returns a list of organizations.',
         operationId: 'seamConsoleV1OrganizationsListGet',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -64453,8 +64453,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/list',
@@ -64470,7 +64470,7 @@ const openapi: OpenAPISpec = {
         description: 'Returns a list of organizations.',
         operationId: 'seamConsoleV1OrganizationsListPost',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -64532,8 +64532,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/list',
@@ -64571,7 +64571,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -64638,8 +64638,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/members/add',
@@ -64676,7 +64676,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -64688,8 +64688,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/members/remove',
@@ -64727,7 +64727,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -64767,8 +64767,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/members/update',
@@ -64807,7 +64807,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -64819,8 +64819,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/members/workspaces/grant',
@@ -64859,7 +64859,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -64893,8 +64893,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/members/workspaces/list',
@@ -64932,7 +64932,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -64966,8 +64966,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/members/workspaces/list',
@@ -65007,7 +65007,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -65019,8 +65019,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/members/workspaces/revoke',
@@ -65074,7 +65074,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -65129,8 +65129,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/update',
@@ -65176,7 +65176,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -65231,8 +65231,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/update',
@@ -65250,7 +65250,7 @@ const openapi: OpenAPISpec = {
         description: 'Uploads a logo image for an organization.',
         operationId: 'seamConsoleV1OrganizationsUploadLogoPost',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -65305,8 +65305,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/upload_logo',
@@ -65339,7 +65339,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -65354,8 +65354,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/workspaces/create',
@@ -65392,7 +65392,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -65404,8 +65404,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/workspaces/remove',
@@ -65442,7 +65442,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -65457,8 +65457,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_without_workspace: [] }],
         summary: '/seam/console/v1/organizations/workspaces/update',
@@ -65504,7 +65504,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -65519,8 +65519,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -65559,7 +65559,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -65571,8 +65571,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -65608,7 +65608,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -65620,8 +65620,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -65654,7 +65654,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -65672,8 +65672,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -65710,7 +65710,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -65728,8 +65728,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -65777,7 +65777,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -65792,8 +65792,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -65839,7 +65839,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -65854,8 +65854,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -65982,7 +65982,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -66291,8 +66291,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -66388,7 +66388,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -66697,8 +66697,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -66721,7 +66721,7 @@ const openapi: OpenAPISpec = {
         description: 'Lists workspace feature flags.',
         operationId: 'seamConsoleV1WorkspaceFeatureFlagsListGet',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -66739,8 +66739,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_with_workspace: [] }],
         summary: '/seam/console/v1/workspace/feature_flags/list',
@@ -66761,7 +66761,7 @@ const openapi: OpenAPISpec = {
         description: 'Lists workspace feature flags.',
         operationId: 'seamConsoleV1WorkspaceFeatureFlagsListPost',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -66779,8 +66779,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_with_workspace: [] }],
         summary: '/seam/console/v1/workspace/feature_flags/list',
@@ -66842,7 +66842,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -66882,8 +66882,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -66911,7 +66911,7 @@ const openapi: OpenAPISpec = {
         operationId: 'seamCustomerV1AccessGrantsListGet',
         parameters: [],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -66929,8 +66929,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -66954,7 +66954,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -66972,8 +66972,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -67018,7 +67018,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -67030,8 +67030,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ client_session_with_customer: [] }],
         summary: '/seam/customer/v1/access_grants/update',
@@ -67070,7 +67070,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -67082,8 +67082,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ client_session_with_customer: [] }],
         summary: '/seam/customer/v1/access_grants/update',
@@ -67125,7 +67125,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -67142,8 +67142,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ client_session_with_customer: [] }],
         summary: '/seam/customer/v1/access_methods/encode',
@@ -67239,7 +67239,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -67330,8 +67330,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { console_session_with_workspace: [] },
@@ -67411,7 +67411,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -67502,8 +67502,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { console_session_with_workspace: [] },
@@ -67532,7 +67532,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -67544,8 +67544,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { console_session_with_workspace: [] },
@@ -67570,7 +67570,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -67582,8 +67582,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { console_session_with_workspace: [] },
@@ -67615,7 +67615,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -67881,8 +67881,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_with_workspace: [] }, { api_key: [] }],
         summary: '/seam/customer/v1/automations/get',
@@ -67914,7 +67914,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -68180,8 +68180,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_with_workspace: [] }, { api_key: [] }],
         summary: '/seam/customer/v1/automations/get',
@@ -68456,7 +68456,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -68468,8 +68468,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_with_workspace: [] }, { api_key: [] }],
         summary: '/seam/customer/v1/automations/update',
@@ -68742,7 +68742,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -68754,8 +68754,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_with_workspace: [] }, { api_key: [] }],
         summary: '/seam/customer/v1/automations/update',
@@ -68783,7 +68783,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -68834,8 +68834,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -68877,7 +68877,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -68928,8 +68928,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -68981,7 +68981,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -69003,8 +69003,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         summary: '/seam/customer/v1/connectors/authorize',
         tags: [],
@@ -69043,7 +69043,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -69065,8 +69065,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         summary: '/seam/customer/v1/connectors/authorize',
         tags: [],
@@ -69084,7 +69084,7 @@ const openapi: OpenAPISpec = {
           'Lists all available connector types and their editable fields for UI input.',
         operationId: 'seamCustomerV1ConnectorsConnectorTypesGet',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -69142,8 +69142,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -69164,7 +69164,7 @@ const openapi: OpenAPISpec = {
           'Lists all available connector types and their editable fields for UI input.',
         operationId: 'seamCustomerV1ConnectorsConnectorTypesPost',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -69222,8 +69222,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -69286,7 +69286,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -69334,8 +69334,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ api_key: [] }, { console_session_with_workspace: [] }],
         summary: '/seam/customer/v1/connectors/create',
@@ -69375,7 +69375,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -69398,8 +69398,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ api_key: [] }, { console_session_with_workspace: [] }],
         summary: '/seam/customer/v1/connectors/delete',
@@ -69431,7 +69431,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -69456,8 +69456,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ api_key: [] }, { console_session_with_workspace: [] }],
         summary: '/seam/customer/v1/connectors/external_sites/list',
@@ -69498,7 +69498,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -69523,8 +69523,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ api_key: [] }, { console_session_with_workspace: [] }],
         summary: '/seam/customer/v1/connectors/external_sites/list',
@@ -69735,7 +69735,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -69794,8 +69794,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ api_key: [] }, { console_session_with_workspace: [] }],
         summary: '/seam/customer/v1/connectors/ical/validate-config',
@@ -69820,7 +69820,7 @@ const openapi: OpenAPISpec = {
           'Lists connectors for a workspace (API key auth) or for a specific customer (customer client session auth).',
         operationId: 'seamCustomerV1ConnectorsListGet',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -69871,8 +69871,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -69894,7 +69894,7 @@ const openapi: OpenAPISpec = {
           'Lists connectors for a workspace (API key auth) or for a specific customer (customer client session auth).',
         operationId: 'seamCustomerV1ConnectorsListPost',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -69945,8 +69945,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -70007,7 +70007,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -70029,8 +70029,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ api_key: [] }, { console_session_with_workspace: [] }],
         summary: '/seam/customer/v1/connectors/sync',
@@ -70083,7 +70083,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -70131,8 +70131,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -70155,7 +70155,7 @@ const openapi: OpenAPISpec = {
           'Gets the automation configuration for the authenticated customer.\nReturns the merged configuration (customer overrides on top of workspace defaults).',
         operationId: 'seamCustomerV1CustomersAutomationsGetGet',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -70430,8 +70430,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -70457,7 +70457,7 @@ const openapi: OpenAPISpec = {
           'Gets the automation configuration for the authenticated customer.\nReturns the merged configuration (customer overrides on top of workspace defaults).',
         operationId: 'seamCustomerV1CustomersAutomationsGetPost',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -70732,8 +70732,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -71013,7 +71013,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -71025,8 +71025,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ client_session_with_customer: [] }],
         summary: '/seam/customer/v1/customers/automations/update',
@@ -71300,7 +71300,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -71312,8 +71312,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ client_session_with_customer: [] }],
         summary: '/seam/customer/v1/customers/automations/update',
@@ -71369,7 +71369,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -71388,8 +71388,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -71440,7 +71440,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -71459,8 +71459,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -71483,7 +71483,7 @@ const openapi: OpenAPISpec = {
           'Returns the customer associated with the authenticated client session.',
         operationId: 'seamCustomerV1CustomersMeGet',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -71503,8 +71503,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -71523,7 +71523,7 @@ const openapi: OpenAPISpec = {
           'Returns the customer associated with the authenticated client session.',
         operationId: 'seamCustomerV1CustomersMePost',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -71543,8 +71543,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -71581,7 +71581,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -71596,8 +71596,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -71631,7 +71631,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -71649,8 +71649,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -71686,7 +71686,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -71704,8 +71704,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -72021,7 +72021,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -72039,8 +72039,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -72336,7 +72336,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -72354,8 +72354,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -72389,7 +72389,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -72844,8 +72844,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -72882,7 +72882,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -73337,8 +73337,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -73779,7 +73779,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -73791,8 +73791,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_with_workspace: [] }, { api_key: [] }],
         summary: '/seam/customer/v1/portals/update',
@@ -74227,7 +74227,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -74239,8 +74239,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_with_workspace: [] }, { api_key: [] }],
         summary: '/seam/customer/v1/portals/update',
@@ -74286,7 +74286,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -74459,8 +74459,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -74507,7 +74507,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -74680,8 +74680,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -74820,7 +74820,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -75034,8 +75034,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -75138,7 +75138,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -75352,8 +75352,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -75397,7 +75397,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -75415,8 +75415,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -75459,7 +75459,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -75477,8 +75477,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -75501,7 +75501,7 @@ const openapi: OpenAPISpec = {
         operationId: 'seamCustomerV1SettingsBusinessVerticalsListGet',
         parameters: [],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -75531,8 +75531,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_with_workspace: [] }],
         summary: '/seam/customer/v1/settings/business_verticals/list',
@@ -75559,7 +75559,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -75589,8 +75589,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_with_workspace: [] }],
         summary: '/seam/customer/v1/settings/business_verticals/list',
@@ -75614,7 +75614,7 @@ const openapi: OpenAPISpec = {
         description: 'Retrieves the settings for a customer portal workspace.',
         operationId: 'seamCustomerV1SettingsGetGet',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -75641,8 +75641,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_with_workspace: [] }, { api_key: [] }],
         summary: '/seam/customer/v1/settings/get',
@@ -75658,7 +75658,7 @@ const openapi: OpenAPISpec = {
         description: 'Retrieves the settings for a customer portal workspace.',
         operationId: 'seamCustomerV1SettingsGetPost',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -75685,8 +75685,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_with_workspace: [] }, { api_key: [] }],
         summary: '/seam/customer/v1/settings/get',
@@ -75732,7 +75732,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -75744,8 +75744,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_with_workspace: [] }, { api_key: [] }],
         summary: '/seam/customer/v1/settings/update',
@@ -75788,7 +75788,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -75800,8 +75800,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ console_session_with_workspace: [] }, { api_key: [] }],
         summary: '/seam/customer/v1/settings/update',
@@ -75820,7 +75820,7 @@ const openapi: OpenAPISpec = {
         operationId: 'seamCustomerV1SettingsVerticalResourceAliasesGetGet',
         parameters: [],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -75979,8 +75979,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { console_session_with_workspace: [] },
@@ -76012,7 +76012,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -76171,8 +76171,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { console_session_with_workspace: [] },
@@ -76280,7 +76280,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -76295,8 +76295,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -76371,7 +76371,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -76389,8 +76389,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -76453,7 +76453,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -76471,8 +76471,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -76518,7 +76518,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -76619,8 +76619,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -76662,7 +76662,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -76763,8 +76763,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -76823,7 +76823,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -76835,8 +76835,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ client_session_with_customer: [] }],
         summary: '/seam/customer/v1/spaces/push_common_areas',
@@ -76864,7 +76864,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -76930,8 +76930,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -76966,7 +76966,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -77032,8 +77032,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -77105,7 +77105,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -77164,8 +77164,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -77225,7 +77225,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -77284,8 +77284,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -77324,7 +77324,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -77341,8 +77341,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ certified_client: [] }],
         summary: '/seam/instant_key/v1/client_sessions/exchange_short_code',
@@ -77381,7 +77381,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -77486,8 +77486,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ certified_client: [] }],
         summary: '/seam/instant_key/v1/preview/get',
@@ -77519,7 +77519,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -77624,8 +77624,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ certified_client: [] }],
         summary: '/seam/instant_key/v1/preview/get',
@@ -77667,7 +77667,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -77713,8 +77713,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ internal_service_agent: [] }],
         summary: '/seam/mcp/v1/create_ro_token',
@@ -77734,7 +77734,7 @@ const openapi: OpenAPISpec = {
         operationId: 'seamMobileSdkV1AcsCredentialsListGet',
         parameters: [],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -77752,8 +77752,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ client_session: [] }],
         summary: '/seam/mobile_sdk/v1/acs/credentials/list',
@@ -77781,7 +77781,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -77799,8 +77799,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ client_session: [] }],
         summary: '/seam/mobile_sdk/v1/acs/credentials/list',
@@ -77857,7 +77857,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -77874,8 +77874,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ client_session: [] }],
         summary: '/seam/mobile_sdk/v1/phone_sessions/get_or_create',
@@ -77916,7 +77916,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -77928,8 +77928,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [{ client_session: [] }],
         summary: '/seam/mobile_sdk/v1/report_salto_space_audit_trail',
@@ -77972,7 +77972,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -78054,8 +78054,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -78108,7 +78108,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -78190,8 +78190,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -78236,7 +78236,7 @@ const openapi: OpenAPISpec = {
         ],
         requestBody: { content: { 'application/json': { schema: {} } } },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -78248,8 +78248,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         summary: '/seam/webhooks/[provider]/[subscription_id]',
         tags: ['/webhooks'],
@@ -78291,7 +78291,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -78303,8 +78303,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -78349,7 +78349,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -78361,8 +78361,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -78408,7 +78408,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -78420,8 +78420,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -78465,7 +78465,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -78477,8 +78477,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -78524,7 +78524,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -78536,8 +78536,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -78581,7 +78581,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -78593,8 +78593,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -78692,7 +78692,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -78707,8 +78707,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -78747,7 +78747,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -78759,8 +78759,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -78796,7 +78796,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -78808,8 +78808,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -78830,7 +78830,7 @@ const openapi: OpenAPISpec = {
         description: 'Gets a space.',
         operationId: 'spacesGetGet',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -78845,8 +78845,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -78900,7 +78900,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -78915,8 +78915,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -78998,7 +78998,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -79045,8 +79045,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -79128,7 +79128,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -79175,8 +79175,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -79290,7 +79290,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -79309,8 +79309,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -79392,7 +79392,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -79411,8 +79411,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -79461,7 +79461,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -79473,8 +79473,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -79518,7 +79518,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -79530,8 +79530,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -79577,7 +79577,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -79589,8 +79589,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -79634,7 +79634,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -79646,8 +79646,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -79692,7 +79692,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -79704,8 +79704,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -79748,7 +79748,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -79760,8 +79760,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -79861,7 +79861,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -79876,8 +79876,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -79976,7 +79976,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -79991,8 +79991,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -80038,7 +80038,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -80055,8 +80055,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -80114,7 +80114,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -80131,8 +80131,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -80267,7 +80267,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -80279,8 +80279,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -80348,7 +80348,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -80365,8 +80365,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -80401,7 +80401,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -80413,8 +80413,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -80451,7 +80451,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -80463,8 +80463,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -80533,7 +80533,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -80550,8 +80550,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -80620,7 +80620,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -80637,8 +80637,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -80685,7 +80685,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -80697,8 +80697,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -80741,7 +80741,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -80753,8 +80753,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -80796,7 +80796,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -80811,8 +80811,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -80858,7 +80858,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -80873,8 +80873,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -80935,7 +80935,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -80952,8 +80952,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -81024,7 +81024,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -81041,8 +81041,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -81151,7 +81151,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -81173,8 +81173,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -81267,7 +81267,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -81289,8 +81289,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -81337,7 +81337,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -81354,8 +81354,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -81433,7 +81433,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -81450,8 +81450,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -81488,7 +81488,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -81500,8 +81500,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -81539,7 +81539,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -81551,8 +81551,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -81587,7 +81587,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -81604,8 +81604,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -81645,7 +81645,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -81662,8 +81662,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -81710,7 +81710,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -81730,8 +81730,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -81778,7 +81778,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -81798,8 +81798,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -81875,7 +81875,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -81887,8 +81887,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -81958,7 +81958,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -81970,8 +81970,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -82016,7 +82016,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -82028,8 +82028,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -82087,7 +82087,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -82104,8 +82104,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -82256,7 +82256,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -82273,8 +82273,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -82348,7 +82348,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -82360,8 +82360,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -82430,7 +82430,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -82442,8 +82442,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -82591,7 +82591,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -82603,8 +82603,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -82655,7 +82655,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -82667,8 +82667,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -82799,7 +82799,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -82811,8 +82811,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -82942,7 +82942,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -82954,8 +82954,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -83044,7 +83044,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -83061,8 +83061,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -83104,7 +83104,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -83119,8 +83119,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -83261,7 +83261,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -83276,8 +83276,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -83413,7 +83413,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -83428,8 +83428,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -83470,7 +83470,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -83485,8 +83485,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -83614,7 +83614,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -83629,8 +83629,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -83682,7 +83682,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -83694,8 +83694,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -83743,7 +83743,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -83755,8 +83755,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -83820,7 +83820,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -83837,8 +83837,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -83872,7 +83872,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -83884,8 +83884,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -83922,7 +83922,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -83934,8 +83934,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -83969,7 +83969,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -83981,8 +83981,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -84020,7 +84020,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -84032,8 +84032,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -84068,7 +84068,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -84085,8 +84085,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -84126,7 +84126,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -84143,8 +84143,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -84212,7 +84212,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -84229,8 +84229,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -84266,7 +84266,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -84286,8 +84286,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -84327,7 +84327,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -84347,8 +84347,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -84398,7 +84398,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -84413,8 +84413,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -84436,7 +84436,7 @@ const openapi: OpenAPISpec = {
           'Returns a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesGetGet',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -84453,8 +84453,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -84504,7 +84504,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -84521,8 +84521,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -84571,7 +84571,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -84583,8 +84583,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -84627,7 +84627,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -84639,8 +84639,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -84723,7 +84723,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -84742,8 +84742,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -84813,7 +84813,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -84832,8 +84832,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -84870,7 +84870,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -84894,8 +84894,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -84934,7 +84934,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -84958,8 +84958,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -84995,7 +84995,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -85013,8 +85013,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -85054,7 +85054,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -85072,8 +85072,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -85110,7 +85110,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -85128,8 +85128,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -85169,7 +85169,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -85187,8 +85187,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session: [] },
@@ -85225,7 +85225,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -85243,8 +85243,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -85283,7 +85283,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -85301,8 +85301,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -85349,7 +85349,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -85361,8 +85361,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -85405,7 +85405,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -85417,8 +85417,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -85463,7 +85463,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -85475,8 +85475,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -85519,7 +85519,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -85531,8 +85531,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -85566,7 +85566,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -85583,8 +85583,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -85623,7 +85623,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -85640,8 +85640,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -85706,7 +85706,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -85727,8 +85727,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -85786,7 +85786,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -85807,8 +85807,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -85861,7 +85861,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -85873,8 +85873,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -85923,7 +85923,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -85935,8 +85935,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -86000,7 +86000,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -86012,8 +86012,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -86074,7 +86074,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -86086,8 +86086,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -86132,7 +86132,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -86147,8 +86147,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -86181,7 +86181,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -86193,8 +86193,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -86229,7 +86229,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -86241,8 +86241,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -86274,7 +86274,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -86289,8 +86289,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -86326,7 +86326,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -86341,8 +86341,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -86364,7 +86364,7 @@ const openapi: OpenAPISpec = {
           'Returns a list of all [webhooks](https://docs.seam.co/developer-tools/webhooks).',
         operationId: 'webhooksListGet',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -86382,8 +86382,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -86404,7 +86404,7 @@ const openapi: OpenAPISpec = {
           'Returns a list of all [webhooks](https://docs.seam.co/developer-tools/webhooks).',
         operationId: 'webhooksListPost',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -86422,8 +86422,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -86468,7 +86468,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -86480,8 +86480,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -86522,7 +86522,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -86534,8 +86534,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -86652,7 +86652,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -86667,8 +86667,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_without_workspace: [] },
@@ -86721,7 +86721,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -86738,8 +86738,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -86770,7 +86770,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -86787,8 +86787,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -86823,7 +86823,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -86840,8 +86840,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -86876,7 +86876,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -86896,8 +86896,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -86935,7 +86935,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -86955,8 +86955,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -87016,7 +87016,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -87028,8 +87028,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -87085,7 +87085,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -87097,8 +87097,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -87120,7 +87120,7 @@ const openapi: OpenAPISpec = {
         description: 'Uploads a logo for the customization profile.',
         operationId: 'workspacesCustomizationProfilesUploadImagesPost',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -87132,8 +87132,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { client_session_with_customer: [] },
@@ -87164,7 +87164,7 @@ const openapi: OpenAPISpec = {
           },
         ],
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -87327,8 +87327,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -87389,7 +87389,7 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -87552,8 +87552,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -87606,7 +87606,7 @@ const openapi: OpenAPISpec = {
           'Returns the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the authentication value.',
         operationId: 'workspacesGetGet',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -87621,8 +87621,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -87646,7 +87646,7 @@ const openapi: OpenAPISpec = {
           'Returns the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the authentication value.',
         operationId: 'workspacesGetPost',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -87661,8 +87661,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -87688,7 +87688,7 @@ const openapi: OpenAPISpec = {
           'Returns a list of [workspaces](https://docs.seam.co/core-concepts/workspaces) associated with the authentication value.',
         operationId: 'workspacesListGet',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -87706,8 +87706,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -87731,7 +87731,7 @@ const openapi: OpenAPISpec = {
           'Returns a list of [workspaces](https://docs.seam.co/core-concepts/workspaces) associated with the authentication value.',
         operationId: 'workspacesListPost',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -87749,8 +87749,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { pat_with_workspace: [] },
@@ -87776,7 +87776,7 @@ const openapi: OpenAPISpec = {
           'Resets the [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces) associated with the authentication value. Note that this endpoint is only available for sandbox workspaces.',
         operationId: 'workspacesResetSandboxPost',
         responses: {
-          200: {
+          '200': {
             content: {
               'application/json': {
                 schema: {
@@ -87793,8 +87793,8 @@ const openapi: OpenAPISpec = {
             },
             description: 'OK',
           },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -87884,9 +87884,9 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: { description: 'OK' },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '200': { description: 'OK' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
@@ -87972,9 +87972,9 @@ const openapi: OpenAPISpec = {
           },
         },
         responses: {
-          200: { description: 'OK' },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
+          '200': { description: 'OK' },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
         },
         security: [
           { api_key: [] },
