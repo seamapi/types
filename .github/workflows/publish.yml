@@ -72,12 +72,12 @@ jobs:
     needs: npm
     steps:
       - name: Checkout seamapi/javascript-http
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: seamapi/javascript-http
           token: ${{ secrets.GH_TOKEN }}
       - name: Import GPG key
-        uses: crazy-max/ghaction-import-gpg@v5
+        uses: crazy-max/ghaction-import-gpg@v7
         with:
           git_user_signingkey: true
           git_commit_gpgsign: true
@@ -86,7 +86,7 @@ jobs:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           cache: npm
           node-version-file: .nvmrc
@@ -98,7 +98,7 @@ jobs:
         run: npm run generate
       - name: Commit to seamapi/javascript-http
         id: commit
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           branch: seamapi/types/${{ needs.npm.outputs.version }}
           create_branch: true
@@ -118,12 +118,12 @@ jobs:
     needs: npm
     steps:
       - name: Checkout seamapi/docs
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: seamapi/docs
           token: ${{ secrets.GH_TOKEN }}
       - name: Import GPG key
-        uses: crazy-max/ghaction-import-gpg@v5
+        uses: crazy-max/ghaction-import-gpg@v7
         with:
           git_user_signingkey: true
           git_commit_gpgsign: true
@@ -132,7 +132,7 @@ jobs:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           cache: npm
           node-version-file: .nvmrc
@@ -142,7 +142,7 @@ jobs:
         run: npm install --save-dev --save-exact @seamapi/types@${{ needs.npm.outputs.version }}
       - name: Commit to seamapi/docs
         id: commit
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           branch: seamapi/types/${{ needs.npm.outputs.version }}
           create_branch: true
