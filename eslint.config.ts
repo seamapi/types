@@ -8,7 +8,11 @@ import neostandard, { resolveIgnoresFromGitignore } from 'neostandard'
 const files = ['**/*.{ts,tsx}']
 
 export default [
-  globalIgnores(resolveIgnoresFromGitignore()),
+  globalIgnores([
+    ...resolveIgnoresFromGitignore(),
+    // Generated route type blobs are too large/deep for ESLint to parse reliably.
+    'src/lib/seam/**/route-types.ts',
+  ]),
   ...neostandard({ ts: true, noStyle: true }),
   {
     files,
@@ -57,18 +61,6 @@ export default [
         'error',
         {
           ignoreExternal: true,
-        },
-      ],
-      'no-restricted-imports': [
-        'error',
-        {
-          patterns: [
-            {
-              group: ['..', '../**'],
-              message:
-                'Import by path alias instead, e.g., lib/foo/bar.js or test/fixtures/blueprint.js.',
-            },
-          ],
         },
       ],
       'unused-imports/no-unused-imports': 'error',
