@@ -108,6 +108,20 @@ const needs_to_be_reissued = common_acs_credential_warning
     'Access permissions for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
   )
 
+const requested_code_unavailable = common_acs_credential_warning
+  .extend({
+    warning_code: z
+      .literal('requested_code_unavailable')
+      .describe(warning_code_description),
+    original_code: z
+      .string()
+      .describe('The originally requested PIN code that could not be used.'),
+    new_code: z.string().describe('The PIN code that was assigned instead.'),
+  })
+  .describe(
+    'Indicates that the requested PIN code could not be used, so the access system assigned a different code. Give the guest the assigned code.',
+  )
+
 const acs_credential_warning = z
   .discriminatedUnion('warning_code', [
     waiting_to_be_issued,
@@ -116,6 +130,7 @@ const acs_credential_warning = z
     being_deleted,
     unknown_issue_with_acs_credential,
     needs_to_be_reissued,
+    requested_code_unavailable,
   ])
   .describe(
     'Warning associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
@@ -132,6 +147,7 @@ const _acs_credential_warning_map = z.object({
     .optional()
     .nullable(),
   needs_to_be_reissued: needs_to_be_reissued.optional().nullable(),
+  requested_code_unavailable: requested_code_unavailable.optional().nullable(),
 })
 
 export type AcsCredentialWarningMap = z.infer<

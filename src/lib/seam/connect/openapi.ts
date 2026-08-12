@@ -3701,6 +3701,46 @@ const openapi: OpenAPISpec = {
                   required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Indicates that the requested PIN code could not be used, so the access system assigned a different code. Give the guest the assigned code.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    new_code: {
+                      description: 'The PIN code that was assigned instead.',
+                      type: 'string',
+                    },
+                    original_code: {
+                      description:
+                        'The originally requested PIN code that could not be used.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['requested_code_unavailable'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'warning_code',
+                    'original_code',
+                    'new_code',
+                  ],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -6767,6 +6807,47 @@ const openapi: OpenAPISpec = {
                                   ],
                                   type: 'object',
                                 },
+                                {
+                                  description:
+                                    'Indicates that the requested PIN code could not be used, so the access system assigned a different code. Give the guest the assigned code.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    new_code: {
+                                      description:
+                                        'The PIN code that was assigned instead.',
+                                      type: 'string',
+                                    },
+                                    original_code: {
+                                      description:
+                                        'The originally requested PIN code that could not be used.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['requested_code_unavailable'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                    'original_code',
+                                    'new_code',
+                                  ],
+                                  type: 'object',
+                                },
                               ],
                             },
                             type: 'array',
@@ -7242,6 +7323,47 @@ const openapi: OpenAPISpec = {
                                     'created_at',
                                     'message',
                                     'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'Indicates that the requested PIN code could not be used, so the access system assigned a different code. Give the guest the assigned code.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    new_code: {
+                                      description:
+                                        'The PIN code that was assigned instead.',
+                                      type: 'string',
+                                    },
+                                    original_code: {
+                                      description:
+                                        'The originally requested PIN code that could not be used.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['requested_code_unavailable'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                    'original_code',
+                                    'new_code',
                                   ],
                                   type: 'object',
                                 },
@@ -7982,6 +8104,47 @@ const openapi: OpenAPISpec = {
                               ],
                               type: 'object',
                             },
+                            {
+                              description:
+                                'Indicates that the requested PIN code could not be used, so the access system assigned a different code. Give the guest the assigned code.',
+                              properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the warning.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: {
+                                  description:
+                                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                  type: 'string',
+                                },
+                                new_code: {
+                                  description:
+                                    'The PIN code that was assigned instead.',
+                                  type: 'string',
+                                },
+                                original_code: {
+                                  description:
+                                    'The originally requested PIN code that could not be used.',
+                                  type: 'string',
+                                },
+                                warning_code: {
+                                  description:
+                                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                  enum: ['requested_code_unavailable'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'created_at',
+                                'message',
+                                'warning_code',
+                                'original_code',
+                                'new_code',
+                              ],
+                              type: 'object',
+                            },
                           ],
                         },
                         type: 'array',
@@ -8454,6 +8617,47 @@ const openapi: OpenAPISpec = {
                                 'created_at',
                                 'message',
                                 'warning_code',
+                              ],
+                              type: 'object',
+                            },
+                            {
+                              description:
+                                'Indicates that the requested PIN code could not be used, so the access system assigned a different code. Give the guest the assigned code.',
+                              properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the warning.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: {
+                                  description:
+                                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                  type: 'string',
+                                },
+                                new_code: {
+                                  description:
+                                    'The PIN code that was assigned instead.',
+                                  type: 'string',
+                                },
+                                original_code: {
+                                  description:
+                                    'The originally requested PIN code that could not be used.',
+                                  type: 'string',
+                                },
+                                warning_code: {
+                                  description:
+                                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                  enum: ['requested_code_unavailable'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'created_at',
+                                'message',
+                                'warning_code',
+                                'original_code',
+                                'new_code',
                               ],
                               type: 'object',
                             },
@@ -9204,6 +9408,47 @@ const openapi: OpenAPISpec = {
                             },
                           },
                           required: ['created_at', 'message', 'warning_code'],
+                          type: 'object',
+                        },
+                        {
+                          description:
+                            'Indicates that the requested PIN code could not be used, so the access system assigned a different code. Give the guest the assigned code.',
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which Seam created the warning.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            message: {
+                              description:
+                                'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                              type: 'string',
+                            },
+                            new_code: {
+                              description:
+                                'The PIN code that was assigned instead.',
+                              type: 'string',
+                            },
+                            original_code: {
+                              description:
+                                'The originally requested PIN code that could not be used.',
+                              type: 'string',
+                            },
+                            warning_code: {
+                              description:
+                                'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                              enum: ['requested_code_unavailable'],
+                              type: 'string',
+                            },
+                          },
+                          required: [
+                            'created_at',
+                            'message',
+                            'warning_code',
+                            'original_code',
+                            'new_code',
+                          ],
                           type: 'object',
                         },
                       ],
@@ -29141,6 +29386,47 @@ const openapi: OpenAPISpec = {
                               ],
                               type: 'object',
                             },
+                            {
+                              description:
+                                'Indicates that the requested PIN code could not be used, so the access system assigned a different code. Give the guest the assigned code.',
+                              properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the warning.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: {
+                                  description:
+                                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                  type: 'string',
+                                },
+                                new_code: {
+                                  description:
+                                    'The PIN code that was assigned instead.',
+                                  type: 'string',
+                                },
+                                original_code: {
+                                  description:
+                                    'The originally requested PIN code that could not be used.',
+                                  type: 'string',
+                                },
+                                warning_code: {
+                                  description:
+                                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                  enum: ['requested_code_unavailable'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'created_at',
+                                'message',
+                                'warning_code',
+                                'original_code',
+                                'new_code',
+                              ],
+                              type: 'object',
+                            },
                           ],
                         },
                         type: 'array',
@@ -33118,6 +33404,46 @@ const openapi: OpenAPISpec = {
                     },
                   },
                   required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the requested PIN code could not be used, so the access system assigned a different code. Give the guest the assigned code.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    new_code: {
+                      description: 'The PIN code that was assigned instead.',
+                      type: 'string',
+                    },
+                    original_code: {
+                      description:
+                        'The originally requested PIN code that could not be used.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['requested_code_unavailable'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'warning_code',
+                    'original_code',
+                    'new_code',
+                  ],
                   type: 'object',
                 },
               ],
