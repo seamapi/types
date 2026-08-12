@@ -123,6 +123,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'omnitec',
     'dusaw',
     'thirty_three_lock',
+    'yacan',
   ],
 
   consumer_smartlocks: [
@@ -145,9 +146,10 @@ export const PROVIDER_CATEGORY_MAP = {
     'keyincode',
     'sifely',
     'thirty_three_lock',
+    'yacan',
   ],
 
-  beta: ['salto_ks_accept', 'aqara', 'yacan'],
+  beta: ['salto_ks_accept', 'aqara'],
 
   thermostats: ['ecobee', 'nest', 'sensi', 'honeywell_resideo', 'first_alert'],
   noise_sensors: ['minut', 'noiseaware'],
