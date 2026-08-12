@@ -1101,6 +1101,28 @@ export const device_metadata = z
       .partial()
       .describe(`Metadata for an Ultraloq device.`),
 
+    yacan_metadata: z
+      .object({
+        device_id: z
+          .string()
+          .optional()
+          .describe(`Device ID for a Yacan device.`),
+        device_name: z
+          .string()
+          .optional()
+          .describe(`Device name for a Yacan device.`),
+        device_type: z
+          .string()
+          .optional()
+          .describe(`Device type for a Yacan device.`),
+        serial_number: z
+          .string()
+          .optional()
+          .describe(`Serial number for a Yacan device.`),
+      })
+      .partial()
+      .describe(`Metadata for a Yacan device.`),
+
     ring_metadata: z
       .object({
         device_id: z

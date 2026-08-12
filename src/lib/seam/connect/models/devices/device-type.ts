@@ -28,6 +28,7 @@ export const LOCK_DEVICE_TYPE = {
   TEDEE_LOCK: 'tedee_lock',
   AKILES_LOCK: 'akiles_lock',
   ULTRALOQ_LOCK: 'ultraloq_lock',
+  YACAN_LOCK: 'yacan_lock',
   KEYINCODE_LOCK: 'keyincode_lock',
   OMNITEC_LOCK: 'omnitec_lock',
   KISI_LOCK: 'kisi_lock',
