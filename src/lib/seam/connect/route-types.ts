@@ -13620,6 +13620,7 @@ export type Routes = {
                     | 'tedee_lock'
                     | 'akiles_lock'
                     | 'ultraloq_lock'
+                    | 'yacan_lock'
                     | 'keyincode_lock'
                     | 'omnitec_lock'
                     | 'kisi_lock'
@@ -14449,6 +14450,19 @@ export type Routes = {
                       device_type?: (string | undefined) | undefined
                       /** IANA timezone for the Ultraloq device. */
                       time_zone?: ((string | null) | undefined) | undefined
+                    }
+                  | undefined
+                /** Metadata for a Yacan device. */
+                yacan_metadata?:
+                  | {
+                      /** Device ID for a Yacan device. */
+                      device_id?: (string | undefined) | undefined
+                      /** Device name for a Yacan device. */
+                      device_name?: (string | undefined) | undefined
+                      /** Device type for a Yacan device. */
+                      device_type?: (string | undefined) | undefined
+                      /** Serial number for a Yacan device. */
+                      serial_number?: (string | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for a Ring device. */
@@ -22039,6 +22053,7 @@ export type Routes = {
                     | 'tedee_lock'
                     | 'akiles_lock'
                     | 'ultraloq_lock'
+                    | 'yacan_lock'
                     | 'keyincode_lock'
                     | 'omnitec_lock'
                     | 'kisi_lock'
@@ -22868,6 +22883,19 @@ export type Routes = {
                       device_type?: (string | undefined) | undefined
                       /** IANA timezone for the Ultraloq device. */
                       time_zone?: ((string | null) | undefined) | undefined
+                    }
+                  | undefined
+                /** Metadata for a Yacan device. */
+                yacan_metadata?:
+                  | {
+                      /** Device ID for a Yacan device. */
+                      device_id?: (string | undefined) | undefined
+                      /** Device name for a Yacan device. */
+                      device_name?: (string | undefined) | undefined
+                      /** Device type for a Yacan device. */
+                      device_type?: (string | undefined) | undefined
+                      /** Serial number for a Yacan device. */
+                      serial_number?: (string | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for a Ring device. */
@@ -47903,6 +47931,7 @@ export type Routes = {
             | 'keyincode'
             | 'dormakaba_ambiance'
             | 'ultraloq'
+            | 'yacan'
             | 'dusaw'
             | 'sifely'
             | 'thirty_three_lock'
@@ -50094,6 +50123,7 @@ export type Routes = {
               | 'tedee_lock'
               | 'akiles_lock'
               | 'ultraloq_lock'
+              | 'yacan_lock'
               | 'keyincode_lock'
               | 'omnitec_lock'
               | 'kisi_lock'
@@ -50877,6 +50907,19 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yacan device. */
+          yacan_metadata?:
+            | {
+                /** Device ID for a Yacan device. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yacan device. */
+                device_name?: (string | undefined) | undefined
+                /** Device type for a Yacan device. */
+                device_type?: (string | undefined) | undefined
+                /** Serial number for a Yacan device. */
+                serial_number?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Ring device. */
@@ -51986,6 +52029,7 @@ export type Routes = {
                 | 'tedee_lock'
                 | 'akiles_lock'
                 | 'ultraloq_lock'
+                | 'yacan_lock'
                 | 'keyincode_lock'
                 | 'omnitec_lock'
                 | 'kisi_lock'
@@ -52035,6 +52079,7 @@ export type Routes = {
                 | 'tedee_lock'
                 | 'akiles_lock'
                 | 'ultraloq_lock'
+                | 'yacan_lock'
                 | 'keyincode_lock'
                 | 'omnitec_lock'
                 | 'kisi_lock'
@@ -52108,6 +52153,7 @@ export type Routes = {
             | 'omnitec'
             | 'kisi'
             | 'slack'
+            | 'yacan'
           )
         | undefined
       /** Array of device IDs for which you want to list devices. */
@@ -52218,6 +52264,7 @@ export type Routes = {
               | 'tedee_lock'
               | 'akiles_lock'
               | 'ultraloq_lock'
+              | 'yacan_lock'
               | 'keyincode_lock'
               | 'omnitec_lock'
               | 'kisi_lock'
@@ -53001,6 +53048,19 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yacan device. */
+          yacan_metadata?:
+            | {
+                /** Device ID for a Yacan device. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yacan device. */
+                device_name?: (string | undefined) | undefined
+                /** Device type for a Yacan device. */
+                device_type?: (string | undefined) | undefined
+                /** Serial number for a Yacan device. */
+                serial_number?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Ring device. */
@@ -54151,6 +54211,7 @@ export type Routes = {
           | 'keyincode'
           | 'dormakaba_ambiance'
           | 'ultraloq'
+          | 'yacan'
           | 'dusaw'
           | 'sifely'
           | 'thirty_three_lock'
@@ -55672,6 +55733,7 @@ export type Routes = {
               | 'tedee_lock'
               | 'akiles_lock'
               | 'ultraloq_lock'
+              | 'yacan_lock'
               | 'keyincode_lock'
               | 'omnitec_lock'
               | 'kisi_lock'
@@ -56271,6 +56333,7 @@ export type Routes = {
                 | 'tedee_lock'
                 | 'akiles_lock'
                 | 'ultraloq_lock'
+                | 'yacan_lock'
                 | 'keyincode_lock'
                 | 'omnitec_lock'
                 | 'kisi_lock'
@@ -56320,6 +56383,7 @@ export type Routes = {
                 | 'tedee_lock'
                 | 'akiles_lock'
                 | 'ultraloq_lock'
+                | 'yacan_lock'
                 | 'keyincode_lock'
                 | 'omnitec_lock'
                 | 'kisi_lock'
@@ -56393,6 +56457,7 @@ export type Routes = {
             | 'omnitec'
             | 'kisi'
             | 'slack'
+            | 'yacan'
           )
         | undefined
       /** Array of device IDs for which you want to list devices. */
@@ -56490,6 +56555,7 @@ export type Routes = {
               | 'tedee_lock'
               | 'akiles_lock'
               | 'ultraloq_lock'
+              | 'yacan_lock'
               | 'keyincode_lock'
               | 'omnitec_lock'
               | 'kisi_lock'
@@ -66885,6 +66951,7 @@ export type Routes = {
               | 'tedee_lock'
               | 'akiles_lock'
               | 'ultraloq_lock'
+              | 'yacan_lock'
               | 'keyincode_lock'
               | 'omnitec_lock'
               | 'kisi_lock'
@@ -67668,6 +67735,19 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yacan device. */
+          yacan_metadata?:
+            | {
+                /** Device ID for a Yacan device. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yacan device. */
+                device_name?: (string | undefined) | undefined
+                /** Device type for a Yacan device. */
+                device_type?: (string | undefined) | undefined
+                /** Serial number for a Yacan device. */
+                serial_number?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Ring device. */
@@ -68763,6 +68843,7 @@ export type Routes = {
               | 'tedee_lock'
               | 'akiles_lock'
               | 'ultraloq_lock'
+              | 'yacan_lock'
               | 'keyincode_lock'
               | 'omnitec_lock'
               | 'kisi_lock'
@@ -69546,6 +69627,19 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yacan device. */
+          yacan_metadata?:
+            | {
+                /** Device ID for a Yacan device. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yacan device. */
+                device_name?: (string | undefined) | undefined
+                /** Device type for a Yacan device. */
+                device_type?: (string | undefined) | undefined
+                /** Serial number for a Yacan device. */
+                serial_number?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Ring device. */
@@ -70652,6 +70746,7 @@ export type Routes = {
             | 'tedee_lock'
             | 'akiles_lock'
             | 'ultraloq_lock'
+            | 'yacan_lock'
             | 'keyincode_lock'
             | 'omnitec_lock'
             | 'kisi_lock'
@@ -70687,6 +70782,7 @@ export type Routes = {
             | 'tedee_lock'
             | 'akiles_lock'
             | 'ultraloq_lock'
+            | 'yacan_lock'
             | 'keyincode_lock'
             | 'omnitec_lock'
             | 'kisi_lock'
@@ -70728,6 +70824,7 @@ export type Routes = {
             | 'ultraloq'
             | 'omnitec'
             | 'kisi'
+            | 'yacan'
           )
         | undefined
     }
@@ -70765,6 +70862,7 @@ export type Routes = {
               | 'tedee_lock'
               | 'akiles_lock'
               | 'ultraloq_lock'
+              | 'yacan_lock'
               | 'keyincode_lock'
               | 'omnitec_lock'
               | 'kisi_lock'
@@ -71548,6 +71646,19 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yacan device. */
+          yacan_metadata?:
+            | {
+                /** Device ID for a Yacan device. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yacan device. */
+                device_name?: (string | undefined) | undefined
+                /** Device type for a Yacan device. */
+                device_type?: (string | undefined) | undefined
+                /** Serial number for a Yacan device. */
+                serial_number?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Ring device. */
@@ -72642,6 +72753,7 @@ export type Routes = {
               | 'tedee_lock'
               | 'akiles_lock'
               | 'ultraloq_lock'
+              | 'yacan_lock'
               | 'keyincode_lock'
               | 'omnitec_lock'
               | 'kisi_lock'
@@ -73425,6 +73537,19 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yacan device. */
+          yacan_metadata?:
+            | {
+                /** Device ID for a Yacan device. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yacan device. */
+                device_name?: (string | undefined) | undefined
+                /** Device type for a Yacan device. */
+                device_type?: (string | undefined) | undefined
+                /** Serial number for a Yacan device. */
+                serial_number?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Ring device. */
@@ -82885,6 +83010,7 @@ export type Routes = {
               | 'tedee_lock'
               | 'akiles_lock'
               | 'ultraloq_lock'
+              | 'yacan_lock'
               | 'keyincode_lock'
               | 'omnitec_lock'
               | 'kisi_lock'
@@ -83668,6 +83794,19 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yacan device. */
+          yacan_metadata?:
+            | {
+                /** Device ID for a Yacan device. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yacan device. */
+                device_name?: (string | undefined) | undefined
+                /** Device type for a Yacan device. */
+                device_type?: (string | undefined) | undefined
+                /** Serial number for a Yacan device. */
+                serial_number?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Ring device. */
@@ -84762,6 +84901,7 @@ export type Routes = {
               | 'tedee_lock'
               | 'akiles_lock'
               | 'ultraloq_lock'
+              | 'yacan_lock'
               | 'keyincode_lock'
               | 'omnitec_lock'
               | 'kisi_lock'
@@ -85545,6 +85685,19 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yacan device. */
+          yacan_metadata?:
+            | {
+                /** Device ID for a Yacan device. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yacan device. */
+                device_name?: (string | undefined) | undefined
+                /** Device type for a Yacan device. */
+                device_type?: (string | undefined) | undefined
+                /** Serial number for a Yacan device. */
+                serial_number?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Ring device. */
@@ -104582,6 +104735,7 @@ export type Routes = {
                     | 'tedee_lock'
                     | 'akiles_lock'
                     | 'ultraloq_lock'
+                    | 'yacan_lock'
                     | 'keyincode_lock'
                     | 'omnitec_lock'
                     | 'kisi_lock'
@@ -105411,6 +105565,19 @@ export type Routes = {
                       device_type?: (string | undefined) | undefined
                       /** IANA timezone for the Ultraloq device. */
                       time_zone?: ((string | null) | undefined) | undefined
+                    }
+                  | undefined
+                /** Metadata for a Yacan device. */
+                yacan_metadata?:
+                  | {
+                      /** Device ID for a Yacan device. */
+                      device_id?: (string | undefined) | undefined
+                      /** Device name for a Yacan device. */
+                      device_name?: (string | undefined) | undefined
+                      /** Device type for a Yacan device. */
+                      device_type?: (string | undefined) | undefined
+                      /** Serial number for a Yacan device. */
+                      serial_number?: (string | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for a Ring device. */
@@ -114010,6 +114177,7 @@ export type Routes = {
               | 'tedee_lock'
               | 'akiles_lock'
               | 'ultraloq_lock'
+              | 'yacan_lock'
               | 'keyincode_lock'
               | 'omnitec_lock'
               | 'kisi_lock'
@@ -114793,6 +114961,19 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yacan device. */
+          yacan_metadata?:
+            | {
+                /** Device ID for a Yacan device. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yacan device. */
+                device_name?: (string | undefined) | undefined
+                /** Device type for a Yacan device. */
+                device_type?: (string | undefined) | undefined
+                /** Serial number for a Yacan device. */
+                serial_number?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Ring device. */
@@ -120122,6 +120303,7 @@ export type Routes = {
               | 'tedee_lock'
               | 'akiles_lock'
               | 'ultraloq_lock'
+              | 'yacan_lock'
               | 'keyincode_lock'
               | 'omnitec_lock'
               | 'kisi_lock'
@@ -120905,6 +121087,19 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yacan device. */
+          yacan_metadata?:
+            | {
+                /** Device ID for a Yacan device. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yacan device. */
+                device_name?: (string | undefined) | undefined
+                /** Device type for a Yacan device. */
+                device_type?: (string | undefined) | undefined
+                /** Serial number for a Yacan device. */
+                serial_number?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Ring device. */
@@ -121999,6 +122194,7 @@ export type Routes = {
               | 'tedee_lock'
               | 'akiles_lock'
               | 'ultraloq_lock'
+              | 'yacan_lock'
               | 'keyincode_lock'
               | 'omnitec_lock'
               | 'kisi_lock'
@@ -122782,6 +122978,19 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yacan device. */
+          yacan_metadata?:
+            | {
+                /** Device ID for a Yacan device. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yacan device. */
+                device_name?: (string | undefined) | undefined
+                /** Device type for a Yacan device. */
+                device_type?: (string | undefined) | undefined
+                /** Serial number for a Yacan device. */
+                serial_number?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Ring device. */
@@ -133258,6 +133467,7 @@ export type Routes = {
               | 'tedee_lock'
               | 'akiles_lock'
               | 'ultraloq_lock'
+              | 'yacan_lock'
               | 'keyincode_lock'
               | 'omnitec_lock'
               | 'kisi_lock'
@@ -134041,6 +134251,19 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yacan device. */
+          yacan_metadata?:
+            | {
+                /** Device ID for a Yacan device. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yacan device. */
+                device_name?: (string | undefined) | undefined
+                /** Device type for a Yacan device. */
+                device_type?: (string | undefined) | undefined
+                /** Serial number for a Yacan device. */
+                serial_number?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Ring device. */
@@ -135137,6 +135360,7 @@ export type Routes = {
               | 'tedee_lock'
               | 'akiles_lock'
               | 'ultraloq_lock'
+              | 'yacan_lock'
               | 'keyincode_lock'
               | 'omnitec_lock'
               | 'kisi_lock'
@@ -135920,6 +136144,19 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yacan device. */
+          yacan_metadata?:
+            | {
+                /** Device ID for a Yacan device. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yacan device. */
+                device_name?: (string | undefined) | undefined
+                /** Device type for a Yacan device. */
+                device_type?: (string | undefined) | undefined
+                /** Serial number for a Yacan device. */
+                serial_number?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Ring device. */
@@ -138521,6 +138758,7 @@ export type Routes = {
                     | 'tedee_lock'
                     | 'akiles_lock'
                     | 'ultraloq_lock'
+                    | 'yacan_lock'
                     | 'keyincode_lock'
                     | 'omnitec_lock'
                     | 'kisi_lock'
@@ -139350,6 +139588,19 @@ export type Routes = {
                       device_type?: (string | undefined) | undefined
                       /** IANA timezone for the Ultraloq device. */
                       time_zone?: ((string | null) | undefined) | undefined
+                    }
+                  | undefined
+                /** Metadata for a Yacan device. */
+                yacan_metadata?:
+                  | {
+                      /** Device ID for a Yacan device. */
+                      device_id?: (string | undefined) | undefined
+                      /** Device name for a Yacan device. */
+                      device_name?: (string | undefined) | undefined
+                      /** Device type for a Yacan device. */
+                      device_type?: (string | undefined) | undefined
+                      /** Serial number for a Yacan device. */
+                      serial_number?: (string | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for a Ring device. */
@@ -144160,6 +144411,7 @@ export type Routes = {
                     | 'tedee_lock'
                     | 'akiles_lock'
                     | 'ultraloq_lock'
+                    | 'yacan_lock'
                     | 'keyincode_lock'
                     | 'omnitec_lock'
                     | 'kisi_lock'

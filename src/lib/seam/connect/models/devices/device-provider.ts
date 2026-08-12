@@ -55,6 +55,7 @@ export const DEVICE_PROVIDERS = {
   KEYINCODE: 'keyincode',
   DORMAKABA_AMBIANCE: 'dormakaba_ambiance',
   ULTRALOQ: 'ultraloq',
+  YACAN: 'yacan',
   DUSAW: 'dusaw',
   SIFELY: 'sifely',
   THIRTY_THREE_LOCK: 'thirty_three_lock',
@@ -146,7 +147,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'thirty_three_lock',
   ],
 
-  beta: ['salto_ks_accept', 'aqara'],
+  beta: ['salto_ks_accept', 'aqara', 'yacan'],
 
   thermostats: ['ecobee', 'nest', 'sensi', 'honeywell_resideo', 'first_alert'],
   noise_sensors: ['minut', 'noiseaware'],
