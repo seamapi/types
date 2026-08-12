@@ -327,6 +327,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -516,6 +528,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -782,6 +806,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -967,6 +1003,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -1243,6 +1291,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -3453,6 +3513,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -3642,6 +3714,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -3908,6 +3992,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -4093,6 +4189,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -4369,6 +4477,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -8205,6 +8325,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -8394,6 +8526,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -8660,6 +8804,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -8845,6 +9001,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -9121,6 +9289,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -11182,6 +11362,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -11371,6 +11563,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -11637,6 +11841,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -11822,6 +12038,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -12098,6 +12326,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -17879,6 +18119,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -18068,6 +18320,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -18334,6 +18598,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -18519,6 +18795,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -18795,6 +19083,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -19987,6 +20287,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -20176,6 +20488,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -20442,6 +20766,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -20627,6 +20963,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -20903,6 +21251,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -24777,6 +25137,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -25315,6 +25687,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -25504,6 +25888,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -25770,6 +26166,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -25955,6 +26363,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -26231,6 +26651,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -29117,6 +29549,18 @@ export type Routes = {
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'needs_to_be_reissued'
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'requested_code_unavailable'
+              /** The originally requested PIN code that could not be used. */
+              original_code: string
+              /** The PIN code that was assigned instead. */
+              new_code: string
+            }
         )[]
         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
@@ -29375,6 +29819,18 @@ export type Routes = {
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'needs_to_be_reissued'
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'requested_code_unavailable'
+              /** The originally requested PIN code that could not be used. */
+              original_code: string
+              /** The PIN code that was assigned instead. */
+              new_code: string
+            }
         )[]
         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
@@ -29579,6 +30035,18 @@ export type Routes = {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'needs_to_be_reissued'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'requested_code_unavailable'
+              /** The originally requested PIN code that could not be used. */
+              original_code: string
+              /** The PIN code that was assigned instead. */
+              new_code: string
             }
         )[]
         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -29789,6 +30257,18 @@ export type Routes = {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'needs_to_be_reissued'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'requested_code_unavailable'
+              /** The originally requested PIN code that could not be used. */
+              original_code: string
+              /** The PIN code that was assigned instead. */
+              new_code: string
             }
         )[]
         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -30007,6 +30487,18 @@ export type Routes = {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'needs_to_be_reissued'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'requested_code_unavailable'
+              /** The originally requested PIN code that could not be used. */
+              original_code: string
+              /** The PIN code that was assigned instead. */
+              new_code: string
             }
         )[]
         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -30495,6 +30987,18 @@ export type Routes = {
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'needs_to_be_reissued'
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'requested_code_unavailable'
+              /** The originally requested PIN code that could not be used. */
+              original_code: string
+              /** The PIN code that was assigned instead. */
+              new_code: string
+            }
         )[]
         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
@@ -30685,6 +31189,18 @@ export type Routes = {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'needs_to_be_reissued'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'requested_code_unavailable'
+              /** The originally requested PIN code that could not be used. */
+              original_code: string
+              /** The PIN code that was assigned instead. */
+              new_code: string
             }
         )[]
         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -30894,6 +31410,18 @@ export type Routes = {
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'needs_to_be_reissued'
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'requested_code_unavailable'
+              /** The originally requested PIN code that could not be used. */
+              original_code: string
+              /** The PIN code that was assigned instead. */
+              new_code: string
+            }
         )[]
         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
@@ -31093,6 +31621,18 @@ export type Routes = {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'needs_to_be_reissued'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'requested_code_unavailable'
+              /** The originally requested PIN code that could not be used. */
+              original_code: string
+              /** The PIN code that was assigned instead. */
+              new_code: string
             }
         )[]
         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -31452,6 +31992,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -31641,6 +32193,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -31907,6 +32471,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -32092,6 +32668,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -32368,6 +32956,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -33655,6 +34255,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -33844,6 +34456,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -34110,6 +34734,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -34295,6 +34931,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -34571,6 +35219,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -35750,6 +36410,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -35939,6 +36611,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -36205,6 +36889,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -36390,6 +37086,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -36666,6 +37374,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -38368,6 +39088,18 @@ export type Routes = {
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'needs_to_be_reissued'
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'requested_code_unavailable'
+              /** The originally requested PIN code that could not be used. */
+              original_code: string
+              /** The PIN code that was assigned instead. */
+              new_code: string
+            }
         )[]
         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
@@ -38724,6 +39456,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -38913,6 +39657,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -39179,6 +39935,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -39364,6 +40132,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -39640,6 +40420,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -43619,6 +44411,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -43808,6 +44612,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -44074,6 +44890,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -44259,6 +45087,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -44535,6 +45375,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -45704,6 +46556,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -45893,6 +46757,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -46159,6 +47035,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -46344,6 +47232,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -46620,6 +47520,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -65111,6 +66023,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -65300,6 +66224,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -65566,6 +66502,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -65751,6 +66699,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -66027,6 +66987,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -74907,6 +75879,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -75096,6 +76080,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -75362,6 +76358,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -75547,6 +76555,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -75823,6 +76843,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -76993,6 +78025,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -77182,6 +78226,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -77448,6 +78504,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -77633,6 +78701,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -77909,6 +78989,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -79077,6 +80169,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -79266,6 +80370,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -79532,6 +80648,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -79717,6 +80845,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -79993,6 +81133,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -81163,6 +82315,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -81352,6 +82516,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -81618,6 +82794,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -81803,6 +82991,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -82079,6 +83279,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -87065,6 +88277,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -87254,6 +88478,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -87520,6 +88756,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -87705,6 +88953,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -87981,6 +89241,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -89170,6 +90442,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -89359,6 +90643,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -89625,6 +90921,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -89810,6 +91118,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -90086,6 +91406,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -91331,6 +92663,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -91520,6 +92864,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -91786,6 +93142,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -91971,6 +93339,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -92247,6 +93627,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -95412,6 +96804,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -95601,6 +97005,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -95867,6 +97283,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -96052,6 +97480,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -96328,6 +97768,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -103738,6 +105190,18 @@ export type Routes = {
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'needs_to_be_reissued'
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'requested_code_unavailable'
+              /** The originally requested PIN code that could not be used. */
+              original_code: string
+              /** The PIN code that was assigned instead. */
+              new_code: string
+            }
         )[]
         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
@@ -103953,6 +105417,18 @@ export type Routes = {
                   message: string
                   /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                   warning_code: 'needs_to_be_reissued'
+                }
+              | {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: 'requested_code_unavailable'
+                  /** The originally requested PIN code that could not be used. */
+                  original_code: string
+                  /** The PIN code that was assigned instead. */
+                  new_code: string
                 }
             )[]
             /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -108030,6 +109506,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -108219,6 +109707,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -108485,6 +109985,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -108670,6 +110182,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -108946,6 +110470,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -110120,6 +111656,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -110309,6 +111857,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -110575,6 +112135,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -110760,6 +112332,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -111036,6 +112620,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -112322,6 +113918,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -112511,6 +114119,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -112777,6 +114397,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -112962,6 +114594,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -113238,6 +114882,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -116335,6 +117991,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -116524,6 +118192,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -116790,6 +118470,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -116975,6 +118667,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -117251,6 +118955,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -118429,6 +120145,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -118618,6 +120346,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -118884,6 +120624,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -119069,6 +120821,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -119345,6 +121109,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -124348,6 +126124,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -124537,6 +126325,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -124803,6 +126603,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -124988,6 +126800,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -125264,6 +127088,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -126643,6 +128479,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -126832,6 +128680,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -127098,6 +128958,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -127283,6 +129155,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -127559,6 +129443,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -128765,6 +130661,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -128954,6 +130862,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -129220,6 +131140,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -129405,6 +131337,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -129681,6 +131625,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -131004,6 +132960,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -131193,6 +133161,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -131459,6 +133439,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -131644,6 +133636,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -131920,6 +133924,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -142000,6 +144016,18 @@ export type Routes = {
                                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                                     warning_code: 'needs_to_be_reissued'
                                   }
+                                | {
+                                    /** Date and time at which Seam created the warning. */
+                                    created_at: string
+                                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                                    message: string
+                                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                                    warning_code: 'requested_code_unavailable'
+                                    /** The originally requested PIN code that could not be used. */
+                                    original_code: string
+                                    /** The PIN code that was assigned instead. */
+                                    new_code: string
+                                  }
                               )[]
                               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                               is_multi_phone_sync_credential?:
@@ -142203,6 +144231,18 @@ export type Routes = {
                                     message: string
                                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                                     warning_code: 'needs_to_be_reissued'
+                                  }
+                                | {
+                                    /** Date and time at which Seam created the warning. */
+                                    created_at: string
+                                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                                    message: string
+                                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                                    warning_code: 'requested_code_unavailable'
+                                    /** The originally requested PIN code that could not be used. */
+                                    original_code: string
+                                    /** The PIN code that was assigned instead. */
+                                    new_code: string
                                   }
                               )[]
                               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -142487,6 +144527,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -142676,6 +144728,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -142952,6 +145016,18 @@ export type Routes = {
                           message: string
                           /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                           warning_code: 'needs_to_be_reissued'
+                        }
+                      | {
+                          /** Date and time at which Seam created the warning. */
+                          created_at: string
+                          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                          message: string
+                          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                          warning_code: 'requested_code_unavailable'
+                          /** The originally requested PIN code that could not be used. */
+                          original_code: string
+                          /** The PIN code that was assigned instead. */
+                          new_code: string
                         }
                     )[]
                     /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -149400,6 +151476,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -149581,6 +151669,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -151018,6 +153118,18 @@ export type Routes = {
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -151207,6 +153319,18 @@ export type Routes = {
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                               warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
                             }
                         )[]
                         /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -151473,6 +153597,18 @@ export type Routes = {
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -151658,6 +153794,18 @@ export type Routes = {
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                         warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
                       }
                   )[]
                   /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -151934,6 +154082,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
