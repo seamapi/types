@@ -284,6 +284,11 @@ export const access_method = z.object({
   is_issued: z
     .boolean()
     .describe('Indicates whether the access method has been issued.'),
+  display_status: z
+    .string()
+    .describe(
+      'Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`.',
+    ),
   instant_key_url: z
     .string()
     .url()
