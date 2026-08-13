@@ -7924,8 +7924,7 @@ export type Routes = {
     route: '/access_codes/unmanaged/convert_to_managed'
     method: 'POST' | 'PATCH'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the unmanaged access code that you want to convert to a managed access code. */
       access_code_id: string
       /** Indicates whether [external modification](https://docs.seam.co/low-level-apis/smart-locks/access-codes#external-modification) of the access code is allowed. */
@@ -7937,6 +7936,7 @@ export type Routes = {
       /**  */
       sync?: boolean
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -10891,8 +10891,7 @@ export type Routes = {
     route: '/access_codes/unmanaged/update'
     method: 'PATCH' | 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the unmanaged access code that you want to update. */
       access_code_id: string
       is_managed: boolean
@@ -10903,6 +10902,7 @@ export type Routes = {
       /** Indicates whether to force the unmanaged access code update. */
       force?: boolean | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -13061,8 +13061,7 @@ export type Routes = {
     route: '/access_grants/create'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: (
+    jsonBody: (
       | {
           /** ID of user identity for whom access is being granted. */
           user_identity_id: string
@@ -13127,6 +13126,7 @@ export type Routes = {
       /** ID of the customization profile to apply to the Access Grant and its access methods. */
       customization_profile_id?: string | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents an Access Grant. Access Grants enable you to grant a user identity access to spaces, entrances, and devices through one or more access methods, such as mobile keys, plastic cards, and PIN codes. You can create an Access Grant for an existing user identity, or you can create a new user identity *while* creating the new Access Grant. */
@@ -16903,8 +16903,7 @@ export type Routes = {
     route: '/access_grants/request_access_methods'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the Access Grant to add access methods to. */
       access_grant_id: string
       /** Array of requested access methods to add to the access grant. */
@@ -16917,6 +16916,7 @@ export type Routes = {
         instant_key_max_use_count?: number | undefined
       }[]
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents an Access Grant. Access Grants enable you to grant a user identity access to spaces, entrances, and devices through one or more access methods, such as mobile keys, plastic cards, and PIN codes. You can create an Access Grant for an existing user identity, or you can create a new user identity *while* creating the new Access Grant. */
@@ -17561,8 +17561,7 @@ export type Routes = {
     route: '/access_grants/update'
     method: 'POST' | 'PATCH'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** Display name for the access grant. */
       name?: (string | null) | undefined
       /** ID of the Access Grant to update. Provide either `access_grant_id` or `access_grant_key`. */
@@ -17574,6 +17573,7 @@ export type Routes = {
       /** Date and time at which the validity of the grant ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
       ends_at?: (string | null) | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -17582,13 +17582,13 @@ export type Routes = {
     route: '/access_methods/assign_card'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the `access_method` to assign the credential to. */
       access_method_id: string
       /** Card number of the credential to assign. */
       card_number: string
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents an action attempt that enables you to keep track of the progress of your action that affects a physical device or system.actions against a device. Action attempts are useful because the physical world is intrinsically asynchronous.
@@ -19704,13 +19704,13 @@ export type Routes = {
     route: '/access_methods/encode'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the `acs_encoder` to use to encode the `access_method`. */
       acs_encoder_id: string
       /** ID of the `access_method` to encode onto a card. */
       access_method_id: string
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents an action attempt that enables you to keep track of the progress of your action that affects a physical device or system.actions against a device. Action attempts are useful because the physical world is intrinsically asynchronous.
@@ -24993,13 +24993,13 @@ export type Routes = {
     route: '/access_methods/unlock_door'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the cloud_key `access_method` to use for the unlock operation. */
       access_method_id: string
       /** ID of the entrance to unlock. */
       acs_entrance_id: string
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents an action attempt that enables you to keep track of the progress of your action that affects a physical device or system.actions against a device. Action attempts are useful because the physical world is intrinsically asynchronous.
@@ -27394,8 +27394,7 @@ export type Routes = {
     route: '/acs/access_groups/add_user'
     method: 'PUT' | 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the access group to which you want to add an access system user. */
       acs_access_group_id: string
       /** ID of the access system user that you want to add to an access group. You can only provide one of acs_user_id or user_identity_id. */
@@ -27403,6 +27402,7 @@ export type Routes = {
       /** ID of the desired user identity that you want to add to an access group. You can only provide one of acs_user_id or user_identity_id. If the ACS system contains an ACS user with the same `email_address` or `phone_number` as the user identity that you specify, they are linked, and the access group membership belongs to the ACS user. If the ACS system does not have a corresponding ACS user, one is created. */
       user_identity_id?: string | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -28932,8 +28932,7 @@ export type Routes = {
     route: '/acs/credential_provisioning_automations/launch'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the user identity for which you want to launch a credential provisioning automation. */
       user_identity_id: string
       /** Access system ID of the credential manager for which you want to launch a credential provisioning automation. */
@@ -28945,6 +28944,7 @@ export type Routes = {
       /** ID of the associated access system user within the credential manager. If you specify a `credential_manager_acs_user_id`, you cannot set `create_credential_manager_user` to `true`. */
       credential_manager_acs_user_id?: string | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /**
@@ -29173,8 +29173,7 @@ export type Routes = {
     route: '/acs/credentials/create'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ACS system ID of the credential manager for the new credential. */
       credential_manager_acs_system_id?: string | undefined
       /** ID of the access system user to whom the new credential belongs. You must provide either `acs_user_id` or the combination of `user_identity_id` and `acs_system_id`. */
@@ -29238,6 +29237,7 @@ export type Routes = {
       /** Date and time at which the validity of the new credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
       ends_at?: string | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Means by which an [access control system user](https://docs.seam.co/low-level-apis/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/low-level-apis/access-systems).
@@ -29439,8 +29439,7 @@ export type Routes = {
     route: '/acs/credentials/create_offline_code'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the access system user to whom the new credential belongs. */
       acs_user_id: string
       /** IDs of the [`acs_entrance`s](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) for which the new credential grants access. */
@@ -29452,6 +29451,7 @@ export type Routes = {
       /** Date and time at which the validity of the new credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
       ends_at?: string | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Means by which an [access control system user](https://docs.seam.co/low-level-apis/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/low-level-apis/access-systems).
@@ -31193,8 +31193,7 @@ export type Routes = {
     route: '/acs/encoders/encode_credential'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the `acs_encoder` to use to encode the `acs_credential`. */
       acs_encoder_id: string
       /** ID of the `acs_credential` to encode onto a card. */
@@ -31202,6 +31201,7 @@ export type Routes = {
       /** ID of the `access_method` to encode onto a card. */
       access_method_id?: string | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents an action attempt that enables you to keep track of the progress of your action that affects a physical device or system.actions against a device. Action attempts are useful because the physical world is intrinsically asynchronous.
@@ -33400,8 +33400,7 @@ export type Routes = {
     route: '/acs/encoders/scan_credential'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the encoder to use for the scan. */
       acs_encoder_id: string
       /** Salto KS-specific metadata for the scan action. */
@@ -33412,6 +33411,7 @@ export type Routes = {
           }
         | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents an action attempt that enables you to keep track of the progress of your action that affects a physical device or system.actions against a device. Action attempts are useful because the physical world is intrinsically asynchronous.
@@ -35505,8 +35505,7 @@ export type Routes = {
     route: '/acs/encoders/scan_to_assign_credential'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the `acs_encoder` to use to scan the credential. */
       acs_encoder_id: string
       /** ID of the `acs_user` to assign the scanned credential to. */
@@ -35521,6 +35520,7 @@ export type Routes = {
           }
         | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents an action attempt that enables you to keep track of the progress of your action that affects a physical device or system.actions against a device. Action attempts are useful because the physical world is intrinsically asynchronous.
@@ -38508,13 +38508,13 @@ export type Routes = {
     route: '/acs/entrances/unlock'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the entrance to unlock. */
       acs_entrance_id: string
       /** ID of the cloud_key credential to use for the unlock operation. */
       acs_credential_id: string
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents an action attempt that enables you to keep track of the progress of your action that affects a physical device or system.actions against a device. Action attempts are useful because the physical world is intrinsically asynchronous.
@@ -41283,8 +41283,7 @@ export type Routes = {
     route: '/acs/systems/report_devices'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the ACS system to report resources for */
       acs_system_id: string
       /** Array of ACS encoders to report */
@@ -41315,6 +41314,7 @@ export type Routes = {
           }[]
         | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -41323,13 +41323,13 @@ export type Routes = {
     route: '/acs/users/add_to_access_group'
     method: 'PUT' | 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the access system user that you want to add to an access group. */
       acs_user_id: string
       /** ID of the access group to which you want to add an access system user. */
       acs_access_group_id: string
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -42694,8 +42694,7 @@ export type Routes = {
     route: '/acs/users/suspend'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the access system user that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id. */
       acs_user_id?: string | undefined
       /** ID of the user identity that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id. */
@@ -42703,6 +42702,7 @@ export type Routes = {
       /** ID of the access system that you want to suspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id. */
       acs_system_id?: string | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -43364,8 +43364,7 @@ export type Routes = {
     route: '/acs/users/unsuspend'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the access system user that you want to unsuspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id. */
       acs_user_id?: string | undefined
       /** ID of the user identity that you want to unsuspend. You can only provide acs_user_id or the combination of acs_system_id and user_identity_id. */
@@ -43373,6 +43372,7 @@ export type Routes = {
       /** ID of the access system of the user that you want to unsuspend. You can only provide acs_system_id with user_identity_id. */
       acs_system_id?: string | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -47858,8 +47858,7 @@ export type Routes = {
     route: '/client_sessions/grant_access'
     method: 'PATCH' | 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the client session to which you want to grant access to resources. */
       client_session_id?: string | undefined
       /** Your user ID for the user that you want to associate with the client session. */
@@ -47874,6 +47873,7 @@ export type Routes = {
       /** ID of the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session. */
       user_identity_id?: string | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents a [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens). If you want to restrict your users' access to their own devices, use client sessions.
@@ -47968,11 +47968,11 @@ export type Routes = {
     route: '/client_sessions/revoke'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the client session that you want to revoke. */
       client_session_id: string
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -49111,8 +49111,7 @@ export type Routes = {
     route: '/customers/create_portal'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       features?: {
         /** Configuration for the connect accounts feature. */
         connect?: {
@@ -49653,6 +49652,7 @@ export type Routes = {
           }
         | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents a Customer Portal. Customer Portal is a hosted, customizable interface for managing device access. It enables you to embed secure, pre-authenticated access flows into your product—either by sharing a link with users or embedding a view in an iframe.
@@ -49745,8 +49745,7 @@ export type Routes = {
     route: '/customers/push_data'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** Your unique identifier for the customer. */
       customer_key: string
       /** List of general spaces or areas. */
@@ -50105,6 +50104,7 @@ export type Routes = {
           }[]
         | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -50113,13 +50113,13 @@ export type Routes = {
     route: '/customers/reservations/create_deep_link'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** The customer_key identifying the customer who owns the reservation. */
       customer_key: string
       /** The key of the reservation to create a deep link for. */
       reservation_key: string
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       deep_link: {
@@ -54297,8 +54297,7 @@ export type Routes = {
     route: '/devices/report_provider_metadata'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** Array of devices with provider metadata to update */
       devices: {
         /** ID of the device to update */
@@ -55613,6 +55612,7 @@ export type Routes = {
           | undefined
       }[]
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -57130,8 +57130,7 @@ export type Routes = {
     route: '/devices/unmanaged/update'
     method: 'POST' | 'PATCH'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the unmanaged device that you want to update. */
       device_id: string
       /** Indicates whether the device is managed. Set this parameter to `true` to convert an unmanaged device to managed. */
@@ -57143,6 +57142,7 @@ export type Routes = {
           }
         | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -57151,8 +57151,7 @@ export type Routes = {
     route: '/devices/update'
     method: 'POST' | 'PATCH'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the device that you want to update. */
       device_id: string
       properties?:
@@ -57174,6 +57173,7 @@ export type Routes = {
       /** Indicates whether the device's [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is enabled. Set to `false` to disable the pool: Seam stops refilling it and removes any backup codes that have not yet been pulled into active use. */
       backup_access_code_pool_enabled?: boolean | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -93916,11 +93916,11 @@ export type Routes = {
     route: '/seam/console/v1/lynx_migration/migrate_property'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the space (property) to migrate. */
       space_id: string
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       lynx_migration_property_run: {
@@ -94779,8 +94779,7 @@ export type Routes = {
     route: '/seam/console/v1/workspace/feature_flags/update'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** Name of the workspace feature flag to update. */
       feature_flag_name:
         | 'RESERVATION_LEGACY'
@@ -94800,6 +94799,7 @@ export type Routes = {
       /** Whether the feature flag should be enabled for the workspace. */
       enabled: boolean
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       feature_flag: {
@@ -95033,13 +95033,13 @@ export type Routes = {
     route: '/seam/customer/v1/access_grants/update'
     method: 'POST' | 'PATCH'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the Access Grant to update. */
       access_grant_id: string
       /** Array of location IDs to associate with the access grant. */
       space_ids: string[]
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -95048,13 +95048,13 @@ export type Routes = {
     route: '/seam/customer/v1/access_methods/encode'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the encoder to use for encoding the access method. */
       acs_encoder_id: string
       /** ID of the access method to encode onto a card. */
       access_method_id: string
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents an action attempt that enables you to keep track of the progress of your action that affects a physical device or system.actions against a device. Action attempts are useful because the physical world is intrinsically asynchronous.
@@ -97747,8 +97747,7 @@ export type Routes = {
     route: '/seam/customer/v1/connectors/sync'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the connector to sync */
       connector_id: string
       /** Type of the connector to sync */
@@ -97760,6 +97759,7 @@ export type Routes = {
       /** Unique provider resource key of the connector to sync */
       unique_provider_resource_key?: (string | null) | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       connector_sync: {
@@ -98097,11 +98097,11 @@ export type Routes = {
     route: '/seam/customer/v1/customers/open_portal'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** The customer key to open a portal for. */
       customer_key: string
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents a Customer Portal. Customer Portal is a hosted, customizable interface for managing device access. It enables you to embed secure, pre-authenticated access flows into your product—either by sharing a link with users or embedding a view in an iframe.
@@ -103105,8 +103105,7 @@ export type Routes = {
     route: '/seam/customer/v1/spaces/push_common_areas'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       common_areas?:
         | {
             name: string
@@ -103121,6 +103120,7 @@ export type Routes = {
           }[]
         | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -132706,11 +132706,11 @@ export type Routes = {
     route: '/unstable_partner/building_blocks/connect_accounts'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** Customer key for which you want to connect accounts. */
       customer_key: string
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents a Customer Portal. Customer Portal is a hosted, customizable interface for managing device access. It enables you to embed secure, pre-authenticated access flows into your product—either by sharing a link with users or embedding a view in an iframe.
@@ -132806,11 +132806,11 @@ export type Routes = {
     route: '/unstable_partner/building_blocks/manage_devices'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** Customer key for which you want to manage devices. */
       customer_key: string
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents a Customer Portal. Customer Portal is a hosted, customizable interface for managing device access. It enables you to embed secure, pre-authenticated access flows into your product—either by sharing a link with users or embedding a view in an iframe.
@@ -132837,8 +132837,7 @@ export type Routes = {
     route: '/unstable_partner/building_blocks/organize_spaces'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** Customer key for which you want to organize spaces. */
       customer_key: string
       /** Optional list of spaces that you want to include in the new building block magic link. */
@@ -132877,6 +132876,7 @@ export type Routes = {
           }[]
         | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents a Customer Portal. Customer Portal is a hosted, customizable interface for managing device access. It enables you to embed secure, pre-authenticated access flows into your product—either by sharing a link with users or embedding a view in an iframe.
@@ -132903,8 +132903,7 @@ export type Routes = {
     route: '/user_identities/add_acs_user'
     method: 'POST' | 'PUT'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the user identity to which you want to add an access system user. */
       user_identity_id?: string | undefined
       /** Key of the user identity to which you want to add an access system user. */
@@ -132912,6 +132911,7 @@ export type Routes = {
       /** ID of the access system user that you want to add to the user identity. */
       acs_user_id: string
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -132920,8 +132920,7 @@ export type Routes = {
     route: '/user_identities/create'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** Unique key for the new user identity. */
       user_identity_key?: (string | null) | undefined
       /** Unique email address for the new user identity. */
@@ -132933,6 +132932,7 @@ export type Routes = {
       /** List of access system IDs to associate with the new user identity through access system users. If there's no user with the same email address or phone number in the specified access systems, a new access system user is created. If there is an existing user with the same email or phone number in the specified access systems, the user is linked to the user identity. */
       acs_system_ids?: string[] | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents a [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with an application user account. */
@@ -133048,8 +133048,7 @@ export type Routes = {
     route: '/user_identities/enrollment_automations/launch'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the user identity for which you want to launch an enrollment automation. */
       user_identity_id: string
       /** ID of the desired access system that serves as the credential manager for the enrollment automation. */
@@ -133061,6 +133060,7 @@ export type Routes = {
       /** ID of the associated access system user within the credential manager. If you specify a `credential_manager_acs_user_id`, you cannot set `create_credential_manager_user` to `true`. */
       credential_manager_acs_user_id?: string | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents an [enrollment automation](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) within the [Seam mobile access solution](https://docs.seam.co/capability-guides/mobile-access/). */
@@ -133109,14 +133109,14 @@ export type Routes = {
     route: '/user_identities/generate_instant_key'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       customization_profile_id?: string | undefined
       /** ID of the user identity for which you want to generate an instant key. */
       user_identity_id: string
       /** Maximum number of times the instant key can be used. Default: 1. */
       max_use_count?: number
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents a Seam Instant Key. For issuing Bluetooth mobile keys, Instant Keys are the fastest way to share access. With a single API call, you can create a mobile key and send it through text or email or embed it in your own app.
@@ -133229,13 +133229,13 @@ export type Routes = {
     route: '/user_identities/grant_access_to_device'
     method: 'PUT' | 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** ID of the user identity that you want to grant access to a device. */
       user_identity_id: string
       /** ID of the managed device to which you want to grant access to the user identity. */
       device_id: string
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
