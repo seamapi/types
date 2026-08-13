@@ -13,10 +13,6 @@
     "./connect": {
       "types": "./connect.d.ts",
       "default": "./connect.js"
-    },
-    "./devicedb": {
-      "types": "./devicedb.d.ts",
-      "default": "./devicedb.js"
     }
   },
   "module": "index.js",
@@ -39,9 +35,6 @@
     "connect.js",
     "connect.js.map",
     "connect.d.ts",
-    "devicedb.js",
-    "devicedb.js.map",
-    "devicedb.d.ts",
     "lib",
     "src",
     "!test",
@@ -49,11 +42,11 @@
   ],
   "scripts": {
     "build": "npm run build:entrypoints",
-    "prebuild": "concurrently --raw --group 'tsx src/index.ts' 'tsx src/connect.ts'  'tsx src/devicedb.ts'",
-    "postbuild": "concurrently --raw --group 'node ./index.js' 'node ./connect.js'  'node ./devicedb.js'",
+    "prebuild": "concurrently --raw --group 'tsx src/index.ts' 'tsx src/connect.ts'",
+    "postbuild": "concurrently --raw --group 'node ./index.js' 'node ./connect.js'",
     "build:entrypoints": "npm run build:ts",
     "build:ts": "tsc --project tsconfig.build.json",
-    "prebuild:ts": "del 'index.*' 'connect.*' 'devicedb.*' lib",
+    "prebuild:ts": "del 'index.*' 'connect.*' lib",
     "postbuild:ts": "tsc-alias --replacer ./tsc-alias-replacer.cjs --project tsconfig.build.json",
     "typecheck": "tsc",
     "docs:build": "typedoc",
