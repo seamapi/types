@@ -89,10 +89,7 @@ export default [
             ['^\\u0000'],
             ['^node:'],
             ['^@?\\w'],
-            [
-              '@seamapi/types',
-              '@seamapi/types/connect',
-            ],
+            ['@seamapi/types', '@seamapi/types/connect'],
             ['^lib/', '^test/'],
             ['^'],
             ['^\\.'],

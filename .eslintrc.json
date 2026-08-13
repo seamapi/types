@@ -28,10 +28,7 @@
           ["^\\u0000"],
           ["^node:"],
           ["^@?\\w"],
-          [
-            "@seamapi/types",
-            "@seamapi/types/connect"
-          ],
+          ["@seamapi/types", "@seamapi/types/connect"],
           ["^lib/"],
           ["^"],
           ["^\\."]
@@ -63,17 +60,13 @@
       }
     },
     {
-      "files": [
-        "src/lib/seam/connect/route-types.ts"
-      ],
+      "files": ["src/lib/seam/connect/route-types.ts"],
       "rules": {
         "@typescript-eslint/ban-types": "off"
       }
     },
     {
-      "files": [
-        "src/lib/seam/connect/**/*.ts"
-      ],
+      "files": ["src/lib/seam/connect/**/*.ts"],
       "rules": {
         "@typescript-eslint/naming-convention": "off",
         "node/file-extension-in-import": [
