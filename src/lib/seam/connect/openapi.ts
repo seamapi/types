@@ -2287,6 +2287,11 @@ const openapi: OpenAPISpec = {
             description: 'Display name of the access method.',
             type: 'string',
           },
+          display_status: {
+            description:
+              'Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`.',
+            type: 'string',
+          },
           errors: {
             description:
               'Errors associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
@@ -2690,6 +2695,7 @@ const openapi: OpenAPISpec = {
           'created_at',
           'issued_at',
           'is_issued',
+          'display_status',
           'warnings',
           'errors',
           'pending_mutations',
@@ -9669,6 +9675,11 @@ const openapi: OpenAPISpec = {
                     description: 'Display name of the access method.',
                     type: 'string',
                   },
+                  display_status: {
+                    description:
+                      'Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`.',
+                    type: 'string',
+                  },
                   errors: {
                     description:
                       'Errors associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
@@ -10079,6 +10090,7 @@ const openapi: OpenAPISpec = {
                   'created_at',
                   'issued_at',
                   'is_issued',
+                  'display_status',
                   'warnings',
                   'errors',
                   'pending_mutations',
@@ -32007,6 +32019,11 @@ const openapi: OpenAPISpec = {
             description: 'Display name of the access method.',
             type: 'string',
           },
+          display_status: {
+            description:
+              'Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`.',
+            type: 'string',
+          },
           errors: {
             description:
               'Errors associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
@@ -32404,6 +32421,7 @@ const openapi: OpenAPISpec = {
           'created_at',
           'issued_at',
           'is_issued',
+          'display_status',
           'warnings',
           'errors',
           'pending_mutations',
