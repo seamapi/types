@@ -1,7 +1,7 @@
 {
   "$schema": "https://typedoc.org/schema.json",
   "includeVersion": true,
-  "entryPoints": ["src/index.ts", "src/connect.ts", "src/devicedb.ts"],
+  "entryPoints": ["src/index.ts", "src/connect.ts"],
   "out": "docs",
   "tsconfig": "./tsconfig.build.json",
   "navigationLinks": {

@@ -92,7 +92,6 @@ export default [
             [
               '@seamapi/types',
               '@seamapi/types/connect',
-              '@seamapi/types/devicedb',
             ],
             ['^lib/', '^test/'],
             ['^'],
