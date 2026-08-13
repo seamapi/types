@@ -44527,6 +44527,87 @@ const openapi: OpenAPISpec = {
         description:
           'Returns a list of all [credentials](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
         operationId: 'acsCredentialsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_user_id',
+            schema: {
+              description:
+                'ID of the access system user for which you want to retrieve all credentials.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_system_id',
+            schema: {
+              description:
+                'ID of the access system for which you want to retrieve all credentials.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            schema: {
+              description:
+                'ID of the user identity for which you want to retrieve all credentials.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description: 'Number of credentials to return.',
+              format: 'float',
+              type: 'number',
+            },
+          },
+          {
+            in: 'query',
+            name: 'created_before',
+            schema: {
+              description:
+                'Date and time, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format, before which events to return were created.',
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'is_multi_phone_sync_credential',
+            schema: {
+              description:
+                'Indicates whether you want to retrieve only multi-phone sync credentials or non-multi-phone sync credentials.',
+              type: 'boolean',
+            },
+          },
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned credentials to include all records that satisfy a partial match using `display_name`, `code`, `card_number`, `acs_user_id` or `acs_credential_id`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
+        ],
         responses: {
           '200': {
             content: {
@@ -44573,101 +44654,56 @@ const openapi: OpenAPISpec = {
           content: {
             'application/json': {
               schema: {
-                allOf: [
-                  {
-                    oneOf: [
-                      {
-                        properties: {
-                          acs_user_id: {
-                            description:
-                              'ID of the access system user for which you want to retrieve all credentials.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: ['acs_user_id'],
-                        type: 'object',
-                      },
-                      {
-                        properties: {
-                          acs_system_id: {
-                            description:
-                              'ID of the access system for which you want to retrieve all credentials.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: ['acs_system_id'],
-                        type: 'object',
-                      },
-                      {
-                        properties: {
-                          acs_system_id: {
-                            description:
-                              'ID of the access system for which you want to retrieve all credentials.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          acs_user_id: {
-                            description:
-                              'ID of the access system user for which you want to retrieve all credentials.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: ['acs_user_id', 'acs_system_id'],
-                        type: 'object',
-                      },
-                      {
-                        properties: {
-                          user_identity_id: {
-                            description:
-                              'ID of the user identity for which you want to retrieve all credentials.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: ['user_identity_id'],
-                        type: 'object',
-                      },
-                      { properties: {}, type: 'object' },
-                    ],
+                properties: {
+                  acs_system_id: {
+                    description:
+                      'ID of the access system for which you want to retrieve all credentials.',
+                    format: 'uuid',
+                    type: 'string',
                   },
-                  {
-                    properties: {
-                      created_before: {
-                        description:
-                          'Date and time, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format, before which events to return were created.',
-                        format: 'date-time',
-                        type: 'string',
-                      },
-                      is_multi_phone_sync_credential: {
-                        description:
-                          'Indicates whether you want to retrieve only multi-phone sync credentials or non-multi-phone sync credentials.',
-                        type: 'boolean',
-                      },
-                      limit: {
-                        default: 500,
-                        description: 'Number of credentials to return.',
-                        format: 'float',
-                        type: 'number',
-                      },
-                      page_cursor: {
-                        description:
-                          "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
-                        nullable: true,
-                        type: 'string',
-                      },
-                      search: {
-                        description:
-                          'String for which to search. Filters returned credentials to include all records that satisfy a partial match using `display_name`, `code`, `card_number`, `acs_user_id` or `acs_credential_id`.',
-                        minLength: 1,
-                        type: 'string',
-                      },
-                    },
-                    type: 'object',
+                  acs_user_id: {
+                    description:
+                      'ID of the access system user for which you want to retrieve all credentials.',
+                    format: 'uuid',
+                    type: 'string',
                   },
-                ],
+                  created_before: {
+                    description:
+                      'Date and time, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format, before which events to return were created.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
+                  is_multi_phone_sync_credential: {
+                    description:
+                      'Indicates whether you want to retrieve only multi-phone sync credentials or non-multi-phone sync credentials.',
+                    type: 'boolean',
+                  },
+                  limit: {
+                    default: 500,
+                    description: 'Number of credentials to return.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
+                    type: 'string',
+                  },
+                  search: {
+                    description:
+                      'String for which to search. Filters returned credentials to include all records that satisfy a partial match using `display_name`, `code`, `card_number`, `acs_user_id` or `acs_credential_id`.',
+                    minLength: 1,
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity for which you want to retrieve all credentials.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                type: 'object',
               },
             },
           },
@@ -45076,6 +45112,48 @@ const openapi: OpenAPISpec = {
         description:
           'Returns a list of all unmanaged [credentials](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
         operationId: 'acsCredentialsUnmanagedListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_user_id',
+            schema: {
+              description:
+                'ID of the access system user for which you want to retrieve all credentials.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_system_id',
+            schema: {
+              description:
+                'ID of the access system for which you want to retrieve all credentials.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'user_identity_id',
+            schema: {
+              description:
+                'ID of the user identity for which you want to retrieve all credentials.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned credentials to include all records that satisfy a partial match using `display_name`, `code`, `card_number`, `acs_user_id` or `acs_credential_id`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+        ],
         responses: {
           '200': {
             content: {
@@ -45122,85 +45200,33 @@ const openapi: OpenAPISpec = {
           content: {
             'application/json': {
               schema: {
-                allOf: [
-                  {
-                    oneOf: [
-                      {
-                        description:
-                          'ID of the access system user for which you want to list unmanaged credentials.',
-                        properties: {
-                          acs_user_id: {
-                            description:
-                              'ID of the access system user for which you want to retrieve all credentials.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: ['acs_user_id'],
-                        type: 'object',
-                      },
-                      {
-                        description:
-                          'ID of the access system for which you want to list unmanaged credentials.',
-                        properties: {
-                          acs_system_id: {
-                            description:
-                              'ID of the access system for which you want to retrieve all credentials.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: ['acs_system_id'],
-                        type: 'object',
-                      },
-                      {
-                        description:
-                          'ID of the access system and ID of the access system user for which you want to list unmanaged credentials.',
-                        properties: {
-                          acs_system_id: {
-                            description:
-                              'ID of the access system for which you want to retrieve all credentials.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          acs_user_id: {
-                            description:
-                              'ID of the access system user for which you want to retrieve all credentials.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: ['acs_user_id', 'acs_system_id'],
-                        type: 'object',
-                      },
-                      {
-                        description:
-                          'ID of the user identity for which you want to list unmanaged credentials.',
-                        properties: {
-                          user_identity_id: {
-                            description:
-                              'ID of the user identity for which you want to retrieve all credentials.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: ['user_identity_id'],
-                        type: 'object',
-                      },
-                    ],
+                properties: {
+                  acs_system_id: {
+                    description:
+                      'ID of the access system for which you want to retrieve all credentials.',
+                    format: 'uuid',
+                    type: 'string',
                   },
-                  {
-                    properties: {
-                      search: {
-                        description:
-                          'String for which to search. Filters returned credentials to include all records that satisfy a partial match using `display_name`, `code`, `card_number`, `acs_user_id` or `acs_credential_id`.',
-                        minLength: 1,
-                        type: 'string',
-                      },
-                    },
-                    type: 'object',
+                  acs_user_id: {
+                    description:
+                      'ID of the access system user for which you want to retrieve all credentials.',
+                    format: 'uuid',
+                    type: 'string',
                   },
-                ],
+                  search: {
+                    description:
+                      'String for which to search. Filters returned credentials to include all records that satisfy a partial match using `display_name`, `code`, `card_number`, `acs_user_id` or `acs_credential_id`.',
+                    minLength: 1,
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity for which you want to retrieve all credentials.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                type: 'object',
               },
             },
           },
@@ -45560,6 +45586,57 @@ const openapi: OpenAPISpec = {
         description:
           'Returns a list of all [encoders](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
         operationId: 'acsEncodersListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'acs_system_id',
+            schema: {
+              description:
+                'ID of the access system for which you want to retrieve all encoders.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_system_ids',
+            schema: {
+              description:
+                'IDs of the access systems for which you want to retrieve all encoders.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'acs_encoder_ids',
+            schema: {
+              description: 'IDs of the encoders that you want to retrieve.',
+              items: { format: 'uuid', type: 'string' },
+              type: 'array',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 500,
+              description: 'Number of encoders to return.',
+              format: 'float',
+              type: 'number',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
+        ],
         responses: {
           '200': {
             content: {
@@ -45607,65 +45684,39 @@ const openapi: OpenAPISpec = {
           content: {
             'application/json': {
               schema: {
-                allOf: [
-                  {
-                    oneOf: [
-                      {
-                        properties: {
-                          acs_system_id: {
-                            description:
-                              'ID of the access system for which you want to retrieve all encoders.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: ['acs_system_id'],
-                        type: 'object',
-                      },
-                      {
-                        properties: {
-                          acs_system_ids: {
-                            description:
-                              'IDs of the access systems for which you want to retrieve all encoders.',
-                            items: { format: 'uuid', type: 'string' },
-                            type: 'array',
-                          },
-                        },
-                        required: ['acs_system_ids'],
-                        type: 'object',
-                      },
-                      {
-                        properties: {
-                          acs_encoder_ids: {
-                            description:
-                              'IDs of the encoders that you want to retrieve.',
-                            items: { format: 'uuid', type: 'string' },
-                            type: 'array',
-                          },
-                        },
-                        required: ['acs_encoder_ids'],
-                        type: 'object',
-                      },
-                    ],
+                properties: {
+                  acs_encoder_ids: {
+                    description:
+                      'IDs of the encoders that you want to retrieve.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
                   },
-                  {
-                    properties: {
-                      limit: {
-                        default: 500,
-                        description: 'Number of encoders to return.',
-                        format: 'float',
-                        type: 'number',
-                      },
-                      page_cursor: {
-                        description:
-                          "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
-                        nullable: true,
-                        type: 'string',
-                      },
-                    },
-                    type: 'object',
+                  acs_system_id: {
+                    description:
+                      'ID of the access system for which you want to retrieve all encoders.',
+                    format: 'uuid',
+                    type: 'string',
                   },
-                ],
+                  acs_system_ids: {
+                    description:
+                      'IDs of the access systems for which you want to retrieve all encoders.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  limit: {
+                    default: 500,
+                    description: 'Number of encoders to return.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
+                    type: 'string',
+                  },
+                },
+                type: 'object',
               },
             },
           },
@@ -59072,12 +59123,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Lower and upper timestamps to define an exclusive interval containing the events that you want to list. You must include `since` or `between`.',
-              items: {
-                oneOf: [
-                  { type: 'string' },
-                  { format: 'date-time', type: 'string' },
-                ],
-              },
+              items: { type: 'string' },
               maxItems: 2,
               minItems: 2,
               type: 'array',
@@ -59678,12 +59724,7 @@ const openapi: OpenAPISpec = {
                   between: {
                     description:
                       'Lower and upper timestamps to define an exclusive interval containing the events that you want to list. You must include `since` or `between`.',
-                    items: {
-                      oneOf: [
-                        { type: 'string' },
-                        { format: 'date-time', type: 'string' },
-                      ],
-                    },
+                    items: { type: 'string' },
                     maxItems: 2,
                     minItems: 2,
                     type: 'array',
@@ -72124,12 +72165,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Lower and upper timestamps to define an exclusive interval containing the events that you want to list. You must include `since` or `between`.',
-              items: {
-                oneOf: [
-                  { type: 'string' },
-                  { format: 'date-time', type: 'string' },
-                ],
-              },
+              items: { type: 'string' },
               maxItems: 2,
               minItems: 2,
               type: 'array',
@@ -72437,12 +72473,7 @@ const openapi: OpenAPISpec = {
                   between: {
                     description:
                       'Lower and upper timestamps to define an exclusive interval containing the events that you want to list. You must include `since` or `between`.',
-                    items: {
-                      oneOf: [
-                        { type: 'string' },
-                        { format: 'date-time', type: 'string' },
-                      ],
-                    },
+                    items: { type: 'string' },
                     maxItems: 2,
                     minItems: 2,
                     type: 'array',
@@ -75157,12 +75188,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Lower and upper timestamps to filter reservations whose time range overlaps with the given interval.',
-              items: {
-                oneOf: [
-                  { type: 'string' },
-                  { format: 'date-time', type: 'string' },
-                ],
-              },
+              items: { type: 'string' },
               maxItems: 2,
               minItems: 2,
               type: 'array',
@@ -75433,12 +75459,7 @@ const openapi: OpenAPISpec = {
                   between: {
                     description:
                       'Lower and upper timestamps to filter reservations whose time range overlaps with the given interval.',
-                    items: {
-                      oneOf: [
-                        { type: 'string' },
-                        { format: 'date-time', type: 'string' },
-                      ],
-                    },
+                    items: { type: 'string' },
                     maxItems: 2,
                     minItems: 2,
                     type: 'array',
