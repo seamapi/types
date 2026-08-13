@@ -29873,27 +29873,13 @@ export type Routes = {
     method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
-    commonParams: (
-      | {
-          /** ID of the access system user for which you want to retrieve all credentials. */
-          acs_user_id: string
-        }
-      | {
-          /** ID of the access system for which you want to retrieve all credentials. */
-          acs_system_id: string
-        }
-      | {
-          /** ID of the access system user for which you want to retrieve all credentials. */
-          acs_user_id: string
-          /** ID of the access system for which you want to retrieve all credentials. */
-          acs_system_id: string
-        }
-      | {
-          /** ID of the user identity for which you want to retrieve all credentials. */
-          user_identity_id: string
-        }
-      | {}
-    ) & {
+    commonParams: {
+      /** ID of the access system user for which you want to retrieve all credentials. */
+      acs_user_id?: string | undefined
+      /** ID of the access system for which you want to retrieve all credentials. */
+      acs_system_id?: string | undefined
+      /** ID of the user identity for which you want to retrieve all credentials. */
+      user_identity_id?: string | undefined
       /** Number of credentials to return. */
       limit?: number
       /** Date and time, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format, before which events to return were created. */
@@ -30794,26 +30780,13 @@ export type Routes = {
     method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
-    commonParams: (
-      | {
-          /** ID of the access system user for which you want to retrieve all credentials. */
-          acs_user_id: string
-        }
-      | {
-          /** ID of the access system for which you want to retrieve all credentials. */
-          acs_system_id: string
-        }
-      | {
-          /** ID of the access system user for which you want to retrieve all credentials. */
-          acs_user_id: string
-          /** ID of the access system for which you want to retrieve all credentials. */
-          acs_system_id: string
-        }
-      | {
-          /** ID of the user identity for which you want to retrieve all credentials. */
-          user_identity_id: string
-        }
-    ) & {
+    commonParams: {
+      /** ID of the access system user for which you want to retrieve all credentials. */
+      acs_user_id?: string | undefined
+      /** ID of the access system for which you want to retrieve all credentials. */
+      acs_system_id?: string | undefined
+      /** ID of the user identity for which you want to retrieve all credentials. */
+      user_identity_id?: string | undefined
       /** String for which to search. Filters returned credentials to include all records that satisfy a partial match using `display_name`, `code`, `card_number`, `acs_user_id` or `acs_credential_id`. */
       search?: string | undefined
     }
@@ -33374,20 +33347,13 @@ export type Routes = {
     method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
-    commonParams: (
-      | {
-          /** ID of the access system for which you want to retrieve all encoders. */
-          acs_system_id: string
-        }
-      | {
-          /** IDs of the access systems for which you want to retrieve all encoders. */
-          acs_system_ids: string[]
-        }
-      | {
-          /** IDs of the encoders that you want to retrieve. */
-          acs_encoder_ids: string[]
-        }
-    ) & {
+    commonParams: {
+      /** ID of the access system for which you want to retrieve all encoders. */
+      acs_system_id?: string | undefined
+      /** IDs of the access systems for which you want to retrieve all encoders. */
+      acs_system_ids?: string[] | undefined
+      /** IDs of the encoders that you want to retrieve. */
+      acs_encoder_ids?: string[] | undefined
       /** Number of encoders to return. */
       limit?: number
       /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
@@ -60861,7 +60827,7 @@ export type Routes = {
       /** Timestamp to indicate the beginning generation time for the events that you want to list. You must include `since` or `between`. */
       since?: string | undefined
       /** Lower and upper timestamps to define an exclusive interval containing the events that you want to list. You must include `since` or `between`. */
-      between?: (string | Date)[] | undefined
+      between?: string[] | undefined
       /** ID of the device for which you want to list events. */
       device_id?: string | undefined
       /** IDs of the devices for which you want to list events. */
@@ -98188,7 +98154,7 @@ export type Routes = {
       /** Timestamp to indicate the beginning generation time for the events that you want to list. You must include `since` or `between`. */
       since?: string | undefined
       /** Lower and upper timestamps to define an exclusive interval containing the events that you want to list. You must include `since` or `between`. */
-      between?: (string | Date)[] | undefined
+      between?: string[] | undefined
       /** Type of the events that you want to list. */
       event_type?:
         | (
@@ -102527,7 +102493,7 @@ export type Routes = {
       /** Timestamp by which to limit returned reservations. Returns reservations created after this timestamp. */
       created_after?: Date | undefined
       /** Lower and upper timestamps to filter reservations whose time range overlaps with the given interval. */
-      between?: (string | Date)[] | undefined
+      between?: string[] | undefined
       /** String for which to search. Filters returned reservations to include all records that satisfy a partial match using `reservation_id`, `reservation_key`, `name`, `guest_name`, or space names. */
       search?: string | undefined
       /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
