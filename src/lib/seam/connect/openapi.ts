@@ -1659,6 +1659,11 @@ const openapi: OpenAPISpec = {
             description: 'Display name of the Access Grant.',
             type: 'string',
           },
+          display_status: {
+            description:
+              "Human-readable sentence answering whether the user can currently get in, for example `Awaiting encoding` on an access method or `Upcoming` here. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `starts_at`, `ends_at`, `errors`, and the access methods' own fields.",
+            type: 'string',
+          },
           ends_at: {
             description: 'Date and time at which the Access Grant ends.',
             format: 'date-time',
@@ -2244,6 +2249,7 @@ const openapi: OpenAPISpec = {
           'created_at',
           'starts_at',
           'ends_at',
+          'display_status',
           'warnings',
           'errors',
           'pending_mutations',

@@ -13185,6 +13185,8 @@ export type Routes = {
         starts_at: string
         /** Date and time at which the Access Grant ends. */
         ends_at: string | null
+        /** Human-readable sentence answering whether the user can currently get in, for example `Awaiting encoding` on an access method or `Upcoming` here. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `starts_at`, `ends_at`, `errors`, and the access methods' own fields. */
+        display_status: string
         /** Warnings associated with the [access grant](https://docs.seam.co/use-cases/granting-access). */
         warnings: (
           | {
@@ -13413,6 +13415,8 @@ export type Routes = {
         starts_at: string
         /** Date and time at which the Access Grant ends. */
         ends_at: string | null
+        /** Human-readable sentence answering whether the user can currently get in, for example `Awaiting encoding` on an access method or `Upcoming` here. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `starts_at`, `ends_at`, `errors`, and the access methods' own fields. */
+        display_status: string
         /** Warnings associated with the [access grant](https://docs.seam.co/use-cases/granting-access). */
         warnings: (
           | {
@@ -16749,6 +16753,8 @@ export type Routes = {
         starts_at: string
         /** Date and time at which the Access Grant ends. */
         ends_at: string | null
+        /** Human-readable sentence answering whether the user can currently get in, for example `Awaiting encoding` on an access method or `Upcoming` here. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `starts_at`, `ends_at`, `errors`, and the access methods' own fields. */
+        display_status: string
         /** Warnings associated with the [access grant](https://docs.seam.co/use-cases/granting-access). */
         warnings: (
           | {
@@ -16977,6 +16983,8 @@ export type Routes = {
         starts_at: string
         /** Date and time at which the Access Grant ends. */
         ends_at: string | null
+        /** Human-readable sentence answering whether the user can currently get in, for example `Awaiting encoding` on an access method or `Upcoming` here. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `starts_at`, `ends_at`, `errors`, and the access methods' own fields. */
+        display_status: string
         /** Warnings associated with the [access grant](https://docs.seam.co/use-cases/granting-access). */
         warnings: (
           | {
@@ -24286,6 +24294,8 @@ export type Routes = {
               starts_at: string
               /** Date and time at which the Access Grant ends. */
               ends_at: string | null
+              /** Human-readable sentence answering whether the user can currently get in, for example `Awaiting encoding` on an access method or `Upcoming` here. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `starts_at`, `ends_at`, `errors`, and the access methods' own fields. */
+              display_status: string
               /** Warnings associated with the [access grant](https://docs.seam.co/use-cases/granting-access). */
               warnings: (
                 | {
@@ -94932,6 +94942,8 @@ export type Routes = {
         starts_at: string
         /** Date and time at which the Access Grant ends. */
         ends_at: string | null
+        /** Human-readable sentence answering whether the user can currently get in, for example `Awaiting encoding` on an access method or `Upcoming` here. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `starts_at`, `ends_at`, `errors`, and the access methods' own fields. */
+        display_status: string
         /** Warnings associated with the [access grant](https://docs.seam.co/use-cases/granting-access). */
         warnings: (
           | {
@@ -102684,6 +102696,8 @@ export type Routes = {
         starts_at: string
         /** Date and time at which the Access Grant ends. */
         ends_at: string | null
+        /** Human-readable sentence answering whether the user can currently get in, for example `Awaiting encoding` on an access method or `Upcoming` here. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `starts_at`, `ends_at`, `errors`, and the access methods' own fields. */
+        display_status: string
         /** Warnings associated with the [access grant](https://docs.seam.co/use-cases/granting-access). */
         warnings: (
           | {
@@ -103241,6 +103255,8 @@ export type Routes = {
             starts_at: string
             /** Date and time at which the Access Grant ends. */
             ends_at: string | null
+            /** Human-readable sentence answering whether the user can currently get in, for example `Awaiting encoding` on an access method or `Upcoming` here. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `starts_at`, `ends_at`, `errors`, and the access methods' own fields. */
+            display_status: string
             /** Warnings associated with the [access grant](https://docs.seam.co/use-cases/granting-access). */
             warnings: (
               | {
@@ -145105,6 +145121,8 @@ export type Routes = {
               starts_at: string
               /** Date and time at which the Access Grant ends. */
               ends_at: string | null
+              /** Human-readable sentence answering whether the user can currently get in, for example `Awaiting encoding` on an access method or `Upcoming` here. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `starts_at`, `ends_at`, `errors`, and the access methods' own fields. */
+              display_status: string
               /** Warnings associated with the [access grant](https://docs.seam.co/use-cases/granting-access). */
               warnings: (
                 | {
