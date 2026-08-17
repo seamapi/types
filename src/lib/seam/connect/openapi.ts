@@ -29602,6 +29602,18 @@ const openapi: OpenAPISpec = {
                 nullable: true,
                 type: 'string',
               },
+              merged_user_identity_ids: {
+                description:
+                  'IDs that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity.',
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
+              },
+              merged_user_identity_keys: {
+                description:
+                  'Keys that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity.',
+                items: { type: 'string' },
+                type: 'array',
+              },
               phone_number: {
                 description:
                   'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
@@ -29696,6 +29708,8 @@ const openapi: OpenAPISpec = {
               'phone_number',
               'display_name',
               'full_name',
+              'merged_user_identity_ids',
+              'merged_user_identity_keys',
               'created_at',
               'workspace_id',
               'errors',
@@ -36228,6 +36242,18 @@ const openapi: OpenAPISpec = {
             nullable: true,
             type: 'string',
           },
+          merged_user_identity_ids: {
+            description:
+              'IDs that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity.',
+            items: { format: 'uuid', type: 'string' },
+            type: 'array',
+          },
+          merged_user_identity_keys: {
+            description:
+              'Keys that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity.',
+            items: { type: 'string' },
+            type: 'array',
+          },
           phone_number: {
             description:
               'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
@@ -36312,6 +36338,8 @@ const openapi: OpenAPISpec = {
           'phone_number',
           'display_name',
           'full_name',
+          'merged_user_identity_ids',
+          'merged_user_identity_keys',
           'created_at',
           'workspace_id',
           'errors',
@@ -36411,6 +36439,18 @@ const openapi: OpenAPISpec = {
             nullable: true,
             type: 'string',
           },
+          merged_user_identity_ids: {
+            description:
+              'IDs that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity.',
+            items: { format: 'uuid', type: 'string' },
+            type: 'array',
+          },
+          merged_user_identity_keys: {
+            description:
+              'Keys that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity.',
+            items: { type: 'string' },
+            type: 'array',
+          },
           phone_number: {
             description:
               'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
@@ -36502,6 +36542,8 @@ const openapi: OpenAPISpec = {
           'phone_number',
           'display_name',
           'full_name',
+          'merged_user_identity_ids',
+          'merged_user_identity_keys',
           'created_at',
           'workspace_id',
           'errors',
@@ -85730,6 +85772,92 @@ const openapi: OpenAPISpec = {
         'x-fern-sdk-return-value': 'acs_users',
         'x-response-key': 'acs_users',
         'x-title': 'List ACS Users Associated with a User Identity',
+      },
+    },
+    '/user_identities/merge': {
+      post: {
+        description:
+          'Merges one or more [user identities](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) into a primary user identity, for when the same person ended up with more than one user identity.\n\nThe primary user identity takes on any email address or phone number it was missing from the user identities merged into it, and the merged user identities are then deleted. Their IDs and keys keep working: looking one up returns the primary user identity, and they are listed on it as `merged_user_identity_ids` and `merged_user_identity_keys`.\n\nAccess grants, access system users, client sessions and other resources belonging to the merged user identities are moved to the primary user identity.\n\nIdentify the user identities either by ID or by key, but not both in the same request. Repeating a merge that has already been applied makes no further changes.',
+        operationId: 'userIdentitiesMergePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                oneOf: [
+                  {
+                    properties: {
+                      merged_user_identity_ids: {
+                        description:
+                          'IDs of the user identities to merge into the primary user identity. These user identities are deleted.',
+                        items: { format: 'uuid', type: 'string' },
+                        maxItems: 20,
+                        minItems: 1,
+                        type: 'array',
+                      },
+                      user_identity_id: {
+                        description: 'ID of the primary user identity to keep.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                    },
+                    required: ['user_identity_id', 'merged_user_identity_ids'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      merged_user_identity_keys: {
+                        description:
+                          'Keys of the user identities to merge into the primary user identity. These user identities are deleted.',
+                        items: { minLength: 1, type: 'string' },
+                        maxItems: 20,
+                        minItems: 1,
+                        type: 'array',
+                      },
+                      user_identity_key: {
+                        description:
+                          'Key of the primary user identity to keep.',
+                        minLength: 1,
+                        type: 'string',
+                      },
+                    },
+                    required: [
+                      'user_identity_key',
+                      'merged_user_identity_keys',
+                    ],
+                    type: 'object',
+                  },
+                ],
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/user_identities/merge',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'merge',
+        'x-response-key': null,
+        'x-title': 'Merge User Identities',
       },
     },
     '/user_identities/remove_acs_user': {

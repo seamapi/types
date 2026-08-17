@@ -129,6 +129,16 @@ export const user_identity = z.object({
     .min(1)
     .nullable()
     .describe('Full name of the user associated with the user identity.'),
+  merged_user_identity_ids: z
+    .array(z.string().uuid())
+    .describe(
+      'IDs that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity.',
+    ),
+  merged_user_identity_keys: z
+    .array(z.string())
+    .describe(
+      'Keys that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity.',
+    ),
   created_at: z
     .string()
     .datetime()
