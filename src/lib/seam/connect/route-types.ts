@@ -2256,6 +2256,16 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'code_constraints_violated'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -2787,6 +2797,16 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'access_code_inactive'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'code_constraints_violated'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -5434,6 +5454,16 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'code_constraints_violated'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -6070,6 +6100,16 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'code_constraints_violated'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -6596,6 +6636,16 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'code_constraints_violated'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -7095,6 +7145,16 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'access_code_inactive'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'code_constraints_violated'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -7631,6 +7691,16 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'access_code_inactive'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'code_constraints_violated'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -10180,6 +10250,16 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'code_constraints_violated'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -10591,6 +10671,16 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'access_code_inactive'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'code_constraints_violated'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -149677,6 +149767,16 @@ export type Routes = {
                 | {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
+                    /** Indicates that this is an access code error. */
+                    is_access_code_error: true
+                    /** Date and time at which Seam created the error. */
+                    created_at?: string | undefined
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'code_constraints_violated'
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
                     /** Indicates that the error is not a device error. */
                     is_device_error: false
                     /** Date and time at which Seam created the error. */
@@ -150074,6 +150174,16 @@ export type Routes = {
                     created_at?: string | undefined
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'access_code_inactive'
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Indicates that this is an access code error. */
+                    is_access_code_error: true
+                    /** Date and time at which Seam created the error. */
+                    created_at?: string | undefined
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'code_constraints_violated'
                   }
                 | {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
