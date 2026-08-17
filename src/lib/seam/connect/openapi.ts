@@ -67308,6 +67308,7 @@ const openapi: OpenAPISpec = {
                       'ICAL_CONNECTOR',
                       'VISIONLINE_SERIALIZE_BRIDGE_REQUESTS',
                       'SALTO_KS_ENTRANCES_ONLY_FOR_SPACES',
+                      'SALTO_KS_DEVICES_AND_ENTRANCES_FOR_SPACES',
                       'MANAGE_DEVICES_CONFIRMATION_MODAL',
                       'RECLAIM_ORPHANED_BACKUP_ACCESS_CODES',
                       'RECONCILE_ORPHANED_SMARTTHINGS_ACCESS_CODES',
@@ -67342,6 +67343,7 @@ const openapi: OpenAPISpec = {
                             'ICAL_CONNECTOR',
                             'VISIONLINE_SERIALIZE_BRIDGE_REQUESTS',
                             'SALTO_KS_ENTRANCES_ONLY_FOR_SPACES',
+                            'SALTO_KS_DEVICES_AND_ENTRANCES_FOR_SPACES',
                             'MANAGE_DEVICES_CONFIRMATION_MODAL',
                             'RECLAIM_ORPHANED_BACKUP_ACCESS_CODES',
                             'RECONCILE_ORPHANED_SMARTTHINGS_ACCESS_CODES',
@@ -72973,6 +72975,9 @@ const openapi: OpenAPISpec = {
                               type: 'boolean',
                             },
                             RESERVATION_LEGACY: { type: 'boolean' },
+                            SALTO_KS_DEVICES_AND_ENTRANCES_FOR_SPACES: {
+                              type: 'boolean',
+                            },
                             SALTO_KS_ENTRANCES_ONLY_FOR_SPACES: {
                               type: 'boolean',
                             },
@@ -73466,6 +73471,9 @@ const openapi: OpenAPISpec = {
                               type: 'boolean',
                             },
                             RESERVATION_LEGACY: { type: 'boolean' },
+                            SALTO_KS_DEVICES_AND_ENTRANCES_FOR_SPACES: {
+                              type: 'boolean',
+                            },
                             SALTO_KS_ENTRANCES_ONLY_FOR_SPACES: {
                               type: 'boolean',
                             },
