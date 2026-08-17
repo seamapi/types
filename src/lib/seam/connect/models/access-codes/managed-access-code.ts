@@ -235,13 +235,17 @@ const delay_in_setting_on_device = common_access_code_warning
   })
   .describe('Delay in setting code on device.')
 
-const delay_in_removing_from_device = common_access_code_warning
-  .extend({
-    warning_code: z
-      .literal('delay_in_removing_from_device')
-      .describe(warning_code_description),
-  })
-  .describe('Delay in removing code from device.')
+/** @deprecated Seam no longer sets this warning. */
+const delay_in_removing_from_device = common_access_code_warning.extend({
+  warning_code: z
+    .literal('delay_in_removing_from_device')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    deprecated: Seam no longer sets this warning. Use the \`failed_to_remove_from_device\` error instead.
+    ---
+    Delay in removing code from device.
+    `)
 
 const third_party_integration_detected = common_access_code_warning
   .extend({

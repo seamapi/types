@@ -1406,6 +1406,7 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
+                  deprecated: true,
                   description: 'Delay in removing code from device.',
                   properties: {
                     created_at: {
@@ -1428,6 +1429,8 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'warning_code'],
                   type: 'object',
+                  'x-deprecated':
+                    'Seam no longer sets this warning. Use the `failed_to_remove_from_device` error instead.',
                 },
                 {
                   description:
@@ -19458,6 +19461,7 @@ const openapi: OpenAPISpec = {
             'x-route-path': '/access_codes',
           },
           {
+            deprecated: true,
             description:
               'There was an unusually long delay in removing an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) from a device.',
             properties: {
@@ -19709,6 +19713,8 @@ const openapi: OpenAPISpec = {
               'access_code_warnings',
             ],
             type: 'object',
+            'x-deprecated':
+              'Seam no longer emits this event. Use `access_code.failed_to_remove_from_device` instead.',
             'x-route-path': '/access_codes',
           },
           {
@@ -31198,6 +31204,7 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
+                  deprecated: true,
                   description: 'Delay in removing code from device.',
                   properties: {
                     created_at: {
@@ -31220,6 +31227,8 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'warning_code'],
                   type: 'object',
+                  'x-deprecated':
+                    'Seam no longer sets this warning. Use the `failed_to_remove_from_device` error instead.',
                 },
                 {
                   description:
