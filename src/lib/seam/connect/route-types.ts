@@ -16281,6 +16281,10 @@ export type Routes = {
               display_name: string
               /** Full name of the user associated with the user identity. */
               full_name: string | null
+              /** IDs that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity. */
+              merged_user_identity_ids: string[]
+              /** Keys that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity. */
+              merged_user_identity_keys: string[]
               /** Date and time at which the user identity was created. */
               created_at: string
               /** ID of the workspace that contains the user identity. */
@@ -104306,6 +104310,10 @@ export type Routes = {
           display_name: string
           /** Full name of the user associated with the user identity. */
           full_name: string | null
+          /** IDs that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity. */
+          merged_user_identity_ids: string[]
+          /** Keys that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity. */
+          merged_user_identity_keys: string[]
           /** Date and time at which the user identity was created. */
           created_at: string
           /** ID of the workspace that contains the user identity. */
@@ -133039,6 +133047,10 @@ export type Routes = {
         display_name: string
         /** Full name of the user associated with the user identity. */
         full_name: string | null
+        /** IDs that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity. */
+        merged_user_identity_ids: string[]
+        /** Keys that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity. */
+        merged_user_identity_keys: string[]
         /** Date and time at which the user identity was created. */
         created_at: string
         /** ID of the workspace that contains the user identity. */
@@ -133273,6 +133285,10 @@ export type Routes = {
         display_name: string
         /** Full name of the user associated with the user identity. */
         full_name: string | null
+        /** IDs that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity. */
+        merged_user_identity_ids: string[]
+        /** Keys that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity. */
+        merged_user_identity_keys: string[]
         /** Date and time at which the user identity was created. */
         created_at: string
         /** ID of the workspace that contains the user identity. */
@@ -133364,6 +133380,10 @@ export type Routes = {
         display_name: string
         /** Full name of the user associated with the user identity. */
         full_name: string | null
+        /** IDs that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity. */
+        merged_user_identity_ids: string[]
+        /** Keys that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity. */
+        merged_user_identity_keys: string[]
         /** Date and time at which the user identity was created. */
         created_at: string
         /** ID of the workspace that contains the user identity. */
@@ -137973,6 +137993,28 @@ export type Routes = {
     }
     maxDuration: undefined
   }
+  '/user_identities/merge': {
+    route: '/user_identities/merge'
+    method: 'POST'
+    queryParams: {}
+    jsonBody:
+      | {
+          /** ID of the primary user identity to keep. */
+          user_identity_id: string
+          /** IDs of the user identities to merge into the primary user identity. These user identities are deleted. */
+          merged_user_identity_ids: string[]
+        }
+      | {
+          /** Key of the primary user identity to keep. */
+          user_identity_key: string
+          /** Keys of the user identities to merge into the primary user identity. These user identities are deleted. */
+          merged_user_identity_keys: string[]
+        }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+    maxDuration: undefined
+  }
   '/user_identities/remove_acs_user': {
     route: '/user_identities/remove_acs_user'
     method: 'DELETE' | 'POST'
@@ -138026,6 +138068,10 @@ export type Routes = {
         display_name: string
         /** Full name of the user associated with the user identity. */
         full_name: string | null
+        /** IDs that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity. */
+        merged_user_identity_ids: string[]
+        /** Keys that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity. */
+        merged_user_identity_keys: string[]
         /** Date and time at which the user identity was created. */
         created_at: string
         /** ID of the workspace that contains the user identity. */
@@ -138096,6 +138142,10 @@ export type Routes = {
         display_name: string
         /** Full name of the user associated with the user identity. */
         full_name: string | null
+        /** IDs that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity. */
+        merged_user_identity_ids: string[]
+        /** Keys that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity. */
+        merged_user_identity_keys: string[]
         /** Date and time at which the user identity was created. */
         created_at: string
         /** ID of the workspace that contains the user identity. */
@@ -138580,6 +138630,10 @@ export type Routes = {
               display_name: string
               /** Full name of the user associated with the user identity. */
               full_name: string | null
+              /** IDs that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity. */
+              merged_user_identity_ids: string[]
+              /** Keys that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity. */
+              merged_user_identity_keys: string[]
               /** Date and time at which the user identity was created. */
               created_at: string
               /** ID of the workspace that contains the user identity. */
