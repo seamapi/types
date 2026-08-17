@@ -312,17 +312,20 @@ export const access_code_deleted_event = access_code_event.extend({
 
 export type AccessCodeDeletedEvent = z.infer<typeof access_code_deleted_event>
 
+/** @deprecated Seam no longer emits this event. */
 export const access_code_delay_in_removing_from_device_event = access_code_event
   .extend({
     event_type: z.literal('access_code.delay_in_removing_from_device'),
   })
   .extend(access_code_event_issue_properties).describe(`
     ---
+    deprecated: Seam no longer emits this event. Use \`access_code.failed_to_remove_from_device\` instead.
     route_path: /access_codes
     ---
     There was an unusually long delay in removing an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) from a device.
   `)
 
+/** @deprecated Seam no longer emits this event. */
 export type AccessCodeDelayInRemovingFromDeviceEvent = z.infer<
   typeof access_code_delay_in_removing_from_device_event
 >
