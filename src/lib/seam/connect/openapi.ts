@@ -368,6 +368,38 @@ const openapi: OpenAPISpec = {
                   'x-resource-type': 'access_code',
                 },
                 {
+                  description:
+                    "The code cannot be set on the device because it violates the device's code constraints (for example, its length, digits, or a too-simple value). The code will not be retried until you change it. See the device's `code_constraints` and `supported_code_lengths`.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['code_constraints_violated'],
+                      type: 'string',
+                    },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                  'x-resource-type': 'access_code',
+                },
+                {
                   description: 'Indicates that the account is disconnected.',
                   properties: {
                     created_at: {
@@ -30458,6 +30490,38 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['access_code_inactive'],
+                      type: 'string',
+                    },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                  'x-resource-type': 'access_code',
+                },
+                {
+                  description:
+                    "The code cannot be set on the device because it violates the device's code constraints (for example, its length, digits, or a too-simple value). The code will not be retried until you change it. See the device's `code_constraints` and `supported_code_lengths`.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['code_constraints_violated'],
                       type: 'string',
                     },
                     is_access_code_error: {

@@ -135,6 +135,17 @@ const access_code_inactive_error = common_access_code_error.extend({
     Indicates that the access code is disabled or inactive on the device. The code exists but will not grant access until re-enabled.
     `)
 
+const code_constraints_violated = common_access_code_error.extend({
+  error_code: z
+    .literal('code_constraints_violated')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: access_code
+    ---
+    The code cannot be set on the device because it violates the device's code constraints (for example, its length, digits, or a too-simple value). The code will not be retried until you change it. See the device's \`code_constraints\` and \`supported_code_lengths\`.
+    `)
+
 const access_code_error = z
   .discriminatedUnion('error_code', [
     provider_issue,
@@ -144,6 +155,7 @@ const access_code_error = z
     no_space_for_access_code_on_device,
     conflicting_external_modification_error,
     access_code_inactive_error,
+    code_constraints_violated,
   ])
   .describe(
     'Errors associated with the [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).',
@@ -165,6 +177,7 @@ const _access_code_error_map = z.object({
     .optional()
     .nullable(),
   access_code_inactive: access_code_inactive_error.optional().nullable(),
+  code_constraints_violated: code_constraints_violated.optional().nullable(),
 })
 
 export type AccessCodeErrorMap = z.infer<typeof _access_code_error_map>
