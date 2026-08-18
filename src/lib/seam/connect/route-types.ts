@@ -133007,10 +133007,9 @@ export type Routes = {
   }
   '/unstable_partner/building_blocks/generate_magic_link': {
     route: '/unstable_partner/building_blocks/generate_magic_link'
-    method: 'POST' | 'GET'
+    method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       /** Type of building block for which you want to create a magic link. */
       building_block_type:
         'connect_accounts' | 'organize_spaces' | 'console' | 'manage_devices'
@@ -133052,6 +133051,7 @@ export type Routes = {
           }[]
         | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents a Customer Portal. Customer Portal is a hosted, customizable interface for managing device access. It enables you to embed secure, pre-authenticated access flows into your product—either by sharing a link with users or embedding a view in an iframe.
