@@ -975,7 +975,19 @@ export const device_metadata = z
           .tuple([z.number(), z.number()])
           .optional()
           .describe(
-            `Enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error.`,
+            `Legacy combined enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. Read as a fallback for the per-mode ranges below; no longer written.`,
+          ),
+        enforced_heating_setpoint_range_celsius: z
+          .tuple([z.number(), z.number()])
+          .optional()
+          .describe(
+            `Enforced heating setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error.`,
+          ),
+        enforced_cooling_setpoint_range_celsius: z
+          .tuple([z.number(), z.number()])
+          .optional()
+          .describe(
+            `Enforced cooling setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error.`,
           ),
       })
       .partial()
