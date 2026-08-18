@@ -36858,6 +36858,7 @@ const openapi: OpenAPISpec = {
                   common_code_key: {
                     description:
                       'Key to identify access codes that should have the same code. Any two access codes with the same `common_code_key` are guaranteed to have the same `code`. See also [Creating and Updating Multiple Linked Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).',
+                    minLength: 1,
                     type: 'string',
                   },
                   device_id: {
@@ -38117,6 +38118,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Customer key for which you want to list access codes.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -38166,6 +38168,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Key of the access grant for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -38175,6 +38178,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Your user ID for the user by which to filter access codes.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -38275,6 +38279,7 @@ const openapi: OpenAPISpec = {
                   access_grant_key: {
                     description:
                       'Key of the access grant for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   access_method_id: {
@@ -38286,6 +38291,7 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'Customer key for which you want to list access codes.',
+                    minLength: 1,
                     type: 'string',
                   },
                   device_id: {
@@ -38316,6 +38322,7 @@ const openapi: OpenAPISpec = {
                   user_identifier_key: {
                     description:
                       'Your user ID for the user by which to filter access codes.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -39018,6 +39025,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Your user ID for the user by which to filter unmanaged access codes.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -39135,6 +39143,7 @@ const openapi: OpenAPISpec = {
                   user_identifier_key: {
                     description:
                       'Your user ID for the user by which to filter unmanaged access codes.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -39688,6 +39697,7 @@ const openapi: OpenAPISpec = {
                   common_code_key: {
                     description:
                       'Key that links the group of access codes, assigned on creation by `/access_codes/create_multiple`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   ends_at: {
@@ -39754,6 +39764,7 @@ const openapi: OpenAPISpec = {
                   common_code_key: {
                     description:
                       'Key that links the group of access codes, assigned on creation by `/access_codes/create_multiple`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   ends_at: {
@@ -39980,6 +39991,7 @@ const openapi: OpenAPISpec = {
                       },
                       reservation_key: {
                         description: 'Reservation key for the access grant.',
+                        minLength: 1,
                         type: 'string',
                       },
                       space_ids: {
@@ -40199,6 +40211,7 @@ const openapi: OpenAPISpec = {
                     properties: {
                       access_grant_key: {
                         description: 'Unique key of Access Grant to get.',
+                        minLength: 1,
                         type: 'string',
                       },
                     },
@@ -40268,7 +40281,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Keys of the access grants that you want to get along with their related resources.',
-              items: { type: 'string' },
+              items: { minLength: 1, type: 'string' },
               type: 'array',
             },
           },
@@ -40417,7 +40430,7 @@ const openapi: OpenAPISpec = {
                   access_grant_keys: {
                     description:
                       'Keys of the access grants that you want to get along with their related resources.',
-                    items: { type: 'string' },
+                    items: { minLength: 1, type: 'string' },
                     type: 'array',
                   },
                   exclude: {
@@ -40565,6 +40578,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Customer key for which you want to list access grants.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -40665,6 +40679,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Filter Access Grants by access_grant_key. Use null to filter for Access Grants without an access_grant_key.',
+              minLength: 1,
               nullable: true,
               type: 'string',
             },
@@ -40674,6 +40689,7 @@ const openapi: OpenAPISpec = {
             name: 'reservation_key',
             schema: {
               description: 'Filter Access Grants by reservation_key.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -40739,6 +40755,7 @@ const openapi: OpenAPISpec = {
                   access_grant_key: {
                     description:
                       'Filter Access Grants by access_grant_key. Use null to filter for Access Grants without an access_grant_key.',
+                    minLength: 1,
                     nullable: true,
                     type: 'string',
                   },
@@ -40757,6 +40774,7 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'Customer key for which you want to list access grants.',
+                    minLength: 1,
                     type: 'string',
                   },
                   device_id: {
@@ -40786,6 +40804,7 @@ const openapi: OpenAPISpec = {
                   },
                   reservation_key: {
                     description: 'Filter Access Grants by reservation_key.',
+                    minLength: 1,
                     type: 'string',
                   },
                   space_id: {
@@ -41088,6 +41107,7 @@ const openapi: OpenAPISpec = {
             name: 'reservation_key',
             schema: {
               description: 'Filter unmanaged Access Grants by reservation_key.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -41190,6 +41210,7 @@ const openapi: OpenAPISpec = {
                   reservation_key: {
                     description:
                       'Filter unmanaged Access Grants by reservation_key.',
+                    minLength: 1,
                     type: 'string',
                   },
                   user_identity_id: {
@@ -41264,6 +41285,7 @@ const openapi: OpenAPISpec = {
                   access_grant_key: {
                     description:
                       'Unique key for the access grant. If not provided, the existing key will be preserved.',
+                    minLength: 1,
                     type: 'string',
                   },
                   is_managed: {
@@ -41325,6 +41347,7 @@ const openapi: OpenAPISpec = {
                   access_grant_key: {
                     description:
                       'Unique key for the access grant. If not provided, the existing key will be preserved.',
+                    minLength: 1,
                     type: 'string',
                   },
                   is_managed: {
@@ -41652,6 +41675,7 @@ const openapi: OpenAPISpec = {
                       reservation_key: {
                         description:
                           'Reservation key of the access grant whose access methods should be deleted.',
+                        minLength: 1,
                         type: 'string',
                       },
                     },
@@ -46583,6 +46607,7 @@ const openapi: OpenAPISpec = {
             name: 'customer_key',
             schema: {
               description: 'Customer key for which you want to list entrances.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -46771,6 +46796,7 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'Customer key for which you want to list entrances.',
+                    minLength: 1,
                     type: 'string',
                   },
                   limit: {
@@ -47170,6 +47196,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Customer key for which you want to list access systems.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -47251,6 +47278,7 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'Customer key for which you want to list access systems.',
+                    minLength: 1,
                     type: 'string',
                   },
                   search: {
@@ -50149,6 +50177,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'User identifier key associated with the client session that you want to get.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -50206,6 +50235,7 @@ const openapi: OpenAPISpec = {
                   user_identifier_key: {
                     description:
                       'User identifier key associated with the client session that you want to get.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -50372,6 +50402,7 @@ const openapi: OpenAPISpec = {
                   user_identifier_key: {
                     description:
                       'Your user ID for the user that you want to associate with the client session.',
+                    minLength: 1,
                     type: 'string',
                   },
                   user_identity_id: {
@@ -50458,6 +50489,7 @@ const openapi: OpenAPISpec = {
                   user_identifier_key: {
                     description:
                       'Your user ID for the user that you want to associate with the client session.',
+                    minLength: 1,
                     type: 'string',
                   },
                   user_identity_id: {
@@ -50537,6 +50569,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Your user ID for the user by which you want to filter client sessions.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -50625,6 +50658,7 @@ const openapi: OpenAPISpec = {
                   user_identifier_key: {
                     description:
                       'Your user ID for the user by which you want to filter client sessions.',
+                    minLength: 1,
                     type: 'string',
                   },
                   user_identity_id: {
@@ -51175,6 +51209,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Customer key for which you want to list connect webviews.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -51184,6 +51219,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Your user ID for the user by which you want to filter Connect Webviews.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -51290,6 +51326,7 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'Customer key for which you want to list connect webviews.',
+                    minLength: 1,
                     type: 'string',
                   },
                   limit: {
@@ -51314,6 +51351,7 @@ const openapi: OpenAPISpec = {
                   user_identifier_key: {
                     description:
                       'Your user ID for the user by which you want to filter Connect Webviews.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -51609,6 +51647,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Your user ID for the user by which you want to filter connected accounts.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -51630,6 +51669,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Customer key by which you want to filter connected accounts.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -51734,6 +51774,7 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'Customer key by which you want to filter connected accounts.',
+                    minLength: 1,
                     type: 'string',
                   },
                   limit: {
@@ -51765,6 +51806,7 @@ const openapi: OpenAPISpec = {
                   user_identifier_key: {
                     description:
                       'Your user ID for the user by which you want to filter connected accounts.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -54830,11 +54872,13 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'The customer_key identifying the customer who owns the reservation.',
+                    minLength: 1,
                     type: 'string',
                   },
                   reservation_key: {
                     description:
                       'The key of the reservation to create a deep link for.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -55136,6 +55180,7 @@ const openapi: OpenAPISpec = {
             name: 'customer_key',
             schema: {
               description: 'Customer key for which you want to list devices.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -55428,6 +55473,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Your own internal user ID for the user for which you want to list devices.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -55635,6 +55681,7 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'Customer key for which you want to list devices.',
+                    minLength: 1,
                     type: 'string',
                   },
                   device_ids: {
@@ -55952,6 +55999,7 @@ const openapi: OpenAPISpec = {
                   user_identifier_key: {
                     description:
                       'Your own internal user ID for the user for which you want to list devices.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -57968,6 +58016,7 @@ const openapi: OpenAPISpec = {
             name: 'customer_key',
             schema: {
               description: 'Customer key for which you want to list devices.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -58416,6 +58465,7 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'Customer key for which you want to list devices.',
+                    minLength: 1,
                     type: 'string',
                   },
                   device_ids: {
@@ -59235,6 +59285,7 @@ const openapi: OpenAPISpec = {
             name: 'customer_key',
             schema: {
               description: 'Customer key for which you want to list events.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -59883,6 +59934,7 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'Customer key for which you want to list events.',
+                    minLength: 1,
                     type: 'string',
                   },
                   device_id: {
@@ -60750,6 +60802,7 @@ const openapi: OpenAPISpec = {
             name: 'customer_key',
             schema: {
               description: 'Customer key for which you want to list devices.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -60968,6 +61021,7 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'Customer key for which you want to list devices.',
+                    minLength: 1,
                     type: 'string',
                   },
                   device_type: {
@@ -61402,6 +61456,7 @@ const openapi: OpenAPISpec = {
             name: 'customer_key',
             schema: {
               description: 'Customer key for which you want to list devices.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -61525,6 +61580,7 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'Customer key for which you want to list devices.',
+                    minLength: 1,
                     type: 'string',
                   },
                   device_type: {
@@ -62892,6 +62948,7 @@ const openapi: OpenAPISpec = {
                   bridge_client_machine_identifier_key: {
                     description:
                       'Identifier key of the client machine for the Seam Bridge client that you want to create.',
+                    minLength: 1,
                     type: 'string',
                   },
                   bridge_client_name: {
@@ -66044,6 +66101,7 @@ const openapi: OpenAPISpec = {
                   site_key: {
                     description:
                       'Unique key for the site within the workspace.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -66317,6 +66375,7 @@ const openapi: OpenAPISpec = {
                   site_key: {
                     description:
                       'New unique key for the site within the workspace.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -66379,6 +66438,7 @@ const openapi: OpenAPISpec = {
                   site_key: {
                     description:
                       'New unique key for the site within the workspace.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -68160,6 +68220,7 @@ const openapi: OpenAPISpec = {
             name: 'customer_key',
             schema: {
               description: 'Key of the customer to get automation config for.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -68455,6 +68516,7 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'Key of the customer to get automation config for.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -68997,6 +69059,7 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'Key of the customer to update automation config for.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -69283,6 +69346,7 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'Key of the customer to update automation config for.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -69915,7 +69979,7 @@ const openapi: OpenAPISpec = {
                     type: 'string',
                   },
                   customer_id: { type: 'string' },
-                  customer_key: { type: 'string' },
+                  customer_key: { minLength: 1, type: 'string' },
                   unique_provider_resource_key: { type: 'string' },
                 },
                 required: ['connector_id'],
@@ -70541,6 +70605,7 @@ const openapi: OpenAPISpec = {
                   },
                   customer_key: {
                     description: 'Key of the customer to sync',
+                    minLength: 1,
                     type: 'string',
                   },
                   unique_provider_resource_key: {
@@ -72121,6 +72186,7 @@ const openapi: OpenAPISpec = {
                 properties: {
                   customer_key: {
                     description: 'The customer key to open a portal for.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -72176,6 +72242,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Optional filter to list encoders for a specific space.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -72227,6 +72294,7 @@ const openapi: OpenAPISpec = {
                   space_key: {
                     description:
                       'Optional filter to list encoders for a specific space.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -74810,6 +74878,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'The customer_key identifying the customer. Required when not using client_session_with_customer auth.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -74827,6 +74896,7 @@ const openapi: OpenAPISpec = {
             name: 'reservation_key',
             schema: {
               description: 'Key of the reservation to retrieve.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -75035,6 +75105,7 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'The customer_key identifying the customer. Required when not using client_session_with_customer auth.',
+                    minLength: 1,
                     type: 'string',
                   },
                   reservation_id: {
@@ -75044,6 +75115,7 @@ const openapi: OpenAPISpec = {
                   },
                   reservation_key: {
                     description: 'Key of the reservation to retrieve.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -75257,6 +75329,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'The customer_key identifying the customer. Required when not using client_session_with_customer auth.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -75265,6 +75338,7 @@ const openapi: OpenAPISpec = {
             name: 'space_key',
             schema: {
               description: 'Filter reservations by space key.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -75630,6 +75704,7 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'The customer_key identifying the customer. Required when not using client_session_with_customer auth.',
+                    minLength: 1,
                     type: 'string',
                   },
                   limit: {
@@ -75659,6 +75734,7 @@ const openapi: OpenAPISpec = {
                   },
                   space_key: {
                     description: 'Filter reservations by space key.',
+                    minLength: 1,
                     type: 'string',
                   },
                   user_identity_id: {
@@ -75919,6 +75995,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'The customer_key identifying the customer. Required when not using client_session_with_customer auth.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -75928,6 +76005,7 @@ const openapi: OpenAPISpec = {
             required: true,
             schema: {
               description: 'The reservation_key to filter access grants by.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -75980,11 +76058,13 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'The customer_key identifying the customer. Required when not using client_session_with_customer auth.',
+                    minLength: 1,
                     type: 'string',
                   },
                   reservation_key: {
                     description:
                       'The reservation_key to filter access grants by.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -76797,6 +76877,7 @@ const openapi: OpenAPISpec = {
                   parent_space_key: {
                     description:
                       'Space key of the parent space for this space.',
+                    minLength: 1,
                     type: 'string',
                   },
                   parent_space_name: {
@@ -76806,6 +76887,7 @@ const openapi: OpenAPISpec = {
                   space_key: {
                     description:
                       'Unique key for the space within the workspace.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -76881,6 +76963,7 @@ const openapi: OpenAPISpec = {
             name: 'space_key',
             schema: {
               description: 'Filter spaces by space_key.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -76901,6 +76984,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Filter spaces to only include those whose parent space has the specified `parent_space_key`.',
+              minLength: 1,
               type: 'string',
               'x-undocumented': 'Only used internally.',
             },
@@ -76969,6 +77053,7 @@ const openapi: OpenAPISpec = {
                   parent_space_key: {
                     description:
                       'Filter spaces to only include those whose parent space has the specified `parent_space_key`.',
+                    minLength: 1,
                     type: 'string',
                     'x-undocumented': 'Only used internally.',
                   },
@@ -76980,6 +77065,7 @@ const openapi: OpenAPISpec = {
                   },
                   space_key: {
                     description: 'Filter spaces by space_key.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -77049,6 +77135,7 @@ const openapi: OpenAPISpec = {
             required: true,
             schema: {
               description: 'Filter reservations by space key.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -77188,6 +77275,7 @@ const openapi: OpenAPISpec = {
                   },
                   space_key: {
                     description: 'Filter reservations by space key.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -77395,6 +77483,7 @@ const openapi: OpenAPISpec = {
             required: true,
             schema: {
               description: 'Key of staff member to get.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -77492,6 +77581,7 @@ const openapi: OpenAPISpec = {
                 properties: {
                   staff_member_key: {
                     description: 'Key of staff member to get.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -77596,6 +77686,7 @@ const openapi: OpenAPISpec = {
             name: 'space_key',
             schema: {
               description: 'Filter staff members by space key.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -77752,6 +77843,7 @@ const openapi: OpenAPISpec = {
                   },
                   space_key: {
                     description: 'Filter staff members by space key.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -78488,13 +78580,18 @@ const openapi: OpenAPISpec = {
             name: 'customer_key',
             schema: {
               description: 'Customer key for which to auto-map spaces.',
+              minLength: 1,
               type: 'string',
             },
           },
           {
             in: 'query',
             name: 'collection_key',
-            schema: { description: 'Collection key.', type: 'string' },
+            schema: {
+              description: 'Collection key.',
+              minLength: 1,
+              type: 'string',
+            },
           },
           {
             in: 'query',
@@ -78625,6 +78722,7 @@ const openapi: OpenAPISpec = {
                 properties: {
                   collection_key: {
                     description: 'Collection key.',
+                    minLength: 1,
                     type: 'string',
                   },
                   connected_account_id: {
@@ -78635,6 +78733,7 @@ const openapi: OpenAPISpec = {
                   },
                   customer_key: {
                     description: 'Customer key for which to auto-map spaces.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -79218,6 +79317,7 @@ const openapi: OpenAPISpec = {
                   space_key: {
                     description:
                       'Unique key for the space within the workspace.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -79424,6 +79524,7 @@ const openapi: OpenAPISpec = {
                       space_key: {
                         description:
                           'Unique key of the space that you want to get.',
+                        minLength: 1,
                         type: 'string',
                       },
                     },
@@ -79492,7 +79593,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Keys of the spaces that you want to get along with their related resources.',
-              items: { type: 'string' },
+              items: { minLength: 1, type: 'string' },
               type: 'array',
             },
           },
@@ -79654,7 +79755,7 @@ const openapi: OpenAPISpec = {
                   space_keys: {
                     description:
                       'Keys of the spaces that you want to get along with their related resources.',
-                    items: { type: 'string' },
+                    items: { minLength: 1, type: 'string' },
                     type: 'array',
                   },
                 },
@@ -79750,6 +79851,7 @@ const openapi: OpenAPISpec = {
             name: 'customer_key',
             schema: {
               description: 'Customer key for which you want to list spaces.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -79780,6 +79882,7 @@ const openapi: OpenAPISpec = {
             name: 'space_key',
             schema: {
               description: 'Filter spaces by space_key.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -79800,6 +79903,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Filter spaces to only include those whose parent space has the specified `parent_space_key`.',
+              minLength: 1,
               type: 'string',
               'x-undocumented': 'Only used internally.',
             },
@@ -79883,6 +79987,7 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'Customer key for which you want to list spaces.',
+                    minLength: 1,
                     type: 'string',
                   },
                   limit: {
@@ -79908,6 +80013,7 @@ const openapi: OpenAPISpec = {
                   parent_space_key: {
                     description:
                       'Filter spaces to only include those whose parent space has the specified `parent_space_key`.',
+                    minLength: 1,
                     type: 'string',
                     'x-undocumented': 'Only used internally.',
                   },
@@ -79919,6 +80025,7 @@ const openapi: OpenAPISpec = {
                   },
                   space_key: {
                     description: 'Filter spaces by space_key.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -80377,6 +80484,7 @@ const openapi: OpenAPISpec = {
                   parent_space_key: {
                     description:
                       'Reassign this space to the parent space (site) with this `parent_space_key`.',
+                    minLength: 1,
                     type: 'string',
                     'x-undocumented': 'Only used internally.',
                   },
@@ -80388,6 +80496,7 @@ const openapi: OpenAPISpec = {
                   space_key: {
                     description:
                       'Unique key of the space that you want to update.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -80492,6 +80601,7 @@ const openapi: OpenAPISpec = {
                   parent_space_key: {
                     description:
                       'Reassign this space to the parent space (site) with this `parent_space_key`.',
+                    minLength: 1,
                     type: 'string',
                     'x-undocumented': 'Only used internally.',
                   },
@@ -80503,6 +80613,7 @@ const openapi: OpenAPISpec = {
                   space_key: {
                     description:
                       'Unique key of the space that you want to update.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -80558,6 +80669,7 @@ const openapi: OpenAPISpec = {
                   climate_preset_key: {
                     description:
                       'Climate preset key of the climate preset that you want to activate.',
+                    minLength: 1,
                     type: 'string',
                   },
                   device_id: {
@@ -81205,6 +81317,7 @@ const openapi: OpenAPISpec = {
                   climate_preset_key: {
                     description:
                       'Climate preset key of the climate preset that you want to delete.',
+                    minLength: 1,
                     type: 'string',
                   },
                   device_id: {
@@ -81261,6 +81374,7 @@ const openapi: OpenAPISpec = {
                   climate_preset_key: {
                     description:
                       'Climate preset key of the climate preset that you want to delete.',
+                    minLength: 1,
                     type: 'string',
                   },
                   device_id: {
@@ -81607,6 +81721,7 @@ const openapi: OpenAPISpec = {
             name: 'customer_key',
             schema: {
               description: 'Customer key for which you want to list devices.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -81751,6 +81866,7 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'Customer key for which you want to list devices.',
+                    minLength: 1,
                     type: 'string',
                   },
                   device_type: {
@@ -81922,6 +82038,7 @@ const openapi: OpenAPISpec = {
                   climate_preset_key: {
                     description:
                       'Key of the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the new thermostat schedule.',
+                    minLength: 1,
                     type: 'string',
                   },
                   device_id: {
@@ -82241,6 +82358,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'User identifier key by which to filter the list of returned thermostat schedules.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -82304,6 +82422,7 @@ const openapi: OpenAPISpec = {
                   user_identifier_key: {
                     description:
                       'User identifier key by which to filter the list of returned thermostat schedules.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -82368,6 +82487,7 @@ const openapi: OpenAPISpec = {
                   climate_preset_key: {
                     description:
                       'Key of the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule.',
+                    minLength: 1,
                     type: 'string',
                   },
                   ends_at: {
@@ -82451,6 +82571,7 @@ const openapi: OpenAPISpec = {
                   climate_preset_key: {
                     description:
                       'Key of the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule.',
+                    minLength: 1,
                     type: 'string',
                   },
                   ends_at: {
@@ -82536,6 +82657,7 @@ const openapi: OpenAPISpec = {
                   climate_preset_key: {
                     description:
                       'Climate preset key of the climate preset that you want to set as the fallback climate preset.',
+                    minLength: 1,
                     type: 'string',
                   },
                   device_id: {
@@ -84208,6 +84330,7 @@ const openapi: OpenAPISpec = {
                   user_identity_key: {
                     description:
                       'Key of the user identity to which you want to add an access system user.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -84269,6 +84392,7 @@ const openapi: OpenAPISpec = {
                   user_identity_key: {
                     description:
                       'Key of the user identity to which you want to add an access system user.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -85030,7 +85154,9 @@ const openapi: OpenAPISpec = {
                     type: 'object',
                   },
                   {
-                    properties: { user_identity_key: { type: 'string' } },
+                    properties: {
+                      user_identity_key: { minLength: 1, type: 'string' },
+                    },
                     required: ['user_identity_key'],
                     type: 'object',
                   },
@@ -86473,6 +86599,7 @@ const openapi: OpenAPISpec = {
                   user_identity_key: {
                     description:
                       'Unique key for the user identity. If not provided, the existing key will be preserved.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -86535,6 +86662,7 @@ const openapi: OpenAPISpec = {
                   user_identity_key: {
                     description:
                       'Unique key for the user identity. If not provided, the existing key will be preserved.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -87493,6 +87621,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Customer key for which you want to list customization profiles.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -87548,6 +87677,7 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description:
                       'Customer key for which you want to list customization profiles.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
