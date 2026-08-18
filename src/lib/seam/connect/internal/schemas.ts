@@ -73,6 +73,7 @@ export {
   provider_capability,
   reservation_resource,
   resident_resource,
+  resource_key,
   room_resource,
   space,
   space_customer_data,
