@@ -48415,10 +48415,10 @@ export type Routes = {
       customer_key?: string | undefined
       /** Your user ID for the user by which you want to filter Connect Webviews. */
       user_identifier_key?: string | undefined
-      /** Custom metadata pairs by which you want to [filter Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). Returns Connect Webviews with `custom_metadata` that contains all of the provided key:value pairs. Key names cannot contain a period (.). Specify an empty string to match a key that is unset or set to an empty string. */
+      /** Custom metadata pairs by which you want to [filter Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). Returns Connect Webviews with `custom_metadata` that contains all of the provided key:value pairs. Key names cannot contain a period (.). Specify `null` to match a key that is unset. A key given an empty string is omitted from the filter. */
       custom_metadata_has?:
         | {
-            [x: string]: string | boolean
+            [x: string]: string | boolean | null
           }
         | undefined
       /** String for which to search. Filters returned Connect Webviews to include all records that satisfy a partial match using `connect_webview_id`, `accepted_providers`, `custom_metadata`, or `customer_key`. */
@@ -48747,10 +48747,10 @@ export type Routes = {
     commonParams: {
       /** Your user ID for the user by which you want to filter connected accounts. */
       user_identifier_key?: string | undefined
-      /** Custom metadata pairs by which you want to filter connected accounts. Returns connected accounts with `custom_metadata` that contains all of the provided key:value pairs. Key names cannot contain a period (.). Specify an empty string to match a key that is unset or set to an empty string. */
+      /** Custom metadata pairs by which you want to filter connected accounts. Returns connected accounts with `custom_metadata` that contains all of the provided key:value pairs. Key names cannot contain a period (.). Specify `null` to match a key that is unset. A key given an empty string is omitted from the filter. */
       custom_metadata_has?:
         | {
-            [x: string]: string | boolean
+            [x: string]: string | boolean | null
           }
         | undefined
       /** Customer key by which you want to filter connected accounts. */
@@ -52363,10 +52363,10 @@ export type Routes = {
       created_before?: Date | undefined
       /** Your own internal user ID for the user for which you want to list devices. */
       user_identifier_key?: string | undefined
-      /** Set of key:value [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices. Key names cannot contain a period (.). Specify an empty string to match a key that is unset or set to an empty string. */
+      /** Set of key:value [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices. Key names cannot contain a period (.). Specify `null` to match a key that is unset. A key given an empty string is omitted from the filter. */
       custom_metadata_has?:
         | {
-            [x: string]: string | boolean
+            [x: string]: string | boolean | null
           }
         | undefined
       /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
