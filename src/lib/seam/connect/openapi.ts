@@ -85198,6 +85198,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'String for which to search. Filters returned user identities to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address` or `user_identity_id`.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -85319,6 +85320,7 @@ const openapi: OpenAPISpec = {
                   search: {
                     description:
                       'String for which to search. Filters returned user identities to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address` or `user_identity_id`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   user_identity_ids: {
