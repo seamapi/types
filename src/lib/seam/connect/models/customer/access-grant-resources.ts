@@ -101,7 +101,7 @@ export const reservation_resource = base_access_grant_resource
     custom_metadata: custom_metadata_input
       .optional()
       .describe(
-        'Set key:value pairs for filtering reservations by custom criteria.',
+        'Set key:value pairs for filtering reservations by custom criteria. Set a key to `null` or to an empty string to remove that key from the custom metadata.',
       ),
   })
   .merge(user_identity_reference)
