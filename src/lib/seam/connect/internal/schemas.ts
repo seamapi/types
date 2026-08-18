@@ -37,6 +37,7 @@ export {
   common_event,
   connect_webview_device_selection_mode,
   connected_account,
+  custom_metadata_has,
   custom_metadata_input,
   customer,
   customer_data,
