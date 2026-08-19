@@ -42189,10 +42189,10 @@ export type Routes = {
     commonParams: {
       /** ID of the user identity for which you want to retrieve all access system users. */
       user_identity_id?: string | undefined
-      /** Phone number of the user identity for which you want to retrieve all access system users, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`). */
-      user_identity_phone_number?: string | undefined
-      /** Email address of the user identity for which you want to retrieve all access system users. */
-      user_identity_email_address?: string | undefined
+      /** Phone number of the user identity for which you want to retrieve all access system users, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`). Specify `null` to retrieve access system users whose user identity has no phone number. */
+      user_identity_phone_number?: (string | null) | undefined
+      /** Email address of the user identity for which you want to retrieve all access system users. Specify `null` to retrieve access system users whose user identity has no email address. */
+      user_identity_email_address?: (string | null) | undefined
       /** ID of the `acs_system` for which you want to retrieve all access system users. */
       acs_system_id?: string | undefined
       /** String for which to search. Filters returned access system users to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address`, `acs_user_id`, `user_identity_id`, `user_identity_full_name` or `user_identity_phone_number`. */
@@ -43187,10 +43187,10 @@ export type Routes = {
     commonParams: {
       /** ID of the user identity for which you want to retrieve all unmanaged access system users. */
       user_identity_id?: string | undefined
-      /** Phone number of the user identity for which you want to retrieve all unmanaged access system users. */
-      user_identity_phone_number?: string | undefined
-      /** Email address of the user identity for which you want to retrieve all unmanaged access system users. */
-      user_identity_email_address?: string | undefined
+      /** Phone number of the user identity for which you want to retrieve all unmanaged access system users. Specify `null` to retrieve unmanaged access system users whose user identity has no phone number. */
+      user_identity_phone_number?: (string | null) | undefined
+      /** Email address of the user identity for which you want to retrieve all unmanaged access system users. Specify `null` to retrieve unmanaged access system users whose user identity has no email address. */
+      user_identity_email_address?: (string | null) | undefined
       /** ID of the access system for which you want to retrieve all unmanaged access system users. */
       acs_system_id?: string | undefined
       /** Number of unmanaged access system users to return. */
@@ -48079,12 +48079,12 @@ export type Routes = {
       client_session_id?: string | undefined
       /** Your user ID for the user by which you want to filter client sessions. */
       user_identifier_key?: string | undefined
-      /** ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) for which you want to retrieve client sessions. */
-      connect_webview_id?: string | undefined
+      /** ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) for which you want to retrieve client sessions. Specify `null` to retrieve client sessions that are not associated with a Connect Webview. */
+      connect_webview_id?: (string | null) | undefined
       /** Indicates whether to retrieve only client sessions without associated user identifier keys. */
       without_user_identifier_key?: boolean | undefined
-      /** ID of the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to retrieve client sessions. */
-      user_identity_id?: string | undefined
+      /** ID of the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to retrieve client sessions. Specify `null` to retrieve client sessions that are not associated with a user identity. */
+      user_identity_id?: (string | null) | undefined
     }
     formData: {}
     jsonResponse: {
@@ -94864,8 +94864,8 @@ export type Routes = {
         | undefined
       /** Filter timeline entries by context type. 'request' for API requests, 'job' for background jobs. */
       context_type?: ('request' | 'job') | undefined
-      /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
-      page_cursor?: string | undefined
+      /** Identifies the specific page of results to return. Specify `null` or omit this parameter to return the first page. */
+      page_cursor?: (string | null) | undefined
     }
     formData: {}
     jsonResponse: {
