@@ -37518,6 +37518,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Code of the access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -37577,6 +37578,7 @@ const openapi: OpenAPISpec = {
                   code: {
                     description:
                       'Code of the access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   device_id: {
@@ -38902,6 +38904,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Code of the unmanaged access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -38963,6 +38966,7 @@ const openapi: OpenAPISpec = {
                   code: {
                     description:
                       'Code of the unmanaged access code that you want to get. You must specify either `access_code_id` or both `device_id` and `code`.',
+                    minLength: 1,
                     type: 'string',
                   },
                   device_id: {
@@ -55098,6 +55102,7 @@ const openapi: OpenAPISpec = {
             name: 'name',
             schema: {
               description: 'Name of the device that you want to get.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -55155,6 +55160,7 @@ const openapi: OpenAPISpec = {
                   },
                   name: {
                     description: 'Name of the device that you want to get.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -57938,6 +57944,7 @@ const openapi: OpenAPISpec = {
             name: 'name',
             schema: {
               description: 'Name of the unmanaged device that you want to get.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -57995,6 +58002,7 @@ const openapi: OpenAPISpec = {
                   name: {
                     description:
                       'Name of the unmanaged device that you want to get.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -59186,6 +59194,7 @@ const openapi: OpenAPISpec = {
             name: 'event_type',
             schema: {
               description: 'Type of the event that you want to get.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -59261,6 +59270,7 @@ const openapi: OpenAPISpec = {
                   },
                   event_type: {
                     description: 'Type of the event that you want to get.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -60722,6 +60732,7 @@ const openapi: OpenAPISpec = {
             name: 'name',
             schema: {
               description: 'Name of the lock that you want to get.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -60779,6 +60790,7 @@ const openapi: OpenAPISpec = {
                   },
                   name: {
                     description: 'Name of the lock that you want to get.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -81471,6 +81483,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Name of the thermostat device that you want to retrieve.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -81529,6 +81542,7 @@ const openapi: OpenAPISpec = {
                   name: {
                     description:
                       'Name of the thermostat device that you want to retrieve.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -86803,6 +86817,7 @@ const openapi: OpenAPISpec = {
             required: true,
             schema: {
               description: 'ID of the webhook that you want to delete.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -86846,6 +86861,7 @@ const openapi: OpenAPISpec = {
                 properties: {
                   webhook_id: {
                     description: 'ID of the webhook that you want to delete.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
@@ -86896,6 +86912,7 @@ const openapi: OpenAPISpec = {
             required: true,
             schema: {
               description: 'ID of the webhook that you want to get.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -86943,6 +86960,7 @@ const openapi: OpenAPISpec = {
                 properties: {
                   webhook_id: {
                     description: 'ID of the webhook that you want to get.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
