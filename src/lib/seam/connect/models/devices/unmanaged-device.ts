@@ -18,6 +18,7 @@ export const unmanaged_device = device
     warnings: true,
     created_at: true,
     custom_metadata: true,
+    display_name: true,
   })
   .extend({
     is_managed: z
