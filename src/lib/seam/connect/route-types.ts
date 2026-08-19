@@ -2266,6 +2266,36 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_issue'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_apply_mutations'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_expire'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -2468,6 +2498,22 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_issuing'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_applying_mutations'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -2811,6 +2857,36 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_issue'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_apply_mutations'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_expire'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -3013,6 +3089,22 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_issuing'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_applying_mutations'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -5464,6 +5556,36 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_issue'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_apply_mutations'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_expire'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -5666,6 +5788,22 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_issuing'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_applying_mutations'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -6110,6 +6248,36 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_issue'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_apply_mutations'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_expire'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -6312,6 +6480,22 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_issuing'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_applying_mutations'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -6646,6 +6830,36 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_issue'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_apply_mutations'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_expire'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -6848,6 +7062,22 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_issuing'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_applying_mutations'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -7159,6 +7389,36 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_issue'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_apply_mutations'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_expire'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -7361,6 +7621,22 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_issuing'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_applying_mutations'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -7705,6 +7981,36 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_issue'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_apply_mutations'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_expire'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -7907,6 +8213,22 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_issuing'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_applying_mutations'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -10260,6 +10582,36 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_issue'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_apply_mutations'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_expire'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -10462,6 +10814,22 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_issuing'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_applying_mutations'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -10685,6 +11053,36 @@ export type Routes = {
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_issue'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_apply_mutations'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that this is an access code error. */
+              is_access_code_error: true
+              /** Date and time at which Seam created the error. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_expire'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
               /** Indicates that the error is not a device error. */
               is_device_error: false
               /** Date and time at which Seam created the error. */
@@ -10887,6 +11285,22 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_issuing'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_applying_mutations'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -57926,6 +58340,464 @@ export type Routes = {
                       [x: string]: string | boolean
                     }
                   | undefined
+                event_type: 'access_code.issued'
+                /** Code for the affected access code. */
+                code: string
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the workspace associated with the event. */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                event_description?: string | undefined
+                /** ID of the affected access code. */
+                access_code_id: string
+                /** ID of the device associated with the affected access code. */
+                device_id: string
+                /** ID of the connected account associated with the affected access code. */
+                connected_account_id: string
+                /** Custom metadata of the device, present when device_id is provided. */
+                device_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                connected_account_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                event_type: 'access_code.delay_in_issuing'
+                /** Errors associated with the connected account. */
+                connected_account_errors: {
+                  /** Date and time at which Seam created the error. */
+                  created_at: string
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: string
+                }[]
+                /** Warnings associated with the connected account. */
+                connected_account_warnings: {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: string
+                }[]
+                /** Errors associated with the device. */
+                device_errors: {
+                  /** Date and time at which Seam created the error. */
+                  created_at: string
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: string
+                }[]
+                /** Warnings associated with the device. */
+                device_warnings: {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: string
+                }[]
+                /** Errors associated with the access code. */
+                access_code_errors: {
+                  /** Date and time at which Seam created the error. */
+                  created_at: string
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: string
+                }[]
+                /** Warnings associated with the access code. */
+                access_code_warnings: {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: string
+                }[]
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the workspace associated with the event. */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                event_description?: string | undefined
+                /** ID of the affected access code. */
+                access_code_id: string
+                /** ID of the device associated with the affected access code. */
+                device_id: string
+                /** ID of the connected account associated with the affected access code. */
+                connected_account_id: string
+                /** Custom metadata of the device, present when device_id is provided. */
+                device_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                connected_account_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                event_type: 'access_code.failed_to_issue'
+                /** Errors associated with the connected account. */
+                connected_account_errors: {
+                  /** Date and time at which Seam created the error. */
+                  created_at: string
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: string
+                }[]
+                /** Warnings associated with the connected account. */
+                connected_account_warnings: {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: string
+                }[]
+                /** Errors associated with the device. */
+                device_errors: {
+                  /** Date and time at which Seam created the error. */
+                  created_at: string
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: string
+                }[]
+                /** Warnings associated with the device. */
+                device_warnings: {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: string
+                }[]
+                /** Errors associated with the access code. */
+                access_code_errors: {
+                  /** Date and time at which Seam created the error. */
+                  created_at: string
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: string
+                }[]
+                /** Warnings associated with the access code. */
+                access_code_warnings: {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: string
+                }[]
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the workspace associated with the event. */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                event_description?: string | undefined
+                /** ID of the affected access code. */
+                access_code_id: string
+                /** ID of the device associated with the affected access code. */
+                device_id: string
+                /** ID of the connected account associated with the affected access code. */
+                connected_account_id: string
+                /** Custom metadata of the device, present when device_id is provided. */
+                device_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                connected_account_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                event_type: 'access_code.delay_in_applying_mutations'
+                /** Errors associated with the connected account. */
+                connected_account_errors: {
+                  /** Date and time at which Seam created the error. */
+                  created_at: string
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: string
+                }[]
+                /** Warnings associated with the connected account. */
+                connected_account_warnings: {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: string
+                }[]
+                /** Errors associated with the device. */
+                device_errors: {
+                  /** Date and time at which Seam created the error. */
+                  created_at: string
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: string
+                }[]
+                /** Warnings associated with the device. */
+                device_warnings: {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: string
+                }[]
+                /** Errors associated with the access code. */
+                access_code_errors: {
+                  /** Date and time at which Seam created the error. */
+                  created_at: string
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: string
+                }[]
+                /** Warnings associated with the access code. */
+                access_code_warnings: {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: string
+                }[]
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the workspace associated with the event. */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                event_description?: string | undefined
+                /** ID of the affected access code. */
+                access_code_id: string
+                /** ID of the device associated with the affected access code. */
+                device_id: string
+                /** ID of the connected account associated with the affected access code. */
+                connected_account_id: string
+                /** Custom metadata of the device, present when device_id is provided. */
+                device_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                connected_account_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                event_type: 'access_code.failed_to_apply_mutations'
+                /** Errors associated with the connected account. */
+                connected_account_errors: {
+                  /** Date and time at which Seam created the error. */
+                  created_at: string
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: string
+                }[]
+                /** Warnings associated with the connected account. */
+                connected_account_warnings: {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: string
+                }[]
+                /** Errors associated with the device. */
+                device_errors: {
+                  /** Date and time at which Seam created the error. */
+                  created_at: string
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: string
+                }[]
+                /** Warnings associated with the device. */
+                device_warnings: {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: string
+                }[]
+                /** Errors associated with the access code. */
+                access_code_errors: {
+                  /** Date and time at which Seam created the error. */
+                  created_at: string
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: string
+                }[]
+                /** Warnings associated with the access code. */
+                access_code_warnings: {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: string
+                }[]
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the workspace associated with the event. */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                event_description?: string | undefined
+                /** ID of the affected access code. */
+                access_code_id: string
+                /** ID of the device associated with the affected access code. */
+                device_id: string
+                /** ID of the connected account associated with the affected access code. */
+                connected_account_id: string
+                /** Custom metadata of the device, present when device_id is provided. */
+                device_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                connected_account_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                event_type: 'access_code.failed_to_expire'
+                /** Errors associated with the connected account. */
+                connected_account_errors: {
+                  /** Date and time at which Seam created the error. */
+                  created_at: string
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: string
+                }[]
+                /** Warnings associated with the connected account. */
+                connected_account_warnings: {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: string
+                }[]
+                /** Errors associated with the device. */
+                device_errors: {
+                  /** Date and time at which Seam created the error. */
+                  created_at: string
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: string
+                }[]
+                /** Warnings associated with the device. */
+                device_warnings: {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: string
+                }[]
+                /** Errors associated with the access code. */
+                access_code_errors: {
+                  /** Date and time at which Seam created the error. */
+                  created_at: string
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: string
+                }[]
+                /** Warnings associated with the access code. */
+                access_code_warnings: {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: string
+                }[]
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the workspace associated with the event. */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                event_description?: string | undefined
+                /** ID of the affected access code. */
+                access_code_id: string
+                /** ID of the device associated with the affected access code. */
+                device_id: string
+                /** ID of the connected account associated with the affected access code. */
+                connected_account_id: string
+                /** Custom metadata of the device, present when device_id is provided. */
+                device_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                connected_account_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
                 event_type: 'access_code.deleted'
                 /** Code for the affected access code. */
                 code: string | null
@@ -61024,6 +61896,12 @@ export type Routes = {
             | 'access_code.removed_from_device'
             | 'access_code.delay_in_setting_on_device'
             | 'access_code.failed_to_set_on_device'
+            | 'access_code.issued'
+            | 'access_code.delay_in_issuing'
+            | 'access_code.failed_to_issue'
+            | 'access_code.delay_in_applying_mutations'
+            | 'access_code.failed_to_apply_mutations'
+            | 'access_code.failed_to_expire'
             | 'access_code.deleted'
             | 'access_code.delay_in_removing_from_device'
             | 'access_code.failed_to_remove_from_device'
@@ -61138,6 +62016,12 @@ export type Routes = {
             | 'access_code.removed_from_device'
             | 'access_code.delay_in_setting_on_device'
             | 'access_code.failed_to_set_on_device'
+            | 'access_code.issued'
+            | 'access_code.delay_in_issuing'
+            | 'access_code.failed_to_issue'
+            | 'access_code.delay_in_applying_mutations'
+            | 'access_code.failed_to_apply_mutations'
+            | 'access_code.failed_to_expire'
             | 'access_code.deleted'
             | 'access_code.delay_in_removing_from_device'
             | 'access_code.failed_to_remove_from_device'
@@ -61748,6 +62632,464 @@ export type Routes = {
                 }
               | undefined
             event_type: 'access_code.failed_to_set_on_device'
+            /** Errors associated with the connected account. */
+            connected_account_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the connected account. */
+            connected_account_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the device. */
+            device_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the device. */
+            device_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the access code. */
+            access_code_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the access code. */
+            access_code_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected access code. */
+            access_code_id: string
+            /** ID of the device associated with the affected access code. */
+            device_id: string
+            /** ID of the connected account associated with the affected access code. */
+            connected_account_id: string
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'access_code.issued'
+            /** Code for the affected access code. */
+            code: string
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected access code. */
+            access_code_id: string
+            /** ID of the device associated with the affected access code. */
+            device_id: string
+            /** ID of the connected account associated with the affected access code. */
+            connected_account_id: string
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'access_code.delay_in_issuing'
+            /** Errors associated with the connected account. */
+            connected_account_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the connected account. */
+            connected_account_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the device. */
+            device_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the device. */
+            device_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the access code. */
+            access_code_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the access code. */
+            access_code_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected access code. */
+            access_code_id: string
+            /** ID of the device associated with the affected access code. */
+            device_id: string
+            /** ID of the connected account associated with the affected access code. */
+            connected_account_id: string
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'access_code.failed_to_issue'
+            /** Errors associated with the connected account. */
+            connected_account_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the connected account. */
+            connected_account_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the device. */
+            device_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the device. */
+            device_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the access code. */
+            access_code_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the access code. */
+            access_code_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected access code. */
+            access_code_id: string
+            /** ID of the device associated with the affected access code. */
+            device_id: string
+            /** ID of the connected account associated with the affected access code. */
+            connected_account_id: string
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'access_code.delay_in_applying_mutations'
+            /** Errors associated with the connected account. */
+            connected_account_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the connected account. */
+            connected_account_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the device. */
+            device_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the device. */
+            device_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the access code. */
+            access_code_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the access code. */
+            access_code_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected access code. */
+            access_code_id: string
+            /** ID of the device associated with the affected access code. */
+            device_id: string
+            /** ID of the connected account associated with the affected access code. */
+            connected_account_id: string
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'access_code.failed_to_apply_mutations'
+            /** Errors associated with the connected account. */
+            connected_account_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the connected account. */
+            connected_account_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the device. */
+            device_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the device. */
+            device_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the access code. */
+            access_code_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the access code. */
+            access_code_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected access code. */
+            access_code_id: string
+            /** ID of the device associated with the affected access code. */
+            device_id: string
+            /** ID of the connected account associated with the affected access code. */
+            connected_account_id: string
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'access_code.failed_to_expire'
             /** Errors associated with the connected account. */
             connected_account_errors: {
               /** Date and time at which Seam created the error. */
@@ -98393,6 +99735,12 @@ export type Routes = {
             | 'access_code.removed_from_device'
             | 'access_code.delay_in_setting_on_device'
             | 'access_code.failed_to_set_on_device'
+            | 'access_code.issued'
+            | 'access_code.delay_in_issuing'
+            | 'access_code.failed_to_issue'
+            | 'access_code.delay_in_applying_mutations'
+            | 'access_code.failed_to_apply_mutations'
+            | 'access_code.failed_to_expire'
             | 'access_code.deleted'
             | 'access_code.delay_in_removing_from_device'
             | 'access_code.failed_to_remove_from_device'
@@ -98507,6 +99855,12 @@ export type Routes = {
             | 'access_code.removed_from_device'
             | 'access_code.delay_in_setting_on_device'
             | 'access_code.failed_to_set_on_device'
+            | 'access_code.issued'
+            | 'access_code.delay_in_issuing'
+            | 'access_code.failed_to_issue'
+            | 'access_code.delay_in_applying_mutations'
+            | 'access_code.failed_to_apply_mutations'
+            | 'access_code.failed_to_expire'
             | 'access_code.deleted'
             | 'access_code.delay_in_removing_from_device'
             | 'access_code.failed_to_remove_from_device'
@@ -99087,6 +100441,464 @@ export type Routes = {
                 }
               | undefined
             event_type: 'access_code.failed_to_set_on_device'
+            /** Errors associated with the connected account. */
+            connected_account_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the connected account. */
+            connected_account_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the device. */
+            device_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the device. */
+            device_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the access code. */
+            access_code_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the access code. */
+            access_code_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected access code. */
+            access_code_id: string
+            /** ID of the device associated with the affected access code. */
+            device_id: string
+            /** ID of the connected account associated with the affected access code. */
+            connected_account_id: string
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'access_code.issued'
+            /** Code for the affected access code. */
+            code: string
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected access code. */
+            access_code_id: string
+            /** ID of the device associated with the affected access code. */
+            device_id: string
+            /** ID of the connected account associated with the affected access code. */
+            connected_account_id: string
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'access_code.delay_in_issuing'
+            /** Errors associated with the connected account. */
+            connected_account_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the connected account. */
+            connected_account_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the device. */
+            device_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the device. */
+            device_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the access code. */
+            access_code_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the access code. */
+            access_code_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected access code. */
+            access_code_id: string
+            /** ID of the device associated with the affected access code. */
+            device_id: string
+            /** ID of the connected account associated with the affected access code. */
+            connected_account_id: string
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'access_code.failed_to_issue'
+            /** Errors associated with the connected account. */
+            connected_account_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the connected account. */
+            connected_account_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the device. */
+            device_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the device. */
+            device_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the access code. */
+            access_code_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the access code. */
+            access_code_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected access code. */
+            access_code_id: string
+            /** ID of the device associated with the affected access code. */
+            device_id: string
+            /** ID of the connected account associated with the affected access code. */
+            connected_account_id: string
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'access_code.delay_in_applying_mutations'
+            /** Errors associated with the connected account. */
+            connected_account_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the connected account. */
+            connected_account_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the device. */
+            device_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the device. */
+            device_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the access code. */
+            access_code_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the access code. */
+            access_code_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected access code. */
+            access_code_id: string
+            /** ID of the device associated with the affected access code. */
+            device_id: string
+            /** ID of the connected account associated with the affected access code. */
+            connected_account_id: string
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'access_code.failed_to_apply_mutations'
+            /** Errors associated with the connected account. */
+            connected_account_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the connected account. */
+            connected_account_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the device. */
+            device_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the device. */
+            device_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the access code. */
+            access_code_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the access code. */
+            access_code_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected access code. */
+            access_code_id: string
+            /** ID of the device associated with the affected access code. */
+            device_id: string
+            /** ID of the connected account associated with the affected access code. */
+            connected_account_id: string
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'access_code.failed_to_expire'
             /** Errors associated with the connected account. */
             connected_account_errors: {
               /** Date and time at which Seam created the error. */
@@ -146300,6 +148112,464 @@ export type Routes = {
                         [x: string]: string | boolean
                       }
                     | undefined
+                  event_type: 'access_code.issued'
+                  /** Code for the affected access code. */
+                  code: string
+                }
+              | {
+                  /** ID of the event. */
+                  event_id: string
+                  /** ID of the workspace associated with the event. */
+                  workspace_id: string
+                  /** Date and time at which the event was created. */
+                  created_at: string
+                  /** Date and time at which the event occurred. */
+                  occurred_at: string
+                  /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                  event_description?: string | undefined
+                  /** ID of the affected access code. */
+                  access_code_id: string
+                  /** ID of the device associated with the affected access code. */
+                  device_id: string
+                  /** ID of the connected account associated with the affected access code. */
+                  connected_account_id: string
+                  /** Custom metadata of the device, present when device_id is provided. */
+                  device_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                  connected_account_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  event_type: 'access_code.delay_in_issuing'
+                  /** Errors associated with the connected account. */
+                  connected_account_errors: {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: string
+                  }[]
+                  /** Warnings associated with the connected account. */
+                  connected_account_warnings: {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: string
+                  }[]
+                  /** Errors associated with the device. */
+                  device_errors: {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: string
+                  }[]
+                  /** Warnings associated with the device. */
+                  device_warnings: {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: string
+                  }[]
+                  /** Errors associated with the access code. */
+                  access_code_errors: {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: string
+                  }[]
+                  /** Warnings associated with the access code. */
+                  access_code_warnings: {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: string
+                  }[]
+                }
+              | {
+                  /** ID of the event. */
+                  event_id: string
+                  /** ID of the workspace associated with the event. */
+                  workspace_id: string
+                  /** Date and time at which the event was created. */
+                  created_at: string
+                  /** Date and time at which the event occurred. */
+                  occurred_at: string
+                  /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                  event_description?: string | undefined
+                  /** ID of the affected access code. */
+                  access_code_id: string
+                  /** ID of the device associated with the affected access code. */
+                  device_id: string
+                  /** ID of the connected account associated with the affected access code. */
+                  connected_account_id: string
+                  /** Custom metadata of the device, present when device_id is provided. */
+                  device_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                  connected_account_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  event_type: 'access_code.failed_to_issue'
+                  /** Errors associated with the connected account. */
+                  connected_account_errors: {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: string
+                  }[]
+                  /** Warnings associated with the connected account. */
+                  connected_account_warnings: {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: string
+                  }[]
+                  /** Errors associated with the device. */
+                  device_errors: {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: string
+                  }[]
+                  /** Warnings associated with the device. */
+                  device_warnings: {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: string
+                  }[]
+                  /** Errors associated with the access code. */
+                  access_code_errors: {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: string
+                  }[]
+                  /** Warnings associated with the access code. */
+                  access_code_warnings: {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: string
+                  }[]
+                }
+              | {
+                  /** ID of the event. */
+                  event_id: string
+                  /** ID of the workspace associated with the event. */
+                  workspace_id: string
+                  /** Date and time at which the event was created. */
+                  created_at: string
+                  /** Date and time at which the event occurred. */
+                  occurred_at: string
+                  /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                  event_description?: string | undefined
+                  /** ID of the affected access code. */
+                  access_code_id: string
+                  /** ID of the device associated with the affected access code. */
+                  device_id: string
+                  /** ID of the connected account associated with the affected access code. */
+                  connected_account_id: string
+                  /** Custom metadata of the device, present when device_id is provided. */
+                  device_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                  connected_account_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  event_type: 'access_code.delay_in_applying_mutations'
+                  /** Errors associated with the connected account. */
+                  connected_account_errors: {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: string
+                  }[]
+                  /** Warnings associated with the connected account. */
+                  connected_account_warnings: {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: string
+                  }[]
+                  /** Errors associated with the device. */
+                  device_errors: {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: string
+                  }[]
+                  /** Warnings associated with the device. */
+                  device_warnings: {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: string
+                  }[]
+                  /** Errors associated with the access code. */
+                  access_code_errors: {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: string
+                  }[]
+                  /** Warnings associated with the access code. */
+                  access_code_warnings: {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: string
+                  }[]
+                }
+              | {
+                  /** ID of the event. */
+                  event_id: string
+                  /** ID of the workspace associated with the event. */
+                  workspace_id: string
+                  /** Date and time at which the event was created. */
+                  created_at: string
+                  /** Date and time at which the event occurred. */
+                  occurred_at: string
+                  /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                  event_description?: string | undefined
+                  /** ID of the affected access code. */
+                  access_code_id: string
+                  /** ID of the device associated with the affected access code. */
+                  device_id: string
+                  /** ID of the connected account associated with the affected access code. */
+                  connected_account_id: string
+                  /** Custom metadata of the device, present when device_id is provided. */
+                  device_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                  connected_account_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  event_type: 'access_code.failed_to_apply_mutations'
+                  /** Errors associated with the connected account. */
+                  connected_account_errors: {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: string
+                  }[]
+                  /** Warnings associated with the connected account. */
+                  connected_account_warnings: {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: string
+                  }[]
+                  /** Errors associated with the device. */
+                  device_errors: {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: string
+                  }[]
+                  /** Warnings associated with the device. */
+                  device_warnings: {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: string
+                  }[]
+                  /** Errors associated with the access code. */
+                  access_code_errors: {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: string
+                  }[]
+                  /** Warnings associated with the access code. */
+                  access_code_warnings: {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: string
+                  }[]
+                }
+              | {
+                  /** ID of the event. */
+                  event_id: string
+                  /** ID of the workspace associated with the event. */
+                  workspace_id: string
+                  /** Date and time at which the event was created. */
+                  created_at: string
+                  /** Date and time at which the event occurred. */
+                  occurred_at: string
+                  /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                  event_description?: string | undefined
+                  /** ID of the affected access code. */
+                  access_code_id: string
+                  /** ID of the device associated with the affected access code. */
+                  device_id: string
+                  /** ID of the connected account associated with the affected access code. */
+                  connected_account_id: string
+                  /** Custom metadata of the device, present when device_id is provided. */
+                  device_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                  connected_account_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  event_type: 'access_code.failed_to_expire'
+                  /** Errors associated with the connected account. */
+                  connected_account_errors: {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: string
+                  }[]
+                  /** Warnings associated with the connected account. */
+                  connected_account_warnings: {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: string
+                  }[]
+                  /** Errors associated with the device. */
+                  device_errors: {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: string
+                  }[]
+                  /** Warnings associated with the device. */
+                  device_warnings: {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: string
+                  }[]
+                  /** Errors associated with the access code. */
+                  access_code_errors: {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: string
+                  }[]
+                  /** Warnings associated with the access code. */
+                  access_code_warnings: {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: string
+                  }[]
+                }
+              | {
+                  /** ID of the event. */
+                  event_id: string
+                  /** ID of the workspace associated with the event. */
+                  workspace_id: string
+                  /** Date and time at which the event was created. */
+                  created_at: string
+                  /** Date and time at which the event occurred. */
+                  occurred_at: string
+                  /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                  event_description?: string | undefined
+                  /** ID of the affected access code. */
+                  access_code_id: string
+                  /** ID of the device associated with the affected access code. */
+                  device_id: string
+                  /** ID of the connected account associated with the affected access code. */
+                  connected_account_id: string
+                  /** Custom metadata of the device, present when device_id is provided. */
+                  device_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                  connected_account_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
                   event_type: 'access_code.deleted'
                   /** Code for the affected access code. */
                   code: string | null
@@ -149882,6 +152152,36 @@ export type Routes = {
                 | {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
+                    /** Indicates that this is an access code error. */
+                    is_access_code_error: true
+                    /** Date and time at which Seam created the error. */
+                    created_at?: string | undefined
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Indicates that this is an access code error. */
+                    is_access_code_error: true
+                    /** Date and time at which Seam created the error. */
+                    created_at?: string | undefined
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_apply_mutations'
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Indicates that this is an access code error. */
+                    is_access_code_error: true
+                    /** Date and time at which Seam created the error. */
+                    created_at?: string | undefined
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_expire'
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
                     /** Indicates that the error is not a device error. */
                     is_device_error: false
                     /** Date and time at which Seam created the error. */
@@ -150084,6 +152384,22 @@ export type Routes = {
                     created_at?: string | undefined
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'delay_in_removing_from_device'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at?: string | undefined
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'delay_in_issuing'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at?: string | undefined
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'delay_in_applying_mutations'
                   }
                 | {
                     /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -150293,6 +152609,36 @@ export type Routes = {
                 | {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
+                    /** Indicates that this is an access code error. */
+                    is_access_code_error: true
+                    /** Date and time at which Seam created the error. */
+                    created_at?: string | undefined
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Indicates that this is an access code error. */
+                    is_access_code_error: true
+                    /** Date and time at which Seam created the error. */
+                    created_at?: string | undefined
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_apply_mutations'
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Indicates that this is an access code error. */
+                    is_access_code_error: true
+                    /** Date and time at which Seam created the error. */
+                    created_at?: string | undefined
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_expire'
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
                     /** Indicates that the error is not a device error. */
                     is_device_error: false
                     /** Date and time at which Seam created the error. */
@@ -150495,6 +152841,22 @@ export type Routes = {
                     created_at?: string | undefined
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'delay_in_removing_from_device'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at?: string | undefined
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'delay_in_issuing'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at?: string | undefined
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'delay_in_applying_mutations'
                   }
                 | {
                     /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
