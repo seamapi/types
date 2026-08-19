@@ -300,6 +300,99 @@ export type AccessCodeFailedToSetOnDeviceEvent = z.infer<
   typeof access_code_failed_to_set_on_device_event
 >
 
+export const access_code_issued_event = access_code_event.extend({
+  event_type: z.literal('access_code.issued'),
+  code,
+}).describe(`
+    ---
+    route_path: /access_codes
+    undocumented: Unreleased.
+    ---
+    An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was issued.
+  `)
+
+export type AccessCodeIssuedEvent = z.infer<typeof access_code_issued_event>
+
+export const access_code_delay_in_issuing_event = access_code_event
+  .extend({
+    event_type: z.literal('access_code.delay_in_issuing'),
+  })
+  .extend(access_code_event_issue_properties).describe(`
+    ---
+    route_path: /access_codes
+    undocumented: Unreleased.
+    ---
+    Seam has not yet issued this [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes), even though its start time is approaching, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and the accompanying \`delay_in_issuing\` warning clears automatically once issuance succeeds.
+  `)
+
+export type AccessCodeDelayInIssuingEvent = z.infer<
+  typeof access_code_delay_in_issuing_event
+>
+
+export const access_code_failed_to_issue_event = access_code_event
+  .extend({
+    event_type: z.literal('access_code.failed_to_issue'),
+  })
+  .extend(access_code_event_issue_properties).describe(`
+    ---
+    route_path: /access_codes
+    undocumented: Unreleased.
+    ---
+    Seam was unable to issue this [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) before its start time, so the recipient may be unable to unlock the device. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and the accompanying \`failed_to_issue\` error clears automatically if the access code is eventually issued.
+  `)
+
+export type AccessCodeFailedToIssueEvent = z.infer<
+  typeof access_code_failed_to_issue_event
+>
+
+export const access_code_delay_in_applying_mutations_event = access_code_event
+  .extend({
+    event_type: z.literal('access_code.delay_in_applying_mutations'),
+  })
+  .extend(access_code_event_issue_properties).describe(`
+    ---
+    route_path: /access_codes
+    undocumented: Unreleased.
+    ---
+    Seam has not yet applied this [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes)'s pending mutations to the device, so the code on the device does not yet match its requested state. Seam is still attempting to apply them, and the accompanying \`delay_in_applying_mutations\` warning clears automatically once the mutations are applied.
+  `)
+
+export type AccessCodeDelayInApplyingMutationsEvent = z.infer<
+  typeof access_code_delay_in_applying_mutations_event
+>
+
+export const access_code_failed_to_apply_mutations_event = access_code_event
+  .extend({
+    event_type: z.literal('access_code.failed_to_apply_mutations'),
+  })
+  .extend(access_code_event_issue_properties).describe(`
+    ---
+    route_path: /access_codes
+    undocumented: Unreleased.
+    ---
+    Seam was unable to apply this [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes)'s pending mutations to the device, so the code on the device does not match its requested state. Seam keeps retrying, and the accompanying \`failed_to_apply_mutations\` error clears automatically once the mutations are applied.
+  `)
+
+export type AccessCodeFailedToApplyMutationsEvent = z.infer<
+  typeof access_code_failed_to_apply_mutations_event
+>
+
+export const access_code_failed_to_expire_event = access_code_event
+  .extend({
+    event_type: z.literal('access_code.failed_to_expire'),
+  })
+  .extend(access_code_event_issue_properties).describe(`
+    ---
+    route_path: /access_codes
+    undocumented: Unreleased.
+    ---
+    An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) is still active on the device even though its \`ends_at\` has passed, so the recipient may still be able to unlock the device after their access window ended. Seam is attempting to remove it, and the accompanying \`failed_to_expire\` error clears automatically once the access code is no longer active.
+  `)
+
+export type AccessCodeFailedToExpireEvent = z.infer<
+  typeof access_code_failed_to_expire_event
+>
+
 export const access_code_deleted_event = access_code_event.extend({
   event_type: z.literal('access_code.deleted'),
   code: code.nullable(),
@@ -460,6 +553,12 @@ export const access_code_events = [
   access_code_removed_from_device_event,
   access_code_delay_in_setting_on_device_event,
   access_code_failed_to_set_on_device_event,
+  access_code_issued_event,
+  access_code_delay_in_issuing_event,
+  access_code_failed_to_issue_event,
+  access_code_delay_in_applying_mutations_event,
+  access_code_failed_to_apply_mutations_event,
+  access_code_failed_to_expire_event,
   access_code_deleted_event,
   access_code_delay_in_removing_from_device_event,
   access_code_failed_to_remove_from_device_event,

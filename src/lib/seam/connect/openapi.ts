@@ -400,6 +400,105 @@ const openapi: OpenAPISpec = {
                   'x-resource-type': 'access_code',
                 },
                 {
+                  description:
+                    'Seam was unable to issue this access code before its start time, so the recipient may be unable to unlock the device. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access code is eventually issued.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['failed_to_issue'],
+                      type: 'string',
+                    },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                  'x-resource-type': 'access_code',
+                  'x-undocumented': 'Unreleased.',
+                },
+                {
+                  description:
+                    "Seam was unable to apply this access code's pending mutations to the device, so the code on the device does not match its requested state. Seam keeps retrying, and this error clears automatically once the mutations are applied.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['failed_to_apply_mutations'],
+                      type: 'string',
+                    },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                  'x-resource-type': 'access_code',
+                  'x-undocumented': 'Unreleased.',
+                },
+                {
+                  description:
+                    'This access code is still active on the device even though its `ends_at` has passed, so the recipient may still be able to unlock the device after their access window ended. Seam is attempting to remove it, and this error clears automatically once the access code is no longer active.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['failed_to_expire'],
+                      type: 'string',
+                    },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                  'x-resource-type': 'access_code',
+                  'x-undocumented': 'Unreleased.',
+                },
+                {
                   description: 'Indicates that the account is disconnected.',
                   properties: {
                     created_at: {
@@ -1463,6 +1562,58 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-deprecated':
                     'Seam no longer sets this warning. Use the `failed_to_remove_from_device` error instead.',
+                },
+                {
+                  description:
+                    'Seam has not yet issued this access code, even though its start time is approaching, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['delay_in_issuing'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                  'x-undocumented': 'Unreleased.',
+                },
+                {
+                  description:
+                    "Seam has not yet applied this access code's pending mutations to the device, so the code on the device does not yet match its requested state. Seam is still attempting to apply them, and this warning clears automatically once the mutations are applied.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['delay_in_applying_mutations'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                  'x-undocumented': 'Unreleased.',
                 },
                 {
                   description:
@@ -19427,6 +19578,1364 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
+              'An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was issued.',
+            properties: {
+              access_code_id: {
+                description: 'ID of the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              code: {
+                description: 'Code for the affected access code.',
+                type: 'string',
+              },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
+              },
+              device_id: {
+                description:
+                  'ID of the device associated with the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: { enum: ['access_code.issued'], type: 'string' },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description: 'ID of the workspace associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'access_code_id',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+              'code',
+            ],
+            type: 'object',
+            'x-route-path': '/access_codes',
+            'x-undocumented': 'Unreleased.',
+          },
+          {
+            description:
+              'Seam has not yet issued this [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes), even though its start time is approaching, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and the accompanying `delay_in_issuing` warning clears automatically once issuance succeeds.',
+            properties: {
+              access_code_errors: {
+                description: 'Errors associated with the access code.',
+                items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              access_code_id: {
+                description: 'ID of the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              access_code_warnings: {
+                description: 'Warnings associated with the access code.',
+                items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_errors: {
+                description: 'Errors associated with the connected account.',
+                items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              connected_account_warnings: {
+                description: 'Warnings associated with the connected account.',
+                items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
+              },
+              device_errors: {
+                description: 'Errors associated with the device.',
+                items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              device_id: {
+                description:
+                  'ID of the device associated with the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              device_warnings: {
+                description: 'Warnings associated with the device.',
+                items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['access_code.delay_in_issuing'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description: 'ID of the workspace associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'access_code_id',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+              'connected_account_errors',
+              'connected_account_warnings',
+              'device_errors',
+              'device_warnings',
+              'access_code_errors',
+              'access_code_warnings',
+            ],
+            type: 'object',
+            'x-route-path': '/access_codes',
+            'x-undocumented': 'Unreleased.',
+          },
+          {
+            description:
+              'Seam was unable to issue this [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) before its start time, so the recipient may be unable to unlock the device. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and the accompanying `failed_to_issue` error clears automatically if the access code is eventually issued.',
+            properties: {
+              access_code_errors: {
+                description: 'Errors associated with the access code.',
+                items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              access_code_id: {
+                description: 'ID of the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              access_code_warnings: {
+                description: 'Warnings associated with the access code.',
+                items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_errors: {
+                description: 'Errors associated with the connected account.',
+                items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              connected_account_warnings: {
+                description: 'Warnings associated with the connected account.',
+                items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
+              },
+              device_errors: {
+                description: 'Errors associated with the device.',
+                items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              device_id: {
+                description:
+                  'ID of the device associated with the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              device_warnings: {
+                description: 'Warnings associated with the device.',
+                items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['access_code.failed_to_issue'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description: 'ID of the workspace associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'access_code_id',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+              'connected_account_errors',
+              'connected_account_warnings',
+              'device_errors',
+              'device_warnings',
+              'access_code_errors',
+              'access_code_warnings',
+            ],
+            type: 'object',
+            'x-route-path': '/access_codes',
+            'x-undocumented': 'Unreleased.',
+          },
+          {
+            description:
+              "Seam has not yet applied this [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes)'s pending mutations to the device, so the code on the device does not yet match its requested state. Seam is still attempting to apply them, and the accompanying `delay_in_applying_mutations` warning clears automatically once the mutations are applied.",
+            properties: {
+              access_code_errors: {
+                description: 'Errors associated with the access code.',
+                items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              access_code_id: {
+                description: 'ID of the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              access_code_warnings: {
+                description: 'Warnings associated with the access code.',
+                items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_errors: {
+                description: 'Errors associated with the connected account.',
+                items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              connected_account_warnings: {
+                description: 'Warnings associated with the connected account.',
+                items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
+              },
+              device_errors: {
+                description: 'Errors associated with the device.',
+                items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              device_id: {
+                description:
+                  'ID of the device associated with the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              device_warnings: {
+                description: 'Warnings associated with the device.',
+                items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['access_code.delay_in_applying_mutations'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description: 'ID of the workspace associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'access_code_id',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+              'connected_account_errors',
+              'connected_account_warnings',
+              'device_errors',
+              'device_warnings',
+              'access_code_errors',
+              'access_code_warnings',
+            ],
+            type: 'object',
+            'x-route-path': '/access_codes',
+            'x-undocumented': 'Unreleased.',
+          },
+          {
+            description:
+              "Seam was unable to apply this [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes)'s pending mutations to the device, so the code on the device does not match its requested state. Seam keeps retrying, and the accompanying `failed_to_apply_mutations` error clears automatically once the mutations are applied.",
+            properties: {
+              access_code_errors: {
+                description: 'Errors associated with the access code.',
+                items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              access_code_id: {
+                description: 'ID of the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              access_code_warnings: {
+                description: 'Warnings associated with the access code.',
+                items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_errors: {
+                description: 'Errors associated with the connected account.',
+                items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              connected_account_warnings: {
+                description: 'Warnings associated with the connected account.',
+                items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
+              },
+              device_errors: {
+                description: 'Errors associated with the device.',
+                items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              device_id: {
+                description:
+                  'ID of the device associated with the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              device_warnings: {
+                description: 'Warnings associated with the device.',
+                items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['access_code.failed_to_apply_mutations'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description: 'ID of the workspace associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'access_code_id',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+              'connected_account_errors',
+              'connected_account_warnings',
+              'device_errors',
+              'device_warnings',
+              'access_code_errors',
+              'access_code_warnings',
+            ],
+            type: 'object',
+            'x-route-path': '/access_codes',
+            'x-undocumented': 'Unreleased.',
+          },
+          {
+            description:
+              'An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) is still active on the device even though its `ends_at` has passed, so the recipient may still be able to unlock the device after their access window ended. Seam is attempting to remove it, and the accompanying `failed_to_expire` error clears automatically once the access code is no longer active.',
+            properties: {
+              access_code_errors: {
+                description: 'Errors associated with the access code.',
+                items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              access_code_id: {
+                description: 'ID of the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              access_code_warnings: {
+                description: 'Warnings associated with the access code.',
+                items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_errors: {
+                description: 'Errors associated with the connected account.',
+                items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              connected_account_warnings: {
+                description: 'Warnings associated with the connected account.',
+                items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
+              },
+              device_errors: {
+                description: 'Errors associated with the device.',
+                items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              device_id: {
+                description:
+                  'ID of the device associated with the affected access code.',
+                format: 'uuid',
+                type: 'string',
+              },
+              device_warnings: {
+                description: 'Warnings associated with the device.',
+                items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['access_code.failed_to_expire'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description: 'ID of the workspace associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'access_code_id',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+              'connected_account_errors',
+              'connected_account_warnings',
+              'device_errors',
+              'device_warnings',
+              'access_code_errors',
+              'access_code_warnings',
+            ],
+            type: 'object',
+            'x-route-path': '/access_codes',
+            'x-undocumented': 'Unreleased.',
+          },
+          {
+            description:
               'An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was deleted.',
             properties: {
               access_code_id: {
@@ -30557,6 +32066,105 @@ const openapi: OpenAPISpec = {
                   'x-resource-type': 'access_code',
                 },
                 {
+                  description:
+                    'Seam was unable to issue this access code before its start time, so the recipient may be unable to unlock the device. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access code is eventually issued.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['failed_to_issue'],
+                      type: 'string',
+                    },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                  'x-resource-type': 'access_code',
+                  'x-undocumented': 'Unreleased.',
+                },
+                {
+                  description:
+                    "Seam was unable to apply this access code's pending mutations to the device, so the code on the device does not match its requested state. Seam keeps retrying, and this error clears automatically once the mutations are applied.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['failed_to_apply_mutations'],
+                      type: 'string',
+                    },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                  'x-resource-type': 'access_code',
+                  'x-undocumented': 'Unreleased.',
+                },
+                {
+                  description:
+                    'This access code is still active on the device even though its `ends_at` has passed, so the recipient may still be able to unlock the device after their access window ended. Seam is attempting to remove it, and this error clears automatically once the access code is no longer active.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['failed_to_expire'],
+                      type: 'string',
+                    },
+                    is_access_code_error: {
+                      description:
+                        'Indicates that this is an access code error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                  'x-resource-type': 'access_code',
+                  'x-undocumented': 'Unreleased.',
+                },
+                {
                   description: 'Indicates that the account is disconnected.',
                   properties: {
                     created_at: {
@@ -31309,6 +32917,58 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-deprecated':
                     'Seam no longer sets this warning. Use the `failed_to_remove_from_device` error instead.',
+                },
+                {
+                  description:
+                    'Seam has not yet issued this access code, even though its start time is approaching, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['delay_in_issuing'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                  'x-undocumented': 'Unreleased.',
+                },
+                {
+                  description:
+                    "Seam has not yet applied this access code's pending mutations to the device, so the code on the device does not yet match its requested state. Seam is still attempting to apply them, and this warning clears automatically once the mutations are applied.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['delay_in_applying_mutations'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                  'x-undocumented': 'Unreleased.',
                 },
                 {
                   description:
@@ -59448,6 +61108,12 @@ const openapi: OpenAPISpec = {
                 'access_code.removed_from_device',
                 'access_code.delay_in_setting_on_device',
                 'access_code.failed_to_set_on_device',
+                'access_code.issued',
+                'access_code.delay_in_issuing',
+                'access_code.failed_to_issue',
+                'access_code.delay_in_applying_mutations',
+                'access_code.failed_to_apply_mutations',
+                'access_code.failed_to_expire',
                 'access_code.deleted',
                 'access_code.delay_in_removing_from_device',
                 'access_code.failed_to_remove_from_device',
@@ -59568,6 +61234,12 @@ const openapi: OpenAPISpec = {
                   'access_code.removed_from_device',
                   'access_code.delay_in_setting_on_device',
                   'access_code.failed_to_set_on_device',
+                  'access_code.issued',
+                  'access_code.delay_in_issuing',
+                  'access_code.failed_to_issue',
+                  'access_code.delay_in_applying_mutations',
+                  'access_code.failed_to_apply_mutations',
+                  'access_code.failed_to_expire',
                   'access_code.deleted',
                   'access_code.delay_in_removing_from_device',
                   'access_code.failed_to_remove_from_device',
@@ -60020,6 +61692,12 @@ const openapi: OpenAPISpec = {
                       'access_code.removed_from_device',
                       'access_code.delay_in_setting_on_device',
                       'access_code.failed_to_set_on_device',
+                      'access_code.issued',
+                      'access_code.delay_in_issuing',
+                      'access_code.failed_to_issue',
+                      'access_code.delay_in_applying_mutations',
+                      'access_code.failed_to_apply_mutations',
+                      'access_code.failed_to_expire',
                       'access_code.deleted',
                       'access_code.delay_in_removing_from_device',
                       'access_code.failed_to_remove_from_device',
@@ -60136,6 +61814,12 @@ const openapi: OpenAPISpec = {
                         'access_code.removed_from_device',
                         'access_code.delay_in_setting_on_device',
                         'access_code.failed_to_set_on_device',
+                        'access_code.issued',
+                        'access_code.delay_in_issuing',
+                        'access_code.failed_to_issue',
+                        'access_code.delay_in_applying_mutations',
+                        'access_code.failed_to_apply_mutations',
+                        'access_code.failed_to_expire',
                         'access_code.deleted',
                         'access_code.delay_in_removing_from_device',
                         'access_code.failed_to_remove_from_device',
@@ -72450,6 +74134,12 @@ const openapi: OpenAPISpec = {
                 'access_code.removed_from_device',
                 'access_code.delay_in_setting_on_device',
                 'access_code.failed_to_set_on_device',
+                'access_code.issued',
+                'access_code.delay_in_issuing',
+                'access_code.failed_to_issue',
+                'access_code.delay_in_applying_mutations',
+                'access_code.failed_to_apply_mutations',
+                'access_code.failed_to_expire',
                 'access_code.deleted',
                 'access_code.delay_in_removing_from_device',
                 'access_code.failed_to_remove_from_device',
@@ -72571,6 +74261,12 @@ const openapi: OpenAPISpec = {
                   'access_code.removed_from_device',
                   'access_code.delay_in_setting_on_device',
                   'access_code.failed_to_set_on_device',
+                  'access_code.issued',
+                  'access_code.delay_in_issuing',
+                  'access_code.failed_to_issue',
+                  'access_code.delay_in_applying_mutations',
+                  'access_code.failed_to_apply_mutations',
+                  'access_code.failed_to_expire',
                   'access_code.deleted',
                   'access_code.delay_in_removing_from_device',
                   'access_code.failed_to_remove_from_device',
@@ -72753,6 +74449,12 @@ const openapi: OpenAPISpec = {
                       'access_code.removed_from_device',
                       'access_code.delay_in_setting_on_device',
                       'access_code.failed_to_set_on_device',
+                      'access_code.issued',
+                      'access_code.delay_in_issuing',
+                      'access_code.failed_to_issue',
+                      'access_code.delay_in_applying_mutations',
+                      'access_code.failed_to_apply_mutations',
+                      'access_code.failed_to_expire',
                       'access_code.deleted',
                       'access_code.delay_in_removing_from_device',
                       'access_code.failed_to_remove_from_device',
@@ -72869,6 +74571,12 @@ const openapi: OpenAPISpec = {
                         'access_code.removed_from_device',
                         'access_code.delay_in_setting_on_device',
                         'access_code.failed_to_set_on_device',
+                        'access_code.issued',
+                        'access_code.delay_in_issuing',
+                        'access_code.failed_to_issue',
+                        'access_code.delay_in_applying_mutations',
+                        'access_code.failed_to_apply_mutations',
+                        'access_code.failed_to_expire',
                         'access_code.deleted',
                         'access_code.delay_in_removing_from_device',
                         'access_code.failed_to_remove_from_device',

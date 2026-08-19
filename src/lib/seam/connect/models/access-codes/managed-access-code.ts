@@ -124,6 +124,38 @@ const no_space_for_access_code_on_device = common_access_code_error.extend({
     No space for access code on device.
     `)
 
+const failed_to_issue = common_access_code_error.extend({
+  error_code: z.literal('failed_to_issue').describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: access_code
+    undocumented: Unreleased.
+    ---
+    Seam was unable to issue this access code before its start time, so the recipient may be unable to unlock the device. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access code is eventually issued.
+    `)
+
+const failed_to_apply_mutations = common_access_code_error.extend({
+  error_code: z
+    .literal('failed_to_apply_mutations')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: access_code
+    undocumented: Unreleased.
+    ---
+    Seam was unable to apply this access code's pending mutations to the device, so the code on the device does not match its requested state. Seam keeps retrying, and this error clears automatically once the mutations are applied.
+    `)
+
+const failed_to_expire = common_access_code_error.extend({
+  error_code: z.literal('failed_to_expire').describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: access_code
+    undocumented: Unreleased.
+    ---
+    This access code is still active on the device even though its \`ends_at\` has passed, so the recipient may still be able to unlock the device after their access window ended. Seam is attempting to remove it, and this error clears automatically once the access code is no longer active.
+    `)
+
 const access_code_inactive_error = common_access_code_error.extend({
   error_code: z
     .literal('access_code_inactive')
@@ -156,6 +188,9 @@ const access_code_error = z
     conflicting_external_modification_error,
     access_code_inactive_error,
     code_constraints_violated,
+    failed_to_issue,
+    failed_to_apply_mutations,
+    failed_to_expire,
   ])
   .describe(
     'Errors associated with the [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).',
@@ -178,6 +213,9 @@ const _access_code_error_map = z.object({
     .nullable(),
   access_code_inactive: access_code_inactive_error.optional().nullable(),
   code_constraints_violated: code_constraints_violated.optional().nullable(),
+  failed_to_issue: failed_to_issue.optional().nullable(),
+  failed_to_apply_mutations: failed_to_apply_mutations.optional().nullable(),
+  failed_to_expire: failed_to_expire.optional().nullable(),
 })
 
 export type AccessCodeErrorMap = z.infer<typeof _access_code_error_map>
@@ -260,6 +298,28 @@ const delay_in_removing_from_device = common_access_code_warning.extend({
     Delay in removing code from device.
     `)
 
+const delay_in_issuing = common_access_code_warning.extend({
+  warning_code: z
+    .literal('delay_in_issuing')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    undocumented: Unreleased.
+    ---
+    Seam has not yet issued this access code, even though its start time is approaching, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.
+    `)
+
+const delay_in_applying_mutations = common_access_code_warning.extend({
+  warning_code: z
+    .literal('delay_in_applying_mutations')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    undocumented: Unreleased.
+    ---
+    Seam has not yet applied this access code's pending mutations to the device, so the code on the device does not yet match its requested state. Seam is still attempting to apply them, and this warning clears automatically once the mutations are applied.
+    `)
+
 const third_party_integration_detected = common_access_code_warning
   .extend({
     warning_code: z
@@ -317,6 +377,8 @@ const access_code_warning = z
     external_modification_in_effect_warning,
     delay_in_setting_on_device,
     delay_in_removing_from_device,
+    delay_in_issuing,
+    delay_in_applying_mutations,
     third_party_integration_detected,
     igloo_algopin_must_be_used_within_24_hours,
     management_transferred,
@@ -339,6 +401,10 @@ const _access_code_warning_map = z.object({
     .nullable(),
   delay_in_setting_on_device: delay_in_setting_on_device.optional().nullable(),
   delay_in_removing_from_device: delay_in_removing_from_device
+    .optional()
+    .nullable(),
+  delay_in_issuing: delay_in_issuing.optional().nullable(),
+  delay_in_applying_mutations: delay_in_applying_mutations
     .optional()
     .nullable(),
   third_party_integration_detected: third_party_integration_detected
