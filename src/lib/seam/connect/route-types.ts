@@ -56339,6 +56339,8 @@ export type Routes = {
         custom_metadata: {
           [x: string]: string | boolean
         }
+        /** Display name of the device, defaults to nickname (if it is set) or `properties.appearance.name`, otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+        display_name: string
         /** Indicates that Seam does not manage the device. */
         is_managed: false
         /** properties of the device. */
@@ -57160,6 +57162,8 @@ export type Routes = {
         custom_metadata: {
           [x: string]: string | boolean
         }
+        /** Display name of the device, defaults to nickname (if it is set) or `properties.appearance.name`, otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+        display_name: string
         /** Indicates that Seam does not manage the device. */
         is_managed: false
         /** properties of the device. */
@@ -144947,6 +144951,8 @@ export type Routes = {
               custom_metadata: {
                 [x: string]: string | boolean
               }
+              /** Display name of the device, defaults to nickname (if it is set) or `properties.appearance.name`, otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+              display_name: string
               /** Indicates that Seam does not manage the device. */
               is_managed: false
               /** properties of the device. */
