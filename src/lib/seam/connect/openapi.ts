@@ -66633,7 +66633,6 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Identifies the specific page of results to return. Specify `null` or omit this parameter to return the first page.',
-              minLength: 1,
               nullable: true,
               type: 'string',
             },
@@ -67031,7 +67030,6 @@ const openapi: OpenAPISpec = {
                   page_cursor: {
                     description:
                       'Identifies the specific page of results to return. Specify `null` or omit this parameter to return the first page.',
-                    minLength: 1,
                     nullable: true,
                     type: 'string',
                   },

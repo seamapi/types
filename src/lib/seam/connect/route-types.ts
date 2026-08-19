@@ -94865,7 +94865,7 @@ export type Routes = {
       /** Filter timeline entries by context type. 'request' for API requests, 'job' for background jobs. */
       context_type?: ('request' | 'job') | undefined
       /** Identifies the specific page of results to return. Specify `null` or omit this parameter to return the first page. */
-      page_cursor?: (string | null) | undefined
+      page_cursor?: (string | undefined) | null
     }
     formData: {}
     jsonResponse: {
