@@ -48092,7 +48092,8 @@ const openapi: OpenAPISpec = {
             name: 'user_identity_phone_number',
             schema: {
               description:
-                'Phone number of the user identity for which you want to retrieve all access system users, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`).',
+                'Phone number of the user identity for which you want to retrieve all access system users, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`). Specify `null` to retrieve access system users whose user identity has no phone number.',
+              nullable: true,
               type: 'string',
             },
           },
@@ -48101,7 +48102,8 @@ const openapi: OpenAPISpec = {
             name: 'user_identity_email_address',
             schema: {
               description:
-                'Email address of the user identity for which you want to retrieve all access system users.',
+                'Email address of the user identity for which you want to retrieve all access system users. Specify `null` to retrieve access system users whose user identity has no email address.',
+              nullable: true,
               type: 'string',
             },
           },
@@ -48238,7 +48240,8 @@ const openapi: OpenAPISpec = {
                   },
                   user_identity_email_address: {
                     description:
-                      'Email address of the user identity for which you want to retrieve all access system users.',
+                      'Email address of the user identity for which you want to retrieve all access system users. Specify `null` to retrieve access system users whose user identity has no email address.',
+                    nullable: true,
                     type: 'string',
                   },
                   user_identity_id: {
@@ -48249,7 +48252,8 @@ const openapi: OpenAPISpec = {
                   },
                   user_identity_phone_number: {
                     description:
-                      'Phone number of the user identity for which you want to retrieve all access system users, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`).',
+                      'Phone number of the user identity for which you want to retrieve all access system users, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`). Specify `null` to retrieve access system users whose user identity has no phone number.',
+                    nullable: true,
                     type: 'string',
                   },
                 },
@@ -48835,7 +48839,8 @@ const openapi: OpenAPISpec = {
             name: 'user_identity_phone_number',
             schema: {
               description:
-                'Phone number of the user identity for which you want to retrieve all unmanaged access system users.',
+                'Phone number of the user identity for which you want to retrieve all unmanaged access system users. Specify `null` to retrieve unmanaged access system users whose user identity has no phone number.',
+              nullable: true,
               type: 'string',
             },
           },
@@ -48844,7 +48849,8 @@ const openapi: OpenAPISpec = {
             name: 'user_identity_email_address',
             schema: {
               description:
-                'Email address of the user identity for which you want to retrieve all unmanaged access system users.',
+                'Email address of the user identity for which you want to retrieve all unmanaged access system users. Specify `null` to retrieve unmanaged access system users whose user identity has no email address.',
+              nullable: true,
               type: 'string',
             },
           },
@@ -48947,7 +48953,8 @@ const openapi: OpenAPISpec = {
                   },
                   user_identity_email_address: {
                     description:
-                      'Email address of the user identity for which you want to retrieve all unmanaged access system users.',
+                      'Email address of the user identity for which you want to retrieve all unmanaged access system users. Specify `null` to retrieve unmanaged access system users whose user identity has no email address.',
+                    nullable: true,
                     type: 'string',
                   },
                   user_identity_id: {
@@ -48958,7 +48965,8 @@ const openapi: OpenAPISpec = {
                   },
                   user_identity_phone_number: {
                     description:
-                      'Phone number of the user identity for which you want to retrieve all unmanaged access system users.',
+                      'Phone number of the user identity for which you want to retrieve all unmanaged access system users. Specify `null` to retrieve unmanaged access system users whose user identity has no phone number.',
+                    nullable: true,
                     type: 'string',
                   },
                 },
@@ -50594,7 +50602,8 @@ const openapi: OpenAPISpec = {
             name: 'connect_webview_id',
             schema: {
               description:
-                'ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) for which you want to retrieve client sessions.',
+                'ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) for which you want to retrieve client sessions. Specify `null` to retrieve client sessions that are not associated with a Connect Webview.',
+              nullable: true,
               type: 'string',
             },
           },
@@ -50612,7 +50621,8 @@ const openapi: OpenAPISpec = {
             name: 'user_identity_id',
             schema: {
               description:
-                'ID of the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to retrieve client sessions.',
+                'ID of the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to retrieve client sessions. Specify `null` to retrieve client sessions that are not associated with a user identity.',
+              nullable: true,
               type: 'string',
             },
           },
@@ -50668,7 +50678,8 @@ const openapi: OpenAPISpec = {
                   },
                   connect_webview_id: {
                     description:
-                      'ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) for which you want to retrieve client sessions.',
+                      'ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) for which you want to retrieve client sessions. Specify `null` to retrieve client sessions that are not associated with a Connect Webview.',
+                    nullable: true,
                     type: 'string',
                   },
                   user_identifier_key: {
@@ -50679,7 +50690,8 @@ const openapi: OpenAPISpec = {
                   },
                   user_identity_id: {
                     description:
-                      'ID of the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to retrieve client sessions.',
+                      'ID of the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to retrieve client sessions. Specify `null` to retrieve client sessions that are not associated with a user identity.',
+                    nullable: true,
                     type: 'string',
                   },
                   without_user_identifier_key: {
@@ -66608,7 +66620,9 @@ const openapi: OpenAPISpec = {
             required: false,
             schema: {
               description:
-                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                'Identifies the specific page of results to return. Specify `null` or omit this parameter to return the first page.',
+              minLength: 1,
+              nullable: true,
               type: 'string',
             },
           },
@@ -67004,7 +67018,9 @@ const openapi: OpenAPISpec = {
                   },
                   page_cursor: {
                     description:
-                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                      'Identifies the specific page of results to return. Specify `null` or omit this parameter to return the first page.',
+                    minLength: 1,
+                    nullable: true,
                     type: 'string',
                   },
                   resource_id: {
