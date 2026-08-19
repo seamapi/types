@@ -50588,6 +50588,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'ID of the client session that you want to retrieve.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -50678,6 +50679,7 @@ const openapi: OpenAPISpec = {
                   client_session_id: {
                     description:
                       'ID of the client session that you want to retrieve.',
+                    minLength: 1,
                     type: 'string',
                   },
                   connect_webview_id: {
@@ -86307,6 +86309,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'String for which to search. Filters returned unmanaged user identities to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address`,  `user_identity_id` or `acs_system_id`.',
+              minLength: 1,
               type: 'string',
             },
           },
@@ -86414,6 +86417,7 @@ const openapi: OpenAPISpec = {
                   search: {
                     description:
                       'String for which to search. Filters returned unmanaged user identities to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address`,  `user_identity_id` or `acs_system_id`.',
+                    minLength: 1,
                     type: 'string',
                   },
                 },
