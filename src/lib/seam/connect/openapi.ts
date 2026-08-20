@@ -69903,11 +69903,7 @@ const openapi: OpenAPISpec = {
         description:
           'Deletes the automation configuration for a customer portal workspace.\nSupports both console session and customer client session authentication.',
         operationId: 'seamCustomerV1AutomationsDeleteDelete',
-        requestBody: {
-          content: {
-            'application/json': { schema: { properties: {}, type: 'object' } },
-          },
-        },
+        parameters: [],
         responses: {
           '200': {
             content: {
