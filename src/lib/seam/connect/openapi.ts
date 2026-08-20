@@ -67858,23 +67858,18 @@ const openapi: OpenAPISpec = {
       delete: {
         description: 'Deletes a site.',
         operationId: 'seamConsoleV1SitesDeleteDelete',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  site_id: {
-                    description: 'ID of the site that you want to delete.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                },
-                required: ['site_id'],
-                type: 'object',
-              },
+        parameters: [
+          {
+            in: 'query',
+            name: 'site_id',
+            required: true,
+            schema: {
+              description: 'ID of the site that you want to delete.',
+              format: 'uuid',
+              type: 'string',
             },
           },
-        },
+        ],
         responses: {
           '200': {
             content: {
@@ -79718,23 +79713,17 @@ const openapi: OpenAPISpec = {
     '/seam/instant_key/v1/preview/get': {
       get: {
         operationId: 'seamInstantKeyV1PreviewGetGet',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  instant_key_url: {
-                    description:
-                      'The short code of the instant key to preview.',
-                    type: 'string',
-                  },
-                },
-                required: ['instant_key_url'],
-                type: 'object',
-              },
+        parameters: [
+          {
+            in: 'query',
+            name: 'instant_key_url',
+            required: true,
+            schema: {
+              description: 'The short code of the instant key to preview.',
+              type: 'string',
             },
           },
-        },
+        ],
         responses: {
           '200': {
             content: {
