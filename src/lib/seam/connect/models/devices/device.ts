@@ -625,6 +625,17 @@ const accessory_keypad_setup_required = common_device_warning.extend({
     Indicates that the accessory keypad exists, but is not linked to the Igloohome Bridge. Online access code programming will fail until the keypad is linked to the Igloohome Bridge in the Igloohome app.
     `)
 
+const accessory_keypad_low_battery = common_device_warning.extend({
+  warning_code: z
+    .literal('accessory_keypad_low_battery')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: locks
+    ---
+    Indicates that the accessory keypad paired with this lock has a low or critically low battery. Replace its batteries so guests can keep entering their access codes.
+    `)
+
 const unreliable_online_status = common_device_warning.extend({
   warning_code: z
     .literal('unreliable_online_status')
@@ -683,6 +694,7 @@ const device_warning = z.discriminatedUnion('warning_code', [
   provider_issue,
   keynest_unsupported_locker,
   accessory_keypad_setup_required,
+  accessory_keypad_low_battery,
   unreliable_online_status,
   max_access_codes_reached,
 ])
@@ -739,6 +751,9 @@ export const device_warning_map = z.object({
   provider_issue: provider_issue.optional().nullable(),
   keynest_unsupported_locker: keynest_unsupported_locker.optional().nullable(),
   accessory_keypad_setup_required: accessory_keypad_setup_required
+    .optional()
+    .nullable(),
+  accessory_keypad_low_battery: accessory_keypad_low_battery
     .optional()
     .nullable(),
   unreliable_online_status: unreliable_online_status.optional().nullable(),
