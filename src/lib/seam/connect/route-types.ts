@@ -48717,11 +48717,11 @@ export type Routes = {
     route: '/connect_webviews/delete'
     method: 'DELETE' | 'POST'
     queryParams: {}
-    jsonBody: {
+    jsonBody: {}
+    commonParams: {
       /** ID of the Connect Webview that you want to delete. */
       connect_webview_id: string
     }
-    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -48892,13 +48892,13 @@ export type Routes = {
     route: '/connected_accounts/delete'
     method: 'DELETE' | 'POST'
     queryParams: {}
-    jsonBody: {
+    jsonBody: {}
+    commonParams: {
       /** ID of the connected account that you want to delete. */
       connected_account_id: string
       /**  */
       sync?: boolean
     }
-    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -90246,7 +90246,8 @@ export type Routes = {
     route: '/noise_sensors/noise_thresholds/delete'
     method: 'DELETE' | 'POST'
     queryParams: {}
-    jsonBody: {
+    jsonBody: {}
+    commonParams: {
       /** ID of the noise threshold that you want to delete. */
       noise_threshold_id: string
       /** ID of the device that contains the noise threshold that you want to delete. */
@@ -90254,7 +90255,6 @@ export type Routes = {
       /**  */
       sync?: boolean
     }
-    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents an action attempt that enables you to keep track of the progress of your action that affects a physical device or system.actions against a device. Action attempts are useful because the physical world is intrinsically asynchronous.
@@ -94540,11 +94540,11 @@ export type Routes = {
     route: '/phones/deactivate'
     method: 'DELETE' | 'POST'
     queryParams: {}
-    jsonBody: {
+    jsonBody: {}
+    commonParams: {
       /** Device ID of the phone that you want to deactivate. */
       device_id: string
     }
-    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -106433,11 +106433,11 @@ export type Routes = {
     route: '/spaces/delete'
     method: 'DELETE' | 'POST'
     queryParams: {}
-    jsonBody: {
+    jsonBody: {}
+    commonParams: {
       /** ID of the space that you want to delete. */
       space_id: string
     }
-    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -115990,13 +115990,13 @@ export type Routes = {
     route: '/thermostats/delete_climate_preset'
     method: 'POST' | 'DELETE'
     queryParams: {}
-    jsonBody: {
+    jsonBody: {}
+    commonParams: {
       /** ID of the thermostat device for which you want to delete a climate preset. */
       device_id: string
       /** Climate preset key of the climate preset that you want to delete. */
       climate_preset_key: string
     }
-    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
