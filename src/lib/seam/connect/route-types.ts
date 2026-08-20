@@ -96205,7 +96205,7 @@ export type Routes = {
       /** Timestamp by which to limit returned timeline entries. Returns entries created after this timestamp. */
       created_after?: Date | undefined
       /** Time range to filter timeline entries. Returns entries created between the two timestamps [start, end]. */
-      created_between?: [Date, Date] | undefined
+      created_between?: Date[] | undefined
       /** Filter timeline entries by entry type. If not specified, all entry types are returned. */
       entry_types?:
         | (
