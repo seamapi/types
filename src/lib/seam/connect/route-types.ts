@@ -95796,7 +95796,8 @@ export type Routes = {
         workspace_id: string
         /** Name of the [workspace](https://docs.seam.co/core-concepts/workspaces). */
         name: string
-        /** Company name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces). */
+        /** Company name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces).
+         * @deprecated Use `connect_partner_name` instead.*/
         company_name: string
         /** Indicates whether the workspace is a [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces). */
         is_sandbox: boolean
@@ -95814,9 +95815,8 @@ export type Routes = {
         }
         /** Indicates whether the [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces) is suspended. Seam suspends sandbox workspaces that have not been accessed in 14 days. */
         is_suspended: boolean
-        /**
-         * @deprecated Use `company_name` instead.*/
-        connect_partner_name: (string | null) | null
+        /** Seam Connect partner name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces). */
+        connect_partner_name: string | null
         /** Publishable key for the [workspace](https://docs.seam.co/core-concepts/workspaces). This key is used to identify the workspace in client-side applications. */
         publishable_key?: string | undefined
         /** Indicates whether publishable key authentication is enabled for this workspace. */
@@ -95858,7 +95858,8 @@ export type Routes = {
         workspace_id: string
         /** Name of the [workspace](https://docs.seam.co/core-concepts/workspaces). */
         name: string
-        /** Company name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces). */
+        /** Company name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces).
+         * @deprecated Use `connect_partner_name` instead.*/
         company_name: string
         /** Indicates whether the workspace is a [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces). */
         is_sandbox: boolean
@@ -95876,9 +95877,8 @@ export type Routes = {
         }
         /** Indicates whether the [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces) is suspended. Seam suspends sandbox workspaces that have not been accessed in 14 days. */
         is_suspended: boolean
-        /**
-         * @deprecated Use `company_name` instead.*/
-        connect_partner_name: (string | null) | null
+        /** Seam Connect partner name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces). */
+        connect_partner_name: string | null
         /** Publishable key for the [workspace](https://docs.seam.co/core-concepts/workspaces). This key is used to identify the workspace in client-side applications. */
         publishable_key?: string | undefined
         /** Indicates whether publishable key authentication is enabled for this workspace. */
@@ -140206,7 +140206,7 @@ export type Routes = {
       /** Company name for the new workspace. */
       company_name?: string | undefined
       /** Connect partner name for the new workspace. */
-      connect_partner_name?: ((string | null) | null) | undefined
+      connect_partner_name?: (string | null) | undefined
       /** Indicates whether the new workspace is a [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces). */
       is_sandbox?: boolean
       /**
@@ -140244,7 +140244,8 @@ export type Routes = {
         workspace_id: string
         /** Name of the [workspace](https://docs.seam.co/core-concepts/workspaces). */
         name: string
-        /** Company name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces). */
+        /** Company name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces).
+         * @deprecated Use `connect_partner_name` instead.*/
         company_name: string
         /** Indicates whether the workspace is a [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces). */
         is_sandbox: boolean
@@ -140262,9 +140263,8 @@ export type Routes = {
         }
         /** Indicates whether the [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces) is suspended. Seam suspends sandbox workspaces that have not been accessed in 14 days. */
         is_suspended: boolean
-        /**
-         * @deprecated Use `company_name` instead.*/
-        connect_partner_name: (string | null) | null
+        /** Seam Connect partner name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces). */
+        connect_partner_name: string | null
         /** Publishable key for the [workspace](https://docs.seam.co/core-concepts/workspaces). This key is used to identify the workspace in client-side applications. */
         publishable_key?: string | undefined
         /** Indicates whether publishable key authentication is enabled for this workspace. */
@@ -140538,7 +140538,8 @@ export type Routes = {
               workspace_id: string
               /** Name of the [workspace](https://docs.seam.co/core-concepts/workspaces). */
               name: string
-              /** Company name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces). */
+              /** Company name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces).
+               * @deprecated Use `connect_partner_name` instead.*/
               company_name: string
               /** Indicates whether the workspace is a [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces). */
               is_sandbox: boolean
@@ -140556,9 +140557,8 @@ export type Routes = {
               }
               /** Indicates whether the [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces) is suspended. Seam suspends sandbox workspaces that have not been accessed in 14 days. */
               is_suspended: boolean
-              /**
-               * @deprecated Use `company_name` instead.*/
-              connect_partner_name: (string | null) | null
+              /** Seam Connect partner name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces). */
+              connect_partner_name: string | null
               /** Publishable key for the [workspace](https://docs.seam.co/core-concepts/workspaces). This key is used to identify the workspace in client-side applications. */
               publishable_key?: string | undefined
               /** Indicates whether publishable key authentication is enabled for this workspace. */
@@ -153002,7 +153002,8 @@ export type Routes = {
         workspace_id: string
         /** Name of the [workspace](https://docs.seam.co/core-concepts/workspaces). */
         name: string
-        /** Company name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces). */
+        /** Company name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces).
+         * @deprecated Use `connect_partner_name` instead.*/
         company_name: string
         /** Indicates whether the workspace is a [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces). */
         is_sandbox: boolean
@@ -153020,9 +153021,8 @@ export type Routes = {
         }
         /** Indicates whether the [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces) is suspended. Seam suspends sandbox workspaces that have not been accessed in 14 days. */
         is_suspended: boolean
-        /**
-         * @deprecated Use `company_name` instead.*/
-        connect_partner_name: (string | null) | null
+        /** Seam Connect partner name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces). */
+        connect_partner_name: string | null
         /** Publishable key for the [workspace](https://docs.seam.co/core-concepts/workspaces). This key is used to identify the workspace in client-side applications. */
         publishable_key?: string | undefined
         /** Indicates whether publishable key authentication is enabled for this workspace. */
@@ -153046,7 +153046,8 @@ export type Routes = {
         workspace_id: string
         /** Name of the [workspace](https://docs.seam.co/core-concepts/workspaces). */
         name: string
-        /** Company name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces). */
+        /** Company name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces).
+         * @deprecated Use `connect_partner_name` instead.*/
         company_name: string
         /** Indicates whether the workspace is a [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces). */
         is_sandbox: boolean
@@ -153064,9 +153065,8 @@ export type Routes = {
         }
         /** Indicates whether the [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces) is suspended. Seam suspends sandbox workspaces that have not been accessed in 14 days. */
         is_suspended: boolean
-        /**
-         * @deprecated Use `company_name` instead.*/
-        connect_partner_name: (string | null) | null
+        /** Seam Connect partner name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces). */
+        connect_partner_name: string | null
         /** Publishable key for the [workspace](https://docs.seam.co/core-concepts/workspaces). This key is used to identify the workspace in client-side applications. */
         publishable_key?: string | undefined
         /** Indicates whether publishable key authentication is enabled for this workspace. */

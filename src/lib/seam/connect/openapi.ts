@@ -38315,15 +38315,17 @@ const openapi: OpenAPISpec = {
           'Represents a Seam [workspace](https://docs.seam.co/core-concepts/workspaces). A workspace is a top-level entity that encompasses all other resources below it, such as devices, connected accounts, and Connect Webviews. Seam provides two types of workspaces. A [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces) is a special type of workspace designed for testing code. Sandbox workspaces offer test device accounts and virtual devices that you can connect and control. This ability to work with virtual devices is quite handy because it removes the need to own physical devices from multiple brands. To connect real devices and systems to Seam, use a [production workspace](https://docs.seam.co/core-concepts/workspaces#production-workspaces).',
         properties: {
           company_name: {
+            deprecated: true,
             description:
               'Company name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces).',
             type: 'string',
+            'x-deprecated': 'Use `connect_partner_name` instead.',
           },
           connect_partner_name: {
-            deprecated: true,
+            description:
+              'Seam Connect partner name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces).',
             nullable: true,
             type: 'string',
-            'x-deprecated': 'Use `company_name` instead.',
           },
           connect_webview_customization: {
             properties: {
@@ -88898,15 +88900,15 @@ const openapi: OpenAPISpec = {
               schema: {
                 properties: {
                   company_name: {
+                    deprecated: true,
                     description: 'Company name for the new workspace.',
                     type: 'string',
+                    'x-deprecated': 'Use `connect_partner_name` instead.',
                   },
                   connect_partner_name: {
-                    deprecated: true,
                     description: 'Connect partner name for the new workspace.',
                     nullable: true,
                     type: 'string',
-                    'x-deprecated': 'Use `company_name` instead.',
                   },
                   connect_webview_customization: {
                     description:
