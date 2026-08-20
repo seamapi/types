@@ -38423,6 +38423,11 @@ const openapi: OpenAPISpec = {
         scheme: 'bearer',
         type: 'http',
       },
+      certified_client_optional: {
+        bearerFormat: 'Certified Client (Optional)',
+        scheme: 'bearer',
+        type: 'http',
+      },
       client_session: {
         bearerFormat: 'Client Session Token',
         scheme: 'bearer',
@@ -64702,7 +64707,7 @@ const openapi: OpenAPISpec = {
           '400': { description: 'Bad Request' },
           '401': { description: 'Unauthorized' },
         },
-        security: [{ certified_client: [] }],
+        security: [{}, { certified_client_optional: [] }],
         summary: '/seam/bridge/v1/bridge_client_sessions/create',
         tags: [],
         'x-fern-sdk-group-name': [
