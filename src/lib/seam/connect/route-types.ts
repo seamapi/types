@@ -95956,11 +95956,11 @@ export type Routes = {
     route: '/seam/console/v1/sites/delete'
     method: 'DELETE' | 'POST'
     queryParams: {}
-    jsonBody: {
+    jsonBody: {}
+    commonParams: {
       /** ID of the site that you want to delete. */
       site_id: string
     }
-    commonParams: {}
     formData: {}
     jsonResponse: {}
     maxDuration: undefined
@@ -105410,11 +105410,11 @@ export type Routes = {
     route: '/seam/instant_key/v1/preview/get'
     method: 'GET' | 'POST'
     queryParams: {}
-    jsonBody: {
+    jsonBody: {}
+    commonParams: {
       /** The short code of the instant key to preview. */
       instant_key_url: string
     }
-    commonParams: {}
     formData: {}
     jsonResponse: {
       /** Represents a preview of an Instant Key with hotel, guest, and access information. */
