@@ -45,6 +45,12 @@ const device_battery_status = z
     'Battery status of the affected device, calculated from the numeric `battery_level` value.',
   )
 
+const battery_source = z
+  .enum(['lock', 'accessory_keypad'])
+  .describe(
+    "Battery that dropped below the low threshold. `lock`: the lock's own battery. `accessory_keypad`: a paired accessory keypad's battery. Omitted for events emitted before this field existed, which always refer to the lock's own battery.",
+  )
+
 const disconnection_error_code = z
   .enum(['account_disconnected', 'hub_disconnected', 'device_disconnected'])
   .describe('Error code associated with the disconnection event, if any.')
@@ -176,6 +182,7 @@ export type DeviceTamperedEvent = z.infer<typeof device_tampered_event>
 export const device_low_battery_event = device_event.extend({
   event_type: z.literal('device.low_battery'),
   battery_level,
+  battery_source: battery_source.optional(),
 }).describe(`
   ---
   route_path: /devices

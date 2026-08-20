@@ -17774,6 +17774,32 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
+                    'Indicates that the accessory keypad paired with this lock has a low or critically low battery. Replace its batteries so guests can keep entering their access codes.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['accessory_keypad_low_battery'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
                     'Indicates that the device may optimistically be reported as online because the provider does not reliably report its online status.',
                   properties: {
                     created_at: {
@@ -26251,6 +26277,12 @@ const openapi: OpenAPISpec = {
                 maximum: 1,
                 minimum: 0,
                 type: 'number',
+              },
+              battery_source: {
+                description:
+                  "Battery that dropped below the low threshold. `lock`: the lock's own battery. `accessory_keypad`: a paired accessory keypad's battery. Omitted for events emitted before this field existed, which always refer to the lock's own battery.",
+                enum: ['lock', 'accessory_keypad'],
+                type: 'string',
               },
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -37763,6 +37795,32 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['accessory_keypad_setup_required'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    'Indicates that the accessory keypad paired with this lock has a low or critically low battery. Replace its batteries so guests can keep entering their access codes.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['accessory_keypad_low_battery'],
                       type: 'string',
                     },
                   },

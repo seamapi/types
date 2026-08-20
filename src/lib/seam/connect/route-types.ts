@@ -15978,6 +15978,14 @@ export type Routes = {
                     /** Date and time at which Seam created the warning. */
                     created_at: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'accessory_keypad_low_battery'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'unreliable_online_status'
                   }
                 | {
@@ -24380,6 +24388,14 @@ export type Routes = {
                     created_at: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'accessory_keypad_setup_required'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'accessory_keypad_low_battery'
                   }
                 | {
                     /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -52479,6 +52495,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unreliable_online_status'
             }
           | {
@@ -54580,6 +54604,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_setup_required'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_low_battery'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -56696,6 +56728,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unreliable_online_status'
             }
           | {
@@ -57512,6 +57552,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_setup_required'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_low_battery'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -60601,6 +60649,8 @@ export type Routes = {
                 event_type: 'device.low_battery'
                 /** Number in the range 0 to 1.0 indicating the amount of battery in the affected device, as reported by the device. */
                 battery_level: number
+                /** Battery that dropped below the low threshold. `lock`: the lock's own battery. `accessory_keypad`: a paired accessory keypad's battery. Omitted for events emitted before this field existed, which always refer to the lock's own battery. */
+                battery_source?: ('lock' | 'accessory_keypad') | undefined
               }
             | {
                 /** ID of the event. */
@@ -64977,6 +65027,8 @@ export type Routes = {
             event_type: 'device.low_battery'
             /** Number in the range 0 to 1.0 indicating the amount of battery in the affected device, as reported by the device. */
             battery_level: number
+            /** Battery that dropped below the low threshold. `lock`: the lock's own battery. `accessory_keypad`: a paired accessory keypad's battery. Omitted for events emitted before this field existed, which always refer to the lock's own battery. */
+            battery_source?: ('lock' | 'accessory_keypad') | undefined
           }
         | {
             /** ID of the event. */
@@ -70172,6 +70224,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unreliable_online_status'
             }
           | {
@@ -72024,6 +72084,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_setup_required'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_low_battery'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -74017,6 +74085,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unreliable_online_status'
             }
           | {
@@ -75868,6 +75944,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_setup_required'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_low_battery'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -86163,6 +86247,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unreliable_online_status'
             }
           | {
@@ -88014,6 +88106,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_setup_required'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_low_battery'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -102732,6 +102832,8 @@ export type Routes = {
             event_type: 'device.low_battery'
             /** Number in the range 0 to 1.0 indicating the amount of battery in the affected device, as reported by the device. */
             battery_level: number
+            /** Battery that dropped below the low threshold. `lock`: the lock's own battery. `accessory_keypad`: a paired accessory keypad's battery. Omitted for events emitted before this field existed, which always refer to the lock's own battery. */
+            battery_source?: ('lock' | 'accessory_keypad') | undefined
           }
         | {
             /** ID of the event. */
@@ -108403,6 +108505,14 @@ export type Routes = {
                     created_at: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'accessory_keypad_setup_required'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'accessory_keypad_low_battery'
                   }
                 | {
                     /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -117784,6 +117894,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unreliable_online_status'
             }
           | {
@@ -123909,6 +124027,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unreliable_online_status'
             }
           | {
@@ -125760,6 +125886,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_setup_required'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_low_battery'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -137079,6 +137213,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unreliable_online_status'
             }
           | {
@@ -138932,6 +139074,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_setup_required'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_low_battery'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -142379,6 +142529,14 @@ export type Routes = {
                     created_at: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'accessory_keypad_setup_required'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'accessory_keypad_low_battery'
                   }
                 | {
                     /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -146589,6 +146747,14 @@ export type Routes = {
                     /** Date and time at which Seam created the warning. */
                     created_at: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'accessory_keypad_low_battery'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'unreliable_online_status'
                   }
                 | {
@@ -150256,6 +150422,8 @@ export type Routes = {
                   event_type: 'device.low_battery'
                   /** Number in the range 0 to 1.0 indicating the amount of battery in the affected device, as reported by the device. */
                   battery_level: number
+                  /** Battery that dropped below the low threshold. `lock`: the lock's own battery. `accessory_keypad`: a paired accessory keypad's battery. Omitted for events emitted before this field existed, which always refer to the lock's own battery. */
+                  battery_source?: ('lock' | 'accessory_keypad') | undefined
                 }
               | {
                   /** ID of the event. */
