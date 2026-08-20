@@ -9,11 +9,12 @@ export const workspace = z.object({
     .describe(
       'Name of the [workspace](https://docs.seam.co/core-concepts/workspaces).',
     ),
-  company_name: z
-    .string()
-    .describe(
-      'Company name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces).',
-    ),
+  company_name: z.string().describe(`
+      ---
+      deprecated: Use \`connect_partner_name\` instead.
+      ---
+      Company name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces).
+      `),
   is_sandbox: z
     .boolean()
     .describe(
@@ -58,13 +59,8 @@ export const workspace = z.object({
     .string()
     .nullable()
     .describe(
-      `
-    ---
-    deprecated: Use \`company_name\` instead.
-    ---
-  `,
-    )
-    .nullable(),
+      'Seam Connect partner name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces).',
+    ),
   publishable_key: z
     .string()
     .optional()
