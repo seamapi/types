@@ -14919,15 +14919,6 @@ export type Routes = {
                       /** Set to true when the device does not support the /dual-setpoints API endpoint. */
                       dual_setpoints_not_supported?:
                         (boolean | undefined) | undefined
-                      /** Legacy combined enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. Read as a fallback for the per-mode ranges below; no longer written. */
-                      enforced_setpoint_range_celsius?:
-                        ([number, number] | undefined) | undefined
-                      /** Enforced heating setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                      enforced_heating_setpoint_range_celsius?:
-                        ([number, number] | undefined) | undefined
-                      /** Enforced cooling setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                      enforced_cooling_setpoint_range_celsius?:
-                        ([number, number] | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for a KeyNest device. */
@@ -23337,15 +23328,6 @@ export type Routes = {
                       /** Set to true when the device does not support the /dual-setpoints API endpoint. */
                       dual_setpoints_not_supported?:
                         (boolean | undefined) | undefined
-                      /** Legacy combined enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. Read as a fallback for the per-mode ranges below; no longer written. */
-                      enforced_setpoint_range_celsius?:
-                        ([number, number] | undefined) | undefined
-                      /** Enforced heating setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                      enforced_heating_setpoint_range_celsius?:
-                        ([number, number] | undefined) | undefined
-                      /** Enforced cooling setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                      enforced_cooling_setpoint_range_celsius?:
-                        ([number, number] | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for a KeyNest device. */
@@ -51471,15 +51453,6 @@ export type Routes = {
                 product_type?: (string | undefined) | undefined
                 /** Set to true when the device does not support the /dual-setpoints API endpoint. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
-                /** Legacy combined enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. Read as a fallback for the per-mode ranges below; no longer written. */
-                enforced_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced heating setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_heating_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced cooling setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_cooling_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
               }
             | undefined
           /** Metadata for a KeyNest device. */
@@ -53588,15 +53561,6 @@ export type Routes = {
                 product_type?: (string | undefined) | undefined
                 /** Set to true when the device does not support the /dual-setpoints API endpoint. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
-                /** Legacy combined enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. Read as a fallback for the per-mode ranges below; no longer written. */
-                enforced_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced heating setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_heating_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced cooling setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_cooling_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
               }
             | undefined
           /** Metadata for a KeyNest device. */
@@ -69182,15 +69146,6 @@ export type Routes = {
                 product_type?: (string | undefined) | undefined
                 /** Set to true when the device does not support the /dual-setpoints API endpoint. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
-                /** Legacy combined enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. Read as a fallback for the per-mode ranges below; no longer written. */
-                enforced_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced heating setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_heating_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced cooling setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_cooling_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
               }
             | undefined
           /** Metadata for a KeyNest device. */
@@ -71050,15 +71005,6 @@ export type Routes = {
                 product_type?: (string | undefined) | undefined
                 /** Set to true when the device does not support the /dual-setpoints API endpoint. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
-                /** Legacy combined enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. Read as a fallback for the per-mode ranges below; no longer written. */
-                enforced_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced heating setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_heating_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced cooling setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_cooling_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
               }
             | undefined
           /** Metadata for a KeyNest device. */
@@ -73045,15 +72991,6 @@ export type Routes = {
                 product_type?: (string | undefined) | undefined
                 /** Set to true when the device does not support the /dual-setpoints API endpoint. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
-                /** Legacy combined enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. Read as a fallback for the per-mode ranges below; no longer written. */
-                enforced_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced heating setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_heating_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced cooling setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_cooling_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
               }
             | undefined
           /** Metadata for a KeyNest device. */
@@ -74912,15 +74849,6 @@ export type Routes = {
                 product_type?: (string | undefined) | undefined
                 /** Set to true when the device does not support the /dual-setpoints API endpoint. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
-                /** Legacy combined enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. Read as a fallback for the per-mode ranges below; no longer written. */
-                enforced_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced heating setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_heating_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced cooling setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_cooling_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
               }
             | undefined
           /** Metadata for a KeyNest device. */
@@ -85209,15 +85137,6 @@ export type Routes = {
                 product_type?: (string | undefined) | undefined
                 /** Set to true when the device does not support the /dual-setpoints API endpoint. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
-                /** Legacy combined enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. Read as a fallback for the per-mode ranges below; no longer written. */
-                enforced_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced heating setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_heating_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced cooling setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_cooling_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
               }
             | undefined
           /** Metadata for a KeyNest device. */
@@ -87076,15 +86995,6 @@ export type Routes = {
                 product_type?: (string | undefined) | undefined
                 /** Set to true when the device does not support the /dual-setpoints API endpoint. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
-                /** Legacy combined enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. Read as a fallback for the per-mode ranges below; no longer written. */
-                enforced_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced heating setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_heating_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced cooling setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_cooling_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
               }
             | undefined
           /** Metadata for a KeyNest device. */
@@ -107441,15 +107351,6 @@ export type Routes = {
                       /** Set to true when the device does not support the /dual-setpoints API endpoint. */
                       dual_setpoints_not_supported?:
                         (boolean | undefined) | undefined
-                      /** Legacy combined enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. Read as a fallback for the per-mode ranges below; no longer written. */
-                      enforced_setpoint_range_celsius?:
-                        ([number, number] | undefined) | undefined
-                      /** Enforced heating setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                      enforced_heating_setpoint_range_celsius?:
-                        ([number, number] | undefined) | undefined
-                      /** Enforced cooling setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                      enforced_cooling_setpoint_range_celsius?:
-                        ([number, number] | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for a KeyNest device. */
@@ -116857,15 +116758,6 @@ export type Routes = {
                 product_type?: (string | undefined) | undefined
                 /** Set to true when the device does not support the /dual-setpoints API endpoint. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
-                /** Legacy combined enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. Read as a fallback for the per-mode ranges below; no longer written. */
-                enforced_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced heating setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_heating_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced cooling setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_cooling_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
               }
             | undefined
           /** Metadata for a KeyNest device. */
@@ -122991,15 +122883,6 @@ export type Routes = {
                 product_type?: (string | undefined) | undefined
                 /** Set to true when the device does not support the /dual-setpoints API endpoint. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
-                /** Legacy combined enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. Read as a fallback for the per-mode ranges below; no longer written. */
-                enforced_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced heating setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_heating_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced cooling setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_cooling_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
               }
             | undefined
           /** Metadata for a KeyNest device. */
@@ -124858,15 +124741,6 @@ export type Routes = {
                 product_type?: (string | undefined) | undefined
                 /** Set to true when the device does not support the /dual-setpoints API endpoint. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
-                /** Legacy combined enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. Read as a fallback for the per-mode ranges below; no longer written. */
-                enforced_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced heating setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_heating_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced cooling setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_cooling_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
               }
             | undefined
           /** Metadata for a KeyNest device. */
@@ -136179,15 +136053,6 @@ export type Routes = {
                 product_type?: (string | undefined) | undefined
                 /** Set to true when the device does not support the /dual-setpoints API endpoint. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
-                /** Legacy combined enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. Read as a fallback for the per-mode ranges below; no longer written. */
-                enforced_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced heating setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_heating_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced cooling setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_cooling_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
               }
             | undefined
           /** Metadata for a KeyNest device. */
@@ -138048,15 +137913,6 @@ export type Routes = {
                 product_type?: (string | undefined) | undefined
                 /** Set to true when the device does not support the /dual-setpoints API endpoint. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
-                /** Legacy combined enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. Read as a fallback for the per-mode ranges below; no longer written. */
-                enforced_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced heating setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_heating_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
-                /** Enforced cooling setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                enforced_cooling_setpoint_range_celsius?:
-                  ([number, number] | undefined) | undefined
               }
             | undefined
           /** Metadata for a KeyNest device. */
@@ -141471,15 +141327,6 @@ export type Routes = {
                       /** Set to true when the device does not support the /dual-setpoints API endpoint. */
                       dual_setpoints_not_supported?:
                         (boolean | undefined) | undefined
-                      /** Legacy combined enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. Read as a fallback for the per-mode ranges below; no longer written. */
-                      enforced_setpoint_range_celsius?:
-                        ([number, number] | undefined) | undefined
-                      /** Enforced heating setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                      enforced_heating_setpoint_range_celsius?:
-                        ([number, number] | undefined) | undefined
-                      /** Enforced cooling setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. */
-                      enforced_cooling_setpoint_range_celsius?:
-                        ([number, number] | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for a KeyNest device. */

@@ -15613,30 +15613,6 @@ const openapi: OpenAPISpec = {
                               'Set to true when the device does not support the /dual-setpoints API endpoint.',
                             type: 'boolean',
                           },
-                          enforced_cooling_setpoint_range_celsius: {
-                            description:
-                              'Enforced cooling setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error.',
-                            items: { format: 'float', type: 'number' },
-                            maxItems: 2,
-                            minItems: 2,
-                            type: 'array',
-                          },
-                          enforced_heating_setpoint_range_celsius: {
-                            description:
-                              'Enforced heating setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error.',
-                            items: { format: 'float', type: 'number' },
-                            maxItems: 2,
-                            minItems: 2,
-                            type: 'array',
-                          },
-                          enforced_setpoint_range_celsius: {
-                            description:
-                              'Legacy combined enforced setpoint range in Celsius for a Sensi device, derived from an OutOfRange API error. Read as a fallback for the per-mode ranges below; no longer written.',
-                            items: { format: 'float', type: 'number' },
-                            maxItems: 2,
-                            minItems: 2,
-                            type: 'array',
-                          },
                           product_type: {
                             description: 'Product type for a Sensi device.',
                             type: 'string',
