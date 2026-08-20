@@ -52662,24 +52662,18 @@ const openapi: OpenAPISpec = {
         description:
           'Deletes a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).\n\nYou do not need to delete a Connect Webview once a user completes it. Instead, you can simply ignore completed Connect Webviews.',
         operationId: 'connectWebviewsDeleteDelete',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  connect_webview_id: {
-                    description:
-                      'ID of the Connect Webview that you want to delete.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                },
-                required: ['connect_webview_id'],
-                type: 'object',
-              },
+        parameters: [
+          {
+            in: 'query',
+            name: 'connect_webview_id',
+            required: true,
+            schema: {
+              description: 'ID of the Connect Webview that you want to delete.',
+              format: 'uuid',
+              type: 'string',
             },
           },
-        },
+        ],
         responses: {
           '200': {
             content: {
@@ -53086,29 +53080,29 @@ const openapi: OpenAPISpec = {
         description:
           'Deletes a specified [connected account](https://docs.seam.co/core-concepts/connected-accounts).\n\nDeleting a connected account triggers a `connected_account.deleted` event and removes the connected account and all data associated with the connected account from Seam, including devices, events, access codes, and so on. For every deleted resource, Seam sends a corresponding deleted event, but the resource is not deleted from the provider.\n\nFor example, if you delete a connected account with a device that has an access code, Seam sends a `connected_account.deleted` event, a `device.deleted` event, and an `access_code.deleted` event, but Seam does not remove the access code from the device.',
         operationId: 'connectedAccountsDeleteDelete',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  connected_account_id: {
-                    description:
-                      'ID of the connected account that you want to delete.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                  sync: {
-                    default: false,
-                    type: 'boolean',
-                    'x-undocumented': 'Only used internally.',
-                  },
-                },
-                required: ['connected_account_id'],
-                type: 'object',
-              },
+        parameters: [
+          {
+            in: 'query',
+            name: 'connected_account_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the connected account that you want to delete.',
+              format: 'uuid',
+              type: 'string',
             },
           },
-        },
+          {
+            in: 'query',
+            name: 'sync',
+            required: false,
+            schema: {
+              default: false,
+              type: 'boolean',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
+        ],
         responses: {
           '200': {
             content: {
@@ -63467,35 +63461,39 @@ const openapi: OpenAPISpec = {
         description:
           'Deletes a [noise threshold](https://docs.seam.co/capability-guides/noise-sensors/configure-noise-threshold-settings) from a [noise sensor](https://docs.seam.co/capability-guides/noise-sensors).',
         operationId: 'noiseSensorsNoiseThresholdsDeleteDelete',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  device_id: {
-                    description:
-                      'ID of the device that contains the noise threshold that you want to delete.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                  noise_threshold_id: {
-                    description:
-                      'ID of the noise threshold that you want to delete.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                  sync: {
-                    default: false,
-                    type: 'boolean',
-                    'x-undocumented': 'Only used internally.',
-                  },
-                },
-                required: ['noise_threshold_id', 'device_id'],
-                type: 'object',
-              },
+        parameters: [
+          {
+            in: 'query',
+            name: 'noise_threshold_id',
+            required: true,
+            schema: {
+              description: 'ID of the noise threshold that you want to delete.',
+              format: 'uuid',
+              type: 'string',
             },
           },
-        },
+          {
+            in: 'query',
+            name: 'device_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the device that contains the noise threshold that you want to delete.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'sync',
+            required: false,
+            schema: {
+              default: false,
+              type: 'boolean',
+              'x-undocumented': 'Only used internally.',
+            },
+          },
+        ],
         responses: {
           '200': {
             content: {
@@ -64183,23 +64181,18 @@ const openapi: OpenAPISpec = {
         description:
           'Deactivates a phone, which is useful, for example, if a user has lost their phone. For more information, see [App User Lost Phone Process](https://docs.seam.co/capability-guides/mobile-access/managing-phones-for-a-user-identity#app-user-lost-phone-process).',
         operationId: 'phonesDeactivateDelete',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  device_id: {
-                    description:
-                      'Device ID of the phone that you want to deactivate.',
-                    type: 'string',
-                  },
-                },
-                required: ['device_id'],
-                type: 'object',
-              },
+        parameters: [
+          {
+            in: 'query',
+            name: 'device_id',
+            required: true,
+            schema: {
+              description:
+                'Device ID of the phone that you want to deactivate.',
+              type: 'string',
             },
           },
-        },
+        ],
         responses: {
           '200': {
             content: {
@@ -81099,23 +81092,18 @@ const openapi: OpenAPISpec = {
       delete: {
         description: 'Deletes a space.',
         operationId: 'spacesDeleteDelete',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  space_id: {
-                    description: 'ID of the space that you want to delete.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                },
-                required: ['space_id'],
-                type: 'object',
-              },
+        parameters: [
+          {
+            in: 'query',
+            name: 'space_id',
+            required: true,
+            schema: {
+              description: 'ID of the space that you want to delete.',
+              format: 'uuid',
+              type: 'string',
             },
           },
-        },
+        ],
         responses: {
           '200': {
             content: {
@@ -83043,30 +83031,30 @@ const openapi: OpenAPISpec = {
         description:
           'Deletes a specified [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/capability-guides/thermostats).',
         operationId: 'thermostatsDeleteClimatePresetDelete',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  climate_preset_key: {
-                    description:
-                      'Climate preset key of the climate preset that you want to delete.',
-                    minLength: 1,
-                    type: 'string',
-                  },
-                  device_id: {
-                    description:
-                      'ID of the thermostat device for which you want to delete a climate preset.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                },
-                required: ['device_id', 'climate_preset_key'],
-                type: 'object',
-              },
+        parameters: [
+          {
+            in: 'query',
+            name: 'device_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the thermostat device for which you want to delete a climate preset.',
+              format: 'uuid',
+              type: 'string',
             },
           },
-        },
+          {
+            in: 'query',
+            name: 'climate_preset_key',
+            required: true,
+            schema: {
+              description:
+                'Climate preset key of the climate preset that you want to delete.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+        ],
         responses: {
           '200': {
             content: {
