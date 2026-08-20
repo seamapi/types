@@ -345,36 +345,20 @@ export type AccessCodeFailedToIssueEvent = z.infer<
   typeof access_code_failed_to_issue_event
 >
 
-export const access_code_delay_in_applying_mutations_event = access_code_event
+export const access_code_failed_to_update_event = access_code_event
   .extend({
-    event_type: z.literal('access_code.delay_in_applying_mutations'),
+    event_type: z.literal('access_code.failed_to_update'),
   })
   .extend(access_code_event_issue_properties).describe(`
     ---
     route_path: /access_codes
     undocumented: Unreleased.
     ---
-    Seam has not yet applied this [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes)'s pending mutations to the device, so the code on the device does not yet match its requested state. Seam is still attempting to apply them, and the accompanying \`delay_in_applying_mutations\` warning clears automatically once the mutations are applied.
+    Seam was unable to apply this [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes)'s requested update to the device, so the code on the device does not match its requested state. Seam keeps retrying, and the accompanying \`failed_to_update\` error clears automatically once the update is applied.
   `)
 
-export type AccessCodeDelayInApplyingMutationsEvent = z.infer<
-  typeof access_code_delay_in_applying_mutations_event
->
-
-export const access_code_failed_to_apply_mutations_event = access_code_event
-  .extend({
-    event_type: z.literal('access_code.failed_to_apply_mutations'),
-  })
-  .extend(access_code_event_issue_properties).describe(`
-    ---
-    route_path: /access_codes
-    undocumented: Unreleased.
-    ---
-    Seam was unable to apply this [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes)'s pending mutations to the device, so the code on the device does not match its requested state. Seam keeps retrying, and the accompanying \`failed_to_apply_mutations\` error clears automatically once the mutations are applied.
-  `)
-
-export type AccessCodeFailedToApplyMutationsEvent = z.infer<
-  typeof access_code_failed_to_apply_mutations_event
+export type AccessCodeFailedToUpdateEvent = z.infer<
+  typeof access_code_failed_to_update_event
 >
 
 export const access_code_failed_to_expire_event = access_code_event
@@ -556,8 +540,7 @@ export const access_code_events = [
   access_code_issued_event,
   access_code_delay_in_issuing_event,
   access_code_failed_to_issue_event,
-  access_code_delay_in_applying_mutations_event,
-  access_code_failed_to_apply_mutations_event,
+  access_code_failed_to_update_event,
   access_code_failed_to_expire_event,
   access_code_deleted_event,
   access_code_delay_in_removing_from_device_event,

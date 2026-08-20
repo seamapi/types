@@ -434,7 +434,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    "Seam was unable to apply this access code's pending mutations to the device, so the code on the device does not match its requested state. Seam keeps retrying, and this error clears automatically once the mutations are applied.",
+                    "Seam was unable to apply this access code's requested update to the device, so the code on the device does not match its requested state. Seam keeps retrying, and this error clears automatically once the update is applied.",
                   properties: {
                     created_at: {
                       description:
@@ -445,7 +445,7 @@ const openapi: OpenAPISpec = {
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['failed_to_apply_mutations'],
+                      enum: ['failed_to_update'],
                       type: 'string',
                     },
                     is_access_code_error: {
@@ -1582,32 +1582,6 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['delay_in_issuing'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                  'x-undocumented': 'Unreleased.',
-                },
-                {
-                  description:
-                    "Seam has not yet applied this access code's pending mutations to the device, so the code on the device does not yet match its requested state. Seam is still attempting to apply them, and this warning clears automatically once the mutations are applied.",
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['delay_in_applying_mutations'],
                       type: 'string',
                     },
                   },
@@ -20173,7 +20147,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              "Seam has not yet applied this [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes)'s pending mutations to the device, so the code on the device does not yet match its requested state. Seam is still attempting to apply them, and the accompanying `delay_in_applying_mutations` warning clears automatically once the mutations are applied.",
+              "Seam was unable to apply this [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes)'s requested update to the device, so the code on the device does not match its requested state. Seam keeps retrying, and the accompanying `failed_to_update` error clears automatically once the update is applied.",
             properties: {
               access_code_errors: {
                 description: 'Errors associated with the access code.',
@@ -20392,262 +20366,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               event_type: {
-                enum: ['access_code.delay_in_applying_mutations'],
-                type: 'string',
-              },
-              occurred_at: {
-                description: 'Date and time at which the event occurred.',
-                format: 'date-time',
-                type: 'string',
-              },
-              workspace_id: {
-                description: 'ID of the workspace associated with the event.',
-                format: 'uuid',
-                type: 'string',
-              },
-            },
-            required: [
-              'event_id',
-              'workspace_id',
-              'created_at',
-              'occurred_at',
-              'access_code_id',
-              'device_id',
-              'connected_account_id',
-              'event_type',
-              'connected_account_errors',
-              'connected_account_warnings',
-              'device_errors',
-              'device_warnings',
-              'access_code_errors',
-              'access_code_warnings',
-            ],
-            type: 'object',
-            'x-route-path': '/access_codes',
-            'x-undocumented': 'Unreleased.',
-          },
-          {
-            description:
-              "Seam was unable to apply this [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes)'s pending mutations to the device, so the code on the device does not match its requested state. Seam keeps retrying, and the accompanying `failed_to_apply_mutations` error clears automatically once the mutations are applied.",
-            properties: {
-              access_code_errors: {
-                description: 'Errors associated with the access code.',
-                items: {
-                  description:
-                    'Error associated with the resource, including the error code, message, and creation timestamp.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['created_at', 'message', 'error_code'],
-                  type: 'object',
-                },
-                type: 'array',
-              },
-              access_code_id: {
-                description: 'ID of the affected access code.',
-                format: 'uuid',
-                type: 'string',
-              },
-              access_code_warnings: {
-                description: 'Warnings associated with the access code.',
-                items: {
-                  description:
-                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['created_at', 'message', 'warning_code'],
-                  type: 'object',
-                },
-                type: 'array',
-              },
-              connected_account_custom_metadata: {
-                additionalProperties: {
-                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
-                },
-                description:
-                  'Custom metadata of the connected account, present when connected_account_id is provided.',
-                type: 'object',
-              },
-              connected_account_errors: {
-                description: 'Errors associated with the connected account.',
-                items: {
-                  description:
-                    'Error associated with the resource, including the error code, message, and creation timestamp.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['created_at', 'message', 'error_code'],
-                  type: 'object',
-                },
-                type: 'array',
-              },
-              connected_account_id: {
-                description:
-                  'ID of the connected account associated with the affected access code.',
-                format: 'uuid',
-                type: 'string',
-              },
-              connected_account_warnings: {
-                description: 'Warnings associated with the connected account.',
-                items: {
-                  description:
-                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['created_at', 'message', 'warning_code'],
-                  type: 'object',
-                },
-                type: 'array',
-              },
-              created_at: {
-                description: 'Date and time at which the event was created.',
-                format: 'date-time',
-                type: 'string',
-              },
-              device_custom_metadata: {
-                additionalProperties: {
-                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
-                },
-                description:
-                  'Custom metadata of the device, present when device_id is provided.',
-                type: 'object',
-              },
-              device_errors: {
-                description: 'Errors associated with the device.',
-                items: {
-                  description:
-                    'Error associated with the resource, including the error code, message, and creation timestamp.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['created_at', 'message', 'error_code'],
-                  type: 'object',
-                },
-                type: 'array',
-              },
-              device_id: {
-                description:
-                  'ID of the device associated with the affected access code.',
-                format: 'uuid',
-                type: 'string',
-              },
-              device_warnings: {
-                description: 'Warnings associated with the device.',
-                items: {
-                  description:
-                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      type: 'string',
-                    },
-                  },
-                  required: ['created_at', 'message', 'warning_code'],
-                  type: 'object',
-                },
-                type: 'array',
-              },
-              event_description: {
-                description:
-                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
-                type: 'string',
-              },
-              event_id: {
-                description: 'ID of the event.',
-                format: 'uuid',
-                type: 'string',
-              },
-              event_type: {
-                enum: ['access_code.failed_to_apply_mutations'],
+                enum: ['access_code.failed_to_update'],
                 type: 'string',
               },
               occurred_at: {
@@ -32108,7 +31827,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    "Seam was unable to apply this access code's pending mutations to the device, so the code on the device does not match its requested state. Seam keeps retrying, and this error clears automatically once the mutations are applied.",
+                    "Seam was unable to apply this access code's requested update to the device, so the code on the device does not match its requested state. Seam keeps retrying, and this error clears automatically once the update is applied.",
                   properties: {
                     created_at: {
                       description:
@@ -32119,7 +31838,7 @@ const openapi: OpenAPISpec = {
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['failed_to_apply_mutations'],
+                      enum: ['failed_to_update'],
                       type: 'string',
                     },
                     is_access_code_error: {
@@ -32945,32 +32664,6 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['delay_in_issuing'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                  'x-undocumented': 'Unreleased.',
-                },
-                {
-                  description:
-                    "Seam has not yet applied this access code's pending mutations to the device, so the code on the device does not yet match its requested state. Seam is still attempting to apply them, and this warning clears automatically once the mutations are applied.",
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the warning.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['delay_in_applying_mutations'],
                       type: 'string',
                     },
                   },
@@ -61146,8 +60839,7 @@ const openapi: OpenAPISpec = {
                 'access_code.issued',
                 'access_code.delay_in_issuing',
                 'access_code.failed_to_issue',
-                'access_code.delay_in_applying_mutations',
-                'access_code.failed_to_apply_mutations',
+                'access_code.failed_to_update',
                 'access_code.failed_to_expire',
                 'access_code.deleted',
                 'access_code.delay_in_removing_from_device',
@@ -61272,8 +60964,7 @@ const openapi: OpenAPISpec = {
                   'access_code.issued',
                   'access_code.delay_in_issuing',
                   'access_code.failed_to_issue',
-                  'access_code.delay_in_applying_mutations',
-                  'access_code.failed_to_apply_mutations',
+                  'access_code.failed_to_update',
                   'access_code.failed_to_expire',
                   'access_code.deleted',
                   'access_code.delay_in_removing_from_device',
@@ -61730,8 +61421,7 @@ const openapi: OpenAPISpec = {
                       'access_code.issued',
                       'access_code.delay_in_issuing',
                       'access_code.failed_to_issue',
-                      'access_code.delay_in_applying_mutations',
-                      'access_code.failed_to_apply_mutations',
+                      'access_code.failed_to_update',
                       'access_code.failed_to_expire',
                       'access_code.deleted',
                       'access_code.delay_in_removing_from_device',
@@ -61852,8 +61542,7 @@ const openapi: OpenAPISpec = {
                         'access_code.issued',
                         'access_code.delay_in_issuing',
                         'access_code.failed_to_issue',
-                        'access_code.delay_in_applying_mutations',
-                        'access_code.failed_to_apply_mutations',
+                        'access_code.failed_to_update',
                         'access_code.failed_to_expire',
                         'access_code.deleted',
                         'access_code.delay_in_removing_from_device',
@@ -74162,8 +73851,7 @@ const openapi: OpenAPISpec = {
                 'access_code.issued',
                 'access_code.delay_in_issuing',
                 'access_code.failed_to_issue',
-                'access_code.delay_in_applying_mutations',
-                'access_code.failed_to_apply_mutations',
+                'access_code.failed_to_update',
                 'access_code.failed_to_expire',
                 'access_code.deleted',
                 'access_code.delay_in_removing_from_device',
@@ -74289,8 +73977,7 @@ const openapi: OpenAPISpec = {
                   'access_code.issued',
                   'access_code.delay_in_issuing',
                   'access_code.failed_to_issue',
-                  'access_code.delay_in_applying_mutations',
-                  'access_code.failed_to_apply_mutations',
+                  'access_code.failed_to_update',
                   'access_code.failed_to_expire',
                   'access_code.deleted',
                   'access_code.delay_in_removing_from_device',
@@ -74477,8 +74164,7 @@ const openapi: OpenAPISpec = {
                       'access_code.issued',
                       'access_code.delay_in_issuing',
                       'access_code.failed_to_issue',
-                      'access_code.delay_in_applying_mutations',
-                      'access_code.failed_to_apply_mutations',
+                      'access_code.failed_to_update',
                       'access_code.failed_to_expire',
                       'access_code.deleted',
                       'access_code.delay_in_removing_from_device',
@@ -74599,8 +74285,7 @@ const openapi: OpenAPISpec = {
                         'access_code.issued',
                         'access_code.delay_in_issuing',
                         'access_code.failed_to_issue',
-                        'access_code.delay_in_applying_mutations',
-                        'access_code.failed_to_apply_mutations',
+                        'access_code.failed_to_update',
                         'access_code.failed_to_expire',
                         'access_code.deleted',
                         'access_code.delay_in_removing_from_device',
