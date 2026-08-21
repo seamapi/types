@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
 import { device } from './device.js'
 import { phone_device_type } from './device-type.js'
 import { phone_specific_properties } from './phone-properties.js'
@@ -41,10 +42,9 @@ export const phone = z.object({
           .string()
           .describe('Unique identifier of the type of error.'),
         message: z.string().describe('Detailed description of the error.'),
-        created_at: z
-          .string()
-          .datetime()
-          .describe('Date and time at which Seam created the error.'),
+        created_at: datetime.describe(
+          'Date and time at which Seam created the error.',
+        ),
       }),
     )
     .describe('Errors associated with the phone.'),
@@ -55,10 +55,9 @@ export const phone = z.object({
           .string()
           .describe('Unique identifier of the type of warning.'),
         message: z.string().describe('Detailed description of the warning.'),
-        created_at: z
-          .string()
-          .datetime()
-          .describe('Date and time at which Seam created the warning.'),
+        created_at: datetime.describe(
+          'Date and time at which Seam created the warning.',
+        ),
       }),
     )
     .describe('Warnings associated with the phone.'),

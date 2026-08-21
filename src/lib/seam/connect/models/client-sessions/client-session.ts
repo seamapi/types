@@ -1,23 +1,19 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
+
 export const client_session = z.object({
   client_session_id: z.string().uuid().describe('ID of the client session.'),
   workspace_id: z
     .string()
     .uuid()
     .describe('ID of the workspace associated with the client session.'),
-  created_at: z
-    .string()
-    .datetime()
-    .describe(
-      'Date and time at which the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens) was created.',
-    ),
-  expires_at: z
-    .string()
-    .datetime()
-    .describe(
-      'Date and time at which the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens) expires.',
-    ),
+  created_at: datetime.describe(
+    'Date and time at which the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens) was created.',
+  ),
+  expires_at: datetime.describe(
+    'Date and time at which the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens) expires.',
+  ),
   token: z
     .string()
     .describe(

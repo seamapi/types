@@ -1,10 +1,11 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
+
 const common_access_method_warning = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam created the warning.'),
+  created_at: datetime.describe(
+    'Date and time at which Seam created the warning.',
+  ),
   message: z
     .string()
     .describe(
@@ -83,10 +84,9 @@ const _access_method_warning_map = z.object({
 export type AccessMethodWarningMap = z.infer<typeof _access_method_warning_map>
 
 const common_access_method_error = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam created the error.'),
+  created_at: datetime.describe(
+    'Date and time at which Seam created the error.',
+  ),
   message: z
     .string()
     .describe(
@@ -120,10 +120,9 @@ export type AccessMethodErrorMap = z.infer<typeof _access_method_error_map>
 
 // Pending mutations for access methods
 const common_pending_mutation = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the mutation was created.'),
+  created_at: datetime.describe(
+    'Date and time at which the mutation was created.',
+  ),
   message: z.string().describe('Detailed description of the mutation.'),
 })
 
@@ -188,30 +187,16 @@ const updating_access_times_mutation = common_pending_mutation
       ),
     from: z
       .object({
-        starts_at: z
-          .string()
-          .datetime()
+        starts_at: datetime
           .nullable()
           .describe('Previous start time for access.'),
-        ends_at: z
-          .string()
-          .datetime()
-          .nullable()
-          .describe('Previous end time for access.'),
+        ends_at: datetime.nullable().describe('Previous end time for access.'),
       })
       .describe('Previous access time configuration.'),
     to: z
       .object({
-        starts_at: z
-          .string()
-          .datetime()
-          .nullable()
-          .describe('New start time for access.'),
-        ends_at: z
-          .string()
-          .datetime()
-          .nullable()
-          .describe('New end time for access.'),
+        starts_at: datetime.nullable().describe('New start time for access.'),
+        ends_at: datetime.nullable().describe('New end time for access.'),
       })
       .describe('New access time configuration.'),
   })
@@ -272,13 +257,10 @@ export const access_method = z.object({
     .describe(
       'Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
     ),
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the access method was created.'),
-  issued_at: z
-    .string()
-    .datetime()
+  created_at: datetime.describe(
+    'Date and time at which the access method was created.',
+  ),
+  issued_at: datetime
     .nullable()
     .describe('Date and time at which the access method was issued.'),
   is_issued: z

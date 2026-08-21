@@ -1,13 +1,13 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
 import { access_grant_pending_mutations } from './pending-mutations.js'
 import { requested_access_method } from './requested-access-method.js'
 
 const common_access_grant_error = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam created the error.'),
+  created_at: datetime.describe(
+    'Date and time at which Seam created the error.',
+  ),
   message: z
     .string()
     .describe(
@@ -37,10 +37,9 @@ const cannot_create_requested_access_methods_error =
     `)
 
 const common_access_grant_warning = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam created the warning.'),
+  created_at: datetime.describe(
+    'Date and time at which Seam created the warning.',
+  ),
   message: z
     .string()
     .describe(
@@ -272,17 +271,13 @@ export const access_grant = z.object({
     .describe(
       'Instant Key URL. Only returned if the Access Grant has a single mobile_key access_method. ',
     ),
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the Access Grant was created.'),
-  starts_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the Access Grant starts.'),
-  ends_at: z
-    .string()
-    .datetime()
+  created_at: datetime.describe(
+    'Date and time at which the Access Grant was created.',
+  ),
+  starts_at: datetime.describe(
+    'Date and time at which the Access Grant starts.',
+  ),
+  ends_at: datetime
     .nullable()
     .describe('Date and time at which the Access Grant ends.'),
   display_status: z

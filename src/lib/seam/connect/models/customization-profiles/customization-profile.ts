@@ -1,6 +1,7 @@
 import { z } from 'zod'
 
 import { hex_color_code } from '../colors.js'
+import { datetime } from '../datetime.js'
 
 export const customer_portal_theme = z.object({
   primary_color: hex_color_code.optional(),
@@ -23,7 +24,7 @@ export const customization_profile = z.object({
   workspace_id: z.string().uuid(),
   name: z.string().nullable(),
   customization_profile_id: z.string().uuid(),
-  created_at: z.string().datetime(),
+  created_at: datetime,
   logo_url: z.string().url().optional(),
   primary_color: z.string().optional(),
   secondary_color: z.string().optional(),

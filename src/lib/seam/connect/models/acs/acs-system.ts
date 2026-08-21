@@ -1,5 +1,7 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
+
 export const acs_system_capability_flags = z.object({
   // Access method type capability flags are not publicly exposed for ACS systems
   // They are only available for ACS entrances
@@ -38,10 +40,9 @@ export const acs_system_external_type = z.enum([
 export type AcsSystemExternalType = z.infer<typeof acs_system_external_type>
 
 const common_acs_system_error = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam created the error.'),
+  created_at: datetime.describe(
+    'Date and time at which Seam created the error.',
+  ),
   message: z
     .string()
     .describe(
@@ -200,10 +201,9 @@ const _acs_system_error_map = z.object({
 export type AcsSystemErrorMap = z.infer<typeof _acs_system_error_map>
 
 const common_acs_system_warning = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam created the warning.'),
+  created_at: datetime.describe(
+    'Date and time at which Seam created the warning.',
+  ),
   message: z
     .string()
     .describe(
@@ -377,12 +377,9 @@ export const acs_system = z
       .describe(
         'Name of the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
       ),
-    created_at: z
-      .string()
-      .datetime()
-      .describe(
-        'Date and time at which the [access control system](https://docs.seam.co/low-level-apis/access-systems) was created.',
-      ),
+    created_at: datetime.describe(
+      'Date and time at which the [access control system](https://docs.seam.co/low-level-apis/access-systems) was created.',
+    ),
     workspace_id: z
       .string()
       .uuid()

@@ -1,15 +1,16 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
+
 const common_bridge_client_session_error = z.object({
   message: z
     .string()
     .describe(
       'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
     ),
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam created the error.'),
+  created_at: datetime.describe(
+    'Date and time at which Seam created the error.',
+  ),
 })
 
 const error_code_description =
@@ -89,12 +90,9 @@ export type BridgeClientSessionErrorMap = z.infer<
 >
 
 export const bridge_client_session = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe(
-      'Date and time at which the Seam Bridge client session was created.',
-    ),
+  created_at: datetime.describe(
+    'Date and time at which the Seam Bridge client session was created.',
+  ),
   bridge_client_session_id: z
     .string()
     .uuid()
@@ -110,10 +108,9 @@ export const bridge_client_session = z.object({
     .describe(
       'Pairing code for Seam Bridge. Use this code to pair Seam Bridge with your workspace.',
     ),
-  pairing_code_expires_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the pairing code expires.'),
+  pairing_code_expires_at: datetime.describe(
+    'Date and time at which the pairing code expires.',
+  ),
   tailscale_hostname: z
     .string()
     .describe('Tailscale hostname for Seam Bridge.'),
@@ -137,9 +134,7 @@ export const bridge_client_session = z.object({
     .string()
     .nullable()
     .describe('Telemetry token for the Seam Bridge client session.'),
-  telemetry_token_expires_at: z
-    .string()
-    .datetime()
+  telemetry_token_expires_at: datetime
     .nullable()
     .describe(
       'Date and time at which the telemetry token for the Seam Bridge client session expires.',

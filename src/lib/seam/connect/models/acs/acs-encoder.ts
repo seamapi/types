@@ -1,10 +1,11 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
+
 const common_acs_encoder_error = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam created the error.'),
+  created_at: datetime.describe(
+    'Date and time at which Seam created the error.',
+  ),
   message: z
     .string()
     .describe(
@@ -65,12 +66,9 @@ export const acs_encoder = z.object({
     .describe(
       'Errors associated with the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
     ),
-  created_at: z
-    .string()
-    .datetime()
-    .describe(
-      'Date and time at which the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners) was created.',
-    ),
+  created_at: datetime.describe(
+    'Date and time at which the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners) was created.',
+  ),
   display_name: z
     .string()
     .describe(

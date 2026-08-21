@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
 import { schedule } from '../schedule.js'
 import { acs_access_group_pending_mutations } from './acs-access-groups/pending-mutations.js'
 
@@ -22,10 +23,9 @@ export type AcsAccessGroupExternalType = z.infer<
 >
 
 const common_acs_access_group_error = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam created the error.'),
+  created_at: datetime.describe(
+    'Date and time at which Seam created the error.',
+  ),
   message: z
     .string()
     .describe(
@@ -62,10 +62,9 @@ const _acs_access_group_error_map = z.object({
 export type AcsAccessGroupErrorMap = z.infer<typeof _acs_access_group_error_map>
 
 const common_acs_access_group_warning = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam created the warning.'),
+  created_at: datetime.describe(
+    'Date and time at which Seam created the warning.',
+  ),
   message: z
     .string()
     .describe(
@@ -146,10 +145,9 @@ const common_acs_access_group = z.object({
     .describe(
       'Display name that corresponds to the brand-specific terminology for the access group type.',
     ),
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the access group was created.'),
+  created_at: datetime.describe(
+    'Date and time at which the access group was created.',
+  ),
   errors: z
     .array(acs_access_group_errors)
     .describe('Errors associated with the `acs_access_group`.'),

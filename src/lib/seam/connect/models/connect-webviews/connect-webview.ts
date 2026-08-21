@@ -1,6 +1,7 @@
 import { z } from 'zod'
 
 import { custom_metadata } from '../custom-metadata.js'
+import { datetime } from '../datetime.js'
 import { provider_capability } from '../provider-capability.js'
 
 export const connect_webview_device_selection_mode = z.enum([
@@ -15,10 +16,9 @@ export const connect_webview = z.object({
     .string()
     .uuid()
     .describe('ID of the workspace that contains the Connect Webview.'),
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the Connect Webview was created.'),
+  created_at: datetime.describe(
+    'Date and time at which the Connect Webview was created.',
+  ),
   connected_account_id: z
     .string()
     .uuid()
@@ -104,9 +104,7 @@ export const connect_webview = z.object({
     .describe(
       'Indicates whether Seam should [finish syncing all devices](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#wait_for_device_creation) in a newly-connected account before completing the associated Connect Webview.',
     ),
-  authorized_at: z
-    .string()
-    .datetime()
+  authorized_at: datetime
     .nullable()
     .describe(
       'Date and time at which the user authorized (through the Connect Webview) the management of their devices.',

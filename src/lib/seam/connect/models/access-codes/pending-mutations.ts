@@ -1,10 +1,11 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
+
 const common_pending_mutation = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the mutation was created.'),
+  created_at: datetime.describe(
+    'Date and time at which the mutation was created.',
+  ),
   message: z.string().describe('Detailed description of the mutation.'),
 })
 
@@ -25,12 +26,9 @@ const deferring_creation = common_pending_mutation
       .describe(
         "Mutation code to indicate that Seam is waiting until closer to the access code's start time before programming it on the device.",
       ),
-    scheduled_at: z
-      .string()
-      .datetime()
-      .describe(
-        'Date and time at which Seam will attempt to program this access code on the device.',
-      ),
+    scheduled_at: datetime.describe(
+      'Date and time at which Seam will attempt to program this access code on the device.',
+    ),
   })
   .describe(
     "Seam is waiting until closer to the access code's start time before programming it on the device.",
@@ -101,28 +99,20 @@ const updating_time_frame = common_pending_mutation
       ),
     from: z
       .object({
-        starts_at: z
-          .string()
-          .datetime()
+        starts_at: datetime
           .nullable()
           .describe('Previous start time for the access code.'),
-        ends_at: z
-          .string()
-          .datetime()
+        ends_at: datetime
           .nullable()
           .describe('Previous end time for the access code.'),
       })
       .describe('Previous time frame configuration.'),
     to: z
       .object({
-        starts_at: z
-          .string()
-          .datetime()
+        starts_at: datetime
           .nullable()
           .describe('New start time for the access code.'),
-        ends_at: z
-          .string()
-          .datetime()
+        ends_at: datetime
           .nullable()
           .describe('New end time for the access code.'),
       })

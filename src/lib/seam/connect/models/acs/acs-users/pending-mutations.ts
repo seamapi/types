@@ -1,12 +1,12 @@
 import { z } from 'zod'
 
+import { datetime } from '../../datetime.js'
 import { loose_phone_number } from '../../phone-number.js'
 
 const common_pending_mutation = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the mutation was created.'),
+  created_at: datetime.describe(
+    'Date and time at which the mutation was created.',
+  ),
   message: z.string().describe('Detailed description of the mutation.'),
 })
 
@@ -41,9 +41,7 @@ const deferring_creation = common_pending_mutation
       .describe(
         'Mutation code to indicate that Seam is intentionally deferring the creation of the user on the access control system until the appropriate time.',
       ),
-    scheduled_at: z
-      .string()
-      .datetime()
+    scheduled_at: datetime
       .optional()
       .nullable()
       .describe('Optional: When the user creation is scheduled to occur.'),
@@ -83,14 +81,10 @@ export const updating_user_information_mutation =
 
 const access_schedule = z
   .object({
-    starts_at: z
-      .string()
-      .datetime()
+    starts_at: datetime
       .nullable()
       .describe('Starting time for the access schedule.'),
-    ends_at: z
-      .string()
-      .datetime()
+    ends_at: datetime
       .nullable()
       .describe('Starting time for the access schedule.'),
   })

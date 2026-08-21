@@ -1,19 +1,17 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
+
 export const common_event = z.object({
   event_id: z.string().uuid().describe('ID of the event.'),
   workspace_id: z
     .string()
     .uuid()
     .describe('ID of the workspace associated with the event.'),
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the event was created.'),
-  occurred_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the event occurred.'),
+  created_at: datetime.describe(
+    'Date and time at which the event was created.',
+  ),
+  occurred_at: datetime.describe('Date and time at which the event occurred.'),
   event_description: z
     .string()
     .optional()
@@ -29,10 +27,9 @@ const warning_code_description =
 
 export const common_event_error = z
   .object({
-    created_at: z
-      .string()
-      .datetime()
-      .describe('Date and time at which Seam created the error.'),
+    created_at: datetime.describe(
+      'Date and time at which Seam created the error.',
+    ),
     message: z
       .string()
       .describe(
@@ -46,10 +43,9 @@ export const common_event_error = z
 
 export const common_event_warning = z
   .object({
-    created_at: z
-      .string()
-      .datetime()
-      .describe('Date and time at which Seam created the warning.'),
+    created_at: datetime.describe(
+      'Date and time at which Seam created the warning.',
+    ),
     message: z
       .string()
       .describe(

@@ -1,20 +1,20 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
+
 export const magic_link = z.object({
   url: z.string().url().describe('URL for the magic link.'),
   customer_key: z.string().describe('Customer key for the magic link.'),
-  expires_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the magic link expires.'),
+  expires_at: datetime.describe(
+    'Date and time at which the magic link expires.',
+  ),
   workspace_id: z
     .string()
     .uuid()
     .describe('ID of the workspace associated with the magic link.'),
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the magic link was created.'),
+  created_at: datetime.describe(
+    'Date and time at which the magic link was created.',
+  ),
 }).describe(`
   ---
   undocumented: Unreleased.

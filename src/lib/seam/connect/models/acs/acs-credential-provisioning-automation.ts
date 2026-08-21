@@ -1,10 +1,12 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
+
 export const acs_credential_provisioning_automation = z.object({
   acs_credential_provisioning_automation_id: z.string().uuid(),
   credential_manager_acs_system_id: z.string().uuid(),
   user_identity_id: z.string().uuid(),
-  created_at: z.string().datetime(),
+  created_at: datetime,
   workspace_id: z.string().uuid(),
 }).describe(`
   ---
@@ -31,10 +33,9 @@ export const enrollment_automation = z.object({
     .describe(
       'ID of the associated [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
     ),
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the enrollment automation was created.'),
+  created_at: datetime.describe(
+    'Date and time at which the enrollment automation was created.',
+  ),
   workspace_id: z
     .string()
     .uuid()

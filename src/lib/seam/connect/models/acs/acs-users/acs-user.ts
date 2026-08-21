@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import { datetime } from '../../datetime.js'
 import { loose_phone_number } from '../../phone-number.js'
 import { schedule } from '../../schedule.js'
 import { acs_user_salto_ks_metadata } from '../metadata/salto.js'
@@ -21,10 +22,9 @@ export const acs_user_external_type = z.enum([
 export type AcsUserExternalType = z.infer<typeof acs_user_external_type>
 
 const common_acs_user_error = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam created the error.'),
+  created_at: datetime.describe(
+    'Date and time at which Seam created the error.',
+  ),
   message: z
     .string()
     .describe(
@@ -122,10 +122,9 @@ const _acs_users_error_map = z.object({
 export type AcsUsersErrorMap = z.infer<typeof _acs_users_error_map>
 
 const common_acs_user_warning = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam created the warning.'),
+  created_at: datetime.describe(
+    'Date and time at which Seam created the warning.',
+  ),
   message: z
     .string()
     .describe(
@@ -254,12 +253,9 @@ const common_acs_user = z
       .describe(
         'ID of the workspace that contains the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
       ),
-    created_at: z
-      .string()
-      .datetime()
-      .describe(
-        'Date and time at which the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was created.',
-      ),
+    created_at: datetime.describe(
+      'Date and time at which the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was created.',
+    ),
     display_name: z
       .string()
       .describe(
@@ -330,7 +326,7 @@ const common_acs_user = z
       .describe(
         'Pending mutations associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.',
       ),
-    last_successful_sync_at: z.string().datetime().nullable().describe(`
+    last_successful_sync_at: datetime.nullable().describe(`
         ---
         undocumented: Only used internally.
         ---

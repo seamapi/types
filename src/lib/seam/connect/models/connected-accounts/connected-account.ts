@@ -1,13 +1,13 @@
 import { z } from 'zod'
 
 import { custom_metadata } from '../custom-metadata.js'
+import { datetime } from '../datetime.js'
 import { provider_capability } from '../provider-capability.js'
 
 const common_connected_account_error = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam created the error.'),
+  created_at: datetime.describe(
+    'Date and time at which Seam created the error.',
+  ),
   message: z
     .string()
     .describe(
@@ -34,10 +34,9 @@ const warning_code_description =
   'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
 
 const common_connected_account_warning = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam created the warning.'),
+  created_at: datetime.describe(
+    'Date and time at which Seam created the warning.',
+  ),
   message: z
     .string()
     .describe(
@@ -335,9 +334,7 @@ export const connected_account = z.object({
     .string()
     .uuid()
     .describe('ID of the connected account.'),
-  created_at: z
-    .string()
-    .datetime()
+  created_at: datetime
     .optional()
     .describe('Date and time at which the connected account was created.'),
   user_identifier: z

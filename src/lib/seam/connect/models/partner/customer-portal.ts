@@ -1,21 +1,21 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
+
 export const customer_portal = z
   .object({
     url: z.string().url().describe('URL for the customer portal.'),
     customer_key: z.string().describe('Customer key for the customer portal.'),
-    expires_at: z
-      .string()
-      .datetime()
-      .describe('Date and time at which the customer portal link expires.'),
+    expires_at: datetime.describe(
+      'Date and time at which the customer portal link expires.',
+    ),
     workspace_id: z
       .string()
       .uuid()
       .describe('ID of the workspace associated with the customer portal.'),
-    created_at: z
-      .string()
-      .datetime()
-      .describe('Date and time at which the customer portal link was created.'),
+    created_at: datetime.describe(
+      'Date and time at which the customer portal link was created.',
+    ),
   })
   .describe(
     `

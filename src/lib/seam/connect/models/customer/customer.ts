@@ -1,5 +1,7 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
+
 export const customer = z.object({
   customer_key: z
     .string()
@@ -8,10 +10,9 @@ export const customer = z.object({
     .string()
     .uuid()
     .describe('ID of the workspace associated with the customer.'),
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the customer was created.'),
+  created_at: datetime.describe(
+    'Date and time at which the customer was created.',
+  ),
 }).describe(`
   ---
   route_path: /customers

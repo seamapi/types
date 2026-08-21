@@ -1,12 +1,12 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
 import { loose_phone_number } from '../phone-number.js'
 
 const common_user_identity_error = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam created the error.'),
+  created_at: datetime.describe(
+    'Date and time at which Seam created the error.',
+  ),
   message: z
     .string()
     .describe(
@@ -15,10 +15,9 @@ const common_user_identity_error = z.object({
 })
 
 const common_user_identity_warning = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam created the warning.'),
+  created_at: datetime.describe(
+    'Date and time at which Seam created the warning.',
+  ),
   message: z
     .string()
     .describe(
@@ -139,10 +138,9 @@ export const user_identity = z.object({
     .describe(
       'Keys that other user identities used to have before they were merged into this user identity. Looking up any of them returns this user identity.',
     ),
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the user identity was created.'),
+  created_at: datetime.describe(
+    'Date and time at which the user identity was created.',
+  ),
   workspace_id: z
     .string()
     .uuid()
