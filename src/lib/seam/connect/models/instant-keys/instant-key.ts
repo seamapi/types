@@ -1,15 +1,16 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
+
 export const instant_key = z.object({
   instant_key_id: z.string().uuid().describe('ID of the Instant Key.'),
   workspace_id: z
     .string()
     .uuid()
     .describe('ID of the workspace that contains the Instant Key.'),
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the Instant Key was created.'),
+  created_at: datetime.describe(
+    'Date and time at which the Instant Key was created.',
+  ),
   instant_key_url: z
     .string()
     .url()
@@ -24,10 +25,9 @@ export const instant_key = z.object({
     .string()
     .uuid()
     .describe('ID of the user identity associated with the Instant Key.'),
-  expires_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the Instant Key expires.'),
+  expires_at: datetime.describe(
+    'Date and time at which the Instant Key expires.',
+  ),
   customization_profile_id: z
     .string()
     .uuid()

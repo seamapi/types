@@ -1,5 +1,7 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
+
 const time_of_day_re = /^([01]\d|2[0-3]):[0-5]\d(:[0-5]\d)?$/
 
 export const space_customer_data = z
@@ -47,10 +49,9 @@ export const space = z.object({
     .describe('Unique key for the space within the workspace.'),
   name: z.string().describe('Name of the space.'),
   display_name: z.string().describe('Display name for the space.'),
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the space was created.'),
+  created_at: datetime.describe(
+    'Date and time at which the space was created.',
+  ),
   device_count: z.number().describe('Number of devices in the space.'),
   acs_entrance_count: z.number().describe('Number of entrances in the space.'),
   customer_key: z

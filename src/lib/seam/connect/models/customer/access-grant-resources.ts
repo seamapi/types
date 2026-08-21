@@ -1,6 +1,7 @@
 import { z } from 'zod'
 
 import { custom_metadata_input } from '../custom-metadata.js'
+import { datetime } from '../datetime.js'
 
 // Base access grant resource with common fields
 const base_access_grant_resource = z.object({
@@ -8,14 +9,10 @@ const base_access_grant_resource = z.object({
     .string()
     .optional()
     .describe('Your name for this access grant resource.'),
-  starts_at: z
-    .string()
-    .datetime()
+  starts_at: datetime
     .optional()
     .describe('Starting date and time for the access grant.'),
-  ends_at: z
-    .string()
-    .datetime()
+  ends_at: datetime
     .optional()
     .describe('Ending date and time for the access grant.'),
   preferred_code: z

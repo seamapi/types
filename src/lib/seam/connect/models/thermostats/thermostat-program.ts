@@ -1,5 +1,7 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
+
 export const thermostat_daily_program_period = z
   .object({
     starts_at_time: z
@@ -42,12 +44,9 @@ export const thermostat_daily_program = z.object({
     .describe(
       'ID of the workspace that contains the thermostat daily program.',
     ),
-  created_at: z
-    .string()
-    .datetime()
-    .describe(
-      'Date and time at which the thermostat daily program was created.',
-    ),
+  created_at: datetime.describe(
+    'Date and time at which the thermostat daily program was created.',
+  ),
 }).describe(`
   ---
   route_path: /thermostats/daily_programs
@@ -91,12 +90,9 @@ export const thermostat_weekly_program = z.object({
     .uuid()
     .nullable()
     .describe('ID of the thermostat daily program to run on Sundays.'),
-  created_at: z
-    .string()
-    .datetime()
-    .describe(
-      'Date and time at which the thermostat weekly program was created.',
-    ),
+  created_at: datetime.describe(
+    'Date and time at which the thermostat weekly program was created.',
+  ),
 })
 
 export type ThermostatDailyProgram = z.infer<typeof thermostat_daily_program>

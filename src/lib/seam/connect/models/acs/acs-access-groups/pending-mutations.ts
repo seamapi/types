@@ -1,10 +1,11 @@
 import { z } from 'zod'
 
+import { datetime } from '../../datetime.js'
+
 const common_pending_mutation = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the mutation was created.'),
+  created_at: datetime.describe(
+    'Date and time at which the mutation was created.',
+  ),
   message: z.string().describe('Detailed description of the mutation.'),
 })
 
@@ -56,14 +57,10 @@ const updating_group_information = common_pending_mutation
 
 const access_schedule = z
   .object({
-    starts_at: z
-      .string()
-      .datetime()
+    starts_at: datetime
       .nullable()
       .describe('Starting time for the access schedule.'),
-    ends_at: z
-      .string()
-      .datetime()
+    ends_at: datetime
       .nullable()
       .describe('Ending time for the access schedule.'),
   })

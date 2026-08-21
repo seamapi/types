@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
 import {
   acs_credential_akiles_metadata,
   acs_credential_visionline_metadata,
@@ -36,10 +37,9 @@ export type AcsCredentialExternalType = z.infer<
 >
 
 const common_acs_credential_warning = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam created the warning.'),
+  created_at: datetime.describe(
+    'Date and time at which Seam created the warning.',
+  ),
   message: z
     .string()
     .describe(
@@ -231,9 +231,7 @@ const common_acs_credential = z.object({
     .describe(
       'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been encoded onto a card.',
     ),
-  issued_at: z
-    .string()
-    .datetime()
+  issued_at: datetime
     .optional()
     .nullable()
     .describe(
@@ -253,12 +251,9 @@ const common_acs_credential = z.object({
     .describe(
       'Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.',
     ),
-  created_at: z
-    .string()
-    .datetime()
-    .describe(
-      'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was created.',
-    ),
+  created_at: datetime.describe(
+    'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was created.',
+  ),
   workspace_id: z
     .string()
     .uuid()
@@ -282,10 +277,9 @@ const common_acs_credential = z.object({
       z.object({
         error_code: z.string(),
         message: z.string(),
-        created_at: z
-          .string()
-          .datetime()
-          .describe('Date and time at which Seam created the error.'),
+        created_at: datetime.describe(
+          'Date and time at which Seam created the error.',
+        ),
       }),
     )
     .describe(
@@ -309,9 +303,7 @@ const common_acs_credential = z.object({
     .describe(
       'Indicates whether the latest state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider.',
     ),
-  latest_desired_state_synced_with_provider_at: z
-    .string()
-    .datetime()
+  latest_desired_state_synced_with_provider_at: datetime
     .nullable()
     .optional()
     .describe(
@@ -366,9 +358,7 @@ export const unmanaged_acs_credential = common_acs_credential.merge(
 `)
 
 export const acs_credential_on_encoder = z.object({
-  created_at: z
-    .string()
-    .datetime()
+  created_at: datetime
     .nullable()
     .describe(
       'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was created.',
@@ -381,16 +371,12 @@ export const acs_credential_on_encoder = z.object({
       'Indicates whether the credential has been issued (encoded onto a card).',
     ),
 
-  starts_at: z
-    .string()
-    .datetime()
+  starts_at: datetime
     .nullable()
     .describe(
       'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) becomes usable.',
     ),
-  ends_at: z
-    .string()
-    .datetime()
+  ends_at: datetime
     .nullable()
     .describe(
       'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) will stop being usable.',

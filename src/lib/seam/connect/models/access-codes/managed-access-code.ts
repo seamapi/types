@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
 import { device_and_connected_account_error_options } from '../devices/index.js'
 import { access_code_pending_mutations } from './pending-mutations.js'
 
@@ -12,9 +13,7 @@ const common_access_code_error = z.object({
   is_access_code_error: z
     .literal(true)
     .describe('Indicates that this is an access code error.'),
-  created_at: z
-    .string()
-    .datetime()
+  created_at: datetime
     .optional()
     .describe('Date and time at which Seam created the error.'),
 })
@@ -224,9 +223,7 @@ const common_access_code_warning = z.object({
     .describe(
       'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
     ),
-  created_at: z
-    .string()
-    .datetime()
+  created_at: datetime
     .optional()
     .describe('Date and time at which Seam created the warning.'),
 })
@@ -508,10 +505,9 @@ export const access_code = z.object({
     .describe(
       'Code used for access. Typically, a numeric or alphanumeric string.',
     ),
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the access code was created.'),
+  created_at: datetime.describe(
+    'Date and time at which the access code was created.',
+  ),
   errors: z.array(
     z.discriminatedUnion('error_code', [
       ...access_code_error.options,
@@ -560,17 +556,13 @@ export const access_code = z.object({
   is_managed: z
     .literal(true)
     .describe('Indicates whether Seam manages the access code.'),
-  starts_at: z
-    .string()
-    .datetime()
+  starts_at: datetime
     .nullable()
     .optional()
     .describe(
       'Date and time at which the time-bound access code becomes active.',
     ),
-  ends_at: z
-    .string()
-    .datetime()
+  ends_at: datetime
     .nullable()
     .optional()
     .describe(

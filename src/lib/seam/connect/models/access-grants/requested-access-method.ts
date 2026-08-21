@@ -1,5 +1,7 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
+
 export const requested_access_method = z.object({
   display_name: z.string().describe('Display name of the access method.'),
   mode: z
@@ -24,12 +26,9 @@ export const requested_access_method = z.object({
     .describe(
       "Maximum number of times the instant key can be used. Only applicable when mode is 'mobile_key'. Defaults to 1 if not specified.",
     ),
-  created_at: z
-    .string()
-    .datetime()
-    .describe(
-      'Date and time at which the requested access method was added to the Access Grant.',
-    ),
+  created_at: datetime.describe(
+    'Date and time at which the requested access method was added to the Access Grant.',
+  ),
   created_access_method_ids: z
     .array(z.string().uuid())
     .describe(

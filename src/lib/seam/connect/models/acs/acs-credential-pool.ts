@@ -1,5 +1,7 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
+
 export const acs_credential_pool_external_type = z.enum(['hid_part_number'])
 
 export type AcsCredentialPoolExternalType = z.infer<
@@ -12,7 +14,7 @@ export const acs_credential_pool = z.object({
   display_name: z.string().min(1),
   external_type: acs_credential_pool_external_type,
   external_type_display_name: z.string(),
-  created_at: z.string().datetime(),
+  created_at: datetime,
   workspace_id: z.string().uuid(),
 }).describe(`
   ---

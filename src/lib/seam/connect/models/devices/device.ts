@@ -2,6 +2,7 @@ import { z } from 'zod'
 
 import { connected_account_error } from '../connected-accounts/index.js'
 import { custom_metadata } from '../custom-metadata.js'
+import { datetime } from '../datetime.js'
 import { capabilities } from './capabilities-supported.js'
 import { capability_properties } from './capability-properties/index.js'
 import { device_metadata } from './device-metadata.js'
@@ -118,10 +119,9 @@ const common_device_error = z.object({
   is_device_error: z
     .literal(true)
     .describe('Indicates that the error is a device error.'),
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam created the error.'),
+  created_at: datetime.describe(
+    'Date and time at which Seam created the error.',
+  ),
 })
 
 const error_code_description =
@@ -357,10 +357,9 @@ const common_device_warning = z.object({
     .describe(
       'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
     ),
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam created the warning.'),
+  created_at: datetime.describe(
+    'Date and time at which Seam created the warning.',
+  ),
 })
 
 const partial_backup_access_code_pool = common_device_warning.extend({
@@ -1149,10 +1148,9 @@ export const device = z
         ---
         Array of warnings associated with the device. Each warning object within the array contains two fields: \`warning_code\` and \`message\`. \`warning_code\` is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. \`message\` provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.
       `),
-    created_at: z
-      .string()
-      .datetime()
-      .describe('Date and time at which the device object was created.'),
+    created_at: datetime.describe(
+      'Date and time at which the device object was created.',
+    ),
     is_managed: z
       .literal(true)
       .describe(

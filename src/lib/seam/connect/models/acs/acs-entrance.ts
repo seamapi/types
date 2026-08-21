@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
 import { acs_entrance_akiles_metadata } from './metadata/akiles.js'
 import { acs_entrance_avigilon_alta_metadata } from './metadata/avigilon-alta.js'
 import { acs_entrance_dormakaba_ambiance_metadata } from './metadata/dormakaba-ambiance.js'
@@ -18,10 +19,9 @@ const warning_code_description =
   'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
 
 const common_acs_entrance_warning = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam created the warning.'),
+  created_at: datetime.describe(
+    'Date and time at which Seam created the warning.',
+  ),
   message: z
     .string()
     .describe(
@@ -152,12 +152,9 @@ export const acs_entrance = z
     space_ids: z
       .array(z.string().uuid())
       .describe('IDs of the spaces that the entrance is in.'),
-    created_at: z
-      .string()
-      .datetime()
-      .describe(
-        'Date and time at which the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) was created.',
-      ),
+    created_at: datetime.describe(
+      'Date and time at which the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) was created.',
+    ),
     display_name: z
       .string()
       .describe(
@@ -182,10 +179,9 @@ export const acs_entrance = z
             .describe(
               'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
             ),
-          created_at: z
-            .string()
-            .datetime()
-            .describe('Date and time at which Seam created the error.'),
+          created_at: datetime.describe(
+            'Date and time at which Seam created the error.',
+          ),
         }),
       )
       .describe(

@@ -1,10 +1,11 @@
 import { z } from 'zod'
 
+import { datetime } from '../../datetime.js'
+
 const common_pending_mutation = z.object({
-  created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which the mutation was created.'),
+  created_at: datetime.describe(
+    'Date and time at which the mutation was created.',
+  ),
   message: z.string().describe('Detailed description of the mutation.'),
 })
 

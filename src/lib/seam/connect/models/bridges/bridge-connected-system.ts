@@ -1,24 +1,22 @@
 import { z } from 'zod'
 
+import { datetime } from '../datetime.js'
+
 export const bridge_connected_system = z.object({
   bridge_id: z
     .string()
     .uuid()
     .describe('ID of Seam Bridge connected to the access system.'),
-  bridge_created_at: z
-    .string()
-    .datetime()
-    .describe('Date and time at which Seam Bridge was created.'),
+  bridge_created_at: datetime.describe(
+    'Date and time at which Seam Bridge was created.',
+  ),
   connected_account_id: z
     .string()
     .uuid()
     .describe('ID of the connected account associated with Seam Bridge.'),
-  connected_account_created_at: z
-    .string()
-    .datetime()
-    .describe(
-      'Date and time at which the connected account associated with Seam Bridge was created.',
-    ),
+  connected_account_created_at: datetime.describe(
+    'Date and time at which the connected account associated with Seam Bridge was created.',
+  ),
   acs_system_id: z
     .string()
     .uuid()

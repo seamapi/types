@@ -43,6 +43,7 @@ export {
   customer_data,
   customer_portal,
   customer_portal_theme,
+  datetime,
   device_capability_flags,
   device_metadata,
   device_provider,
