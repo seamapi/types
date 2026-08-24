@@ -80355,6 +80355,80 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for inbound provider webhooks',
       },
     },
+    '/seam/wizard/v1/session': {
+      post: {
+        description:
+          "Exchanges a Seam API key for a short-lived wizard inference token. The Seam\nWizard CLI calls this once, then sends the returned token as the bearer to the\ninference proxy. The session also carries the workspace org's Console-collected\nonboarding answers (or null) so the CLI can pre-fill its integration plan.",
+        operationId: 'seamWizardV1SessionPost',
+        requestBody: {
+          content: {
+            'application/json': { schema: { properties: {}, type: 'object' } },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    wizard_session: {
+                      properties: {
+                        expires_at: { type: 'string' },
+                        onboarding: {
+                          nullable: true,
+                          properties: {
+                            build_target: { nullable: true, type: 'string' },
+                            device_categories: {
+                              items: { type: 'string' },
+                              nullable: true,
+                              type: 'array',
+                            },
+                            embed_customer_portal: {
+                              nullable: true,
+                              type: 'boolean',
+                            },
+                            org_type: { nullable: true, type: 'string' },
+                            primary_goal: { nullable: true, type: 'string' },
+                            use_case: { nullable: true, type: 'string' },
+                          },
+                          required: [
+                            'org_type',
+                            'primary_goal',
+                            'use_case',
+                            'build_target',
+                            'embed_customer_portal',
+                            'device_categories',
+                          ],
+                          type: 'object',
+                        },
+                        token: { type: 'string' },
+                      },
+                      required: ['token', 'expires_at', 'onboarding'],
+                      type: 'object',
+                    },
+                  },
+                  required: ['wizard_session', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ api_key: [] }, { pat_with_workspace: [] }],
+        summary: '/seam/wizard/v1/session',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'wizard', 'v1'],
+        'x-fern-sdk-method-name': 'session',
+        'x-fern-sdk-return-value': 'wizard_session',
+        'x-response-key': 'wizard_session',
+        'x-title': 'Create a Wizard Session',
+        'x-undocumented': 'Seam Wizard CLI only.',
+      },
+    },
     '/spaces/add_acs_entrances': {
       post: {
         description:
