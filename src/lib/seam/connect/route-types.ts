@@ -106071,6 +106071,29 @@ export type Routes = {
     jsonResponse: {}
     maxDuration: undefined
   }
+  '/seam/wizard/v1/session': {
+    route: '/seam/wizard/v1/session'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      wizard_session: {
+        token: string
+        expires_at: string
+        onboarding: {
+          org_type: string | null
+          primary_goal: string | null
+          use_case: string | null
+          build_target: string | null
+          embed_customer_portal: boolean | null
+          device_categories: string[] | null
+        } | null
+      }
+    }
+    maxDuration: undefined
+  }
   '/spaces/add_acs_entrances': {
     route: '/spaces/add_acs_entrances'
     method: 'POST' | 'PUT'
