@@ -60500,10 +60500,13 @@ export type Routes = {
                     }
                   | undefined
                 event_type: 'device.low_battery'
-                /** Number in the range 0 to 1.0 indicating the amount of battery in the affected device, as reported by the device. */
+                /** Number in the range 0 to 1.0 indicating the level of the battery whose drop triggered this event.
+                 * @deprecated Use device_battery_level and accessory_keypad_battery_level, which distinguish the device's own battery from a paired accessory keypad's battery.*/
                 battery_level: number
-                /** Battery that dropped below the low threshold. `lock`: the lock's own battery. `accessory_keypad`: a paired accessory keypad's battery. Omitted for events emitted before this field existed, which always refer to the lock's own battery. */
-                battery_source?: ('lock' | 'accessory_keypad') | undefined
+                /** Number in the range 0 to 1.0 indicating the affected device's own battery level, when known. */
+                device_battery_level?: number | undefined
+                /** Number in the range 0 to 1.0 indicating the battery level of the affected device's paired accessory keypad, when the device has one and its level is known. */
+                accessory_keypad_battery_level?: number | undefined
               }
             | {
                 /** ID of the event. */
@@ -64791,10 +64794,13 @@ export type Routes = {
                 }
               | undefined
             event_type: 'device.low_battery'
-            /** Number in the range 0 to 1.0 indicating the amount of battery in the affected device, as reported by the device. */
+            /** Number in the range 0 to 1.0 indicating the level of the battery whose drop triggered this event.
+             * @deprecated Use device_battery_level and accessory_keypad_battery_level, which distinguish the device's own battery from a paired accessory keypad's battery.*/
             battery_level: number
-            /** Battery that dropped below the low threshold. `lock`: the lock's own battery. `accessory_keypad`: a paired accessory keypad's battery. Omitted for events emitted before this field existed, which always refer to the lock's own battery. */
-            battery_source?: ('lock' | 'accessory_keypad') | undefined
+            /** Number in the range 0 to 1.0 indicating the affected device's own battery level, when known. */
+            device_battery_level?: number | undefined
+            /** Number in the range 0 to 1.0 indicating the battery level of the affected device's paired accessory keypad, when the device has one and its level is known. */
+            accessory_keypad_battery_level?: number | undefined
           }
         | {
             /** ID of the event. */
@@ -102513,10 +102519,13 @@ export type Routes = {
                 }
               | undefined
             event_type: 'device.low_battery'
-            /** Number in the range 0 to 1.0 indicating the amount of battery in the affected device, as reported by the device. */
+            /** Number in the range 0 to 1.0 indicating the level of the battery whose drop triggered this event.
+             * @deprecated Use device_battery_level and accessory_keypad_battery_level, which distinguish the device's own battery from a paired accessory keypad's battery.*/
             battery_level: number
-            /** Battery that dropped below the low threshold. `lock`: the lock's own battery. `accessory_keypad`: a paired accessory keypad's battery. Omitted for events emitted before this field existed, which always refer to the lock's own battery. */
-            battery_source?: ('lock' | 'accessory_keypad') | undefined
+            /** Number in the range 0 to 1.0 indicating the affected device's own battery level, when known. */
+            device_battery_level?: number | undefined
+            /** Number in the range 0 to 1.0 indicating the battery level of the affected device's paired accessory keypad, when the device has one and its level is known. */
+            accessory_keypad_battery_level?: number | undefined
           }
         | {
             /** ID of the event. */
@@ -150041,10 +150050,13 @@ export type Routes = {
                       }
                     | undefined
                   event_type: 'device.low_battery'
-                  /** Number in the range 0 to 1.0 indicating the amount of battery in the affected device, as reported by the device. */
+                  /** Number in the range 0 to 1.0 indicating the level of the battery whose drop triggered this event.
+                   * @deprecated Use device_battery_level and accessory_keypad_battery_level, which distinguish the device's own battery from a paired accessory keypad's battery.*/
                   battery_level: number
-                  /** Battery that dropped below the low threshold. `lock`: the lock's own battery. `accessory_keypad`: a paired accessory keypad's battery. Omitted for events emitted before this field existed, which always refer to the lock's own battery. */
-                  battery_source?: ('lock' | 'accessory_keypad') | undefined
+                  /** Number in the range 0 to 1.0 indicating the affected device's own battery level, when known. */
+                  device_battery_level?: number | undefined
+                  /** Number in the range 0 to 1.0 indicating the battery level of the affected device's paired accessory keypad, when the device has one and its level is known. */
+                  accessory_keypad_battery_level?: number | undefined
                 }
               | {
                   /** ID of the event. */
