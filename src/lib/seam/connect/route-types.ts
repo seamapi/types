@@ -140066,7 +140066,7 @@ export type Routes = {
     jsonBody: {
       /** Name of the new workspace. */
       name: string
-      /** ID of the organization to associate with the new workspace. */
+      /** ID of the organization to associate with the new workspace. If omitted, the new workspace is associated with the organization that you administer, if you administer exactly one. */
       organization_id?: string | undefined
       /** Company name for the new workspace. */
       company_name?: string | undefined
