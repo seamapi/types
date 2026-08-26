@@ -3,12 +3,10 @@ import { z } from 'zod'
 import { custom_metadata_input } from '../custom-metadata.js'
 import { space_customer_data, space_geolocation } from '../spaces/space.js'
 
-// Base location resource with common fields
 const base_location_resource = z.object({
   name: z.string().describe('Your display name for this location resource.'),
 })
 
-// Location resource types with their key aliases
 export const neutral_resource = base_location_resource.extend({
   space_key: z
     .string()
@@ -162,7 +160,6 @@ export const site_resource = base_location_resource.extend({
     .describe('Your unique identifier for the site.'),
 })
 
-// Union of all location resource types
 export const location_resource = z.union([
   neutral_resource,
   property_resource,
@@ -176,7 +173,6 @@ export const location_resource = z.union([
   site_resource,
 ])
 
-// All location key aliases for use in references
 export const location_key_aliases = z.union([
   z.object({ space_key: z.string() }),
   z.object({ property_key: z.string() }),
@@ -190,7 +186,6 @@ export const location_key_aliases = z.union([
   z.object({ site_key: z.string() }),
 ])
 
-// Export types
 export type NeutralResource = z.infer<typeof neutral_resource>
 export type PropertyResource = z.infer<typeof property_resource>
 export type RoomResource = z.infer<typeof room_resource>

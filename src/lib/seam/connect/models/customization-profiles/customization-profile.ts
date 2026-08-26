@@ -12,9 +12,6 @@ export const customer_portal_theme = z.object({
   mono_font_family: z.string().optional(),
 })
 
-// Per-locale portal label/terminology overrides:
-// { [locale]: { ["Namespace.key"]: "Override string" } }
-// e.g. { "en-US": { "Reservations.reservation": "Booking" } }
 export const message_overrides = z.record(
   z.string(),
   z.record(z.string(), z.string()),

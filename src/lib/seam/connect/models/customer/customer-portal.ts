@@ -210,7 +210,6 @@ export const portal_configuration_base = z.object({
     ),
   deep_link: z
     .discriminatedUnion('resource_type', [
-      // Customer-keyed resources: resolved to an internal id via a lookup.
       z.object({
         resource_type: z.literal('reservation'),
         resource_key: z.string(),
@@ -219,9 +218,6 @@ export const portal_configuration_base = z.object({
         resource_type: z.literal('space'),
         resource_key: z.string(),
       }),
-      // Seam-id resource: a device is addressed by its Seam device_id directly
-      // (there is no customer-facing device_key), so it carries resource_id
-      // rather than resource_key.
       z.object({
         resource_type: z.literal('device'),
         resource_id: z.string(),
@@ -237,6 +233,7 @@ export const portal_configuration_base = z.object({
 
 export const portal_configuration = portal_configuration_base
   .extend({
+    // TODO: Remove _ prop
     _dev: z.boolean().default(false).describe(`
         ---
         undocumented: Internal developer mode flag.
@@ -259,9 +256,9 @@ export const portal_configuration = portal_configuration_base
       },
       configure: {
         exclude: false,
-        allow_instant_key_customization: false, // default
-        allow_access_automation_rule_customization: false, // default
-        allow_climate_automation_rule_customization: false, // default
+        allow_instant_key_customization: false,
+        allow_access_automation_rule_customization: false,
+        allow_climate_automation_rule_customization: false,
       },
     },
     is_embedded: false,

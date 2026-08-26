@@ -7,7 +7,6 @@ import {
   acs_credential_vostio_metadata,
 } from './metadata/index.js'
 
-// If changed, update seam.acs_credential.external_type generated column
 export const acs_credential_external_type = z.enum([
   'pti_card',
   'brivo_credential',
@@ -398,7 +397,6 @@ export const acs_credential_on_encoder = z.object({
           'Card ID for the Visionline card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
         ),
       // TODO card_function_type: z.enum(["guest", "staff"]), // computed, looks at door ops, and checks is guest op is present.
-
       cancelled: z
         .boolean()
         .optional()

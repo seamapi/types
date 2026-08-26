@@ -102,8 +102,6 @@ const update_access_code_action_attempt = z
         .describe('Updating an access code succeeded.'),
       result: z
         .object({
-          // Omitted when the update was a no-op, that is, when every
-          // requested value already matched the access code.
           access_code: z
             .record(z.any())
             .optional()

@@ -3,13 +3,11 @@ import { z } from 'zod'
 import { resource_key } from '../../models/resource-key.js'
 
 export const customer_delete_data = z.object({
-  // Customer keys to delete all data for
   customer_keys: z
     .array(resource_key)
     .optional()
     .describe('List of customer keys to delete all data for.'),
 
-  // Location resources to delete
   space_keys: z
     .array(resource_key)
     .optional()
@@ -47,7 +45,6 @@ export const customer_delete_data = z.object({
     .optional()
     .describe('List of property listing keys to delete.'),
 
-  // User identity resources to delete
   guest_keys: z
     .array(resource_key)
     .optional()
@@ -69,7 +66,6 @@ export const customer_delete_data = z.object({
     .optional()
     .describe('List of user identity keys to delete.'),
 
-  // Access grant resources to delete
   reservation_keys: z
     .array(resource_key)
     .optional()

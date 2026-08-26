@@ -27,7 +27,6 @@ import {
 } from './user-identity-resources.js'
 
 export const external_resources = z.object({
-  // Location resources
   spaces: z
     .array(neutral_resource)
     .optional()
@@ -69,7 +68,6 @@ export const external_resources = z.object({
     .optional()
     .describe('List of property listings.'),
 
-  // User identity resources
   guests: z.array(guest_resource).optional().describe('List of guests.'),
   tenants: z.array(tenant_resource).optional().describe('List of tenants.'),
   residents: z
@@ -86,7 +84,6 @@ export const external_resources = z.object({
     .optional()
     .describe('List of staff members.'),
 
-  // Access grant resources
   reservations: z
     .array(reservation_resource)
     .optional()
@@ -114,7 +111,6 @@ export const customer_data = z
 
 export type CustomerData = z.infer<typeof customer_data>
 
-// Re-export all resource types for convenience
 export * from './access-grant-resources.js'
 export * from './location-resources.js'
 export * from './user-identity-resources.js'

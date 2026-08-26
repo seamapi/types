@@ -10,14 +10,12 @@ export const dormakaba_oracode_time_slot = z
       .number()
       .optional()
       .describe(`Prefix for a time slot for a dormakaba Oracode device.`),
-    // Seam TOD
     check_in_time: z
       .string()
       .optional()
       .describe(
         `Check in time for a time slot for a dormakaba Oracode device.`,
       ),
-    // Seam TOD
     check_out_time: z
       .string()
       .optional()
@@ -687,19 +685,19 @@ export const device_metadata = z
           .optional()
           .describe(
             `Device name for a Google Nest device. Google sets this value.`,
-          ), // set by Google
+          ),
         device_custom_name: z
           .string()
           .optional()
           .describe(
             `Custom device name for a Google Nest device. The device owner sets this value.`,
-          ), // set by device owner
+          ),
         structure_name: z
           .string()
           .optional()
           .describe(
             `Name of the Google Nest structure containing the device. The device owner sets this value.`,
-          ), // set by device owner
+          ),
         display_name: z
           .string()
           .optional()
@@ -876,9 +874,7 @@ export const device_metadata = z
           .optional()
           .describe(`Product name for an Akiles device.`),
 
-        /**
-         * Group ID to add users to for this device
-         */
+        // TODO: Remove _ prop
         _member_group_id: z
           .string()
           .optional()

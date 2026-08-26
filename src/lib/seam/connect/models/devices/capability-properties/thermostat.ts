@@ -75,9 +75,6 @@ export const thermostat_capability_properties = z
       ---
     `),
 
-    /**
-     * this is true if the current thermostat settings differ that what is on seam, and `current_climate_setting.manual_override_allowed: true`
-     */
     is_temporary_manual_override_active: z.boolean().describe(`
           ---
           property_group_key: thermostats
@@ -85,9 +82,6 @@ export const thermostat_capability_properties = z
           Indicates whether the current thermostat settings differ from the most recent active program or schedule that Seam activated. For this condition to occur, \`current_climate_setting.manual_override_allowed\` must also be \`true\`.
           `),
 
-    /**
-     * can be derived from `fallback_climate_preset_key`, or `active_thermostat_schedule` if one is active
-     */
     current_climate_setting: climate_setting.describe(`
           ---
           property_group_key: thermostats

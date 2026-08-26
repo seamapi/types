@@ -2,10 +2,7 @@ import { z } from 'zod'
 
 import { datetime } from '../datetime.js'
 
-export const acs_system_capability_flags = z.object({
-  // Access method type capability flags are not publicly exposed for ACS systems
-  // They are only available for ACS entrances
-})
+export const acs_system_capability_flags = z.object({})
 
 export const acs_location = z.object({
   time_zone: z
@@ -16,7 +13,6 @@ export const acs_location = z.object({
     ),
 })
 
-// If changed, update seam.acs_system.external_type generated column
 export const acs_system_external_type = z.enum([
   'pti_site',
   'avigilon_alta_org',

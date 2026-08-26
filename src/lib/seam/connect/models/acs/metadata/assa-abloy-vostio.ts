@@ -34,7 +34,6 @@ export type AcsEntranceAssaAbloyVostioMetadata = z.infer<
 
 export const acs_credential_vostio_metadata = z
   .object({
-    // auto_join does not exist in the Vostio API and is an abstraction made by Seam
     auto_join: z
       .boolean()
       .optional()
