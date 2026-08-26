@@ -96136,6 +96136,7 @@ export type Routes = {
         | 'ACCESS_CODE_DEADLINE_LIFECYCLE'
         | 'GUARD_MATERIALIZATION_ON_UNREACHABLE_DEVICE'
         | 'TARGETED_ACCESS_GRANT_ISSUANCE'
+        | 'TRUTHFUL_CLIMATE_SETTING_SYNC'
       /** Whether the feature flag should be enabled for the workspace. */
       enabled: boolean
     }
@@ -96158,6 +96159,7 @@ export type Routes = {
           | 'ACCESS_CODE_DEADLINE_LIFECYCLE'
           | 'GUARD_MATERIALIZATION_ON_UNREACHABLE_DEVICE'
           | 'TARGETED_ACCESS_GRANT_ISSUANCE'
+          | 'TRUTHFUL_CLIMATE_SETTING_SYNC'
         enabled: boolean
       }
     }
