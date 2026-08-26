@@ -25989,19 +25989,24 @@ const openapi: OpenAPISpec = {
             description:
               'A device battery level dropped below the low threshold.',
             properties: {
-              battery_level: {
+              accessory_keypad_battery_level: {
                 description:
-                  'Number in the range 0 to 1.0 indicating the amount of battery in the affected device, as reported by the device.',
+                  "Number in the range 0 to 1.0 indicating the battery level of the affected device's paired accessory keypad, when the device has one and its level is known.",
                 format: 'float',
                 maximum: 1,
                 minimum: 0,
                 type: 'number',
               },
-              battery_source: {
+              battery_level: {
+                deprecated: true,
                 description:
-                  "Battery that dropped below the low threshold. `lock`: the lock's own battery. `accessory_keypad`: a paired accessory keypad's battery. Omitted for events emitted before this field existed, which always refer to the lock's own battery.",
-                enum: ['lock', 'accessory_keypad'],
-                type: 'string',
+                  'Number in the range 0 to 1.0 indicating the level of the battery whose drop triggered this event.',
+                format: 'float',
+                maximum: 1,
+                minimum: 0,
+                type: 'number',
+                'x-deprecated':
+                  "Use device_battery_level and accessory_keypad_battery_level, which distinguish the device's own battery from a paired accessory keypad's battery.",
               },
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -26026,6 +26031,14 @@ const openapi: OpenAPISpec = {
                 description:
                   'The customer key associated with the device, if any.',
                 type: 'string',
+              },
+              device_battery_level: {
+                description:
+                  "Number in the range 0 to 1.0 indicating the affected device's own battery level, when known.",
+                format: 'float',
+                maximum: 1,
+                minimum: 0,
+                type: 'number',
               },
               device_custom_metadata: {
                 additionalProperties: {
