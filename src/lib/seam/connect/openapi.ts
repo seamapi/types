@@ -70245,7 +70245,7 @@ const openapi: OpenAPISpec = {
                   },
                   organization_id: {
                     description:
-                      'ID of the organization to associate with the new workspace.',
+                      'ID of the organization to associate with the new workspace. If omitted, the new workspace is associated with the organization that you administer, if you administer exactly one.',
                     format: 'uuid',
                     type: 'string',
                   },
