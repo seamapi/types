@@ -118,7 +118,6 @@ const _access_method_error_map = z.object({
 
 export type AccessMethodErrorMap = z.infer<typeof _access_method_error_map>
 
-// Pending mutations for access methods
 const common_pending_mutation = z.object({
   created_at: datetime.describe(
     'Date and time at which the mutation was created.',
@@ -211,8 +210,6 @@ const notifying_connector_mutation = common_pending_mutation
       .describe(
         "Mutation code to indicate that Seam is in the process of notifying the connector about this access method's issuance.",
       ),
-    // Intentionally generic — each connector type has its own provider_data shape
-    // (e.g., Cloudbeds uses { keyId: string, keyType: string })
     provider_data: z
       .record(z.any())
       .describe('Provider-specific data needed to notify the connector.'),
@@ -341,7 +338,6 @@ export const access_method = z.object({
 
 export type AccessMethod = z.infer<typeof access_method>
 
-// Unmanaged access method schema - excludes client sessions, instant keys, customization profiles, and keys
 export const unmanaged_access_method = access_method.omit({
   instant_key_url: true,
   client_session_token: true,

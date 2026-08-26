@@ -1,6 +1,5 @@
 import { z } from 'zod'
 
-/** Locks */
 export const LOCK_DEVICE_TYPE = {
   AKUVOX_LOCK: 'akuvox_lock',
   AUGUST_LOCK: 'august_lock',
@@ -49,7 +48,6 @@ export const lock_device_type = z.enum(
 
 export type LockDeviceType = z.infer<typeof lock_device_type>
 
-/** Keys */
 export const KEY_DEVICE_TYPE = {
   KEYNEST_KEY: 'keynest_key',
 } as const
@@ -66,7 +64,6 @@ export const key_device_type = z.enum(
 
 export type KeyDeviceType = z.infer<typeof key_device_type>
 
-/** Noise Sensors */
 export const NOISE_SENSOR_DEVICE_TYPE = {
   NOISEAWARE_ACTIVITY_ZONE: 'noiseaware_activity_zone',
   MINUT_SENSOR: 'minut_sensor',
@@ -86,7 +83,6 @@ export const noise_sensor_device_type = z.enum(
 
 export type NoiseSensorDeviceType = z.infer<typeof noise_sensor_device_type>
 
-/** Thermostats */
 export const THERMOSTAT_DEVICE_TYPE = {
   ECOBEE_THERMOSTAT: 'ecobee_thermostat',
   NEST_THERMOSTAT: 'nest_thermostat',
@@ -110,7 +106,6 @@ export const thermostat_device_type = z.enum(
 
 export type ThermostatDeviceType = z.infer<typeof thermostat_device_type>
 
-/** Phones */
 export const PHONE_DEVICE_TYPE = {
   IOS_PHONE: 'ios_phone',
   ANDROID_PHONE: 'android_phone',
@@ -130,7 +125,6 @@ export const phone_device_type = z.enum(
 
 export type PhoneDeviceType = z.infer<typeof phone_device_type>
 
-/** Cameras */
 export const CAMERA_DEVICE_TYPE = {
   RING_CAMERA: 'ring_camera',
 } as const

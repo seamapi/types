@@ -62,8 +62,6 @@ type BatchKey =
   | 'noise_thresholds'
   | 'customization_profiles'
 
-// Explicit annotation prevents tsgo TS7056 — the device/access-code
-// discriminated unions push the inferred literal past the serialization cap.
 type BatchShape = z.ZodObject<
   Record<BatchKey, z.ZodOptional<z.ZodArray<ZodTypeAny>>>
 >

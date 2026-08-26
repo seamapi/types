@@ -1,6 +1,5 @@
 import { z } from 'zod'
 
-// Base user identity resource with common fields
 const base_user_identity_resource = z.object({
   name: z
     .string()
@@ -15,7 +14,6 @@ const base_user_identity_resource = z.object({
     .describe('Phone number associated with the user identity.'),
 })
 
-// User identity resource types with their key aliases
 export const guest_resource = base_user_identity_resource.extend({
   guest_key: z
     .string()
@@ -56,7 +54,6 @@ export const user_resource = base_user_identity_resource.extend({
     .describe('Your unique identifier for the user.'),
 })
 
-// staff resource
 export const staff_member_resource = base_user_identity_resource.extend({
   staff_member_key: z
     .string()
@@ -139,7 +136,6 @@ export const user_identity_resource = base_user_identity_resource.extend({
     .describe('Your unique identifier for the user identity.'),
 })
 
-// Union of all user identity resource types
 export const user_identity_resource_union = z.union([
   guest_resource,
   tenant_resource,
@@ -149,7 +145,6 @@ export const user_identity_resource_union = z.union([
   staff_member_resource,
 ])
 
-// All user identity key aliases for use in references
 export const user_identity_key_aliases = z.union([
   z.object({ guest_key: z.string() }),
   z.object({ tenant_key: z.string() }),
@@ -158,7 +153,6 @@ export const user_identity_key_aliases = z.union([
   z.object({ user_identity_key: z.string() }),
 ])
 
-// Export types
 export type GuestResource = z.infer<typeof guest_resource>
 export type TenantResource = z.infer<typeof tenant_resource>
 export type ResidentResource = z.infer<typeof resident_resource>

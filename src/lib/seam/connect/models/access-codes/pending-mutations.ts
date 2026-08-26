@@ -138,9 +138,6 @@ export type AccessCodePendingMutation = z.infer<
   typeof access_code_pending_mutations
 >
 
-// Internal fields stored in the DB but stripped from public API responses.
-// Used to track the delete+recreate flow for providers that don't support
-// in-place updates (e.g. Schlage, August).
 const internal_recreate_fields = z.object({
   must_be_recreated_on_device: z.boolean().optional(),
   is_being_removed: z.boolean().optional(),

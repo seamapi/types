@@ -317,7 +317,6 @@ export const access_grant = z.object({
 
 export type AccessGrant = z.infer<typeof access_grant>
 
-// Unmanaged access grant schema - excludes client sessions, instant keys, customization profiles, and keys
 export const unmanaged_access_grant = access_grant
   .omit({
     client_session_token: true,
@@ -325,8 +324,6 @@ export const unmanaged_access_grant = access_grant
     customization_profile_id: true,
     access_grant_key: true,
     user_identity_id: true,
-    // Seam does not provision these grants, so it has no basis for saying
-    // whether access works — any verdict would be a claim about another system.
     display_status: true,
   })
   .extend({

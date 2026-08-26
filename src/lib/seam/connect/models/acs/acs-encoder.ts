@@ -20,10 +20,7 @@ const acs_encoder_removed = common_acs_encoder_error.extend({
   error_code: z.literal('acs_encoder_removed').describe(error_code_description),
 })
 
-const acs_encoder_error =
-  // z.union([
-  // ])
-  acs_encoder_removed.describe(`
+const acs_encoder_error = acs_encoder_removed.describe(`
     ---
     resource_type: acs_encoder
     ---

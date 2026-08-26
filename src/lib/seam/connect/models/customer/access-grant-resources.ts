@@ -3,7 +3,6 @@ import { z } from 'zod'
 import { custom_metadata_input } from '../custom-metadata.js'
 import { datetime } from '../datetime.js'
 
-// Base access grant resource with common fields
 const base_access_grant_resource = z.object({
   name: z
     .string()
@@ -23,9 +22,7 @@ const base_access_grant_resource = z.object({
     ),
 })
 
-// User identity key reference - allows any user identity key alias
 export const user_identity_reference = z.object({
-  // Allow any user identity key alias (only one should be present)
   guest_key: z
     .string()
     .optional()
@@ -48,9 +45,7 @@ export const user_identity_reference = z.object({
     .describe('User identity key associated with the access grant.'),
 })
 
-// Location key references - separate arrays for each location key alias
 export const location_references = z.object({
-  // Allow arrays of strings for each location key alias
   space_keys: z
     .array(z.string())
     .optional()
@@ -85,7 +80,6 @@ export const location_references = z.object({
     .describe('Listing keys associated with the access grant.'),
 })
 
-// Access grant resource types with their key aliases
 export const reservation_resource = base_access_grant_resource
   .extend({
     reservation_key: z
@@ -130,21 +124,18 @@ export const access_grant_resource = base_access_grant_resource
   .merge(user_identity_reference)
   .merge(location_references)
 
-// Union of all access grant resource types
 export const access_grant_resource_union = z.union([
   reservation_resource,
   booking_resource,
   access_grant_resource,
 ])
 
-// All access grant key aliases for use in references
 export const access_grant_key_aliases = z.union([
   z.object({ reservation_key: z.string() }),
   z.object({ booking_key: z.string() }),
   z.object({ access_grant_key: z.string() }),
 ])
 
-// Export types
 export type ReservationResource = z.infer<typeof reservation_resource>
 export type BookingResource = z.infer<typeof booking_resource>
 export type AccessGrantResource = z.infer<typeof access_grant_resource>

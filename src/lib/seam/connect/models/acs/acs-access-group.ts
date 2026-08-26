@@ -4,7 +4,6 @@ import { datetime } from '../datetime.js'
 import { schedule } from '../schedule.js'
 import { acs_access_group_pending_mutations } from './acs-access-groups/pending-mutations.js'
 
-// If changed, update seam.acs_access_group.external_type generated column
 export const acs_access_group_external_type = z.enum([
   'pti_unit',
   'pti_access_level',

@@ -4,18 +4,18 @@ export const access_code_code_constraint = z
   .object({
     constraint_type: z
       .enum([
-        'no_zeros', // Nuki
-        'cannot_start_with_12', // Nuki
-        'no_triple_consecutive_ints', // Brivo
-        'cannot_specify_pin_code', // Dormakaba?
-        'pin_code_matches_existing_set', // Salto
-        'start_date_in_future', // Kwikset
-        'no_ascending_or_descending_sequence', // Tedee, Korelock
-        'at_least_three_unique_digits', // Tedee
-        'cannot_contain_089', // TTLock
-        'cannot_contain_0789', // TTLock (for some cylinder devices only)
-        'unique_first_four_digits', // Schlage
-        'no_all_same_digits', // Korelock
+        'no_zeros',
+        'cannot_start_with_12',
+        'no_triple_consecutive_ints',
+        'cannot_specify_pin_code',
+        'pin_code_matches_existing_set',
+        'start_date_in_future',
+        'no_ascending_or_descending_sequence',
+        'at_least_three_unique_digits',
+        'cannot_contain_089',
+        'cannot_contain_0789',
+        'unique_first_four_digits',
+        'no_all_same_digits',
       ])
       .describe(`Code constraint type for access codes.`),
   })
@@ -23,7 +23,7 @@ export const access_code_code_constraint = z
 
 export const access_code_name_constraint = z
   .object({
-    constraint_type: z.enum(['name_length', 'name_must_be_unique']), // Nuki, Kwikset
+    constraint_type: z.enum(['name_length', 'name_must_be_unique']),
     min_length: z
       .number()
       .optional()
@@ -116,6 +116,7 @@ export const time_frame_option = z
 export type TimeFrameOption = z.infer<typeof time_frame_option>
 
 export const access_code_capability_properties = z.object({
+  // TODO: Remove _ prop
   _experimental_supported_code_from_access_codes_lengths: z
     .array(z.number())
     .optional().describe(`
