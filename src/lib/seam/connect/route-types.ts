@@ -96127,22 +96127,7 @@ export type Routes = {
     queryParams: {}
     jsonBody: {
       /** Name of the workspace feature flag to update. */
-      feature_flag_name:
-        | 'RESERVATION_LEGACY'
-        | 'EXPERIMENTAL_DASHBOARD_API_ENABLED'
-        | 'ICAL_CONNECTOR'
-        | 'VISIONLINE_SERIALIZE_BRIDGE_REQUESTS'
-        | 'SALTO_KS_DEVICES_AND_ENTRANCES_FOR_SPACES'
-        | 'MANAGE_DEVICES_CONFIRMATION_MODAL'
-        | 'RECLAIM_ORPHANED_BACKUP_ACCESS_CODES'
-        | 'RECONCILE_ORPHANED_SMARTTHINGS_ACCESS_CODES'
-        | 'LYNX_MIGRATION_ENABLED'
-        | 'AURORA_CUSTOMER_FILTER_ENABLED'
-        | 'ACCESS_METHOD_DEADLINE_ERRORS'
-        | 'ACCESS_CODE_DEADLINE_LIFECYCLE'
-        | 'GUARD_MATERIALIZATION_ON_UNREACHABLE_DEVICE'
-        | 'TARGETED_ACCESS_GRANT_ISSUANCE'
-        | 'TRUTHFUL_CLIMATE_SETTING_SYNC'
+      feature_flag_name: string
       /** Whether the feature flag should be enabled for the workspace. */
       enabled: boolean
     }
@@ -96150,22 +96135,7 @@ export type Routes = {
     formData: {}
     jsonResponse: {
       feature_flag: {
-        feature_flag_name:
-          | 'RESERVATION_LEGACY'
-          | 'EXPERIMENTAL_DASHBOARD_API_ENABLED'
-          | 'ICAL_CONNECTOR'
-          | 'VISIONLINE_SERIALIZE_BRIDGE_REQUESTS'
-          | 'SALTO_KS_DEVICES_AND_ENTRANCES_FOR_SPACES'
-          | 'MANAGE_DEVICES_CONFIRMATION_MODAL'
-          | 'RECLAIM_ORPHANED_BACKUP_ACCESS_CODES'
-          | 'RECONCILE_ORPHANED_SMARTTHINGS_ACCESS_CODES'
-          | 'LYNX_MIGRATION_ENABLED'
-          | 'AURORA_CUSTOMER_FILTER_ENABLED'
-          | 'ACCESS_METHOD_DEADLINE_ERRORS'
-          | 'ACCESS_CODE_DEADLINE_LIFECYCLE'
-          | 'GUARD_MATERIALIZATION_ON_UNREACHABLE_DEVICE'
-          | 'TARGETED_ACCESS_GRANT_ISSUANCE'
-          | 'TRUTHFUL_CLIMATE_SETTING_SYNC'
+        feature_flag_name: string
         enabled: boolean
       }
     }
