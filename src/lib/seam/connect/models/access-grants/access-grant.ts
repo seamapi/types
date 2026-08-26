@@ -283,7 +283,7 @@ export const access_grant = z.object({
   display_status: z
     .string()
     .describe(
-      "Human-readable sentence answering whether the user can currently get in, for example `Awaiting encoding` on an access method or `Upcoming` here. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `starts_at`, `ends_at`, `errors`, and the access methods' own fields.",
+      "Human-readable sentence answering whether the user can currently get in, for example `Active`, `Awaiting issuance`, or `Upcoming`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `starts_at`, `ends_at`, `errors`, and the access methods' own fields.",
     ),
   warnings: z
     .array(access_grant_warning)
@@ -326,7 +326,7 @@ export const unmanaged_access_grant = access_grant
     access_grant_key: true,
     user_identity_id: true,
     // Seam does not provision these grants, so it has no basis for saying
-    // whether access works — "blocked" would be a claim about another system.
+    // whether access works — any verdict would be a claim about another system.
     display_status: true,
   })
   .extend({
