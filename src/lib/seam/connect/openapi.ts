@@ -38217,6 +38217,11 @@ const openapi: OpenAPISpec = {
         scheme: 'bearer',
         type: 'http',
       },
+      delegated_agent: {
+        bearerFormat: 'Delegated Agent Session Token',
+        scheme: 'bearer',
+        type: 'http',
+      },
       internal_service_agent: {
         bearerFormat: 'Internal Service Agent Key',
         scheme: 'bearer',
