@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 import { datetime } from '../datetime.js'
 import { access_grant_pending_mutations } from './pending-mutations.js'

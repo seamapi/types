@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 import { connected_account_error } from '../connected-accounts/index.js'
 import { custom_metadata } from '../custom-metadata.js'

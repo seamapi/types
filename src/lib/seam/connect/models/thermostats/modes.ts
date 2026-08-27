@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 export const hvac_mode_setting = z
   .enum(['off', 'heat', 'cool', 'heat_cool', 'eco'])

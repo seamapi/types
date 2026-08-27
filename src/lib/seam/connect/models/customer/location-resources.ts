@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 import { custom_metadata_input } from '../custom-metadata.js'
 import { space_customer_data, space_geolocation } from '../spaces/space.js'

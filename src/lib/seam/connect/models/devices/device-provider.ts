@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 import type { ProviderCapability } from '../provider-capability.js'
 import { device_capability_flags } from './device.js'

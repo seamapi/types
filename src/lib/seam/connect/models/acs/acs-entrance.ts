@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 import { datetime } from '../datetime.js'
 import { acs_entrance_akiles_metadata } from './metadata/akiles.js'

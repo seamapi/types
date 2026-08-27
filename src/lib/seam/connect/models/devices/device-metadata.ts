@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 export const dormakaba_oracode_time_slot = z
   .object({

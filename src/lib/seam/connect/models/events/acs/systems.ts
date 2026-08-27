@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 import { common_event_error, common_event_warning } from '../common.js'
 import { common_acs_event } from './common.js'

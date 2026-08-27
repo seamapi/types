@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 export const hex_color_code = z.string().refine((value) => {
   if (value != null) {

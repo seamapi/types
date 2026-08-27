@@ -1,4 +1,4 @@
-import { z, type ZodTypeAny } from 'zod'
+import * as z from 'zod/v3'
 
 import { access_code, unmanaged_access_code } from './access-codes/index.js'
 import { access_grant } from './access-grants/access-grant.js'
@@ -63,7 +63,7 @@ type BatchKey =
   | 'customization_profiles'
 
 type BatchShape = z.ZodObject<
-  Record<BatchKey, z.ZodOptional<z.ZodArray<ZodTypeAny>>>
+  Record<BatchKey, z.ZodOptional<z.ZodArray<z.ZodTypeAny>>>
 >
 
 export const batch: BatchShape = z.object({

@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 export const acs_entrance_brivo_metadata = z
   .object({

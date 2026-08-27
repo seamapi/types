@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 export const webhook = z.object({
   webhook_id: z.string().describe('ID of the webhook.'),

@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 import { access_method } from '../access-grants/access-method.js'
 import {

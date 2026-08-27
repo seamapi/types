@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 import { access_grant_key_aliases } from './access-grant-resources.js'
 import { location_key_aliases } from './location-resources.js'

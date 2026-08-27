@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 import { acs_credential } from '../acs/acs-credential.js'
 import {
