@@ -1,6 +1,4 @@
-import * as schemas from './schemas.js'
-
-export { schemas }
+export const loadSchemas = () => import('./schemas.js')
 
 export type * from './model-types.js'
 export { default as openapi } from './openapi.js'

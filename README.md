@@ -23,7 +23,7 @@ These files should not be edited manually as they will be overridden by automati
 
 Each entrypoint may export one or more of the following:
 
-- Zod schemas: collectively exported as a single object named `schemas`.
+- Zod schemas: loaded with the async `loadSchemas()` function.
 - Types: derived directly from the [Zod Schemas][zod] and exported at the top level.
 - A separate collection of Zod schmeas named `routes`.
 - A type named `Routes` that implements the
