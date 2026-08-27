@@ -64,7 +64,7 @@
     "npm": ">=10.0.0"
   },
   "peerDependencies": {
-    "zod": "^3.25.0"
+    "zod": "^3.25.0 || ^4.0.0"
   },
   "devEngines": {
     "runtime": {
@@ -96,6 +96,6 @@
     "tsx": "^4.6.2",
     "typedoc": "^0.28.7",
     "typescript": "^6.0.3",
-    "zod": "^3.25.0"
+    "zod": "^4.4.3"
   }
 }
