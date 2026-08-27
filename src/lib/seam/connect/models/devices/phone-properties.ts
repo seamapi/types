@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 export const phone_specific_properties = z.object({
   assa_abloy_credential_service_metadata: z

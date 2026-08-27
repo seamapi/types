@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 import { custom_metadata } from '../custom-metadata.js'
 import { common_event } from './common.js'

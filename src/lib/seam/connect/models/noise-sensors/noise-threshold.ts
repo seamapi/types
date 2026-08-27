@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 export const noise_threshold = z.object({
   noise_threshold_id: z

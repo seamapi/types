@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 import { activate_climate_preset_action_attempt } from './activate-climate-preset.js'
 import { assign_credential_action_attempt } from './assign-credential.js'

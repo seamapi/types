@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 export const lock_capability_properties = z.object({
   locked: z.boolean().optional().describe(`

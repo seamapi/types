@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 export const phone_registration = z.object({
   phone_registration_id: z.string().describe('Registration ID for the phone.'),

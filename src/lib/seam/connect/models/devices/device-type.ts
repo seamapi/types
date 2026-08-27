@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 export const LOCK_DEVICE_TYPE = {
   AKUVOX_LOCK: 'akuvox_lock',

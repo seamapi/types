@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 import { datetime } from '../datetime.js'
 import { device_and_connected_account_error_options } from '../devices/index.js'

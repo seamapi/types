@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 export const common_action_attempt = z.object({
   action_attempt_id: z.string().uuid().describe('ID of the action attempt.'),

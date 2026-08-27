@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 const PERIOD_IN_KEY_ERROR = {
   message: 'Custom metadata key names cannot contain a period (.)',

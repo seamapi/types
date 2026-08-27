@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 const instant_key_preview_hotel = z.object({
   hotel_name: z.string(),

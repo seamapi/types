@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 const base_user_identity_resource = z.object({
   name: z

@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import * as z from 'zod/v3'
 
 import { resource_key } from '../../models/resource-key.js'
 
