@@ -66,6 +66,11 @@
   "peerDependencies": {
     "zod": "^3.24.0"
   },
+  "peerDependenciesMeta": {
+    "zod": {
+      "optional": true
+    }
+  },
   "devEngines": {
     "runtime": {
       "name": "node",
