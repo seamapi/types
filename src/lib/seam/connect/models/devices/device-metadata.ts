@@ -777,6 +777,40 @@ export const device_metadata = z
       .partial()
       .describe(`Metadata for a dormakaba Oracode device.`),
 
+    dormakaba_oracode_iho_metadata: z
+      .object({
+        door_name: z
+          .string()
+          .optional()
+          .describe(
+            `Name of the door for a dormakaba Oracode Homeowner's Portal device.`,
+          ),
+        door_id: z
+          .number()
+          .optional()
+          .describe(
+            `Door ID for a dormakaba Oracode Homeowner's Portal device.`,
+          ),
+        user_levels: z
+          .array(
+            z
+              .object({
+                userLevel: z.number().optional(),
+                userLevelName: z.string().optional(),
+                userLevelType: z.string().optional(),
+                checkInTime: z.string().optional(),
+                checkOutTime: z.string().optional(),
+              })
+              .partial(),
+          )
+          .optional()
+          .describe(
+            `User levels for a dormakaba Oracode Homeowner's Portal device.`,
+          ),
+      })
+      .partial()
+      .describe(`Metadata for a dormakaba Oracode Homeowner's Portal device.`),
+
     wyze_metadata: z
       .object({
         device_id: z

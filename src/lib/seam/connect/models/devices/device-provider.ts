@@ -35,6 +35,7 @@ export const DEVICE_PROVIDERS = {
   ECOBEE: 'ecobee',
   FOUR_SUITES: 'four_suites',
   DORMAKABA_ORACODE: 'dormakaba_oracode',
+  DORMAKABA_ORACODE_IHO: 'dormakaba_oracode_iho',
   PTI: 'pti',
   WYZE: 'wyze',
   SEAM_PASSPORT: 'seam_passport',
