@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "@seamapi/makenew-tsmodule",
   "version": "3.0.12",
   "description": "Package skeleton for a TypeScript module.",
