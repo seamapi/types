@@ -14730,6 +14730,39 @@ const openapi: OpenAPISpec = {
                         },
                         type: 'object',
                       },
+                      dormakaba_oracode_iho_metadata: {
+                        description:
+                          "Metadata for a dormakaba Oracode Homeowner's Portal device.",
+                        properties: {
+                          door_id: {
+                            description:
+                              "Door ID for a dormakaba Oracode Homeowner's Portal device.",
+                            format: 'float',
+                            type: 'number',
+                          },
+                          door_name: {
+                            description:
+                              "Name of the door for a dormakaba Oracode Homeowner's Portal device.",
+                            type: 'string',
+                          },
+                          user_levels: {
+                            description:
+                              "User levels for a dormakaba Oracode Homeowner's Portal device.",
+                            items: {
+                              properties: {
+                                checkInTime: { type: 'string' },
+                                checkOutTime: { type: 'string' },
+                                userLevel: { format: 'float', type: 'number' },
+                                userLevelName: { type: 'string' },
+                                userLevelType: { type: 'string' },
+                              },
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
+                        },
+                        type: 'object',
+                      },
                       dormakaba_oracode_metadata: {
                         description: 'Metadata for a dormakaba Oracode device.',
                         properties: {
@@ -18015,6 +18048,7 @@ const openapi: OpenAPISpec = {
               'ecobee',
               'four_suites',
               'dormakaba_oracode',
+              'dormakaba_oracode_iho',
               'pti',
               'wyze',
               'seam_passport',
@@ -46698,6 +46732,7 @@ const openapi: OpenAPISpec = {
                         'ecobee',
                         'four_suites',
                         'dormakaba_oracode',
+                        'dormakaba_oracode_iho',
                         'pti',
                         'wyze',
                         'seam_passport',
@@ -50508,6 +50543,7 @@ const openapi: OpenAPISpec = {
                 'akiles',
                 'aqara',
                 'ecobee',
+                'dormakaba_oracode_iho',
                 'honeywell_resideo',
                 'keynest',
                 'korelock',
@@ -52807,6 +52843,7 @@ const openapi: OpenAPISpec = {
                 'akiles',
                 'aqara',
                 'ecobee',
+                'dormakaba_oracode_iho',
                 'honeywell_resideo',
                 'keynest',
                 'korelock',
@@ -54233,6 +54270,7 @@ const openapi: OpenAPISpec = {
                 'keyincode',
                 'akiles',
                 'aqara',
+                'dormakaba_oracode_iho',
                 'korelock',
                 'lockly',
                 'smartthings',

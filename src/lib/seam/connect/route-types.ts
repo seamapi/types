@@ -14750,6 +14750,28 @@ export type Routes = {
                         | undefined
                     }
                   | undefined
+                /** Metadata for a dormakaba Oracode Homeowner's Portal device. */
+                dormakaba_oracode_iho_metadata?:
+                  | {
+                      /** Name of the door for a dormakaba Oracode Homeowner's Portal device. */
+                      door_name?: (string | undefined) | undefined
+                      /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
+                      door_id?: (number | undefined) | undefined
+                      /** User levels for a dormakaba Oracode Homeowner's Portal device. */
+                      user_levels?:
+                        | (
+                            | {
+                                userLevel?: (number | undefined) | undefined
+                                userLevelName?: (string | undefined) | undefined
+                                userLevelType?: (string | undefined) | undefined
+                                checkInTime?: (string | undefined) | undefined
+                                checkOutTime?: (string | undefined) | undefined
+                              }[]
+                            | undefined
+                          )
+                        | undefined
+                    }
+                  | undefined
                 /** Metadata for a Wyze device. */
                 wyze_metadata?:
                   | {
@@ -23161,6 +23183,28 @@ export type Routes = {
                                 /** ID of a user level for a dormakaba Oracode device. */
                                 dormakaba_oracode_user_level_id?:
                                   (string | undefined) | undefined
+                              }[]
+                            | undefined
+                          )
+                        | undefined
+                    }
+                  | undefined
+                /** Metadata for a dormakaba Oracode Homeowner's Portal device. */
+                dormakaba_oracode_iho_metadata?:
+                  | {
+                      /** Name of the door for a dormakaba Oracode Homeowner's Portal device. */
+                      door_name?: (string | undefined) | undefined
+                      /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
+                      door_id?: (number | undefined) | undefined
+                      /** User levels for a dormakaba Oracode Homeowner's Portal device. */
+                      user_levels?:
+                        | (
+                            | {
+                                userLevel?: (number | undefined) | undefined
+                                userLevelName?: (string | undefined) | undefined
+                                userLevelType?: (string | undefined) | undefined
+                                checkInTime?: (string | undefined) | undefined
+                                checkOutTime?: (string | undefined) | undefined
                               }[]
                             | undefined
                           )
@@ -48528,6 +48572,7 @@ export type Routes = {
             | 'ecobee'
             | 'four_suites'
             | 'dormakaba_oracode'
+            | 'dormakaba_oracode_iho'
             | 'pti'
             | 'wyze'
             | 'seam_passport'
@@ -51301,6 +51346,28 @@ export type Routes = {
                   | undefined
               }
             | undefined
+          /** Metadata for a dormakaba Oracode Homeowner's Portal device. */
+          dormakaba_oracode_iho_metadata?:
+            | {
+                /** Name of the door for a dormakaba Oracode Homeowner's Portal device. */
+                door_name?: (string | undefined) | undefined
+                /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
+                door_id?: (number | undefined) | undefined
+                /** User levels for a dormakaba Oracode Homeowner's Portal device. */
+                user_levels?:
+                  | (
+                      | {
+                          userLevel?: (number | undefined) | undefined
+                          userLevelName?: (string | undefined) | undefined
+                          userLevelType?: (string | undefined) | undefined
+                          checkInTime?: (string | undefined) | undefined
+                          checkOutTime?: (string | undefined) | undefined
+                        }[]
+                      | undefined
+                    )
+                  | undefined
+              }
+            | undefined
           /** Metadata for a Wyze device. */
           wyze_metadata?:
             | {
@@ -52681,6 +52748,7 @@ export type Routes = {
             | 'akiles'
             | 'aqara'
             | 'ecobee'
+            | 'dormakaba_oracode_iho'
             | 'honeywell_resideo'
             | 'keynest'
             | 'korelock'
@@ -53411,6 +53479,28 @@ export type Routes = {
                           /** ID of a user level for a dormakaba Oracode device. */
                           dormakaba_oracode_user_level_id?:
                             (string | undefined) | undefined
+                        }[]
+                      | undefined
+                    )
+                  | undefined
+              }
+            | undefined
+          /** Metadata for a dormakaba Oracode Homeowner's Portal device. */
+          dormakaba_oracode_iho_metadata?:
+            | {
+                /** Name of the door for a dormakaba Oracode Homeowner's Portal device. */
+                door_name?: (string | undefined) | undefined
+                /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
+                door_id?: (number | undefined) | undefined
+                /** User levels for a dormakaba Oracode Homeowner's Portal device. */
+                user_levels?:
+                  | (
+                      | {
+                          userLevel?: (number | undefined) | undefined
+                          userLevelName?: (string | undefined) | undefined
+                          userLevelType?: (string | undefined) | undefined
+                          checkInTime?: (string | undefined) | undefined
+                          checkOutTime?: (string | undefined) | undefined
                         }[]
                       | undefined
                     )
@@ -54714,6 +54804,7 @@ export type Routes = {
           | 'ecobee'
           | 'four_suites'
           | 'dormakaba_oracode'
+          | 'dormakaba_oracode_iho'
           | 'pti'
           | 'wyze'
           | 'seam_passport'
@@ -56968,6 +57059,7 @@ export type Routes = {
             | 'akiles'
             | 'aqara'
             | 'ecobee'
+            | 'dormakaba_oracode_iho'
             | 'honeywell_resideo'
             | 'keynest'
             | 'korelock'
@@ -68864,6 +68956,28 @@ export type Routes = {
                   | undefined
               }
             | undefined
+          /** Metadata for a dormakaba Oracode Homeowner's Portal device. */
+          dormakaba_oracode_iho_metadata?:
+            | {
+                /** Name of the door for a dormakaba Oracode Homeowner's Portal device. */
+                door_name?: (string | undefined) | undefined
+                /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
+                door_id?: (number | undefined) | undefined
+                /** User levels for a dormakaba Oracode Homeowner's Portal device. */
+                user_levels?:
+                  | (
+                      | {
+                          userLevel?: (number | undefined) | undefined
+                          userLevelName?: (string | undefined) | undefined
+                          userLevelType?: (string | undefined) | undefined
+                          checkInTime?: (string | undefined) | undefined
+                          checkOutTime?: (string | undefined) | undefined
+                        }[]
+                      | undefined
+                    )
+                  | undefined
+              }
+            | undefined
           /** Metadata for a Wyze device. */
           wyze_metadata?:
             | {
@@ -70731,6 +70845,28 @@ export type Routes = {
                   | undefined
               }
             | undefined
+          /** Metadata for a dormakaba Oracode Homeowner's Portal device. */
+          dormakaba_oracode_iho_metadata?:
+            | {
+                /** Name of the door for a dormakaba Oracode Homeowner's Portal device. */
+                door_name?: (string | undefined) | undefined
+                /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
+                door_id?: (number | undefined) | undefined
+                /** User levels for a dormakaba Oracode Homeowner's Portal device. */
+                user_levels?:
+                  | (
+                      | {
+                          userLevel?: (number | undefined) | undefined
+                          userLevelName?: (string | undefined) | undefined
+                          userLevelType?: (string | undefined) | undefined
+                          checkInTime?: (string | undefined) | undefined
+                          checkOutTime?: (string | undefined) | undefined
+                        }[]
+                      | undefined
+                    )
+                  | undefined
+              }
+            | undefined
           /** Metadata for a Wyze device. */
           wyze_metadata?:
             | {
@@ -72076,6 +72212,7 @@ export type Routes = {
             | 'keyincode'
             | 'akiles'
             | 'aqara'
+            | 'dormakaba_oracode_iho'
             | 'korelock'
             | 'lockly'
             | 'smartthings'
@@ -72719,6 +72856,28 @@ export type Routes = {
                           /** ID of a user level for a dormakaba Oracode device. */
                           dormakaba_oracode_user_level_id?:
                             (string | undefined) | undefined
+                        }[]
+                      | undefined
+                    )
+                  | undefined
+              }
+            | undefined
+          /** Metadata for a dormakaba Oracode Homeowner's Portal device. */
+          dormakaba_oracode_iho_metadata?:
+            | {
+                /** Name of the door for a dormakaba Oracode Homeowner's Portal device. */
+                door_name?: (string | undefined) | undefined
+                /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
+                door_id?: (number | undefined) | undefined
+                /** User levels for a dormakaba Oracode Homeowner's Portal device. */
+                user_levels?:
+                  | (
+                      | {
+                          userLevel?: (number | undefined) | undefined
+                          userLevelName?: (string | undefined) | undefined
+                          userLevelType?: (string | undefined) | undefined
+                          checkInTime?: (string | undefined) | undefined
+                          checkOutTime?: (string | undefined) | undefined
                         }[]
                       | undefined
                     )
@@ -74585,6 +74744,28 @@ export type Routes = {
                           /** ID of a user level for a dormakaba Oracode device. */
                           dormakaba_oracode_user_level_id?:
                             (string | undefined) | undefined
+                        }[]
+                      | undefined
+                    )
+                  | undefined
+              }
+            | undefined
+          /** Metadata for a dormakaba Oracode Homeowner's Portal device. */
+          dormakaba_oracode_iho_metadata?:
+            | {
+                /** Name of the door for a dormakaba Oracode Homeowner's Portal device. */
+                door_name?: (string | undefined) | undefined
+                /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
+                door_id?: (number | undefined) | undefined
+                /** User levels for a dormakaba Oracode Homeowner's Portal device. */
+                user_levels?:
+                  | (
+                      | {
+                          userLevel?: (number | undefined) | undefined
+                          userLevelName?: (string | undefined) | undefined
+                          userLevelType?: (string | undefined) | undefined
+                          checkInTime?: (string | undefined) | undefined
+                          checkOutTime?: (string | undefined) | undefined
                         }[]
                       | undefined
                     )
@@ -84887,6 +85068,28 @@ export type Routes = {
                   | undefined
               }
             | undefined
+          /** Metadata for a dormakaba Oracode Homeowner's Portal device. */
+          dormakaba_oracode_iho_metadata?:
+            | {
+                /** Name of the door for a dormakaba Oracode Homeowner's Portal device. */
+                door_name?: (string | undefined) | undefined
+                /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
+                door_id?: (number | undefined) | undefined
+                /** User levels for a dormakaba Oracode Homeowner's Portal device. */
+                user_levels?:
+                  | (
+                      | {
+                          userLevel?: (number | undefined) | undefined
+                          userLevelName?: (string | undefined) | undefined
+                          userLevelType?: (string | undefined) | undefined
+                          checkInTime?: (string | undefined) | undefined
+                          checkOutTime?: (string | undefined) | undefined
+                        }[]
+                      | undefined
+                    )
+                  | undefined
+              }
+            | undefined
           /** Metadata for a Wyze device. */
           wyze_metadata?:
             | {
@@ -86747,6 +86950,28 @@ export type Routes = {
                           /** ID of a user level for a dormakaba Oracode device. */
                           dormakaba_oracode_user_level_id?:
                             (string | undefined) | undefined
+                        }[]
+                      | undefined
+                    )
+                  | undefined
+              }
+            | undefined
+          /** Metadata for a dormakaba Oracode Homeowner's Portal device. */
+          dormakaba_oracode_iho_metadata?:
+            | {
+                /** Name of the door for a dormakaba Oracode Homeowner's Portal device. */
+                door_name?: (string | undefined) | undefined
+                /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
+                door_id?: (number | undefined) | undefined
+                /** User levels for a dormakaba Oracode Homeowner's Portal device. */
+                user_levels?:
+                  | (
+                      | {
+                          userLevel?: (number | undefined) | undefined
+                          userLevelName?: (string | undefined) | undefined
+                          userLevelType?: (string | undefined) | undefined
+                          checkInTime?: (string | undefined) | undefined
+                          checkOutTime?: (string | undefined) | undefined
                         }[]
                       | undefined
                     )
@@ -107031,6 +107256,28 @@ export type Routes = {
                         | undefined
                     }
                   | undefined
+                /** Metadata for a dormakaba Oracode Homeowner's Portal device. */
+                dormakaba_oracode_iho_metadata?:
+                  | {
+                      /** Name of the door for a dormakaba Oracode Homeowner's Portal device. */
+                      door_name?: (string | undefined) | undefined
+                      /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
+                      door_id?: (number | undefined) | undefined
+                      /** User levels for a dormakaba Oracode Homeowner's Portal device. */
+                      user_levels?:
+                        | (
+                            | {
+                                userLevel?: (number | undefined) | undefined
+                                userLevelName?: (string | undefined) | undefined
+                                userLevelType?: (string | undefined) | undefined
+                                checkInTime?: (string | undefined) | undefined
+                                checkOutTime?: (string | undefined) | undefined
+                              }[]
+                            | undefined
+                          )
+                        | undefined
+                    }
+                  | undefined
                 /** Metadata for a Wyze device. */
                 wyze_metadata?:
                   | {
@@ -116447,6 +116694,28 @@ export type Routes = {
                   | undefined
               }
             | undefined
+          /** Metadata for a dormakaba Oracode Homeowner's Portal device. */
+          dormakaba_oracode_iho_metadata?:
+            | {
+                /** Name of the door for a dormakaba Oracode Homeowner's Portal device. */
+                door_name?: (string | undefined) | undefined
+                /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
+                door_id?: (number | undefined) | undefined
+                /** User levels for a dormakaba Oracode Homeowner's Portal device. */
+                user_levels?:
+                  | (
+                      | {
+                          userLevel?: (number | undefined) | undefined
+                          userLevelName?: (string | undefined) | undefined
+                          userLevelType?: (string | undefined) | undefined
+                          checkInTime?: (string | undefined) | undefined
+                          checkOutTime?: (string | undefined) | undefined
+                        }[]
+                      | undefined
+                    )
+                  | undefined
+              }
+            | undefined
           /** Metadata for a Wyze device. */
           wyze_metadata?:
             | {
@@ -122580,6 +122849,28 @@ export type Routes = {
                   | undefined
               }
             | undefined
+          /** Metadata for a dormakaba Oracode Homeowner's Portal device. */
+          dormakaba_oracode_iho_metadata?:
+            | {
+                /** Name of the door for a dormakaba Oracode Homeowner's Portal device. */
+                door_name?: (string | undefined) | undefined
+                /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
+                door_id?: (number | undefined) | undefined
+                /** User levels for a dormakaba Oracode Homeowner's Portal device. */
+                user_levels?:
+                  | (
+                      | {
+                          userLevel?: (number | undefined) | undefined
+                          userLevelName?: (string | undefined) | undefined
+                          userLevelType?: (string | undefined) | undefined
+                          checkInTime?: (string | undefined) | undefined
+                          checkOutTime?: (string | undefined) | undefined
+                        }[]
+                      | undefined
+                    )
+                  | undefined
+              }
+            | undefined
           /** Metadata for a Wyze device. */
           wyze_metadata?:
             | {
@@ -124440,6 +124731,28 @@ export type Routes = {
                           /** ID of a user level for a dormakaba Oracode device. */
                           dormakaba_oracode_user_level_id?:
                             (string | undefined) | undefined
+                        }[]
+                      | undefined
+                    )
+                  | undefined
+              }
+            | undefined
+          /** Metadata for a dormakaba Oracode Homeowner's Portal device. */
+          dormakaba_oracode_iho_metadata?:
+            | {
+                /** Name of the door for a dormakaba Oracode Homeowner's Portal device. */
+                door_name?: (string | undefined) | undefined
+                /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
+                door_id?: (number | undefined) | undefined
+                /** User levels for a dormakaba Oracode Homeowner's Portal device. */
+                user_levels?:
+                  | (
+                      | {
+                          userLevel?: (number | undefined) | undefined
+                          userLevelName?: (string | undefined) | undefined
+                          userLevelType?: (string | undefined) | undefined
+                          checkInTime?: (string | undefined) | undefined
+                          checkOutTime?: (string | undefined) | undefined
                         }[]
                       | undefined
                     )
@@ -135766,6 +136079,28 @@ export type Routes = {
                   | undefined
               }
             | undefined
+          /** Metadata for a dormakaba Oracode Homeowner's Portal device. */
+          dormakaba_oracode_iho_metadata?:
+            | {
+                /** Name of the door for a dormakaba Oracode Homeowner's Portal device. */
+                door_name?: (string | undefined) | undefined
+                /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
+                door_id?: (number | undefined) | undefined
+                /** User levels for a dormakaba Oracode Homeowner's Portal device. */
+                user_levels?:
+                  | (
+                      | {
+                          userLevel?: (number | undefined) | undefined
+                          userLevelName?: (string | undefined) | undefined
+                          userLevelType?: (string | undefined) | undefined
+                          checkInTime?: (string | undefined) | undefined
+                          checkOutTime?: (string | undefined) | undefined
+                        }[]
+                      | undefined
+                    )
+                  | undefined
+              }
+            | undefined
           /** Metadata for a Wyze device. */
           wyze_metadata?:
             | {
@@ -137628,6 +137963,28 @@ export type Routes = {
                           /** ID of a user level for a dormakaba Oracode device. */
                           dormakaba_oracode_user_level_id?:
                             (string | undefined) | undefined
+                        }[]
+                      | undefined
+                    )
+                  | undefined
+              }
+            | undefined
+          /** Metadata for a dormakaba Oracode Homeowner's Portal device. */
+          dormakaba_oracode_iho_metadata?:
+            | {
+                /** Name of the door for a dormakaba Oracode Homeowner's Portal device. */
+                door_name?: (string | undefined) | undefined
+                /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
+                door_id?: (number | undefined) | undefined
+                /** User levels for a dormakaba Oracode Homeowner's Portal device. */
+                user_levels?:
+                  | (
+                      | {
+                          userLevel?: (number | undefined) | undefined
+                          userLevelName?: (string | undefined) | undefined
+                          userLevelType?: (string | undefined) | undefined
+                          checkInTime?: (string | undefined) | undefined
+                          checkOutTime?: (string | undefined) | undefined
                         }[]
                       | undefined
                     )
@@ -141049,6 +141406,28 @@ export type Routes = {
                                 /** ID of a user level for a dormakaba Oracode device. */
                                 dormakaba_oracode_user_level_id?:
                                   (string | undefined) | undefined
+                              }[]
+                            | undefined
+                          )
+                        | undefined
+                    }
+                  | undefined
+                /** Metadata for a dormakaba Oracode Homeowner's Portal device. */
+                dormakaba_oracode_iho_metadata?:
+                  | {
+                      /** Name of the door for a dormakaba Oracode Homeowner's Portal device. */
+                      door_name?: (string | undefined) | undefined
+                      /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
+                      door_id?: (number | undefined) | undefined
+                      /** User levels for a dormakaba Oracode Homeowner's Portal device. */
+                      user_levels?:
+                        | (
+                            | {
+                                userLevel?: (number | undefined) | undefined
+                                userLevelName?: (string | undefined) | undefined
+                                userLevelType?: (string | undefined) | undefined
+                                checkInTime?: (string | undefined) | undefined
+                                checkOutTime?: (string | undefined) | undefined
                               }[]
                             | undefined
                           )
