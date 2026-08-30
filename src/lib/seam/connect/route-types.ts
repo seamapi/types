@@ -14757,6 +14757,8 @@ export type Routes = {
                       door_name?: (string | undefined) | undefined
                       /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
                       door_id?: (number | undefined) | undefined
+                      /** IANA time zone for a dormakaba Oracode Homeowner's Portal device. */
+                      iana_timezone?: (string | undefined) | undefined
                       /** User levels for a dormakaba Oracode Homeowner's Portal device. */
                       user_levels?:
                         | (
@@ -23196,6 +23198,8 @@ export type Routes = {
                       door_name?: (string | undefined) | undefined
                       /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
                       door_id?: (number | undefined) | undefined
+                      /** IANA time zone for a dormakaba Oracode Homeowner's Portal device. */
+                      iana_timezone?: (string | undefined) | undefined
                       /** User levels for a dormakaba Oracode Homeowner's Portal device. */
                       user_levels?:
                         | (
@@ -51353,6 +51357,8 @@ export type Routes = {
                 door_name?: (string | undefined) | undefined
                 /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
                 door_id?: (number | undefined) | undefined
+                /** IANA time zone for a dormakaba Oracode Homeowner's Portal device. */
+                iana_timezone?: (string | undefined) | undefined
                 /** User levels for a dormakaba Oracode Homeowner's Portal device. */
                 user_levels?:
                   | (
@@ -53492,6 +53498,8 @@ export type Routes = {
                 door_name?: (string | undefined) | undefined
                 /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
                 door_id?: (number | undefined) | undefined
+                /** IANA time zone for a dormakaba Oracode Homeowner's Portal device. */
+                iana_timezone?: (string | undefined) | undefined
                 /** User levels for a dormakaba Oracode Homeowner's Portal device. */
                 user_levels?:
                   | (
@@ -68963,6 +68971,8 @@ export type Routes = {
                 door_name?: (string | undefined) | undefined
                 /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
                 door_id?: (number | undefined) | undefined
+                /** IANA time zone for a dormakaba Oracode Homeowner's Portal device. */
+                iana_timezone?: (string | undefined) | undefined
                 /** User levels for a dormakaba Oracode Homeowner's Portal device. */
                 user_levels?:
                   | (
@@ -70852,6 +70862,8 @@ export type Routes = {
                 door_name?: (string | undefined) | undefined
                 /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
                 door_id?: (number | undefined) | undefined
+                /** IANA time zone for a dormakaba Oracode Homeowner's Portal device. */
+                iana_timezone?: (string | undefined) | undefined
                 /** User levels for a dormakaba Oracode Homeowner's Portal device. */
                 user_levels?:
                   | (
@@ -72869,6 +72881,8 @@ export type Routes = {
                 door_name?: (string | undefined) | undefined
                 /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
                 door_id?: (number | undefined) | undefined
+                /** IANA time zone for a dormakaba Oracode Homeowner's Portal device. */
+                iana_timezone?: (string | undefined) | undefined
                 /** User levels for a dormakaba Oracode Homeowner's Portal device. */
                 user_levels?:
                   | (
@@ -74757,6 +74771,8 @@ export type Routes = {
                 door_name?: (string | undefined) | undefined
                 /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
                 door_id?: (number | undefined) | undefined
+                /** IANA time zone for a dormakaba Oracode Homeowner's Portal device. */
+                iana_timezone?: (string | undefined) | undefined
                 /** User levels for a dormakaba Oracode Homeowner's Portal device. */
                 user_levels?:
                   | (
@@ -85075,6 +85091,8 @@ export type Routes = {
                 door_name?: (string | undefined) | undefined
                 /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
                 door_id?: (number | undefined) | undefined
+                /** IANA time zone for a dormakaba Oracode Homeowner's Portal device. */
+                iana_timezone?: (string | undefined) | undefined
                 /** User levels for a dormakaba Oracode Homeowner's Portal device. */
                 user_levels?:
                   | (
@@ -86963,6 +86981,8 @@ export type Routes = {
                 door_name?: (string | undefined) | undefined
                 /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
                 door_id?: (number | undefined) | undefined
+                /** IANA time zone for a dormakaba Oracode Homeowner's Portal device. */
+                iana_timezone?: (string | undefined) | undefined
                 /** User levels for a dormakaba Oracode Homeowner's Portal device. */
                 user_levels?:
                   | (
@@ -107263,6 +107283,8 @@ export type Routes = {
                       door_name?: (string | undefined) | undefined
                       /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
                       door_id?: (number | undefined) | undefined
+                      /** IANA time zone for a dormakaba Oracode Homeowner's Portal device. */
+                      iana_timezone?: (string | undefined) | undefined
                       /** User levels for a dormakaba Oracode Homeowner's Portal device. */
                       user_levels?:
                         | (
@@ -116701,6 +116723,8 @@ export type Routes = {
                 door_name?: (string | undefined) | undefined
                 /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
                 door_id?: (number | undefined) | undefined
+                /** IANA time zone for a dormakaba Oracode Homeowner's Portal device. */
+                iana_timezone?: (string | undefined) | undefined
                 /** User levels for a dormakaba Oracode Homeowner's Portal device. */
                 user_levels?:
                   | (
@@ -122856,6 +122880,8 @@ export type Routes = {
                 door_name?: (string | undefined) | undefined
                 /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
                 door_id?: (number | undefined) | undefined
+                /** IANA time zone for a dormakaba Oracode Homeowner's Portal device. */
+                iana_timezone?: (string | undefined) | undefined
                 /** User levels for a dormakaba Oracode Homeowner's Portal device. */
                 user_levels?:
                   | (
@@ -124744,6 +124770,8 @@ export type Routes = {
                 door_name?: (string | undefined) | undefined
                 /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
                 door_id?: (number | undefined) | undefined
+                /** IANA time zone for a dormakaba Oracode Homeowner's Portal device. */
+                iana_timezone?: (string | undefined) | undefined
                 /** User levels for a dormakaba Oracode Homeowner's Portal device. */
                 user_levels?:
                   | (
@@ -136086,6 +136114,8 @@ export type Routes = {
                 door_name?: (string | undefined) | undefined
                 /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
                 door_id?: (number | undefined) | undefined
+                /** IANA time zone for a dormakaba Oracode Homeowner's Portal device. */
+                iana_timezone?: (string | undefined) | undefined
                 /** User levels for a dormakaba Oracode Homeowner's Portal device. */
                 user_levels?:
                   | (
@@ -137976,6 +138006,8 @@ export type Routes = {
                 door_name?: (string | undefined) | undefined
                 /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
                 door_id?: (number | undefined) | undefined
+                /** IANA time zone for a dormakaba Oracode Homeowner's Portal device. */
+                iana_timezone?: (string | undefined) | undefined
                 /** User levels for a dormakaba Oracode Homeowner's Portal device. */
                 user_levels?:
                   | (
@@ -141419,6 +141451,8 @@ export type Routes = {
                       door_name?: (string | undefined) | undefined
                       /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
                       door_id?: (number | undefined) | undefined
+                      /** IANA time zone for a dormakaba Oracode Homeowner's Portal device. */
+                      iana_timezone?: (string | undefined) | undefined
                       /** User levels for a dormakaba Oracode Homeowner's Portal device. */
                       user_levels?:
                         | (
