@@ -14745,6 +14745,11 @@ const openapi: OpenAPISpec = {
                               "Name of the door for a dormakaba Oracode Homeowner's Portal device.",
                             type: 'string',
                           },
+                          iana_timezone: {
+                            description:
+                              "IANA time zone for a dormakaba Oracode Homeowner's Portal device.",
+                            type: 'string',
+                          },
                           user_levels: {
                             description:
                               "User levels for a dormakaba Oracode Homeowner's Portal device.",

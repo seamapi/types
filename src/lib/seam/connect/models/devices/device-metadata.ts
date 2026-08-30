@@ -791,6 +791,12 @@ export const device_metadata = z
           .describe(
             `Door ID for a dormakaba Oracode Homeowner's Portal device.`,
           ),
+        iana_timezone: z
+          .string()
+          .optional()
+          .describe(
+            `IANA time zone for a dormakaba Oracode Homeowner's Portal device.`,
+          ),
         user_levels: z
           .array(
             z
