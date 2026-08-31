@@ -804,8 +804,8 @@ export const device_metadata = z
                 userLevel: z.number().optional(),
                 userLevelName: z.string().optional(),
                 userLevelType: z.string().optional(),
-                checkInTime: z.string().optional(),
-                checkOutTime: z.string().optional(),
+                userLevelCheckInTime: z.string().optional(),
+                userLevelCheckOutTime: z.string().optional(),
               })
               .partial(),
           )

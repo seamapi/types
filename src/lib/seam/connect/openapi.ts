@@ -14755,9 +14755,9 @@ const openapi: OpenAPISpec = {
                               "User levels for a dormakaba Oracode Homeowner's Portal device.",
                             items: {
                               properties: {
-                                checkInTime: { type: 'string' },
-                                checkOutTime: { type: 'string' },
                                 userLevel: { format: 'float', type: 'number' },
+                                userLevelCheckInTime: { type: 'string' },
+                                userLevelCheckOutTime: { type: 'string' },
                                 userLevelName: { type: 'string' },
                                 userLevelType: { type: 'string' },
                               },
