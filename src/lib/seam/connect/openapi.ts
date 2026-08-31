@@ -35,6 +35,11 @@ const openapi: OpenAPISpec = {
             format: 'uuid',
             type: 'string',
           },
+          display_status: {
+            description:
+              'Human-readable label for where this access code sits in its lifecycle, for example `Active`, `Issuing`, or `Expired`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `pending_mutations`, `errors`, `warnings`, `starts_at`, and `ends_at`.',
+            type: 'string',
+          },
           dormakaba_oracode_metadata: {
             description:
               'Metadata for a dormakaba Oracode managed access code. Only present for access codes from dormakaba Oracode devices.',
@@ -1381,10 +1386,13 @@ const openapi: OpenAPISpec = {
             type: 'string',
           },
           status: {
+            deprecated: true,
             description:
               'Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/lifecycle-of-access-codes).',
             enum: ['setting', 'set', 'unset', 'removing', 'unknown'],
             type: 'string',
+            'x-deprecated':
+              "Use `display_status` to show a person the code's state. To make decisions, read `pending_mutations`, `errors`, `warnings`, `starts_at`, and `ends_at`.",
           },
           type: {
             description:
@@ -1765,6 +1773,7 @@ const openapi: OpenAPISpec = {
           'warnings',
           'is_managed',
           'status',
+          'display_status',
           'is_backup_access_code_available',
           'is_external_modification_allowed',
           'is_one_time_use',
@@ -31480,6 +31489,11 @@ const openapi: OpenAPISpec = {
             format: 'uuid',
             type: 'string',
           },
+          display_status: {
+            description:
+              "Human-readable label for the code's state: `Active` or `Not active`, based on whether the code is set on the device. For display only. The wording is not stable and is not an enumeration — never compare against or branch on it.",
+            type: 'string',
+          },
           dormakaba_oracode_metadata: {
             description:
               'Metadata for a dormakaba Oracode unmanaged access code. Only present for unmanaged access codes from dormakaba Oracode devices.',
@@ -32515,10 +32529,13 @@ const openapi: OpenAPISpec = {
             type: 'string',
           },
           status: {
+            deprecated: true,
             description:
               'Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational. `unset` indicates that the code exists on the provider but is not usable on the device.',
             enum: ['set', 'unset'],
             type: 'string',
+            'x-deprecated':
+              "Use `display_status` to show a person the code's state.",
           },
           type: {
             description:
@@ -32898,6 +32915,7 @@ const openapi: OpenAPISpec = {
           'warnings',
           'is_managed',
           'status',
+          'display_status',
         ],
         type: 'object',
         'x-route-path': '/access_codes/unmanaged',

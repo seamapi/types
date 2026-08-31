@@ -24,10 +24,16 @@ export const unmanaged_access_code = access_code
     is_managed: z
       .literal(false)
       .describe('Indicates that Seam does not manage the access code.'),
-    status: z
-      .enum(['set', 'unset'])
+    status: z.enum(['set', 'unset']).describe(`
+      ---
+      deprecated: Use \`display_status\` to show a person the code's state.
+      ---
+      Current status of the access code within the operational lifecycle. \`set\` indicates that the code is active and operational. \`unset\` indicates that the code exists on the provider but is not usable on the device.
+      `),
+    display_status: z
+      .string()
       .describe(
-        'Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational. `unset` indicates that the code exists on the provider but is not usable on the device.',
+        "Human-readable label for the code's state: `Active` or `Not active`, based on whether the code is set on the device. For display only. The wording is not stable and is not an enumeration — never compare against or branch on it.",
       ),
     cannot_be_managed: z
       .literal(true)

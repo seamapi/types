@@ -568,10 +568,16 @@ export const access_code = z.object({
     .describe(
       'Date and time after which the time-bound access code becomes inactive.',
     ),
-  status: z
-    .enum(['setting', 'set', 'unset', 'removing', 'unknown'])
+  status: z.enum(['setting', 'set', 'unset', 'removing', 'unknown']).describe(`
+      ---
+      deprecated: Use \`display_status\` to show a person the code's state. To make decisions, read \`pending_mutations\`, \`errors\`, \`warnings\`, \`starts_at\`, and \`ends_at\`.
+      ---
+      Current status of the access code within the operational lifecycle. Values are \`setting\`, a transitional phase that indicates that the code is being configured or activated; \`set\`, which indicates that the code is active and operational; \`unset\`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; \`removing\`, which indicates a transitional period in which the code is being deleted or made inactive; and \`unknown\`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/lifecycle-of-access-codes).
+      `),
+  display_status: z
+    .string()
     .describe(
-      'Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/lifecycle-of-access-codes).',
+      'Human-readable label for where this access code sits in its lifecycle, for example `Active`, `Issuing`, or `Expired`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `pending_mutations`, `errors`, `warnings`, `starts_at`, and `ends_at`.',
     ),
   is_backup_access_code_available: z
     .boolean()
