@@ -71,6 +71,9 @@ jobs:
     timeout-minutes: 30
     needs: npm
     steps:
+      - name: Wait for npm cache updates
+        run: sleep 60s
+        shell: bash
       - name: Checkout seamapi/javascript-http
         uses: actions/checkout@v7
         with:
@@ -116,6 +119,9 @@ jobs:
     timeout-minutes: 30
     needs: npm
     steps:
+      - name: Wait for npm cache updates
+        run: sleep 60s
+        shell: bash
       - name: Checkout seamapi/docs
         uses: actions/checkout@v7
         with:
