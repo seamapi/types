@@ -81,9 +81,17 @@ const device_event_issue_properties = {
 }
 
 export const lock_method = z
-  .enum(['keycode', 'manual', 'automatic', 'unknown', 'remote', 'card'])
+  .enum([
+    'keycode',
+    'manual',
+    'automatic',
+    'unknown',
+    'remote',
+    'card',
+    'mobile_key',
+  ])
   .describe(
-    'Method by which the affected lock device was locked or unlocked. `keycode`: locked or unlocked using an access code (see `access_code_id`). `manual`: a direct physical action, such as turning a thumbturn or pressing a button. `remote`: a remote action initiated via an app, Bluetooth, or the Seam API (see `action_attempt_id` for Seam-initiated actions; see `is_via_bluetooth` or `is_via_nfc` for the specific transport). `automatic`: triggered automatically without user interaction, for example by an auto-relock timer. `card`: a physical credential (RFID card or NFC wallet pass) was presented at the reader. `unknown`: the method could not be determined from the provider event.',
+    "Method by which the affected lock device was locked or unlocked. `keycode`: locked or unlocked using an access code (see `access_code_id`). `manual`: a direct physical action, such as turning a thumbturn or pressing a button. `remote`: a remote action initiated via an app, Bluetooth, or the Seam API (see `action_attempt_id` for Seam-initiated actions; see `is_via_bluetooth` or `is_via_nfc` for the specific transport). `automatic`: triggered automatically without user interaction, for example by an auto-relock timer. `card`: a physical credential (RFID card or NFC wallet pass) was presented at the reader. `mobile_key`: a phone-based mobile credential in the provider's app was presented at the lock (see `is_via_bluetooth` or `is_via_nfc` for the transport). `unknown`: the method could not be determined from the provider event.",
   )
 export type LockMethod = z.infer<typeof lock_method>
 
