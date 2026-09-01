@@ -40789,6 +40789,16 @@ const openapi: OpenAPISpec = {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'search',
+            schema: {
+              description:
+                'String for which to search. Filters returned Access Grants to include all records that satisfy a partial match using `name`, `access_grant_key`, `reservation_key`, `access_grant_id`, `user_identity_id`, `user_identity_full_name`, `user_identity_email_address` or `user_identity_phone_number`.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           '200': {
