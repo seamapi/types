@@ -70432,7 +70432,7 @@ const openapi: OpenAPISpec = {
                   },
                   organization_id: {
                     description:
-                      'ID of the organization to associate with the new workspace. If omitted, the new workspace is associated with the organization that you administer, if you administer exactly one.',
+                      'ID of the organization to associate with the new workspace. If omitted, the new workspace is associated with the organization that you administer, if you administer exactly one. If you administer no organization, Seam creates one for you and associates the new workspace with it.',
                     format: 'uuid',
                     type: 'string',
                   },
