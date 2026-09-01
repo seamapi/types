@@ -61,12 +61,34 @@ const delay_in_issuing_warning = common_access_method_warning
     'Indicates that Seam has not yet issued this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant), even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
   )
 
+const user_identity_missing_email_address_warning = common_access_method_warning
+  .extend({
+    warning_code: z
+      .literal('user_identity_missing_email_address')
+      .describe(warning_code_description),
+  })
+  .describe(
+    "Indicates that the access system delivers this mobile key through an app invitation sent to the recipient's email address, but the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities) for this [access grant](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) has no email address, so the mobile key cannot be delivered. Set an email address on the user identity when you create the access grant.",
+  )
+
+const user_identity_missing_phone_number_warning = common_access_method_warning
+  .extend({
+    warning_code: z
+      .literal('user_identity_missing_phone_number')
+      .describe(warning_code_description),
+  })
+  .describe(
+    "Indicates that the access system delivers this mobile key to the recipient's phone number, but the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities) for this [access grant](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) has no phone number, so the mobile key cannot be delivered. Set a phone number on the user identity when you create the access grant.",
+  )
+
 const access_method_warning = z
   .discriminatedUnion('warning_code', [
     being_deleted,
     updating_access_times_warning,
     pulled_backup_access_code_warning,
     delay_in_issuing_warning,
+    user_identity_missing_email_address_warning,
+    user_identity_missing_phone_number_warning,
   ])
   .describe(
     'Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
@@ -79,6 +101,11 @@ const _access_method_warning_map = z.object({
     .optional()
     .nullable(),
   delay_in_issuing: delay_in_issuing_warning.optional().nullable(),
+  user_identity_missing_email_address:
+    user_identity_missing_email_address_warning.optional().nullable(),
+  user_identity_missing_phone_number: user_identity_missing_phone_number_warning
+    .optional()
+    .nullable(),
 })
 
 export type AccessMethodWarningMap = z.infer<typeof _access_method_warning_map>
