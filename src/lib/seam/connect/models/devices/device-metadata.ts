@@ -801,11 +801,11 @@ export const device_metadata = z
           .array(
             z
               .object({
-                userLevel: z.number().optional(),
-                userLevelName: z.string().optional(),
-                userLevelType: z.string().optional(),
-                userLevelCheckInTime: z.string().optional(),
-                userLevelCheckOutTime: z.string().optional(),
+                user_level: z.number().optional(),
+                user_level_name: z.string().optional(),
+                user_level_type: z.string().optional(),
+                user_level_check_in_time: z.string().optional(),
+                user_level_check_out_time: z.string().optional(),
               })
               .partial(),
           )

@@ -14854,12 +14854,14 @@ export type Routes = {
                       user_levels?:
                         | (
                             | {
-                                userLevel?: (number | undefined) | undefined
-                                userLevelName?: (string | undefined) | undefined
-                                userLevelType?: (string | undefined) | undefined
-                                userLevelCheckInTime?:
+                                user_level?: (number | undefined) | undefined
+                                user_level_name?:
                                   (string | undefined) | undefined
-                                userLevelCheckOutTime?:
+                                user_level_type?:
+                                  (string | undefined) | undefined
+                                user_level_check_in_time?:
+                                  (string | undefined) | undefined
+                                user_level_check_out_time?:
                                   (string | undefined) | undefined
                               }[]
                             | undefined
@@ -23363,12 +23365,14 @@ export type Routes = {
                       user_levels?:
                         | (
                             | {
-                                userLevel?: (number | undefined) | undefined
-                                userLevelName?: (string | undefined) | undefined
-                                userLevelType?: (string | undefined) | undefined
-                                userLevelCheckInTime?:
+                                user_level?: (number | undefined) | undefined
+                                user_level_name?:
                                   (string | undefined) | undefined
-                                userLevelCheckOutTime?:
+                                user_level_type?:
+                                  (string | undefined) | undefined
+                                user_level_check_in_time?:
+                                  (string | undefined) | undefined
+                                user_level_check_out_time?:
                                   (string | undefined) | undefined
                               }[]
                             | undefined
@@ -51700,12 +51704,12 @@ export type Routes = {
                 user_levels?:
                   | (
                       | {
-                          userLevel?: (number | undefined) | undefined
-                          userLevelName?: (string | undefined) | undefined
-                          userLevelType?: (string | undefined) | undefined
-                          userLevelCheckInTime?:
+                          user_level?: (number | undefined) | undefined
+                          user_level_name?: (string | undefined) | undefined
+                          user_level_type?: (string | undefined) | undefined
+                          user_level_check_in_time?:
                             (string | undefined) | undefined
-                          userLevelCheckOutTime?:
+                          user_level_check_out_time?:
                             (string | undefined) | undefined
                         }[]
                       | undefined
@@ -53843,12 +53847,12 @@ export type Routes = {
                 user_levels?:
                   | (
                       | {
-                          userLevel?: (number | undefined) | undefined
-                          userLevelName?: (string | undefined) | undefined
-                          userLevelType?: (string | undefined) | undefined
-                          userLevelCheckInTime?:
+                          user_level?: (number | undefined) | undefined
+                          user_level_name?: (string | undefined) | undefined
+                          user_level_type?: (string | undefined) | undefined
+                          user_level_check_in_time?:
                             (string | undefined) | undefined
-                          userLevelCheckOutTime?:
+                          user_level_check_out_time?:
                             (string | undefined) | undefined
                         }[]
                       | undefined
@@ -69348,12 +69352,12 @@ export type Routes = {
                 user_levels?:
                   | (
                       | {
-                          userLevel?: (number | undefined) | undefined
-                          userLevelName?: (string | undefined) | undefined
-                          userLevelType?: (string | undefined) | undefined
-                          userLevelCheckInTime?:
+                          user_level?: (number | undefined) | undefined
+                          user_level_name?: (string | undefined) | undefined
+                          user_level_type?: (string | undefined) | undefined
+                          user_level_check_in_time?:
                             (string | undefined) | undefined
-                          userLevelCheckOutTime?:
+                          user_level_check_out_time?:
                             (string | undefined) | undefined
                         }[]
                       | undefined
@@ -71241,12 +71245,12 @@ export type Routes = {
                 user_levels?:
                   | (
                       | {
-                          userLevel?: (number | undefined) | undefined
-                          userLevelName?: (string | undefined) | undefined
-                          userLevelType?: (string | undefined) | undefined
-                          userLevelCheckInTime?:
+                          user_level?: (number | undefined) | undefined
+                          user_level_name?: (string | undefined) | undefined
+                          user_level_type?: (string | undefined) | undefined
+                          user_level_check_in_time?:
                             (string | undefined) | undefined
-                          userLevelCheckOutTime?:
+                          user_level_check_out_time?:
                             (string | undefined) | undefined
                         }[]
                       | undefined
@@ -73262,12 +73266,12 @@ export type Routes = {
                 user_levels?:
                   | (
                       | {
-                          userLevel?: (number | undefined) | undefined
-                          userLevelName?: (string | undefined) | undefined
-                          userLevelType?: (string | undefined) | undefined
-                          userLevelCheckInTime?:
+                          user_level?: (number | undefined) | undefined
+                          user_level_name?: (string | undefined) | undefined
+                          user_level_type?: (string | undefined) | undefined
+                          user_level_check_in_time?:
                             (string | undefined) | undefined
-                          userLevelCheckOutTime?:
+                          user_level_check_out_time?:
                             (string | undefined) | undefined
                         }[]
                       | undefined
@@ -75154,12 +75158,12 @@ export type Routes = {
                 user_levels?:
                   | (
                       | {
-                          userLevel?: (number | undefined) | undefined
-                          userLevelName?: (string | undefined) | undefined
-                          userLevelType?: (string | undefined) | undefined
-                          userLevelCheckInTime?:
+                          user_level?: (number | undefined) | undefined
+                          user_level_name?: (string | undefined) | undefined
+                          user_level_type?: (string | undefined) | undefined
+                          user_level_check_in_time?:
                             (string | undefined) | undefined
-                          userLevelCheckOutTime?:
+                          user_level_check_out_time?:
                             (string | undefined) | undefined
                         }[]
                       | undefined
@@ -85540,12 +85544,12 @@ export type Routes = {
                 user_levels?:
                   | (
                       | {
-                          userLevel?: (number | undefined) | undefined
-                          userLevelName?: (string | undefined) | undefined
-                          userLevelType?: (string | undefined) | undefined
-                          userLevelCheckInTime?:
+                          user_level?: (number | undefined) | undefined
+                          user_level_name?: (string | undefined) | undefined
+                          user_level_type?: (string | undefined) | undefined
+                          user_level_check_in_time?:
                             (string | undefined) | undefined
-                          userLevelCheckOutTime?:
+                          user_level_check_out_time?:
                             (string | undefined) | undefined
                         }[]
                       | undefined
@@ -87432,12 +87436,12 @@ export type Routes = {
                 user_levels?:
                   | (
                       | {
-                          userLevel?: (number | undefined) | undefined
-                          userLevelName?: (string | undefined) | undefined
-                          userLevelType?: (string | undefined) | undefined
-                          userLevelCheckInTime?:
+                          user_level?: (number | undefined) | undefined
+                          user_level_name?: (string | undefined) | undefined
+                          user_level_type?: (string | undefined) | undefined
+                          user_level_check_in_time?:
                             (string | undefined) | undefined
-                          userLevelCheckOutTime?:
+                          user_level_check_out_time?:
                             (string | undefined) | undefined
                         }[]
                       | undefined
@@ -107812,12 +107816,14 @@ export type Routes = {
                       user_levels?:
                         | (
                             | {
-                                userLevel?: (number | undefined) | undefined
-                                userLevelName?: (string | undefined) | undefined
-                                userLevelType?: (string | undefined) | undefined
-                                userLevelCheckInTime?:
+                                user_level?: (number | undefined) | undefined
+                                user_level_name?:
                                   (string | undefined) | undefined
-                                userLevelCheckOutTime?:
+                                user_level_type?:
+                                  (string | undefined) | undefined
+                                user_level_check_in_time?:
+                                  (string | undefined) | undefined
+                                user_level_check_out_time?:
                                   (string | undefined) | undefined
                               }[]
                             | undefined
@@ -117318,12 +117324,12 @@ export type Routes = {
                 user_levels?:
                   | (
                       | {
-                          userLevel?: (number | undefined) | undefined
-                          userLevelName?: (string | undefined) | undefined
-                          userLevelType?: (string | undefined) | undefined
-                          userLevelCheckInTime?:
+                          user_level?: (number | undefined) | undefined
+                          user_level_name?: (string | undefined) | undefined
+                          user_level_type?: (string | undefined) | undefined
+                          user_level_check_in_time?:
                             (string | undefined) | undefined
-                          userLevelCheckOutTime?:
+                          user_level_check_out_time?:
                             (string | undefined) | undefined
                         }[]
                       | undefined
@@ -123509,12 +123515,12 @@ export type Routes = {
                 user_levels?:
                   | (
                       | {
-                          userLevel?: (number | undefined) | undefined
-                          userLevelName?: (string | undefined) | undefined
-                          userLevelType?: (string | undefined) | undefined
-                          userLevelCheckInTime?:
+                          user_level?: (number | undefined) | undefined
+                          user_level_name?: (string | undefined) | undefined
+                          user_level_type?: (string | undefined) | undefined
+                          user_level_check_in_time?:
                             (string | undefined) | undefined
-                          userLevelCheckOutTime?:
+                          user_level_check_out_time?:
                             (string | undefined) | undefined
                         }[]
                       | undefined
@@ -125401,12 +125407,12 @@ export type Routes = {
                 user_levels?:
                   | (
                       | {
-                          userLevel?: (number | undefined) | undefined
-                          userLevelName?: (string | undefined) | undefined
-                          userLevelType?: (string | undefined) | undefined
-                          userLevelCheckInTime?:
+                          user_level?: (number | undefined) | undefined
+                          user_level_name?: (string | undefined) | undefined
+                          user_level_type?: (string | undefined) | undefined
+                          user_level_check_in_time?:
                             (string | undefined) | undefined
-                          userLevelCheckOutTime?:
+                          user_level_check_out_time?:
                             (string | undefined) | undefined
                         }[]
                       | undefined
@@ -136811,12 +136817,12 @@ export type Routes = {
                 user_levels?:
                   | (
                       | {
-                          userLevel?: (number | undefined) | undefined
-                          userLevelName?: (string | undefined) | undefined
-                          userLevelType?: (string | undefined) | undefined
-                          userLevelCheckInTime?:
+                          user_level?: (number | undefined) | undefined
+                          user_level_name?: (string | undefined) | undefined
+                          user_level_type?: (string | undefined) | undefined
+                          user_level_check_in_time?:
                             (string | undefined) | undefined
-                          userLevelCheckOutTime?:
+                          user_level_check_out_time?:
                             (string | undefined) | undefined
                         }[]
                       | undefined
@@ -138705,12 +138711,12 @@ export type Routes = {
                 user_levels?:
                   | (
                       | {
-                          userLevel?: (number | undefined) | undefined
-                          userLevelName?: (string | undefined) | undefined
-                          userLevelType?: (string | undefined) | undefined
-                          userLevelCheckInTime?:
+                          user_level?: (number | undefined) | undefined
+                          user_level_name?: (string | undefined) | undefined
+                          user_level_type?: (string | undefined) | undefined
+                          user_level_check_in_time?:
                             (string | undefined) | undefined
-                          userLevelCheckOutTime?:
+                          user_level_check_out_time?:
                             (string | undefined) | undefined
                         }[]
                       | undefined
@@ -142152,12 +142158,14 @@ export type Routes = {
                       user_levels?:
                         | (
                             | {
-                                userLevel?: (number | undefined) | undefined
-                                userLevelName?: (string | undefined) | undefined
-                                userLevelType?: (string | undefined) | undefined
-                                userLevelCheckInTime?:
+                                user_level?: (number | undefined) | undefined
+                                user_level_name?:
                                   (string | undefined) | undefined
-                                userLevelCheckOutTime?:
+                                user_level_type?:
+                                  (string | undefined) | undefined
+                                user_level_check_in_time?:
+                                  (string | undefined) | undefined
+                                user_level_check_out_time?:
                                   (string | undefined) | undefined
                               }[]
                             | undefined
