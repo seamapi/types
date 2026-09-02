@@ -106836,6 +106836,25 @@ export type Routes = {
     jsonResponse: {}
     maxDuration: undefined
   }
+  '/seam/wizard/v1/events': {
+    route: '/seam/wizard/v1/events'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      events: {
+        event: string
+        distinct_id: string
+        timestamp: string
+        properties?: {
+          [x: string]: any
+        }
+      }[]
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+    maxDuration: undefined
+  }
   '/seam/wizard/v1/session': {
     route: '/seam/wizard/v1/session'
     method: 'POST'
