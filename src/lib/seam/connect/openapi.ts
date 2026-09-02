@@ -47844,6 +47844,17 @@ const openapi: OpenAPISpec = {
                             required: ['resource_type', 'resource_id'],
                             type: 'object',
                           },
+                          {
+                            properties: {
+                              resource_id: { type: 'string' },
+                              resource_type: {
+                                enum: ['acs_entrance'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['resource_type', 'resource_id'],
+                            type: 'object',
+                          },
                         ],
                         'x-undocumented':
                           'Internal endpoint for customer portals.',
@@ -61874,6 +61885,17 @@ const openapi: OpenAPISpec = {
                               required: ['resource_type', 'resource_id'],
                               type: 'object',
                             },
+                            {
+                              properties: {
+                                resource_id: { type: 'string' },
+                                resource_type: {
+                                  enum: ['acs_entrance'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['resource_type', 'resource_id'],
+                              type: 'object',
+                            },
                           ],
                           'x-undocumented':
                             'Internal endpoint for customer portals.',
@@ -62335,6 +62357,17 @@ const openapi: OpenAPISpec = {
                               resource_id: { type: 'string' },
                               resource_type: {
                                 enum: ['device'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['resource_type', 'resource_id'],
+                            type: 'object',
+                          },
+                          {
+                            properties: {
+                              resource_id: { type: 'string' },
+                              resource_type: {
+                                enum: ['acs_entrance'],
                                 type: 'string',
                               },
                             },

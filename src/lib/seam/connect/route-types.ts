@@ -50179,6 +50179,10 @@ export type Routes = {
                 resource_type: 'device'
                 resource_id: string
               }
+            | {
+                resource_type: 'acs_entrance'
+                resource_id: string
+              }
           )
         | undefined
       /** Whether the portal is in developer mode. Only available for Seam employees. */
@@ -104657,6 +104661,10 @@ export type Routes = {
                   resource_type: 'device'
                   resource_id: string
                 }
+              | {
+                  resource_type: 'acs_entrance'
+                  resource_id: string
+                }
             )
           | undefined
         /** Business vertical of the customer portal. */
@@ -104873,6 +104881,10 @@ export type Routes = {
                     }
                   | {
                       resource_type: 'device'
+                      resource_id: string
+                    }
+                  | {
+                      resource_type: 'acs_entrance'
                       resource_id: string
                     }
                 )
