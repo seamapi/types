@@ -222,6 +222,10 @@ export const portal_configuration_base = z.object({
         resource_type: z.literal('device'),
         resource_id: z.string(),
       }),
+      z.object({
+        resource_type: z.literal('acs_entrance'),
+        resource_id: z.string(),
+      }),
     ])
     .optional().describe(`
       ---
