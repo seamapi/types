@@ -59334,6 +59334,7 @@ const openapi: OpenAPISpec = {
                     description: 'Access automation rules configuration.',
                     properties: {
                       reservation_created: {
+                        nullable: true,
                         properties: {
                           config: {
                             properties: {
@@ -59382,6 +59383,7 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                       },
                       reservation_deleted: {
+                        nullable: true,
                         properties: {
                           config: { properties: {}, type: 'object' },
                           rule: {
@@ -59393,6 +59395,7 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                       },
                       reservation_spaces_updated: {
+                        nullable: true,
                         properties: {
                           config: { properties: {}, type: 'object' },
                           rule: {
@@ -59404,6 +59407,7 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                       },
                       reservation_time_updated: {
+                        nullable: true,
                         properties: {
                           config: { properties: {}, type: 'object' },
                           rule: {
@@ -59415,6 +59419,7 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                       },
                       space_name_updated: {
+                        nullable: true,
                         properties: {
                           config: { properties: {}, type: 'object' },
                           rule: {
@@ -59426,6 +59431,7 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                       },
                       staff_member_created: {
+                        nullable: true,
                         properties: {
                           config: { properties: {}, type: 'object' },
                           rule: {
@@ -59437,6 +59443,7 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                       },
                       staff_member_name_updated: {
+                        nullable: true,
                         properties: {
                           config: { properties: {}, type: 'object' },
                           rule: {
@@ -59448,6 +59455,7 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                       },
                       user_identity_name_updated: {
+                        nullable: true,
                         properties: {
                           config: { properties: {}, type: 'object' },
                           rule: {
@@ -59467,6 +59475,7 @@ const openapi: OpenAPISpec = {
                       rules: {
                         properties: {
                           reservation_created: {
+                            nullable: true,
                             properties: {
                               automated_occupied_preset: {
                                 properties: {
@@ -59558,10 +59567,12 @@ const openapi: OpenAPISpec = {
                             type: 'object',
                           },
                           reservation_deleted: {
+                            nullable: true,
                             properties: {},
                             type: 'object',
                           },
                           reservation_time_updated: {
+                            nullable: true,
                             properties: {},
                             type: 'object',
                           },
@@ -60933,6 +60944,7 @@ const openapi: OpenAPISpec = {
                     description: 'Access automation rules configuration.',
                     properties: {
                       reservation_created: {
+                        nullable: true,
                         properties: {
                           config: {
                             properties: {
@@ -60981,6 +60993,7 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                       },
                       reservation_deleted: {
+                        nullable: true,
                         properties: {
                           config: { properties: {}, type: 'object' },
                           rule: {
@@ -60992,6 +61005,7 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                       },
                       reservation_spaces_updated: {
+                        nullable: true,
                         properties: {
                           config: { properties: {}, type: 'object' },
                           rule: {
@@ -61003,6 +61017,7 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                       },
                       reservation_time_updated: {
+                        nullable: true,
                         properties: {
                           config: { properties: {}, type: 'object' },
                           rule: {
@@ -61014,6 +61029,7 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                       },
                       space_name_updated: {
+                        nullable: true,
                         properties: {
                           config: { properties: {}, type: 'object' },
                           rule: {
@@ -61025,6 +61041,7 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                       },
                       staff_member_created: {
+                        nullable: true,
                         properties: {
                           config: { properties: {}, type: 'object' },
                           rule: {
@@ -61036,6 +61053,7 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                       },
                       staff_member_name_updated: {
+                        nullable: true,
                         properties: {
                           config: { properties: {}, type: 'object' },
                           rule: {
@@ -61047,6 +61065,7 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                       },
                       user_identity_name_updated: {
+                        nullable: true,
                         properties: {
                           config: { properties: {}, type: 'object' },
                           rule: {
@@ -61066,6 +61085,7 @@ const openapi: OpenAPISpec = {
                       rules: {
                         properties: {
                           reservation_created: {
+                            nullable: true,
                             properties: {
                               automated_occupied_preset: {
                                 properties: {
@@ -61157,10 +61177,12 @@ const openapi: OpenAPISpec = {
                             type: 'object',
                           },
                           reservation_deleted: {
+                            nullable: true,
                             properties: {},
                             type: 'object',
                           },
                           reservation_time_updated: {
+                            nullable: true,
                             properties: {},
                             type: 'object',
                           },

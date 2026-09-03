@@ -99435,7 +99435,7 @@ export type Routes = {
       access_rules?:
         | {
             reservation_created?:
-              | {
+              | ({
                   rule: 'reservation_created'
                   config: {
                     access_methods: ('card' | 'mobile_key' | 'code')[]
@@ -99449,49 +99449,49 @@ export type Routes = {
                     allow_shared_email_and_phone_across_user_identities?:
                       boolean | undefined
                   }
-                }
+                } | null)
               | undefined
             reservation_time_updated?:
-              | {
+              | ({
                   rule: 'reservation_time_updated'
                   config?: {} | undefined
-                }
+                } | null)
               | undefined
             reservation_spaces_updated?:
-              | {
+              | ({
                   rule: 'reservation_spaces_updated'
                   config?: {} | undefined
-                }
+                } | null)
               | undefined
             reservation_deleted?:
-              | {
+              | ({
                   rule: 'reservation_deleted'
                   config?: {} | undefined
-                }
+                } | null)
               | undefined
             space_name_updated?:
-              | {
+              | ({
                   rule: 'space_name_updated'
                   config?: {} | undefined
-                }
+                } | null)
               | undefined
             user_identity_name_updated?:
-              | {
+              | ({
                   rule: 'user_identity_name_updated'
                   config?: {} | undefined
-                }
+                } | null)
               | undefined
             staff_member_name_updated?:
-              | {
+              | ({
                   rule: 'staff_member_name_updated'
                   config?: {} | undefined
-                }
+                } | null)
               | undefined
             staff_member_created?:
-              | {
+              | ({
                   rule: 'staff_member_created'
                   config: {}
-                }
+                } | null)
               | undefined
           }
         | undefined
@@ -99501,7 +99501,7 @@ export type Routes = {
             rules?:
               | {
                   reservation_created?:
-                    | {
+                    | ({
                         occupied_preset_key?: string | undefined
                         automated_occupied_preset?:
                           | {
@@ -99530,10 +99530,10 @@ export type Routes = {
                           | undefined
                         precondition_minutes_before_reservation?:
                           number | undefined
-                      }
+                      } | null)
                     | undefined
-                  reservation_time_updated?: {} | undefined
-                  reservation_deleted?: {} | undefined
+                  reservation_time_updated?: ({} | null) | undefined
+                  reservation_deleted?: ({} | null) | undefined
                 }
               | undefined
           }
@@ -100016,7 +100016,7 @@ export type Routes = {
       access_rules?:
         | {
             reservation_created?:
-              | {
+              | ({
                   rule: 'reservation_created'
                   config: {
                     access_methods: ('card' | 'mobile_key' | 'code')[]
@@ -100030,49 +100030,49 @@ export type Routes = {
                     allow_shared_email_and_phone_across_user_identities?:
                       boolean | undefined
                   }
-                }
+                } | null)
               | undefined
             reservation_time_updated?:
-              | {
+              | ({
                   rule: 'reservation_time_updated'
                   config?: {} | undefined
-                }
+                } | null)
               | undefined
             reservation_spaces_updated?:
-              | {
+              | ({
                   rule: 'reservation_spaces_updated'
                   config?: {} | undefined
-                }
+                } | null)
               | undefined
             reservation_deleted?:
-              | {
+              | ({
                   rule: 'reservation_deleted'
                   config?: {} | undefined
-                }
+                } | null)
               | undefined
             space_name_updated?:
-              | {
+              | ({
                   rule: 'space_name_updated'
                   config?: {} | undefined
-                }
+                } | null)
               | undefined
             user_identity_name_updated?:
-              | {
+              | ({
                   rule: 'user_identity_name_updated'
                   config?: {} | undefined
-                }
+                } | null)
               | undefined
             staff_member_name_updated?:
-              | {
+              | ({
                   rule: 'staff_member_name_updated'
                   config?: {} | undefined
-                }
+                } | null)
               | undefined
             staff_member_created?:
-              | {
+              | ({
                   rule: 'staff_member_created'
                   config: {}
-                }
+                } | null)
               | undefined
           }
         | undefined
@@ -100082,7 +100082,7 @@ export type Routes = {
             rules?:
               | {
                   reservation_created?:
-                    | {
+                    | ({
                         occupied_preset_key?: string | undefined
                         automated_occupied_preset?:
                           | {
@@ -100111,10 +100111,10 @@ export type Routes = {
                           | undefined
                         precondition_minutes_before_reservation?:
                           number | undefined
-                      }
+                      } | null)
                     | undefined
-                  reservation_time_updated?: {} | undefined
-                  reservation_deleted?: {} | undefined
+                  reservation_time_updated?: ({} | null) | undefined
+                  reservation_deleted?: ({} | null) | undefined
                 }
               | undefined
           }
