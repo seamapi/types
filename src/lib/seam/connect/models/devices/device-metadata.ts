@@ -913,12 +913,6 @@ export const device_metadata = z
           .string()
           .optional()
           .describe(`Product name for an Akiles device.`),
-
-        // TODO: Remove _ prop
-        _member_group_id: z
-          .string()
-          .optional()
-          .describe(`Group ID to which to add users for an Akiles device.`),
       })
       .partial()
       .describe(`Metadata for an Akiles device.`),
