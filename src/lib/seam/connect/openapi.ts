@@ -16023,11 +16023,6 @@ const openapi: OpenAPISpec = {
                 allOf: [
                   {
                     properties: {
-                      _experimental_supported_code_from_access_codes_lengths: {
-                        items: { format: 'float', type: 'number' },
-                        type: 'array',
-                        'x-undocumented': 'Marked as experimental.',
-                      },
                       auto_lock_delay_seconds: {
                         description:
                           'The delay in seconds before the lock automatically locks after being unlocked.',

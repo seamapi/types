@@ -15122,9 +15122,6 @@ export type Routes = {
                   | undefined
               }) &
                 ({
-                  /**  */
-                  _experimental_supported_code_from_access_codes_lengths?:
-                    (number[] | undefined) | undefined
                   /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
                   code_constraints?:
                     | (
@@ -23631,9 +23628,6 @@ export type Routes = {
                   | undefined
               }) &
                 ({
-                  /**  */
-                  _experimental_supported_code_from_access_codes_lengths?:
-                    (number[] | undefined) | undefined
                   /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
                   code_constraints?:
                     | (
@@ -51961,9 +51955,6 @@ export type Routes = {
             | undefined
         }) &
           ({
-            /**  */
-            _experimental_supported_code_from_access_codes_lengths?:
-              (number[] | undefined) | undefined
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
@@ -54102,9 +54093,6 @@ export type Routes = {
             | undefined
         }) &
           ({
-            /**  */
-            _experimental_supported_code_from_access_codes_lengths?:
-              (number[] | undefined) | undefined
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
@@ -69605,9 +69593,6 @@ export type Routes = {
             | undefined
         }) &
           ({
-            /**  */
-            _experimental_supported_code_from_access_codes_lengths?:
-              (number[] | undefined) | undefined
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
@@ -71496,9 +71481,6 @@ export type Routes = {
             | undefined
         }) &
           ({
-            /**  */
-            _experimental_supported_code_from_access_codes_lengths?:
-              (number[] | undefined) | undefined
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
@@ -73515,9 +73497,6 @@ export type Routes = {
             | undefined
         }) &
           ({
-            /**  */
-            _experimental_supported_code_from_access_codes_lengths?:
-              (number[] | undefined) | undefined
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
@@ -75405,9 +75384,6 @@ export type Routes = {
             | undefined
         }) &
           ({
-            /**  */
-            _experimental_supported_code_from_access_codes_lengths?:
-              (number[] | undefined) | undefined
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
@@ -85789,9 +85765,6 @@ export type Routes = {
             | undefined
         }) &
           ({
-            /**  */
-            _experimental_supported_code_from_access_codes_lengths?:
-              (number[] | undefined) | undefined
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
@@ -87679,9 +87652,6 @@ export type Routes = {
             | undefined
         }) &
           ({
-            /**  */
-            _experimental_supported_code_from_access_codes_lengths?:
-              (number[] | undefined) | undefined
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
@@ -108076,9 +108046,6 @@ export type Routes = {
                   | undefined
               }) &
                 ({
-                  /**  */
-                  _experimental_supported_code_from_access_codes_lengths?:
-                    (number[] | undefined) | undefined
                   /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
                   code_constraints?:
                     | (
@@ -117571,9 +117538,6 @@ export type Routes = {
             | undefined
         }) &
           ({
-            /**  */
-            _experimental_supported_code_from_access_codes_lengths?:
-              (number[] | undefined) | undefined
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
@@ -123760,9 +123724,6 @@ export type Routes = {
             | undefined
         }) &
           ({
-            /**  */
-            _experimental_supported_code_from_access_codes_lengths?:
-              (number[] | undefined) | undefined
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
@@ -125650,9 +125611,6 @@ export type Routes = {
             | undefined
         }) &
           ({
-            /**  */
-            _experimental_supported_code_from_access_codes_lengths?:
-              (number[] | undefined) | undefined
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
@@ -137058,9 +137016,6 @@ export type Routes = {
             | undefined
         }) &
           ({
-            /**  */
-            _experimental_supported_code_from_access_codes_lengths?:
-              (number[] | undefined) | undefined
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
@@ -138950,9 +138905,6 @@ export type Routes = {
             | undefined
         }) &
           ({
-            /**  */
-            _experimental_supported_code_from_access_codes_lengths?:
-              (number[] | undefined) | undefined
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
             code_constraints?:
               | (
@@ -142406,9 +142358,6 @@ export type Routes = {
                   | undefined
               }) &
                 ({
-                  /**  */
-                  _experimental_supported_code_from_access_codes_lengths?:
-                    (number[] | undefined) | undefined
                   /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
                   code_constraints?:
                     | (
