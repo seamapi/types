@@ -116,14 +116,6 @@ export const time_frame_option = z
 export type TimeFrameOption = z.infer<typeof time_frame_option>
 
 export const access_code_capability_properties = z.object({
-  // TODO: Remove _ prop
-  _experimental_supported_code_from_access_codes_lengths: z
-    .array(z.number())
-    .optional().describe(`
-          ---
-          undocumented: Marked as experimental.
-          ---
-          `),
   code_constraints: z.array(access_code_constraint).optional().describe(`
           ---
           property_group_key: access_codes
