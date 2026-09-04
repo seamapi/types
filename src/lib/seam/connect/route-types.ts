@@ -14925,8 +14925,6 @@ export type Routes = {
                       gadget_id?: (string | undefined) | undefined
                       /** Product name for an Akiles device. */
                       product_name?: (string | undefined) | undefined
-                      /** Group ID to which to add users for an Akiles device. */
-                      _member_group_id?: (string | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for an ASSA ABLOY Vostio system. */
@@ -23436,8 +23434,6 @@ export type Routes = {
                       gadget_id?: (string | undefined) | undefined
                       /** Product name for an Akiles device. */
                       product_name?: (string | undefined) | undefined
-                      /** Group ID to which to add users for an Akiles device. */
-                      _member_group_id?: (string | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for an ASSA ABLOY Vostio system. */
@@ -51777,8 +51773,6 @@ export type Routes = {
                 gadget_id?: (string | undefined) | undefined
                 /** Product name for an Akiles device. */
                 product_name?: (string | undefined) | undefined
-                /** Group ID to which to add users for an Akiles device. */
-                _member_group_id?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for an ASSA ABLOY Vostio system. */
@@ -53920,8 +53914,6 @@ export type Routes = {
                 gadget_id?: (string | undefined) | undefined
                 /** Product name for an Akiles device. */
                 product_name?: (string | undefined) | undefined
-                /** Group ID to which to add users for an Akiles device. */
-                _member_group_id?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for an ASSA ABLOY Vostio system. */
@@ -69425,8 +69417,6 @@ export type Routes = {
                 gadget_id?: (string | undefined) | undefined
                 /** Product name for an Akiles device. */
                 product_name?: (string | undefined) | undefined
-                /** Group ID to which to add users for an Akiles device. */
-                _member_group_id?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for an ASSA ABLOY Vostio system. */
@@ -71318,8 +71308,6 @@ export type Routes = {
                 gadget_id?: (string | undefined) | undefined
                 /** Product name for an Akiles device. */
                 product_name?: (string | undefined) | undefined
-                /** Group ID to which to add users for an Akiles device. */
-                _member_group_id?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for an ASSA ABLOY Vostio system. */
@@ -73339,8 +73327,6 @@ export type Routes = {
                 gadget_id?: (string | undefined) | undefined
                 /** Product name for an Akiles device. */
                 product_name?: (string | undefined) | undefined
-                /** Group ID to which to add users for an Akiles device. */
-                _member_group_id?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for an ASSA ABLOY Vostio system. */
@@ -75231,8 +75217,6 @@ export type Routes = {
                 gadget_id?: (string | undefined) | undefined
                 /** Product name for an Akiles device. */
                 product_name?: (string | undefined) | undefined
-                /** Group ID to which to add users for an Akiles device. */
-                _member_group_id?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for an ASSA ABLOY Vostio system. */
@@ -85617,8 +85601,6 @@ export type Routes = {
                 gadget_id?: (string | undefined) | undefined
                 /** Product name for an Akiles device. */
                 product_name?: (string | undefined) | undefined
-                /** Group ID to which to add users for an Akiles device. */
-                _member_group_id?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for an ASSA ABLOY Vostio system. */
@@ -87509,8 +87491,6 @@ export type Routes = {
                 gadget_id?: (string | undefined) | undefined
                 /** Product name for an Akiles device. */
                 product_name?: (string | undefined) | undefined
-                /** Group ID to which to add users for an Akiles device. */
-                _member_group_id?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for an ASSA ABLOY Vostio system. */
@@ -107899,8 +107879,6 @@ export type Routes = {
                       gadget_id?: (string | undefined) | undefined
                       /** Product name for an Akiles device. */
                       product_name?: (string | undefined) | undefined
-                      /** Group ID to which to add users for an Akiles device. */
-                      _member_group_id?: (string | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for an ASSA ABLOY Vostio system. */
@@ -117405,8 +117383,6 @@ export type Routes = {
                 gadget_id?: (string | undefined) | undefined
                 /** Product name for an Akiles device. */
                 product_name?: (string | undefined) | undefined
-                /** Group ID to which to add users for an Akiles device. */
-                _member_group_id?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for an ASSA ABLOY Vostio system. */
@@ -123596,8 +123572,6 @@ export type Routes = {
                 gadget_id?: (string | undefined) | undefined
                 /** Product name for an Akiles device. */
                 product_name?: (string | undefined) | undefined
-                /** Group ID to which to add users for an Akiles device. */
-                _member_group_id?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for an ASSA ABLOY Vostio system. */
@@ -125488,8 +125462,6 @@ export type Routes = {
                 gadget_id?: (string | undefined) | undefined
                 /** Product name for an Akiles device. */
                 product_name?: (string | undefined) | undefined
-                /** Group ID to which to add users for an Akiles device. */
-                _member_group_id?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for an ASSA ABLOY Vostio system. */
@@ -136898,8 +136870,6 @@ export type Routes = {
                 gadget_id?: (string | undefined) | undefined
                 /** Product name for an Akiles device. */
                 product_name?: (string | undefined) | undefined
-                /** Group ID to which to add users for an Akiles device. */
-                _member_group_id?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for an ASSA ABLOY Vostio system. */
@@ -138792,8 +138762,6 @@ export type Routes = {
                 gadget_id?: (string | undefined) | undefined
                 /** Product name for an Akiles device. */
                 product_name?: (string | undefined) | undefined
-                /** Group ID to which to add users for an Akiles device. */
-                _member_group_id?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for an ASSA ABLOY Vostio system. */
@@ -142241,8 +142209,6 @@ export type Routes = {
                       gadget_id?: (string | undefined) | undefined
                       /** Product name for an Akiles device. */
                       product_name?: (string | undefined) | undefined
-                      /** Group ID to which to add users for an Akiles device. */
-                      _member_group_id?: (string | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for an ASSA ABLOY Vostio system. */

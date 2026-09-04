@@ -138,28 +138,13 @@ export type AccessCodePendingMutation = z.infer<
   typeof access_code_pending_mutations
 >
 
-const internal_recreate_fields = z.object({
-  must_be_recreated_on_device: z.boolean().optional(),
-  is_being_removed: z.boolean().optional(),
-  is_being_created: z.boolean().optional(),
-})
-
 const _access_code_pending_mutations_map = z.object({
   creating: creating.optional().nullable(),
   deferring_creation: deferring_creation.optional().nullable(),
   deleting: deleting.optional().nullable(),
-  updating_code: updating_code
-    .merge(internal_recreate_fields)
-    .optional()
-    .nullable(),
-  updating_name: updating_name
-    .merge(internal_recreate_fields)
-    .optional()
-    .nullable(),
-  updating_time_frame: updating_time_frame
-    .merge(internal_recreate_fields)
-    .optional()
-    .nullable(),
+  updating_code: updating_code.optional().nullable(),
+  updating_name: updating_name.optional().nullable(),
+  updating_time_frame: updating_time_frame.optional().nullable(),
 })
 
 export type AccessCodePendingMutationsMap = z.infer<

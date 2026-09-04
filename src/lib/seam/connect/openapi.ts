@@ -14646,11 +14646,6 @@ const openapi: OpenAPISpec = {
                       akiles_metadata: {
                         description: 'Metadata for an Akiles device.',
                         properties: {
-                          _member_group_id: {
-                            description:
-                              'Group ID to which to add users for an Akiles device.',
-                            type: 'string',
-                          },
                           gadget_id: {
                             description: 'Gadget ID for an Akiles device.',
                             type: 'string',

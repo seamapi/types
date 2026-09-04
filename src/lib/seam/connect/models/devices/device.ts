@@ -706,12 +706,6 @@ export const device_warning_map = z.object({
     .nullable(),
   many_active_backup_codes: many_active_backup_codes.optional().nullable(),
   device_has_flaky_connection: device_has_flaky_connection
-    .extend({
-      // TODO: Remove _ prop
-      _event_id: z.string().uuid().optional(),
-      // TODO: Remove _ prop
-      _reason: z.string().optional(),
-    })
     .optional()
     .nullable(),
   third_party_integration_detected: third_party_integration_detected
