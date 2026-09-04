@@ -90,7 +90,6 @@ export const PROVIDER_CATEGORY_MAP = {
     'yale',
     'nuki',
     'salto_ks',
-    'salto_ks_accept',
     'salto_space',
     'minut',
     'my_2n',
@@ -151,7 +150,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'yacan',
   ],
 
-  beta: ['aqara'],
+  beta: ['salto_ks_accept', 'aqara'],
 
   thermostats: ['ecobee', 'nest', 'sensi', 'honeywell_resideo', 'first_alert'],
   noise_sensors: ['minut', 'noiseaware'],
