@@ -14766,7 +14766,7 @@ export type Routes = {
                       device_custom_name?: (string | undefined) | undefined
                       /** Name of the Google Nest structure containing the device. The device owner sets this value. */
                       structure_name?: (string | undefined) | undefined
-                      /** Display name for a Google Nest device. */
+                      /** Name of the Google Home room containing the device. The device owner sets this value. */
                       display_name?: (string | undefined) | undefined
                     }
                   | undefined
@@ -23272,7 +23272,7 @@ export type Routes = {
                       device_custom_name?: (string | undefined) | undefined
                       /** Name of the Google Nest structure containing the device. The device owner sets this value. */
                       structure_name?: (string | undefined) | undefined
-                      /** Display name for a Google Nest device. */
+                      /** Name of the Google Home room containing the device. The device owner sets this value. */
                       display_name?: (string | undefined) | undefined
                     }
                   | undefined
@@ -51613,7 +51613,7 @@ export type Routes = {
                 device_custom_name?: (string | undefined) | undefined
                 /** Name of the Google Nest structure containing the device. The device owner sets this value. */
                 structure_name?: (string | undefined) | undefined
-                /** Display name for a Google Nest device. */
+                /** Name of the Google Home room containing the device. The device owner sets this value. */
                 display_name?: (string | undefined) | undefined
               }
             | undefined
@@ -53751,7 +53751,7 @@ export type Routes = {
                 device_custom_name?: (string | undefined) | undefined
                 /** Name of the Google Nest structure containing the device. The device owner sets this value. */
                 structure_name?: (string | undefined) | undefined
-                /** Display name for a Google Nest device. */
+                /** Name of the Google Home room containing the device. The device owner sets this value. */
                 display_name?: (string | undefined) | undefined
               }
             | undefined
@@ -69251,7 +69251,7 @@ export type Routes = {
                 device_custom_name?: (string | undefined) | undefined
                 /** Name of the Google Nest structure containing the device. The device owner sets this value. */
                 structure_name?: (string | undefined) | undefined
-                /** Display name for a Google Nest device. */
+                /** Name of the Google Home room containing the device. The device owner sets this value. */
                 display_name?: (string | undefined) | undefined
               }
             | undefined
@@ -71139,7 +71139,7 @@ export type Routes = {
                 device_custom_name?: (string | undefined) | undefined
                 /** Name of the Google Nest structure containing the device. The device owner sets this value. */
                 structure_name?: (string | undefined) | undefined
-                /** Display name for a Google Nest device. */
+                /** Name of the Google Home room containing the device. The device owner sets this value. */
                 display_name?: (string | undefined) | undefined
               }
             | undefined
@@ -73155,7 +73155,7 @@ export type Routes = {
                 device_custom_name?: (string | undefined) | undefined
                 /** Name of the Google Nest structure containing the device. The device owner sets this value. */
                 structure_name?: (string | undefined) | undefined
-                /** Display name for a Google Nest device. */
+                /** Name of the Google Home room containing the device. The device owner sets this value. */
                 display_name?: (string | undefined) | undefined
               }
             | undefined
@@ -75042,7 +75042,7 @@ export type Routes = {
                 device_custom_name?: (string | undefined) | undefined
                 /** Name of the Google Nest structure containing the device. The device owner sets this value. */
                 structure_name?: (string | undefined) | undefined
-                /** Display name for a Google Nest device. */
+                /** Name of the Google Home room containing the device. The device owner sets this value. */
                 display_name?: (string | undefined) | undefined
               }
             | undefined
@@ -85423,7 +85423,7 @@ export type Routes = {
                 device_custom_name?: (string | undefined) | undefined
                 /** Name of the Google Nest structure containing the device. The device owner sets this value. */
                 structure_name?: (string | undefined) | undefined
-                /** Display name for a Google Nest device. */
+                /** Name of the Google Home room containing the device. The device owner sets this value. */
                 display_name?: (string | undefined) | undefined
               }
             | undefined
@@ -87310,7 +87310,7 @@ export type Routes = {
                 device_custom_name?: (string | undefined) | undefined
                 /** Name of the Google Nest structure containing the device. The device owner sets this value. */
                 structure_name?: (string | undefined) | undefined
-                /** Display name for a Google Nest device. */
+                /** Name of the Google Home room containing the device. The device owner sets this value. */
                 display_name?: (string | undefined) | undefined
               }
             | undefined
@@ -107690,7 +107690,7 @@ export type Routes = {
                       device_custom_name?: (string | undefined) | undefined
                       /** Name of the Google Nest structure containing the device. The device owner sets this value. */
                       structure_name?: (string | undefined) | undefined
-                      /** Display name for a Google Nest device. */
+                      /** Name of the Google Home room containing the device. The device owner sets this value. */
                       display_name?: (string | undefined) | undefined
                     }
                   | undefined
@@ -117196,7 +117196,7 @@ export type Routes = {
                 device_custom_name?: (string | undefined) | undefined
                 /** Name of the Google Nest structure containing the device. The device owner sets this value. */
                 structure_name?: (string | undefined) | undefined
-                /** Display name for a Google Nest device. */
+                /** Name of the Google Home room containing the device. The device owner sets this value. */
                 display_name?: (string | undefined) | undefined
               }
             | undefined
@@ -123382,7 +123382,7 @@ export type Routes = {
                 device_custom_name?: (string | undefined) | undefined
                 /** Name of the Google Nest structure containing the device. The device owner sets this value. */
                 structure_name?: (string | undefined) | undefined
-                /** Display name for a Google Nest device. */
+                /** Name of the Google Home room containing the device. The device owner sets this value. */
                 display_name?: (string | undefined) | undefined
               }
             | undefined
@@ -125269,7 +125269,7 @@ export type Routes = {
                 device_custom_name?: (string | undefined) | undefined
                 /** Name of the Google Nest structure containing the device. The device owner sets this value. */
                 structure_name?: (string | undefined) | undefined
-                /** Display name for a Google Nest device. */
+                /** Name of the Google Home room containing the device. The device owner sets this value. */
                 display_name?: (string | undefined) | undefined
               }
             | undefined
@@ -136674,7 +136674,7 @@ export type Routes = {
                 device_custom_name?: (string | undefined) | undefined
                 /** Name of the Google Nest structure containing the device. The device owner sets this value. */
                 structure_name?: (string | undefined) | undefined
-                /** Display name for a Google Nest device. */
+                /** Name of the Google Home room containing the device. The device owner sets this value. */
                 display_name?: (string | undefined) | undefined
               }
             | undefined
@@ -138563,7 +138563,7 @@ export type Routes = {
                 device_custom_name?: (string | undefined) | undefined
                 /** Name of the Google Nest structure containing the device. The device owner sets this value. */
                 structure_name?: (string | undefined) | undefined
-                /** Display name for a Google Nest device. */
+                /** Name of the Google Home room containing the device. The device owner sets this value. */
                 display_name?: (string | undefined) | undefined
               }
             | undefined
@@ -142002,7 +142002,7 @@ export type Routes = {
                       device_custom_name?: (string | undefined) | undefined
                       /** Name of the Google Nest structure containing the device. The device owner sets this value. */
                       structure_name?: (string | undefined) | undefined
-                      /** Display name for a Google Nest device. */
+                      /** Name of the Google Home room containing the device. The device owner sets this value. */
                       display_name?: (string | undefined) | undefined
                     }
                   | undefined
