@@ -701,7 +701,9 @@ export const device_metadata = z
         display_name: z
           .string()
           .optional()
-          .describe(`Display name for a Google Nest device.`),
+          .describe(
+            `Name of the Google Home room containing the device. The device owner sets this value.`,
+          ),
       })
       .partial()
       .describe(`Metadata for a Google Nest device.`),

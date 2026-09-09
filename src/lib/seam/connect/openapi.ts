@@ -15444,7 +15444,7 @@ const openapi: OpenAPISpec = {
                           },
                           display_name: {
                             description:
-                              'Display name for a Google Nest device.',
+                              'Name of the Google Home room containing the device. The device owner sets this value.',
                             type: 'string',
                           },
                           nest_device_id: {
