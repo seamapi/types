@@ -106798,6 +106798,148 @@ export type Routes = {
     jsonResponse: {}
     maxDuration: undefined
   }
+  '/seam/webhooks/v1/preview_event': {
+    route: '/seam/webhooks/v1/preview_event'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** Type of the event that you want to preview. */
+      event_type:
+        | 'access_code.created'
+        | 'access_code.changed'
+        | 'access_code.name_changed'
+        | 'access_code.code_changed'
+        | 'access_code.time_frame_changed'
+        | 'access_code.mutations_requested'
+        | 'access_code.scheduled_on_device'
+        | 'access_code.set_on_device'
+        | 'access_code.removed_from_device'
+        | 'access_code.delay_in_setting_on_device'
+        | 'access_code.failed_to_set_on_device'
+        | 'access_code.issued'
+        | 'access_code.delay_in_issuing'
+        | 'access_code.failed_to_issue'
+        | 'access_code.failed_to_update'
+        | 'access_code.failed_to_expire'
+        | 'access_code.deleted'
+        | 'access_code.delay_in_removing_from_device'
+        | 'access_code.failed_to_remove_from_device'
+        | 'access_code.modified_external_to_seam'
+        | 'access_code.deleted_external_to_seam'
+        | 'access_code.backup_access_code_pulled'
+        | 'access_code.unmanaged.converted_to_managed'
+        | 'access_code.unmanaged.failed_to_convert_to_managed'
+        | 'access_code.unmanaged.created'
+        | 'access_code.unmanaged.removed'
+        | 'access_grant.created'
+        | 'access_grant.deleted'
+        | 'access_grant.access_granted_to_all_doors'
+        | 'access_grant.access_granted_to_door'
+        | 'access_grant.access_to_door_lost'
+        | 'access_grant.access_times_changed'
+        | 'access_grant.could_not_create_requested_access_methods'
+        | 'access_method.issued'
+        | 'access_method.revoked'
+        | 'access_method.card_encoding_required'
+        | 'access_method.deleted'
+        | 'access_method.reissued'
+        | 'access_method.created'
+        | 'access_method.delay_in_issuing'
+        | 'access_method.failed_to_issue'
+        | 'acs_system.connected'
+        | 'acs_system.added'
+        | 'acs_system.disconnected'
+        | 'acs_credential.deleted'
+        | 'acs_credential.issued'
+        | 'acs_credential.reissued'
+        | 'acs_credential.invalidated'
+        | 'acs_user.created'
+        | 'acs_user.deleted'
+        | 'acs_encoder.added'
+        | 'acs_encoder.removed'
+        | 'acs_access_group.deleted'
+        | 'acs_entrance.added'
+        | 'acs_entrance.removed'
+        | 'client_session.deleted'
+        | 'connected_account.connected'
+        | 'connected_account.created'
+        | 'connected_account.successful_login'
+        | 'connected_account.disconnected'
+        | 'connected_account.completed_first_sync'
+        | 'connected_account.deleted'
+        | 'connected_account.completed_first_sync_after_reconnection'
+        | 'connected_account.reauthorization_requested'
+        | 'action_attempt.lock_door.succeeded'
+        | 'action_attempt.lock_door.failed'
+        | 'action_attempt.unlock_door.succeeded'
+        | 'action_attempt.unlock_door.failed'
+        | 'action_attempt.simulate_keypad_code_entry.succeeded'
+        | 'action_attempt.simulate_keypad_code_entry.failed'
+        | 'action_attempt.simulate_manual_lock_via_keypad.succeeded'
+        | 'action_attempt.simulate_manual_lock_via_keypad.failed'
+        | 'connect_webview.login_succeeded'
+        | 'connect_webview.login_failed'
+        | 'device.connected'
+        | 'device.added'
+        | 'device.converted_to_unmanaged'
+        | 'device.unmanaged.converted_to_managed'
+        | 'device.unmanaged.connected'
+        | 'device.disconnected'
+        | 'device.unmanaged.disconnected'
+        | 'device.tampered'
+        | 'device.low_battery'
+        | 'device.battery_status_changed'
+        | 'device.removed'
+        | 'device.deleted'
+        | 'device.third_party_integration_detected'
+        | 'device.third_party_integration_no_longer_detected'
+        | 'device.salto.privacy_mode_activated'
+        | 'device.salto.privacy_mode_deactivated'
+        | 'device.connection_became_flaky'
+        | 'device.connection_stabilized'
+        | 'device.error.subscription_required'
+        | 'device.error.subscription_required.resolved'
+        | 'device.accessory_keypad_connected'
+        | 'device.accessory_keypad_disconnected'
+        | 'noise_sensor.noise_threshold_triggered'
+        | 'lock.locked'
+        | 'lock.unlocked'
+        | 'lock.access_denied'
+        | 'thermostat.climate_preset_activated'
+        | 'thermostat.manually_adjusted'
+        | 'thermostat.temperature_threshold_exceeded'
+        | 'thermostat.temperature_threshold_no_longer_exceeded'
+        | 'thermostat.temperature_reached_set_point'
+        | 'thermostat.temperature_changed'
+        | 'device.name_changed'
+        | 'camera.activated'
+        | 'device.doorbell_rang'
+        | 'enrollment_automation.deleted'
+        | 'phone.deactivated'
+        | 'space.device_membership_changed'
+        | 'space.created'
+        | 'space.deleted'
+      /** Event payload fields that you want to set explicitly. Each field that you provide overrides the value that Seam would otherwise fill in. */
+      payload?: {
+        [x: string]: unknown
+      }
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      /** Event payload that `simulate_event` would send for this event type. */
+      payload: {
+        [x: string]: unknown
+      }
+      /** Payload fields that Seam set to a real resource in your workspace. */
+      resolved_fields: string[]
+      /** Number of webhooks in your workspace that are subscribed to this event type and would therefore receive this event. If this is `0`, no webhook receives the event. `null` if Seam could not determine the count. */
+      subscribed_webhook_count: number | null
+      /** Payload fields that Seam set to a placeholder value because your workspace has no matching resource and you did not provide one. */
+      synthesized_fields: string[]
+    }
+    maxDuration: undefined
+  }
   '/seam/webhooks/v1/simulate_event': {
     route: '/seam/webhooks/v1/simulate_event'
     method: 'POST'
