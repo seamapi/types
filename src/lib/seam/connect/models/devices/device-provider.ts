@@ -61,6 +61,7 @@ export const DEVICE_PROVIDERS = {
   SIFELY: 'sifely',
   THIRTY_THREE_LOCK: 'thirty_three_lock',
   RING: 'ring',
+  TAPO: 'tapo',
   ICAL: 'ical',
   LODGIFY: 'lodgify',
   HOSTAWAY: 'hostaway',
@@ -168,7 +169,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'hotek',
   ],
 
-  cameras: ['ring'],
+  cameras: ['ring', 'tapo'],
 
   connectors: ['ical', 'lodgify', 'hostaway', 'guesty', 'acuity_scheduling'],
 
