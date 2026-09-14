@@ -13758,7 +13758,7 @@ const openapi: OpenAPISpec = {
               },
               {
                 description: 'Device type for cameras.',
-                enum: ['ring_camera'],
+                enum: ['ring_camera', 'tapo_camera'],
                 type: 'string',
               },
             ],
@@ -15764,6 +15764,26 @@ const openapi: OpenAPISpec = {
                           },
                           serial_no: {
                             description: 'Serial number for a tado° device.',
+                            type: 'string',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      tapo_metadata: {
+                        description: 'Metadata for a Tapo camera.',
+                        properties: {
+                          firmware_version: {
+                            description:
+                              'Firmware version reported by the camera.',
+                            type: 'string',
+                          },
+                          hardware_version: {
+                            description:
+                              'Hardware version reported by the camera.',
+                            type: 'string',
+                          },
+                          model: {
+                            description: 'Model reported by the Tapo camera.',
                             type: 'string',
                           },
                         },
@@ -18178,6 +18198,7 @@ const openapi: OpenAPISpec = {
               'sifely',
               'thirty_three_lock',
               'ring',
+              'tapo',
               'ical',
               'lodgify',
               'hostaway',
@@ -36282,7 +36303,7 @@ const openapi: OpenAPISpec = {
               },
               {
                 description: 'Device type for cameras.',
-                enum: ['ring_camera'],
+                enum: ['ring_camera', 'tapo_camera'],
                 type: 'string',
               },
             ],
@@ -46928,6 +46949,7 @@ const openapi: OpenAPISpec = {
                         'sifely',
                         'thirty_three_lock',
                         'ring',
+                        'tapo',
                         'ical',
                         'lodgify',
                         'hostaway',
@@ -50599,7 +50621,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description: 'Device type for cameras.',
-                  enum: ['ring_camera'],
+                  enum: ['ring_camera', 'tapo_camera'],
                   type: 'string',
                 },
               ],
@@ -50679,7 +50701,7 @@ const openapi: OpenAPISpec = {
                   },
                   {
                     description: 'Device type for cameras.',
-                    enum: ['ring_camera'],
+                    enum: ['ring_camera', 'tapo_camera'],
                     type: 'string',
                   },
                 ],
@@ -50737,6 +50759,7 @@ const openapi: OpenAPISpec = {
                 'tado',
                 'ultraloq',
                 'ring',
+                'tapo',
                 'ical',
                 'lodgify',
                 'hostaway',
@@ -52899,7 +52922,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description: 'Device type for cameras.',
-                  enum: ['ring_camera'],
+                  enum: ['ring_camera', 'tapo_camera'],
                   type: 'string',
                 },
               ],
@@ -52979,7 +53002,7 @@ const openapi: OpenAPISpec = {
                   },
                   {
                     description: 'Device type for cameras.',
-                    enum: ['ring_camera'],
+                    enum: ['ring_camera', 'tapo_camera'],
                     type: 'string',
                   },
                 ],
@@ -53037,6 +53060,7 @@ const openapi: OpenAPISpec = {
                 'tado',
                 'ultraloq',
                 'ring',
+                'tapo',
                 'ical',
                 'lodgify',
                 'hostaway',

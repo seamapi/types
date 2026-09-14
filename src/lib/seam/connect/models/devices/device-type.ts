@@ -127,6 +127,7 @@ export type PhoneDeviceType = z.infer<typeof phone_device_type>
 
 export const CAMERA_DEVICE_TYPE = {
   RING_CAMERA: 'ring_camera',
+  TAPO_CAMERA: 'tapo_camera',
 } as const
 
 type CameraDeviceTypeFromMapping =

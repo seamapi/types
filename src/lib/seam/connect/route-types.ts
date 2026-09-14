@@ -14238,7 +14238,7 @@ export type Routes = {
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
-                | 'ring_camera'
+                | ('ring_camera' | 'tapo_camera')
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -15056,6 +15056,20 @@ export type Routes = {
                       /** Serial number for a Yacan device. */
                       serial_number?: (string | undefined) | undefined
                     }
+                  | undefined
+                /** Metadata for a Tapo camera. */
+                tapo_metadata?:
+                  | (
+                      | {
+                          /** Model reported by the Tapo camera. */
+                          model?: (string | undefined) | undefined
+                          /** Firmware version reported by the camera. */
+                          firmware_version?: (string | undefined) | undefined
+                          /** Hardware version reported by the camera. */
+                          hardware_version?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    )
                   | undefined
                 /** Metadata for a Ring device. */
                 ring_metadata?:
@@ -22744,7 +22758,7 @@ export type Routes = {
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
-                | 'ring_camera'
+                | ('ring_camera' | 'tapo_camera')
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -23562,6 +23576,20 @@ export type Routes = {
                       /** Serial number for a Yacan device. */
                       serial_number?: (string | undefined) | undefined
                     }
+                  | undefined
+                /** Metadata for a Tapo camera. */
+                tapo_metadata?:
+                  | (
+                      | {
+                          /** Model reported by the Tapo camera. */
+                          model?: (string | undefined) | undefined
+                          /** Firmware version reported by the camera. */
+                          firmware_version?: (string | undefined) | undefined
+                          /** Hardware version reported by the camera. */
+                          hardware_version?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    )
                   | undefined
                 /** Metadata for a Ring device. */
                 ring_metadata?:
@@ -48933,6 +48961,7 @@ export type Routes = {
             | 'sifely'
             | 'thirty_three_lock'
             | 'ring'
+            | 'tapo'
             | 'ical'
             | 'lodgify'
             | 'hostaway'
@@ -51097,7 +51126,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'ring_camera'
+          | ('ring_camera' | 'tapo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -51890,6 +51919,20 @@ export type Routes = {
                 /** Serial number for a Yacan device. */
                 serial_number?: (string | undefined) | undefined
               }
+            | undefined
+          /** Metadata for a Tapo camera. */
+          tapo_metadata?:
+            | (
+                | {
+                    /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
             | undefined
           /** Metadata for a Ring device. */
           ring_metadata?:
@@ -52999,7 +53042,7 @@ export type Routes = {
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | 'ring_camera'
+            | ('ring_camera' | 'tapo_camera')
           )
         | undefined
       /** Array of device types for which you want to list devices. */
@@ -53049,7 +53092,7 @@ export type Routes = {
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | 'ring_camera'
+            | ('ring_camera' | 'tapo_camera')
           )[]
         | undefined
       /** Manufacturer for which you want to list devices. */
@@ -53099,6 +53142,7 @@ export type Routes = {
             | 'tado'
             | 'ultraloq'
             | 'ring'
+            | 'tapo'
             | 'ical'
             | 'lodgify'
             | 'hostaway'
@@ -53235,7 +53279,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'ring_camera'
+          | ('ring_camera' | 'tapo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -54028,6 +54072,20 @@ export type Routes = {
                 /** Serial number for a Yacan device. */
                 serial_number?: (string | undefined) | undefined
               }
+            | undefined
+          /** Metadata for a Tapo camera. */
+          tapo_metadata?:
+            | (
+                | {
+                    /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
             | undefined
           /** Metadata for a Ring device. */
           ring_metadata?:
@@ -55167,6 +55225,7 @@ export type Routes = {
           | 'sifely'
           | 'thirty_three_lock'
           | 'ring'
+          | 'tapo'
           | 'ical'
           | 'lodgify'
           | 'hostaway'
@@ -56700,7 +56759,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'ring_camera'
+          | ('ring_camera' | 'tapo_camera')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
         /** Location information for the device. */
@@ -57309,7 +57368,7 @@ export type Routes = {
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | 'ring_camera'
+            | ('ring_camera' | 'tapo_camera')
           )
         | undefined
       /** Array of device types for which you want to list devices. */
@@ -57359,7 +57418,7 @@ export type Routes = {
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | 'ring_camera'
+            | ('ring_camera' | 'tapo_camera')
           )[]
         | undefined
       /** Manufacturer for which you want to list devices. */
@@ -57409,6 +57468,7 @@ export type Routes = {
             | 'tado'
             | 'ultraloq'
             | 'ring'
+            | 'tapo'
             | 'ical'
             | 'lodgify'
             | 'hostaway'
@@ -57532,7 +57592,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'ring_camera'
+          | ('ring_camera' | 'tapo_camera')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
         /** Location information for the device. */
@@ -68735,7 +68795,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'ring_camera'
+          | ('ring_camera' | 'tapo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -69528,6 +69588,20 @@ export type Routes = {
                 /** Serial number for a Yacan device. */
                 serial_number?: (string | undefined) | undefined
               }
+            | undefined
+          /** Metadata for a Tapo camera. */
+          tapo_metadata?:
+            | (
+                | {
+                    /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
             | undefined
           /** Metadata for a Ring device. */
           ring_metadata?:
@@ -70623,7 +70697,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'ring_camera'
+          | ('ring_camera' | 'tapo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -71416,6 +71490,20 @@ export type Routes = {
                 /** Serial number for a Yacan device. */
                 serial_number?: (string | undefined) | undefined
               }
+            | undefined
+          /** Metadata for a Tapo camera. */
+          tapo_metadata?:
+            | (
+                | {
+                    /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
             | undefined
           /** Metadata for a Ring device. */
           ring_metadata?:
@@ -72639,7 +72727,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'ring_camera'
+          | ('ring_camera' | 'tapo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -73432,6 +73520,20 @@ export type Routes = {
                 /** Serial number for a Yacan device. */
                 serial_number?: (string | undefined) | undefined
               }
+            | undefined
+          /** Metadata for a Tapo camera. */
+          tapo_metadata?:
+            | (
+                | {
+                    /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
             | undefined
           /** Metadata for a Ring device. */
           ring_metadata?:
@@ -74526,7 +74628,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'ring_camera'
+          | ('ring_camera' | 'tapo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -75319,6 +75421,20 @@ export type Routes = {
                 /** Serial number for a Yacan device. */
                 serial_number?: (string | undefined) | undefined
               }
+            | undefined
+          /** Metadata for a Tapo camera. */
+          tapo_metadata?:
+            | (
+                | {
+                    /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
             | undefined
           /** Metadata for a Ring device. */
           ring_metadata?:
@@ -84907,7 +85023,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'ring_camera'
+          | ('ring_camera' | 'tapo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -85700,6 +85816,20 @@ export type Routes = {
                 /** Serial number for a Yacan device. */
                 serial_number?: (string | undefined) | undefined
               }
+            | undefined
+          /** Metadata for a Tapo camera. */
+          tapo_metadata?:
+            | (
+                | {
+                    /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
             | undefined
           /** Metadata for a Ring device. */
           ring_metadata?:
@@ -86794,7 +86924,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'ring_camera'
+          | ('ring_camera' | 'tapo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -87587,6 +87717,20 @@ export type Routes = {
                 /** Serial number for a Yacan device. */
                 serial_number?: (string | undefined) | undefined
               }
+            | undefined
+          /** Metadata for a Tapo camera. */
+          tapo_metadata?:
+            | (
+                | {
+                    /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
             | undefined
           /** Metadata for a Ring device. */
           ring_metadata?:
@@ -111435,7 +111579,7 @@ export type Routes = {
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
-                | 'ring_camera'
+                | ('ring_camera' | 'tapo_camera')
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -112253,6 +112397,20 @@ export type Routes = {
                       /** Serial number for a Yacan device. */
                       serial_number?: (string | undefined) | undefined
                     }
+                  | undefined
+                /** Metadata for a Tapo camera. */
+                tapo_metadata?:
+                  | (
+                      | {
+                          /** Model reported by the Tapo camera. */
+                          model?: (string | undefined) | undefined
+                          /** Firmware version reported by the camera. */
+                          firmware_version?: (string | undefined) | undefined
+                          /** Hardware version reported by the camera. */
+                          hardware_version?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    )
                   | undefined
                 /** Metadata for a Ring device. */
                 ring_metadata?:
@@ -120953,7 +121111,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'ring_camera'
+          | ('ring_camera' | 'tapo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -121746,6 +121904,20 @@ export type Routes = {
                 /** Serial number for a Yacan device. */
                 serial_number?: (string | undefined) | undefined
               }
+            | undefined
+          /** Metadata for a Tapo camera. */
+          tapo_metadata?:
+            | (
+                | {
+                    /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
             | undefined
           /** Metadata for a Ring device. */
           ring_metadata?:
@@ -127139,7 +127311,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'ring_camera'
+          | ('ring_camera' | 'tapo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -127932,6 +128104,20 @@ export type Routes = {
                 /** Serial number for a Yacan device. */
                 serial_number?: (string | undefined) | undefined
               }
+            | undefined
+          /** Metadata for a Tapo camera. */
+          tapo_metadata?:
+            | (
+                | {
+                    /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
             | undefined
           /** Metadata for a Ring device. */
           ring_metadata?:
@@ -129026,7 +129212,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'ring_camera'
+          | ('ring_camera' | 'tapo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -129819,6 +130005,20 @@ export type Routes = {
                 /** Serial number for a Yacan device. */
                 serial_number?: (string | undefined) | undefined
               }
+            | undefined
+          /** Metadata for a Tapo camera. */
+          tapo_metadata?:
+            | (
+                | {
+                    /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
             | undefined
           /** Metadata for a Ring device. */
           ring_metadata?:
@@ -140431,7 +140631,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'ring_camera'
+          | ('ring_camera' | 'tapo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -141224,6 +141424,20 @@ export type Routes = {
                 /** Serial number for a Yacan device. */
                 serial_number?: (string | undefined) | undefined
               }
+            | undefined
+          /** Metadata for a Tapo camera. */
+          tapo_metadata?:
+            | (
+                | {
+                    /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
             | undefined
           /** Metadata for a Ring device. */
           ring_metadata?:
@@ -142320,7 +142534,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'ring_camera'
+          | ('ring_camera' | 'tapo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -143113,6 +143327,20 @@ export type Routes = {
                 /** Serial number for a Yacan device. */
                 serial_number?: (string | undefined) | undefined
               }
+            | undefined
+          /** Metadata for a Tapo camera. */
+          tapo_metadata?:
+            | (
+                | {
+                    /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
             | undefined
           /** Metadata for a Ring device. */
           ring_metadata?:
@@ -145747,7 +145975,7 @@ export type Routes = {
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
-                | 'ring_camera'
+                | ('ring_camera' | 'tapo_camera')
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -146565,6 +146793,20 @@ export type Routes = {
                       /** Serial number for a Yacan device. */
                       serial_number?: (string | undefined) | undefined
                     }
+                  | undefined
+                /** Metadata for a Tapo camera. */
+                tapo_metadata?:
+                  | (
+                      | {
+                          /** Model reported by the Tapo camera. */
+                          model?: (string | undefined) | undefined
+                          /** Firmware version reported by the camera. */
+                          firmware_version?: (string | undefined) | undefined
+                          /** Hardware version reported by the camera. */
+                          hardware_version?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    )
                   | undefined
                 /** Metadata for a Ring device. */
                 ring_metadata?:
@@ -151372,7 +151614,7 @@ export type Routes = {
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
-                | 'ring_camera'
+                | ('ring_camera' | 'tapo_camera')
               /** Unique identifier for the account associated with the device. */
               connected_account_id: string
               /** Location information for the device. */

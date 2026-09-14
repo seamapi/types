@@ -1149,6 +1149,25 @@ export const device_metadata = z
       .partial()
       .describe(`Metadata for a Yacan device.`),
 
+    tapo_metadata: z
+      .object({
+        model: z
+          .string()
+          .optional()
+          .describe('Model reported by the Tapo camera.'),
+        firmware_version: z
+          .string()
+          .optional()
+          .describe('Firmware version reported by the camera.'),
+        hardware_version: z
+          .string()
+          .optional()
+          .describe('Hardware version reported by the camera.'),
+      })
+      .partial()
+      .optional()
+      .describe('Metadata for a Tapo camera.'),
+
     ring_metadata: z
       .object({
         device_id: z
