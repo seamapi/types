@@ -48574,6 +48574,58 @@ export type Routes = {
     }
     maxDuration: undefined
   }
+  '/cameras/live_views/create': {
+    route: '/cameras/live_views/create'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+      include_audio?: boolean
+      duration_seconds?: number
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      camera_live_view_session: {
+        camera_live_view_session_id: string
+        device_id: string
+        expires_at: string
+        token: string
+      }
+    }
+    maxDuration: undefined
+  }
+  '/cameras/live_views/offer': {
+    route: '/cameras/live_views/offer'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      camera_live_view_session_id: string
+      token: string
+      /** WebRTC SDP, limited to 64 KiB of UTF-8 data. */
+      sdp_offer: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      /** WebRTC SDP, limited to 64 KiB of UTF-8 data. */
+      sdp_answer: string
+    }
+    maxDuration: undefined
+  }
+  '/cameras/live_views/stop': {
+    route: '/cameras/live_views/stop'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      camera_live_view_session_id: string
+      token: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+    maxDuration: undefined
+  }
   '/client_sessions/create': {
     route: '/client_sessions/create'
     method: 'POST' | 'PUT'

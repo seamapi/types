@@ -46324,6 +46324,191 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Not yet for customer use.',
       },
     },
+    '/cameras/live_views/create': {
+      post: {
+        description: 'Creates a short-lived, single-camera live view session.',
+        operationId: 'camerasLiveViewsCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                additionalProperties: false,
+                properties: {
+                  device_id: { format: 'uuid', type: 'string' },
+                  duration_seconds: {
+                    default: 600,
+                    maximum: 600,
+                    minimum: 1,
+                    type: 'integer',
+                  },
+                  include_audio: { default: false, type: 'boolean' },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    camera_live_view_session: {
+                      properties: {
+                        camera_live_view_session_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        device_id: { format: 'uuid', type: 'string' },
+                        expires_at: { format: 'date-time', type: 'string' },
+                        token: { maxLength: 512, minLength: 1, type: 'string' },
+                      },
+                      required: [
+                        'camera_live_view_session_id',
+                        'device_id',
+                        'expires_at',
+                        'token',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['camera_live_view_session', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ client_session: [] }],
+        summary: '/cameras/live_views/create',
+        tags: [],
+        'x-fern-sdk-group-name': ['cameras', 'live_views'],
+        'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'camera_live_view_session',
+        'x-response-key': 'camera_live_view_session',
+        'x-title': 'Create a Camera Live View Session',
+        'x-undocumented': 'Camera pilot; not yet for customer use.',
+      },
+    },
+    '/cameras/live_views/offer': {
+      post: {
+        description:
+          'Exchanges one WebRTC offer for an authorized camera live view session.',
+        operationId: 'camerasLiveViewsOfferPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                additionalProperties: false,
+                properties: {
+                  camera_live_view_session_id: {
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  sdp_offer: {
+                    description: 'WebRTC SDP, limited to 64 KiB of UTF-8 data.',
+                    maxLength: 65_536,
+                    minLength: 1,
+                    type: 'string',
+                  },
+                  token: { maxLength: 512, minLength: 1, type: 'string' },
+                },
+                required: ['camera_live_view_session_id', 'token', 'sdp_offer'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    sdp_answer: {
+                      description:
+                        'WebRTC SDP, limited to 64 KiB of UTF-8 data.',
+                      maxLength: 65_536,
+                      minLength: 1,
+                      type: 'string',
+                    },
+                  },
+                  required: ['sdp_answer', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ client_session: [] }],
+        summary: '/cameras/live_views/offer',
+        tags: [],
+        'x-fern-sdk-group-name': ['cameras', 'live_views'],
+        'x-fern-sdk-method-name': 'offer',
+        'x-response-key': null,
+        'x-title': 'Negotiate a Camera Live View',
+        'x-undocumented': 'Camera pilot; not yet for customer use.',
+      },
+    },
+    '/cameras/live_views/stop': {
+      post: {
+        description:
+          'Stops a camera live view session owned by the current client session.',
+        operationId: 'camerasLiveViewsStopPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                additionalProperties: false,
+                properties: {
+                  camera_live_view_session_id: {
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  token: { maxLength: 512, minLength: 1, type: 'string' },
+                },
+                required: ['camera_live_view_session_id', 'token'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ client_session: [] }],
+        summary: '/cameras/live_views/stop',
+        tags: [],
+        'x-fern-sdk-group-name': ['cameras', 'live_views'],
+        'x-fern-sdk-method-name': 'stop',
+        'x-response-key': null,
+        'x-title': 'Stop a Camera Live View Session',
+        'x-undocumented': 'Camera pilot; not yet for customer use.',
+      },
+    },
     '/client_sessions/create': {
       put: {
         description:
