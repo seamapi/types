@@ -2307,7 +2307,7 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'failed_to_expire'
+              error_code: 'failed_to_remove'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -2893,7 +2893,7 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'failed_to_expire'
+              error_code: 'failed_to_remove'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -5603,7 +5603,7 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'failed_to_expire'
+              error_code: 'failed_to_remove'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -6033,7 +6033,7 @@ export type Routes = {
             | 'access_code.delay_in_issuing'
             | 'access_code.failed_to_issue'
             | 'access_code.failed_to_update'
-            | 'access_code.failed_to_expire'
+            | 'access_code.failed_to_remove'
             | 'access_code.scheduled_on_device'
             | 'access_code.set_on_device'
             | 'access_code.removed_from_device'
@@ -6071,7 +6071,7 @@ export type Routes = {
           | 'access_code.delay_in_issuing'
           | 'access_code.failed_to_issue'
           | 'access_code.failed_to_update'
-          | 'access_code.failed_to_expire'
+          | 'access_code.failed_to_remove'
           | 'access_code.scheduled_on_device'
           | 'access_code.set_on_device'
           | 'access_code.removed_from_device'
@@ -6300,7 +6300,7 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'failed_to_expire'
+              error_code: 'failed_to_remove'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -6877,7 +6877,7 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'failed_to_expire'
+              error_code: 'failed_to_remove'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -7431,7 +7431,7 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'failed_to_expire'
+              error_code: 'failed_to_remove'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -8018,7 +8018,7 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'failed_to_expire'
+              error_code: 'failed_to_remove'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -10630,7 +10630,7 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'failed_to_expire'
+              error_code: 'failed_to_remove'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -11096,7 +11096,7 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'failed_to_expire'
+              error_code: 'failed_to_remove'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -59119,7 +59119,7 @@ export type Routes = {
                       [x: string]: string | boolean
                     }
                   | undefined
-                event_type: 'access_code.failed_to_expire'
+                event_type: 'access_code.failed_to_remove'
                 /** Errors associated with the connected account. */
                 connected_account_errors: {
                   /** Date and time at which Seam created the error. */
@@ -62313,7 +62313,7 @@ export type Routes = {
             | 'access_code.delay_in_issuing'
             | 'access_code.failed_to_issue'
             | 'access_code.failed_to_update'
-            | 'access_code.failed_to_expire'
+            | 'access_code.failed_to_remove'
             | 'access_code.deleted'
             | 'access_code.delay_in_removing_from_device'
             | 'access_code.failed_to_remove_from_device'
@@ -62432,7 +62432,7 @@ export type Routes = {
             | 'access_code.delay_in_issuing'
             | 'access_code.failed_to_issue'
             | 'access_code.failed_to_update'
-            | 'access_code.failed_to_expire'
+            | 'access_code.failed_to_remove'
             | 'access_code.deleted'
             | 'access_code.delay_in_removing_from_device'
             | 'access_code.failed_to_remove_from_device'
@@ -63415,7 +63415,7 @@ export type Routes = {
                   [x: string]: string | boolean
                 }
               | undefined
-            event_type: 'access_code.failed_to_expire'
+            event_type: 'access_code.failed_to_remove'
             /** Errors associated with the connected account. */
             connected_account_errors: {
               /** Date and time at which Seam created the error. */
@@ -100405,7 +100405,7 @@ export type Routes = {
             | 'access_code.delay_in_issuing'
             | 'access_code.failed_to_issue'
             | 'access_code.failed_to_update'
-            | 'access_code.failed_to_expire'
+            | 'access_code.failed_to_remove'
             | 'access_code.deleted'
             | 'access_code.delay_in_removing_from_device'
             | 'access_code.failed_to_remove_from_device'
@@ -100524,7 +100524,7 @@ export type Routes = {
             | 'access_code.delay_in_issuing'
             | 'access_code.failed_to_issue'
             | 'access_code.failed_to_update'
-            | 'access_code.failed_to_expire'
+            | 'access_code.failed_to_remove'
             | 'access_code.deleted'
             | 'access_code.delay_in_removing_from_device'
             | 'access_code.failed_to_remove_from_device'
@@ -101477,7 +101477,7 @@ export type Routes = {
                   [x: string]: string | boolean
                 }
               | undefined
-            event_type: 'access_code.failed_to_expire'
+            event_type: 'access_code.failed_to_remove'
             /** Errors associated with the connected account. */
             connected_account_errors: {
               /** Date and time at which Seam created the error. */
@@ -107016,7 +107016,7 @@ export type Routes = {
         | 'access_code.delay_in_issuing'
         | 'access_code.failed_to_issue'
         | 'access_code.failed_to_update'
-        | 'access_code.failed_to_expire'
+        | 'access_code.failed_to_remove'
         | 'access_code.deleted'
         | 'access_code.delay_in_removing_from_device'
         | 'access_code.failed_to_remove_from_device'
@@ -107158,7 +107158,7 @@ export type Routes = {
         | 'access_code.delay_in_issuing'
         | 'access_code.failed_to_issue'
         | 'access_code.failed_to_update'
-        | 'access_code.failed_to_expire'
+        | 'access_code.failed_to_remove'
         | 'access_code.deleted'
         | 'access_code.delay_in_removing_from_device'
         | 'access_code.failed_to_remove_from_device'
@@ -108115,7 +108115,7 @@ export type Routes = {
                   [x: string]: string | boolean
                 }
               | undefined
-            event_type: 'access_code.failed_to_expire'
+            event_type: 'access_code.failed_to_remove'
             /** Errors associated with the connected account. */
             connected_account_errors: {
               /** Date and time at which Seam created the error. */
@@ -153742,7 +153742,7 @@ export type Routes = {
                         [x: string]: string | boolean
                       }
                     | undefined
-                  event_type: 'access_code.failed_to_expire'
+                  event_type: 'access_code.failed_to_remove'
                   /** Errors associated with the connected account. */
                   connected_account_errors: {
                     /** Date and time at which Seam created the error. */
@@ -157441,7 +157441,7 @@ export type Routes = {
                     /** Date and time at which Seam created the error. */
                     created_at?: string | undefined
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                    error_code: 'failed_to_expire'
+                    error_code: 'failed_to_remove'
                   }
                 | {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -157893,7 +157893,7 @@ export type Routes = {
                     /** Date and time at which Seam created the error. */
                     created_at?: string | undefined
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                    error_code: 'failed_to_expire'
+                    error_code: 'failed_to_remove'
                   }
                 | {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
