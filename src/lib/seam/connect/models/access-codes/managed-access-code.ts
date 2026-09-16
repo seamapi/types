@@ -143,8 +143,8 @@ const failed_to_update = common_access_code_error.extend({
     Seam was unable to apply this access code's requested update to the device, so the code on the device does not match its requested state. Seam keeps retrying, and this error clears automatically once the update is applied.
     `)
 
-const failed_to_expire = common_access_code_error.extend({
-  error_code: z.literal('failed_to_expire').describe(error_code_description),
+const failed_to_remove = common_access_code_error.extend({
+  error_code: z.literal('failed_to_remove').describe(error_code_description),
 }).describe(`
     ---
     resource_type: access_code
@@ -187,7 +187,7 @@ const access_code_error = z
     code_constraints_violated,
     failed_to_issue,
     failed_to_update,
-    failed_to_expire,
+    failed_to_remove,
   ])
   .describe(
     'Errors associated with the [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).',
@@ -212,7 +212,7 @@ const _access_code_error_map = z.object({
   code_constraints_violated: code_constraints_violated.optional().nullable(),
   failed_to_issue: failed_to_issue.optional().nullable(),
   failed_to_update: failed_to_update.optional().nullable(),
-  failed_to_expire: failed_to_expire.optional().nullable(),
+  failed_to_remove: failed_to_remove.optional().nullable(),
 })
 
 export type AccessCodeErrorMap = z.infer<typeof _access_code_error_map>

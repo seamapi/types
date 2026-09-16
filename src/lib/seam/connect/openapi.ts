@@ -478,7 +478,7 @@ const openapi: OpenAPISpec = {
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['failed_to_expire'],
+                      enum: ['failed_to_remove'],
                       type: 'string',
                     },
                     is_access_code_error: {
@@ -20556,7 +20556,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) is still active on the device even though its `ends_at` has passed, so the recipient may still be able to unlock the device after their access window ended. Seam is attempting to remove it, and the accompanying `failed_to_expire` error clears automatically once the access code is no longer active.',
+              'An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) is still active on the device even though its `ends_at` has passed, so the recipient may still be able to unlock the device after their access window ended. Seam is attempting to remove it, and the accompanying `failed_to_remove` error clears automatically once the access code is no longer active.',
             properties: {
               access_code_errors: {
                 description: 'Errors associated with the access code.',
@@ -20775,7 +20775,7 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               event_type: {
-                enum: ['access_code.failed_to_expire'],
+                enum: ['access_code.failed_to_remove'],
                 type: 'string',
               },
               occurred_at: {
@@ -32045,7 +32045,7 @@ const openapi: OpenAPISpec = {
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['failed_to_expire'],
+                      enum: ['failed_to_remove'],
                       type: 'string',
                     },
                     is_access_code_error: {
@@ -39039,7 +39039,7 @@ const openapi: OpenAPISpec = {
                   'access_code.delay_in_issuing',
                   'access_code.failed_to_issue',
                   'access_code.failed_to_update',
-                  'access_code.failed_to_expire',
+                  'access_code.failed_to_remove',
                   'access_code.scheduled_on_device',
                   'access_code.set_on_device',
                   'access_code.removed_from_device',
@@ -39140,7 +39140,7 @@ const openapi: OpenAPISpec = {
                               'access_code.delay_in_issuing',
                               'access_code.failed_to_issue',
                               'access_code.failed_to_update',
-                              'access_code.failed_to_expire',
+                              'access_code.failed_to_remove',
                               'access_code.scheduled_on_device',
                               'access_code.set_on_device',
                               'access_code.removed_from_device',
@@ -53779,7 +53779,7 @@ const openapi: OpenAPISpec = {
                 'access_code.delay_in_issuing',
                 'access_code.failed_to_issue',
                 'access_code.failed_to_update',
-                'access_code.failed_to_expire',
+                'access_code.failed_to_remove',
                 'access_code.deleted',
                 'access_code.delay_in_removing_from_device',
                 'access_code.failed_to_remove_from_device',
@@ -53904,7 +53904,7 @@ const openapi: OpenAPISpec = {
                   'access_code.delay_in_issuing',
                   'access_code.failed_to_issue',
                   'access_code.failed_to_update',
-                  'access_code.failed_to_expire',
+                  'access_code.failed_to_remove',
                   'access_code.deleted',
                   'access_code.delay_in_removing_from_device',
                   'access_code.failed_to_remove_from_device',
@@ -61716,7 +61716,7 @@ const openapi: OpenAPISpec = {
                 'access_code.delay_in_issuing',
                 'access_code.failed_to_issue',
                 'access_code.failed_to_update',
-                'access_code.failed_to_expire',
+                'access_code.failed_to_remove',
                 'access_code.deleted',
                 'access_code.delay_in_removing_from_device',
                 'access_code.failed_to_remove_from_device',
@@ -61842,7 +61842,7 @@ const openapi: OpenAPISpec = {
                   'access_code.delay_in_issuing',
                   'access_code.failed_to_issue',
                   'access_code.failed_to_update',
-                  'access_code.failed_to_expire',
+                  'access_code.failed_to_remove',
                   'access_code.deleted',
                   'access_code.delay_in_removing_from_device',
                   'access_code.failed_to_remove_from_device',
@@ -65280,7 +65280,7 @@ const openapi: OpenAPISpec = {
                       'access_code.delay_in_issuing',
                       'access_code.failed_to_issue',
                       'access_code.failed_to_update',
-                      'access_code.failed_to_expire',
+                      'access_code.failed_to_remove',
                       'access_code.deleted',
                       'access_code.delay_in_removing_from_device',
                       'access_code.failed_to_remove_from_device',
@@ -65491,7 +65491,7 @@ const openapi: OpenAPISpec = {
                       'access_code.delay_in_issuing',
                       'access_code.failed_to_issue',
                       'access_code.failed_to_update',
-                      'access_code.failed_to_expire',
+                      'access_code.failed_to_remove',
                       'access_code.deleted',
                       'access_code.delay_in_removing_from_device',
                       'access_code.failed_to_remove_from_device',
