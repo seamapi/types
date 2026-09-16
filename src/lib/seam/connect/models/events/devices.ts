@@ -123,7 +123,7 @@ export const device_converted_to_unmanaged_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A managed device was successfully converted to an [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices).
+  A managed device was successfully converted to an [unmanaged device](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices).
 `)
 
 export type DeviceConvertedToUnmanagedEvent = z.infer<
@@ -136,7 +136,7 @@ export const unmanaged_device_converted_to_managed_event = device_event.extend({
   ---
   route_path: /devices/unmanaged
   ---
-  An [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices) was successfully converted to a managed device.
+  An [unmanaged device](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices) was successfully converted to a managed device.
 `)
 
 export type UnmanagedDeviceConvertedToManagedEvent = z.infer<
@@ -149,7 +149,7 @@ export const unmanaged_device_connected_event = device_event.extend({
   ---
   route_path: /devices/unmanaged
   ---
-  The status of an [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices) changed from offline to online. That is, the \`device.properties.online\` property changed from \`false\` to \`true\`.
+  The status of an [unmanaged device](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices) changed from offline to online. That is, the \`device.properties.online\` property changed from \`false\` to \`true\`.
 `)
 
 export type UnmanagedDeviceConnectedEvent = z.infer<
@@ -179,7 +179,7 @@ export const unmanaged_device_disconnected_event = device_event
   ---
   route_path: /devices/unmanaged
   ---
-  The status of an [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices) changed from online to offline. That is, the \`device.properties.online\` property changed from \`true\` to \`false\`.
+  The status of an [unmanaged device](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices) changed from online to offline. That is, the \`device.properties.online\` property changed from \`true\` to \`false\`.
 `)
 
 export type UnmanagedDeviceDisconnectedEvent = z.infer<
@@ -294,7 +294,7 @@ export const device_salto_privacy_mode_activated_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A [Salto device](https://docs.seam.co/device-and-system-integration-guides/salto-locks) activated privacy mode.
+  A [Salto device](https://www.seam.co/docs/device-and-system-integration-guides/salto-locks) activated privacy mode.
 `)
 
 export type DeviceSaltoPrivacyModeActivatedEvent = z.infer<
@@ -307,7 +307,7 @@ export const device_salto_privacy_mode_deactivated_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A [Salto device](https://docs.seam.co/device-and-system-integration-guides/salto-locks) deactivated privacy mode.
+  A [Salto device](https://www.seam.co/docs/device-and-system-integration-guides/salto-locks) deactivated privacy mode.
 `)
 
 export type DeviceSaltoPrivacyModeDeactivatedEvent = z.infer<
@@ -433,7 +433,7 @@ export const noise_sensor_noise_threshold_triggered_event = device_event.extend(
     ---
     route_path: /noise_sensors/noise_thresholds
     ---
-    Extended periods of noise or noise exceeding a [threshold](https://docs.seam.co/capability-guides/noise-sensors#what-is-a-threshold) were detected.
+    Extended periods of noise or noise exceeding a [threshold](https://www.seam.co/docs/capability-guides/noise-sensors#what-is-a-threshold) were detected.
   `)
 
 export type NoiseSensorNoiseThresholdTriggeredEvent = z.infer<
@@ -500,7 +500,7 @@ export const lock_locked_event = device_event.extend({
   ---
   route_path: /locks
   ---
-  A [lock](https://docs.seam.co/low-level-apis/smart-locks) was locked.
+  A [lock](https://www.seam.co/docs/low-level-apis/smart-locks) was locked.
 `)
 
 export type LockLockedEvent = z.infer<typeof lock_locked_event>
@@ -531,7 +531,7 @@ export const lock_unlocked_event = device_event.extend({
       'ID of the Seam action attempt that triggered this unlock. Present only when the unlock was initiated through Seam (via an `UNLOCK_DOOR` action attempt).',
     ),
   method: lock_method.describe(
-    'Method by which the lock was unlocked. `keycode`: an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or handle press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by a time-based schedule. `unknown`: could not be determined.',
+    'Method by which the lock was unlocked. `keycode`: an [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or handle press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by a time-based schedule. `unknown`: could not be determined.',
   ),
   user_identity_id: z.string().uuid().optional().describe(`
       ---
@@ -572,7 +572,7 @@ export const lock_unlocked_event = device_event.extend({
   ---
   route_path: /locks
   ---
-  A [lock](https://docs.seam.co/low-level-apis/smart-locks) was unlocked.
+  A [lock](https://www.seam.co/docs/low-level-apis/smart-locks) was unlocked.
 `)
 
 export type LockUnlockedEvent = z.infer<typeof lock_unlocked_event>
@@ -628,7 +628,7 @@ export const lock_access_denied_event = device_event.extend({
   ---
   route_path: /locks
   ---
-  The [lock](https://docs.seam.co/low-level-apis/smart-locks) denied access to a user after one or more consecutive invalid attempts to unlock the device.
+  The [lock](https://www.seam.co/docs/low-level-apis/smart-locks) denied access to a user after one or more consecutive invalid attempts to unlock the device.
 `)
 
 export type LockAccessDeniedEvent = z.infer<typeof lock_access_denied_event>
@@ -654,7 +654,7 @@ export const thermostat_climate_preset_activated_event = device_event.extend({
   ---
   route_path: /thermostats
   ---
-  A thermostat [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) was activated.
+  A thermostat [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) was activated.
 `)
 
 export type ThermostatClimatePresetActivatedEvent = z.infer<
@@ -685,7 +685,7 @@ export const thermostat_manually_adjusted_event = device_event
     ---
     route_path: /thermostats
     ---
-    A [thermostat](https://docs.seam.co/capability-guides/thermostats) was adjusted manually.
+    A [thermostat](https://www.seam.co/docs/capability-guides/thermostats) was adjusted manually.
   `)
 
 export type ThermostatManuallyAdjustedEvent = z.infer<
@@ -720,7 +720,7 @@ export const temperature_threshold_exceeded_event = device_event.extend({
   ---
   route_path: /thermostats
   ---
-  A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature reading exceeded the set [threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
+  A [thermostat's](https://www.seam.co/docs/capability-guides/thermostats) temperature reading exceeded the set [threshold](https://www.seam.co/docs/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
 `)
 
 export type TemperatureThresholdExceededEvent = z.infer<
@@ -766,7 +766,7 @@ export const temperature_threshold_no_longer_exceeded_event =
     ---
     route_path: /thermostats
     ---
-    A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature reading no longer exceeds the set [threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
+    A [thermostat's](https://www.seam.co/docs/capability-guides/thermostats) temperature reading no longer exceeds the set [threshold](https://www.seam.co/docs/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).
   `)
 
 export type TemperatureThresholdNoLongerExceededEvent = z.infer<
@@ -797,7 +797,7 @@ export const temperature_reached_set_point_event = device_event.extend({
   ---
   route_path: /thermostats
   ---
-  A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature reading is within 1 °C of the configured cooling or heating [set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
+  A [thermostat's](https://www.seam.co/docs/capability-guides/thermostats) temperature reading is within 1 °C of the configured cooling or heating [set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 `)
 
 export type TemperatureReachedSetPointEvent = z.infer<
@@ -816,7 +816,7 @@ export const temperature_changed_event = device_event.extend({
   ---
   route_path: /thermostats
   ---
-  A [thermostat's](https://docs.seam.co/capability-guides/thermostats) reported temperature changed by at least 1 °C.
+  A [thermostat's](https://www.seam.co/docs/capability-guides/thermostats) reported temperature changed by at least 1 °C.
 `)
 
 export type TemperatureChangedEvent = z.infer<typeof temperature_changed_event>

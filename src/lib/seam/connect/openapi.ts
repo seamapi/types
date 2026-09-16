@@ -5,7 +5,7 @@ const openapi: OpenAPISpec = {
     schemas: {
       access_code: {
         description:
-          'Represents a smart lock [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).\n\nAn access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam Access Code API, you can easily generate access codes on the hundreds of door lock models with which we integrate.\n\nSeam supports programming two types of access codes: [ongoing](https://docs.seam.co/low-level-apis/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/low-level-apis/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`. An ongoing access code is active, until it has been removed from the device. To specify an ongoing access code, leave both `starts_at` and `ends_at` empty. A time-bound access code will be programmed at the `starts_at` time and removed at the `ends_at` time.\n\nIn addition, for certain devices, Seam also supports [offline access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.\n\nFor granting a person access to a space, [Access Grants](https://docs.seam.co/use-cases/granting-access) are the default and recommended approach and work across both standalone smart locks and access systems. Use the lower-level Access Codes API directly only when you specifically need to manage individual PIN codes.',
+          'Represents a smart lock [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes).\n\nAn access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam Access Code API, you can easily generate access codes on the hundreds of door lock models with which we integrate.\n\nSeam supports programming two types of access codes: [ongoing](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the `type` property of the access code. Ongoing codes display as `ongoing`, whereas time-bound codes are labeled `time_bound`. An ongoing access code is active, until it has been removed from the device. To specify an ongoing access code, leave both `starts_at` and `ends_at` empty. A time-bound access code will be programmed at the `starts_at` time and removed at the `ends_at` time.\n\nIn addition, for certain devices, Seam also supports [offline access codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.\n\nFor granting a person access to a space, [Access Grants](https://www.seam.co/docs/use-cases/granting-access) are the default and recommended approach and work across both standalone smart locks and access systems. Use the lower-level Access Codes API directly only when you specifically need to manage individual PIN codes.',
         properties: {
           access_code_id: {
             description: 'Unique identifier for the access code.',
@@ -99,7 +99,7 @@ const openapi: OpenAPISpec = {
           },
           errors: {
             description:
-              'Errors associated with the [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).',
+              'Errors associated with the [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes).',
             items: {
               discriminator: { propertyName: 'error_code' },
               oneOf: [
@@ -515,7 +515,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_connected_account_error: {
                       description:
-                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                        'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
                       enum: [true],
                       type: 'boolean',
                     },
@@ -559,7 +559,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_connected_account_error: {
                       description:
-                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                        'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
                       enum: [true],
                       type: 'boolean',
                     },
@@ -604,7 +604,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_connected_account_error: {
                       description:
-                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                        'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
                       enum: [true],
                       type: 'boolean',
                     },
@@ -648,7 +648,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_connected_account_error: {
                       description:
-                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                        'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
                       enum: [true],
                       type: 'boolean',
                     },
@@ -823,7 +823,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.',
+                    'Indicates that the [backup access code pool](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.',
                   properties: {
                     created_at: {
                       description:
@@ -1009,7 +1009,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://www.seam.co/docs/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -1025,7 +1025,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_bridge_error: {
                       description:
-                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+                        'Indicates whether the error is related to [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge).',
                       type: 'boolean',
                     },
                     is_connected_account_error: {
@@ -1388,7 +1388,7 @@ const openapi: OpenAPISpec = {
           status: {
             deprecated: true,
             description:
-              'Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/lifecycle-of-access-codes).',
+              'Current status of the access code within the operational lifecycle. Values are `setting`, a transitional phase that indicates that the code is being configured or activated; `set`, which indicates that the code is active and operational; `unset`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; `removing`, which indicates a transitional period in which the code is being deleted or made inactive; and `unknown`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/lifecycle-of-access-codes).',
             enum: ['setting', 'set', 'unset', 'removing', 'unknown'],
             type: 'string',
             'x-deprecated':
@@ -1402,10 +1402,10 @@ const openapi: OpenAPISpec = {
           },
           warnings: {
             description:
-              'Warnings associated with the [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).',
+              'Warnings associated with the [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes).',
             items: {
               description:
-                'Warnings associated with the [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).',
+                'Warnings associated with the [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes).',
               discriminator: { propertyName: 'warning_code' },
               oneOf: [
                 {
@@ -1836,7 +1836,7 @@ const openapi: OpenAPISpec = {
           },
           errors: {
             description:
-              'Errors associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
+              'Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access).',
             items: {
               discriminator: { propertyName: 'error_code' },
               oneOf: [
@@ -2115,15 +2115,15 @@ const openapi: OpenAPISpec = {
           },
           warnings: {
             description:
-              'Warnings associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
+              'Warnings associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access).',
             items: {
               description:
-                'Warning associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
+                'Warning associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access).',
               discriminator: { propertyName: 'warning_code' },
               oneOf: [
                 {
                   description:
-                    'Indicates that the [access grant](https://docs.seam.co/use-cases/granting-access) is being deleted.',
+                    'Indicates that the [access grant](https://www.seam.co/docs/use-cases/granting-access) is being deleted.',
                   properties: {
                     created_at: {
                       description:
@@ -2225,7 +2225,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the access times for this [access grant](https://docs.seam.co/use-cases/granting-access) are being updated.',
+                    'Indicates that the access times for this [access grant](https://www.seam.co/docs/use-cases/granting-access) are being updated.',
                   properties: {
                     access_method_ids: {
                       description: 'IDs of the access methods being updated.',
@@ -2464,15 +2464,15 @@ const openapi: OpenAPISpec = {
           },
           errors: {
             description:
-              'Errors associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+              'Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant).',
             items: {
               description:
-                'Error associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+                'Error associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant).',
               discriminator: { propertyName: 'error_code' },
               oneOf: [
                 {
                   description:
-                    'Indicates that Seam was unable to issue this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access method is eventually issued.',
+                    'Indicates that Seam was unable to issue this [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access method is eventually issued.',
                   properties: {
                     created_at: {
                       description:
@@ -2544,7 +2544,7 @@ const openapi: OpenAPISpec = {
           },
           pending_mutations: {
             description:
-              'Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.',
+              'Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.',
             items: {
               discriminator: { propertyName: 'mutation_code' },
               oneOf: [
@@ -2734,15 +2734,15 @@ const openapi: OpenAPISpec = {
           },
           warnings: {
             description:
-              'Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+              'Warnings associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant).',
             items: {
               description:
-                'Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+                'Warning associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant).',
               discriminator: { propertyName: 'warning_code' },
               oneOf: [
                 {
                   description:
-                    'Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) is being deleted.',
+                    'Indicates that the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) is being deleted.',
                   properties: {
                     created_at: {
                       description:
@@ -2767,7 +2767,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) are being updated.',
+                    'Indicates that the access times for this [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) are being updated.',
                   properties: {
                     created_at: {
                       description:
@@ -2823,7 +2823,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that Seam has not yet issued this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant), even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
+                    'Indicates that Seam has not yet issued this [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant), even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
                   properties: {
                     created_at: {
                       description:
@@ -2848,7 +2848,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    "Indicates that the access system delivers this mobile key through an app invitation sent to the recipient's email address, but the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities) for this [access grant](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) has no email address, so the mobile key cannot be delivered. Set an email address on the user identity when you create the access grant.",
+                    "Indicates that the access system delivers this mobile key through an app invitation sent to the recipient's email address, but the [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities) for this [access grant](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) has no email address, so the mobile key cannot be delivered. Set an email address on the user identity when you create the access grant.",
                   properties: {
                     created_at: {
                       description:
@@ -2873,7 +2873,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    "Indicates that the access system delivers this mobile key to the recipient's phone number, but the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities) for this [access grant](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) has no phone number, so the mobile key cannot be delivered. Set a phone number on the user identity when you create the access grant.",
+                    "Indicates that the access system delivers this mobile key to the recipient's phone number, but the [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities) for this [access grant](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) has no phone number, so the mobile key cannot be delivered. Set a phone number on the user identity when you create the access grant.",
                   properties: {
                     created_at: {
                       description:
@@ -2926,7 +2926,7 @@ const openapi: OpenAPISpec = {
       },
       acs_access_group: {
         description:
-          'Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.\n\nSome access control systems use [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups), which are sets of users, combined with sets of permissions. These permissions include both the set of areas or assets that the users can access and the schedule during which the users can access these areas or assets. Instead of assigning access rights individually to each access control system user, which can be time-consuming and error-prone, administrators can assign users to an access group, thereby ensuring that the users inherit all the permissions associated with the access group. Using access groups streamlines the process of managing large numbers of access control system users, especially in bigger organizations or complexes.\n\nTo learn whether your access control system supports access groups, see the corresponding [system integration guide](https://docs.seam.co/device-and-system-integration-guides#access-control-systems).',
+          'Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.\n\nSome access control systems use [access group](https://www.seam.co/docs/low-level-apis/access-systems/user-management/assigning-users-to-access-groups), which are sets of users, combined with sets of permissions. These permissions include both the set of areas or assets that the users can access and the schedule during which the users can access these areas or assets. Instead of assigning access rights individually to each access control system user, which can be time-consuming and error-prone, administrators can assign users to an access group, thereby ensuring that the users inherit all the permissions associated with the access group. Using access groups streamlines the process of managing large numbers of access control system users, especially in bigger organizations or complexes.\n\nTo learn whether your access control system supports access groups, see the corresponding [system integration guide](https://www.seam.co/docs/device-and-system-integration-guides#access-control-systems).',
         properties: {
           access_group_type: {
             deprecated: true,
@@ -3005,7 +3005,7 @@ const openapi: OpenAPISpec = {
               oneOf: [
                 {
                   description:
-                    'Indicates that the [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups) was not created on the [access system](https://docs.seam.co/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
+                    'Indicates that the [access group](https://www.seam.co/docs/low-level-apis/access-systems/user-management/assigning-users-to-access-groups) was not created on the [access system](https://www.seam.co/docs/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -3504,17 +3504,17 @@ const openapi: OpenAPISpec = {
       },
       acs_credential: {
         description:
-          'Means by which an [access control system user](https://docs.seam.co/low-level-apis/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/low-level-apis/access-systems).\n\nAn access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.\n\nFor each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type.\n\nFor granting a person access to a space, [Access Grants](https://docs.seam.co/use-cases/granting-access) are the default and recommended approach. Use the lower-level ACS credential API directly only when you specifically need to manage individual credentials.',
+          'Means by which an [access control system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) gains access at an [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://www.seam.co/docs/low-level-apis/access-systems).\n\nAn access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.\n\nFor each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type.\n\nFor granting a person access to a space, [Access Grants](https://www.seam.co/docs/use-cases/granting-access) are the default and recommended approach. Use the lower-level ACS credential API directly only when you specifically need to manage individual credentials.',
         properties: {
           access_method: {
             description:
-              'Access method for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+              'Access method for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
             enum: ['code', 'card', 'mobile_key', 'cloud_key'],
             type: 'string',
           },
           acs_credential_id: {
             description:
-              'ID of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'ID of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             format: 'uuid',
             type: 'string',
           },
@@ -3526,19 +3526,19 @@ const openapi: OpenAPISpec = {
           },
           acs_system_id: {
             description:
-              'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             format: 'uuid',
             type: 'string',
           },
           acs_user_id: {
             description:
-              'ID of the [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+              'ID of the [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
             format: 'uuid',
             type: 'string',
           },
           akiles_metadata: {
             description:
-              'Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'Akiles-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             properties: {
               member_pin_id: {
                 description: 'ID of the Akiles member PIN.',
@@ -3549,7 +3549,7 @@ const openapi: OpenAPISpec = {
           },
           assa_abloy_vostio_metadata: {
             description:
-              'Vostio-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'Vostio-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             properties: {
               auto_join: {
                 description:
@@ -3586,42 +3586,42 @@ const openapi: OpenAPISpec = {
           },
           card_number: {
             description:
-              'Number of the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'Number of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             nullable: true,
             type: 'string',
           },
           code: {
             description:
-              'Access (PIN) code for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'Access (PIN) code for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             nullable: true,
             type: 'string',
           },
           connected_account_id: {
             description:
-              'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+              'ID of the [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) to which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
             format: 'uuid',
             type: 'string',
           },
           created_at: {
             description:
-              'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was created.',
+              'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created.',
             format: 'date-time',
             type: 'string',
           },
           display_name: {
             description:
-              'Display name that corresponds to the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.',
+              'Display name that corresponds to the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type.',
             minLength: 1,
             type: 'string',
           },
           ends_at: {
             description:
-              'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+              'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
             type: 'string',
           },
           errors: {
             description:
-              'Errors associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'Errors associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             items: {
               properties: {
                 created_at: {
@@ -3639,7 +3639,7 @@ const openapi: OpenAPISpec = {
           },
           external_type: {
             description:
-              'Brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
+              'Brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
             enum: [
               'pti_card',
               'brivo_credential',
@@ -3660,17 +3660,17 @@ const openapi: OpenAPISpec = {
           },
           external_type_display_name: {
             description:
-              'Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.',
+              'Display name that corresponds to the brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type.',
             type: 'string',
           },
           is_issued: {
             description:
-              'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been encoded onto a card.',
+              'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been encoded onto a card.',
             type: 'boolean',
           },
           is_latest_desired_state_synced_with_provider: {
             description:
-              'Indicates whether the latest state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider.',
+              'Indicates whether the latest state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider.',
             nullable: true,
             type: 'boolean',
           },
@@ -3681,48 +3681,48 @@ const openapi: OpenAPISpec = {
           },
           is_multi_phone_sync_credential: {
             description:
-              'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+              'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
             type: 'boolean',
           },
           is_one_time_use: {
             description:
-              'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.',
+              'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.',
             type: 'boolean',
           },
           issued_at: {
             description:
-              'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was encoded onto a card.',
+              'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was encoded onto a card.',
             format: 'date-time',
             nullable: true,
             type: 'string',
           },
           latest_desired_state_synced_with_provider_at: {
             description:
-              'Date and time at which the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider.',
+              'Date and time at which the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider.',
             format: 'date-time',
             nullable: true,
             type: 'string',
           },
           parent_acs_credential_id: {
             description:
-              'ID of the parent [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'ID of the parent [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             format: 'uuid',
             type: 'string',
           },
           starts_at: {
             description:
-              'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+              'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
             type: 'string',
           },
           user_identity_id: {
             description:
-              'ID of the [user identity](https://docs.seam.co/api/user_identities) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+              'ID of the [user identity](https://www.seam.co/docs/api/user_identities/object) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
             format: 'uuid',
             type: 'string',
           },
           visionline_metadata: {
             description:
-              'Visionline-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             properties: {
               auto_join: {
                 description:
@@ -3771,15 +3771,15 @@ const openapi: OpenAPISpec = {
           },
           warnings: {
             description:
-              'Warnings associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'Warnings associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             items: {
               description:
-                'Warning associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                'Warning associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
               discriminator: { propertyName: 'warning_code' },
               oneOf: [
                 {
                   description:
-                    'Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is waiting to be issued.',
+                    'Indicates that the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is waiting to be issued.',
                   properties: {
                     created_at: {
                       description:
@@ -3804,7 +3804,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    "Indicates that the schedule of one of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials)'s children was modified externally.",
+                    "Indicates that the schedule of one of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials)'s children was modified externally.",
                   properties: {
                     created_at: {
                       description:
@@ -3829,7 +3829,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the schedule of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.',
+                    'Indicates that the schedule of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.',
                   properties: {
                     created_at: {
                       description:
@@ -3854,7 +3854,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is being deleted.',
+                    'Indicates that the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is being deleted.',
                   properties: {
                     created_at: {
                       description:
@@ -3879,7 +3879,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'An unknown issue occurred while syncing the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
+                    'An unknown issue occurred while syncing the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
                   properties: {
                     created_at: {
                       description:
@@ -3904,7 +3904,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Access permissions for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
+                    'Access permissions for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
                   properties: {
                     created_at: {
                       description:
@@ -3973,7 +3973,7 @@ const openapi: OpenAPISpec = {
           },
           workspace_id: {
             description:
-              'ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'ID of the workspace that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             format: 'uuid',
             type: 'string',
           },
@@ -4044,43 +4044,43 @@ const openapi: OpenAPISpec = {
       },
       acs_encoder: {
         description:
-          'Represents a hardware device that encodes [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) data onto physical cards within an [access control system](https://docs.seam.co/low-level-apis/access-systems).\n\nSome access control systems require credentials to be encoded onto plastic key cards using a card encoder. This process involves the following two key steps:\n\n1. Credential creation\n   Configure the access parameters for the credential.\n2. Card encoding\n   Write the credential data onto the card using a compatible card encoder.\n\nSeparately, the Seam API also supports card scanning, which enables you to scan and read the encoded data on a card. You can use this action to confirm consistency with access control system records or diagnose discrepancies if needed.\n\n See [Working with Card Encoders and Scanners](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).\n\nTo verify if your access control system requires a card encoder, see the corresponding [system integration guide](https://docs.seam.co/device-and-system-integration-guides#access-control-systems).',
+          'Represents a hardware device that encodes [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) data onto physical cards within an [access control system](https://www.seam.co/docs/low-level-apis/access-systems).\n\nSome access control systems require credentials to be encoded onto plastic key cards using a card encoder. This process involves the following two key steps:\n\n1. Credential creation\n   Configure the access parameters for the credential.\n2. Card encoding\n   Write the credential data onto the card using a compatible card encoder.\n\nSeparately, the Seam API also supports card scanning, which enables you to scan and read the encoded data on a card. You can use this action to confirm consistency with access control system records or diagnose discrepancies if needed.\n\n See [Working with Card Encoders and Scanners](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners).\n\nTo verify if your access control system requires a card encoder, see the corresponding [system integration guide](https://www.seam.co/docs/device-and-system-integration-guides#access-control-systems).',
         properties: {
           acs_encoder_id: {
             description:
-              'ID of the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
+              'ID of the [encoder](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
             format: 'uuid',
             type: 'string',
           },
           acs_system_id: {
             description:
-              'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems) that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
+              'ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [encoder](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
             format: 'uuid',
             type: 'string',
           },
           connected_account_id: {
             description:
-              'ID of the connected account that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
+              'ID of the connected account that contains the [encoder](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
             format: 'uuid',
             type: 'string',
           },
           created_at: {
             description:
-              'Date and time at which the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners) was created.',
+              'Date and time at which the [encoder](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners) was created.',
             format: 'date-time',
             type: 'string',
           },
           display_name: {
             description:
-              'Display name for the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
+              'Display name for the [encoder](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
             type: 'string',
           },
           errors: {
             description:
-              'Errors associated with the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
+              'Errors associated with the [encoder](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
             items: {
               description:
-                'Error associated with the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
+                'Error associated with the [encoder](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
               properties: {
                 created_at: {
                   description: 'Date and time at which Seam created the error.',
@@ -4107,7 +4107,7 @@ const openapi: OpenAPISpec = {
           },
           workspace_id: {
             description:
-              'ID of the workspace that contains the [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
+              'ID of the workspace that contains the [encoder](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
             format: 'uuid',
             type: 'string',
           },
@@ -4126,23 +4126,23 @@ const openapi: OpenAPISpec = {
       },
       acs_entrance: {
         description:
-          'Represents an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) within an [access control system](https://docs.seam.co/low-level-apis/access-systems).\n\nIn an access control system, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the `acs_entrance` resources in your workspace or get these details for a specific `acs_entrance`. You can also list all entrances associated with a specific credential, and you can list all credentials associated with a specific entrance.',
+          'Represents an [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) within an [access control system](https://www.seam.co/docs/low-level-apis/access-systems).\n\nIn an access control system, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the `acs_entrance` resources in your workspace or get these details for a specific `acs_entrance`. You can also list all entrances associated with a specific credential, and you can list all credentials associated with a specific entrance.',
         properties: {
           acs_entrance_id: {
             description:
-              'ID of the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+              'ID of the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
             format: 'uuid',
             type: 'string',
           },
           acs_system_id: {
             description:
-              'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems) that contains the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+              'ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
             format: 'uuid',
             type: 'string',
           },
           akiles_metadata: {
             description:
-              'Akiles-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+              'Akiles-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
             properties: {
               actions: {
                 description: 'Actions the gadget exposes (for example, open).',
@@ -4178,7 +4178,7 @@ const openapi: OpenAPISpec = {
           },
           assa_abloy_vostio_metadata: {
             description:
-              'ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+              'ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
             properties: {
               door_name: {
                 description: 'Name of the door in the Vostio access system.',
@@ -4208,7 +4208,7 @@ const openapi: OpenAPISpec = {
           },
           avigilon_alta_metadata: {
             description:
-              'Avigilon Alta-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+              'Avigilon Alta-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
             properties: {
               entry_name: {
                 description: 'Entry name for an Avigilon Alta system.',
@@ -4247,7 +4247,7 @@ const openapi: OpenAPISpec = {
           },
           brivo_metadata: {
             description:
-              'Brivo-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+              'Brivo-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
             properties: {
               access_point_id: {
                 description:
@@ -4294,24 +4294,24 @@ const openapi: OpenAPISpec = {
           },
           connected_account_id: {
             description:
-              'ID of the [connected account](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+              'ID of the [connected account](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
             format: 'uuid',
             type: 'string',
           },
           created_at: {
             description:
-              'Date and time at which the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) was created.',
+              'Date and time at which the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) was created.',
             format: 'date-time',
             type: 'string',
           },
           display_name: {
             description:
-              'Display name for the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+              'Display name for the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
             type: 'string',
           },
           dormakaba_ambiance_metadata: {
             description:
-              'dormakaba Ambiance-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+              'dormakaba Ambiance-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
             properties: {
               access_point_name: {
                 description:
@@ -4323,7 +4323,7 @@ const openapi: OpenAPISpec = {
           },
           dormakaba_community_metadata: {
             description:
-              'dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+              'dormakaba Community-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
             properties: {
               access_point_profile: {
                 description:
@@ -4335,7 +4335,7 @@ const openapi: OpenAPISpec = {
           },
           errors: {
             description:
-              'Errors associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+              'Errors associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
             items: {
               properties: {
                 created_at: {
@@ -4361,7 +4361,7 @@ const openapi: OpenAPISpec = {
           },
           hotek_metadata: {
             description:
-              'Hotek-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+              'Hotek-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
             properties: {
               common_area_name: {
                 description: 'Display name of the entrance.',
@@ -4380,12 +4380,12 @@ const openapi: OpenAPISpec = {
           },
           is_locked: {
             description:
-              'Indicates whether the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) is currently locked.',
+              'Indicates whether the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) is currently locked.',
             type: 'boolean',
           },
           latch_metadata: {
             description:
-              'Latch-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+              'Latch-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
             properties: {
               accessibility_type: {
                 description: 'Accessibility type in the Latch access system.',
@@ -4408,7 +4408,7 @@ const openapi: OpenAPISpec = {
           },
           salto_ks_metadata: {
             description:
-              'Salto KS-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+              'Salto KS-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
             properties: {
               battery_level: {
                 description: 'Battery level of the door access device.',
@@ -4451,7 +4451,7 @@ const openapi: OpenAPISpec = {
           },
           salto_space_metadata: {
             description:
-              'Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+              'Salto Space-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
             properties: {
               audit_on_keys: {
                 description:
@@ -4492,7 +4492,7 @@ const openapi: OpenAPISpec = {
           },
           visionline_metadata: {
             description:
-              'Visionline-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+              'Visionline-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
             properties: {
               door_category: {
                 description:
@@ -4537,10 +4537,10 @@ const openapi: OpenAPISpec = {
           },
           warnings: {
             description:
-              'Warnings associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+              'Warnings associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
             items: {
               description:
-                'Warning associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                'Warning associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
               discriminator: { propertyName: 'warning_code' },
               oneOf: [
                 {
@@ -4690,64 +4690,64 @@ const openapi: OpenAPISpec = {
       },
       acs_system: {
         description:
-          'Represents an [access control system](https://docs.seam.co/low-level-apis/access-systems).\n\nWithin an `acs_system`, create [`acs_user`s](https://docs.seam.co/api/acs/users/object) and [`acs_credential`s](https://docs.seam.co/api/acs/credentials/object) to grant access to the `acs_user`s.\n\nFor details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/api/acs).',
+          'Represents an [access control system](https://www.seam.co/docs/low-level-apis/access-systems).\n\nWithin an `acs_system`, create [`acs_user`s](https://www.seam.co/docs/api/acs/users/object) and [`acs_credential`s](https://www.seam.co/docs/api/acs/credentials/object) to grant access to the `acs_user`s.\n\nFor details about the resources associated with an access control system, see the [access control systems namespace](https://www.seam.co/docs/api/acs/object).',
         properties: {
           acs_access_group_count: {
             description:
-              'Number of access groups in the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+              'Number of access groups in the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
             format: 'float',
             type: 'number',
           },
           acs_system_id: {
             description:
-              'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+              'ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
             format: 'uuid',
             type: 'string',
           },
           acs_user_count: {
             description:
-              'Number of users in the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+              'Number of users in the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
             format: 'float',
             type: 'number',
           },
           connected_account_id: {
             description:
-              'ID of the connected account associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+              'ID of the connected account associated with the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
             format: 'uuid',
             type: 'string',
           },
           connected_account_ids: {
             deprecated: true,
             description:
-              'IDs of the [connected accounts](https://docs.seam.co/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+              'IDs of the [connected accounts](https://www.seam.co/docs/core-concepts/connected-accounts) associated with the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
             items: { format: 'uuid', type: 'string' },
             type: 'array',
             'x-deprecated': 'Use `connected_account_id`.',
           },
           created_at: {
             description:
-              'Date and time at which the [access control system](https://docs.seam.co/low-level-apis/access-systems) was created.',
+              'Date and time at which the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) was created.',
             format: 'date-time',
             type: 'string',
           },
           default_credential_manager_acs_system_id: {
             description:
-              'ID of the default credential manager `acs_system` for this [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+              'ID of the default credential manager `acs_system` for this [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
             format: 'uuid',
             nullable: true,
             type: 'string',
           },
           errors: {
             description:
-              'Errors associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+              'Errors associated with the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
             items: {
               description:
-                'Error associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+                'Error associated with the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
               discriminator: { propertyName: 'error_code' },
               oneOf: [
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\nThis error might also occur if Seam Bridge is connected to the wrong [workspace](https://docs.seam.co/core-concepts/workspaces).\nSee also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\nThis error might also occur if Seam Bridge is connected to the wrong [workspace](https://www.seam.co/docs/core-concepts/workspaces).\nSee also [Troubleshooting Your Access Control System](https://www.seam.co/docs/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -4773,7 +4773,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\nSee also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\nSee also [Troubleshooting Your Access Control System](https://www.seam.co/docs/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -4789,7 +4789,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_bridge_error: {
                       description:
-                        'Indicates whether the error is related to the [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+                        'Indicates whether the error is related to the [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge).',
                       type: 'boolean',
                     },
                     message: {
@@ -4804,7 +4804,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).\nFor example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/core-concepts/workspaces).\nSee also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-visionline_instance_unreachable).',
+                    'Indicates that [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://www.seam.co/docs/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).\nFor example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://www.seam.co/docs/core-concepts/workspaces).\nSee also [Troubleshooting Your Access Control System](https://www.seam.co/docs/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-visionline_instance_unreachable).',
                   properties: {
                     created_at: {
                       description:
@@ -4856,7 +4856,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    "Indicates that Seam's integration user does not have sufficient permissions on the provider's system backing this [access control system](https://docs.seam.co/low-level-apis/access-systems). Access cannot be managed until permissions are restored. See the error message for specifics, then either reauthorize the connected account in Seam or grant the integration user the required permissions in the provider's system.",
+                    "Indicates that Seam's integration user does not have sufficient permissions on the provider's system backing this [access control system](https://www.seam.co/docs/low-level-apis/access-systems). Access cannot be managed until permissions are restored. See the error message for specifics, then either reauthorize the connected account in Seam or grant the integration user the required permissions in the provider's system.",
                   properties: {
                     created_at: {
                       description:
@@ -4882,7 +4882,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [access control system](https://docs.seam.co/low-level-apis/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system) to resolve the issue.',
+                    'Indicates that the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](https://www.seam.co/docs/low-level-apis/access-systems/troubleshooting-your-access-control-system) to resolve the issue.',
                   properties: {
                     created_at: {
                       description:
@@ -4908,7 +4908,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) to restore access.',
+                    'Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://www.seam.co/docs/core-concepts/connect-webviews) to restore access.',
                   properties: {
                     created_at: {
                       description:
@@ -4934,7 +4934,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [access control system](https://docs.seam.co/low-level-apis/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.',
+                    'Indicates that the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.',
                   properties: {
                     created_at: {
                       description:
@@ -4990,7 +4990,7 @@ const openapi: OpenAPISpec = {
           },
           external_type: {
             description:
-              'Brand-specific terminology for the [access control system](https://docs.seam.co/low-level-apis/access-systems) type.',
+              'Brand-specific terminology for the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) type.',
             enum: [
               'pti_site',
               'avigilon_alta_org',
@@ -5014,17 +5014,17 @@ const openapi: OpenAPISpec = {
           },
           external_type_display_name: {
             description:
-              'Display name that corresponds to the brand-specific terminology for the [access control system](https://docs.seam.co/low-level-apis/access-systems) type.',
+              'Display name that corresponds to the brand-specific terminology for the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) type.',
             type: 'string',
           },
           image_alt_text: {
             description:
-              'Alternative text for the [access control system](https://docs.seam.co/low-level-apis/access-systems) image.',
+              'Alternative text for the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) image.',
             type: 'string',
           },
           image_url: {
             description:
-              'URL for the image that represents the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+              'URL for the image that represents the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
             type: 'string',
           },
           is_credential_manager: {
@@ -5034,11 +5034,11 @@ const openapi: OpenAPISpec = {
           },
           location: {
             description:
-              'Location information for the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+              'Location information for the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
             properties: {
               time_zone: {
                 description:
-                  'Time zone in which the [access control system](https://docs.seam.co/low-level-apis/access-systems) is located.',
+                  'Time zone in which the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) is located.',
                 nullable: true,
                 type: 'string',
               },
@@ -5048,7 +5048,7 @@ const openapi: OpenAPISpec = {
           },
           name: {
             description:
-              'Name of the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+              'Name of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
             type: 'string',
           },
           system_type: {
@@ -5082,11 +5082,11 @@ const openapi: OpenAPISpec = {
           },
           visionline_metadata: {
             description:
-              'Visionline-specific metadata for the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+              'Visionline-specific metadata for the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
             properties: {
               lan_address: {
                 description:
-                  'IP address or hostname of the main Visionline server relative to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) on the local network.',
+                  'IP address or hostname of the main Visionline server relative to [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge) on the local network.',
                 type: 'string',
               },
               mobile_access_uuid: {
@@ -5104,10 +5104,10 @@ const openapi: OpenAPISpec = {
           },
           warnings: {
             description:
-              'Warnings associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+              'Warnings associated with the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
             items: {
               description:
-                'Warning associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+                'Warning associated with the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
               discriminator: { propertyName: 'warning_code' },
               oneOf: [
                 {
@@ -5137,7 +5137,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates the [access control system](https://docs.seam.co/low-level-apis/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                    'Indicates the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                   properties: {
                     created_at: {
                       description:
@@ -5193,7 +5193,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that Seam encountered an unexpected error while syncing this [access control system](https://docs.seam.co/low-level-apis/access-systems), so its users, credentials, and access groups may be out of date. Seam retries on every sync cycle and clears this warning once a sync succeeds; if it persists, contact [support](mailto:support@seam.co).',
+                    'Indicates that Seam encountered an unexpected error while syncing this [access control system](https://www.seam.co/docs/low-level-apis/access-systems), so its users, credentials, and access groups may be out of date. Seam retries on every sync cycle and clears this warning once a sync succeeds; if it persists, contact [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -5223,7 +5223,7 @@ const openapi: OpenAPISpec = {
           },
           workspace_id: {
             description:
-              'ID of the workspace that contains the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+              'ID of the workspace that contains the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
             format: 'uuid',
             type: 'string',
           },
@@ -5247,11 +5247,11 @@ const openapi: OpenAPISpec = {
       },
       acs_user: {
         description:
-          'Represents a [user](https://docs.seam.co/low-level-apis/access-systems/user-management) in an [access system](https://docs.seam.co/low-level-apis/access-systems).\n\nAn access system user typically refers to an individual who requires access, like an employee or resident. Each user can possess multiple credentials that serve as their keys or identifiers for access. The type of credential can vary widely. For example, in the Salto system, a user can have a PIN code, a mobile app account, and a fob. In other platforms, it is not uncommon for a user to have more than one of the same credential type, such as multiple key cards. Additionally, these credentials can have a schedule or validity period.\n\nFor details about how to configure users in your access system, see the corresponding [system integration guide](https://docs.seam.co/device-and-system-integration-guides#access-control-systems).',
+          'Represents a [user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) in an [access system](https://www.seam.co/docs/low-level-apis/access-systems).\n\nAn access system user typically refers to an individual who requires access, like an employee or resident. Each user can possess multiple credentials that serve as their keys or identifiers for access. The type of credential can vary widely. For example, in the Salto system, a user can have a PIN code, a mobile app account, and a fob. In other platforms, it is not uncommon for a user to have more than one of the same credential type, such as multiple key cards. Additionally, these credentials can have a schedule or validity period.\n\nFor details about how to configure users in your access system, see the corresponding [system integration guide](https://www.seam.co/docs/device-and-system-integration-guides#access-control-systems).',
         properties: {
           access_schedule: {
             description:
-              "`starts_at` and `ends_at` timestamps for the [access system user's](https://docs.seam.co/low-level-apis/access-systems/user-management) access.",
+              "`starts_at` and `ends_at` timestamps for the [access system user's](https://www.seam.co/docs/low-level-apis/access-systems/user-management) access.",
             properties: {
               ends_at: {
                 description:
@@ -5272,31 +5272,31 @@ const openapi: OpenAPISpec = {
           },
           acs_system_id: {
             description:
-              'ID of the [access system](https://docs.seam.co/low-level-apis/access-systems) that contains the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'ID of the [access system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             format: 'uuid',
             type: 'string',
           },
           acs_user_id: {
             description:
-              'ID of the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'ID of the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             format: 'uuid',
             type: 'string',
           },
           connected_account_id: {
             description:
-              '\n      The ID of the connected account that is associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).\n    ',
+              '\n      The ID of the connected account that is associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).\n    ',
             format: 'uuid',
             type: 'string',
           },
           created_at: {
             description:
-              'Date and time at which the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was created.',
+              'Date and time at which the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was created.',
             format: 'date-time',
             type: 'string',
           },
           display_name: {
             description:
-              'Display name for the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'Display name for the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             type: 'string',
           },
           email: {
@@ -5307,21 +5307,21 @@ const openapi: OpenAPISpec = {
           },
           email_address: {
             description:
-              'Email address of the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'Email address of the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             format: 'email',
             type: 'string',
           },
           errors: {
             description:
-              'Errors associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'Errors associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             items: {
               description:
-                'Errors associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+                'Errors associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
               discriminator: { propertyName: 'error_code' },
               oneOf: [
                 {
                   description:
-                    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was deleted from the [access system](https://docs.seam.co/low-level-apis/access-systems) outside of Seam.',
+                    'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was deleted from the [access system](https://www.seam.co/docs/low-level-apis/access-systems) outside of Seam.',
                   properties: {
                     created_at: {
                       description:
@@ -5345,7 +5345,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.',
+                    'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.',
                   properties: {
                     created_at: {
                       description:
@@ -5369,7 +5369,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was not created on the [access system](https://docs.seam.co/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
+                    'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was not created on the [access system](https://www.seam.co/docs/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -5393,7 +5393,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was not updated on the [access system](https://docs.seam.co/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
+                    'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was not updated on the [access system](https://www.seam.co/docs/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -5417,7 +5417,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was not deleted on the [access system](https://docs.seam.co/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
+                    'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was not deleted on the [access system](https://www.seam.co/docs/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -5441,7 +5441,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).',
+                    'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -5469,7 +5469,7 @@ const openapi: OpenAPISpec = {
           },
           external_type: {
             description:
-              'Brand-specific terminology for the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) type.',
+              'Brand-specific terminology for the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) type.',
             enum: [
               'pti_user',
               'brivo_user',
@@ -5485,12 +5485,12 @@ const openapi: OpenAPISpec = {
           },
           external_type_display_name: {
             description:
-              'Display name that corresponds to the brand-specific terminology for the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) type.',
+              'Display name that corresponds to the brand-specific terminology for the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) type.',
             type: 'string',
           },
           full_name: {
             description:
-              'Full name of the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'Full name of the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             minLength: 1,
             type: 'string',
           },
@@ -5508,7 +5508,7 @@ const openapi: OpenAPISpec = {
           },
           is_suspended: {
             description:
-              'Indicates whether the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) is currently [suspended](https://docs.seam.co/low-level-apis/access-systems/user-management/suspending-and-unsuspending-users).',
+              'Indicates whether the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) is currently [suspended](https://www.seam.co/docs/low-level-apis/access-systems/user-management/suspending-and-unsuspending-users).',
             type: 'boolean',
           },
           last_successful_sync_at: {
@@ -5521,7 +5521,7 @@ const openapi: OpenAPISpec = {
           },
           pending_mutations: {
             description:
-              'Pending mutations associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.',
+              'Pending mutations associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.',
             items: {
               discriminator: { propertyName: 'mutation_code' },
               oneOf: [
@@ -5950,12 +5950,12 @@ const openapi: OpenAPISpec = {
           },
           phone_number: {
             description:
-              'Phone number of the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
+              'Phone number of the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
             type: 'string',
           },
           salto_ks_metadata: {
             description:
-              'Salto KS-specific metadata associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'Salto KS-specific metadata associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             properties: {
               is_subscribed: {
                 description:
@@ -5967,7 +5967,7 @@ const openapi: OpenAPISpec = {
           },
           salto_space_metadata: {
             description:
-              'Salto Space-specific metadata associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'Salto Space-specific metadata associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             properties: {
               audit_openings: {
                 description:
@@ -5983,38 +5983,38 @@ const openapi: OpenAPISpec = {
           },
           user_identity_email_address: {
             description:
-              'Email address of the user identity associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'Email address of the user identity associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             nullable: true,
             type: 'string',
           },
           user_identity_full_name: {
             description:
-              'Full name of the user identity associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'Full name of the user identity associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             nullable: true,
             type: 'string',
           },
           user_identity_id: {
             description:
-              'ID of the user identity associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'ID of the user identity associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             type: 'string',
           },
           user_identity_phone_number: {
             description:
-              'Phone number of the user identity associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
+              'Phone number of the user identity associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
             nullable: true,
             type: 'string',
           },
           warnings: {
             description:
-              'Warnings associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'Warnings associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             items: {
               description:
-                'Warnings associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+                'Warnings associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
               discriminator: { propertyName: 'warning_code' },
               oneOf: [
                 {
                   description:
-                    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) is being deleted from the [access system](https://docs.seam.co/low-level-apis/access-systems). This is a temporary state, and the access system user will be deleted shortly.',
+                    'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) is being deleted from the [access system](https://www.seam.co/docs/low-level-apis/access-systems). This is a temporary state, and the access system user will be deleted shortly.',
                   properties: {
                     created_at: {
                       description:
@@ -6034,7 +6034,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.',
+                    'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.',
                   properties: {
                     created_at: {
                       description:
@@ -6057,7 +6057,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) exists but is not currently able to gain access—for example, because their access schedule has not started yet or has ended, the access system has reached its limit for active users, or they have been unsubscribed or deactivated. Refer to the warning message for the provider-specific reason. This is distinct from `is_suspended`, which indicates the user has been explicitly blocked.',
+                    'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) exists but is not currently able to gain access—for example, because their access schedule has not started yet or has ended, the access system has reached its limit for active users, or they have been unsubscribed or deactivated. Refer to the warning message for the provider-specific reason. This is distinct from `is_suspended`, which indicates the user has been explicitly blocked.',
                   properties: {
                     created_at: {
                       description:
@@ -6080,7 +6080,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'An unknown issue occurred while syncing the state of this [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.',
+                    'An unknown issue occurred while syncing the state of this [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.',
                   properties: {
                     created_at: {
                       description:
@@ -6103,7 +6103,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.',
+                    'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.',
                   properties: {
                     created_at: {
                       description:
@@ -6130,7 +6130,7 @@ const openapi: OpenAPISpec = {
           },
           workspace_id: {
             description:
-              'ID of the workspace that contains the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'ID of the workspace that contains the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             format: 'uuid',
             type: 'string',
           },
@@ -6152,7 +6152,7 @@ const openapi: OpenAPISpec = {
       },
       action_attempt: {
         description:
-          'Represents an action attempt that enables you to keep track of the progress of your action that affects a physical device or system.actions against a device. Action attempts are useful because the physical world is intrinsically asynchronous.\n\nWhen you request for a device to perform an action, the Seam API immediately returns an action attempt object. In the background, the Seam API performs the action.\n\nSee also [Action Attempts](https://docs.seam.co/core-concepts/action-attempts).',
+          'Represents an action attempt that enables you to keep track of the progress of your action that affects a physical device or system.actions against a device. Action attempts are useful because the physical world is intrinsically asynchronous.\n\nWhen you request for a device to perform an action, the Seam API immediately returns an action attempt object. In the background, the Seam API performs the action.\n\nSee also [Action Attempts](https://www.seam.co/docs/core-concepts/action-attempts).',
         oneOf: [
           {
             description: 'Locking a door is pending.',
@@ -6459,20 +6459,20 @@ const openapi: OpenAPISpec = {
                     properties: {
                       card_number: {
                         description:
-                          'A number or string that physically identifies the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'A number or string that physically identifies the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         nullable: true,
                         type: 'string',
                       },
                       created_at: {
                         description:
-                          'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was created.',
+                          'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created.',
                         format: 'date-time',
                         nullable: true,
                         type: 'string',
                       },
                       ends_at: {
                         description:
-                          'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) will stop being usable.',
+                          'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) will stop being usable.',
                         format: 'date-time',
                         nullable: true,
                         type: 'string',
@@ -6485,77 +6485,77 @@ const openapi: OpenAPISpec = {
                       },
                       starts_at: {
                         description:
-                          'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) becomes usable.',
+                          'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) becomes usable.',
                         format: 'date-time',
                         nullable: true,
                         type: 'string',
                       },
                       visionline_metadata: {
                         description:
-                          'Visionline-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         properties: {
                           cancelled: {
                             description:
-                              'Indicates whether the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is cancelled.',
+                              'Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is cancelled.',
                             type: 'boolean',
                           },
                           card_format: {
                             description:
-                              'Format of the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'Format of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             enum: ['TLCode', 'rfid48'],
                             type: 'string',
                           },
                           card_holder: {
                             description:
-                              'Holder of the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'Holder of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             type: 'string',
                           },
                           card_id: {
                             description:
-                              'Card ID for the Visionline card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'Card ID for the Visionline card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             type: 'string',
                           },
                           common_acs_entrance_ids: {
                             description:
-                              'IDs of the common [entrances](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'IDs of the common [entrances](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             items: { format: 'uuid', type: 'string' },
                             type: 'array',
                           },
                           discarded: {
                             description:
-                              'Indicates whether the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is discarded.',
+                              'Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is discarded.',
                             type: 'boolean',
                           },
                           expired: {
                             description:
-                              'Indicates whether the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is expired.',
+                              'Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is expired.',
                             type: 'boolean',
                           },
                           guest_acs_entrance_ids: {
                             description:
-                              'IDs of the guest [entrances](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'IDs of the guest [entrances](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             items: { format: 'uuid', type: 'string' },
                             type: 'array',
                           },
                           number_of_issued_cards: {
                             description:
-                              'Number of issued cards associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'Number of issued cards associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             format: 'float',
                             type: 'number',
                           },
                           overridden: {
                             description:
-                              'Indicates whether the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is overridden.',
+                              'Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is overridden.',
                             type: 'boolean',
                           },
                           overwritten: {
                             description:
-                              'Indicates whether the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is overwritten.',
+                              'Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is overwritten.',
                             type: 'boolean',
                           },
                           pending_auto_update: {
                             description:
-                              'Indicates whether the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is pending auto-update.',
+                              'Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is pending auto-update.',
                             type: 'boolean',
                           },
                         },
@@ -6578,17 +6578,17 @@ const openapi: OpenAPISpec = {
                     oneOf: [
                       {
                         description:
-                          'Means by which an [access control system user](https://docs.seam.co/low-level-apis/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/low-level-apis/access-systems).\n\nAn access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.\n\nFor each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type.\n\nFor granting a person access to a space, [Access Grants](https://docs.seam.co/use-cases/granting-access) are the default and recommended approach. Use the lower-level ACS credential API directly only when you specifically need to manage individual credentials.',
+                          'Means by which an [access control system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) gains access at an [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://www.seam.co/docs/low-level-apis/access-systems).\n\nAn access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.\n\nFor each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type.\n\nFor granting a person access to a space, [Access Grants](https://www.seam.co/docs/use-cases/granting-access) are the default and recommended approach. Use the lower-level ACS credential API directly only when you specifically need to manage individual credentials.',
                         properties: {
                           access_method: {
                             description:
-                              'Access method for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                              'Access method for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
                             enum: ['code', 'card', 'mobile_key', 'cloud_key'],
                             type: 'string',
                           },
                           acs_credential_id: {
                             description:
-                              'ID of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'ID of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -6600,19 +6600,19 @@ const openapi: OpenAPISpec = {
                           },
                           acs_system_id: {
                             description:
-                              'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             format: 'uuid',
                             type: 'string',
                           },
                           acs_user_id: {
                             description:
-                              'ID of the [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                              'ID of the [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
                             format: 'uuid',
                             type: 'string',
                           },
                           akiles_metadata: {
                             description:
-                              'Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'Akiles-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             properties: {
                               member_pin_id: {
                                 description: 'ID of the Akiles member PIN.',
@@ -6623,7 +6623,7 @@ const openapi: OpenAPISpec = {
                           },
                           assa_abloy_vostio_metadata: {
                             description:
-                              'Vostio-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'Vostio-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             properties: {
                               auto_join: {
                                 description:
@@ -6662,42 +6662,42 @@ const openapi: OpenAPISpec = {
                           },
                           card_number: {
                             description:
-                              'Number of the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'Number of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             nullable: true,
                             type: 'string',
                           },
                           code: {
                             description:
-                              'Access (PIN) code for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'Access (PIN) code for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             nullable: true,
                             type: 'string',
                           },
                           connected_account_id: {
                             description:
-                              'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                              'ID of the [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) to which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
                             format: 'uuid',
                             type: 'string',
                           },
                           created_at: {
                             description:
-                              'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was created.',
+                              'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created.',
                             format: 'date-time',
                             type: 'string',
                           },
                           display_name: {
                             description:
-                              'Display name that corresponds to the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.',
+                              'Display name that corresponds to the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type.',
                             minLength: 1,
                             type: 'string',
                           },
                           ends_at: {
                             description:
-                              'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                              'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
                             type: 'string',
                           },
                           errors: {
                             description:
-                              'Errors associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'Errors associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             items: {
                               properties: {
                                 created_at: {
@@ -6716,7 +6716,7 @@ const openapi: OpenAPISpec = {
                           },
                           external_type: {
                             description:
-                              'Brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
+                              'Brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
                             enum: [
                               'pti_card',
                               'brivo_credential',
@@ -6737,17 +6737,17 @@ const openapi: OpenAPISpec = {
                           },
                           external_type_display_name: {
                             description:
-                              'Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.',
+                              'Display name that corresponds to the brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type.',
                             type: 'string',
                           },
                           is_issued: {
                             description:
-                              'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been encoded onto a card.',
+                              'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been encoded onto a card.',
                             type: 'boolean',
                           },
                           is_latest_desired_state_synced_with_provider: {
                             description:
-                              'Indicates whether the latest state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider.',
+                              'Indicates whether the latest state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider.',
                             nullable: true,
                             type: 'boolean',
                           },
@@ -6759,48 +6759,48 @@ const openapi: OpenAPISpec = {
                           },
                           is_multi_phone_sync_credential: {
                             description:
-                              'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                              'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
                             type: 'boolean',
                           },
                           is_one_time_use: {
                             description:
-                              'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.',
+                              'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.',
                             type: 'boolean',
                           },
                           issued_at: {
                             description:
-                              'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was encoded onto a card.',
+                              'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was encoded onto a card.',
                             format: 'date-time',
                             nullable: true,
                             type: 'string',
                           },
                           latest_desired_state_synced_with_provider_at: {
                             description:
-                              'Date and time at which the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider.',
+                              'Date and time at which the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider.',
                             format: 'date-time',
                             nullable: true,
                             type: 'string',
                           },
                           parent_acs_credential_id: {
                             description:
-                              'ID of the parent [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'ID of the parent [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             format: 'uuid',
                             type: 'string',
                           },
                           starts_at: {
                             description:
-                              'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                              'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                             type: 'string',
                           },
                           user_identity_id: {
                             description:
-                              'ID of the [user identity](https://docs.seam.co/api/user_identities) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                              'ID of the [user identity](https://www.seam.co/docs/api/user_identities/object) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
                             format: 'uuid',
                             type: 'string',
                           },
                           visionline_metadata: {
                             description:
-                              'Visionline-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             properties: {
                               auto_join: {
                                 description:
@@ -6851,15 +6851,15 @@ const openapi: OpenAPISpec = {
                           },
                           warnings: {
                             description:
-                              'Warnings associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'Warnings associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             items: {
                               description:
-                                'Warning associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                                'Warning associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                               discriminator: { propertyName: 'warning_code' },
                               oneOf: [
                                 {
                                   description:
-                                    'Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is waiting to be issued.',
+                                    'Indicates that the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is waiting to be issued.',
                                   properties: {
                                     created_at: {
                                       description:
@@ -6888,7 +6888,7 @@ const openapi: OpenAPISpec = {
                                 },
                                 {
                                   description:
-                                    "Indicates that the schedule of one of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials)'s children was modified externally.",
+                                    "Indicates that the schedule of one of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials)'s children was modified externally.",
                                   properties: {
                                     created_at: {
                                       description:
@@ -6917,7 +6917,7 @@ const openapi: OpenAPISpec = {
                                 },
                                 {
                                   description:
-                                    'Indicates that the schedule of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.',
+                                    'Indicates that the schedule of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.',
                                   properties: {
                                     created_at: {
                                       description:
@@ -6946,7 +6946,7 @@ const openapi: OpenAPISpec = {
                                 },
                                 {
                                   description:
-                                    'Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is being deleted.',
+                                    'Indicates that the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is being deleted.',
                                   properties: {
                                     created_at: {
                                       description:
@@ -6975,7 +6975,7 @@ const openapi: OpenAPISpec = {
                                 },
                                 {
                                   description:
-                                    'An unknown issue occurred while syncing the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
+                                    'An unknown issue occurred while syncing the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
                                   properties: {
                                     created_at: {
                                       description:
@@ -7006,7 +7006,7 @@ const openapi: OpenAPISpec = {
                                 },
                                 {
                                   description:
-                                    'Access permissions for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
+                                    'Access permissions for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
                                   properties: {
                                     created_at: {
                                       description:
@@ -7080,7 +7080,7 @@ const openapi: OpenAPISpec = {
                           },
                           workspace_id: {
                             description:
-                              'ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'ID of the workspace that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -7102,17 +7102,17 @@ const openapi: OpenAPISpec = {
                       },
                       {
                         description:
-                          'Means by which an [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). The `unmanaged_acs_credential` object, which is not managed by Seam, represents a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/low-level-apis/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code.',
+                          'Means by which an [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) gains access at an [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). The `unmanaged_acs_credential` object, which is not managed by Seam, represents a [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://www.seam.co/docs/low-level-apis/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code.',
                         properties: {
                           access_method: {
                             description:
-                              'Access method for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                              'Access method for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
                             enum: ['code', 'card', 'mobile_key', 'cloud_key'],
                             type: 'string',
                           },
                           acs_credential_id: {
                             description:
-                              'ID of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'ID of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -7124,19 +7124,19 @@ const openapi: OpenAPISpec = {
                           },
                           acs_system_id: {
                             description:
-                              'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             format: 'uuid',
                             type: 'string',
                           },
                           acs_user_id: {
                             description:
-                              'ID of the [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                              'ID of the [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
                             format: 'uuid',
                             type: 'string',
                           },
                           akiles_metadata: {
                             description:
-                              'Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'Akiles-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             properties: {
                               member_pin_id: {
                                 description: 'ID of the Akiles member PIN.',
@@ -7147,7 +7147,7 @@ const openapi: OpenAPISpec = {
                           },
                           assa_abloy_vostio_metadata: {
                             description:
-                              'Vostio-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'Vostio-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             properties: {
                               auto_join: {
                                 description:
@@ -7186,42 +7186,42 @@ const openapi: OpenAPISpec = {
                           },
                           card_number: {
                             description:
-                              'Number of the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'Number of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             nullable: true,
                             type: 'string',
                           },
                           code: {
                             description:
-                              'Access (PIN) code for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'Access (PIN) code for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             nullable: true,
                             type: 'string',
                           },
                           connected_account_id: {
                             description:
-                              'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                              'ID of the [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) to which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
                             format: 'uuid',
                             type: 'string',
                           },
                           created_at: {
                             description:
-                              'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was created.',
+                              'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created.',
                             format: 'date-time',
                             type: 'string',
                           },
                           display_name: {
                             description:
-                              'Display name that corresponds to the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.',
+                              'Display name that corresponds to the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type.',
                             minLength: 1,
                             type: 'string',
                           },
                           ends_at: {
                             description:
-                              'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                              'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
                             type: 'string',
                           },
                           errors: {
                             description:
-                              'Errors associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'Errors associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             items: {
                               properties: {
                                 created_at: {
@@ -7240,7 +7240,7 @@ const openapi: OpenAPISpec = {
                           },
                           external_type: {
                             description:
-                              'Brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
+                              'Brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
                             enum: [
                               'pti_card',
                               'brivo_credential',
@@ -7261,65 +7261,65 @@ const openapi: OpenAPISpec = {
                           },
                           external_type_display_name: {
                             description:
-                              'Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.',
+                              'Display name that corresponds to the brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type.',
                             type: 'string',
                           },
                           is_issued: {
                             description:
-                              'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been encoded onto a card.',
+                              'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been encoded onto a card.',
                             type: 'boolean',
                           },
                           is_latest_desired_state_synced_with_provider: {
                             description:
-                              'Indicates whether the latest state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider.',
+                              'Indicates whether the latest state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider.',
                             nullable: true,
                             type: 'boolean',
                           },
                           is_managed: { enum: [false], type: 'boolean' },
                           is_multi_phone_sync_credential: {
                             description:
-                              'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                              'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
                             type: 'boolean',
                           },
                           is_one_time_use: {
                             description:
-                              'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.',
+                              'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.',
                             type: 'boolean',
                           },
                           issued_at: {
                             description:
-                              'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was encoded onto a card.',
+                              'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was encoded onto a card.',
                             format: 'date-time',
                             nullable: true,
                             type: 'string',
                           },
                           latest_desired_state_synced_with_provider_at: {
                             description:
-                              'Date and time at which the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider.',
+                              'Date and time at which the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider.',
                             format: 'date-time',
                             nullable: true,
                             type: 'string',
                           },
                           parent_acs_credential_id: {
                             description:
-                              'ID of the parent [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'ID of the parent [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             format: 'uuid',
                             type: 'string',
                           },
                           starts_at: {
                             description:
-                              'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                              'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                             type: 'string',
                           },
                           user_identity_id: {
                             description:
-                              'ID of the [user identity](https://docs.seam.co/api/user_identities) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                              'ID of the [user identity](https://www.seam.co/docs/api/user_identities/object) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
                             format: 'uuid',
                             type: 'string',
                           },
                           visionline_metadata: {
                             description:
-                              'Visionline-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             properties: {
                               auto_join: {
                                 description:
@@ -7370,15 +7370,15 @@ const openapi: OpenAPISpec = {
                           },
                           warnings: {
                             description:
-                              'Warnings associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'Warnings associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             items: {
                               description:
-                                'Warning associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                                'Warning associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                               discriminator: { propertyName: 'warning_code' },
                               oneOf: [
                                 {
                                   description:
-                                    'Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is waiting to be issued.',
+                                    'Indicates that the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is waiting to be issued.',
                                   properties: {
                                     created_at: {
                                       description:
@@ -7407,7 +7407,7 @@ const openapi: OpenAPISpec = {
                                 },
                                 {
                                   description:
-                                    "Indicates that the schedule of one of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials)'s children was modified externally.",
+                                    "Indicates that the schedule of one of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials)'s children was modified externally.",
                                   properties: {
                                     created_at: {
                                       description:
@@ -7436,7 +7436,7 @@ const openapi: OpenAPISpec = {
                                 },
                                 {
                                   description:
-                                    'Indicates that the schedule of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.',
+                                    'Indicates that the schedule of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.',
                                   properties: {
                                     created_at: {
                                       description:
@@ -7465,7 +7465,7 @@ const openapi: OpenAPISpec = {
                                 },
                                 {
                                   description:
-                                    'Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is being deleted.',
+                                    'Indicates that the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is being deleted.',
                                   properties: {
                                     created_at: {
                                       description:
@@ -7494,7 +7494,7 @@ const openapi: OpenAPISpec = {
                                 },
                                 {
                                   description:
-                                    'An unknown issue occurred while syncing the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
+                                    'An unknown issue occurred while syncing the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
                                   properties: {
                                     created_at: {
                                       description:
@@ -7525,7 +7525,7 @@ const openapi: OpenAPISpec = {
                                 },
                                 {
                                   description:
-                                    'Access permissions for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
+                                    'Access permissions for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
                                   properties: {
                                     created_at: {
                                       description:
@@ -7599,7 +7599,7 @@ const openapi: OpenAPISpec = {
                           },
                           workspace_id: {
                             description:
-                              'ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                              'ID of the workspace that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -7878,17 +7878,17 @@ const openapi: OpenAPISpec = {
                 oneOf: [
                   {
                     description:
-                      'Means by which an [access control system user](https://docs.seam.co/low-level-apis/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/low-level-apis/access-systems).\n\nAn access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.\n\nFor each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type.\n\nFor granting a person access to a space, [Access Grants](https://docs.seam.co/use-cases/granting-access) are the default and recommended approach. Use the lower-level ACS credential API directly only when you specifically need to manage individual credentials.',
+                      'Means by which an [access control system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) gains access at an [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://www.seam.co/docs/low-level-apis/access-systems).\n\nAn access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.\n\nFor each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type.\n\nFor granting a person access to a space, [Access Grants](https://www.seam.co/docs/use-cases/granting-access) are the default and recommended approach. Use the lower-level ACS credential API directly only when you specifically need to manage individual credentials.',
                     properties: {
                       access_method: {
                         description:
-                          'Access method for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                          'Access method for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
                         enum: ['code', 'card', 'mobile_key', 'cloud_key'],
                         type: 'string',
                       },
                       acs_credential_id: {
                         description:
-                          'ID of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'ID of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -7900,19 +7900,19 @@ const openapi: OpenAPISpec = {
                       },
                       acs_system_id: {
                         description:
-                          'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         format: 'uuid',
                         type: 'string',
                       },
                       acs_user_id: {
                         description:
-                          'ID of the [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                          'ID of the [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
                         format: 'uuid',
                         type: 'string',
                       },
                       akiles_metadata: {
                         description:
-                          'Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Akiles-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         properties: {
                           member_pin_id: {
                             description: 'ID of the Akiles member PIN.',
@@ -7923,7 +7923,7 @@ const openapi: OpenAPISpec = {
                       },
                       assa_abloy_vostio_metadata: {
                         description:
-                          'Vostio-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Vostio-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         properties: {
                           auto_join: {
                             description:
@@ -7961,42 +7961,42 @@ const openapi: OpenAPISpec = {
                       },
                       card_number: {
                         description:
-                          'Number of the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Number of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         nullable: true,
                         type: 'string',
                       },
                       code: {
                         description:
-                          'Access (PIN) code for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Access (PIN) code for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         nullable: true,
                         type: 'string',
                       },
                       connected_account_id: {
                         description:
-                          'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                          'ID of the [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) to which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
                         format: 'uuid',
                         type: 'string',
                       },
                       created_at: {
                         description:
-                          'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was created.',
+                          'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created.',
                         format: 'date-time',
                         type: 'string',
                       },
                       display_name: {
                         description:
-                          'Display name that corresponds to the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.',
+                          'Display name that corresponds to the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type.',
                         minLength: 1,
                         type: 'string',
                       },
                       ends_at: {
                         description:
-                          'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                          'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
                         type: 'string',
                       },
                       errors: {
                         description:
-                          'Errors associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Errors associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         items: {
                           properties: {
                             created_at: {
@@ -8015,7 +8015,7 @@ const openapi: OpenAPISpec = {
                       },
                       external_type: {
                         description:
-                          'Brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
+                          'Brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
                         enum: [
                           'pti_card',
                           'brivo_credential',
@@ -8036,17 +8036,17 @@ const openapi: OpenAPISpec = {
                       },
                       external_type_display_name: {
                         description:
-                          'Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.',
+                          'Display name that corresponds to the brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type.',
                         type: 'string',
                       },
                       is_issued: {
                         description:
-                          'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been encoded onto a card.',
+                          'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been encoded onto a card.',
                         type: 'boolean',
                       },
                       is_latest_desired_state_synced_with_provider: {
                         description:
-                          'Indicates whether the latest state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider.',
+                          'Indicates whether the latest state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider.',
                         nullable: true,
                         type: 'boolean',
                       },
@@ -8058,48 +8058,48 @@ const openapi: OpenAPISpec = {
                       },
                       is_multi_phone_sync_credential: {
                         description:
-                          'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                          'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
                         type: 'boolean',
                       },
                       is_one_time_use: {
                         description:
-                          'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.',
+                          'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.',
                         type: 'boolean',
                       },
                       issued_at: {
                         description:
-                          'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was encoded onto a card.',
+                          'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was encoded onto a card.',
                         format: 'date-time',
                         nullable: true,
                         type: 'string',
                       },
                       latest_desired_state_synced_with_provider_at: {
                         description:
-                          'Date and time at which the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider.',
+                          'Date and time at which the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider.',
                         format: 'date-time',
                         nullable: true,
                         type: 'string',
                       },
                       parent_acs_credential_id: {
                         description:
-                          'ID of the parent [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'ID of the parent [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         format: 'uuid',
                         type: 'string',
                       },
                       starts_at: {
                         description:
-                          'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                          'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                         type: 'string',
                       },
                       user_identity_id: {
                         description:
-                          'ID of the [user identity](https://docs.seam.co/api/user_identities) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                          'ID of the [user identity](https://www.seam.co/docs/api/user_identities/object) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
                         format: 'uuid',
                         type: 'string',
                       },
                       visionline_metadata: {
                         description:
-                          'Visionline-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         properties: {
                           auto_join: {
                             description:
@@ -8150,15 +8150,15 @@ const openapi: OpenAPISpec = {
                       },
                       warnings: {
                         description:
-                          'Warnings associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Warnings associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         items: {
                           description:
-                            'Warning associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                            'Warning associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                           discriminator: { propertyName: 'warning_code' },
                           oneOf: [
                             {
                               description:
-                                'Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is waiting to be issued.',
+                                'Indicates that the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is waiting to be issued.',
                               properties: {
                                 created_at: {
                                   description:
@@ -8187,7 +8187,7 @@ const openapi: OpenAPISpec = {
                             },
                             {
                               description:
-                                "Indicates that the schedule of one of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials)'s children was modified externally.",
+                                "Indicates that the schedule of one of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials)'s children was modified externally.",
                               properties: {
                                 created_at: {
                                   description:
@@ -8216,7 +8216,7 @@ const openapi: OpenAPISpec = {
                             },
                             {
                               description:
-                                'Indicates that the schedule of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.',
+                                'Indicates that the schedule of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.',
                               properties: {
                                 created_at: {
                                   description:
@@ -8245,7 +8245,7 @@ const openapi: OpenAPISpec = {
                             },
                             {
                               description:
-                                'Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is being deleted.',
+                                'Indicates that the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is being deleted.',
                               properties: {
                                 created_at: {
                                   description:
@@ -8274,7 +8274,7 @@ const openapi: OpenAPISpec = {
                             },
                             {
                               description:
-                                'An unknown issue occurred while syncing the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
+                                'An unknown issue occurred while syncing the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
                               properties: {
                                 created_at: {
                                   description:
@@ -8303,7 +8303,7 @@ const openapi: OpenAPISpec = {
                             },
                             {
                               description:
-                                'Access permissions for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
+                                'Access permissions for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
                               properties: {
                                 created_at: {
                                   description:
@@ -8377,7 +8377,7 @@ const openapi: OpenAPISpec = {
                       },
                       workspace_id: {
                         description:
-                          'ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'ID of the workspace that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -8399,17 +8399,17 @@ const openapi: OpenAPISpec = {
                   },
                   {
                     description:
-                      'Means by which an [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). The `unmanaged_acs_credential` object, which is not managed by Seam, represents a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/low-level-apis/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code.',
+                      'Means by which an [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) gains access at an [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). The `unmanaged_acs_credential` object, which is not managed by Seam, represents a [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://www.seam.co/docs/low-level-apis/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code.',
                     properties: {
                       access_method: {
                         description:
-                          'Access method for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                          'Access method for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
                         enum: ['code', 'card', 'mobile_key', 'cloud_key'],
                         type: 'string',
                       },
                       acs_credential_id: {
                         description:
-                          'ID of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'ID of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -8421,19 +8421,19 @@ const openapi: OpenAPISpec = {
                       },
                       acs_system_id: {
                         description:
-                          'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         format: 'uuid',
                         type: 'string',
                       },
                       acs_user_id: {
                         description:
-                          'ID of the [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                          'ID of the [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
                         format: 'uuid',
                         type: 'string',
                       },
                       akiles_metadata: {
                         description:
-                          'Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Akiles-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         properties: {
                           member_pin_id: {
                             description: 'ID of the Akiles member PIN.',
@@ -8444,7 +8444,7 @@ const openapi: OpenAPISpec = {
                       },
                       assa_abloy_vostio_metadata: {
                         description:
-                          'Vostio-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Vostio-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         properties: {
                           auto_join: {
                             description:
@@ -8482,42 +8482,42 @@ const openapi: OpenAPISpec = {
                       },
                       card_number: {
                         description:
-                          'Number of the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Number of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         nullable: true,
                         type: 'string',
                       },
                       code: {
                         description:
-                          'Access (PIN) code for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Access (PIN) code for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         nullable: true,
                         type: 'string',
                       },
                       connected_account_id: {
                         description:
-                          'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                          'ID of the [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) to which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
                         format: 'uuid',
                         type: 'string',
                       },
                       created_at: {
                         description:
-                          'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was created.',
+                          'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created.',
                         format: 'date-time',
                         type: 'string',
                       },
                       display_name: {
                         description:
-                          'Display name that corresponds to the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.',
+                          'Display name that corresponds to the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type.',
                         minLength: 1,
                         type: 'string',
                       },
                       ends_at: {
                         description:
-                          'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                          'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
                         type: 'string',
                       },
                       errors: {
                         description:
-                          'Errors associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Errors associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         items: {
                           properties: {
                             created_at: {
@@ -8536,7 +8536,7 @@ const openapi: OpenAPISpec = {
                       },
                       external_type: {
                         description:
-                          'Brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
+                          'Brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
                         enum: [
                           'pti_card',
                           'brivo_credential',
@@ -8557,65 +8557,65 @@ const openapi: OpenAPISpec = {
                       },
                       external_type_display_name: {
                         description:
-                          'Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.',
+                          'Display name that corresponds to the brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type.',
                         type: 'string',
                       },
                       is_issued: {
                         description:
-                          'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been encoded onto a card.',
+                          'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been encoded onto a card.',
                         type: 'boolean',
                       },
                       is_latest_desired_state_synced_with_provider: {
                         description:
-                          'Indicates whether the latest state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider.',
+                          'Indicates whether the latest state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider.',
                         nullable: true,
                         type: 'boolean',
                       },
                       is_managed: { enum: [false], type: 'boolean' },
                       is_multi_phone_sync_credential: {
                         description:
-                          'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                          'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
                         type: 'boolean',
                       },
                       is_one_time_use: {
                         description:
-                          'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.',
+                          'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.',
                         type: 'boolean',
                       },
                       issued_at: {
                         description:
-                          'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was encoded onto a card.',
+                          'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was encoded onto a card.',
                         format: 'date-time',
                         nullable: true,
                         type: 'string',
                       },
                       latest_desired_state_synced_with_provider_at: {
                         description:
-                          'Date and time at which the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider.',
+                          'Date and time at which the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider.',
                         format: 'date-time',
                         nullable: true,
                         type: 'string',
                       },
                       parent_acs_credential_id: {
                         description:
-                          'ID of the parent [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'ID of the parent [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         format: 'uuid',
                         type: 'string',
                       },
                       starts_at: {
                         description:
-                          'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                          'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                         type: 'string',
                       },
                       user_identity_id: {
                         description:
-                          'ID of the [user identity](https://docs.seam.co/api/user_identities) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                          'ID of the [user identity](https://www.seam.co/docs/api/user_identities/object) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
                         format: 'uuid',
                         type: 'string',
                       },
                       visionline_metadata: {
                         description:
-                          'Visionline-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         properties: {
                           auto_join: {
                             description:
@@ -8666,15 +8666,15 @@ const openapi: OpenAPISpec = {
                       },
                       warnings: {
                         description:
-                          'Warnings associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Warnings associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         items: {
                           description:
-                            'Warning associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                            'Warning associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                           discriminator: { propertyName: 'warning_code' },
                           oneOf: [
                             {
                               description:
-                                'Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is waiting to be issued.',
+                                'Indicates that the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is waiting to be issued.',
                               properties: {
                                 created_at: {
                                   description:
@@ -8703,7 +8703,7 @@ const openapi: OpenAPISpec = {
                             },
                             {
                               description:
-                                "Indicates that the schedule of one of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials)'s children was modified externally.",
+                                "Indicates that the schedule of one of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials)'s children was modified externally.",
                               properties: {
                                 created_at: {
                                   description:
@@ -8732,7 +8732,7 @@ const openapi: OpenAPISpec = {
                             },
                             {
                               description:
-                                'Indicates that the schedule of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.',
+                                'Indicates that the schedule of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.',
                               properties: {
                                 created_at: {
                                   description:
@@ -8761,7 +8761,7 @@ const openapi: OpenAPISpec = {
                             },
                             {
                               description:
-                                'Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is being deleted.',
+                                'Indicates that the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is being deleted.',
                               properties: {
                                 created_at: {
                                   description:
@@ -8790,7 +8790,7 @@ const openapi: OpenAPISpec = {
                             },
                             {
                               description:
-                                'An unknown issue occurred while syncing the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
+                                'An unknown issue occurred while syncing the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
                               properties: {
                                 created_at: {
                                   description:
@@ -8819,7 +8819,7 @@ const openapi: OpenAPISpec = {
                             },
                             {
                               description:
-                                'Access permissions for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
+                                'Access permissions for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
                               properties: {
                                 created_at: {
                                   description:
@@ -8893,7 +8893,7 @@ const openapi: OpenAPISpec = {
                       },
                       workspace_id: {
                         description:
-                          'ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'ID of the workspace that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -9213,13 +9213,13 @@ const openapi: OpenAPISpec = {
                 properties: {
                   access_method: {
                     description:
-                      'Access method for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                      'Access method for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
                     enum: ['code', 'card', 'mobile_key', 'cloud_key'],
                     type: 'string',
                   },
                   acs_credential_id: {
                     description:
-                      'ID of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                      'ID of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -9231,19 +9231,19 @@ const openapi: OpenAPISpec = {
                   },
                   acs_system_id: {
                     description:
-                      'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                      'ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                     format: 'uuid',
                     type: 'string',
                   },
                   acs_user_id: {
                     description:
-                      'ID of the [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                      'ID of the [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
                     format: 'uuid',
                     type: 'string',
                   },
                   akiles_metadata: {
                     description:
-                      'Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                      'Akiles-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                     properties: {
                       member_pin_id: {
                         description: 'ID of the Akiles member PIN.',
@@ -9254,7 +9254,7 @@ const openapi: OpenAPISpec = {
                   },
                   assa_abloy_vostio_metadata: {
                     description:
-                      'Vostio-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                      'Vostio-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                     properties: {
                       auto_join: {
                         description:
@@ -9291,42 +9291,42 @@ const openapi: OpenAPISpec = {
                   },
                   card_number: {
                     description:
-                      'Number of the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                      'Number of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                     nullable: true,
                     type: 'string',
                   },
                   code: {
                     description:
-                      'Access (PIN) code for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                      'Access (PIN) code for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                     nullable: true,
                     type: 'string',
                   },
                   connected_account_id: {
                     description:
-                      'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                      'ID of the [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) to which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
                     format: 'uuid',
                     type: 'string',
                   },
                   created_at: {
                     description:
-                      'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was created.',
+                      'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created.',
                     format: 'date-time',
                     type: 'string',
                   },
                   display_name: {
                     description:
-                      'Display name that corresponds to the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.',
+                      'Display name that corresponds to the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type.',
                     minLength: 1,
                     type: 'string',
                   },
                   ends_at: {
                     description:
-                      'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                      'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
                     type: 'string',
                   },
                   errors: {
                     description:
-                      'Errors associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                      'Errors associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                     items: {
                       properties: {
                         created_at: {
@@ -9345,7 +9345,7 @@ const openapi: OpenAPISpec = {
                   },
                   external_type: {
                     description:
-                      'Brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
+                      'Brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
                     enum: [
                       'pti_card',
                       'brivo_credential',
@@ -9366,17 +9366,17 @@ const openapi: OpenAPISpec = {
                   },
                   external_type_display_name: {
                     description:
-                      'Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.',
+                      'Display name that corresponds to the brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type.',
                     type: 'string',
                   },
                   is_issued: {
                     description:
-                      'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been encoded onto a card.',
+                      'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been encoded onto a card.',
                     type: 'boolean',
                   },
                   is_latest_desired_state_synced_with_provider: {
                     description:
-                      'Indicates whether the latest state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider.',
+                      'Indicates whether the latest state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider.',
                     nullable: true,
                     type: 'boolean',
                   },
@@ -9388,48 +9388,48 @@ const openapi: OpenAPISpec = {
                   },
                   is_multi_phone_sync_credential: {
                     description:
-                      'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                      'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
                     type: 'boolean',
                   },
                   is_one_time_use: {
                     description:
-                      'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.',
+                      'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.',
                     type: 'boolean',
                   },
                   issued_at: {
                     description:
-                      'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was encoded onto a card.',
+                      'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was encoded onto a card.',
                     format: 'date-time',
                     nullable: true,
                     type: 'string',
                   },
                   latest_desired_state_synced_with_provider_at: {
                     description:
-                      'Date and time at which the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider.',
+                      'Date and time at which the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider.',
                     format: 'date-time',
                     nullable: true,
                     type: 'string',
                   },
                   parent_acs_credential_id: {
                     description:
-                      'ID of the parent [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                      'ID of the parent [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                     format: 'uuid',
                     type: 'string',
                   },
                   starts_at: {
                     description:
-                      'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                      'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
                   user_identity_id: {
                     description:
-                      'ID of the [user identity](https://docs.seam.co/api/user_identities) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                      'ID of the [user identity](https://www.seam.co/docs/api/user_identities/object) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
                     format: 'uuid',
                     type: 'string',
                   },
                   visionline_metadata: {
                     description:
-                      'Visionline-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                      'Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                     properties: {
                       auto_join: {
                         description:
@@ -9480,15 +9480,15 @@ const openapi: OpenAPISpec = {
                   },
                   warnings: {
                     description:
-                      'Warnings associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                      'Warnings associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                     items: {
                       description:
-                        'Warning associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                        'Warning associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                       discriminator: { propertyName: 'warning_code' },
                       oneOf: [
                         {
                           description:
-                            'Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is waiting to be issued.',
+                            'Indicates that the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is waiting to be issued.',
                           properties: {
                             created_at: {
                               description:
@@ -9513,7 +9513,7 @@ const openapi: OpenAPISpec = {
                         },
                         {
                           description:
-                            "Indicates that the schedule of one of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials)'s children was modified externally.",
+                            "Indicates that the schedule of one of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials)'s children was modified externally.",
                           properties: {
                             created_at: {
                               description:
@@ -9538,7 +9538,7 @@ const openapi: OpenAPISpec = {
                         },
                         {
                           description:
-                            'Indicates that the schedule of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.',
+                            'Indicates that the schedule of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.',
                           properties: {
                             created_at: {
                               description:
@@ -9563,7 +9563,7 @@ const openapi: OpenAPISpec = {
                         },
                         {
                           description:
-                            'Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is being deleted.',
+                            'Indicates that the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is being deleted.',
                           properties: {
                             created_at: {
                               description:
@@ -9588,7 +9588,7 @@ const openapi: OpenAPISpec = {
                         },
                         {
                           description:
-                            'An unknown issue occurred while syncing the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
+                            'An unknown issue occurred while syncing the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
                           properties: {
                             created_at: {
                               description:
@@ -9613,7 +9613,7 @@ const openapi: OpenAPISpec = {
                         },
                         {
                           description:
-                            'Access permissions for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
+                            'Access permissions for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
                           properties: {
                             created_at: {
                               description:
@@ -9683,7 +9683,7 @@ const openapi: OpenAPISpec = {
                   },
                   workspace_id: {
                     description:
-                      'ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                      'ID of the workspace that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -9902,15 +9902,15 @@ const openapi: OpenAPISpec = {
                   },
                   errors: {
                     description:
-                      'Errors associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+                      'Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant).',
                     items: {
                       description:
-                        'Error associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+                        'Error associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant).',
                       discriminator: { propertyName: 'error_code' },
                       oneOf: [
                         {
                           description:
-                            'Indicates that Seam was unable to issue this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access method is eventually issued.',
+                            'Indicates that Seam was unable to issue this [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access method is eventually issued.',
                           properties: {
                             created_at: {
                               description:
@@ -9984,7 +9984,7 @@ const openapi: OpenAPISpec = {
                   },
                   pending_mutations: {
                     description:
-                      'Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.',
+                      'Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.',
                     items: {
                       discriminator: { propertyName: 'mutation_code' },
                       oneOf: [
@@ -10179,15 +10179,15 @@ const openapi: OpenAPISpec = {
                   },
                   warnings: {
                     description:
-                      'Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+                      'Warnings associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant).',
                     items: {
                       description:
-                        'Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+                        'Warning associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant).',
                       discriminator: { propertyName: 'warning_code' },
                       oneOf: [
                         {
                           description:
-                            'Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) is being deleted.',
+                            'Indicates that the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) is being deleted.',
                           properties: {
                             created_at: {
                               description:
@@ -10212,7 +10212,7 @@ const openapi: OpenAPISpec = {
                         },
                         {
                           description:
-                            'Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) are being updated.',
+                            'Indicates that the access times for this [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) are being updated.',
                           properties: {
                             created_at: {
                               description:
@@ -10268,7 +10268,7 @@ const openapi: OpenAPISpec = {
                         },
                         {
                           description:
-                            'Indicates that Seam has not yet issued this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant), even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
+                            'Indicates that Seam has not yet issued this [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant), even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
                           properties: {
                             created_at: {
                               description:
@@ -10293,7 +10293,7 @@ const openapi: OpenAPISpec = {
                         },
                         {
                           description:
-                            "Indicates that the access system delivers this mobile key through an app invitation sent to the recipient's email address, but the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities) for this [access grant](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) has no email address, so the mobile key cannot be delivered. Set an email address on the user identity when you create the access grant.",
+                            "Indicates that the access system delivers this mobile key through an app invitation sent to the recipient's email address, but the [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities) for this [access grant](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) has no email address, so the mobile key cannot be delivered. Set an email address on the user identity when you create the access grant.",
                           properties: {
                             created_at: {
                               description:
@@ -10318,7 +10318,7 @@ const openapi: OpenAPISpec = {
                         },
                         {
                           description:
-                            "Indicates that the access system delivers this mobile key to the recipient's phone number, but the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities) for this [access grant](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) has no phone number, so the mobile key cannot be delivered. Set a phone number on the user identity when you create the access grant.",
+                            "Indicates that the access system delivers this mobile key to the recipient's phone number, but the [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities) for this [access grant](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) has no phone number, so the mobile key cannot be delivered. Set a phone number on the user identity when you create the access grant.",
                           properties: {
                             created_at: {
                               description:
@@ -12275,7 +12275,7 @@ const openapi: OpenAPISpec = {
       },
       bridge_client_session: {
         description:
-          'Represents a [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) client session.',
+          'Represents a [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge) client session.',
         properties: {
           bridge_client_machine_identifier_key: {
             description:
@@ -12470,16 +12470,16 @@ const openapi: OpenAPISpec = {
       },
       bridge_connected_systems: {
         description:
-          'Represents an access system connected to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+          'Represents an access system connected to [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge).',
         properties: {
           acs_system_display_name: {
             description:
-              'Display name for the [access system](https://docs.seam.co/low-level-apis/access-systems) associated with Seam Bridge.',
+              'Display name for the [access system](https://www.seam.co/docs/low-level-apis/access-systems) associated with Seam Bridge.',
             type: 'string',
           },
           acs_system_id: {
             description:
-              'ID of the [access system](https://docs.seam.co/low-level-apis/access-systems) associated with Seam Bridge.',
+              'ID of the [access system](https://www.seam.co/docs/low-level-apis/access-systems) associated with Seam Bridge.',
             format: 'uuid',
             type: 'string',
           },
@@ -12507,7 +12507,7 @@ const openapi: OpenAPISpec = {
           },
           workspace_display_name: {
             description:
-              'Display name for the [workspace](https://docs.seam.co/core-concepts/workspaces) with which Seam Bridge is paired.',
+              'Display name for the [workspace](https://www.seam.co/docs/core-concepts/workspaces) with which Seam Bridge is paired.',
             type: 'string',
           },
           workspace_id: {
@@ -12533,7 +12533,7 @@ const openapi: OpenAPISpec = {
       },
       client_session: {
         description:
-          "Represents a [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens). If you want to restrict your users' access to their own devices, use client sessions.\n\nYou create each client session with a custom `user_identifier_key`. Normally, the `user_identifier_key` is a user ID that your application provides.\n\nWhen calling the Seam API from your backend using an API key, you can pass the `user_identifier_key` as a parameter to limit results to the associated client session. For example, `/devices/list?user_identifier_key=123` only returns devices associated with the client session created with the `user_identifier_key` `123`.\n\nA client session has a token that you can use with the Seam JavaScript SDK to make requests from the client (browser) directly to the Seam API. The token restricts the user's access to only the devices that they own.\n\nSee also [Get Started with React](https://docs.seam.co/ui-components/overview/getting-started-with-seam-components/get-started-with-react-components-and-client-session-tokens).",
+          "Represents a [client session](https://www.seam.co/docs/core-concepts/authentication/client-session-tokens). If you want to restrict your users' access to their own devices, use client sessions.\n\nYou create each client session with a custom `user_identifier_key`. Normally, the `user_identifier_key` is a user ID that your application provides.\n\nWhen calling the Seam API from your backend using an API key, you can pass the `user_identifier_key` as a parameter to limit results to the associated client session. For example, `/devices/list?user_identifier_key=123` only returns devices associated with the client session created with the `user_identifier_key` `123`.\n\nA client session has a token that you can use with the Seam JavaScript SDK to make requests from the client (browser) directly to the Seam API. The token restricts the user's access to only the devices that they own.\n\nSee also [Get Started with React](https://www.seam.co/docs/ui-components/overview/getting-started-with-seam-components/get-started-with-react-components-and-client-session-tokens).",
         properties: {
           client_session_id: {
             description: 'ID of the client session.',
@@ -12542,60 +12542,60 @@ const openapi: OpenAPISpec = {
           },
           connect_webview_ids: {
             description:
-              'IDs of the [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) associated with the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens).',
+              'IDs of the [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews) associated with the [client session](https://www.seam.co/docs/core-concepts/authentication/client-session-tokens).',
             items: { format: 'uuid', type: 'string' },
             type: 'array',
           },
           connected_account_ids: {
             description:
-              'IDs of the [connected accounts](https://docs.seam.co/core-concepts/connected-accounts) associated with the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens).',
+              'IDs of the [connected accounts](https://www.seam.co/docs/core-concepts/connected-accounts) associated with the [client session](https://www.seam.co/docs/core-concepts/authentication/client-session-tokens).',
             items: { format: 'uuid', type: 'string' },
             type: 'array',
           },
           created_at: {
             description:
-              'Date and time at which the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens) was created.',
+              'Date and time at which the [client session](https://www.seam.co/docs/core-concepts/authentication/client-session-tokens) was created.',
             format: 'date-time',
             type: 'string',
           },
           customer_key: {
             description:
-              'Customer key associated with the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens).',
+              'Customer key associated with the [client session](https://www.seam.co/docs/core-concepts/authentication/client-session-tokens).',
             type: 'string',
           },
           device_count: {
             description:
-              'Number of devices associated with the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens).',
+              'Number of devices associated with the [client session](https://www.seam.co/docs/core-concepts/authentication/client-session-tokens).',
             format: 'float',
             type: 'number',
           },
           expires_at: {
             description:
-              'Date and time at which the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens) expires.',
+              'Date and time at which the [client session](https://www.seam.co/docs/core-concepts/authentication/client-session-tokens) expires.',
             format: 'date-time',
             type: 'string',
           },
           token: {
             description:
-              'Client session token associated with the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens).',
+              'Client session token associated with the [client session](https://www.seam.co/docs/core-concepts/authentication/client-session-tokens).',
             type: 'string',
           },
           user_identifier_key: {
             description:
-              'Your user ID for the user associated with the [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens).',
+              'Your user ID for the user associated with the [client session](https://www.seam.co/docs/core-concepts/authentication/client-session-tokens).',
             nullable: true,
             type: 'string',
           },
           user_identity_id: {
             description:
-              'ID of the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with the client session.',
+              'ID of the [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with the client session.',
             format: 'uuid',
             type: 'string',
           },
           user_identity_ids: {
             deprecated: true,
             description:
-              'IDs of the [user identities](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with the client session.',
+              'IDs of the [user identities](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with the client session.',
             items: { format: 'uuid', type: 'string' },
             type: 'array',
             'x-deprecated': 'Use `user_identity_id` instead.',
@@ -12624,7 +12624,7 @@ const openapi: OpenAPISpec = {
       },
       connect_webview: {
         description:
-          'Represents a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).\n\nConnect Webviews are fully-embedded client-side components that you add to your app. Your users interact with your embedded Connect Webviews to link their IoT device or system accounts to Seam. That is, Connect Webviews walk your users through the process of logging in to their device or system accounts. Seam handles all the authentication steps, and—once your user has completed the authorization through your app—you can access and control their devices or systems using the Seam API.\n\nConnect Webviews perform credential validation, multifactor authentication (when applicable), and error handling for each brand that Seam supports. Further, Connect Webviews work across all modern browsers and platforms, including Chrome, Safari, and Firefox.\n\nTo enable a user to connect their device or system account to Seam through your app, first create a `connect_webview`. Once created, this `connect_webview` includes a URL that you can use to open an [iframe](https://www.w3schools.com/html/html_iframe.asp) or new window containing the Connect Webview for your user.\n\nWhen you create a Connect Webview, specify the desired provider category key in the `provider_category` parameter. Alternately, to specify a list of providers explicitly, use the `accepted_providers` parameter with a list of device provider keys.\n\nTo list all providers within a category, use `/devices/list_device_providers` with the desired `provider_category` filter. To list all provider keys, use `/devices/list_device_providers` with no filters.',
+          'Represents a [Connect Webview](https://www.seam.co/docs/core-concepts/connect-webviews).\n\nConnect Webviews are fully-embedded client-side components that you add to your app. Your users interact with your embedded Connect Webviews to link their IoT device or system accounts to Seam. That is, Connect Webviews walk your users through the process of logging in to their device or system accounts. Seam handles all the authentication steps, and—once your user has completed the authorization through your app—you can access and control their devices or systems using the Seam API.\n\nConnect Webviews perform credential validation, multifactor authentication (when applicable), and error handling for each brand that Seam supports. Further, Connect Webviews work across all modern browsers and platforms, including Chrome, Safari, and Firefox.\n\nTo enable a user to connect their device or system account to Seam through your app, first create a `connect_webview`. Once created, this `connect_webview` includes a URL that you can use to open an [iframe](https://www.w3schools.com/html/html_iframe.asp) or new window containing the Connect Webview for your user.\n\nWhen you create a Connect Webview, specify the desired provider category key in the `provider_category` parameter. Alternately, to specify a list of providers explicitly, use the `accepted_providers` parameter with a list of device provider keys.\n\nTo list all providers within a category, use `/devices/list_device_providers` with the desired `provider_category` filter. To list all provider keys, use `/devices/list_device_providers` with no filters.',
         properties: {
           accepted_capabilities: {
             description:
@@ -12652,7 +12652,7 @@ const openapi: OpenAPISpec = {
           },
           accepted_providers: {
             description:
-              'List of accepted [provider keys](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).',
+              'List of accepted [provider keys](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).',
             items: { type: 'string' },
             type: 'array',
           },
@@ -12675,7 +12675,7 @@ const openapi: OpenAPISpec = {
           },
           automatically_manage_new_devices: {
             description:
-              'Indicates whether Seam should [import all new devices](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.',
+              'Indicates whether Seam should [import all new devices](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for use and management by the Seam API.',
             type: 'boolean',
           },
           connect_webview_id: {
@@ -12701,7 +12701,7 @@ const openapi: OpenAPISpec = {
               oneOf: [{ type: 'string' }, { type: 'boolean' }],
             },
             description:
-              'Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. Keys set to `null` or to an empty string are omitted.',
+              'Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://www.seam.co/docs/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://www.seam.co/docs/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://www.seam.co/docs/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. Keys set to `null` or to an empty string are omitted.',
             type: 'object',
           },
           custom_redirect_failure_url: {
@@ -12736,7 +12736,7 @@ const openapi: OpenAPISpec = {
           },
           selected_provider: {
             description:
-              'Selected provider of the Connect Webview, one of the [provider keys](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).',
+              'Selected provider of the Connect Webview, one of the [provider keys](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).',
             nullable: true,
             type: 'string',
           },
@@ -12754,7 +12754,7 @@ const openapi: OpenAPISpec = {
           },
           wait_for_device_creation: {
             description:
-              'Indicates whether Seam should [finish syncing all devices](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#wait_for_device_creation) in a newly-connected account before completing the associated Connect Webview.',
+              'Indicates whether Seam should [finish syncing all devices](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#wait_for_device_creation) in a newly-connected account before completing the associated Connect Webview.',
             type: 'boolean',
           },
           workspace_id: {
@@ -12791,7 +12791,7 @@ const openapi: OpenAPISpec = {
       },
       connected_account: {
         description:
-          'Represents a [connected account](https://docs.seam.co/core-concepts/connected-accounts). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks.',
+          'Represents a [connected account](https://www.seam.co/docs/core-concepts/connected-accounts). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks.',
         properties: {
           accepted_capabilities: {
             description:
@@ -12820,7 +12820,7 @@ const openapi: OpenAPISpec = {
           },
           automatically_manage_new_devices: {
             description:
-              'Indicates whether Seam should [import all new devices](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for management by the Seam API.',
+              'Indicates whether Seam should [import all new devices](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for management by the Seam API.',
             type: 'boolean',
           },
           connected_account_id: {
@@ -12839,7 +12839,7 @@ const openapi: OpenAPISpec = {
               oneOf: [{ type: 'string' }, { type: 'boolean' }],
             },
             description:
-              'Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. Keys set to `null` or to an empty string are omitted.',
+              'Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://www.seam.co/docs/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://www.seam.co/docs/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://www.seam.co/docs/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. Keys set to `null` or to an empty string are omitted.',
             type: 'object',
           },
           customer_key: {
@@ -12883,7 +12883,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_bridge_error: {
                       description:
-                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+                        'Indicates whether the error is related to [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge).',
                       type: 'boolean',
                     },
                     is_connected_account_error: {
@@ -12903,7 +12903,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://www.seam.co/docs/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -12919,7 +12919,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_bridge_error: {
                       description:
-                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+                        'Indicates whether the error is related to [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge).',
                       type: 'boolean',
                     },
                     is_connected_account_error: {
@@ -12955,7 +12955,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_bridge_error: {
                       description:
-                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+                        'Indicates whether the error is related to [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge).',
                       type: 'boolean',
                     },
                     is_connected_account_error: {
@@ -13037,7 +13037,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_bridge_error: {
                       description:
-                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+                        'Indicates whether the error is related to [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge).',
                       type: 'boolean',
                     },
                     is_connected_account_error: {
@@ -13491,7 +13491,7 @@ const openapi: OpenAPISpec = {
       },
       device: {
         description:
-          'Represents a [device](https://docs.seam.co/core-concepts/devices) that has been connected to Seam.',
+          'Represents a [device](https://www.seam.co/docs/core-concepts/devices) that has been connected to Seam.',
         properties: {
           can_configure_auto_lock: {
             description:
@@ -13592,10 +13592,10 @@ const openapi: OpenAPISpec = {
           },
           capabilities_supported: {
             description:
-              '\n        Collection of capabilities that the device supports when connected to Seam. Values are `access_code`, which indicates that the device can manage and utilize digital PIN codes for secure access; `lock`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; `noise_detection`, which indicates that the device supports monitoring and responding to ambient noise levels; `thermostat`, which indicates that the device can regulate and adjust indoor temperatures; `battery`, which indicates that the device can manage battery life and health; and `phone`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://docs.seam.co/capability-guides/device-and-system-capabilities#capability-flags).\n        ',
+              '\n        Collection of capabilities that the device supports when connected to Seam. Values are `access_code`, which indicates that the device can manage and utilize digital PIN codes for secure access; `lock`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; `noise_detection`, which indicates that the device supports monitoring and responding to ambient noise levels; `thermostat`, which indicates that the device can regulate and adjust indoor temperatures; `battery`, which indicates that the device can manage battery life and health; and `phone`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://www.seam.co/docs/capability-guides/device-and-system-capabilities#capability-flags).\n        ',
             items: {
               description:
-                '\n        Collection of capabilities that the device supports when connected to Seam. **Important:** Superseded by [capability flags](https://docs.seam.co/capability-guides/device-and-system-capabilities#capability-flags).\n        ',
+                '\n        Collection of capabilities that the device supports when connected to Seam. **Important:** Superseded by [capability flags](https://www.seam.co/docs/capability-guides/device-and-system-capabilities#capability-flags).\n        ',
               enum: [
                 'access_code',
                 'lock',
@@ -13625,7 +13625,7 @@ const openapi: OpenAPISpec = {
               oneOf: [{ type: 'string' }, { type: 'boolean' }],
             },
             description:
-              'Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. Keys set to `null` or to an empty string are omitted.',
+              'Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://www.seam.co/docs/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://www.seam.co/docs/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://www.seam.co/docs/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. Keys set to `null` or to an empty string are omitted.',
             type: 'object',
           },
           device_id: {
@@ -13791,7 +13791,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_connected_account_error: {
                       description:
-                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                        'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
                       enum: [true],
                       type: 'boolean',
                     },
@@ -13835,7 +13835,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_connected_account_error: {
                       description:
-                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                        'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
                       enum: [true],
                       type: 'boolean',
                     },
@@ -13880,7 +13880,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_connected_account_error: {
                       description:
-                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                        'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
                       enum: [true],
                       type: 'boolean',
                     },
@@ -13924,7 +13924,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_connected_account_error: {
                       description:
-                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                        'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
                       enum: [true],
                       type: 'boolean',
                     },
@@ -14099,7 +14099,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.',
+                    'Indicates that the [backup access code pool](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.',
                   properties: {
                     created_at: {
                       description:
@@ -14285,7 +14285,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://www.seam.co/docs/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -14301,7 +14301,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_bridge_error: {
                       description:
-                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+                        'Indicates whether the error is related to [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge).',
                       type: 'boolean',
                     },
                     is_connected_account_error: {
@@ -14334,7 +14334,7 @@ const openapi: OpenAPISpec = {
           },
           is_managed: {
             description:
-              'Indicates whether Seam manages the device. See also [Managed and Unmanaged Devices](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices).',
+              'Indicates whether Seam manages the device. See also [Managed and Unmanaged Devices](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices).',
             enum: [true],
             type: 'boolean',
           },
@@ -16058,7 +16058,7 @@ const openapi: OpenAPISpec = {
                       },
                       backup_access_code_pool_enabled: {
                         description:
-                          'Indicates whether the [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is currently enabled for the device. To disable it, set this to `false` using [/devices/update](https://docs.seam.co/api/devices/update).',
+                          'Indicates whether the [backup access code pool](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/backup-access-codes) is currently enabled for the device. To disable it, set this to `false` using [/devices/update](https://www.seam.co/docs/api/devices/update).',
                         type: 'boolean',
                         'x-property-group-key': 'access_codes',
                       },
@@ -16331,7 +16331,7 @@ const openapi: OpenAPISpec = {
                       },
                       supports_backup_access_code_pool: {
                         description:
-                          'Indicates whether the device supports a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes).',
+                          'Indicates whether the device supports a [backup access code pool](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/backup-access-codes).',
                         type: 'boolean',
                         'x-property-group-key': 'access_codes',
                       },
@@ -16343,35 +16343,35 @@ const openapi: OpenAPISpec = {
                       active_thermostat_schedule: {
                         deprecated: true,
                         description:
-                          'Active [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+                          'Active [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
                         nullable: true,
                         properties: {
                           climate_preset_key: {
                             description:
-                              'Key of the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+                              'Key of the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
                             type: 'string',
                           },
                           created_at: {
                             description:
-                              'Date and time at which the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created.',
+                              'Date and time at which the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created.',
                             format: 'date-time',
                             type: 'string',
                           },
                           device_id: {
                             description:
-                              'ID of the desired [thermostat](https://docs.seam.co/capability-guides/thermostats) device.',
+                              'ID of the desired [thermostat](https://www.seam.co/docs/capability-guides/thermostats) device.',
                             format: 'uuid',
                             type: 'string',
                           },
                           ends_at: {
                             description:
-                              'Date and time at which the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                              'Date and time at which the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                             format: 'date-time',
                             type: 'string',
                           },
                           errors: {
                             description:
-                              'Errors associated with the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+                              'Errors associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
                             items: {
                               properties: {
                                 created_at: {
@@ -16398,12 +16398,12 @@ const openapi: OpenAPISpec = {
                           },
                           is_override_allowed: {
                             description:
-                              "Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts.",
+                              "Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts.",
                             type: 'boolean',
                           },
                           max_override_period_minutes: {
                             description:
-                              "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
+                              "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                             exclusiveMinimum: true,
                             minimum: 0,
                             nullable: true,
@@ -16411,19 +16411,19 @@ const openapi: OpenAPISpec = {
                           },
                           name: {
                             description:
-                              'User-friendly name to identify the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+                              'User-friendly name to identify the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
                             nullable: true,
                             type: 'string',
                           },
                           starts_at: {
                             description:
-                              'Date and time at which the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                              'Date and time at which the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                             format: 'date-time',
                             type: 'string',
                           },
                           thermostat_schedule_id: {
                             description:
-                              'ID of the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+                              'ID of the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -16453,7 +16453,7 @@ const openapi: OpenAPISpec = {
                       },
                       active_thermostat_schedule_id: {
                         description:
-                          'ID of the active [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+                          'ID of the active [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
                         format: 'uuid',
                         nullable: true,
                         type: 'string',
@@ -16481,27 +16481,27 @@ const openapi: OpenAPISpec = {
                       },
                       available_climate_presets: {
                         description:
-                          'Available [climate presets](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) for the thermostat.',
+                          'Available [climate presets](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) for the thermostat.',
                         items: {
                           properties: {
                             can_delete: {
                               description:
-                                'Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.',
+                                'Indicates whether the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.',
                               type: 'boolean',
                             },
                             can_edit: {
                               description:
-                                'Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.',
+                                'Indicates whether the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.',
                               type: 'boolean',
                             },
                             can_use_with_thermostat_daily_programs: {
                               description:
-                                'Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.',
+                                'Indicates whether the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.',
                               type: 'boolean',
                             },
                             climate_preset_key: {
                               description:
-                                'Unique key to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).',
+                                'Unique key to identify the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets).',
                               type: 'string',
                             },
                             climate_preset_mode: {
@@ -16519,19 +16519,19 @@ const openapi: OpenAPISpec = {
                             },
                             cooling_set_point_celsius: {
                               description:
-                                'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                                'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                               format: 'float',
                               type: 'number',
                             },
                             cooling_set_point_fahrenheit: {
                               description:
-                                'Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                                'Temperature to which the thermostat should cool (in °F). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                               format: 'float',
                               type: 'number',
                             },
                             display_name: {
                               description:
-                                'Display name for the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).',
+                                'Display name for the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets).',
                               type: 'string',
                             },
                             ecobee_metadata: {
@@ -16559,32 +16559,32 @@ const openapi: OpenAPISpec = {
                             },
                             fan_mode_setting: {
                               description:
-                                'Desired [fan mode setting](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.',
+                                'Desired [fan mode setting](https://www.seam.co/docs/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.',
                               enum: ['auto', 'on', 'circulate'],
                               type: 'string',
                             },
                             heating_set_point_celsius: {
                               description:
-                                'Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                                'Temperature to which the thermostat should heat (in °C). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                               format: 'float',
                               type: 'number',
                             },
                             heating_set_point_fahrenheit: {
                               description:
-                                'Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                                'Temperature to which the thermostat should heat (in °F). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                               format: 'float',
                               type: 'number',
                             },
                             hvac_mode_setting: {
                               description:
-                                'Desired [HVAC mode](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
+                                'Desired [HVAC mode](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
                               enum: ['off', 'heat', 'cool', 'heat_cool', 'eco'],
                               type: 'string',
                             },
                             manual_override_allowed: {
                               deprecated: true,
                               description:
-                                "Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
+                                "Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                               type: 'boolean',
                               'x-deprecated':
                                 "Use 'thermostat_schedule.is_override_allowed'",
@@ -16592,7 +16592,7 @@ const openapi: OpenAPISpec = {
                             name: {
                               default: null,
                               description:
-                                'User-friendly name to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).',
+                                'User-friendly name to identify the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets).',
                               nullable: true,
                               type: 'string',
                             },
@@ -16639,22 +16639,22 @@ const openapi: OpenAPISpec = {
                         properties: {
                           can_delete: {
                             description:
-                              'Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.',
+                              'Indicates whether the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.',
                             type: 'boolean',
                           },
                           can_edit: {
                             description:
-                              'Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.',
+                              'Indicates whether the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.',
                             type: 'boolean',
                           },
                           can_use_with_thermostat_daily_programs: {
                             description:
-                              'Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.',
+                              'Indicates whether the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.',
                             type: 'boolean',
                           },
                           climate_preset_key: {
                             description:
-                              'Unique key to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).',
+                              'Unique key to identify the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets).',
                             type: 'string',
                           },
                           climate_preset_mode: {
@@ -16672,19 +16672,19 @@ const openapi: OpenAPISpec = {
                           },
                           cooling_set_point_celsius: {
                             description:
-                              'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                              'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                             format: 'float',
                             type: 'number',
                           },
                           cooling_set_point_fahrenheit: {
                             description:
-                              'Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                              'Temperature to which the thermostat should cool (in °F). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                             format: 'float',
                             type: 'number',
                           },
                           display_name: {
                             description:
-                              'Display name for the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).',
+                              'Display name for the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets).',
                             type: 'string',
                           },
                           ecobee_metadata: {
@@ -16712,32 +16712,32 @@ const openapi: OpenAPISpec = {
                           },
                           fan_mode_setting: {
                             description:
-                              'Desired [fan mode setting](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.',
+                              'Desired [fan mode setting](https://www.seam.co/docs/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.',
                             enum: ['auto', 'on', 'circulate'],
                             type: 'string',
                           },
                           heating_set_point_celsius: {
                             description:
-                              'Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                              'Temperature to which the thermostat should heat (in °C). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                             format: 'float',
                             type: 'number',
                           },
                           heating_set_point_fahrenheit: {
                             description:
-                              'Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                              'Temperature to which the thermostat should heat (in °F). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                             format: 'float',
                             type: 'number',
                           },
                           hvac_mode_setting: {
                             description:
-                              'Desired [HVAC mode](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
+                              'Desired [HVAC mode](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
                             enum: ['off', 'heat', 'cool', 'heat_cool', 'eco'],
                             type: 'string',
                           },
                           manual_override_allowed: {
                             deprecated: true,
                             description:
-                              "Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
+                              "Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                             type: 'boolean',
                             'x-deprecated':
                               "Use 'thermostat_schedule.is_override_allowed'",
@@ -16745,7 +16745,7 @@ const openapi: OpenAPISpec = {
                           name: {
                             default: null,
                             description:
-                              'User-friendly name to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).',
+                              'User-friendly name to identify the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets).',
                             nullable: true,
                             type: 'string',
                           },
@@ -16758,22 +16758,22 @@ const openapi: OpenAPISpec = {
                         properties: {
                           can_delete: {
                             description:
-                              'Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.',
+                              'Indicates whether the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted.',
                             type: 'boolean',
                           },
                           can_edit: {
                             description:
-                              'Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.',
+                              'Indicates whether the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited.',
                             type: 'boolean',
                           },
                           can_use_with_thermostat_daily_programs: {
                             description:
-                              'Indicates whether the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.',
+                              'Indicates whether the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program.',
                             type: 'boolean',
                           },
                           climate_preset_key: {
                             description:
-                              'Unique key to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).',
+                              'Unique key to identify the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets).',
                             type: 'string',
                           },
                           climate_preset_mode: {
@@ -16791,19 +16791,19 @@ const openapi: OpenAPISpec = {
                           },
                           cooling_set_point_celsius: {
                             description:
-                              'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                              'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                             format: 'float',
                             type: 'number',
                           },
                           cooling_set_point_fahrenheit: {
                             description:
-                              'Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                              'Temperature to which the thermostat should cool (in °F). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                             format: 'float',
                             type: 'number',
                           },
                           display_name: {
                             description:
-                              'Display name for the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).',
+                              'Display name for the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets).',
                             type: 'string',
                           },
                           ecobee_metadata: {
@@ -16831,32 +16831,32 @@ const openapi: OpenAPISpec = {
                           },
                           fan_mode_setting: {
                             description:
-                              'Desired [fan mode setting](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.',
+                              'Desired [fan mode setting](https://www.seam.co/docs/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.',
                             enum: ['auto', 'on', 'circulate'],
                             type: 'string',
                           },
                           heating_set_point_celsius: {
                             description:
-                              'Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                              'Temperature to which the thermostat should heat (in °C). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                             format: 'float',
                             type: 'number',
                           },
                           heating_set_point_fahrenheit: {
                             description:
-                              'Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                              'Temperature to which the thermostat should heat (in °F). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                             format: 'float',
                             type: 'number',
                           },
                           hvac_mode_setting: {
                             description:
-                              'Desired [HVAC mode](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
+                              'Desired [HVAC mode](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
                             enum: ['off', 'heat', 'cool', 'heat_cool', 'eco'],
                             type: 'string',
                           },
                           manual_override_allowed: {
                             deprecated: true,
                             description:
-                              "Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
+                              "Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                             type: 'boolean',
                             'x-deprecated':
                               "Use 'thermostat_schedule.is_override_allowed'",
@@ -16864,7 +16864,7 @@ const openapi: OpenAPISpec = {
                           name: {
                             default: null,
                             description:
-                              'User-friendly name to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).',
+                              'User-friendly name to identify the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets).',
                             nullable: true,
                             type: 'string',
                           },
@@ -16876,7 +16876,7 @@ const openapi: OpenAPISpec = {
                       },
                       fallback_climate_preset_key: {
                         description:
-                          'Key of the [fallback climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the thermostat.',
+                          'Key of the [fallback climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the thermostat.',
                         minLength: 1,
                         nullable: true,
                         type: 'string',
@@ -16916,28 +16916,28 @@ const openapi: OpenAPISpec = {
                       },
                       max_cooling_set_point_celsius: {
                         description:
-                          'Maximum [cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.',
+                          'Maximum [cooling set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.',
                         format: 'float',
                         type: 'number',
                         'x-property-group-key': 'thermostats',
                       },
                       max_cooling_set_point_fahrenheit: {
                         description:
-                          'Maximum [cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.',
+                          'Maximum [cooling set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.',
                         format: 'float',
                         type: 'number',
                         'x-property-group-key': 'thermostats',
                       },
                       max_heating_set_point_celsius: {
                         description:
-                          'Maximum [heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.',
+                          'Maximum [heating set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.',
                         format: 'float',
                         type: 'number',
                         'x-property-group-key': 'thermostats',
                       },
                       max_heating_set_point_fahrenheit: {
                         description:
-                          'Maximum [heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.',
+                          'Maximum [heating set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.',
                         format: 'float',
                         type: 'number',
                         'x-property-group-key': 'thermostats',
@@ -16959,42 +16959,42 @@ const openapi: OpenAPISpec = {
                         },
                       min_cooling_set_point_celsius: {
                         description:
-                          'Minimum [cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.',
+                          'Minimum [cooling set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C.',
                         format: 'float',
                         type: 'number',
                         'x-property-group-key': 'thermostats',
                       },
                       min_cooling_set_point_fahrenheit: {
                         description:
-                          'Minimum [cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.',
+                          'Minimum [cooling set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F.',
                         format: 'float',
                         type: 'number',
                         'x-property-group-key': 'thermostats',
                       },
                       min_heating_cooling_delta_celsius: {
                         description:
-                          'Minimum [temperature difference](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °C between the cooling and heating set points when in heat-cool (auto) mode.',
+                          'Minimum [temperature difference](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °C between the cooling and heating set points when in heat-cool (auto) mode.',
                         format: 'float',
                         type: 'number',
                         'x-property-group-key': 'thermostats',
                       },
                       min_heating_cooling_delta_fahrenheit: {
                         description:
-                          'Minimum [temperature difference](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °F between the cooling and heating set points when in heat-cool (auto) mode.',
+                          'Minimum [temperature difference](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °F between the cooling and heating set points when in heat-cool (auto) mode.',
                         format: 'float',
                         type: 'number',
                         'x-property-group-key': 'thermostats',
                       },
                       min_heating_set_point_celsius: {
                         description:
-                          'Minimum [heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.',
+                          'Minimum [heating set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C.',
                         format: 'float',
                         type: 'number',
                         'x-property-group-key': 'thermostats',
                       },
                       min_heating_set_point_fahrenheit: {
                         description:
-                          'Minimum [heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.',
+                          'Minimum [heating set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F.',
                         format: 'float',
                         type: 'number',
                         'x-property-group-key': 'thermostats',
@@ -17022,32 +17022,32 @@ const openapi: OpenAPISpec = {
                       },
                       temperature_threshold: {
                         description:
-                          'Current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.',
+                          'Current [temperature threshold](https://www.seam.co/docs/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.',
                         properties: {
                           lower_limit_celsius: {
                             description:
-                              'Lower limit in °C within the current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.\n          ',
+                              'Lower limit in °C within the current [temperature threshold](https://www.seam.co/docs/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.\n          ',
                             format: 'float',
                             nullable: true,
                             type: 'number',
                           },
                           lower_limit_fahrenheit: {
                             description:
-                              'Lower limit in °F within the current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.\n          ',
+                              'Lower limit in °F within the current [temperature threshold](https://www.seam.co/docs/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.\n          ',
                             format: 'float',
                             nullable: true,
                             type: 'number',
                           },
                           upper_limit_celsius: {
                             description:
-                              'Upper limit in °C within the current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.\n          ',
+                              'Upper limit in °C within the current [temperature threshold](https://www.seam.co/docs/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.\n          ',
                             format: 'float',
                             nullable: true,
                             type: 'number',
                           },
                           upper_limit_fahrenheit: {
                             description:
-                              'Upper limit in °F within the current [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.\n          ',
+                              'Upper limit in °F within the current [temperature threshold](https://www.seam.co/docs/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.\n          ',
                             format: 'float',
                             nullable: true,
                             type: 'number',
@@ -17071,7 +17071,7 @@ const openapi: OpenAPISpec = {
                       },
                       thermostat_daily_programs: {
                         description:
-                          'Configured [daily programs](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.',
+                          'Configured [daily programs](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.',
                         items: {
                           description:
                             'Represents a thermostat daily program, consisting of a set of periods, each of which has a starting time and the key that identifies the climate preset to apply at the starting time.',
@@ -17103,7 +17103,7 @@ const openapi: OpenAPISpec = {
                                 properties: {
                                   climate_preset_key: {
                                     description:
-                                      'Key of the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.',
+                                      'Key of the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.',
                                     type: 'string',
                                   },
                                   starts_at_time: {
@@ -17151,7 +17151,7 @@ const openapi: OpenAPISpec = {
                       },
                       thermostat_weekly_program: {
                         description:
-                          'Current [weekly program](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.',
+                          'Current [weekly program](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat.',
                         nullable: true,
                         properties: {
                           created_at: {
@@ -18248,7 +18248,7 @@ const openapi: OpenAPISpec = {
       },
       enrollment_automation: {
         description:
-          'Represents an [enrollment automation](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) within the [Seam mobile access solution](https://docs.seam.co/capability-guides/mobile-access/).',
+          'Represents an [enrollment automation](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) within the [Seam mobile access solution](https://www.seam.co/docs/capability-guides/mobile-access).',
         properties: {
           created_at: {
             description:
@@ -18258,7 +18258,7 @@ const openapi: OpenAPISpec = {
           },
           credential_manager_acs_system_id: {
             description:
-              'ID of the associated [ACS system](https://docs.seam.co/low-level-apis/access-systems) that serves as the credential manager.',
+              'ID of the associated [ACS system](https://www.seam.co/docs/low-level-apis/access-systems) that serves as the credential manager.',
             format: 'uuid',
             type: 'string',
           },
@@ -18269,7 +18269,7 @@ const openapi: OpenAPISpec = {
           },
           user_identity_id: {
             description:
-              'ID of the associated [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+              'ID of the associated [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
             format: 'uuid',
             type: 'string',
           },
@@ -18298,7 +18298,7 @@ const openapi: OpenAPISpec = {
         oneOf: [
           {
             description:
-              'An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was created.',
+              'An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was created.',
             properties: {
               access_code_id: {
                 description: 'ID of the affected access code.',
@@ -18375,7 +18375,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed.',
+              'An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was changed.',
             properties: {
               access_code_id: {
                 description: 'ID of the affected access code.',
@@ -18486,7 +18486,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'The name of an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed on the device.',
+              'The name of an [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was changed on the device.',
             properties: {
               access_code_id: {
                 description: 'ID of the affected access code.',
@@ -18598,7 +18598,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'The pin code of an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed on the device.',
+              'The pin code of an [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was changed on the device.',
             properties: {
               access_code_id: {
                 description: 'ID of the affected access code.',
@@ -18710,7 +18710,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'The time frame of an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed on the device.',
+              'The time frame of an [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was changed on the device.',
             properties: {
               access_code_id: {
                 description: 'ID of the affected access code.',
@@ -18832,7 +18832,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'Mutations were requested on an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes). This event fires at request time, before the change is confirmed on the device.',
+              'Mutations were requested on an [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes). This event fires at request time, before the change is confirmed on the device.',
             properties: {
               access_code_id: {
                 description: 'ID of the affected access code.',
@@ -18950,7 +18950,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was [scheduled natively](https://docs.seam.co/low-level-apis/smart-locks/access-codes#native-scheduling) on a device.',
+              'An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was [scheduled natively](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#native-scheduling) on a device.',
             properties: {
               access_code_id: {
                 description: 'ID of the affected access code.',
@@ -19035,7 +19035,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was set on a device.',
+              'An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was set on a device.',
             properties: {
               access_code_id: {
                 description: 'ID of the affected access code.',
@@ -19120,7 +19120,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was removed from a device.',
+              'An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was removed from a device.',
             properties: {
               access_code_id: {
                 description: 'ID of the affected access code.',
@@ -19200,7 +19200,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'There was an unusually long delay in setting an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) on a device.',
+              'There was an unusually long delay in setting an [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) on a device.',
             properties: {
               access_code_errors: {
                 description: 'Errors associated with the access code.',
@@ -19454,7 +19454,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) failed to be set on a device.',
+              'An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) failed to be set on a device.',
             properties: {
               access_code_errors: {
                 description: 'Errors associated with the access code.',
@@ -19708,7 +19708,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was issued.',
+              'An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was issued.',
             properties: {
               access_code_id: {
                 description: 'ID of the affected access code.',
@@ -19791,7 +19791,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'Seam has not yet issued this [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes), even though its start time is approaching, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and the accompanying `delay_in_issuing` warning clears automatically once issuance succeeds.',
+              'Seam has not yet issued this [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes), even though its start time is approaching, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and the accompanying `delay_in_issuing` warning clears automatically once issuance succeeds.',
             properties: {
               access_code_errors: {
                 description: 'Errors associated with the access code.',
@@ -20046,7 +20046,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'Seam was unable to issue this [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) before its start time, so the recipient may be unable to unlock the device. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and the accompanying `failed_to_issue` error clears automatically if the access code is eventually issued.',
+              'Seam was unable to issue this [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) before its start time, so the recipient may be unable to unlock the device. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and the accompanying `failed_to_issue` error clears automatically if the access code is eventually issued.',
             properties: {
               access_code_errors: {
                 description: 'Errors associated with the access code.',
@@ -20301,7 +20301,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              "Seam was unable to apply this [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes)'s requested update to the device, so the code on the device does not match its requested state. Seam keeps retrying, and the accompanying `failed_to_update` error clears automatically once the update is applied.",
+              "Seam was unable to apply this [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes)'s requested update to the device, so the code on the device does not match its requested state. Seam keeps retrying, and the accompanying `failed_to_update` error clears automatically once the update is applied.",
             properties: {
               access_code_errors: {
                 description: 'Errors associated with the access code.',
@@ -20556,7 +20556,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) is still active on the device even though its `ends_at` has passed, so the recipient may still be able to unlock the device after their access window ended. Seam is attempting to remove it, and the accompanying `failed_to_remove` error clears automatically once the access code is no longer active.',
+              'An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) is still active on the device even though its `ends_at` has passed, so the recipient may still be able to unlock the device after their access window ended. Seam is attempting to remove it, and the accompanying `failed_to_remove` error clears automatically once the access code is no longer active.',
             properties: {
               access_code_errors: {
                 description: 'Errors associated with the access code.',
@@ -20811,7 +20811,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was deleted.',
+              'An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was deleted.',
             properties: {
               access_code_id: {
                 description: 'ID of the affected access code.',
@@ -20895,7 +20895,7 @@ const openapi: OpenAPISpec = {
           {
             deprecated: true,
             description:
-              'There was an unusually long delay in removing an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) from a device.',
+              'There was an unusually long delay in removing an [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) from a device.',
             properties: {
               access_code_errors: {
                 description: 'Errors associated with the access code.',
@@ -21151,7 +21151,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) failed to be removed from a device.',
+              'An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) failed to be removed from a device.',
             properties: {
               access_code_errors: {
                 description: 'Errors associated with the access code.',
@@ -21405,7 +21405,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was modified outside of Seam.',
+              'An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was modified outside of Seam.',
             properties: {
               access_code_id: {
                 description: 'ID of the affected access code.',
@@ -21485,7 +21485,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was deleted outside of Seam.',
+              'An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was deleted outside of Seam.',
             properties: {
               access_code_id: {
                 description: 'ID of the affected access code.',
@@ -21565,7 +21565,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A [backup access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) was pulled from the backup access code pool and set on a device.',
+              'A [backup access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/backup-access-codes) was pulled from the backup access code pool and set on a device.',
             properties: {
               access_code_id: {
                 description: 'ID of the affected access code.',
@@ -21651,7 +21651,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was converted successfully to a managed access code.',
+              'An [unmanaged access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was converted successfully to a managed access code.',
             properties: {
               access_code_id: {
                 description: 'ID of the affected access code.',
@@ -21731,7 +21731,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) failed to be converted to a managed access code.',
+              'An [unmanaged access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) failed to be converted to a managed access code.',
             properties: {
               access_code_errors: {
                 description: 'Errors associated with the access code.',
@@ -21985,7 +21985,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was created on a device.',
+              'An [unmanaged access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was created on a device.',
             properties: {
               access_code_id: {
                 description: 'ID of the affected access code.',
@@ -22065,7 +22065,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was removed from a device.',
+              'An [unmanaged access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was removed from a device.',
             properties: {
               access_code_id: {
                 description: 'ID of the affected access code.',
@@ -22296,7 +22296,7 @@ const openapi: OpenAPISpec = {
               },
               acs_entrance_id: {
                 description:
-                  'ID of the affected [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                  'ID of the affected [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                 format: 'uuid',
                 type: 'string',
               },
@@ -22353,7 +22353,7 @@ const openapi: OpenAPISpec = {
               },
               acs_entrance_id: {
                 description:
-                  'ID of the affected [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                  'ID of the affected [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                 format: 'uuid',
                 type: 'string',
               },
@@ -23030,7 +23030,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access system](https://docs.seam.co/low-level-apis/access-systems) was connected.',
+              'An [access system](https://www.seam.co/docs/low-level-apis/access-systems) was connected.',
             properties: {
               acs_system_id: {
                 description: 'ID of the access system.',
@@ -23082,7 +23082,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access system](https://docs.seam.co/low-level-apis/access-systems) was added.',
+              'An [access system](https://www.seam.co/docs/low-level-apis/access-systems) was added.',
             properties: {
               acs_system_id: {
                 description: 'ID of the access system.',
@@ -23134,7 +23134,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access system](https://docs.seam.co/low-level-apis/access-systems) was disconnected.',
+              'An [access system](https://www.seam.co/docs/low-level-apis/access-systems) was disconnected.',
             properties: {
               acs_system_errors: {
                 description:
@@ -23304,7 +23304,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access system credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was deleted.',
+              'An [access system credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was deleted.',
             properties: {
               acs_credential_id: {
                 description: 'ID of the affected credential.',
@@ -23362,7 +23362,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access system credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was issued.',
+              'An [access system credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was issued.',
             properties: {
               acs_credential_id: {
                 description: 'ID of the affected credential.',
@@ -23420,7 +23420,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access system credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was reissued.',
+              'An [access system credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was reissued.',
             properties: {
               acs_credential_id: {
                 description: 'ID of the affected credential.',
@@ -23478,7 +23478,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access system credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was invalidated. That is, the credential cannot be used anymore.',
+              'An [access system credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was invalidated. That is, the credential cannot be used anymore.',
             properties: {
               acs_credential_id: {
                 description: 'ID of the affected credential.',
@@ -23539,7 +23539,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was created.',
+              'An [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was created.',
             properties: {
               acs_system_id: {
                 description: 'ID of the access system.',
@@ -23597,7 +23597,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was deleted.',
+              'An [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was deleted.',
             properties: {
               acs_system_id: {
                 description: 'ID of the access system.',
@@ -23655,7 +23655,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access system encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners) was added.',
+              'An [access system encoder](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners) was added.',
             properties: {
               acs_encoder_id: {
                 description: 'ID of the affected encoder.',
@@ -23713,7 +23713,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access system encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners) was removed.',
+              'An [access system encoder](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners) was removed.',
             properties: {
               acs_encoder_id: {
                 description: 'ID of the affected encoder.',
@@ -23831,7 +23831,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access system entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) was added.',
+              'An [access system entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) was added.',
             properties: {
               acs_entrance_id: {
                 description: 'ID of the affected entrance.',
@@ -23889,7 +23889,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access system entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) was removed.',
+              'An [access system entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) was removed.',
             properties: {
               acs_entrance_id: {
                 description: 'ID of the affected entrance.',
@@ -25425,7 +25425,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A managed device was successfully converted to an [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices).',
+              'A managed device was successfully converted to an [unmanaged device](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices).',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -25503,7 +25503,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices) was successfully converted to a managed device.',
+              'An [unmanaged device](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices) was successfully converted to a managed device.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -25581,7 +25581,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'The status of an [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices) changed from offline to online. That is, the `device.properties.online` property changed from `false` to `true`.',
+              'The status of an [unmanaged device](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices) changed from offline to online. That is, the `device.properties.online` property changed from `false` to `true`.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -25861,7 +25861,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'The status of an [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices) changed from online to offline. That is, the `device.properties.online` property changed from `true` to `false`.',
+              'The status of an [unmanaged device](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices) changed from online to offline. That is, the `device.properties.online` property changed from `true` to `false`.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -26649,7 +26649,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A [Salto device](https://docs.seam.co/device-and-system-integration-guides/salto-locks) activated privacy mode.',
+              'A [Salto device](https://www.seam.co/docs/device-and-system-integration-guides/salto-locks) activated privacy mode.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -26727,7 +26727,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A [Salto device](https://docs.seam.co/device-and-system-integration-guides/salto-locks) deactivated privacy mode.',
+              'A [Salto device](https://www.seam.co/docs/device-and-system-integration-guides/salto-locks) deactivated privacy mode.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -27618,7 +27618,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'Extended periods of noise or noise exceeding a [threshold](https://docs.seam.co/capability-guides/noise-sensors#what-is-a-threshold) were detected.',
+              'Extended periods of noise or noise exceeding a [threshold](https://www.seam.co/docs/capability-guides/noise-sensors#what-is-a-threshold) were detected.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -27726,7 +27726,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A [lock](https://docs.seam.co/low-level-apis/smart-locks) was locked.',
+              'A [lock](https://www.seam.co/docs/low-level-apis/smart-locks) was locked.',
             properties: {
               access_code_id: {
                 description:
@@ -27876,7 +27876,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A [lock](https://docs.seam.co/low-level-apis/smart-locks) was unlocked.',
+              'A [lock](https://www.seam.co/docs/low-level-apis/smart-locks) was unlocked.',
             properties: {
               access_code_id: {
                 description:
@@ -27981,7 +27981,7 @@ const openapi: OpenAPISpec = {
               },
               method: {
                 description:
-                  'Method by which the lock was unlocked. `keycode`: an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or handle press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by a time-based schedule. `unknown`: could not be determined.',
+                  'Method by which the lock was unlocked. `keycode`: an [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was used (see `access_code_id`). `manual`: a physical action such as a thumbturn or handle press. `remote`: a remote action via an app, Bluetooth, or the Seam API (see `action_attempt_id` if Seam-initiated; see `is_via_bluetooth` or `is_via_nfc` for the transport). `automatic`: triggered automatically, for example by a time-based schedule. `unknown`: could not be determined.',
                 enum: [
                   'keycode',
                   'manual',
@@ -28025,7 +28025,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'The [lock](https://docs.seam.co/low-level-apis/smart-locks) denied access to a user after one or more consecutive invalid attempts to unlock the device.',
+              'The [lock](https://www.seam.co/docs/low-level-apis/smart-locks) denied access to a user after one or more consecutive invalid attempts to unlock the device.',
             properties: {
               access_code_id: {
                 description:
@@ -28159,7 +28159,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A thermostat [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) was activated.',
+              'A thermostat [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) was activated.',
             properties: {
               climate_preset_key: {
                 description: 'Key of the climate preset that was activated.',
@@ -28256,7 +28256,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A [thermostat](https://docs.seam.co/capability-guides/thermostats) was adjusted manually.',
+              'A [thermostat](https://www.seam.co/docs/capability-guides/thermostats) was adjusted manually.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -28274,13 +28274,13 @@ const openapi: OpenAPISpec = {
               },
               cooling_set_point_celsius: {
                 description:
-                  'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                  'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                 format: 'float',
                 type: 'number',
               },
               cooling_set_point_fahrenheit: {
                 description:
-                  'Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                  'Temperature to which the thermostat should cool (in °F). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                 format: 'float',
                 type: 'number',
               },
@@ -28323,25 +28323,25 @@ const openapi: OpenAPISpec = {
               },
               fan_mode_setting: {
                 description:
-                  'Desired [fan mode setting](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.',
+                  'Desired [fan mode setting](https://www.seam.co/docs/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.',
                 enum: ['auto', 'on', 'circulate'],
                 type: 'string',
               },
               heating_set_point_celsius: {
                 description:
-                  'Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                  'Temperature to which the thermostat should heat (in °C). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                 format: 'float',
                 type: 'number',
               },
               heating_set_point_fahrenheit: {
                 description:
-                  'Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                  'Temperature to which the thermostat should heat (in °F). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                 format: 'float',
                 type: 'number',
               },
               hvac_mode_setting: {
                 description:
-                  'Desired [HVAC mode](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
+                  'Desired [HVAC mode](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
                 enum: ['off', 'heat', 'cool', 'heat_cool', 'eco'],
                 type: 'string',
               },
@@ -28377,7 +28377,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              "A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature reading exceeded the set [threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).",
+              "A [thermostat's](https://www.seam.co/docs/capability-guides/thermostats) temperature reading exceeded the set [threshold](https://www.seam.co/docs/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).",
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -28501,7 +28501,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              "A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature reading no longer exceeds the set [threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).",
+              "A [thermostat's](https://www.seam.co/docs/capability-guides/thermostats) temperature reading no longer exceeds the set [threshold](https://www.seam.co/docs/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).",
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -28625,7 +28625,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              "A [thermostat's](https://docs.seam.co/capability-guides/thermostats) temperature reading is within 1 °C of the configured cooling or heating [set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).",
+              "A [thermostat's](https://www.seam.co/docs/capability-guides/thermostats) temperature reading is within 1 °C of the configured cooling or heating [set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).",
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -28729,7 +28729,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              "A [thermostat's](https://docs.seam.co/capability-guides/thermostats) reported temperature changed by at least 1 °C.",
+              "A [thermostat's](https://www.seam.co/docs/capability-guides/thermostats) reported temperature changed by at least 1 °C.",
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -29084,7 +29084,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [enrollment automation](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) was deleted.',
+              'An [enrollment automation](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) was deleted.',
             properties: {
               created_at: {
                 description: 'Date and time at which the event was created.',
@@ -29517,7 +29517,7 @@ const openapi: OpenAPISpec = {
       },
       noise_threshold: {
         description:
-          'Represents a [noise threshold](https://docs.seam.co/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/capability-guides/noise-sensors). Thresholds represent the limits of noise tolerated at a property, which can be customized for each hour of the day. Each device has its own default thresholds, but you can use the Seam API to modify them.',
+          'Represents a [noise threshold](https://www.seam.co/docs/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://www.seam.co/docs/capability-guides/noise-sensors). Thresholds represent the limits of noise tolerated at a property, which can be customized for each hour of the day. Each device has its own default thresholds, but you can use the Seam API to modify them.',
         properties: {
           device_id: {
             description:
@@ -29543,7 +29543,7 @@ const openapi: OpenAPISpec = {
           },
           noise_threshold_nrs: {
             description:
-              'Noise level in Noiseaware Noise Risk Score (NRS) for the noise threshold. This parameter is only relevant for [Noiseaware sensors](https://docs.seam.co/device-and-system-integration-guides/noiseaware-sensors).',
+              'Noise level in Noiseaware Noise Risk Score (NRS) for the noise threshold. This parameter is only relevant for [Noiseaware sensors](https://www.seam.co/docs/device-and-system-integration-guides/noiseaware-sensors).',
             format: 'float',
             type: 'number',
           },
@@ -29601,7 +29601,7 @@ const openapi: OpenAPISpec = {
               oneOf: [{ type: 'string' }, { type: 'boolean' }],
             },
             description:
-              'Optional [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) for the phone.\n  ',
+              'Optional [custom metadata](https://www.seam.co/docs/core-concepts/devices/adding-custom-metadata-to-a-device) for the phone.\n  ',
             type: 'object',
           },
           device_id: {
@@ -29791,11 +29791,11 @@ const openapi: OpenAPISpec = {
                     'Access system credentials associated with the phone provider session.',
                   items: {
                     description:
-                      'Means by which an [access control system user](https://docs.seam.co/low-level-apis/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/low-level-apis/access-systems).\n\nAn access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.\n\nFor each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type.\n\nFor granting a person access to a space, [Access Grants](https://docs.seam.co/use-cases/granting-access) are the default and recommended approach. Use the lower-level ACS credential API directly only when you specifically need to manage individual credentials.',
+                      'Means by which an [access control system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) gains access at an [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://www.seam.co/docs/low-level-apis/access-systems).\n\nAn access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.\n\nFor each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type.\n\nFor granting a person access to a space, [Access Grants](https://www.seam.co/docs/use-cases/granting-access) are the default and recommended approach. Use the lower-level ACS credential API directly only when you specifically need to manage individual credentials.',
                     properties: {
                       access_method: {
                         description:
-                          'Access method for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+                          'Access method for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
                         enum: ['code', 'card', 'mobile_key', 'cloud_key'],
                         type: 'string',
                       },
@@ -29809,23 +29809,23 @@ const openapi: OpenAPISpec = {
                       acs_entrances: {
                         items: {
                           description:
-                            'Represents an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) within an [access control system](https://docs.seam.co/low-level-apis/access-systems).\n\nIn an access control system, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the `acs_entrance` resources in your workspace or get these details for a specific `acs_entrance`. You can also list all entrances associated with a specific credential, and you can list all credentials associated with a specific entrance.',
+                            'Represents an [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) within an [access control system](https://www.seam.co/docs/low-level-apis/access-systems).\n\nIn an access control system, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the `acs_entrance` resources in your workspace or get these details for a specific `acs_entrance`. You can also list all entrances associated with a specific credential, and you can list all credentials associated with a specific entrance.',
                           properties: {
                             acs_entrance_id: {
                               description:
-                                'ID of the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                                'ID of the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                               format: 'uuid',
                               type: 'string',
                             },
                             acs_system_id: {
                               description:
-                                'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems) that contains the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                                'ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                               format: 'uuid',
                               type: 'string',
                             },
                             akiles_metadata: {
                               description:
-                                'Akiles-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                                'Akiles-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                               properties: {
                                 actions: {
                                   description:
@@ -29865,7 +29865,7 @@ const openapi: OpenAPISpec = {
                             },
                             assa_abloy_vostio_metadata: {
                               description:
-                                'ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                                'ASSA ABLOY Vostio-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                               properties: {
                                 door_name: {
                                   description:
@@ -29904,7 +29904,7 @@ const openapi: OpenAPISpec = {
                             },
                             avigilon_alta_metadata: {
                               description:
-                                'Avigilon Alta-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                                'Avigilon Alta-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                               properties: {
                                 entry_name: {
                                   description:
@@ -29949,7 +29949,7 @@ const openapi: OpenAPISpec = {
                             },
                             brivo_metadata: {
                               description:
-                                'Brivo-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                                'Brivo-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                               properties: {
                                 access_point_id: {
                                   description:
@@ -29997,24 +29997,24 @@ const openapi: OpenAPISpec = {
                             },
                             connected_account_id: {
                               description:
-                                'ID of the [connected account](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                                'ID of the [connected account](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                               format: 'uuid',
                               type: 'string',
                             },
                             created_at: {
                               description:
-                                'Date and time at which the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) was created.',
+                                'Date and time at which the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) was created.',
                               format: 'date-time',
                               type: 'string',
                             },
                             display_name: {
                               description:
-                                'Display name for the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                                'Display name for the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                               type: 'string',
                             },
                             dormakaba_ambiance_metadata: {
                               description:
-                                'dormakaba Ambiance-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                                'dormakaba Ambiance-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                               properties: {
                                 access_point_name: {
                                   description:
@@ -30026,7 +30026,7 @@ const openapi: OpenAPISpec = {
                             },
                             dormakaba_community_metadata: {
                               description:
-                                'dormakaba Community-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                                'dormakaba Community-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                               properties: {
                                 access_point_profile: {
                                   description:
@@ -30038,7 +30038,7 @@ const openapi: OpenAPISpec = {
                             },
                             errors: {
                               description:
-                                'Errors associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                                'Errors associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                               items: {
                                 properties: {
                                   created_at: {
@@ -30069,7 +30069,7 @@ const openapi: OpenAPISpec = {
                             },
                             hotek_metadata: {
                               description:
-                                'Hotek-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                                'Hotek-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                               properties: {
                                 common_area_name: {
                                   description: 'Display name of the entrance.',
@@ -30088,12 +30088,12 @@ const openapi: OpenAPISpec = {
                             },
                             is_locked: {
                               description:
-                                'Indicates whether the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) is currently locked.',
+                                'Indicates whether the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) is currently locked.',
                               type: 'boolean',
                             },
                             latch_metadata: {
                               description:
-                                'Latch-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                                'Latch-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                               properties: {
                                 accessibility_type: {
                                   description:
@@ -30120,7 +30120,7 @@ const openapi: OpenAPISpec = {
                             },
                             salto_ks_metadata: {
                               description:
-                                'Salto KS-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                                'Salto KS-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                               properties: {
                                 battery_level: {
                                   description:
@@ -30167,7 +30167,7 @@ const openapi: OpenAPISpec = {
                             },
                             salto_space_metadata: {
                               description:
-                                'Salto Space-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                                'Salto Space-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                               properties: {
                                 audit_on_keys: {
                                   description:
@@ -30210,7 +30210,7 @@ const openapi: OpenAPISpec = {
                             },
                             visionline_metadata: {
                               description:
-                                'Visionline-specific metadata associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                                'Visionline-specific metadata associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                               properties: {
                                 door_category: {
                                   description:
@@ -30255,10 +30255,10 @@ const openapi: OpenAPISpec = {
                             },
                             warnings: {
                               description:
-                                'Warnings associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                                'Warnings associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                               items: {
                                 description:
-                                  'Warning associated with the [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+                                  'Warning associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                                 discriminator: { propertyName: 'warning_code' },
                                 oneOf: [
                                   {
@@ -30433,19 +30433,19 @@ const openapi: OpenAPISpec = {
                       },
                       acs_system_id: {
                         description:
-                          'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         format: 'uuid',
                         type: 'string',
                       },
                       acs_user_id: {
                         description:
-                          'ID of the [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                          'ID of the [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
                         format: 'uuid',
                         type: 'string',
                       },
                       akiles_metadata: {
                         description:
-                          'Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Akiles-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         properties: {
                           member_pin_id: {
                             description: 'ID of the Akiles member PIN.',
@@ -30456,7 +30456,7 @@ const openapi: OpenAPISpec = {
                       },
                       assa_abloy_vostio_metadata: {
                         description:
-                          'Vostio-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Vostio-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         properties: {
                           auto_join: {
                             description:
@@ -30494,42 +30494,42 @@ const openapi: OpenAPISpec = {
                       },
                       card_number: {
                         description:
-                          'Number of the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Number of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         nullable: true,
                         type: 'string',
                       },
                       code: {
                         description:
-                          'Access (PIN) code for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Access (PIN) code for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         nullable: true,
                         type: 'string',
                       },
                       connected_account_id: {
                         description:
-                          'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                          'ID of the [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) to which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
                         format: 'uuid',
                         type: 'string',
                       },
                       created_at: {
                         description:
-                          'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was created.',
+                          'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created.',
                         format: 'date-time',
                         type: 'string',
                       },
                       display_name: {
                         description:
-                          'Display name that corresponds to the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.',
+                          'Display name that corresponds to the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type.',
                         minLength: 1,
                         type: 'string',
                       },
                       ends_at: {
                         description:
-                          'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                          'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
                         type: 'string',
                       },
                       errors: {
                         description:
-                          'Errors associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Errors associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         items: {
                           properties: {
                             created_at: {
@@ -30548,7 +30548,7 @@ const openapi: OpenAPISpec = {
                       },
                       external_type: {
                         description:
-                          'Brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
+                          'Brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
                         enum: [
                           'pti_card',
                           'brivo_credential',
@@ -30569,17 +30569,17 @@ const openapi: OpenAPISpec = {
                       },
                       external_type_display_name: {
                         description:
-                          'Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.',
+                          'Display name that corresponds to the brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type.',
                         type: 'string',
                       },
                       is_issued: {
                         description:
-                          'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been encoded onto a card.',
+                          'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been encoded onto a card.',
                         type: 'boolean',
                       },
                       is_latest_desired_state_synced_with_provider: {
                         description:
-                          'Indicates whether the latest state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider.',
+                          'Indicates whether the latest state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider.',
                         nullable: true,
                         type: 'boolean',
                       },
@@ -30591,48 +30591,48 @@ const openapi: OpenAPISpec = {
                       },
                       is_multi_phone_sync_credential: {
                         description:
-                          'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                          'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
                         type: 'boolean',
                       },
                       is_one_time_use: {
                         description:
-                          'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.',
+                          'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.',
                         type: 'boolean',
                       },
                       issued_at: {
                         description:
-                          'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was encoded onto a card.',
+                          'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was encoded onto a card.',
                         format: 'date-time',
                         nullable: true,
                         type: 'string',
                       },
                       latest_desired_state_synced_with_provider_at: {
                         description:
-                          'Date and time at which the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider.',
+                          'Date and time at which the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider.',
                         format: 'date-time',
                         nullable: true,
                         type: 'string',
                       },
                       parent_acs_credential_id: {
                         description:
-                          'ID of the parent [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'ID of the parent [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         format: 'uuid',
                         type: 'string',
                       },
                       starts_at: {
                         description:
-                          'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                          'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                         type: 'string',
                       },
                       user_identity_id: {
                         description:
-                          'ID of the [user identity](https://docs.seam.co/api/user_identities) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+                          'ID of the [user identity](https://www.seam.co/docs/api/user_identities/object) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
                         format: 'uuid',
                         type: 'string',
                       },
                       visionline_metadata: {
                         description:
-                          'Visionline-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         properties: {
                           auto_join: {
                             description:
@@ -30683,15 +30683,15 @@ const openapi: OpenAPISpec = {
                       },
                       warnings: {
                         description:
-                          'Warnings associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'Warnings associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         items: {
                           description:
-                            'Warning associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                            'Warning associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                           discriminator: { propertyName: 'warning_code' },
                           oneOf: [
                             {
                               description:
-                                'Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is waiting to be issued.',
+                                'Indicates that the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is waiting to be issued.',
                               properties: {
                                 created_at: {
                                   description:
@@ -30720,7 +30720,7 @@ const openapi: OpenAPISpec = {
                             },
                             {
                               description:
-                                "Indicates that the schedule of one of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials)'s children was modified externally.",
+                                "Indicates that the schedule of one of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials)'s children was modified externally.",
                               properties: {
                                 created_at: {
                                   description:
@@ -30749,7 +30749,7 @@ const openapi: OpenAPISpec = {
                             },
                             {
                               description:
-                                'Indicates that the schedule of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.',
+                                'Indicates that the schedule of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.',
                               properties: {
                                 created_at: {
                                   description:
@@ -30778,7 +30778,7 @@ const openapi: OpenAPISpec = {
                             },
                             {
                               description:
-                                'Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is being deleted.',
+                                'Indicates that the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is being deleted.',
                               properties: {
                                 created_at: {
                                   description:
@@ -30807,7 +30807,7 @@ const openapi: OpenAPISpec = {
                             },
                             {
                               description:
-                                'An unknown issue occurred while syncing the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
+                                'An unknown issue occurred while syncing the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
                               properties: {
                                 created_at: {
                                   description:
@@ -30836,7 +30836,7 @@ const openapi: OpenAPISpec = {
                             },
                             {
                               description:
-                                'Access permissions for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
+                                'Access permissions for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
                               properties: {
                                 created_at: {
                                   description:
@@ -30910,7 +30910,7 @@ const openapi: OpenAPISpec = {
                       },
                       workspace_id: {
                         description:
-                          'ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                          'ID of the workspace that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
                         format: 'uuid',
                         type: 'string',
                       },
@@ -31421,7 +31421,7 @@ const openapi: OpenAPISpec = {
               properties: {
                 climate_preset_key: {
                   description:
-                    'Key of the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.',
+                    'Key of the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.',
                   type: 'string',
                 },
                 starts_at_time: {
@@ -31461,34 +31461,34 @@ const openapi: OpenAPISpec = {
       },
       thermostat_schedule: {
         description:
-          'Represents a [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time.',
+          'Represents a [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://www.seam.co/docs/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time.',
         properties: {
           climate_preset_key: {
             description:
-              'Key of the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+              'Key of the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
             type: 'string',
           },
           created_at: {
             description:
-              'Date and time at which the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created.',
+              'Date and time at which the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created.',
             format: 'date-time',
             type: 'string',
           },
           device_id: {
             description:
-              'ID of the desired [thermostat](https://docs.seam.co/capability-guides/thermostats) device.',
+              'ID of the desired [thermostat](https://www.seam.co/docs/capability-guides/thermostats) device.',
             format: 'uuid',
             type: 'string',
           },
           ends_at: {
             description:
-              'Date and time at which the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+              'Date and time at which the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
             format: 'date-time',
             type: 'string',
           },
           errors: {
             description:
-              'Errors associated with the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+              'Errors associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
             items: {
               properties: {
                 created_at: {
@@ -31514,12 +31514,12 @@ const openapi: OpenAPISpec = {
           },
           is_override_allowed: {
             description:
-              "Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts.",
+              "Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts.",
             type: 'boolean',
           },
           max_override_period_minutes: {
             description:
-              "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
+              "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
             exclusiveMinimum: true,
             minimum: 0,
             nullable: true,
@@ -31527,19 +31527,19 @@ const openapi: OpenAPISpec = {
           },
           name: {
             description:
-              'User-friendly name to identify the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+              'User-friendly name to identify the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
             nullable: true,
             type: 'string',
           },
           starts_at: {
             description:
-              'Date and time at which the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+              'Date and time at which the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
             format: 'date-time',
             type: 'string',
           },
           thermostat_schedule_id: {
             description:
-              'ID of the [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+              'ID of the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
             format: 'uuid',
             type: 'string',
           },
@@ -31566,7 +31566,7 @@ const openapi: OpenAPISpec = {
       },
       unmanaged_access_code: {
         description:
-          'Represents an [unmanaged smart lock access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes).\n\nAn access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly.\n\nWhen you create an access code on a device in Seam, it is created as a managed access code. Access codes that exist on a device that were not created through Seam are considered unmanaged codes. We strictly limit the operations that can be performed on unmanaged codes.\n\nPrior to using Seam to manage your devices, you may have used another lock management system to manage the access codes on your devices. Where possible, we help you keep any existing access codes on devices and transition those codes to ones managed by your Seam workspace.\n\nNot all providers support unmanaged access codes. The following providers do not support unmanaged access codes:\n\n- [Kwikset](https://docs.seam.co/device-and-system-integration-guides/kwikset-locks)',
+          'Represents an [unmanaged smart lock access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes).\n\nAn access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly.\n\nWhen you create an access code on a device in Seam, it is created as a managed access code. Access codes that exist on a device that were not created through Seam are considered unmanaged codes. We strictly limit the operations that can be performed on unmanaged codes.\n\nPrior to using Seam to manage your devices, you may have used another lock management system to manage the access codes on your devices. Where possible, we help you keep any existing access codes on devices and transition those codes to ones managed by your Seam workspace.\n\nNot all providers support unmanaged access codes. The following providers do not support unmanaged access codes:\n\n- [Kwikset](https://www.seam.co/docs/device-and-system-integration-guides/kwikset-locks)',
         properties: {
           access_code_id: {
             description: 'Unique identifier for the access code.',
@@ -31666,7 +31666,7 @@ const openapi: OpenAPISpec = {
           },
           errors: {
             description:
-              'Errors associated with the [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).',
+              'Errors associated with the [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes).',
             items: {
               discriminator: { propertyName: 'error_code' },
               oneOf: [
@@ -32082,7 +32082,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_connected_account_error: {
                       description:
-                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                        'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
                       enum: [true],
                       type: 'boolean',
                     },
@@ -32126,7 +32126,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_connected_account_error: {
                       description:
-                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                        'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
                       enum: [true],
                       type: 'boolean',
                     },
@@ -32171,7 +32171,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_connected_account_error: {
                       description:
-                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                        'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
                       enum: [true],
                       type: 'boolean',
                     },
@@ -32215,7 +32215,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_connected_account_error: {
                       description:
-                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                        'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
                       enum: [true],
                       type: 'boolean',
                     },
@@ -32390,7 +32390,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.',
+                    'Indicates that the [backup access code pool](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.',
                   properties: {
                     created_at: {
                       description:
@@ -32576,7 +32576,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://www.seam.co/docs/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -32592,7 +32592,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_bridge_error: {
                       description:
-                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+                        'Indicates whether the error is related to [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge).',
                       type: 'boolean',
                     },
                     is_connected_account_error: {
@@ -32658,10 +32658,10 @@ const openapi: OpenAPISpec = {
           },
           warnings: {
             description:
-              'Warnings associated with the [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).',
+              'Warnings associated with the [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes).',
             items: {
               description:
-                'Warnings associated with the [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).',
+                'Warnings associated with the [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes).',
               discriminator: { propertyName: 'warning_code' },
               oneOf: [
                 {
@@ -33065,7 +33065,7 @@ const openapi: OpenAPISpec = {
           },
           errors: {
             description:
-              'Errors associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
+              'Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access).',
             items: {
               discriminator: { propertyName: 'error_code' },
               oneOf: [
@@ -33338,15 +33338,15 @@ const openapi: OpenAPISpec = {
           },
           warnings: {
             description:
-              'Warnings associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
+              'Warnings associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access).',
             items: {
               description:
-                'Warning associated with the [access grant](https://docs.seam.co/use-cases/granting-access).',
+                'Warning associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access).',
               discriminator: { propertyName: 'warning_code' },
               oneOf: [
                 {
                   description:
-                    'Indicates that the [access grant](https://docs.seam.co/use-cases/granting-access) is being deleted.',
+                    'Indicates that the [access grant](https://www.seam.co/docs/use-cases/granting-access) is being deleted.',
                   properties: {
                     created_at: {
                       description:
@@ -33448,7 +33448,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the access times for this [access grant](https://docs.seam.co/use-cases/granting-access) are being updated.',
+                    'Indicates that the access times for this [access grant](https://www.seam.co/docs/use-cases/granting-access) are being updated.',
                   properties: {
                     access_method_ids: {
                       description: 'IDs of the access methods being updated.',
@@ -33674,15 +33674,15 @@ const openapi: OpenAPISpec = {
           },
           errors: {
             description:
-              'Errors associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+              'Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant).',
             items: {
               description:
-                'Error associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+                'Error associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant).',
               discriminator: { propertyName: 'error_code' },
               oneOf: [
                 {
                   description:
-                    'Indicates that Seam was unable to issue this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access method is eventually issued.',
+                    'Indicates that Seam was unable to issue this [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access method is eventually issued.',
                   properties: {
                     created_at: {
                       description:
@@ -33748,7 +33748,7 @@ const openapi: OpenAPISpec = {
           },
           pending_mutations: {
             description:
-              'Pending mutations for the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.',
+              'Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress.',
             items: {
               discriminator: { propertyName: 'mutation_code' },
               oneOf: [
@@ -33938,15 +33938,15 @@ const openapi: OpenAPISpec = {
           },
           warnings: {
             description:
-              'Warnings associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+              'Warnings associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant).',
             items: {
               description:
-                'Warning associated with the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant).',
+                'Warning associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant).',
               discriminator: { propertyName: 'warning_code' },
               oneOf: [
                 {
                   description:
-                    'Indicates that the [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) is being deleted.',
+                    'Indicates that the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) is being deleted.',
                   properties: {
                     created_at: {
                       description:
@@ -33971,7 +33971,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the access times for this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) are being updated.',
+                    'Indicates that the access times for this [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) are being updated.',
                   properties: {
                     created_at: {
                       description:
@@ -34027,7 +34027,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that Seam has not yet issued this [access method](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant), even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
+                    'Indicates that Seam has not yet issued this [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant), even though its access grant is about to begin, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and this warning clears automatically once issuance succeeds.',
                   properties: {
                     created_at: {
                       description:
@@ -34052,7 +34052,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    "Indicates that the access system delivers this mobile key through an app invitation sent to the recipient's email address, but the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities) for this [access grant](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) has no email address, so the mobile key cannot be delivered. Set an email address on the user identity when you create the access grant.",
+                    "Indicates that the access system delivers this mobile key through an app invitation sent to the recipient's email address, but the [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities) for this [access grant](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) has no email address, so the mobile key cannot be delivered. Set an email address on the user identity when you create the access grant.",
                   properties: {
                     created_at: {
                       description:
@@ -34077,7 +34077,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    "Indicates that the access system delivers this mobile key to the recipient's phone number, but the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities) for this [access grant](https://docs.seam.co/use-cases/granting-access/creating-an-access-grant) has no phone number, so the mobile key cannot be delivered. Set a phone number on the user identity when you create the access grant.",
+                    "Indicates that the access system delivers this mobile key to the recipient's phone number, but the [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities) for this [access grant](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) has no phone number, so the mobile key cannot be delivered. Set a phone number on the user identity when you create the access grant.",
                   properties: {
                     created_at: {
                       description:
@@ -34207,7 +34207,7 @@ const openapi: OpenAPISpec = {
               oneOf: [
                 {
                   description:
-                    'Indicates that the [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups) was not created on the [access system](https://docs.seam.co/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
+                    'Indicates that the [access group](https://www.seam.co/docs/low-level-apis/access-systems/user-management/assigning-users-to-access-groups) was not created on the [access system](https://www.seam.co/docs/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -34703,17 +34703,17 @@ const openapi: OpenAPISpec = {
       },
       unmanaged_acs_credential: {
         description:
-          'Means by which an [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). The `unmanaged_acs_credential` object, which is not managed by Seam, represents a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/low-level-apis/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code.',
+          'Means by which an [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) gains access at an [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). The `unmanaged_acs_credential` object, which is not managed by Seam, represents a [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://www.seam.co/docs/low-level-apis/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code.',
         properties: {
           access_method: {
             description:
-              'Access method for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+              'Access method for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
             enum: ['code', 'card', 'mobile_key', 'cloud_key'],
             type: 'string',
           },
           acs_credential_id: {
             description:
-              'ID of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'ID of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             format: 'uuid',
             type: 'string',
           },
@@ -34725,19 +34725,19 @@ const openapi: OpenAPISpec = {
           },
           acs_system_id: {
             description:
-              'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             format: 'uuid',
             type: 'string',
           },
           acs_user_id: {
             description:
-              'ID of the [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+              'ID of the [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
             format: 'uuid',
             type: 'string',
           },
           akiles_metadata: {
             description:
-              'Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'Akiles-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             properties: {
               member_pin_id: {
                 description: 'ID of the Akiles member PIN.',
@@ -34748,7 +34748,7 @@ const openapi: OpenAPISpec = {
           },
           assa_abloy_vostio_metadata: {
             description:
-              'Vostio-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'Vostio-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             properties: {
               auto_join: {
                 description:
@@ -34785,42 +34785,42 @@ const openapi: OpenAPISpec = {
           },
           card_number: {
             description:
-              'Number of the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'Number of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             nullable: true,
             type: 'string',
           },
           code: {
             description:
-              'Access (PIN) code for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'Access (PIN) code for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             nullable: true,
             type: 'string',
           },
           connected_account_id: {
             description:
-              'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+              'ID of the [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) to which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
             format: 'uuid',
             type: 'string',
           },
           created_at: {
             description:
-              'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was created.',
+              'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created.',
             format: 'date-time',
             type: 'string',
           },
           display_name: {
             description:
-              'Display name that corresponds to the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.',
+              'Display name that corresponds to the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type.',
             minLength: 1,
             type: 'string',
           },
           ends_at: {
             description:
-              'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+              'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
             type: 'string',
           },
           errors: {
             description:
-              'Errors associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'Errors associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             items: {
               properties: {
                 created_at: {
@@ -34838,7 +34838,7 @@ const openapi: OpenAPISpec = {
           },
           external_type: {
             description:
-              'Brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
+              'Brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
             enum: [
               'pti_card',
               'brivo_credential',
@@ -34859,65 +34859,65 @@ const openapi: OpenAPISpec = {
           },
           external_type_display_name: {
             description:
-              'Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.',
+              'Display name that corresponds to the brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type.',
             type: 'string',
           },
           is_issued: {
             description:
-              'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been encoded onto a card.',
+              'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been encoded onto a card.',
             type: 'boolean',
           },
           is_latest_desired_state_synced_with_provider: {
             description:
-              'Indicates whether the latest state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider.',
+              'Indicates whether the latest state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider.',
             nullable: true,
             type: 'boolean',
           },
           is_managed: { enum: [false], type: 'boolean' },
           is_multi_phone_sync_credential: {
             description:
-              'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+              'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
             type: 'boolean',
           },
           is_one_time_use: {
             description:
-              'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.',
+              'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.',
             type: 'boolean',
           },
           issued_at: {
             description:
-              'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was encoded onto a card.',
+              'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was encoded onto a card.',
             format: 'date-time',
             nullable: true,
             type: 'string',
           },
           latest_desired_state_synced_with_provider_at: {
             description:
-              'Date and time at which the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider.',
+              'Date and time at which the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider.',
             format: 'date-time',
             nullable: true,
             type: 'string',
           },
           parent_acs_credential_id: {
             description:
-              'ID of the parent [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'ID of the parent [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             format: 'uuid',
             type: 'string',
           },
           starts_at: {
             description:
-              'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+              'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
             type: 'string',
           },
           user_identity_id: {
             description:
-              'ID of the [user identity](https://docs.seam.co/api/user_identities) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+              'ID of the [user identity](https://www.seam.co/docs/api/user_identities/object) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
             format: 'uuid',
             type: 'string',
           },
           visionline_metadata: {
             description:
-              'Visionline-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             properties: {
               auto_join: {
                 description:
@@ -34966,15 +34966,15 @@ const openapi: OpenAPISpec = {
           },
           warnings: {
             description:
-              'Warnings associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'Warnings associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             items: {
               description:
-                'Warning associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+                'Warning associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
               discriminator: { propertyName: 'warning_code' },
               oneOf: [
                 {
                   description:
-                    'Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is waiting to be issued.',
+                    'Indicates that the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is waiting to be issued.',
                   properties: {
                     created_at: {
                       description:
@@ -34999,7 +34999,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    "Indicates that the schedule of one of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials)'s children was modified externally.",
+                    "Indicates that the schedule of one of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials)'s children was modified externally.",
                   properties: {
                     created_at: {
                       description:
@@ -35024,7 +35024,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the schedule of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.',
+                    'Indicates that the schedule of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.',
                   properties: {
                     created_at: {
                       description:
@@ -35049,7 +35049,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is being deleted.',
+                    'Indicates that the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is being deleted.',
                   properties: {
                     created_at: {
                       description:
@@ -35074,7 +35074,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'An unknown issue occurred while syncing the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
+                    'An unknown issue occurred while syncing the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
                   properties: {
                     created_at: {
                       description:
@@ -35099,7 +35099,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Access permissions for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
+                    'Access permissions for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
                   properties: {
                     created_at: {
                       description:
@@ -35168,7 +35168,7 @@ const openapi: OpenAPISpec = {
           },
           workspace_id: {
             description:
-              'ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+              'ID of the workspace that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
             format: 'uuid',
             type: 'string',
           },
@@ -35191,11 +35191,11 @@ const openapi: OpenAPISpec = {
       },
       unmanaged_acs_user: {
         description:
-          'Represents an unmanaged [user](https://docs.seam.co/low-level-apis/access-systems/user-management) in an [access system](https://docs.seam.co/low-level-apis/access-systems).',
+          'Represents an unmanaged [user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) in an [access system](https://www.seam.co/docs/low-level-apis/access-systems).',
         properties: {
           access_schedule: {
             description:
-              "`starts_at` and `ends_at` timestamps for the [access system user's](https://docs.seam.co/low-level-apis/access-systems/user-management) access.",
+              "`starts_at` and `ends_at` timestamps for the [access system user's](https://www.seam.co/docs/low-level-apis/access-systems/user-management) access.",
             properties: {
               ends_at: {
                 description:
@@ -35216,31 +35216,31 @@ const openapi: OpenAPISpec = {
           },
           acs_system_id: {
             description:
-              'ID of the [access system](https://docs.seam.co/low-level-apis/access-systems) that contains the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'ID of the [access system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             format: 'uuid',
             type: 'string',
           },
           acs_user_id: {
             description:
-              'ID of the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'ID of the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             format: 'uuid',
             type: 'string',
           },
           connected_account_id: {
             description:
-              '\n      The ID of the connected account that is associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).\n    ',
+              '\n      The ID of the connected account that is associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).\n    ',
             format: 'uuid',
             type: 'string',
           },
           created_at: {
             description:
-              'Date and time at which the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was created.',
+              'Date and time at which the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was created.',
             format: 'date-time',
             type: 'string',
           },
           display_name: {
             description:
-              'Display name for the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'Display name for the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             type: 'string',
           },
           email: {
@@ -35251,21 +35251,21 @@ const openapi: OpenAPISpec = {
           },
           email_address: {
             description:
-              'Email address of the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'Email address of the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             format: 'email',
             type: 'string',
           },
           errors: {
             description:
-              'Errors associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'Errors associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             items: {
               description:
-                'Errors associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+                'Errors associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
               discriminator: { propertyName: 'error_code' },
               oneOf: [
                 {
                   description:
-                    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was deleted from the [access system](https://docs.seam.co/low-level-apis/access-systems) outside of Seam.',
+                    'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was deleted from the [access system](https://www.seam.co/docs/low-level-apis/access-systems) outside of Seam.',
                   properties: {
                     created_at: {
                       description:
@@ -35289,7 +35289,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.',
+                    'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.',
                   properties: {
                     created_at: {
                       description:
@@ -35313,7 +35313,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was not created on the [access system](https://docs.seam.co/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
+                    'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was not created on the [access system](https://www.seam.co/docs/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -35337,7 +35337,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was not updated on the [access system](https://docs.seam.co/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
+                    'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was not updated on the [access system](https://www.seam.co/docs/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -35361,7 +35361,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was not deleted on the [access system](https://docs.seam.co/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
+                    'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was not deleted on the [access system](https://www.seam.co/docs/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -35385,7 +35385,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).',
+                    'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).',
                   properties: {
                     created_at: {
                       description:
@@ -35413,7 +35413,7 @@ const openapi: OpenAPISpec = {
           },
           external_type: {
             description:
-              'Brand-specific terminology for the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) type.',
+              'Brand-specific terminology for the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) type.',
             enum: [
               'pti_user',
               'brivo_user',
@@ -35429,12 +35429,12 @@ const openapi: OpenAPISpec = {
           },
           external_type_display_name: {
             description:
-              'Display name that corresponds to the brand-specific terminology for the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) type.',
+              'Display name that corresponds to the brand-specific terminology for the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) type.',
             type: 'string',
           },
           full_name: {
             description:
-              'Full name of the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'Full name of the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             minLength: 1,
             type: 'string',
           },
@@ -35447,7 +35447,7 @@ const openapi: OpenAPISpec = {
           is_managed: { enum: [false], type: 'boolean' },
           is_suspended: {
             description:
-              'Indicates whether the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) is currently [suspended](https://docs.seam.co/low-level-apis/access-systems/user-management/suspending-and-unsuspending-users).',
+              'Indicates whether the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) is currently [suspended](https://www.seam.co/docs/low-level-apis/access-systems/user-management/suspending-and-unsuspending-users).',
             type: 'boolean',
           },
           last_successful_sync_at: {
@@ -35460,7 +35460,7 @@ const openapi: OpenAPISpec = {
           },
           pending_mutations: {
             description:
-              'Pending mutations associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.',
+              'Pending mutations associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management). Seam is in the process of pushing these mutations to the integrated access system.',
             items: {
               discriminator: { propertyName: 'mutation_code' },
               oneOf: [
@@ -35889,12 +35889,12 @@ const openapi: OpenAPISpec = {
           },
           phone_number: {
             description:
-              'Phone number of the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
+              'Phone number of the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
             type: 'string',
           },
           salto_ks_metadata: {
             description:
-              'Salto KS-specific metadata associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'Salto KS-specific metadata associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             properties: {
               is_subscribed: {
                 description:
@@ -35906,7 +35906,7 @@ const openapi: OpenAPISpec = {
           },
           salto_space_metadata: {
             description:
-              'Salto Space-specific metadata associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'Salto Space-specific metadata associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             properties: {
               audit_openings: {
                 description:
@@ -35922,38 +35922,38 @@ const openapi: OpenAPISpec = {
           },
           user_identity_email_address: {
             description:
-              'Email address of the user identity associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'Email address of the user identity associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             nullable: true,
             type: 'string',
           },
           user_identity_full_name: {
             description:
-              'Full name of the user identity associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'Full name of the user identity associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             nullable: true,
             type: 'string',
           },
           user_identity_id: {
             description:
-              'ID of the user identity associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'ID of the user identity associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             type: 'string',
           },
           user_identity_phone_number: {
             description:
-              'Phone number of the user identity associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
+              'Phone number of the user identity associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
             nullable: true,
             type: 'string',
           },
           warnings: {
             description:
-              'Warnings associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'Warnings associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             items: {
               description:
-                'Warnings associated with the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+                'Warnings associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
               discriminator: { propertyName: 'warning_code' },
               oneOf: [
                 {
                   description:
-                    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) is being deleted from the [access system](https://docs.seam.co/low-level-apis/access-systems). This is a temporary state, and the access system user will be deleted shortly.',
+                    'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) is being deleted from the [access system](https://www.seam.co/docs/low-level-apis/access-systems). This is a temporary state, and the access system user will be deleted shortly.',
                   properties: {
                     created_at: {
                       description:
@@ -35973,7 +35973,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.',
+                    'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) is not subscribed on Salto KS, so they cannot unlock doors or perform any actions. This occurs when the their access schedule hasn’t started yet, if their access schedule has ended, if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.',
                   properties: {
                     created_at: {
                       description:
@@ -35996,7 +35996,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) exists but is not currently able to gain access—for example, because their access schedule has not started yet or has ended, the access system has reached its limit for active users, or they have been unsubscribed or deactivated. Refer to the warning message for the provider-specific reason. This is distinct from `is_suspended`, which indicates the user has been explicitly blocked.',
+                    'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) exists but is not currently able to gain access—for example, because their access schedule has not started yet or has ended, the access system has reached its limit for active users, or they have been unsubscribed or deactivated. Refer to the warning message for the provider-specific reason. This is distinct from `is_suspended`, which indicates the user has been explicitly blocked.',
                   properties: {
                     created_at: {
                       description:
@@ -36019,7 +36019,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'An unknown issue occurred while syncing the state of this [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.',
+                    'An unknown issue occurred while syncing the state of this [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.',
                   properties: {
                     created_at: {
                       description:
@@ -36042,7 +36042,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.',
+                    'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.',
                   properties: {
                     created_at: {
                       description:
@@ -36069,7 +36069,7 @@ const openapi: OpenAPISpec = {
           },
           workspace_id: {
             description:
-              'ID of the workspace that contains the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+              'ID of the workspace that contains the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
             format: 'uuid',
             type: 'string',
           },
@@ -36092,7 +36092,7 @@ const openapi: OpenAPISpec = {
       },
       unmanaged_device: {
         description:
-          'Represents an [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices). An unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).',
+          'Represents an [unmanaged device](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices). An unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).',
         properties: {
           can_configure_auto_lock: {
             description:
@@ -36193,10 +36193,10 @@ const openapi: OpenAPISpec = {
           },
           capabilities_supported: {
             description:
-              '\n        Collection of capabilities that the device supports when connected to Seam. Values are `access_code`, which indicates that the device can manage and utilize digital PIN codes for secure access; `lock`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; `noise_detection`, which indicates that the device supports monitoring and responding to ambient noise levels; `thermostat`, which indicates that the device can regulate and adjust indoor temperatures; `battery`, which indicates that the device can manage battery life and health; and `phone`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://docs.seam.co/capability-guides/device-and-system-capabilities#capability-flags).\n        ',
+              '\n        Collection of capabilities that the device supports when connected to Seam. Values are `access_code`, which indicates that the device can manage and utilize digital PIN codes for secure access; `lock`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; `noise_detection`, which indicates that the device supports monitoring and responding to ambient noise levels; `thermostat`, which indicates that the device can regulate and adjust indoor temperatures; `battery`, which indicates that the device can manage battery life and health; and `phone`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://www.seam.co/docs/capability-guides/device-and-system-capabilities#capability-flags).\n        ',
             items: {
               description:
-                '\n        Collection of capabilities that the device supports when connected to Seam. **Important:** Superseded by [capability flags](https://docs.seam.co/capability-guides/device-and-system-capabilities#capability-flags).\n        ',
+                '\n        Collection of capabilities that the device supports when connected to Seam. **Important:** Superseded by [capability flags](https://www.seam.co/docs/capability-guides/device-and-system-capabilities#capability-flags).\n        ',
               enum: [
                 'access_code',
                 'lock',
@@ -36226,7 +36226,7 @@ const openapi: OpenAPISpec = {
               oneOf: [{ type: 'string' }, { type: 'boolean' }],
             },
             description:
-              'Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://docs.seam.co/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. Keys set to `null` or to an empty string are omitted.',
+              'Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://www.seam.co/docs/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://www.seam.co/docs/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://www.seam.co/docs/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. Keys set to `null` or to an empty string are omitted.',
             type: 'object',
           },
           device_id: {
@@ -36336,7 +36336,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_connected_account_error: {
                       description:
-                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                        'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
                       enum: [true],
                       type: 'boolean',
                     },
@@ -36380,7 +36380,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_connected_account_error: {
                       description:
-                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                        'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
                       enum: [true],
                       type: 'boolean',
                     },
@@ -36425,7 +36425,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_connected_account_error: {
                       description:
-                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                        'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
                       enum: [true],
                       type: 'boolean',
                     },
@@ -36469,7 +36469,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_connected_account_error: {
                       description:
-                        'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+                        'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
                       enum: [true],
                       type: 'boolean',
                     },
@@ -36644,7 +36644,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.',
+                    'Indicates that the [backup access code pool](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.',
                   properties: {
                     created_at: {
                       description:
@@ -36830,7 +36830,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://www.seam.co/docs/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -36846,7 +36846,7 @@ const openapi: OpenAPISpec = {
                     },
                     is_bridge_error: {
                       description:
-                        'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+                        'Indicates whether the error is related to [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge).',
                       type: 'boolean',
                     },
                     is_connected_account_error: {
@@ -38062,7 +38062,7 @@ const openapi: OpenAPISpec = {
       },
       user_identity: {
         description:
-          'Represents a [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with an application user account.',
+          'Represents a [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with an application user account.',
         properties: {
           acs_user_ids: {
             description:
@@ -38265,22 +38265,22 @@ const openapi: OpenAPISpec = {
       },
       webhook: {
         description:
-          'Represents a [webhook](https://docs.seam.co/developer-tools/webhooks) that enables you to receive notifications of events. When you create a webhook, specify the endpoint URL at which you want to receive events and the set of event types that you want to receive.',
+          'Represents a [webhook](https://www.seam.co/docs/developer-tools/webhooks) that enables you to receive notifications of events. When you create a webhook, specify the endpoint URL at which you want to receive events and the set of event types that you want to receive.',
         properties: {
           event_types: {
             description:
-              'Types of events that the [webhook](https://docs.seam.co/developer-tools/webhooks) should receive.',
+              'Types of events that the [webhook](https://www.seam.co/docs/developer-tools/webhooks) should receive.',
             items: { type: 'string' },
             type: 'array',
           },
           secret: {
             description:
-              'Secret associated with the [webhook](https://docs.seam.co/developer-tools/webhooks).',
+              'Secret associated with the [webhook](https://www.seam.co/docs/developer-tools/webhooks).',
             type: 'string',
           },
           url: {
             description:
-              'URL for the [webhook](https://docs.seam.co/developer-tools/webhooks).',
+              'URL for the [webhook](https://www.seam.co/docs/developer-tools/webhooks).',
             type: 'string',
           },
           webhook_id: { description: 'ID of the webhook.', type: 'string' },
@@ -38291,18 +38291,18 @@ const openapi: OpenAPISpec = {
       },
       workspace: {
         description:
-          'Represents a Seam [workspace](https://docs.seam.co/core-concepts/workspaces). A workspace is a top-level entity that encompasses all other resources below it, such as devices, connected accounts, and Connect Webviews. Seam provides two types of workspaces. A [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces) is a special type of workspace designed for testing code. Sandbox workspaces offer test device accounts and virtual devices that you can connect and control. This ability to work with virtual devices is quite handy because it removes the need to own physical devices from multiple brands. To connect real devices and systems to Seam, use a [production workspace](https://docs.seam.co/core-concepts/workspaces#production-workspaces).',
+          'Represents a Seam [workspace](https://www.seam.co/docs/core-concepts/workspaces). A workspace is a top-level entity that encompasses all other resources below it, such as devices, connected accounts, and Connect Webviews. Seam provides two types of workspaces. A [sandbox workspace](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces) is a special type of workspace designed for testing code. Sandbox workspaces offer test device accounts and virtual devices that you can connect and control. This ability to work with virtual devices is quite handy because it removes the need to own physical devices from multiple brands. To connect real devices and systems to Seam, use a [production workspace](https://www.seam.co/docs/core-concepts/workspaces#production-workspaces).',
         properties: {
           company_name: {
             deprecated: true,
             description:
-              'Company name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces).',
+              'Company name associated with the [workspace](https://www.seam.co/docs/core-concepts/workspaces).',
             type: 'string',
             'x-deprecated': 'Use `connect_partner_name` instead.',
           },
           connect_partner_name: {
             description:
-              'Seam Connect partner name associated with the [workspace](https://docs.seam.co/core-concepts/workspaces).',
+              'Seam Connect partner name associated with the [workspace](https://www.seam.co/docs/core-concepts/workspaces).',
             nullable: true,
             type: 'string',
           },
@@ -38310,28 +38310,28 @@ const openapi: OpenAPISpec = {
             properties: {
               inviter_logo_url: {
                 description:
-                  'URL of the inviter logo for [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                  'URL of the inviter logo for [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                 type: 'string',
               },
               logo_shape: {
                 description:
-                  'Logo shape for [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                  'Logo shape for [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                 enum: ['circle', 'square'],
                 type: 'string',
               },
               primary_button_color: {
                 description:
-                  'Primary button color for [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                  'Primary button color for [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                 type: 'string',
               },
               primary_button_text_color: {
                 description:
-                  'Primary button text color for [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                  'Primary button text color for [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                 type: 'string',
               },
               success_message: {
                 description:
-                  'Success message for [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                  'Success message for [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                 type: 'string',
               },
             },
@@ -38344,17 +38344,17 @@ const openapi: OpenAPISpec = {
           },
           is_sandbox: {
             description:
-              'Indicates whether the workspace is a [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces).',
+              'Indicates whether the workspace is a [sandbox workspace](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces).',
             type: 'boolean',
           },
           is_suspended: {
             description:
-              'Indicates whether the [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces) is suspended. Seam suspends sandbox workspaces that have not been accessed in 14 days.',
+              'Indicates whether the [sandbox workspace](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces) is suspended. Seam suspends sandbox workspaces that have not been accessed in 14 days.',
             type: 'boolean',
           },
           name: {
             description:
-              'Name of the [workspace](https://docs.seam.co/core-concepts/workspaces).',
+              'Name of the [workspace](https://www.seam.co/docs/core-concepts/workspaces).',
             type: 'string',
           },
           organization_id: {
@@ -38366,7 +38366,7 @@ const openapi: OpenAPISpec = {
           },
           publishable_key: {
             description:
-              'Publishable key for the [workspace](https://docs.seam.co/core-concepts/workspaces). This key is used to identify the workspace in client-side applications.',
+              'Publishable key for the [workspace](https://www.seam.co/docs/core-concepts/workspaces). This key is used to identify the workspace in client-side applications.',
             type: 'string',
           },
           workspace_id: {
@@ -38472,7 +38472,7 @@ const openapi: OpenAPISpec = {
   },
   externalDocs: {
     description: 'Seam API documentation',
-    url: 'https://docs.seam.co',
+    url: 'https://www.seam.co/docs',
   },
   info: {
     description:
@@ -38497,7 +38497,7 @@ const openapi: OpenAPISpec = {
     '/access_codes/create': {
       post: {
         description:
-          'Creates a new [access code](https://docs.seam.co/low-level-apis/access-codes). For granting access, we recommend [Access Grants](https://docs.seam.co/use-cases/granting-access) instead: they work across both standalone smart locks and access control systems and manage the underlying codes for you. Use this low-level endpoint only when you need direct control over a code on a single device, such as setting a custom PIN value.',
+          'Creates a new [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes). For granting access, we recommend [Access Grants](https://www.seam.co/docs/use-cases/granting-access) instead: they work across both standalone smart locks and access control systems and manage the underlying codes for you. Use this low-level endpoint only when you need direct control over a code on a single device, such as setting a custom PIN value.',
         operationId: 'accessCodesCreatePost',
         requestBody: {
           content: {
@@ -38506,7 +38506,7 @@ const openapi: OpenAPISpec = {
                 properties: {
                   allow_external_modification: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
+                      'Indicates whether [external modification](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
                     type: 'boolean',
                   },
                   attempt_for_offline_device: {
@@ -38522,7 +38522,7 @@ const openapi: OpenAPISpec = {
                   },
                   common_code_key: {
                     description:
-                      'Key to identify access codes that should have the same code. Any two access codes with the same `common_code_key` are guaranteed to have the same `code`. See also [Creating and Updating Multiple Linked Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).',
+                      'Key to identify access codes that should have the same code. Any two access codes with the same `common_code_key` are guaranteed to have the same `code`. See also [Creating and Updating Multiple Linked Access Codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).',
                     minLength: 1,
                     type: 'string',
                   },
@@ -38539,22 +38539,22 @@ const openapi: OpenAPISpec = {
                   },
                   is_external_modification_allowed: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
+                      'Indicates whether [external modification](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
                     type: 'boolean',
                   },
                   is_offline_access_code: {
                     description:
-                      'Indicates whether the access code is an [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes).',
+                      'Indicates whether the access code is an [offline access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/offline-access-codes).',
                     type: 'boolean',
                   },
                   is_one_time_use: {
                     description:
-                      'Indicates whether the [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes) is a single-use access code.',
+                      'Indicates whether the [offline access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/offline-access-codes) is a single-use access code.',
                     type: 'boolean',
                   },
                   max_time_rounding: {
                     description:
-                      'Maximum rounding adjustment. To create a daily-bound [offline access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.',
+                      'Maximum rounding adjustment. To create a daily-bound [offline access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/offline-access-codes) for devices that support this feature, set this parameter to `1d`.',
                     enum: ['1hour', '1day', '1h', '1d'],
                     type: 'string',
                   },
@@ -38565,7 +38565,7 @@ const openapi: OpenAPISpec = {
                   },
                   prefer_native_scheduling: {
                     description:
-                      'Indicates whether [native scheduling](https://docs.seam.co/low-level-apis/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.',
+                      'Indicates whether [native scheduling](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.',
                     type: 'boolean',
                   },
                   preferred_code_length: {
@@ -38586,7 +38586,7 @@ const openapi: OpenAPISpec = {
                   },
                   use_backup_access_code_pool: {
                     description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).',
+                      'Indicates whether to use a [backup access code pool](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://www.seam.co/docs/api/access_codes/pull_backup_access_code).',
                     type: 'boolean',
                   },
                   use_offline_access_code: {
@@ -38643,7 +38643,7 @@ const openapi: OpenAPISpec = {
     '/access_codes/create_multiple': {
       put: {
         description:
-          'Creates new [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes) that share a common code across multiple devices.\n\nUsers with more than one door lock in a property may want to create groups of linked access codes, all of which have the same code (PIN). For example, a short-term rental host may want to provide guests the same PIN for both a front door lock and a back door lock.\n\nIf you specify a custom code, Seam assigns this custom code to each of the resulting access codes. However, in this case, Seam does not link these access codes together with a `common_code_key`. That is, `common_code_key` remains null for these access codes.\n\nIf you want to change these access codes that are not linked by a `common_code_key`, you cannot use `/access_codes/update_multiple`. However, you can update each of these access codes individually, using `/access_codes/update`.\n\nSee also [Creating and Updating Multiple Linked Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).\n\nFor granting a person access to a space, [Access Grants](https://docs.seam.co/use-cases/granting-access) are the default and recommended approach and work across both standalone smart locks and access systems. Use the lower-level Access Codes API directly only when you specifically need to manage individual PIN codes.',
+          'Creates new [access codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) that share a common code across multiple devices.\n\nUsers with more than one door lock in a property may want to create groups of linked access codes, all of which have the same code (PIN). For example, a short-term rental host may want to provide guests the same PIN for both a front door lock and a back door lock.\n\nIf you specify a custom code, Seam assigns this custom code to each of the resulting access codes. However, in this case, Seam does not link these access codes together with a `common_code_key`. That is, `common_code_key` remains null for these access codes.\n\nIf you want to change these access codes that are not linked by a `common_code_key`, you cannot use `/access_codes/update_multiple`. However, you can update each of these access codes individually, using `/access_codes/update`.\n\nSee also [Creating and Updating Multiple Linked Access Codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes).\n\nFor granting a person access to a space, [Access Grants](https://www.seam.co/docs/use-cases/granting-access) are the default and recommended approach and work across both standalone smart locks and access systems. Use the lower-level Access Codes API directly only when you specifically need to manage individual PIN codes.',
         operationId: 'accessCodesCreateMultiplePut',
         requestBody: {
           content: {
@@ -38652,7 +38652,7 @@ const openapi: OpenAPISpec = {
                 properties: {
                   allow_external_modification: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
+                      'Indicates whether [external modification](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
                     type: 'boolean',
                   },
                   attempt_for_offline_device: {
@@ -38686,7 +38686,7 @@ const openapi: OpenAPISpec = {
                   },
                   is_external_modification_allowed: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
+                      'Indicates whether [external modification](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
                     type: 'boolean',
                   },
                   name: {
@@ -38696,7 +38696,7 @@ const openapi: OpenAPISpec = {
                   },
                   prefer_native_scheduling: {
                     description:
-                      'Indicates whether [native scheduling](https://docs.seam.co/low-level-apis/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.',
+                      'Indicates whether [native scheduling](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#native-scheduling) should be used for time-bound codes when supported by the provider. Default: `true`.',
                     type: 'boolean',
                   },
                   preferred_code_length: {
@@ -38712,7 +38712,7 @@ const openapi: OpenAPISpec = {
                   },
                   use_backup_access_code_pool: {
                     description:
-                      'Indicates whether to use a [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://docs.seam.co/api/access_codes/pull_backup_access_code).',
+                      'Indicates whether to use a [backup access code pool](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://www.seam.co/docs/api/access_codes/pull_backup_access_code).',
                     type: 'boolean',
                   },
                 },
@@ -38763,7 +38763,7 @@ const openapi: OpenAPISpec = {
     '/access_codes/delete': {
       delete: {
         description:
-          'Deletes an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).',
+          'Deletes an [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes).',
         operationId: 'accessCodesDeleteDelete',
         parameters: [
           {
@@ -38838,7 +38838,7 @@ const openapi: OpenAPISpec = {
     '/access_codes/generate_code': {
       get: {
         description:
-          'Generates a code for an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes), given a device ID.',
+          'Generates a code for an [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes), given a device ID.',
         operationId: 'accessCodesGenerateCodeGet',
         parameters: [
           {
@@ -38893,7 +38893,7 @@ const openapi: OpenAPISpec = {
     '/access_codes/get': {
       get: {
         description:
-          'Returns a specified [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).\n\nYou must specify either `access_code_id` or both `device_id` and `code`.',
+          'Returns a specified [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes).\n\nYou must specify either `access_code_id` or both `device_id` and `code`.',
         operationId: 'accessCodesGetGet',
         parameters: [
           {
@@ -39233,7 +39233,7 @@ const openapi: OpenAPISpec = {
     '/access_codes/list': {
       get: {
         description:
-          'Returns a list of all [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes).\n\nSpecify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
+          'Returns a list of all [access codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes).\n\nSpecify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
         operationId: 'accessCodesListGet',
         parameters: [
           {
@@ -39383,7 +39383,7 @@ const openapi: OpenAPISpec = {
     '/access_codes/pull_backup_access_code': {
       post: {
         description:
-          "Retrieves a backup access code for an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes). See also [Managing Backup Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes).\n\nA backup access code pool is a collection of pre-programmed access codes stored on a device, ready for use. These codes are programmed in addition to the regular access codes on Seam, serving as a safety net for any issues with the primary codes. If there's ever a complication with a primary access code—be it due to intermittent connectivity, manual removal from a device, or provider outages—a backup code can be retrieved. Its end time can then be adjusted to align with the original code, facilitating seamless and uninterrupted access.\n\nYou can pull a backup access code from the pool at any time. These backup codes are guaranteed to work immediately and automatically programmed to be removed from the device after the access code ends.\n\nYou can only pull backup access codes for time-bound access codes.\n\nBefore pulling a backup access code, make sure that the device's `properties.supports_backup_access_code_pool` is `true`. Then, to activate the backup pool, set `use_backup_access_code_pool` to `true` when creating an access code.",
+          "Retrieves a backup access code for an [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes). See also [Managing Backup Access Codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/backup-access-codes).\n\nA backup access code pool is a collection of pre-programmed access codes stored on a device, ready for use. These codes are programmed in addition to the regular access codes on Seam, serving as a safety net for any issues with the primary codes. If there's ever a complication with a primary access code—be it due to intermittent connectivity, manual removal from a device, or provider outages—a backup code can be retrieved. Its end time can then be adjusted to align with the original code, facilitating seamless and uninterrupted access.\n\nYou can pull a backup access code from the pool at any time. These backup codes are guaranteed to work immediately and automatically programmed to be removed from the device after the access code ends.\n\nYou can only pull backup access codes for time-bound access codes.\n\nBefore pulling a backup access code, make sure that the device's `properties.supports_backup_access_code_pool` is `true`. Then, to activate the backup pool, set `use_backup_access_code_pool` to `true` when creating an access code.",
         operationId: 'accessCodesPullBackupAccessCodePost',
         requestBody: {
           content: {
@@ -39518,7 +39518,7 @@ const openapi: OpenAPISpec = {
     '/access_codes/simulate/create_unmanaged_access_code': {
       post: {
         description:
-          'Simulates the creation of an [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) in a [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces).',
+          'Simulates the creation of an [unmanaged access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) in a [sandbox workspace](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces).',
         operationId: 'accessCodesSimulateCreateUnmanagedAccessCodePost',
         requestBody: {
           content: {
@@ -39588,7 +39588,7 @@ const openapi: OpenAPISpec = {
     '/access_codes/unmanaged/convert_to_managed': {
       patch: {
         description:
-          'Converts an [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) to an [access code managed through Seam](https://docs.seam.co/low-level-apis/smart-locks/access-codes).\n\nAn unmanaged access code has a limited set of operations that you can perform on it. Once you convert an unmanaged access code to a managed access code, the full set of access code operations and lifecycle events becomes available for it.\n\nNote that not all device providers support converting an unmanaged access code to a managed access code.',
+          'Converts an [unmanaged access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) to an [access code managed through Seam](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes).\n\nAn unmanaged access code has a limited set of operations that you can perform on it. Once you convert an unmanaged access code to a managed access code, the full set of access code operations and lifecycle events becomes available for it.\n\nNote that not all device providers support converting an unmanaged access code to a managed access code.',
         operationId: 'accessCodesUnmanagedConvertToManagedPatch',
         requestBody: {
           content: {
@@ -39603,7 +39603,7 @@ const openapi: OpenAPISpec = {
                   },
                   allow_external_modification: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/low-level-apis/smart-locks/access-codes#external-modification) of the access code is allowed.',
+                      'Indicates whether [external modification](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#external-modification) of the access code is allowed.',
                     type: 'boolean',
                   },
                   force: {
@@ -39613,7 +39613,7 @@ const openapi: OpenAPISpec = {
                   },
                   is_external_modification_allowed: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/low-level-apis/smart-locks/access-codes#external-modification) of the access code is allowed.',
+                      'Indicates whether [external modification](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#external-modification) of the access code is allowed.',
                     type: 'boolean',
                   },
                   sync: {
@@ -39663,7 +39663,7 @@ const openapi: OpenAPISpec = {
     '/access_codes/unmanaged/delete': {
       delete: {
         description:
-          'Deletes an [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes).',
+          'Deletes an [unmanaged access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes).',
         operationId: 'accessCodesUnmanagedDeleteDelete',
         parameters: [
           {
@@ -39728,7 +39728,7 @@ const openapi: OpenAPISpec = {
     '/access_codes/unmanaged/get': {
       get: {
         description:
-          'Returns a specified [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes).\n\nYou must specify either `access_code_id` or both `device_id` and `code`.',
+          'Returns a specified [unmanaged access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes).\n\nYou must specify either `access_code_id` or both `device_id` and `code`.',
         operationId: 'accessCodesUnmanagedGetGet',
         parameters: [
           {
@@ -39805,7 +39805,7 @@ const openapi: OpenAPISpec = {
     '/access_codes/unmanaged/list': {
       get: {
         description:
-          'Returns a list of all [unmanaged access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes).',
+          'Returns a list of all [unmanaged access codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes).',
         operationId: 'accessCodesUnmanagedListGet',
         parameters: [
           {
@@ -39911,7 +39911,7 @@ const openapi: OpenAPISpec = {
     '/access_codes/unmanaged/update': {
       patch: {
         description:
-          'Updates a specified [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes).',
+          'Updates a specified [unmanaged access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes).',
         operationId: 'accessCodesUnmanagedUpdatePatch',
         requestBody: {
           content: {
@@ -39926,7 +39926,7 @@ const openapi: OpenAPISpec = {
                   },
                   allow_external_modification: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed.',
+                      'Indicates whether [external modification](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed.',
                     type: 'boolean',
                   },
                   force: {
@@ -39936,7 +39936,7 @@ const openapi: OpenAPISpec = {
                   },
                   is_external_modification_allowed: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed.',
+                      'Indicates whether [external modification](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed.',
                     type: 'boolean',
                   },
                   is_managed: { type: 'boolean' },
@@ -39981,7 +39981,7 @@ const openapi: OpenAPISpec = {
     '/access_codes/update': {
       patch: {
         description:
-          'Updates a specified active or upcoming [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).\n\nSee also [Modifying Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/modifying-access-codes).',
+          'Updates a specified active or upcoming [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes).\n\nSee also [Modifying Access Codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/modifying-access-codes).',
         operationId: 'accessCodesUpdatePatch',
         requestBody: {
           content: {
@@ -39996,7 +39996,7 @@ const openapi: OpenAPISpec = {
                   },
                   allow_external_modification: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
+                      'Indicates whether [external modification](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
                     type: 'boolean',
                   },
                   attempt_for_offline_device: {
@@ -40023,7 +40023,7 @@ const openapi: OpenAPISpec = {
                   },
                   is_external_modification_allowed: {
                     description:
-                      'Indicates whether [external modification](https://docs.seam.co/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
+                      'Indicates whether [external modification](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`.',
                     type: 'boolean',
                   },
                   is_managed: {
@@ -40048,7 +40048,7 @@ const openapi: OpenAPISpec = {
                   },
                   type: {
                     description:
-                      'Type to which you want to convert the access code. To convert a time-bound access code to an ongoing access code, set `type` to `ongoing`. See also [Changing a time-bound access code to permanent access](https://docs.seam.co/low-level-apis/smart-locks/access-codes/modifying-access-codes#special-case-2-changing-a-time-bound-access-code-to-permanent-access).',
+                      'Type to which you want to convert the access code. To convert a time-bound access code to an ongoing access code, set `type` to `ongoing`. See also [Changing a time-bound access code to permanent access](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/modifying-access-codes#special-case-2-changing-a-time-bound-access-code-to-permanent-access).',
                     enum: ['ongoing', 'time_bound'],
                     type: 'string',
                   },
@@ -40099,7 +40099,7 @@ const openapi: OpenAPISpec = {
     '/access_codes/update_multiple': {
       patch: {
         description:
-          'Updates [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes) that share a common code across multiple devices.\n\nSpecify the `common_code_key` to identify the set of access codes that you want to update.\n\nSee also [Update Linked Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes#update-linked-access-codes).',
+          'Updates [access codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) that share a common code across multiple devices.\n\nSpecify the `common_code_key` to identify the set of access codes that you want to update.\n\nSee also [Update Linked Access Codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes#update-linked-access-codes).',
         operationId: 'accessCodesUpdateMultiplePatch',
         requestBody: {
           content: {
@@ -40168,7 +40168,7 @@ const openapi: OpenAPISpec = {
     '/access_grants/create': {
       post: {
         description:
-          'Creates a new [Access Grant](https://docs.seam.co/use-cases/granting-access/access-grants). Access Grants are the default and recommended way to grant a user access to any physical space, irrespective of the locking hardware. They work with both standalone smart locks (using `device_ids`) and access control systems (using `acs_entrance_ids` or `space_ids`), and can issue PIN codes, key cards, and mobile keys through a single request.',
+          'Creates a new [Access Grant](https://www.seam.co/docs/use-cases/granting-access). Access Grants are the default and recommended way to grant a user access to any physical space, irrespective of the locking hardware. They work with both standalone smart locks (using `device_ids`) and access control systems (using `acs_entrance_ids` or `space_ids`), and can issue PIN codes, key cards, and mobile keys through a single request.',
         operationId: 'accessGrantsCreatePost',
         requestBody: {
           content: {
@@ -40242,7 +40242,7 @@ const openapi: OpenAPISpec = {
                       acs_entrance_ids: {
                         default: [],
                         description:
-                          'Set of IDs of the [entrances](https://docs.seam.co/api/acs/systems/list) to which access is being granted.',
+                          'Set of IDs of the [entrances](https://www.seam.co/docs/api/acs/systems/list) to which access is being granted.',
                         items: { format: 'uuid', type: 'string' },
                         type: 'array',
                       },
@@ -40255,7 +40255,7 @@ const openapi: OpenAPISpec = {
                       device_ids: {
                         default: [],
                         description:
-                          'Set of IDs of the [devices](https://docs.seam.co/api/devices/list) to which access is being granted.',
+                          'Set of IDs of the [devices](https://www.seam.co/docs/api/devices/list) to which access is being granted.',
                         items: { format: 'uuid', type: 'string' },
                         type: 'array',
                       },
@@ -41370,7 +41370,7 @@ const openapi: OpenAPISpec = {
     '/access_methods/encode': {
       post: {
         description:
-          'Encodes an existing access method onto a plastic card placed on the specified [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
+          'Encodes an existing access method onto a plastic card placed on the specified [encoder](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
         operationId: 'accessMethodsEncodePost',
         requestBody: {
           content: {
@@ -41762,7 +41762,7 @@ const openapi: OpenAPISpec = {
     '/access_methods/unlock_door': {
       post: {
         description:
-          'Remotely unlocks a specified [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) using the cloud key credential associated with an access method. Returns an action attempt that tracks the progress of the unlock operation.',
+          'Remotely unlocks a specified [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) using the cloud key credential associated with an access method. Returns an action attempt that tracks the progress of the unlock operation.',
         operationId: 'accessMethodsUnlockDoorPost',
         requestBody: {
           content: {
@@ -41971,7 +41971,7 @@ const openapi: OpenAPISpec = {
     '/acs/access_groups/add_user': {
       put: {
         description:
-          'Adds a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) to a specified [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
+          'Adds a specified [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to a specified [access group](https://www.seam.co/docs/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsAddUserPut',
         requestBody: {
           content: {
@@ -42035,7 +42035,7 @@ const openapi: OpenAPISpec = {
     '/acs/access_groups/delete': {
       delete: {
         description:
-          'Deletes a specified [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
+          'Deletes a specified [access group](https://www.seam.co/docs/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsDeleteDelete',
         parameters: [
           {
@@ -42082,7 +42082,7 @@ const openapi: OpenAPISpec = {
     '/acs/access_groups/get': {
       get: {
         description:
-          'Returns a specified [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
+          'Returns a specified [access group](https://www.seam.co/docs/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsGetGet',
         parameters: [
           {
@@ -42135,7 +42135,7 @@ const openapi: OpenAPISpec = {
     '/acs/access_groups/list': {
       get: {
         description:
-          'Returns a list of all [access groups](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
+          'Returns a list of all [access groups](https://www.seam.co/docs/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsListGet',
         parameters: [
           {
@@ -42219,7 +42219,7 @@ const openapi: OpenAPISpec = {
     '/acs/access_groups/list_accessible_entrances': {
       get: {
         description:
-          'Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
+          'Returns a list of all accessible entrances for a specified [access group](https://www.seam.co/docs/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsListAccessibleEntrancesGet',
         parameters: [
           {
@@ -42274,7 +42274,7 @@ const openapi: OpenAPISpec = {
     '/acs/access_groups/list_users': {
       get: {
         description:
-          'Returns a list of all [access system users](https://docs.seam.co/low-level-apis/access-systems/user-management) in an [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
+          'Returns a list of all [access system users](https://www.seam.co/docs/low-level-apis/access-systems/user-management) in an [access group](https://www.seam.co/docs/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsListUsersGet',
         parameters: [
           {
@@ -42329,7 +42329,7 @@ const openapi: OpenAPISpec = {
     '/acs/access_groups/remove_user': {
       delete: {
         description:
-          'Removes a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) from a specified [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
+          'Removes a specified [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) from a specified [access group](https://www.seam.co/docs/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsRemoveUserDelete',
         parameters: [
           {
@@ -42398,7 +42398,7 @@ const openapi: OpenAPISpec = {
     '/acs/access_groups/unmanaged/get': {
       get: {
         description:
-          'Returns a specified unmanaged [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
+          'Returns a specified unmanaged [access group](https://www.seam.co/docs/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsUnmanagedGetGet',
         parameters: [
           {
@@ -42453,7 +42453,7 @@ const openapi: OpenAPISpec = {
     '/acs/access_groups/unmanaged/list': {
       get: {
         description:
-          'Returns a list of all unmanaged [access groups](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
+          'Returns a list of all unmanaged [access groups](https://www.seam.co/docs/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsUnmanagedListGet',
         parameters: [
           {
@@ -42674,7 +42674,7 @@ const openapi: OpenAPISpec = {
     '/acs/credentials/assign': {
       patch: {
         description:
-          'Assigns a specified [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) to a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+          'Assigns a specified [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) to a specified [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
         operationId: 'acsCredentialsAssignPatch',
         requestBody: {
           content: {
@@ -42743,7 +42743,7 @@ const openapi: OpenAPISpec = {
     '/acs/credentials/create': {
       post: {
         description:
-          'Creates a new [credential](https://docs.seam.co/low-level-apis/managing-credentials) for a specified [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management). For granting access, we recommend [Access Grants](https://docs.seam.co/use-cases/granting-access) instead: they create and manage the underlying credentials for you, across access systems and standalone smart locks alike. Use this low-level endpoint only when you need direct control over an individual ACS credential.',
+          'Creates a new [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) for a specified [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management). For granting access, we recommend [Access Grants](https://www.seam.co/docs/use-cases/granting-access) instead: they create and manage the underlying credentials for you, across access systems and standalone smart locks alike. Use this low-level endpoint only when you need direct control over an individual ACS credential.',
         operationId: 'acsCredentialsCreatePost',
         requestBody: {
           content: {
@@ -42771,7 +42771,7 @@ const openapi: OpenAPISpec = {
                   allowed_acs_entrance_ids: {
                     default: [],
                     description:
-                      'Set of IDs of the [entrances](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) for which the new credential grants access.',
+                      'Set of IDs of the [entrances](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) for which the new credential grants access.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
@@ -42791,7 +42791,7 @@ const openapi: OpenAPISpec = {
                   },
                   code: {
                     description:
-                      'Access (PIN) code for the new credential. There may be manufacturer-specific code restrictions. For details, see the applicable [device or system integration guide](https://docs.seam.co/device-and-system-integration-guides).',
+                      'Access (PIN) code for the new credential. There may be manufacturer-specific code restrictions. For details, see the applicable [device or system integration guide](https://www.seam.co/docs/device-and-system-integration-guides).',
                     pattern: '^\\d+$',
                     type: 'string',
                   },
@@ -42818,7 +42818,7 @@ const openapi: OpenAPISpec = {
                   is_multi_phone_sync_credential: {
                     default: false,
                     description:
-                      'Indicates whether the new credential is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                      'Indicates whether the new credential is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
                     type: 'boolean',
                   },
                   salto_space_metadata: {
@@ -42827,12 +42827,12 @@ const openapi: OpenAPISpec = {
                     properties: {
                       assign_new_key: {
                         description:
-                          'Indicates whether to assign a first, new card to a user. See also [Programming Salto Space Card-based Credentials](https://docs.seam.co/device-and-system-integration-guides/salto-proaccess-space-access-system/programming-salto-space-card-based-credentials).',
+                          'Indicates whether to assign a first, new card to a user. See also [Programming Salto Space Card-based Credentials](https://www.seam.co/docs/device-and-system-integration-guides/salto-proaccess-space-access-system/programming-salto-space-card-based-credentials).',
                         type: 'boolean',
                       },
                       update_current_key: {
                         description:
-                          "Indicates whether to update the user's existing card. See also [Programming Salto Space Card-based Credentials](https://docs.seam.co/device-and-system-integration-guides/salto-proaccess-space-access-system/programming-salto-space-card-based-credentials).",
+                          "Indicates whether to update the user's existing card. See also [Programming Salto Space Card-based Credentials](https://www.seam.co/docs/device-and-system-integration-guides/salto-proaccess-space-access-system/programming-salto-space-card-based-credentials).",
                         type: 'boolean',
                         'x-undocumented': 'Not used. Will be deprecated.',
                       },
@@ -42933,7 +42933,7 @@ const openapi: OpenAPISpec = {
     '/acs/credentials/create_offline_code': {
       post: {
         description:
-          'Creates a new offline [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) for a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+          'Creates a new offline [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) for a specified [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
         operationId: 'acsCredentialsCreateOfflineCodePost',
         requestBody: {
           content: {
@@ -42948,7 +42948,7 @@ const openapi: OpenAPISpec = {
                   },
                   allowed_acs_entrance_id: {
                     description:
-                      'IDs of the [`acs_entrance`s](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) for which the new credential grants access.',
+                      'IDs of the [`acs_entrance`s](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) for which the new credential grants access.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -43016,7 +43016,7 @@ const openapi: OpenAPISpec = {
     '/acs/credentials/delete': {
       delete: {
         description:
-          'Deletes a specified [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+          'Deletes a specified [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
         operationId: 'acsCredentialsDeleteDelete',
         parameters: [
           {
@@ -43062,7 +43062,7 @@ const openapi: OpenAPISpec = {
     '/acs/credentials/get': {
       get: {
         description:
-          'Returns a specified [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+          'Returns a specified [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
         operationId: 'acsCredentialsGetGet',
         parameters: [
           {
@@ -43115,7 +43115,7 @@ const openapi: OpenAPISpec = {
     '/acs/credentials/list': {
       get: {
         description:
-          'Returns a list of all [credentials](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+          'Returns a list of all [credentials](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
         operationId: 'acsCredentialsListGet',
         parameters: [
           {
@@ -43240,7 +43240,7 @@ const openapi: OpenAPISpec = {
     '/acs/credentials/list_accessible_entrances': {
       get: {
         description:
-          'Returns a list of all [entrances](https://docs.seam.co/api/acs/entrances) to which a [credential](https://docs.seam.co/api/acs/credentials) grants access.',
+          'Returns a list of all [entrances](https://www.seam.co/docs/api/acs/entrances/object) to which a [credential](https://www.seam.co/docs/api/acs/credentials/object) grants access.',
         operationId: 'acsCredentialsListAccessibleEntrancesGet',
         parameters: [
           {
@@ -43295,7 +43295,7 @@ const openapi: OpenAPISpec = {
     '/acs/credentials/unassign': {
       patch: {
         description:
-          'Unassigns a specified [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) from a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+          'Unassigns a specified [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) from a specified [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
         operationId: 'acsCredentialsUnassignPatch',
         requestBody: {
           content: {
@@ -43364,7 +43364,7 @@ const openapi: OpenAPISpec = {
     '/acs/credentials/unmanaged/get': {
       get: {
         description:
-          'Returns a specified unmanaged [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+          'Returns a specified unmanaged [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
         operationId: 'acsCredentialsUnmanagedGetGet',
         parameters: [
           {
@@ -43418,7 +43418,7 @@ const openapi: OpenAPISpec = {
     '/acs/credentials/unmanaged/list': {
       get: {
         description:
-          'Returns a list of all unmanaged [credentials](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+          'Returns a list of all unmanaged [credentials](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
         operationId: 'acsCredentialsUnmanagedListGet',
         parameters: [
           {
@@ -43504,7 +43504,7 @@ const openapi: OpenAPISpec = {
     '/acs/credentials/update': {
       patch: {
         description:
-          'Updates the code and ends at date and time for a specified [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+          'Updates the code and ends at date and time for a specified [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
         operationId: 'acsCredentialsUpdatePatch',
         requestBody: {
           content: {
@@ -43572,7 +43572,7 @@ const openapi: OpenAPISpec = {
     '/acs/encoders/encode_credential': {
       post: {
         description:
-          'Encodes an existing [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) onto a plastic card placed on the specified [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners). Either provide an `acs_credential_id` or an `access_method_id`',
+          'Encodes an existing [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) onto a plastic card placed on the specified [encoder](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners). Either provide an `acs_credential_id` or an `access_method_id`',
         operationId: 'acsEncodersEncodeCredentialPost',
         requestBody: {
           content: {
@@ -43644,7 +43644,7 @@ const openapi: OpenAPISpec = {
     '/acs/encoders/get': {
       get: {
         description:
-          'Returns a specified [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
+          'Returns a specified [encoder](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
         operationId: 'acsEncodersGetGet',
         parameters: [
           {
@@ -43695,7 +43695,7 @@ const openapi: OpenAPISpec = {
     '/acs/encoders/list': {
       get: {
         description:
-          'Returns a list of all [encoders](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
+          'Returns a list of all [encoders](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
         operationId: 'acsEncodersListGet',
         parameters: [
           {
@@ -43791,7 +43791,7 @@ const openapi: OpenAPISpec = {
     '/acs/encoders/scan_credential': {
       post: {
         description:
-          'Scans an encoded [acs_credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) from a plastic card placed on the specified [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
+          'Scans an encoded [acs_credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) from a plastic card placed on the specified [encoder](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners).',
         operationId: 'acsEncodersScanCredentialPost',
         requestBody: {
           content: {
@@ -43862,7 +43862,7 @@ const openapi: OpenAPISpec = {
     '/acs/encoders/scan_to_assign_credential': {
       post: {
         description:
-          'Scans a physical card placed on the specified [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners) and assigns the scanned credential to an ACS user. Provide either an `acs_user_id` or a `user_identity_id`.',
+          'Scans a physical card placed on the specified [encoder](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners) and assigns the scanned credential to an ACS user. Provide either an `acs_user_id` or a `user_identity_id`.',
         operationId: 'acsEncodersScanToAssignCredentialPost',
         requestBody: {
           content: {
@@ -43947,7 +43947,7 @@ const openapi: OpenAPISpec = {
     '/acs/encoders/simulate/next_credential_encode_will_fail': {
       post: {
         description:
-          'Simulates that the next attempt to encode a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) using the specified [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners) will fail. You can only perform this action within a [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces).',
+          'Simulates that the next attempt to encode a [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) using the specified [encoder](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners) will fail. You can only perform this action within a [sandbox workspace](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces).',
         operationId: 'acsEncodersSimulateNextCredentialEncodeWillFailPost',
         requestBody: {
           content: {
@@ -44037,7 +44037,7 @@ const openapi: OpenAPISpec = {
     '/acs/encoders/simulate/next_credential_encode_will_succeed': {
       post: {
         description:
-          'Simulates that the next attempt to encode a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) using the specified [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners) will succeed. You can only perform this action within a [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces).',
+          'Simulates that the next attempt to encode a [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) using the specified [encoder](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners) will succeed. You can only perform this action within a [sandbox workspace](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces).',
         operationId: 'acsEncodersSimulateNextCredentialEncodeWillSucceedPost',
         requestBody: {
           content: {
@@ -44097,7 +44097,7 @@ const openapi: OpenAPISpec = {
     '/acs/encoders/simulate/next_credential_scan_will_fail': {
       post: {
         description:
-          'Simulates that the next attempt to scan a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) using the specified [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners) will fail. You can only perform this action within a [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces).',
+          'Simulates that the next attempt to scan a [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) using the specified [encoder](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners) will fail. You can only perform this action within a [sandbox workspace](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces).',
         operationId: 'acsEncodersSimulateNextCredentialScanWillFailPost',
         requestBody: {
           content: {
@@ -44180,7 +44180,7 @@ const openapi: OpenAPISpec = {
     '/acs/encoders/simulate/next_credential_scan_will_succeed': {
       post: {
         description:
-          'Simulates that the next attempt to scan a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) using the specified [encoder](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners) will succeed. You can only perform this action within a [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces).',
+          'Simulates that the next attempt to scan a [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) using the specified [encoder](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners) will succeed. You can only perform this action within a [sandbox workspace](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces).',
         operationId: 'acsEncodersSimulateNextCredentialScanWillSucceedPost',
         requestBody: {
           content: {
@@ -44288,7 +44288,7 @@ const openapi: OpenAPISpec = {
     '/acs/entrances/get': {
       get: {
         description:
-          'Returns a specified [access system entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+          'Returns a specified [access system entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
         operationId: 'acsEntrancesGetGet',
         parameters: [
           {
@@ -44342,7 +44342,7 @@ const openapi: OpenAPISpec = {
     '/acs/entrances/grant_access': {
       post: {
         description:
-          'Grants a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) access to a specified [access system entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+          'Grants a specified [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) access to a specified [access system entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
         operationId: 'acsEntrancesGrantAccessPost',
         requestBody: {
           content: {
@@ -44406,7 +44406,7 @@ const openapi: OpenAPISpec = {
     '/acs/entrances/list': {
       get: {
         description:
-          'Returns a list of all [access system entrances](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+          'Returns a list of all [access system entrances](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
         operationId: 'acsEntrancesListGet',
         parameters: [
           {
@@ -44565,7 +44565,7 @@ const openapi: OpenAPISpec = {
     '/acs/entrances/list_credentials_with_access': {
       get: {
         description:
-          'Returns a list of all [credentials](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) with access to a specified [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+          'Returns a list of all [credentials](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) with access to a specified [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
         operationId: 'acsEntrancesListCredentialsWithAccessGet',
         parameters: [
           {
@@ -44632,7 +44632,7 @@ const openapi: OpenAPISpec = {
     '/acs/entrances/unlock': {
       post: {
         description:
-          'Remotely unlocks a specified [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) using a cloud_key credential. Returns an action attempt that tracks the progress of the unlock operation.',
+          'Remotely unlocks a specified [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) using a cloud_key credential. Returns an action attempt that tracks the progress of the unlock operation.',
         operationId: 'acsEntrancesUnlockPost',
         requestBody: {
           content: {
@@ -44696,7 +44696,7 @@ const openapi: OpenAPISpec = {
     '/acs/systems/get': {
       get: {
         description:
-          'Returns a specified [access system](https://docs.seam.co/low-level-apis/access-systems).',
+          'Returns a specified [access system](https://www.seam.co/docs/low-level-apis/access-systems).',
         operationId: 'acsSystemsGetGet',
         parameters: [
           {
@@ -44747,7 +44747,7 @@ const openapi: OpenAPISpec = {
     '/acs/systems/list': {
       get: {
         description:
-          'Returns a list of all [access systems](https://docs.seam.co/low-level-apis/access-systems).\n\nTo filter the list of returned access systems by a specific connected account ID, include the `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the response includes all access systems connected to your workspace.',
+          'Returns a list of all [access systems](https://www.seam.co/docs/low-level-apis/access-systems).\n\nTo filter the list of returned access systems by a specific connected account ID, include the `connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the response includes all access systems connected to your workspace.',
         operationId: 'acsSystemsListGet',
         parameters: [
           {
@@ -44824,7 +44824,7 @@ const openapi: OpenAPISpec = {
     '/acs/systems/list_compatible_credential_manager_acs_systems': {
       get: {
         description:
-          'Returns a list of all credential manager systems that are compatible with a specified [access system](https://docs.seam.co/low-level-apis/access-systems).\n\nSpecify the access system for which you want to retrieve all compatible credential manager systems by including the corresponding `acs_system_id` in the request body.',
+          'Returns a list of all credential manager systems that are compatible with a specified [access system](https://www.seam.co/docs/low-level-apis/access-systems).\n\nSpecify the access system for which you want to retrieve all compatible credential manager systems by including the corresponding `acs_system_id` in the request body.',
         operationId: 'acsSystemsListCompatibleCredentialManagerAcsSystemsGet',
         parameters: [
           {
@@ -44995,7 +44995,7 @@ const openapi: OpenAPISpec = {
     '/acs/users/add_to_access_group': {
       put: {
         description:
-          'Adds a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) to a specified [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
+          'Adds a specified [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to a specified [access group](https://www.seam.co/docs/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsUsersAddToAccessGroupPut',
         requestBody: {
           content: {
@@ -45053,7 +45053,7 @@ const openapi: OpenAPISpec = {
     '/acs/users/create': {
       post: {
         description:
-          'Creates a new [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+          'Creates a new [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
         operationId: 'acsUsersCreatePost',
         requestBody: {
           content: {
@@ -45101,7 +45101,7 @@ const openapi: OpenAPISpec = {
                   },
                   email_address: {
                     description:
-                      'Email address of the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+                      'Email address of the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
                     format: 'email',
                     type: 'string',
                   },
@@ -45111,7 +45111,7 @@ const openapi: OpenAPISpec = {
                   },
                   phone_number: {
                     description:
-                      'Phone number of the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
+                      'Phone number of the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
                     type: 'string',
                   },
                   user_identity_id: {
@@ -45163,7 +45163,7 @@ const openapi: OpenAPISpec = {
     '/acs/users/delete': {
       delete: {
         description:
-          "Deletes a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) and invalidates the access system user's [credentials](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).",
+          "Deletes a specified [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) and invalidates the access system user's [credentials](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).",
         operationId: 'acsUsersDeleteDelete',
         parameters: [
           {
@@ -45230,7 +45230,7 @@ const openapi: OpenAPISpec = {
     '/acs/users/get': {
       get: {
         description:
-          'Returns a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+          'Returns a specified [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
         operationId: 'acsUsersGetGet',
         parameters: [
           {
@@ -45302,7 +45302,7 @@ const openapi: OpenAPISpec = {
     '/acs/users/list': {
       get: {
         description:
-          'Returns a list of all [access system users](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+          'Returns a list of all [access system users](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
         operationId: 'acsUsersListGet',
         parameters: [
           {
@@ -45429,7 +45429,7 @@ const openapi: OpenAPISpec = {
     '/acs/users/list_accessible_entrances': {
       get: {
         description:
-          'Lists the [entrances](https://docs.seam.co/api/acs/entrances) to which a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) has access.',
+          'Lists the [entrances](https://www.seam.co/docs/api/acs/entrances/object) to which a specified [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) has access.',
         operationId: 'acsUsersListAccessibleEntrancesGet',
         parameters: [
           {
@@ -45505,7 +45505,7 @@ const openapi: OpenAPISpec = {
     '/acs/users/remove_from_access_group': {
       delete: {
         description:
-          'Removes a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) from a specified [access group](https://docs.seam.co/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
+          'Removes a specified [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) from a specified [access group](https://www.seam.co/docs/low-level-apis/access-systems/user-management/assigning-users-to-access-groups).',
         operationId: 'acsUsersRemoveFromAccessGroupDelete',
         parameters: [
           {
@@ -45574,7 +45574,7 @@ const openapi: OpenAPISpec = {
     '/acs/users/revoke_access_to_all_entrances': {
       post: {
         description:
-          'Revokes access to all [entrances](https://docs.seam.co/api/acs/entrances) for a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+          'Revokes access to all [entrances](https://www.seam.co/docs/api/acs/entrances/object) for a specified [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
         operationId: 'acsUsersRevokeAccessToAllEntrancesPost',
         requestBody: {
           content: {
@@ -45638,7 +45638,7 @@ const openapi: OpenAPISpec = {
     '/acs/users/suspend': {
       post: {
         description:
-          "[Suspends](https://docs.seam.co/low-level-apis/access-systems/user-management/suspending-and-unsuspending-users#suspend-an-acs-user) a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management). Suspending an access system user revokes their access temporarily. To restore an access system user's access, you can [unsuspend](https://docs.seam.co/api/acs/users/unsuspend) them.",
+          "[Suspends](https://www.seam.co/docs/low-level-apis/access-systems/user-management/suspending-and-unsuspending-users#suspend-an-acs-user) a specified [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management). Suspending an access system user revokes their access temporarily. To restore an access system user's access, you can [unsuspend](https://www.seam.co/docs/api/acs/users/unsuspend) them.",
         operationId: 'acsUsersSuspendPost',
         requestBody: {
           content: {
@@ -45702,7 +45702,7 @@ const openapi: OpenAPISpec = {
     '/acs/users/unmanaged/get': {
       get: {
         description:
-          'Returns a specified unmanaged [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+          'Returns a specified unmanaged [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
         operationId: 'acsUsersUnmanagedGetGet',
         parameters: [
           {
@@ -45756,7 +45756,7 @@ const openapi: OpenAPISpec = {
     '/acs/users/unmanaged/list': {
       get: {
         description:
-          'Returns a list of all unmanaged [access system users](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+          'Returns a list of all unmanaged [access system users](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
         operationId: 'acsUsersUnmanagedListGet',
         parameters: [
           {
@@ -45862,7 +45862,7 @@ const openapi: OpenAPISpec = {
     '/acs/users/unsuspend': {
       post: {
         description:
-          '[Unsuspends](https://docs.seam.co/low-level-apis/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management). While [suspending an access system user](https://docs.seam.co/api/acs/users/suspend) revokes their access temporarily, unsuspending the access system user restores their access.',
+          '[Unsuspends](https://www.seam.co/docs/low-level-apis/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management). While [suspending an access system user](https://www.seam.co/docs/api/acs/users/suspend) revokes their access temporarily, unsuspending the access system user restores their access.',
         operationId: 'acsUsersUnsuspendPost',
         requestBody: {
           content: {
@@ -45926,7 +45926,7 @@ const openapi: OpenAPISpec = {
     '/acs/users/update': {
       patch: {
         description:
-          'Updates the properties of a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+          'Updates the properties of a specified [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
         operationId: 'acsUsersUpdatePatch',
         requestBody: {
           content: {
@@ -45974,13 +45974,13 @@ const openapi: OpenAPISpec = {
                   },
                   email_address: {
                     description:
-                      'Email address of the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+                      'Email address of the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
                     format: 'email',
                     type: 'string',
                   },
                   full_name: {
                     description:
-                      'Full name of the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management).',
+                      'Full name of the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
                     minLength: 1,
                     type: 'string',
                   },
@@ -45992,7 +45992,7 @@ const openapi: OpenAPISpec = {
                   },
                   phone_number: {
                     description:
-                      'Phone number of the [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
+                      'Phone number of the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
                     type: 'string',
                   },
                   user_identity_id: {
@@ -46040,7 +46040,7 @@ const openapi: OpenAPISpec = {
     '/action_attempts/get': {
       get: {
         description:
-          'Returns a specified [action attempt](https://docs.seam.co/core-concepts/action-attempts).',
+          'Returns a specified [action attempt](https://www.seam.co/docs/core-concepts/action-attempts).',
         operationId: 'actionAttemptsGetGet',
         parameters: [
           {
@@ -46096,7 +46096,7 @@ const openapi: OpenAPISpec = {
     '/action_attempts/list': {
       get: {
         description:
-          'Returns a list of the [action attempts](https://docs.seam.co/core-concepts/action-attempts) that you specify as an array of `action_attempt_id`s.',
+          'Returns a list of the [action attempts](https://www.seam.co/docs/core-concepts/action-attempts) that you specify as an array of `action_attempt_id`s.',
         operationId: 'actionAttemptsListGet',
         parameters: [
           {
@@ -46181,7 +46181,7 @@ const openapi: OpenAPISpec = {
     '/bridges/get': {
       get: {
         description:
-          'Returns a specified [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+          'Returns a specified [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge).',
         operationId: 'bridgesGetGet',
         parameters: [
           {
@@ -46203,7 +46203,7 @@ const openapi: OpenAPISpec = {
                   properties: {
                     bridge: {
                       description:
-                        'Represents [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+                        'Represents [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge).',
                       properties: {
                         bridge_id: {
                           description: 'ID of Seam Bridge.',
@@ -46258,7 +46258,7 @@ const openapi: OpenAPISpec = {
     '/bridges/list': {
       get: {
         description:
-          'Returns a list of all [Seam Bridges](https://docs.seam.co/capability-guides/seam-bridge).',
+          'Returns a list of all [Seam Bridges](https://www.seam.co/docs/capability-guides/seam-bridge).',
         operationId: 'bridgesListGet',
         parameters: [],
         responses: {
@@ -46270,7 +46270,7 @@ const openapi: OpenAPISpec = {
                     bridges: {
                       items: {
                         description:
-                          'Represents [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+                          'Represents [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge).',
                         properties: {
                           bridge_id: {
                             description: 'ID of Seam Bridge.',
@@ -46512,7 +46512,7 @@ const openapi: OpenAPISpec = {
     '/client_sessions/create': {
       put: {
         description:
-          'Creates a new [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens).',
+          'Creates a new [client session](https://www.seam.co/docs/core-concepts/authentication/client-session-tokens).',
         operationId: 'clientSessionsCreatePut',
         requestBody: {
           content: {
@@ -46521,13 +46521,13 @@ const openapi: OpenAPISpec = {
                 properties: {
                   connect_webview_ids: {
                     description:
-                      'IDs of the [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) for which you want to create a client session.',
+                      'IDs of the [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews) for which you want to create a client session.',
                     items: { type: 'string' },
                     type: 'array',
                   },
                   connected_account_ids: {
                     description:
-                      'IDs of the [connected accounts](https://docs.seam.co/core-concepts/connected-accounts) for which you want to create a client session.',
+                      'IDs of the [connected accounts](https://www.seam.co/docs/core-concepts/connected-accounts) for which you want to create a client session.',
                     items: { type: 'string' },
                     type: 'array',
                   },
@@ -46556,14 +46556,14 @@ const openapi: OpenAPISpec = {
                   },
                   user_identity_id: {
                     description:
-                      'ID of the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to create a client session.',
+                      'ID of the [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to create a client session.',
                     format: 'uuid',
                     type: 'string',
                   },
                   user_identity_ids: {
                     deprecated: true,
                     description:
-                      'IDs of the [user identities](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.',
+                      'IDs of the [user identities](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.',
                     items: { format: 'uuid', type: 'string' },
                     maxItems: 1,
                     minItems: 1,
@@ -46615,7 +46615,7 @@ const openapi: OpenAPISpec = {
     '/client_sessions/delete': {
       delete: {
         description:
-          'Deletes a [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens).',
+          'Deletes a [client session](https://www.seam.co/docs/core-concepts/authentication/client-session-tokens).',
         operationId: 'clientSessionsDeleteDelete',
         parameters: [
           {
@@ -46661,7 +46661,7 @@ const openapi: OpenAPISpec = {
     '/client_sessions/get': {
       get: {
         description:
-          'Returns a specified [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens).',
+          'Returns a specified [client session](https://www.seam.co/docs/core-concepts/authentication/client-session-tokens).',
         operationId: 'clientSessionsGetGet',
         parameters: [
           {
@@ -46723,7 +46723,7 @@ const openapi: OpenAPISpec = {
     '/client_sessions/get_or_create': {
       post: {
         description:
-          'Returns a [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens) with specific characteristics or creates a new client session with these characteristics if it does not yet exist.',
+          'Returns a [client session](https://www.seam.co/docs/core-concepts/authentication/client-session-tokens) with specific characteristics or creates a new client session with these characteristics if it does not yet exist.',
         operationId: 'clientSessionsGetOrCreatePost',
         requestBody: {
           content: {
@@ -46732,13 +46732,13 @@ const openapi: OpenAPISpec = {
                 properties: {
                   connect_webview_ids: {
                     description:
-                      'IDs of the [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) that you want to associate with the client session (or that are already associated with the existing client session).',
+                      'IDs of the [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews) that you want to associate with the client session (or that are already associated with the existing client session).',
                     items: { type: 'string' },
                     type: 'array',
                   },
                   connected_account_ids: {
                     description:
-                      'IDs of the [connected accounts](https://docs.seam.co/api/connected_accounts) that you want to associate with the client session (or that are already associated with the existing client session).',
+                      'IDs of the [connected accounts](https://www.seam.co/docs/api/connected_accounts/object) that you want to associate with the client session (or that are already associated with the existing client session).',
                     items: { type: 'string' },
                     type: 'array',
                   },
@@ -46756,14 +46756,14 @@ const openapi: OpenAPISpec = {
                   },
                   user_identity_id: {
                     description:
-                      'ID of the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session (or that are already associated with the existing client session).',
+                      'ID of the [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session (or that are already associated with the existing client session).',
                     format: 'uuid',
                     type: 'string',
                   },
                   user_identity_ids: {
                     deprecated: true,
                     description:
-                      'IDs of the [user identities](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.',
+                      'IDs of the [user identities](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.',
                     items: { format: 'uuid', type: 'string' },
                     maxItems: 1,
                     minItems: 1,
@@ -46815,7 +46815,7 @@ const openapi: OpenAPISpec = {
     '/client_sessions/grant_access': {
       patch: {
         description:
-          'Grants a [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens) access to one or more resources, such as [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews), [user identities](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity), and so on.',
+          'Grants a [client session](https://www.seam.co/docs/core-concepts/authentication/client-session-tokens) access to one or more resources, such as [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews), [user identities](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity), and so on.',
         operationId: 'clientSessionsGrantAccessPatch',
         requestBody: {
           content: {
@@ -46829,13 +46829,13 @@ const openapi: OpenAPISpec = {
                   },
                   connect_webview_ids: {
                     description:
-                      'IDs of the [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) that you want to associate with the client session.',
+                      'IDs of the [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews) that you want to associate with the client session.',
                     items: { type: 'string' },
                     type: 'array',
                   },
                   connected_account_ids: {
                     description:
-                      'IDs of the [connected accounts](https://docs.seam.co/core-concepts/connected-accounts) that you want to associate with the client session.',
+                      'IDs of the [connected accounts](https://www.seam.co/docs/core-concepts/connected-accounts) that you want to associate with the client session.',
                     items: { type: 'string' },
                     type: 'array',
                   },
@@ -46847,13 +46847,13 @@ const openapi: OpenAPISpec = {
                   },
                   user_identity_id: {
                     description:
-                      'ID of the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.',
+                      'ID of the [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.',
                     type: 'string',
                   },
                   user_identity_ids: {
                     deprecated: true,
                     description:
-                      'IDs of the [user identities](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.',
+                      'IDs of the [user identities](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) that you want to associate with the client session.',
                     items: { type: 'string' },
                     maxItems: 1,
                     minItems: 1,
@@ -46904,7 +46904,7 @@ const openapi: OpenAPISpec = {
     '/client_sessions/list': {
       get: {
         description:
-          'Returns a list of all [client sessions](https://docs.seam.co/core-concepts/authentication/client-session-tokens).',
+          'Returns a list of all [client sessions](https://www.seam.co/docs/core-concepts/authentication/client-session-tokens).',
         operationId: 'clientSessionsListGet',
         parameters: [
           {
@@ -46932,7 +46932,7 @@ const openapi: OpenAPISpec = {
             name: 'connect_webview_id',
             schema: {
               description:
-                'ID of the [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) for which you want to retrieve client sessions. Specify `null` to retrieve client sessions that are not associated with a Connect Webview.',
+                'ID of the [Connect Webview](https://www.seam.co/docs/core-concepts/connect-webviews) for which you want to retrieve client sessions. Specify `null` to retrieve client sessions that are not associated with a Connect Webview.',
               nullable: true,
               type: 'string',
             },
@@ -46951,7 +46951,7 @@ const openapi: OpenAPISpec = {
             name: 'user_identity_id',
             schema: {
               description:
-                'ID of the [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to retrieve client sessions. Specify `null` to retrieve client sessions that are not associated with a user identity.',
+                'ID of the [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to retrieve client sessions. Specify `null` to retrieve client sessions that are not associated with a user identity.',
               nullable: true,
               type: 'string',
             },
@@ -46996,7 +46996,7 @@ const openapi: OpenAPISpec = {
     '/client_sessions/revoke': {
       post: {
         description:
-          'Revokes a [client session](https://docs.seam.co/core-concepts/authentication/client-session-tokens).\n\nNote that [deleting a client session](https://docs.seam.co/api/client_sessions/delete) is a separate action.',
+          'Revokes a [client session](https://www.seam.co/docs/core-concepts/authentication/client-session-tokens).\n\nNote that [deleting a client session](https://www.seam.co/docs/api/client_sessions/delete) is a separate action.',
         operationId: 'clientSessionsRevokePost',
         requestBody: {
           content: {
@@ -47048,7 +47048,7 @@ const openapi: OpenAPISpec = {
     '/connect_webviews/create': {
       post: {
         description:
-          'Creates a new [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).\n\nTo enable a user to connect their devices or systems to Seam, they must sign in to their device or system account. To enable a user to sign in, you create a `connect_webview`. After creating the Connect Webview, you receive a URL that you can use to display the visual component of this Connect Webview for your user. You can open an iframe or new window to display the Connect Webview.\n\nYou should make a new `connect_webview` for each unique login request. Each `connect_webview` tracks the user that signed in with it. You receive an error if you reuse a Connect Webview for the same user twice or if you use the same Connect Webview for multiple users.\n\nSee also: [Connect Webview Process](https://docs.seam.co/core-concepts/connect-webviews/connect-webview-process).',
+          'Creates a new [Connect Webview](https://www.seam.co/docs/core-concepts/connect-webviews).\n\nTo enable a user to connect their devices or systems to Seam, they must sign in to their device or system account. To enable a user to sign in, you create a `connect_webview`. After creating the Connect Webview, you receive a URL that you can use to display the visual component of this Connect Webview for your user. You can open an iframe or new window to display the Connect Webview.\n\nYou should make a new `connect_webview` for each unique login request. Each `connect_webview` tracks the user that signed in with it. You receive an error if you reuse a Connect Webview for the same user twice or if you use the same Connect Webview for multiple users.\n\nSee also: [Connect Webview Process](https://www.seam.co/docs/core-concepts/connect-webviews/connect-webview-process).',
         operationId: 'connectWebviewsCreatePost',
         requestBody: {
           content: {
@@ -47074,7 +47074,7 @@ const openapi: OpenAPISpec = {
                   },
                   accepted_providers: {
                     description:
-                      'Accepted device provider keys as an alternative to `provider_category`. Use this parameter to specify accepted providers explicitly. See [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). To list all provider keys, use [`/devices/list_device_providers`](https://docs.seam.co/api/devices/list_device_providers) with no filters.',
+                      'Accepted device provider keys as an alternative to `provider_category`. Use this parameter to specify accepted providers explicitly. See [Customize the Brands to Display in Your Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews). To list all provider keys, use [`/devices/list_device_providers`](https://www.seam.co/docs/api/devices/list_device_providers) with no filters.',
                     items: {
                       enum: [
                         'hotek',
@@ -47154,7 +47154,7 @@ const openapi: OpenAPISpec = {
                   },
                   automatically_manage_new_devices: {
                     description:
-                      'Indicates whether newly-added devices should appear as [managed devices](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices). See also: [Customize the Behavior Settings of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-behavior-settings-of-your-connect-webviews).',
+                      'Indicates whether newly-added devices should appear as [managed devices](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices). See also: [Customize the Behavior Settings of Your Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-behavior-settings-of-your-connect-webviews).',
                     type: 'boolean',
                   },
                   custom_metadata: {
@@ -47166,7 +47166,7 @@ const openapi: OpenAPISpec = {
                       ],
                     },
                     description:
-                      'Custom metadata that you want to associate with the Connect Webview. Supports up to 50 JSON key:value pairs, with key names up to 40 characters long that cannot contain a period (.). [Adding custom metadata to a Connect Webview](https://docs.seam.co/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview) enables you to store custom information, like customer details or internal IDs from your application. The custom metadata is then transferred to any [connected accounts](https://docs.seam.co/core-concepts/connected-accounts) that were connected using the Connect Webview, making it easy to find and filter these resources in your [workspace](https://docs.seam.co/core-concepts/workspaces). You can also [filter Connect Webviews by custom metadata](https://docs.seam.co/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). Set a key to `null` or to an empty string to remove that key from the custom metadata.',
+                      'Custom metadata that you want to associate with the Connect Webview. Supports up to 50 JSON key:value pairs, with key names up to 40 characters long that cannot contain a period (.). [Adding custom metadata to a Connect Webview](https://www.seam.co/docs/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview) enables you to store custom information, like customer details or internal IDs from your application. The custom metadata is then transferred to any [connected accounts](https://www.seam.co/docs/core-concepts/connected-accounts) that were connected using the Connect Webview, making it easy to find and filter these resources in your [workspace](https://www.seam.co/docs/core-concepts/workspaces). You can also [filter Connect Webviews by custom metadata](https://www.seam.co/docs/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). Set a key to `null` or to an empty string to remove that key from the custom metadata.',
                     type: 'object',
                   },
                   custom_redirect_failure_url: {
@@ -47198,7 +47198,7 @@ const openapi: OpenAPISpec = {
                   },
                   provider_category: {
                     description:
-                      'Specifies the category of providers that you want to include. To list all providers within a category, use [`/devices/list_device_providers`](https://docs.seam.co/api/devices/list_device_providers) with the desired `provider_category` filter.',
+                      'Specifies the category of providers that you want to include. To list all providers within a category, use [`/devices/list_device_providers`](https://www.seam.co/docs/api/devices/list_device_providers) with the desired `provider_category` filter.',
                     enum: [
                       'stable',
                       'consumer_smartlocks',
@@ -47215,7 +47215,7 @@ const openapi: OpenAPISpec = {
                   wait_for_device_creation: {
                     default: false,
                     description:
-                      'Indicates whether Seam should finish syncing all devices in a newly-connected account before completing the associated Connect Webview. See also: [Customize the Behavior Settings of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-behavior-settings-of-your-connect-webviews).',
+                      'Indicates whether Seam should finish syncing all devices in a newly-connected account before completing the associated Connect Webview. See also: [Customize the Behavior Settings of Your Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-behavior-settings-of-your-connect-webviews).',
                     type: 'boolean',
                   },
                 },
@@ -47264,7 +47264,7 @@ const openapi: OpenAPISpec = {
     '/connect_webviews/delete': {
       delete: {
         description:
-          'Deletes a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).\n\nYou do not need to delete a Connect Webview once a user completes it. Instead, you can simply ignore completed Connect Webviews.',
+          'Deletes a [Connect Webview](https://www.seam.co/docs/core-concepts/connect-webviews).\n\nYou do not need to delete a Connect Webview once a user completes it. Instead, you can simply ignore completed Connect Webviews.',
         operationId: 'connectWebviewsDeleteDelete',
         parameters: [
           {
@@ -47310,7 +47310,7 @@ const openapi: OpenAPISpec = {
     '/connect_webviews/get': {
       get: {
         description:
-          "Returns a specified [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).\n\nUnless you're using a `custom_redirect_url`, you should poll a newly-created `connect_webview` to find out if the user has signed in or to get details about what devices they've connected.",
+          "Returns a specified [Connect Webview](https://www.seam.co/docs/core-concepts/connect-webviews).\n\nUnless you're using a `custom_redirect_url`, you should poll a newly-created `connect_webview` to find out if the user has signed in or to get details about what devices they've connected.",
         operationId: 'connectWebviewsGetGet',
         parameters: [
           {
@@ -47366,7 +47366,7 @@ const openapi: OpenAPISpec = {
     '/connect_webviews/list': {
       get: {
         description:
-          'Returns a list of all [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews).',
+          'Returns a list of all [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews).',
         operationId: 'connectWebviewsListGet',
         parameters: [
           {
@@ -47398,7 +47398,7 @@ const openapi: OpenAPISpec = {
                 oneOf: [{ type: 'string' }, { type: 'boolean' }],
               },
               description:
-                'Custom metadata pairs by which you want to [filter Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). Returns Connect Webviews with `custom_metadata` that contains all of the provided key:value pairs. Key names cannot contain a period (.). Specify `null` to match a key that is unset. A key given an empty string is omitted from the filter.',
+                'Custom metadata pairs by which you want to [filter Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews/filtering-connect-webviews-by-custom-metadata). Returns Connect Webviews with `custom_metadata` that contains all of the provided key:value pairs. Key names cannot contain a period (.). Specify `null` to match a key that is unset. A key given an empty string is omitted from the filter.',
               type: 'object',
             },
           },
@@ -47477,7 +47477,7 @@ const openapi: OpenAPISpec = {
     '/connected_accounts/delete': {
       delete: {
         description:
-          'Deletes a specified [connected account](https://docs.seam.co/core-concepts/connected-accounts).\n\nDeleting a connected account triggers a `connected_account.deleted` event and removes the connected account and all data associated with the connected account from Seam, including devices, events, access codes, and so on. For every deleted resource, Seam sends a corresponding deleted event, but the resource is not deleted from the provider.\n\nFor example, if you delete a connected account with a device that has an access code, Seam sends a `connected_account.deleted` event, a `device.deleted` event, and an `access_code.deleted` event, but Seam does not remove the access code from the device.',
+          'Deletes a specified [connected account](https://www.seam.co/docs/core-concepts/connected-accounts).\n\nDeleting a connected account triggers a `connected_account.deleted` event and removes the connected account and all data associated with the connected account from Seam, including devices, events, access codes, and so on. For every deleted resource, Seam sends a corresponding deleted event, but the resource is not deleted from the provider.\n\nFor example, if you delete a connected account with a device that has an access code, Seam sends a `connected_account.deleted` event, a `device.deleted` event, and an `access_code.deleted` event, but Seam does not remove the access code from the device.',
         operationId: 'connectedAccountsDeleteDelete',
         parameters: [
           {
@@ -47535,7 +47535,7 @@ const openapi: OpenAPISpec = {
     '/connected_accounts/get': {
       get: {
         description:
-          'Returns a specified [connected account](https://docs.seam.co/core-concepts/connected-accounts).',
+          'Returns a specified [connected account](https://www.seam.co/docs/core-concepts/connected-accounts).',
         operationId: 'connectedAccountsGetGet',
         parameters: [
           {
@@ -47601,7 +47601,7 @@ const openapi: OpenAPISpec = {
     '/connected_accounts/list': {
       get: {
         description:
-          'Returns a list of all [connected accounts](https://docs.seam.co/core-concepts/connected-accounts).',
+          'Returns a list of all [connected accounts](https://www.seam.co/docs/core-concepts/connected-accounts).',
         operationId: 'connectedAccountsListGet',
         parameters: [
           {
@@ -47722,7 +47722,7 @@ const openapi: OpenAPISpec = {
     '/connected_accounts/simulate/disconnect': {
       post: {
         description:
-          'Simulates a connected account becoming disconnected from Seam. Only applicable for [sandbox workspaces](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces).',
+          'Simulates a connected account becoming disconnected from Seam. Only applicable for [sandbox workspaces](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces).',
         operationId: 'connectedAccountsSimulateDisconnectPost',
         requestBody: {
           content: {
@@ -47775,7 +47775,7 @@ const openapi: OpenAPISpec = {
     '/connected_accounts/sync': {
       post: {
         description:
-          'Request a [connected account](https://docs.seam.co/core-concepts/connected-accounts) sync attempt for the specified `connected_account_id`.',
+          'Request a [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) sync attempt for the specified `connected_account_id`.',
         operationId: 'connectedAccountsSyncPost',
         requestBody: {
           content: {
@@ -47827,7 +47827,7 @@ const openapi: OpenAPISpec = {
     '/connected_accounts/update': {
       patch: {
         description:
-          'Updates a [connected account](https://docs.seam.co/core-concepts/connected-accounts).',
+          'Updates a [connected account](https://www.seam.co/docs/core-concepts/connected-accounts).',
         operationId: 'connectedAccountsUpdatePatch',
         requestBody: {
           content: {
@@ -47853,7 +47853,7 @@ const openapi: OpenAPISpec = {
                   },
                   automatically_manage_new_devices: {
                     description:
-                      'Indicates whether newly-added devices should appear as [managed devices](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices).',
+                      'Indicates whether newly-added devices should appear as [managed devices](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices).',
                     type: 'boolean',
                   },
                   connected_account_id: {
@@ -47871,7 +47871,7 @@ const openapi: OpenAPISpec = {
                       ],
                     },
                     description:
-                      'Custom metadata that you want to associate with the connected account. Entirely replaces the existing custom metadata object. If a new Connect Webview contains custom metadata and is used to reconnect a connected account, the custom metadata from the Connect Webview will entirely replace the entire custom metadata object on the connected account. Supports up to 50 JSON key:value pairs, with key names up to 40 characters long that cannot contain a period (.). [Adding custom metadata to a connected account](https://docs.seam.co/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account) enables you to store custom information, like customer details or internal IDs from your application. Then, you can [filter connected accounts by the desired metadata](https://docs.seam.co/core-concepts/connected-accounts/filtering-connected-accounts-by-custom-metadata). Set a key to `null` or to an empty string to remove that key from the custom metadata.',
+                      'Custom metadata that you want to associate with the connected account. Entirely replaces the existing custom metadata object. If a new Connect Webview contains custom metadata and is used to reconnect a connected account, the custom metadata from the Connect Webview will entirely replace the entire custom metadata object on the connected account. Supports up to 50 JSON key:value pairs, with key names up to 40 characters long that cannot contain a period (.). [Adding custom metadata to a connected account](https://www.seam.co/docs/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account) enables you to store custom information, like customer details or internal IDs from your application. Then, you can [filter connected accounts by the desired metadata](https://www.seam.co/docs/core-concepts/connected-accounts/filtering-connected-accounts-by-custom-metadata). Set a key to `null` or to an empty string to remove that key from the custom metadata.',
                     type: 'object',
                   },
                   customer_key: {
@@ -50579,7 +50579,7 @@ const openapi: OpenAPISpec = {
     '/devices/delete': {
       delete: {
         description:
-          'Deletes a specified [device](https://docs.seam.co/core-concepts/devices).',
+          'Deletes a specified [device](https://www.seam.co/docs/core-concepts/devices).',
         operationId: 'devicesDeleteDelete',
         parameters: [
           {
@@ -50629,7 +50629,7 @@ const openapi: OpenAPISpec = {
     '/devices/get': {
       get: {
         description:
-          'Returns a specified [device](https://docs.seam.co/core-concepts/devices).\n\nYou must specify either `device_id` or `name`.',
+          'Returns a specified [device](https://www.seam.co/docs/core-concepts/devices).\n\nYou must specify either `device_id` or `name`.',
         operationId: 'devicesGetGet',
         parameters: [
           {
@@ -50692,7 +50692,7 @@ const openapi: OpenAPISpec = {
     '/devices/list': {
       get: {
         description:
-          'Returns a list of all [devices](https://docs.seam.co/core-concepts/devices).',
+          'Returns a list of all [devices](https://www.seam.co/docs/core-concepts/devices).',
         operationId: 'devicesListGet',
         parameters: [
           {
@@ -51008,7 +51008,7 @@ const openapi: OpenAPISpec = {
                 oneOf: [{ type: 'string' }, { type: 'boolean' }],
               },
               description:
-                'Set of key:value [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices. Key names cannot contain a period (.). Specify `null` to match a key that is unset. A key given an empty string is omitted from the filter.',
+                'Set of key:value [custom metadata](https://www.seam.co/docs/core-concepts/devices/adding-custom-metadata-to-a-device) pairs for which you want to list devices. Key names cannot contain a period (.). Specify `null` to match a key that is unset. A key given an empty string is omitted from the filter.',
               type: 'object',
             },
           },
@@ -51164,7 +51164,7 @@ const openapi: OpenAPISpec = {
     '/devices/list_device_providers': {
       get: {
         description:
-          'Returns a list of all device providers.\n\nThe information that this endpoint returns for each provider includes a set of [capability flags](https://docs.seam.co/capability-guides/device-and-system-capabilities#capability-flags), such as `device_provider.can_remotely_unlock`. If at least one supported device from a provider has a specific capability, the corresponding capability flag is `true`.\n\nWhen you create a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews), you can customize the providers—that is, the brands—that it displays. In the `/connect_webviews/create` request, include the desired set of device provider keys in the `accepted_providers` parameter. See also [Customize the Brands to Display in Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).',
+          'Returns a list of all device providers.\n\nThe information that this endpoint returns for each provider includes a set of [capability flags](https://www.seam.co/docs/capability-guides/device-and-system-capabilities#capability-flags), such as `device_provider.can_remotely_unlock`. If at least one supported device from a provider has a specific capability, the corresponding capability flag is `true`.\n\nWhen you create a [Connect Webview](https://www.seam.co/docs/core-concepts/connect-webviews), you can customize the providers—that is, the brands—that it displays. In the `/connect_webviews/create` request, include the desired set of device provider keys in the `accepted_providers` parameter. See also [Customize the Brands to Display in Your Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-brands-to-display-in-your-connect-webviews).',
         operationId: 'devicesListDeviceProvidersGet',
         parameters: [
           {
@@ -52618,7 +52618,7 @@ const openapi: OpenAPISpec = {
     '/devices/simulate/connect': {
       post: {
         description:
-          'Simulates connecting a device to Seam. Only applicable for [sandbox devices](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://docs.seam.co/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).',
+          'Simulates connecting a device to Seam. Only applicable for [sandbox devices](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://www.seam.co/docs/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).',
         operationId: 'devicesSimulateConnectPost',
         requestBody: {
           content: {
@@ -52724,7 +52724,7 @@ const openapi: OpenAPISpec = {
     '/devices/simulate/disconnect': {
       post: {
         description:
-          'Simulates disconnecting a device from Seam. Only applicable for [sandbox devices](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://docs.seam.co/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).',
+          'Simulates disconnecting a device from Seam. Only applicable for [sandbox devices](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://www.seam.co/docs/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).',
         operationId: 'devicesSimulateDisconnectPost',
         requestBody: {
           content: {
@@ -52879,7 +52879,7 @@ const openapi: OpenAPISpec = {
     '/devices/simulate/remove': {
       post: {
         description:
-          'Simulates removing a device from Seam. Only applicable for [sandbox devices](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://docs.seam.co/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).',
+          'Simulates removing a device from Seam. Only applicable for [sandbox devices](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your App Against Device Disconnection and Removal](https://www.seam.co/docs/core-concepts/devices/testing-your-app-against-device-disconnection-and-removal).',
         operationId: 'devicesSimulateRemovePost',
         requestBody: {
           content: {
@@ -52932,7 +52932,7 @@ const openapi: OpenAPISpec = {
     '/devices/unmanaged/get': {
       get: {
         description:
-          'Returns a specified [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices).\n\nAn unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).\n\nYou must specify either `device_id` or `name`.',
+          'Returns a specified [unmanaged device](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices).\n\nAn unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).\n\nYou must specify either `device_id` or `name`.',
         operationId: 'devicesUnmanagedGetGet',
         parameters: [
           {
@@ -52993,7 +52993,7 @@ const openapi: OpenAPISpec = {
     '/devices/unmanaged/list': {
       get: {
         description:
-          'Returns a list of all [unmanaged devices](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices).\n\nAn unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).',
+          'Returns a list of all [unmanaged devices](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices).\n\nAn unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).',
         operationId: 'devicesUnmanagedListGet',
         parameters: [
           {
@@ -53420,7 +53420,7 @@ const openapi: OpenAPISpec = {
     '/devices/unmanaged/update': {
       patch: {
         description:
-          'Updates a specified [unmanaged device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices). To convert an unmanaged device to managed, set `is_managed` to `true`.\n\nAn unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).',
+          'Updates a specified [unmanaged device](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices). To convert an unmanaged device to managed, set `is_managed` to `true`.\n\nAn unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).',
         operationId: 'devicesUnmanagedUpdatePatch',
         requestBody: {
           content: {
@@ -53490,7 +53490,7 @@ const openapi: OpenAPISpec = {
     '/devices/update': {
       patch: {
         description:
-          "Updates a specified [device](https://docs.seam.co/core-concepts/devices).\n\nYou can add or change [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) for a device, change the device's name, or [convert a managed device to unmanaged](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices).",
+          "Updates a specified [device](https://www.seam.co/docs/core-concepts/devices).\n\nYou can add or change [custom metadata](https://www.seam.co/docs/core-concepts/devices/adding-custom-metadata-to-a-device) for a device, change the device's name, or [convert a managed device to unmanaged](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices).",
         operationId: 'devicesUpdatePatch',
         requestBody: {
           content: {
@@ -53499,7 +53499,7 @@ const openapi: OpenAPISpec = {
                 properties: {
                   backup_access_code_pool_enabled: {
                     description:
-                      "Indicates whether the device's [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is enabled. Set to `false` to disable the pool: Seam stops refilling it and removes any backup codes that have not yet been pulled into active use.",
+                      "Indicates whether the device's [backup access code pool](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/backup-access-codes) is enabled. Set to `false` to disable the pool: Seam stops refilling it and removes any backup codes that have not yet been pulled into active use.",
                     type: 'boolean',
                   },
                   custom_metadata: {
@@ -53511,7 +53511,7 @@ const openapi: OpenAPISpec = {
                       ],
                     },
                     description:
-                      'Custom metadata that you want to associate with the device. Supports up to 50 JSON key:value pairs, with key names up to 40 characters long that cannot contain a period (.). [Adding custom metadata to a device](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) enables you to store custom information, like customer details or internal IDs from your application. Then, you can [filter devices by the desired metadata](https://docs.seam.co/core-concepts/devices/filtering-devices-by-custom-metadata). Set a key to `null` or to an empty string to remove that key from the custom metadata.',
+                      'Custom metadata that you want to associate with the device. Supports up to 50 JSON key:value pairs, with key names up to 40 characters long that cannot contain a period (.). [Adding custom metadata to a device](https://www.seam.co/docs/core-concepts/devices/adding-custom-metadata-to-a-device) enables you to store custom information, like customer details or internal IDs from your application. Then, you can [filter devices by the desired metadata](https://www.seam.co/docs/core-concepts/devices/filtering-devices-by-custom-metadata). Set a key to `null` or to an empty string to remove that key from the custom metadata.',
                     type: 'object',
                   },
                   device_id: {
@@ -53581,7 +53581,7 @@ const openapi: OpenAPISpec = {
     '/events/get': {
       get: {
         description:
-          'Returns a specified event. This endpoint returns the same event that would be sent to a [webhook](https://docs.seam.co/developer-tools/webhooks), but it enables you to retrieve an event that already took place.',
+          'Returns a specified event. This endpoint returns the same event that would be sent to a [webhook](https://www.seam.co/docs/developer-tools/webhooks), but it enables you to retrieve an event that already took place.',
         operationId: 'eventsGetGet',
         parameters: [
           {
@@ -53656,7 +53656,7 @@ const openapi: OpenAPISpec = {
     '/events/list': {
       get: {
         description:
-          'Returns a list of all events. This endpoint returns the same events that would be sent to a [webhook](https://docs.seam.co/developer-tools/webhooks), but it enables you to filter or see events that already took place.',
+          'Returns a list of all events. This endpoint returns the same events that would be sent to a [webhook](https://www.seam.co/docs/developer-tools/webhooks), but it enables you to filter or see events that already took place.',
         operationId: 'eventsListGet',
         parameters: [
           {
@@ -54215,7 +54215,7 @@ const openapi: OpenAPISpec = {
     '/instant_keys/delete': {
       delete: {
         description:
-          'Deletes a specified [Instant Key](https://docs.seam.co/capability-guides/instant-keys).',
+          'Deletes a specified [Instant Key](https://www.seam.co/docs/use-cases/granting-access/using-instant-keys).',
         operationId: 'instantKeysDeleteDelete',
         parameters: [
           {
@@ -54261,7 +54261,7 @@ const openapi: OpenAPISpec = {
     '/instant_keys/get': {
       get: {
         description:
-          'Gets an [instant key](https://docs.seam.co/capability-guides/instant-keys).',
+          'Gets an [instant key](https://www.seam.co/docs/use-cases/granting-access/using-instant-keys).',
         operationId: 'instantKeysGetGet',
         parameters: [
           {
@@ -54322,7 +54322,7 @@ const openapi: OpenAPISpec = {
     '/instant_keys/list': {
       get: {
         description:
-          'Returns a list of all [instant keys](https://docs.seam.co/capability-guides/instant-keys).',
+          'Returns a list of all [instant keys](https://www.seam.co/docs/use-cases/granting-access/using-instant-keys).',
         operationId: 'instantKeysListGet',
         parameters: [
           {
@@ -54376,7 +54376,7 @@ const openapi: OpenAPISpec = {
     '/locks/configure_auto_lock': {
       post: {
         description:
-          'Configures the auto-lock setting for a specified [lock](https://docs.seam.co/low-level-apis/smart-locks).',
+          'Configures the auto-lock setting for a specified [lock](https://www.seam.co/docs/low-level-apis/smart-locks).',
         operationId: 'locksConfigureAutoLockPost',
         requestBody: {
           content: {
@@ -54448,7 +54448,7 @@ const openapi: OpenAPISpec = {
     '/locks/get': {
       get: {
         description:
-          'Returns a specified [lock](https://docs.seam.co/low-level-apis/smart-locks).',
+          'Returns a specified [lock](https://www.seam.co/docs/low-level-apis/smart-locks).',
         operationId: 'locksGetGet',
         parameters: [
           {
@@ -54511,7 +54511,7 @@ const openapi: OpenAPISpec = {
     '/locks/list': {
       get: {
         description:
-          'Returns a list of all [locks](https://docs.seam.co/low-level-apis/smart-locks).',
+          'Returns a list of all [locks](https://www.seam.co/docs/low-level-apis/smart-locks).',
         operationId: 'locksListGet',
         parameters: [
           {
@@ -54719,7 +54719,7 @@ const openapi: OpenAPISpec = {
     '/locks/lock_door': {
       post: {
         description:
-          'Locks a [lock](https://docs.seam.co/low-level-apis/smart-locks). See also [Locking and Unlocking Smart Locks](https://docs.seam.co/low-level-apis/smart-locks/lock-and-unlock).',
+          'Locks a [lock](https://www.seam.co/docs/low-level-apis/smart-locks). See also [Locking and Unlocking Smart Locks](https://www.seam.co/docs/low-level-apis/smart-locks/lock-and-unlock).',
         operationId: 'locksLockDoorPost',
         requestBody: {
           content: {
@@ -54784,7 +54784,7 @@ const openapi: OpenAPISpec = {
     '/locks/simulate/keypad_code_entry': {
       post: {
         description:
-          'Simulates the entry of a code on a keypad. You can only perform this action for [August](https://docs.seam.co/device-and-system-integration-guides/august-locks) devices within [sandbox workspaces](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces).',
+          'Simulates the entry of a code on a keypad. You can only perform this action for [August](https://www.seam.co/docs/device-and-system-integration-guides/august-locks) devices within [sandbox workspaces](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces).',
         operationId: 'locksSimulateKeypadCodeEntryPost',
         requestBody: {
           content: {
@@ -54848,7 +54848,7 @@ const openapi: OpenAPISpec = {
     '/locks/simulate/manual_lock_via_keypad': {
       post: {
         description:
-          'Simulates a manual lock action using a keypad. You can only perform this action for [August](https://docs.seam.co/device-and-system-integration-guides/august-locks) devices within [sandbox workspaces](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces).',
+          'Simulates a manual lock action using a keypad. You can only perform this action for [August](https://www.seam.co/docs/device-and-system-integration-guides/august-locks) devices within [sandbox workspaces](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces).',
         operationId: 'locksSimulateManualLockViaKeypadPost',
         requestBody: {
           content: {
@@ -54907,7 +54907,7 @@ const openapi: OpenAPISpec = {
     '/locks/unlock_door': {
       post: {
         description:
-          'Unlocks a [lock](https://docs.seam.co/low-level-apis/smart-locks). See also [Locking and Unlocking Smart Locks](https://docs.seam.co/low-level-apis/smart-locks/lock-and-unlock).',
+          'Unlocks a [lock](https://www.seam.co/docs/low-level-apis/smart-locks). See also [Locking and Unlocking Smart Locks](https://www.seam.co/docs/low-level-apis/smart-locks/lock-and-unlock).',
         operationId: 'locksUnlockDoorPost',
         requestBody: {
           content: {
@@ -54972,7 +54972,7 @@ const openapi: OpenAPISpec = {
     '/noise_sensors/list': {
       get: {
         description:
-          'Returns a list of all [noise sensors](https://docs.seam.co/capability-guides/noise-sensors).',
+          'Returns a list of all [noise sensors](https://www.seam.co/docs/capability-guides/noise-sensors).',
         operationId: 'noiseSensorsListGet',
         parameters: [
           {
@@ -55084,7 +55084,7 @@ const openapi: OpenAPISpec = {
     '/noise_sensors/noise_thresholds/create': {
       post: {
         description:
-          'Creates a new [noise threshold](https://docs.seam.co/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/capability-guides/noise-sensors). Thresholds represent the limits of noise tolerated at a property, which can be customized for each hour of the day. Each device has its own default thresholds, but you can use the Seam API to modify them.',
+          'Creates a new [noise threshold](https://www.seam.co/docs/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://www.seam.co/docs/capability-guides/noise-sensors). Thresholds represent the limits of noise tolerated at a property, which can be customized for each hour of the day. Each device has its own default thresholds, but you can use the Seam API to modify them.',
         operationId: 'noiseSensorsNoiseThresholdsCreatePost',
         requestBody: {
           content: {
@@ -55114,7 +55114,7 @@ const openapi: OpenAPISpec = {
                   },
                   noise_threshold_nrs: {
                     description:
-                      'Noise level in Noiseaware Noise Risk Score (NRS) for the new noise threshold. This parameter is only relevant for [Noiseaware sensors](https://docs.seam.co/device-and-system-integration-guides/noiseaware-sensors).',
+                      'Noise level in Noiseaware Noise Risk Score (NRS) for the new noise threshold. This parameter is only relevant for [Noiseaware sensors](https://www.seam.co/docs/device-and-system-integration-guides/noiseaware-sensors).',
                     format: 'float',
                     type: 'number',
                   },
@@ -55177,7 +55177,7 @@ const openapi: OpenAPISpec = {
     '/noise_sensors/noise_thresholds/delete': {
       delete: {
         description:
-          'Deletes a [noise threshold](https://docs.seam.co/capability-guides/noise-sensors/configure-noise-threshold-settings) from a [noise sensor](https://docs.seam.co/capability-guides/noise-sensors).',
+          'Deletes a [noise threshold](https://www.seam.co/docs/capability-guides/noise-sensors/configure-noise-threshold-settings) from a [noise sensor](https://www.seam.co/docs/capability-guides/noise-sensors).',
         operationId: 'noiseSensorsNoiseThresholdsDeleteDelete',
         parameters: [
           {
@@ -55250,7 +55250,7 @@ const openapi: OpenAPISpec = {
     '/noise_sensors/noise_thresholds/get': {
       get: {
         description:
-          'Returns a specified [noise threshold](https://docs.seam.co/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/capability-guides/noise-sensors).',
+          'Returns a specified [noise threshold](https://www.seam.co/docs/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://www.seam.co/docs/capability-guides/noise-sensors).',
         operationId: 'noiseSensorsNoiseThresholdsGetGet',
         parameters: [
           {
@@ -55303,7 +55303,7 @@ const openapi: OpenAPISpec = {
     '/noise_sensors/noise_thresholds/list': {
       get: {
         description:
-          'Returns a list of all [noise thresholds](https://docs.seam.co/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/capability-guides/noise-sensors).',
+          'Returns a list of all [noise thresholds](https://www.seam.co/docs/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://www.seam.co/docs/capability-guides/noise-sensors).',
         operationId: 'noiseSensorsNoiseThresholdsListGet',
         parameters: [
           {
@@ -55371,7 +55371,7 @@ const openapi: OpenAPISpec = {
     '/noise_sensors/noise_thresholds/update': {
       patch: {
         description:
-          'Updates a [noise threshold](https://docs.seam.co/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/capability-guides/noise-sensors).',
+          'Updates a [noise threshold](https://www.seam.co/docs/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://www.seam.co/docs/capability-guides/noise-sensors).',
         operationId: 'noiseSensorsNoiseThresholdsUpdatePatch',
         requestBody: {
           content: {
@@ -55408,7 +55408,7 @@ const openapi: OpenAPISpec = {
                   },
                   noise_threshold_nrs: {
                     description:
-                      'Noise level in Noiseaware Noise Risk Score (NRS) for the noise threshold. This parameter is only relevant for [Noiseaware sensors](https://docs.seam.co/device-and-system-integration-guides/noiseaware-sensors).',
+                      'Noise level in Noiseaware Noise Risk Score (NRS) for the noise threshold. This parameter is only relevant for [Noiseaware sensors](https://www.seam.co/docs/device-and-system-integration-guides/noiseaware-sensors).',
                     format: 'float',
                     type: 'number',
                   },
@@ -55467,7 +55467,7 @@ const openapi: OpenAPISpec = {
     '/noise_sensors/simulate/trigger_noise_threshold': {
       post: {
         description:
-          'Simulates the triggering of a [noise threshold](https://docs.seam.co/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://docs.seam.co/capability-guides/noise-sensors) in a [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces).',
+          'Simulates the triggering of a [noise threshold](https://www.seam.co/docs/capability-guides/noise-sensors/configure-noise-threshold-settings) for a [noise sensor](https://www.seam.co/docs/capability-guides/noise-sensors) in a [sandbox workspace](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces).',
         operationId: 'noiseSensorsSimulateTriggerNoiseThresholdPost',
         requestBody: {
           content: {
@@ -55519,7 +55519,7 @@ const openapi: OpenAPISpec = {
     '/phones/deactivate': {
       delete: {
         description:
-          'Deactivates a phone, which is useful, for example, if a user has lost their phone. For more information, see [App User Lost Phone Process](https://docs.seam.co/capability-guides/mobile-access/managing-phones-for-a-user-identity#app-user-lost-phone-process).',
+          'Deactivates a phone, which is useful, for example, if a user has lost their phone. For more information, see [App User Lost Phone Process](https://www.seam.co/docs/capability-guides/mobile-access/managing-phones-for-a-user-identity#app-user-lost-phone-process).',
         operationId: 'phonesDeactivateDelete',
         parameters: [
           {
@@ -55566,7 +55566,7 @@ const openapi: OpenAPISpec = {
     '/phones/get': {
       get: {
         description:
-          'Returns a specified [phone](https://docs.seam.co/capability-guides/mobile-access/managing-phones-for-a-user-identity).',
+          'Returns a specified [phone](https://www.seam.co/docs/capability-guides/mobile-access/managing-phones-for-a-user-identity).',
         operationId: 'phonesGetGet',
         parameters: [
           {
@@ -55617,7 +55617,7 @@ const openapi: OpenAPISpec = {
     '/phones/list': {
       get: {
         description:
-          'Returns a list of all [phones](https://docs.seam.co/capability-guides/mobile-access/managing-phones-for-a-user-identity). To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.',
+          'Returns a list of all [phones](https://www.seam.co/docs/capability-guides/mobile-access/managing-phones-for-a-user-identity). To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.',
         operationId: 'phonesListGet',
         parameters: [
           {
@@ -55635,7 +55635,7 @@ const openapi: OpenAPISpec = {
             name: 'acs_credential_id',
             schema: {
               description:
-                'ID of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) by which you want to filter the list of returned phones.',
+                'ID of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) by which you want to filter the list of returned phones.',
               format: 'uuid',
               type: 'string',
             },
@@ -55681,7 +55681,7 @@ const openapi: OpenAPISpec = {
     '/phones/simulate/create_sandbox_phone': {
       post: {
         description:
-          'Creates a new simulated phone in a [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces). See also [Creating a Simulated Phone for a User Identity](https://docs.seam.co/capability-guides/mobile-access/developing-in-a-sandbox-workspace#creating-a-simulated-phone-for-a-user-identity).',
+          'Creates a new simulated phone in a [sandbox workspace](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces). See also [Creating a Simulated Phone for a User Identity](https://www.seam.co/docs/capability-guides/mobile-access/developing-in-a-sandbox-workspace#creating-a-simulated-phone-for-a-user-identity).',
         operationId: 'phonesSimulateCreateSandboxPhonePost',
         requestBody: {
           content: {
@@ -55820,7 +55820,7 @@ const openapi: OpenAPISpec = {
     '/seam/bridge/v1/bridge_client_sessions/create': {
       post: {
         description:
-          'Creates a new [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) client session.',
+          'Creates a new [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge) client session.',
         operationId: 'seamBridgeV1BridgeClientSessionsCreatePost',
         requestBody: {
           content: {
@@ -55894,7 +55894,7 @@ const openapi: OpenAPISpec = {
     '/seam/bridge/v1/bridge_client_sessions/get': {
       get: {
         description:
-          'Returns the [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) client session associated with the client session token used for authentication.',
+          'Returns the [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge) client session associated with the client session token used for authentication.',
         operationId: 'seamBridgeV1BridgeClientSessionsGetGet',
         responses: {
           '200': {
@@ -55936,7 +55936,7 @@ const openapi: OpenAPISpec = {
     '/seam/bridge/v1/bridge_client_sessions/refresh_tailscale_auth_key': {
       post: {
         description:
-          'Refreshes the Tailscale auth key for the [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) client session associated with the client session token used for authentication.',
+          'Refreshes the Tailscale auth key for the [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge) client session associated with the client session token used for authentication.',
         operationId:
           'seamBridgeV1BridgeClientSessionsRefreshTailscaleAuthKeyPost',
         responses: {
@@ -55981,7 +55981,7 @@ const openapi: OpenAPISpec = {
     '/seam/bridge/v1/bridge_client_sessions/refresh_telemetry_token': {
       post: {
         description:
-          'Returns the [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) client session associated with the client session token used for authentication and refreshed telemetry token.',
+          'Returns the [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge) client session associated with the client session token used for authentication and refreshed telemetry token.',
         operationId:
           'seamBridgeV1BridgeClientSessionsRefreshTelemetryTokenPost',
         responses: {
@@ -56026,7 +56026,7 @@ const openapi: OpenAPISpec = {
     '/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code': {
       post: {
         description:
-          'Generate a new pairing code and return the updated [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) client session.',
+          'Generate a new pairing code and return the updated [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge) client session.',
         operationId:
           'seamBridgeV1BridgeClientSessionsRegeneratePairingCodePost',
         responses: {
@@ -56070,7 +56070,7 @@ const openapi: OpenAPISpec = {
     '/seam/bridge/v1/bridge_client_sessions/report_status': {
       post: {
         description:
-          'Report the status of a [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) client.',
+          'Report the status of a [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge) client.',
         operationId: 'seamBridgeV1BridgeClientSessionsReportStatusPost',
         requestBody: {
           content: {
@@ -56128,7 +56128,7 @@ const openapi: OpenAPISpec = {
     '/seam/bridge/v1/bridge_connected_systems/list': {
       get: {
         description:
-          'Returns the [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge)-connected systems associated with the client session token used for authentication.',
+          'Returns the [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge)-connected systems associated with the client session token used for authentication.',
         operationId: 'seamBridgeV1BridgeConnectedSystemsListGet',
         responses: {
           '200': {
@@ -56173,7 +56173,7 @@ const openapi: OpenAPISpec = {
     '/seam/connect_webview/v1/get_current_pane': {
       get: {
         description:
-          'Returns the current render pane for a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews).',
+          'Returns the current render pane for a [Connect Webview](https://www.seam.co/docs/core-concepts/connect-webviews).',
         operationId: 'seamConnectWebviewV1GetCurrentPaneGet',
         parameters: [
           {
@@ -56217,7 +56217,7 @@ const openapi: OpenAPISpec = {
     '/seam/connect_webview/v1/reset': {
       post: {
         description:
-          'Resets an errored [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) so its login flow can be retried.',
+          'Resets an errored [Connect Webview](https://www.seam.co/docs/core-concepts/connect-webviews) so its login flow can be retried.',
         operationId: 'seamConnectWebviewV1ResetPost',
         requestBody: {
           content: {
@@ -56263,7 +56263,7 @@ const openapi: OpenAPISpec = {
     '/seam/connect_webview/v1/submit': {
       post: {
         description:
-          'Submits pane arguments to advance a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) login state machine.',
+          'Submits pane arguments to advance a [Connect Webview](https://www.seam.co/docs/core-concepts/connect-webviews) login state machine.',
         operationId: 'seamConnectWebviewV1SubmitPost',
         requestBody: {
           content: {
@@ -64900,7 +64900,7 @@ const openapi: OpenAPISpec = {
     '/seam/mobile_sdk/v1/acs/credentials/list': {
       get: {
         description:
-          'Returns a list of all [credentials](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+          'Returns a list of all [credentials](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
         operationId: 'seamMobileSdkV1AcsCredentialsListGet',
         parameters: [],
         responses: {
@@ -65255,7 +65255,7 @@ const openapi: OpenAPISpec = {
     '/seam/webhooks/v1/preview_event': {
       post: {
         description:
-          'Returns the event payload that `/seam/webhooks/v1/simulate_event` would send for a specified event type, without creating an event or delivering a [webhook](https://docs.seam.co/developer-tools/webhooks). Only applicable within [sandbox workspaces](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces).\n\nSeam fills in the payload the same way that `simulate_event` does, using real resources from the workspace where it can and placeholder values otherwise, and reports which fields it filled in each way. Provide `payload` to set any field explicitly.',
+          'Returns the event payload that `/seam/webhooks/v1/simulate_event` would send for a specified event type, without creating an event or delivering a [webhook](https://www.seam.co/docs/developer-tools/webhooks). Only applicable within [sandbox workspaces](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces).\n\nSeam fills in the payload the same way that `simulate_event` does, using real resources from the workspace where it can and placeholder values otherwise, and reports which fields it filled in each way. Provide `payload` to set any field explicitly.',
         operationId: 'seamWebhooksV1PreviewEventPost',
         requestBody: {
           content: {
@@ -65465,7 +65465,7 @@ const openapi: OpenAPISpec = {
     '/seam/webhooks/v1/simulate_event': {
       post: {
         description:
-          'Creates an event of a specified type and delivers it to every [webhook](https://docs.seam.co/developer-tools/webhooks) in the workspace that is subscribed to that event type, so that a developer can test their webhook endpoint against any event Seam can send. Only applicable within [sandbox workspaces](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces).\n\nSeam fills in the event payload, using real resources from the workspace where it can and placeholder values otherwise. Provide `payload` to set any field explicitly.\n\nThis creates a real event and delivers a real webhook, but does not change the state of any device or other resource. For example, simulating a `lock.unlocked` event does not unlock the lock.',
+          'Creates an event of a specified type and delivers it to every [webhook](https://www.seam.co/docs/developer-tools/webhooks) in the workspace that is subscribed to that event type, so that a developer can test their webhook endpoint against any event Seam can send. Only applicable within [sandbox workspaces](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces).\n\nSeam fills in the event payload, using real resources from the workspace where it can and placeholder values otherwise. Provide `payload` to set any field explicitly.\n\nThis creates a real event and delivers a real webhook, but does not change the state of any device or other resource. For example, simulating a `lock.unlocked` event does not unlock the lock.',
         operationId: 'seamWebhooksV1SimulateEventPost',
         requestBody: {
           content: {
@@ -65748,7 +65748,7 @@ const openapi: OpenAPISpec = {
     '/spaces/add_acs_entrances': {
       put: {
         description:
-          'Adds [entrances](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) to a specific space.',
+          'Adds [entrances](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) to a specific space.',
         operationId: 'spacesAddAcsEntrancesPut',
         requestBody: {
           content: {
@@ -65808,7 +65808,7 @@ const openapi: OpenAPISpec = {
     '/spaces/add_connected_account': {
       put: {
         description:
-          'Adds a [connected account](https://docs.seam.co/core-concepts/connected-accounts) to a specific space.',
+          'Adds a [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) to a specific space.',
         operationId: 'spacesAddConnectedAccountPut',
         requestBody: {
           content: {
@@ -66416,7 +66416,7 @@ const openapi: OpenAPISpec = {
     '/spaces/remove_acs_entrances': {
       delete: {
         description:
-          'Removes [entrances](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) from a specific space.',
+          'Removes [entrances](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) from a specific space.',
         operationId: 'spacesRemoveAcsEntrancesDelete',
         parameters: [
           {
@@ -66475,7 +66475,7 @@ const openapi: OpenAPISpec = {
     '/spaces/remove_connected_account': {
       delete: {
         description:
-          'Removes a [connected account](https://docs.seam.co/core-concepts/connected-accounts) from a specific space.',
+          'Removes a [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) from a specific space.',
         operationId: 'spacesRemoveConnectedAccountDelete',
         parameters: [
           {
@@ -66711,7 +66711,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/activate_climate_preset': {
       post: {
         description:
-          'Activates a specified [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/capability-guides/thermostats).',
+          'Activates a specified [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://www.seam.co/docs/capability-guides/thermostats).',
         operationId: 'thermostatsActivateClimatePresetPost',
         requestBody: {
           content: {
@@ -66776,7 +66776,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/cool': {
       post: {
         description:
-          'Sets a specified [thermostat](https://docs.seam.co/capability-guides/thermostats) to [cool mode](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings).',
+          'Sets a specified [thermostat](https://www.seam.co/docs/capability-guides/thermostats) to [cool mode](https://www.seam.co/docs/capability-guides/thermostats/configure-current-climate-settings).',
         operationId: 'thermostatsCoolPost',
         requestBody: {
           content: {
@@ -66785,13 +66785,13 @@ const openapi: OpenAPISpec = {
                 properties: {
                   cooling_set_point_celsius: {
                     description:
-                      '[Cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
+                      '[Cooling set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
                   cooling_set_point_fahrenheit: {
                     description:
-                      '[Cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
+                      '[Cooling set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
@@ -66853,7 +66853,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/create_climate_preset': {
       post: {
         description:
-          'Creates a [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/capability-guides/thermostats).',
+          'Creates a [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://www.seam.co/docs/capability-guides/thermostats).',
         operationId: 'thermostatsCreateClimatePresetPost',
         requestBody: {
           content: {
@@ -66862,7 +66862,7 @@ const openapi: OpenAPISpec = {
                 properties: {
                   climate_preset_key: {
                     description:
-                      'Unique key to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).',
+                      'Unique key to identify the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets).',
                     type: 'string',
                   },
                   climate_preset_mode: {
@@ -66880,13 +66880,13 @@ const openapi: OpenAPISpec = {
                   },
                   cooling_set_point_celsius: {
                     description:
-                      'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                      'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                     format: 'float',
                     type: 'number',
                   },
                   cooling_set_point_fahrenheit: {
                     description:
-                      'Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                      'Temperature to which the thermostat should cool (in °F). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                     format: 'float',
                     type: 'number',
                   },
@@ -66921,25 +66921,25 @@ const openapi: OpenAPISpec = {
                   },
                   fan_mode_setting: {
                     description:
-                      'Desired [fan mode setting](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.',
+                      'Desired [fan mode setting](https://www.seam.co/docs/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.',
                     enum: ['auto', 'on', 'circulate'],
                     type: 'string',
                   },
                   heating_set_point_celsius: {
                     description:
-                      'Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                      'Temperature to which the thermostat should heat (in °C). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                     format: 'float',
                     type: 'number',
                   },
                   heating_set_point_fahrenheit: {
                     description:
-                      'Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                      'Temperature to which the thermostat should heat (in °F). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                     format: 'float',
                     type: 'number',
                   },
                   hvac_mode_setting: {
                     description:
-                      'Desired [HVAC mode](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
+                      'Desired [HVAC mode](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
                     enum: ['off', 'heat', 'cool', 'heat_cool', 'eco'],
                     type: 'string',
                   },
@@ -66955,7 +66955,7 @@ const openapi: OpenAPISpec = {
                   name: {
                     default: null,
                     description:
-                      'User-friendly name to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).',
+                      'User-friendly name to identify the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets).',
                     nullable: true,
                     type: 'string',
                   },
@@ -67025,7 +67025,7 @@ const openapi: OpenAPISpec = {
                       properties: {
                         climate_preset_key: {
                           description:
-                            'Key of the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.',
+                            'Key of the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.',
                           type: 'string',
                         },
                         starts_at_time: {
@@ -67154,7 +67154,7 @@ const openapi: OpenAPISpec = {
                       properties: {
                         climate_preset_key: {
                           description:
-                            'Key of the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.',
+                            'Key of the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`.',
                           type: 'string',
                         },
                         starts_at_time: {
@@ -67222,7 +67222,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/delete_climate_preset': {
       delete: {
         description:
-          'Deletes a specified [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/capability-guides/thermostats).',
+          'Deletes a specified [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://www.seam.co/docs/capability-guides/thermostats).',
         operationId: 'thermostatsDeleteClimatePresetDelete',
         parameters: [
           {
@@ -67281,7 +67281,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/get': {
       get: {
         description:
-          'Returns a specified [thermostat](https://docs.seam.co/capability-guides/thermostats). **Deprecated:** Will be removed. Use `/devices/get` instead.',
+          'Returns a specified [thermostat](https://www.seam.co/docs/capability-guides/thermostats). **Deprecated:** Will be removed. Use `/devices/get` instead.',
         operationId: 'thermostatsGetGet',
         parameters: [
           {
@@ -67344,7 +67344,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/heat': {
       post: {
         description:
-          'Sets a specified [thermostat](https://docs.seam.co/capability-guides/thermostats) to [heat mode](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings).',
+          'Sets a specified [thermostat](https://www.seam.co/docs/capability-guides/thermostats) to [heat mode](https://www.seam.co/docs/capability-guides/thermostats/configure-current-climate-settings).',
         operationId: 'thermostatsHeatPost',
         requestBody: {
           content: {
@@ -67359,13 +67359,13 @@ const openapi: OpenAPISpec = {
                   },
                   heating_set_point_celsius: {
                     description:
-                      '[Heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
+                      '[Heating set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
                   heating_set_point_fahrenheit: {
                     description:
-                      '[Heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
+                      '[Heating set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
@@ -67421,7 +67421,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/heat_cool': {
       post: {
         description:
-          'Sets a specified [thermostat](https://docs.seam.co/capability-guides/thermostats) to [heat-cool ("auto") mode](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings).',
+          'Sets a specified [thermostat](https://www.seam.co/docs/capability-guides/thermostats) to [heat-cool ("auto") mode](https://www.seam.co/docs/capability-guides/thermostats/configure-current-climate-settings).',
         operationId: 'thermostatsHeatCoolPost',
         requestBody: {
           content: {
@@ -67430,13 +67430,13 @@ const openapi: OpenAPISpec = {
                 properties: {
                   cooling_set_point_celsius: {
                     description:
-                      '[Cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
+                      '[Cooling set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
                   cooling_set_point_fahrenheit: {
                     description:
-                      '[Cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
+                      '[Cooling set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
@@ -67448,13 +67448,13 @@ const openapi: OpenAPISpec = {
                   },
                   heating_set_point_celsius: {
                     description:
-                      '[Heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
+                      '[Heating set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
                   heating_set_point_fahrenheit: {
                     description:
-                      '[Heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
+                      '[Heating set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
@@ -67510,7 +67510,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/list': {
       get: {
         description:
-          'Returns a list of all [thermostats](https://docs.seam.co/capability-guides/thermostats).',
+          'Returns a list of all [thermostats](https://www.seam.co/docs/capability-guides/thermostats).',
         operationId: 'thermostatsListGet',
         parameters: [
           {
@@ -67643,7 +67643,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/off': {
       post: {
         description:
-          'Sets a specified [thermostat](https://docs.seam.co/capability-guides/thermostats) to ["off" mode](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings).',
+          'Sets a specified [thermostat](https://www.seam.co/docs/capability-guides/thermostats) to ["off" mode](https://www.seam.co/docs/capability-guides/thermostats/configure-current-climate-settings).',
         operationId: 'thermostatsOffPost',
         requestBody: {
           content: {
@@ -67708,7 +67708,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/schedules/create': {
       post: {
         description:
-          'Creates a new [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/capability-guides/thermostats).',
+          'Creates a new [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://www.seam.co/docs/capability-guides/thermostats).',
         operationId: 'thermostatsSchedulesCreatePost',
         requestBody: {
           content: {
@@ -67717,7 +67717,7 @@ const openapi: OpenAPISpec = {
                 properties: {
                   climate_preset_key: {
                     description:
-                      'Key of the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the new thermostat schedule.',
+                      'Key of the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the new thermostat schedule.',
                     minLength: 1,
                     type: 'string',
                   },
@@ -67733,12 +67733,12 @@ const openapi: OpenAPISpec = {
                   },
                   is_override_allowed: {
                     description:
-                      "Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the new schedule is active. See also [Specifying Manual Override Permissions](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
+                      "Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the new schedule is active. See also [Specifying Manual Override Permissions](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                     type: 'boolean',
                   },
                   max_override_period_minutes: {
                     description:
-                      "Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
+                      "Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                     exclusiveMinimum: true,
                     minimum: 0,
                     nullable: true,
@@ -67805,7 +67805,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/schedules/delete': {
       delete: {
         description:
-          'Deletes a [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/capability-guides/thermostats).',
+          'Deletes a [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://www.seam.co/docs/capability-guides/thermostats).',
         operationId: 'thermostatsSchedulesDeleteDelete',
         parameters: [
           {
@@ -67853,7 +67853,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/schedules/get': {
       get: {
         description:
-          'Returns a specified [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+          'Returns a specified [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
         operationId: 'thermostatsSchedulesGetGet',
         parameters: [
           {
@@ -67908,7 +67908,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/schedules/list': {
       get: {
         description:
-          'Returns a list of all [thermostat schedules](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/capability-guides/thermostats).',
+          'Returns a list of all [thermostat schedules](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://www.seam.co/docs/capability-guides/thermostats).',
         operationId: 'thermostatsSchedulesListGet',
         parameters: [
           {
@@ -67979,7 +67979,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/schedules/update': {
       patch: {
         description:
-          'Updates a specified [thermostat schedule](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+          'Updates a specified [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
         operationId: 'thermostatsSchedulesUpdatePatch',
         requestBody: {
           content: {
@@ -67988,7 +67988,7 @@ const openapi: OpenAPISpec = {
                 properties: {
                   climate_preset_key: {
                     description:
-                      'Key of the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule.',
+                      'Key of the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule.',
                     minLength: 1,
                     type: 'string',
                   },
@@ -67999,12 +67999,12 @@ const openapi: OpenAPISpec = {
                   },
                   is_override_allowed: {
                     description:
-                      "Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the schedule is active. See also [Specifying Manual Override Permissions](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
+                      "Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the schedule is active. See also [Specifying Manual Override Permissions](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                     type: 'boolean',
                   },
                   max_override_period_minutes: {
                     description:
-                      "Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
+                      "Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                     exclusiveMinimum: true,
                     minimum: 0,
                     nullable: true,
@@ -68065,7 +68065,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/set_fallback_climate_preset': {
       post: {
         description:
-          'Sets a specified [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) as the ["fallback"](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) preset for a specified [thermostat](https://docs.seam.co/capability-guides/thermostats).',
+          'Sets a specified [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) as the ["fallback"](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) preset for a specified [thermostat](https://www.seam.co/docs/capability-guides/thermostats).',
         operationId: 'thermostatsSetFallbackClimatePresetPost',
         requestBody: {
           content: {
@@ -68123,7 +68123,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/set_fan_mode': {
       post: {
         description:
-          'Sets the [fan mode setting](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for a specified [thermostat](https://docs.seam.co/capability-guides/thermostats).',
+          'Sets the [fan mode setting](https://www.seam.co/docs/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for a specified [thermostat](https://www.seam.co/docs/capability-guides/thermostats).',
         operationId: 'thermostatsSetFanModePost',
         requestBody: {
           content: {
@@ -68146,7 +68146,7 @@ const openapi: OpenAPISpec = {
                   },
                   fan_mode_setting: {
                     description:
-                      '[Fan mode setting](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) that you want to set for the thermostat.',
+                      '[Fan mode setting](https://www.seam.co/docs/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) that you want to set for the thermostat.',
                     enum: ['auto', 'on', 'circulate'],
                     type: 'string',
                   },
@@ -68202,7 +68202,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/set_hvac_mode': {
       post: {
         description:
-          'Sets the [HVAC mode](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings) for a specified [thermostat](https://docs.seam.co/capability-guides/thermostats).',
+          'Sets the [HVAC mode](https://www.seam.co/docs/capability-guides/thermostats/configure-current-climate-settings) for a specified [thermostat](https://www.seam.co/docs/capability-guides/thermostats).',
         operationId: 'thermostatsSetHvacModePost',
         requestBody: {
           content: {
@@ -68227,13 +68227,13 @@ const openapi: OpenAPISpec = {
                     properties: {
                       cooling_set_point_celsius: {
                         description:
-                          '[Cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
+                          '[Cooling set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
                         format: 'float',
                         type: 'number',
                       },
                       cooling_set_point_fahrenheit: {
                         description:
-                          '[Cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
+                          '[Cooling set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
                         format: 'float',
                         type: 'number',
                       },
@@ -68258,13 +68258,13 @@ const openapi: OpenAPISpec = {
                       },
                       heating_set_point_celsius: {
                         description:
-                          '[Heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
+                          '[Heating set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
                         format: 'float',
                         type: 'number',
                       },
                       heating_set_point_fahrenheit: {
                         description:
-                          '[Heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
+                          '[Heating set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
                         format: 'float',
                         type: 'number',
                       },
@@ -68277,13 +68277,13 @@ const openapi: OpenAPISpec = {
                     properties: {
                       cooling_set_point_celsius: {
                         description:
-                          '[Cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
+                          '[Cooling set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
                         format: 'float',
                         type: 'number',
                       },
                       cooling_set_point_fahrenheit: {
                         description:
-                          '[Cooling set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
+                          '[Cooling set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters.',
                         format: 'float',
                         type: 'number',
                       },
@@ -68295,13 +68295,13 @@ const openapi: OpenAPISpec = {
                       },
                       heating_set_point_celsius: {
                         description:
-                          '[Heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
+                          '[Heating set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
                         format: 'float',
                         type: 'number',
                       },
                       heating_set_point_fahrenheit: {
                         description:
-                          '[Heating set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
+                          '[Heating set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
                         format: 'float',
                         type: 'number',
                       },
@@ -68371,7 +68371,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/set_temperature_threshold': {
       patch: {
         description:
-          'Sets a [temperature threshold](https://docs.seam.co/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) for a specified thermostat. Seam emits a `thermostat.temperature_threshold_exceeded` event and adds a warning on a thermostat if it reports a temperature outside the threshold range.',
+          'Sets a [temperature threshold](https://www.seam.co/docs/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) for a specified thermostat. Seam emits a `thermostat.temperature_threshold_exceeded` event and adds a warning on a thermostat if it reports a temperature outside the threshold range.',
         operationId: 'thermostatsSetTemperatureThresholdPatch',
         requestBody: {
           content: {
@@ -68455,7 +68455,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/simulate/hvac_mode_adjusted': {
       post: {
         description:
-          'Simulates having adjusted the [HVAC mode](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) for a [thermostat](https://docs.seam.co/capability-guides/thermostats). Only applicable for [sandbox devices](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your Thermostat App with Simulate Endpoints](https://docs.seam.co/capability-guides/thermostats/testing-your-thermostat-app-with-simulate-endpoints).',
+          'Simulates having adjusted the [HVAC mode](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) for a [thermostat](https://www.seam.co/docs/capability-guides/thermostats). Only applicable for [sandbox devices](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your Thermostat App with Simulate Endpoints](https://www.seam.co/docs/capability-guides/thermostats/testing-your-thermostat-app-with-simulate-endpoints).',
         operationId: 'thermostatsSimulateHvacModeAdjustedPost',
         requestBody: {
           content: {
@@ -68484,13 +68484,13 @@ const openapi: OpenAPISpec = {
                     properties: {
                       cooling_set_point_celsius: {
                         description:
-                          'Cooling [set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to simulate. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.',
+                          'Cooling [set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to simulate. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.',
                         format: 'float',
                         type: 'number',
                       },
                       cooling_set_point_fahrenheit: {
                         description:
-                          'Cooling [set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to simulate. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`.',
+                          'Cooling [set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to simulate. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`.',
                         format: 'float',
                         type: 'number',
                       },
@@ -68519,13 +68519,13 @@ const openapi: OpenAPISpec = {
                       },
                       heating_set_point_celsius: {
                         description:
-                          'Heating [set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to simulate. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`.',
+                          'Heating [set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to simulate. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`.',
                         format: 'float',
                         type: 'number',
                       },
                       heating_set_point_fahrenheit: {
                         description:
-                          'Heating [set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to simulate. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`.',
+                          'Heating [set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to simulate. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`.',
                         format: 'float',
                         type: 'number',
                       },
@@ -68542,13 +68542,13 @@ const openapi: OpenAPISpec = {
                     properties: {
                       cooling_set_point_celsius: {
                         description:
-                          'Cooling [set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to simulate. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.',
+                          'Cooling [set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to simulate. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.',
                         format: 'float',
                         type: 'number',
                       },
                       cooling_set_point_fahrenheit: {
                         description:
-                          'Cooling [set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to simulate. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`.',
+                          'Cooling [set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to simulate. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`.',
                         format: 'float',
                         type: 'number',
                       },
@@ -68560,13 +68560,13 @@ const openapi: OpenAPISpec = {
                       },
                       heating_set_point_celsius: {
                         description:
-                          'Heating [set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to simulate. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`.',
+                          'Heating [set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C that you want to simulate. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`.',
                         format: 'float',
                         type: 'number',
                       },
                       heating_set_point_fahrenheit: {
                         description:
-                          'Heating [set point](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to simulate. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`.',
+                          'Heating [set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to simulate. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`.',
                         format: 'float',
                         type: 'number',
                       },
@@ -68616,7 +68616,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/simulate/temperature_reached': {
       post: {
         description:
-          'Simulates a [thermostat](https://docs.seam.co/capability-guides/thermostats) reaching a specified temperature. Only applicable for [sandbox devices](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your Thermostat App with Simulate Endpoints](https://docs.seam.co/capability-guides/thermostats/testing-your-thermostat-app-with-simulate-endpoints).',
+          'Simulates a [thermostat](https://www.seam.co/docs/capability-guides/thermostats) reaching a specified temperature. Only applicable for [sandbox devices](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your Thermostat App with Simulate Endpoints](https://www.seam.co/docs/capability-guides/thermostats/testing-your-thermostat-app-with-simulate-endpoints).',
         operationId: 'thermostatsSimulateTemperatureReachedPost',
         requestBody: {
           content: {
@@ -68680,7 +68680,7 @@ const openapi: OpenAPISpec = {
     '/thermostats/update_climate_preset': {
       patch: {
         description:
-          'Updates a specified [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/capability-guides/thermostats).',
+          'Updates a specified [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://www.seam.co/docs/capability-guides/thermostats).',
         operationId: 'thermostatsUpdateClimatePresetPatch',
         requestBody: {
           content: {
@@ -68689,7 +68689,7 @@ const openapi: OpenAPISpec = {
                 properties: {
                   climate_preset_key: {
                     description:
-                      'Unique key to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).',
+                      'Unique key to identify the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets).',
                     type: 'string',
                   },
                   climate_preset_mode: {
@@ -68707,13 +68707,13 @@ const openapi: OpenAPISpec = {
                   },
                   cooling_set_point_celsius: {
                     description:
-                      'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                      'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                     format: 'float',
                     type: 'number',
                   },
                   cooling_set_point_fahrenheit: {
                     description:
-                      'Temperature to which the thermostat should cool (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                      'Temperature to which the thermostat should cool (in °F). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                     format: 'float',
                     type: 'number',
                   },
@@ -68748,32 +68748,32 @@ const openapi: OpenAPISpec = {
                   },
                   fan_mode_setting: {
                     description:
-                      'Desired [fan mode setting](https://docs.seam.co/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.',
+                      'Desired [fan mode setting](https://www.seam.co/docs/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`.',
                     enum: ['auto', 'on', 'circulate'],
                     type: 'string',
                   },
                   heating_set_point_celsius: {
                     description:
-                      'Temperature to which the thermostat should heat (in °C). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                      'Temperature to which the thermostat should heat (in °C). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                     format: 'float',
                     type: 'number',
                   },
                   heating_set_point_fahrenheit: {
                     description:
-                      'Temperature to which the thermostat should heat (in °F). See also [Set Points](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
+                      'Temperature to which the thermostat should heat (in °F). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                     format: 'float',
                     type: 'number',
                   },
                   hvac_mode_setting: {
                     description:
-                      'Desired [HVAC mode](https://docs.seam.co/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
+                      'Desired [HVAC mode](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
                     enum: ['off', 'heat', 'cool', 'heat_cool', 'eco'],
                     type: 'string',
                   },
                   manual_override_allowed: {
                     deprecated: true,
                     description:
-                      "Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
+                      "Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                     type: 'boolean',
                     'x-deprecated':
                       "Use 'thermostat_schedule.is_override_allowed'",
@@ -68781,7 +68781,7 @@ const openapi: OpenAPISpec = {
                   name: {
                     default: null,
                     description:
-                      'User-friendly name to identify the [climate preset](https://docs.seam.co/capability-guides/thermostats/creating-and-managing-climate-presets).',
+                      'User-friendly name to identify the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets).',
                     nullable: true,
                     type: 'string',
                   },
@@ -69346,7 +69346,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/add_acs_user': {
       put: {
         description:
-          "Adds a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) to a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).\n\nYou must specify either `user_identity_id` or `user_identity_key` to identify the user identity.\n\nIf `user_identity_key` is provided, but the user identity doesn't exist, a new user identity will be created automatically using information from the ACS user.",
+          "Adds a specified [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to a specified [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).\n\nYou must specify either `user_identity_id` or `user_identity_key` to identify the user identity.\n\nIf `user_identity_key` is provided, but the user identity doesn't exist, a new user identity will be created automatically using information from the ACS user.",
         operationId: 'userIdentitiesAddAcsUserPut',
         requestBody: {
           content: {
@@ -69410,7 +69410,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/create': {
       post: {
         description:
-          'Creates a new [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Creates a new [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesCreatePost',
         requestBody: {
           content: {
@@ -69493,7 +69493,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/delete': {
       delete: {
         description:
-          'Deletes a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://docs.seam.co/api/acs/credentials), [acs users](https://docs.seam.co/api/acs/users) and [client sessions](https://docs.seam.co/api/client_sessions).',
+          'Deletes a specified [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This deletes the user identity and all associated resources, including any [credentials](https://www.seam.co/docs/api/acs/credentials/object), [acs users](https://www.seam.co/docs/api/acs/users/object) and [client sessions](https://www.seam.co/docs/api/client_sessions/object).',
         operationId: 'userIdentitiesDeleteDelete',
         parameters: [
           {
@@ -69539,7 +69539,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/enrollment_automations/delete': {
       delete: {
         description:
-          'Deletes a specified [enrollment automation](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system). You must delete all enrollment automations associated with a [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) before [deleting the user identity](https://docs.seam.co/api/user_identities/delete).',
+          'Deletes a specified [enrollment automation](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system). You must delete all enrollment automations associated with a [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) before [deleting the user identity](https://www.seam.co/docs/api/user_identities/delete).',
         operationId: 'userIdentitiesEnrollmentAutomationsDeleteDelete',
         parameters: [
           {
@@ -69587,7 +69587,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/enrollment_automations/get': {
       get: {
         description:
-          'Returns a specified [enrollment automation](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system/).',
+          'Returns a specified [enrollment automation](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system).',
         operationId: 'userIdentitiesEnrollmentAutomationsGetGet',
         parameters: [
           {
@@ -69642,7 +69642,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/enrollment_automations/launch': {
       post: {
         description:
-          'Sets up a new [enrollment automation](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) with a specified [credential manager](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system).',
+          'Sets up a new [enrollment automation](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) with a specified [credential manager](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system).',
         operationId: 'userIdentitiesEnrollmentAutomationsLaunchPost',
         requestBody: {
           content: {
@@ -69727,7 +69727,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/enrollment_automations/list': {
       get: {
         description:
-          'Returns a list of all [enrollment automations](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a list of all [enrollment automations](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesEnrollmentAutomationsListGet',
         parameters: [
           {
@@ -69785,7 +69785,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/generate_instant_key': {
       post: {
         description:
-          'Generates a new [instant key](https://docs.seam.co/capability-guides/instant-keys) for a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Generates a new [instant key](https://www.seam.co/docs/use-cases/granting-access/using-instant-keys) for a specified [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesGenerateInstantKeyPost',
         requestBody: {
           content: {
@@ -69849,7 +69849,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/get': {
       get: {
         description:
-          'Returns a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a specified [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesGetGet',
         parameters: [
           {
@@ -69909,7 +69909,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/grant_access_to_device': {
       put: {
         description:
-          'Grants a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](https://docs.seam.co/core-concepts/devices/).',
+          'Grants a specified [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](https://www.seam.co/docs/core-concepts/devices).',
         operationId: 'userIdentitiesGrantAccessToDevicePut',
         requestBody: {
           content: {
@@ -69967,7 +69967,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/list': {
       get: {
         description:
-          'Returns a list of all [user identities](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a list of all [user identities](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesListGet',
         parameters: [
           {
@@ -70074,7 +70074,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/list_accessible_devices': {
       get: {
         description:
-          'Returns a list of all [devices](https://docs.seam.co/core-concepts/devices) associated with a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This includes devices derived from the access grants assigned to the user identity and devices directly linked to the user identity.',
+          'Returns a list of all [devices](https://www.seam.co/docs/core-concepts/devices) associated with a specified [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This includes devices derived from the access grants assigned to the user identity and devices directly linked to the user identity.',
         operationId: 'userIdentitiesListAccessibleDevicesGet',
         parameters: [
           {
@@ -70135,7 +70135,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/list_accessible_entrances': {
       get: {
         description:
-          'Returns a list of all [ACS entrances](https://docs.seam.co/api/acs/entrances) accessible to a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This includes entrances derived from the access grants assigned to the user identity and entrances accessible through ACS users linked to the user identity.',
+          'Returns a list of all [ACS entrances](https://www.seam.co/docs/api/acs/entrances/object) accessible to a specified [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). This includes entrances derived from the access grants assigned to the user identity and entrances accessible through ACS users linked to the user identity.',
         operationId: 'userIdentitiesListAccessibleEntrancesGet',
         parameters: [
           {
@@ -70191,7 +70191,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/list_acs_systems': {
       get: {
         description:
-          'Returns a list of all [access systems](https://docs.seam.co/low-level-apis/access-systems) associated with a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a list of all [access systems](https://www.seam.co/docs/low-level-apis/access-systems) associated with a specified [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesListAcsSystemsGet',
         parameters: [
           {
@@ -70247,7 +70247,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/list_acs_users': {
       get: {
         description:
-          'Returns a list of all [access system users](https://docs.seam.co/low-level-apis/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Returns a list of all [access system users](https://www.seam.co/docs/low-level-apis/access-systems/user-management) assigned to a specified [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesListAcsUsersGet',
         parameters: [
           {
@@ -70302,7 +70302,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/merge': {
       post: {
         description:
-          'Merges one or more [user identities](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) into a primary user identity, for when the same person ended up with more than one user identity.\n\nThe primary user identity takes on any email address or phone number it was missing from the user identities merged into it, and the merged user identities are then deleted. Their IDs and keys keep working: looking one up returns the primary user identity, and they are listed on it as `merged_user_identity_ids` and `merged_user_identity_keys`.\n\nAccess grants, access system users, client sessions and other resources belonging to the merged user identities are moved to the primary user identity.\n\nIdentify the user identities either by ID or by key, but not both in the same request. Repeating a merge that has already been applied makes no further changes.',
+          'Merges one or more [user identities](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) into a primary user identity, for when the same person ended up with more than one user identity.\n\nThe primary user identity takes on any email address or phone number it was missing from the user identities merged into it, and the merged user identities are then deleted. Their IDs and keys keep working: looking one up returns the primary user identity, and they are listed on it as `merged_user_identity_ids` and `merged_user_identity_keys`.\n\nAccess grants, access system users, client sessions and other resources belonging to the merged user identities are moved to the primary user identity.\n\nIdentify the user identities either by ID or by key, but not both in the same request. Repeating a merge that has already been applied makes no further changes.',
         operationId: 'userIdentitiesMergePost',
         requestBody: {
           content: {
@@ -70388,7 +70388,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/remove_acs_user': {
       delete: {
         description:
-          'Removes a specified [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) from a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Removes a specified [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) from a specified [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesRemoveAcsUserDelete',
         parameters: [
           {
@@ -70446,7 +70446,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/revoke_access_to_device': {
       delete: {
         description:
-          'Revokes access to a specified [device](https://docs.seam.co/core-concepts/devices/) from a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Revokes access to a specified [device](https://www.seam.co/docs/core-concepts/devices) from a specified [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesRevokeAccessToDeviceDelete',
         parameters: [
           {
@@ -70504,7 +70504,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/unmanaged/get': {
       get: {
         description:
-          'Returns a specified unmanaged [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) (where is_managed = false).',
+          'Returns a specified unmanaged [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) (where is_managed = false).',
         operationId: 'userIdentitiesUnmanagedGetGet',
         parameters: [
           {
@@ -70558,7 +70558,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/unmanaged/list': {
       get: {
         description:
-          'Returns a list of all unmanaged [user identities](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) (where is_managed = false).',
+          'Returns a list of all unmanaged [user identities](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) (where is_managed = false).',
         operationId: 'userIdentitiesUnmanagedListGet',
         parameters: [
           {
@@ -70647,7 +70647,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/unmanaged/update': {
       patch: {
         description:
-          'Updates an unmanaged [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) to make it managed.\n\nThis endpoint can only be used to convert unmanaged user identities to managed ones by setting `is_managed` to `true`. It cannot be used to convert managed user identities back to unmanaged.',
+          'Updates an unmanaged [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) to make it managed.\n\nThis endpoint can only be used to convert unmanaged user identities to managed ones by setting `is_managed` to `true`. It cannot be used to convert managed user identities back to unmanaged.',
         operationId: 'userIdentitiesUnmanagedUpdatePatch',
         requestBody: {
           content: {
@@ -70712,7 +70712,7 @@ const openapi: OpenAPISpec = {
     '/user_identities/update': {
       patch: {
         description:
-          'Updates a specified [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+          'Updates a specified [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesUpdatePatch',
         requestBody: {
           content: {
@@ -70788,7 +70788,7 @@ const openapi: OpenAPISpec = {
     '/webhooks/create': {
       post: {
         description:
-          'Creates a new [webhook](https://docs.seam.co/developer-tools/webhooks).',
+          'Creates a new [webhook](https://www.seam.co/docs/developer-tools/webhooks).',
         operationId: 'webhooksCreatePost',
         requestBody: {
           content: {
@@ -70850,7 +70850,7 @@ const openapi: OpenAPISpec = {
     '/webhooks/delete': {
       delete: {
         description:
-          'Deletes a specified [webhook](https://docs.seam.co/developer-tools/webhooks).',
+          'Deletes a specified [webhook](https://www.seam.co/docs/developer-tools/webhooks).',
         operationId: 'webhooksDeleteDelete',
         parameters: [
           {
@@ -70896,7 +70896,7 @@ const openapi: OpenAPISpec = {
     '/webhooks/get': {
       get: {
         description:
-          'Gets a specified [webhook](https://docs.seam.co/developer-tools/webhooks).',
+          'Gets a specified [webhook](https://www.seam.co/docs/developer-tools/webhooks).',
         operationId: 'webhooksGetGet',
         parameters: [
           {
@@ -70946,7 +70946,7 @@ const openapi: OpenAPISpec = {
     '/webhooks/list': {
       get: {
         description:
-          'Returns a list of all [webhooks](https://docs.seam.co/developer-tools/webhooks).',
+          'Returns a list of all [webhooks](https://www.seam.co/docs/developer-tools/webhooks).',
         operationId: 'webhooksListGet',
         responses: {
           '200': {
@@ -70988,7 +70988,7 @@ const openapi: OpenAPISpec = {
     '/webhooks/update': {
       put: {
         description:
-          'Updates a specified [webhook](https://docs.seam.co/developer-tools/webhooks).',
+          'Updates a specified [webhook](https://www.seam.co/docs/developer-tools/webhooks).',
         operationId: 'webhooksUpdatePut',
         requestBody: {
           content: {
@@ -71044,7 +71044,7 @@ const openapi: OpenAPISpec = {
     '/workspaces/create': {
       post: {
         description:
-          'Creates a new [workspace](https://docs.seam.co/core-concepts/workspaces).',
+          'Creates a new [workspace](https://www.seam.co/docs/core-concepts/workspaces).',
         operationId: 'workspacesCreatePost',
         requestBody: {
           content: {
@@ -71064,30 +71064,30 @@ const openapi: OpenAPISpec = {
                   },
                   connect_webview_customization: {
                     description:
-                      '[Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) customizations for the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                      '[Connect Webview](https://www.seam.co/docs/core-concepts/connect-webviews) customizations for the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                     properties: {
                       logo_shape: {
                         description:
-                          'Logo shape for [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                          'Logo shape for [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                         enum: ['circle', 'square'],
                         nullable: true,
                         type: 'string',
                       },
                       primary_button_color: {
                         description:
-                          'Primary button color for [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                          'Primary button color for [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                         nullable: true,
                         type: 'string',
                       },
                       primary_button_text_color: {
                         description:
-                          'Primary button text color for [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                          'Primary button text color for [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                         nullable: true,
                         type: 'string',
                       },
                       success_message: {
                         description:
-                          'Success message for [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                          'Success message for [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews) in the new workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                         nullable: true,
                         type: 'string',
                       },
@@ -71097,7 +71097,7 @@ const openapi: OpenAPISpec = {
                   is_sandbox: {
                     default: false,
                     description:
-                      'Indicates whether the new workspace is a [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces).',
+                      'Indicates whether the new workspace is a [sandbox workspace](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces).',
                     type: 'boolean',
                   },
                   name: {
@@ -71689,7 +71689,7 @@ const openapi: OpenAPISpec = {
     '/workspaces/get': {
       get: {
         description:
-          'Returns the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the authentication value.',
+          'Returns the [workspace](https://www.seam.co/docs/core-concepts/workspaces) associated with the authentication value.',
         operationId: 'workspacesGetGet',
         responses: {
           '200': {
@@ -71731,7 +71731,7 @@ const openapi: OpenAPISpec = {
     '/workspaces/list': {
       get: {
         description:
-          'Returns a list of [workspaces](https://docs.seam.co/core-concepts/workspaces) associated with the authentication value.',
+          'Returns a list of [workspaces](https://www.seam.co/docs/core-concepts/workspaces) associated with the authentication value.',
         operationId: 'workspacesListGet',
         responses: {
           '200': {
@@ -71776,7 +71776,7 @@ const openapi: OpenAPISpec = {
     '/workspaces/reset_sandbox': {
       post: {
         description:
-          'Resets the [sandbox workspace](https://docs.seam.co/core-concepts/workspaces#sandbox-workspaces) associated with the authentication value. Note that this endpoint is only available for sandbox workspaces.',
+          'Resets the [sandbox workspace](https://www.seam.co/docs/core-concepts/workspaces#sandbox-workspaces) associated with the authentication value. Note that this endpoint is only available for sandbox workspaces.',
         operationId: 'workspacesResetSandboxPost',
         responses: {
           '200': {
@@ -71817,7 +71817,7 @@ const openapi: OpenAPISpec = {
     '/workspaces/update': {
       patch: {
         description:
-          'Updates the [workspace](https://docs.seam.co/core-concepts/workspaces) associated with the authentication value.',
+          'Updates the [workspace](https://www.seam.co/docs/core-concepts/workspaces) associated with the authentication value.',
         operationId: 'workspacesUpdatePatch',
         requestBody: {
           content: {
@@ -71830,30 +71830,30 @@ const openapi: OpenAPISpec = {
                   },
                   connect_webview_customization: {
                     description:
-                      '[Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) customizations for the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                      '[Connect Webview](https://www.seam.co/docs/core-concepts/connect-webviews) customizations for the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                     properties: {
                       logo_shape: {
                         description:
-                          'Logo shape for [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                          'Logo shape for [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                         enum: ['circle', 'square'],
                         nullable: true,
                         type: 'string',
                       },
                       primary_button_color: {
                         description:
-                          'Primary button color for [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                          'Primary button color for [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                         nullable: true,
                         type: 'string',
                       },
                       primary_button_text_color: {
                         description:
-                          'Primary button text color for [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                          'Primary button text color for [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                         nullable: true,
                         type: 'string',
                       },
                       success_message: {
                         description:
-                          'Success message for [Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
+                          'Success message for [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews) in the workspace. See also [Customize the Look and Feel of Your Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#customize-the-look-and-feel-of-your-connect-webviews).',
                         nullable: true,
                         type: 'string',
                       },

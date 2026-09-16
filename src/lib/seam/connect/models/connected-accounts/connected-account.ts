@@ -23,7 +23,7 @@ const common_connected_account_error = z.object({
     .boolean()
     .optional()
     .describe(
-      'Indicates whether the error is related to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+      'Indicates whether the error is related to [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge).',
     ),
 })
 
@@ -61,7 +61,7 @@ export const bridge_disconnected = common_connected_account_error.extend({
     ---
     resource_type: connected_account
     ---
-    Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).
+    Indicates that the Seam API cannot communicate with [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://www.seam.co/docs/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).
     `)
 
 export const salto_ks_subscription_limit_exceeded =
@@ -396,7 +396,7 @@ export const connected_account = z.object({
   automatically_manage_new_devices: z
     .boolean()
     .describe(
-      'Indicates whether Seam should [import all new devices](https://docs.seam.co/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for management by the Seam API.',
+      'Indicates whether Seam should [import all new devices](https://www.seam.co/docs/core-concepts/connect-webviews/customizing-connect-webviews#automatically_manage_new_devices) for the connected account to make these devices available for management by the Seam API.',
     ),
   customer_key: z
     .string()
@@ -443,7 +443,7 @@ export const connected_account = z.object({
   ---
   route_path: /connected_accounts
   ---
-  Represents a [connected account](https://docs.seam.co/core-concepts/connected-accounts). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks.
+  Represents a [connected account](https://www.seam.co/docs/core-concepts/connected-accounts). A connected account is an external third-party account to which your user has authorized Seam to get access, for example, an August account with a list of door locks.
 `)
 
 export type ConnectedAccount = z.infer<typeof connected_account>
