@@ -16,6 +16,6 @@ export const bridge = z.object({
 undocumented: Unreleased.
 route_path: /bridges
 ---
-Represents [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).
+Represents [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge).
 `)
 export type Bridge = z.infer<typeof bridge>

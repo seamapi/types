@@ -190,7 +190,7 @@ const access_code_error = z
     failed_to_remove,
   ])
   .describe(
-    'Errors associated with the [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).',
+    'Errors associated with the [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes).',
   )
 
 export type AccessCodeError = z.infer<typeof access_code_error>
@@ -370,7 +370,7 @@ const access_code_warning = z
     unknown_issue_with_access_code,
   ])
   .describe(
-    'Warnings associated with the [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).',
+    'Warnings associated with the [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes).',
   )
 
 export type AccessCodeWarning = z.infer<typeof access_code_warning>
@@ -531,7 +531,7 @@ export const access_code = z.object({
           provider_metadata:
             name: Provider Metadata
         ---
-        Errors associated with the [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).
+        Errors associated with the [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes).
       `),
   warnings: z.array(access_code_warning).describe(`
         ---
@@ -551,7 +551,7 @@ export const access_code = z.object({
           provider_metadata:
             name: Provider Metadata
         ---
-        Warnings associated with the [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).
+        Warnings associated with the [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes).
       `),
   is_managed: z
     .literal(true)
@@ -572,7 +572,7 @@ export const access_code = z.object({
       ---
       deprecated: Use \`display_status\` to show a person the code's state. To make decisions, read \`pending_mutations\`, \`errors\`, \`warnings\`, \`starts_at\`, and \`ends_at\`.
       ---
-      Current status of the access code within the operational lifecycle. Values are \`setting\`, a transitional phase that indicates that the code is being configured or activated; \`set\`, which indicates that the code is active and operational; \`unset\`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; \`removing\`, which indicates a transitional period in which the code is being deleted or made inactive; and \`unknown\`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes/lifecycle-of-access-codes).
+      Current status of the access code within the operational lifecycle. Values are \`setting\`, a transitional phase that indicates that the code is being configured or activated; \`set\`, which indicates that the code is active and operational; \`unset\`, which indicates a deactivated or unused state, either before activation or after deliberate deactivation; \`removing\`, which indicates a transitional period in which the code is being deleted or made inactive; and \`unknown\`, which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting. See also [Lifecycle of Access Codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/lifecycle-of-access-codes).
       `),
   display_status: z
     .string()
@@ -626,15 +626,15 @@ export const access_code = z.object({
   ---
   route_path: /access_codes
   ---
-  Represents a smart lock [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes).
+  Represents a smart lock [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes).
 
   An access code is a code used for a keypad or pinpad device. Unlike physical keys, which can easily be lost or duplicated, PIN codes can be customized, tracked, and altered on the fly. Using the Seam Access Code API, you can easily generate access codes on the hundreds of door lock models with which we integrate.
 
-  Seam supports programming two types of access codes: [ongoing](https://docs.seam.co/low-level-apis/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://docs.seam.co/low-level-apis/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the \`type\` property of the access code. Ongoing codes display as \`ongoing\`, whereas time-bound codes are labeled \`time_bound\`. An ongoing access code is active, until it has been removed from the device. To specify an ongoing access code, leave both \`starts_at\` and \`ends_at\` empty. A time-bound access code will be programmed at the \`starts_at\` time and removed at the \`ends_at\` time.
+  Seam supports programming two types of access codes: [ongoing](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#ongoing-access-codes) and [time-bound](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#time-bound-access-codes). To differentiate between the two, refer to the \`type\` property of the access code. Ongoing codes display as \`ongoing\`, whereas time-bound codes are labeled \`time_bound\`. An ongoing access code is active, until it has been removed from the device. To specify an ongoing access code, leave both \`starts_at\` and \`ends_at\` empty. A time-bound access code will be programmed at the \`starts_at\` time and removed at the \`ends_at\` time.
 
-  In addition, for certain devices, Seam also supports [offline access codes](https://docs.seam.co/low-level-apis/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.
+  In addition, for certain devices, Seam also supports [offline access codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#offline-access-codes). Offline access (PIN) codes are designed for door locks that might not always maintain an internet connection. For this type of access code, the device manufacturer uses encryption keys (tokens) to create server-based registries of algorithmically-generated offline PIN codes. Because the tokens remain synchronized with the managed devices, the locks do not require an active internet connection—and you do not need to be near the locks—to create an offline access code. Then, owners or managers can share these offline codes with users through a variety of mechanisms, such as messaging applications. That is, lock users do not need to install a smartphone application to receive an offline access code.
 
-  For granting a person access to a space, [Access Grants](https://docs.seam.co/use-cases/granting-access) are the default and recommended approach and work across both standalone smart locks and access systems. Use the lower-level Access Codes API directly only when you specifically need to manage individual PIN codes.
+  For granting a person access to a space, [Access Grants](https://www.seam.co/docs/use-cases/granting-access) are the default and recommended approach and work across both standalone smart locks and access systems. Use the lower-level Access Codes API directly only when you specifically need to manage individual PIN codes.
 `)
 
 export type AccessCode = z.infer<typeof access_code>

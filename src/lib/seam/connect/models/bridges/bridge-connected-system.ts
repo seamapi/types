@@ -21,12 +21,12 @@ export const bridge_connected_system = z.object({
     .string()
     .uuid()
     .describe(
-      'ID of the [access system](https://docs.seam.co/low-level-apis/access-systems) associated with Seam Bridge.',
+      'ID of the [access system](https://www.seam.co/docs/low-level-apis/access-systems) associated with Seam Bridge.',
     ),
   acs_system_display_name: z
     .string()
     .describe(
-      'Display name for the [access system](https://docs.seam.co/low-level-apis/access-systems) associated with Seam Bridge.',
+      'Display name for the [access system](https://www.seam.co/docs/low-level-apis/access-systems) associated with Seam Bridge.',
     ),
   workspace_id: z
     .string()
@@ -35,14 +35,14 @@ export const bridge_connected_system = z.object({
   workspace_display_name: z
     .string()
     .describe(
-      'Display name for the [workspace](https://docs.seam.co/core-concepts/workspaces) with which Seam Bridge is paired.',
+      'Display name for the [workspace](https://www.seam.co/docs/core-concepts/workspaces) with which Seam Bridge is paired.',
     ),
 }).describe(`
   ---
   route_path: /seam/bridge/v1/bridge_connected_systems
   undocumented: Seam Bridge client only.
   ---
-  Represents an access system connected to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).
+  Represents an access system connected to [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge).
 `)
 
 export type BridgeConnectedSystem = z.infer<typeof bridge_connected_system>

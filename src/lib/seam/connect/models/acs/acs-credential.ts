@@ -56,7 +56,7 @@ const waiting_to_be_issued = common_acs_credential_warning
       .describe(warning_code_description),
   })
   .describe(
-    'Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is waiting to be issued.',
+    'Indicates that the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is waiting to be issued.',
   )
 
 const schedule_externally_modified = common_acs_credential_warning
@@ -66,7 +66,7 @@ const schedule_externally_modified = common_acs_credential_warning
       .describe(warning_code_description),
   })
   .describe(
-    "Indicates that the schedule of one of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials)'s children was modified externally.",
+    "Indicates that the schedule of one of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials)'s children was modified externally.",
   )
 
 const schedule_modified = common_acs_credential_warning
@@ -76,7 +76,7 @@ const schedule_modified = common_acs_credential_warning
       .describe(warning_code_description),
   })
   .describe(
-    'Indicates that the schedule of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.',
+    'Indicates that the schedule of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was modified to avoid creating a credential with a start date in the past.',
   )
 
 const being_deleted = common_acs_credential_warning
@@ -84,7 +84,7 @@ const being_deleted = common_acs_credential_warning
     warning_code: z.literal('being_deleted').describe(warning_code_description),
   })
   .describe(
-    'Indicates that the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is being deleted.',
+    'Indicates that the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is being deleted.',
   )
 
 export const unknown_issue_with_acs_credential = common_acs_credential_warning
@@ -94,7 +94,7 @@ export const unknown_issue_with_acs_credential = common_acs_credential_warning
       .describe(warning_code_description),
   })
   .describe(
-    'An unknown issue occurred while syncing the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
+    'An unknown issue occurred while syncing the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
   )
 
 const needs_to_be_reissued = common_acs_credential_warning
@@ -104,7 +104,7 @@ const needs_to_be_reissued = common_acs_credential_warning
       .describe(warning_code_description),
   })
   .describe(
-    'Access permissions for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
+    'Access permissions for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) have changed. [Reissue](https://www.seam.co/docs/low-level-apis/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) the credential. This issue may affect the proper functioning of the credential.',
   )
 
 const requested_code_unavailable = common_acs_credential_warning
@@ -132,7 +132,7 @@ const acs_credential_warning = z
     requested_code_unavailable,
   ])
   .describe(
-    'Warning associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+    'Warning associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
   )
 
 const _acs_credential_warning_map = z.object({
@@ -158,27 +158,27 @@ const common_acs_credential = z.object({
     .string()
     .uuid()
     .describe(
-      'ID of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+      'ID of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
     ),
   acs_user_id: z
     .string()
     .uuid()
     .optional()
     .describe(
-      'ID of the [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+      'ID of the [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
     ),
   user_identity_id: z
     .string()
     .uuid()
     .optional()
     .describe(
-      'ID of the [user identity](https://docs.seam.co/api/user_identities) to whom the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+      'ID of the [user identity](https://www.seam.co/docs/api/user_identities/object) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
     ),
   connected_account_id: z
     .string()
     .uuid()
     .describe(
-      'ID of the [connected account](https://docs.seam.co/core-concepts/connected-accounts) to which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) belongs.',
+      'ID of the [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) to which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs.',
     ),
   acs_credential_pool_id: z
     .string()
@@ -189,87 +189,87 @@ const common_acs_credential = z.object({
     .string()
     .uuid()
     .describe(
-      'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems) that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+      'ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
     ),
   parent_acs_credential_id: z
     .string()
     .uuid()
     .optional()
     .describe(
-      'ID of the parent [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+      'ID of the parent [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
     ),
   display_name: z
     .string()
     .min(1)
     .describe(
-      'Display name that corresponds to the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.',
+      'Display name that corresponds to the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type.',
     ),
   code: z
     .string()
     .optional()
     .nullable()
     .describe(
-      'Access (PIN) code for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+      'Access (PIN) code for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
     ),
   is_one_time_use: z
     .boolean()
     .optional()
     .describe(
-      'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.',
+      'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use.',
     ),
   card_number: z
     .string()
     .optional()
     .nullable()
     .describe(
-      'Number of the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+      'Number of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
     ),
   is_issued: z
     .boolean()
     .optional()
     .describe(
-      'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been encoded onto a card.',
+      'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been encoded onto a card.',
     ),
   issued_at: datetime
     .optional()
     .nullable()
     .describe(
-      'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was encoded onto a card.',
+      'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was encoded onto a card.',
     ),
   access_method: acs_credential_access_method_type.describe(
-    'Access method for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
+    'Access method for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`.',
   ),
   external_type: acs_credential_external_type
     .optional()
     .describe(
-      'Brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
+      'Brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
     ),
   external_type_display_name: z
     .string()
     .optional()
     .describe(
-      'Display name that corresponds to the brand-specific terminology for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) type.',
+      'Display name that corresponds to the brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type.',
     ),
   created_at: datetime.describe(
-    'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was created.',
+    'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created.',
   ),
   workspace_id: z
     .string()
     .uuid()
     .describe(
-      'ID of the workspace that contains the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+      'ID of the workspace that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
     ),
   starts_at: z
     .string()
     .optional()
     .describe(
-      'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+      'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
     ),
   ends_at: z
     .string()
     .optional()
     .describe(
-      'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+      'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
     ),
   errors: z
     .array(
@@ -282,46 +282,46 @@ const common_acs_credential = z.object({
       }),
     )
     .describe(
-      'Errors associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+      'Errors associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
     ),
   warnings: z
     .array(acs_credential_warning)
     .describe(
-      'Warnings associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+      'Warnings associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
     ),
   is_multi_phone_sync_credential: z
     .boolean()
     .optional()
     .describe(
-      'Indicates whether the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+      'Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
     ),
   is_latest_desired_state_synced_with_provider: z
     .boolean()
     .nullable()
     .optional()
     .describe(
-      'Indicates whether the latest state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider.',
+      'Indicates whether the latest state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider.',
     ),
   latest_desired_state_synced_with_provider_at: datetime
     .nullable()
     .optional()
     .describe(
-      'Date and time at which the state of the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider.',
+      'Date and time at which the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider.',
     ),
   visionline_metadata: acs_credential_visionline_metadata
     .optional()
     .describe(
-      'Visionline-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+      'Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
     ),
   assa_abloy_vostio_metadata: acs_credential_vostio_metadata
     .optional()
     .describe(
-      'Vostio-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+      'Vostio-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
     ),
   akiles_metadata: acs_credential_akiles_metadata
     .optional()
     .describe(
-      'Akiles-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+      'Akiles-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
     ),
 })
 
@@ -335,13 +335,13 @@ export const acs_credential = common_acs_credential.merge(
   ---
   route_path: /acs/credentials
   ---
-  Means by which an [access control system user](https://docs.seam.co/low-level-apis/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). The \`acs_credential\` object represents a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/low-level-apis/access-systems).
+  Means by which an [access control system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) gains access at an [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). The \`acs_credential\` object represents a [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://www.seam.co/docs/low-level-apis/access-systems).
 
   An access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.
 
   For each \`acs_credential\`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type.
 
-  For granting a person access to a space, [Access Grants](https://docs.seam.co/use-cases/granting-access) are the default and recommended approach. Use the lower-level ACS credential API directly only when you specifically need to manage individual credentials.
+  For granting a person access to a space, [Access Grants](https://www.seam.co/docs/use-cases/granting-access) are the default and recommended approach. Use the lower-level ACS credential API directly only when you specifically need to manage individual credentials.
 `)
 
 export const unmanaged_acs_credential = common_acs_credential.merge(
@@ -353,14 +353,14 @@ export const unmanaged_acs_credential = common_acs_credential.merge(
   route_path: /acs/credentials/unmanaged
   undocumented: Unreleased.
   ---
-  Means by which an [ACS user](https://docs.seam.co/low-level-apis/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details). The \`unmanaged_acs_credential\` object, which is not managed by Seam, represents a [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/low-level-apis/access-systems). For each \`acs_credential\` object, you define the access method. You can also specify additional properties, such as a PIN code.
+  Means by which an [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) gains access at an [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). The \`unmanaged_acs_credential\` object, which is not managed by Seam, represents a [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://www.seam.co/docs/low-level-apis/access-systems). For each \`acs_credential\` object, you define the access method. You can also specify additional properties, such as a PIN code.
 `)
 
 export const acs_credential_on_encoder = z.object({
   created_at: datetime
     .nullable()
     .describe(
-      'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) was created.',
+      'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created.',
     ),
 
   is_issued: z
@@ -373,19 +373,19 @@ export const acs_credential_on_encoder = z.object({
   starts_at: datetime
     .nullable()
     .describe(
-      'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) becomes usable.',
+      'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) becomes usable.',
     ),
   ends_at: datetime
     .nullable()
     .describe(
-      'Date and time at which the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) will stop being usable.',
+      'Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) will stop being usable.',
     ),
 
   card_number: z
     .string()
     .nullable()
     .describe(
-      'A number or string that physically identifies the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+      'A number or string that physically identifies the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
     ),
 
   visionline_metadata: z
@@ -394,83 +394,83 @@ export const acs_credential_on_encoder = z.object({
         .string()
         .optional()
         .describe(
-          'Card ID for the Visionline card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+          'Card ID for the Visionline card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
         ),
       // TODO card_function_type: z.enum(["guest", "staff"]), // computed, looks at door ops, and checks is guest op is present.
       cancelled: z
         .boolean()
         .optional()
         .describe(
-          'Indicates whether the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is cancelled.',
+          'Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is cancelled.',
         ),
       discarded: z
         .boolean()
         .optional()
         .describe(
-          'Indicates whether the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is discarded.',
+          'Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is discarded.',
         ),
       expired: z
         .boolean()
         .optional()
         .describe(
-          'Indicates whether the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is expired.',
+          'Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is expired.',
         ),
       overwritten: z
         .boolean()
         .optional()
         .describe(
-          'Indicates whether the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is overwritten.',
+          'Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is overwritten.',
         ),
       overridden: z
         .boolean()
         .optional()
         .describe(
-          'Indicates whether the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is overridden.',
+          'Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is overridden.',
         ),
       pending_auto_update: z
         .boolean()
         .optional()
         .describe(
-          'Indicates whether the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials) is pending auto-update.',
+          'Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is pending auto-update.',
         ),
 
       card_format: z
         .enum(['TLCode', 'rfid48'])
         .optional()
         .describe(
-          'Format of the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+          'Format of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
         ),
       card_holder: z
         .string()
         .optional()
         .describe(
-          'Holder of the card associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+          'Holder of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
         ),
 
       number_of_issued_cards: z
         .number()
         .optional()
         .describe(
-          'Number of issued cards associated with the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+          'Number of issued cards associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
         ),
 
       guest_acs_entrance_ids: z
         .array(z.string().uuid())
         .optional()
         .describe(
-          'IDs of the guest [entrances](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+          'IDs of the guest [entrances](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
         ),
       common_acs_entrance_ids: z
         .array(z.string().uuid())
         .optional()
         .describe(
-          'IDs of the common [entrances](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details) for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+          'IDs of the common [entrances](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
         ),
     })
     .partial()
     .optional()
     .describe(
-      'Visionline-specific metadata for the [credential](https://docs.seam.co/low-level-apis/access-systems/managing-credentials).',
+      'Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
     ),
 })
 

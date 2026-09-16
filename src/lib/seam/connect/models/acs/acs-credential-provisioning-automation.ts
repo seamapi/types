@@ -25,13 +25,13 @@ export const enrollment_automation = z.object({
     .string()
     .uuid()
     .describe(
-      'ID of the associated [ACS system](https://docs.seam.co/low-level-apis/access-systems) that serves as the credential manager.',
+      'ID of the associated [ACS system](https://www.seam.co/docs/low-level-apis/access-systems) that serves as the credential manager.',
     ),
   user_identity_id: z
     .string()
     .uuid()
     .describe(
-      'ID of the associated [user identity](https://docs.seam.co/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+      'ID of the associated [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
     ),
   created_at: datetime.describe(
     'Date and time at which the enrollment automation was created.',
@@ -45,7 +45,7 @@ export const enrollment_automation = z.object({
   route_path: /user_identities/enrollment_automations
   undocumented: Will be removed.
   ---
-  Represents an [enrollment automation](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) within the [Seam mobile access solution](https://docs.seam.co/capability-guides/mobile-access/).
+  Represents an [enrollment automation](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) within the [Seam mobile access solution](https://www.seam.co/docs/capability-guides/mobile-access).
 `)
 
 export type EnrollmentAutomation = z.output<typeof enrollment_automation>

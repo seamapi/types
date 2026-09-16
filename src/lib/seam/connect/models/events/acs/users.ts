@@ -15,7 +15,7 @@ export const acs_user_deleted_event = acs_user_event.extend({
     ---
     route_path: /acs/users
     ---
-    An [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was deleted.
+    An [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was deleted.
   `)
 
 export type AcsUserDeletedEvent = z.infer<typeof acs_user_deleted_event>
@@ -26,7 +26,7 @@ export const acs_user_created_event = acs_user_event.extend({
     ---
     route_path: /acs/users
     ---
-    An [access system user](https://docs.seam.co/low-level-apis/access-systems/user-management) was created.
+    An [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was created.
   `)
 
 export type AcsUserCreatedEvent = z.infer<typeof acs_user_created_event>

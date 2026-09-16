@@ -32,7 +32,7 @@ export const phone = z.object({
     .describe(`Date and time at which the phone was created.
   `),
   custom_metadata: basePhoneDeviceSchema.shape.custom_metadata
-    .describe(`Optional [custom metadata](https://docs.seam.co/core-concepts/devices/adding-custom-metadata-to-a-device) for the phone.
+    .describe(`Optional [custom metadata](https://www.seam.co/docs/core-concepts/devices/adding-custom-metadata-to-a-device) for the phone.
   `),
 
   errors: z

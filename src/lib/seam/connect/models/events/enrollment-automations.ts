@@ -17,7 +17,7 @@ export const enrollment_automation_deleted_event =
     route_path: /user_identities/enrollment_automations
     undocumented: Enrollment automations are deprecated and will be removed.
     ---
-    An [enrollment automation](https://docs.seam.co/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) was deleted.
+    An [enrollment automation](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) was deleted.
   `)
 
 export type EnrollmentAutomationDeletedEvent = z.infer<

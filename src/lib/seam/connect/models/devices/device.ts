@@ -175,7 +175,7 @@ const account_disconnected = common_device_error.extend({
   is_connected_account_error: z
     .literal(true)
     .describe(
-      'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+      'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
     ),
   is_device_error: z
     .literal(false)
@@ -196,7 +196,7 @@ const empty_backup_access_code_pool = common_device_error.extend({
     resource_type: device
     variant_group_key: access_codes
     ---
-    Indicates that the [backup access code pool](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.
+    Indicates that the [backup access code pool](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.
     `)
 
 const august_lock_not_authorized = common_device_error.extend({
@@ -218,7 +218,7 @@ const salto_ks_subscription_limit_exceeded = common_device_error.extend({
   is_connected_account_error: z
     .literal(true)
     .describe(
-      'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+      'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
     ),
   is_device_error: z
     .literal(false)
@@ -238,7 +238,7 @@ const dormakaba_sites_disconnected = common_device_error.extend({
   is_connected_account_error: z
     .literal(true)
     .describe(
-      'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+      'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
     ),
   is_device_error: z
     .literal(false)
@@ -292,7 +292,7 @@ const insufficient_permissions = common_device_error.extend({
   is_connected_account_error: z
     .literal(true)
     .describe(
-      'Indicates that the error is a [connected account](https://docs.seam.co/api/connected_accounts) error.',
+      'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
     ),
   is_device_error: z
     .literal(false)
@@ -1030,7 +1030,7 @@ export const device = z
         'Display name of the device, defaults to nickname (if it is set) or `properties.appearance.name`, otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
       ),
     capabilities_supported: z.array(capabilities).describe(`
-        Collection of capabilities that the device supports when connected to Seam. Values are \`access_code\`, which indicates that the device can manage and utilize digital PIN codes for secure access; \`lock\`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; \`noise_detection\`, which indicates that the device supports monitoring and responding to ambient noise levels; \`thermostat\`, which indicates that the device can regulate and adjust indoor temperatures; \`battery\`, which indicates that the device can manage battery life and health; and \`phone\`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://docs.seam.co/capability-guides/device-and-system-capabilities#capability-flags).
+        Collection of capabilities that the device supports when connected to Seam. Values are \`access_code\`, which indicates that the device can manage and utilize digital PIN codes for secure access; \`lock\`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; \`noise_detection\`, which indicates that the device supports monitoring and responding to ambient noise levels; \`thermostat\`, which indicates that the device can regulate and adjust indoor temperatures; \`battery\`, which indicates that the device can manage battery life and health; and \`phone\`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://www.seam.co/docs/capability-guides/device-and-system-capabilities#capability-flags).
         `),
     properties: common_device_properties
       .and(phone_specific_properties.partial())
@@ -1149,7 +1149,7 @@ export const device = z
     is_managed: z
       .literal(true)
       .describe(
-        'Indicates whether Seam manages the device. See also [Managed and Unmanaged Devices](https://docs.seam.co/core-concepts/devices/managed-and-unmanaged-devices).',
+        'Indicates whether Seam manages the device. See also [Managed and Unmanaged Devices](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices).',
       ),
     custom_metadata,
     device_provider: device_provider_info.optional().describe(`
@@ -1184,7 +1184,7 @@ export const device = z
       provider_metadata:
         name: Provider Metadata
     ---
-    Represents a [device](https://docs.seam.co/core-concepts/devices) that has been connected to Seam.
+    Represents a [device](https://www.seam.co/docs/core-concepts/devices) that has been connected to Seam.
   `)
 
 export type Device = z.infer<typeof device>

@@ -9,7 +9,7 @@ export const acs_location = z.object({
     .string()
     .nullable()
     .describe(
-      'Time zone in which the [access control system](https://docs.seam.co/low-level-apis/access-systems) is located.',
+      'Time zone in which the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) is located.',
     ),
 })
 
@@ -59,9 +59,9 @@ const seam_bridge_disconnected = common_acs_system_error.extend({
     ---
     resource_type: acs_system
     ---
-    Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
-    This error might also occur if Seam Bridge is connected to the wrong [workspace](https://docs.seam.co/core-concepts/workspaces).
-    See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).
+    Indicates that the Seam API cannot communicate with [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
+    This error might also occur if Seam Bridge is connected to the wrong [workspace](https://www.seam.co/docs/core-concepts/workspaces).
+    See also [Troubleshooting Your Access Control System](https://www.seam.co/docs/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).
     `)
 
 const bridge_disconnected = common_acs_system_error.extend({
@@ -70,14 +70,14 @@ const bridge_disconnected = common_acs_system_error.extend({
     .boolean()
     .optional()
     .describe(
-      'Indicates whether the error is related to the [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge).',
+      'Indicates whether the error is related to the [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge).',
     ),
 }).describe(`
     ---
     resource_type: acs_system
     ---
-    Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
-    See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).
+    Indicates that the Seam API cannot communicate with [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
+    See also [Troubleshooting Your Access Control System](https://www.seam.co/docs/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).
     `)
 
 const visionline_instance_unreachable = common_acs_system_error.extend({
@@ -88,9 +88,9 @@ const visionline_instance_unreachable = common_acs_system_error.extend({
     ---
     resource_type: acs_system
     ---
-    Indicates that [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).
-    For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/core-concepts/workspaces).
-    See also [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-visionline_instance_unreachable).
+    Indicates that [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://www.seam.co/docs/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).
+    For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://www.seam.co/docs/core-concepts/workspaces).
+    See also [Troubleshooting Your Access Control System](https://www.seam.co/docs/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-visionline_instance_unreachable).
     `)
 
 const salto_ks_subscription_limit_exceeded = common_acs_system_error.extend({
@@ -112,7 +112,7 @@ const acs_system_disconnected = common_acs_system_error.extend({
     ---
     resource_type: acs_system
     ---
-    Indicates that the [access control system](https://docs.seam.co/low-level-apis/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](https://docs.seam.co/low-level-apis/access-systems/troubleshooting-your-access-control-system) to resolve the issue.
+    Indicates that the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](https://www.seam.co/docs/low-level-apis/access-systems/troubleshooting-your-access-control-system) to resolve the issue.
     `)
 
 const account_disconnected = common_acs_system_error.extend({
@@ -123,7 +123,7 @@ const account_disconnected = common_acs_system_error.extend({
     ---
     resource_type: acs_system
     ---
-    Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/core-concepts/connect-webviews) to restore access.
+    Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://www.seam.co/docs/core-concepts/connect-webviews) to restore access.
     `)
 
 const salto_ks_certification_expired = common_acs_system_error.extend({
@@ -134,7 +134,7 @@ const salto_ks_certification_expired = common_acs_system_error.extend({
     ---
     resource_type: acs_system
     ---
-    Indicates that the [access control system](https://docs.seam.co/low-level-apis/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
+    Indicates that the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.
     `)
 const provider_service_unavailable = common_acs_system_error.extend({
   error_code: z
@@ -155,7 +155,7 @@ const insufficient_permissions = common_acs_system_error.extend({
     ---
     resource_type: acs_system
     ---
-    Indicates that Seam's integration user does not have sufficient permissions on the provider's system backing this [access control system](https://docs.seam.co/low-level-apis/access-systems). Access cannot be managed until permissions are restored. See the error message for specifics, then either reauthorize the connected account in Seam or grant the integration user the required permissions in the provider's system.
+    Indicates that Seam's integration user does not have sufficient permissions on the provider's system backing this [access control system](https://www.seam.co/docs/low-level-apis/access-systems). Access cannot be managed until permissions are restored. See the error message for specifics, then either reauthorize the connected account in Seam or grant the integration user the required permissions in the provider's system.
     `)
 
 const acs_system_error = z
@@ -171,7 +171,7 @@ const acs_system_error = z
     provider_service_unavailable,
   ])
   .describe(
-    'Error associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+    'Error associated with the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
   )
 
 const _acs_system_error_map = z.object({
@@ -234,7 +234,7 @@ const time_zone_does_not_match_location = common_acs_system_warning
       ),
   })
   .describe(
-    'Indicates the [access control system](https://docs.seam.co/low-level-apis/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](https://docs.seam.co/low-level-apis/access-systems/retrieving-entrance-details).',
+    'Indicates the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
   )
 
 const setup_required = common_acs_system_warning
@@ -255,7 +255,7 @@ const unknown_issue_with_acs_system = common_acs_system_warning.extend({
     ---
     resource_type: acs_system
     ---
-    Indicates that Seam encountered an unexpected error while syncing this [access control system](https://docs.seam.co/low-level-apis/access-systems), so its users, credentials, and access groups may be out of date. Seam retries on every sync cycle and clears this warning once a sync succeeds; if it persists, contact [support](mailto:support@seam.co).
+    Indicates that Seam encountered an unexpected error while syncing this [access control system](https://www.seam.co/docs/low-level-apis/access-systems), so its users, credentials, and access groups may be out of date. Seam retries on every sync cycle and clears this warning once a sync succeeds; if it persists, contact [support](mailto:support@seam.co).
     `)
 
 const acs_system_warning = z
@@ -266,7 +266,7 @@ const acs_system_warning = z
     unknown_issue_with_acs_system,
   ])
   .describe(
-    'Warning associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+    'Warning associated with the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
   )
 
 const _acs_system_warning_map = z.object({
@@ -291,35 +291,35 @@ export const acs_system = z
       .nullable()
       .optional()
       .describe(
-        'ID of the default credential manager `acs_system` for this [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+        'ID of the default credential manager `acs_system` for this [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
       ),
     acs_system_id: z
       .string()
       .uuid()
       .describe(
-        'ID of the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+        'ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
       ),
     acs_user_count: z
       .number()
       .optional()
       .describe(
-        'Number of users in the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+        'Number of users in the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
       ),
     acs_access_group_count: z
       .number()
       .optional()
       .describe(
-        'Number of access groups in the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+        'Number of access groups in the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
       ),
     external_type: acs_system_external_type
       .describe(
-        'Brand-specific terminology for the [access control system](https://docs.seam.co/low-level-apis/access-systems) type.',
+        'Brand-specific terminology for the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) type.',
       )
       .optional(),
     external_type_display_name: z
       .string()
       .describe(
-        'Display name that corresponds to the brand-specific terminology for the [access control system](https://docs.seam.co/low-level-apis/access-systems) type.',
+        'Display name that corresponds to the brand-specific terminology for the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) type.',
       )
       .optional(),
     is_credential_manager: z
@@ -343,13 +343,13 @@ export const acs_system = z
           .string()
           .optional()
           .describe(
-            'IP address or hostname of the main Visionline server relative to [Seam Bridge](https://docs.seam.co/capability-guides/seam-bridge) on the local network.',
+            'IP address or hostname of the main Visionline server relative to [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge) on the local network.',
           ),
       })
       .partial()
       .optional()
       .describe(
-        'Visionline-specific metadata for the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+        'Visionline-specific metadata for the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
       ),
     system_type: acs_system_external_type
       .describe(
@@ -366,64 +366,64 @@ export const acs_system = z
       ---
       `),
     location: acs_location.describe(
-      'Location information for the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+      'Location information for the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
     ),
     name: z
       .string()
       .describe(
-        'Name of the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+        'Name of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
       ),
     created_at: datetime.describe(
-      'Date and time at which the [access control system](https://docs.seam.co/low-level-apis/access-systems) was created.',
+      'Date and time at which the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) was created.',
     ),
     workspace_id: z
       .string()
       .uuid()
       .describe(
-        'ID of the workspace that contains the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+        'ID of the workspace that contains the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
       ),
     connected_account_ids: z.array(z.string().uuid()).describe(`
       ---
       deprecated: Use \`connected_account_id\`.
       ---
-      IDs of the [connected accounts](https://docs.seam.co/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).
+      IDs of the [connected accounts](https://www.seam.co/docs/core-concepts/connected-accounts) associated with the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).
       `),
     connected_account_id: z
       .string()
       .uuid()
       .describe(
-        'ID of the connected account associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+        'ID of the connected account associated with the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
       ),
     image_url: z
       .string()
       .describe(
-        'URL for the image that represents the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+        'URL for the image that represents the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
       ),
     image_alt_text: z
       .string()
       .describe(
-        'Alternative text for the [access control system](https://docs.seam.co/low-level-apis/access-systems) image.',
+        'Alternative text for the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) image.',
       ),
     errors: z
       .array(acs_system_error)
       .describe(
-        'Errors associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+        'Errors associated with the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
       ),
     warnings: z
       .array(acs_system_warning)
       .describe(
-        'Warnings associated with the [access control system](https://docs.seam.co/low-level-apis/access-systems).',
+        'Warnings associated with the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).',
       ),
   })
   .merge(acs_system_capability_flags).describe(`
     ---
     route_path: /acs/systems
     ---
-    Represents an [access control system](https://docs.seam.co/low-level-apis/access-systems).
+    Represents an [access control system](https://www.seam.co/docs/low-level-apis/access-systems).
 
-    Within an \`acs_system\`, create [\`acs_user\`s](https://docs.seam.co/api/acs/users/object) and [\`acs_credential\`s](https://docs.seam.co/api/acs/credentials/object) to grant access to the \`acs_user\`s.
+    Within an \`acs_system\`, create [\`acs_user\`s](https://www.seam.co/docs/api/acs/users/object) and [\`acs_credential\`s](https://www.seam.co/docs/api/acs/credentials/object) to grant access to the \`acs_user\`s.
 
-    For details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/api/acs).
+    For details about the resources associated with an access control system, see the [access control systems namespace](https://www.seam.co/docs/api/acs/object).
   `)
 
 export type AcsSystem = z.output<typeof acs_system>

@@ -60,7 +60,7 @@ export const access_code_created_event = access_code_event.extend({
     ---
     route_path: /access_codes
     ---
-    An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was created.
+    An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was created.
   `)
 
 export type AccessCodeCreatedEvent = z.infer<typeof access_code_created_event>
@@ -97,7 +97,7 @@ export const access_code_changed_event = access_code_event.extend({
     ---
     route_path: /access_codes
     ---
-    An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed.
+    An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was changed.
   `)
 
 export type AccessCodeChangedEvent = z.infer<typeof access_code_changed_event>
@@ -121,7 +121,7 @@ export const access_code_name_changed_event = access_code_event.extend({
     ---
     route_path: /access_codes
     ---
-    The name of an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed on the device.
+    The name of an [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was changed on the device.
   `)
 
 export type AccessCodeNameChangedEvent = z.infer<
@@ -147,7 +147,7 @@ export const access_code_code_changed_event = access_code_event.extend({
     ---
     route_path: /access_codes
     ---
-    The pin code of an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed on the device.
+    The pin code of an [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was changed on the device.
   `)
 
 export type AccessCodeCodeChangedEvent = z.infer<
@@ -175,7 +175,7 @@ export const access_code_time_frame_changed_event = access_code_event.extend({
     ---
     route_path: /access_codes
     ---
-    The time frame of an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was changed on the device.
+    The time frame of an [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was changed on the device.
   `)
 
 export type AccessCodeTimeFrameChangedEvent = z.infer<
@@ -222,7 +222,7 @@ export const access_code_mutations_requested_event = access_code_event.extend({
     ---
     route_path: /access_codes
     ---
-    Mutations were requested on an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes). This event fires at request time, before the change is confirmed on the device.
+    Mutations were requested on an [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes). This event fires at request time, before the change is confirmed on the device.
   `)
 
 export type AccessCodeMutationsRequestedEvent = z.infer<
@@ -236,7 +236,7 @@ export const access_code_scheduled_on_device_event = access_code_event.extend({
     ---
     route_path: /access_codes
     ---
-    An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was [scheduled natively](https://docs.seam.co/low-level-apis/smart-locks/access-codes#native-scheduling) on a device.
+    An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was [scheduled natively](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#native-scheduling) on a device.
   `)
 
 export type AccessCodeScheduledOnDeviceEvent = z.infer<
@@ -250,7 +250,7 @@ export const access_code_set_on_device_event = access_code_event.extend({
     ---
     route_path: /access_codes
     ---
-    An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was set on a device.
+    An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was set on a device.
   `)
 
 export type AccessCodeSetOnDeviceEvent = z.infer<
@@ -263,7 +263,7 @@ export const access_code_removed_from_device_event = access_code_event.extend({
     ---
     route_path: /access_codes
     ---
-    An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was removed from a device.
+    An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was removed from a device.
   `)
 
 export type AccessCodeRemovedFromDeviceEvent = z.infer<
@@ -278,7 +278,7 @@ export const access_code_delay_in_setting_on_device_event = access_code_event
     ---
     route_path: /access_codes
     ---
-    There was an unusually long delay in setting an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) on a device.
+    There was an unusually long delay in setting an [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) on a device.
   `)
 
 export type AccessCodeDelayInSettingOnDeviceEvent = z.infer<
@@ -293,7 +293,7 @@ export const access_code_failed_to_set_on_device_event = access_code_event
     ---
     route_path: /access_codes
     ---
-    An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) failed to be set on a device.
+    An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) failed to be set on a device.
   `)
 
 export type AccessCodeFailedToSetOnDeviceEvent = z.infer<
@@ -308,7 +308,7 @@ export const access_code_issued_event = access_code_event.extend({
     route_path: /access_codes
     undocumented: Unreleased.
     ---
-    An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was issued.
+    An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was issued.
   `)
 
 export type AccessCodeIssuedEvent = z.infer<typeof access_code_issued_event>
@@ -322,7 +322,7 @@ export const access_code_delay_in_issuing_event = access_code_event
     route_path: /access_codes
     undocumented: Unreleased.
     ---
-    Seam has not yet issued this [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes), even though its start time is approaching, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and the accompanying \`delay_in_issuing\` warning clears automatically once issuance succeeds.
+    Seam has not yet issued this [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes), even though its start time is approaching, so access may not be ready when the recipient arrives. Seam is still attempting to issue it, and the accompanying \`delay_in_issuing\` warning clears automatically once issuance succeeds.
   `)
 
 export type AccessCodeDelayInIssuingEvent = z.infer<
@@ -338,7 +338,7 @@ export const access_code_failed_to_issue_event = access_code_event
     route_path: /access_codes
     undocumented: Unreleased.
     ---
-    Seam was unable to issue this [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) before its start time, so the recipient may be unable to unlock the device. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and the accompanying \`failed_to_issue\` error clears automatically if the access code is eventually issued.
+    Seam was unable to issue this [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) before its start time, so the recipient may be unable to unlock the device. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and the accompanying \`failed_to_issue\` error clears automatically if the access code is eventually issued.
   `)
 
 export type AccessCodeFailedToIssueEvent = z.infer<
@@ -354,7 +354,7 @@ export const access_code_failed_to_update_event = access_code_event
     route_path: /access_codes
     undocumented: Unreleased.
     ---
-    Seam was unable to apply this [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes)'s requested update to the device, so the code on the device does not match its requested state. Seam keeps retrying, and the accompanying \`failed_to_update\` error clears automatically once the update is applied.
+    Seam was unable to apply this [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes)'s requested update to the device, so the code on the device does not match its requested state. Seam keeps retrying, and the accompanying \`failed_to_update\` error clears automatically once the update is applied.
   `)
 
 export type AccessCodeFailedToUpdateEvent = z.infer<
@@ -370,7 +370,7 @@ export const access_code_failed_to_remove_event = access_code_event
     route_path: /access_codes
     undocumented: Unreleased.
     ---
-    An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) is still active on the device even though its \`ends_at\` has passed, so the recipient may still be able to unlock the device after their access window ended. Seam is attempting to remove it, and the accompanying \`failed_to_remove\` error clears automatically once the access code is no longer active.
+    An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) is still active on the device even though its \`ends_at\` has passed, so the recipient may still be able to unlock the device after their access window ended. Seam is attempting to remove it, and the accompanying \`failed_to_remove\` error clears automatically once the access code is no longer active.
   `)
 
 export type AccessCodeFailedToRemoveEvent = z.infer<
@@ -384,7 +384,7 @@ export const access_code_deleted_event = access_code_event.extend({
     ---
     route_path: /access_codes
     ---
-    An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was deleted.
+    An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was deleted.
   `)
 
 export type AccessCodeDeletedEvent = z.infer<typeof access_code_deleted_event>
@@ -399,7 +399,7 @@ export const access_code_delay_in_removing_from_device_event = access_code_event
     deprecated: Seam no longer emits this event. Use \`access_code.failed_to_remove_from_device\` instead.
     route_path: /access_codes
     ---
-    There was an unusually long delay in removing an [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) from a device.
+    There was an unusually long delay in removing an [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) from a device.
   `)
 
 /** @deprecated Seam no longer emits this event. */
@@ -415,7 +415,7 @@ export const access_code_failed_to_remove_from_device_event = access_code_event
     ---
     route_path: /access_codes
     ---
-    An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) failed to be removed from a device.
+    An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) failed to be removed from a device.
   `)
 
 export type AccessCodeFailedToRemoveFromDeviceEvent = z.infer<
@@ -429,7 +429,7 @@ export const access_code_modified_external_to_seam_event =
     ---
     route_path: /access_codes
     ---
-    An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was modified outside of Seam.
+    An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was modified outside of Seam.
   `)
 
 export type AccessCodeModifiedExternalToSeamEvent = z.infer<
@@ -443,7 +443,7 @@ export const access_code_deleted_external_to_seam_event =
     ---
     route_path: /access_codes
     ---
-    An [access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes) was deleted outside of Seam.
+    An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) was deleted outside of Seam.
   `)
 
 export type AccessCodeDeletedExternalToSeamEvent = z.infer<
@@ -460,7 +460,7 @@ export const access_code_backup_access_code_pulled_event =
     ---
     route_path: /access_codes
     ---
-    A [backup access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/backup-access-codes) was pulled from the backup access code pool and set on a device.
+    A [backup access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/backup-access-codes) was pulled from the backup access code pool and set on a device.
   `)
 
 export type AccessCodeBackupAccessCodePulledEvent = z.infer<
@@ -474,7 +474,7 @@ export const unmanaged_access_code_converted_to_managed_event =
       ---
       route_path: /access_codes/unmanaged
       ---
-      An [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was converted successfully to a managed access code.
+      An [unmanaged access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was converted successfully to a managed access code.
     `)
 
 export type UnmanagedAccessCodeConvertedToManagedEvent = z.infer<
@@ -492,7 +492,7 @@ export const unmanaged_access_code_failed_to_convert_to_managed_event =
       ---
       route_path: /access_codes/unmanaged
       ---
-      An [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) failed to be converted to a managed access code.
+      An [unmanaged access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) failed to be converted to a managed access code.
     `)
 
 export type UnmanagedAccessCodeFailedToConvertToManagedEvent = z.infer<
@@ -505,7 +505,7 @@ export const unmanaged_access_code_created_event = access_code_event.extend({
     ---
     route_path: /access_codes/unmanaged
     ---
-    An [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was created on a device.
+    An [unmanaged access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was created on a device.
   `)
 
 export type UnmanagedAccessCodeCreatedEvent = z.infer<
@@ -518,7 +518,7 @@ export const unmanaged_access_code_removed_event = access_code_event.extend({
     ---
     route_path: /access_codes/unmanaged
     ---
-    An [unmanaged access code](https://docs.seam.co/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was removed from a device.
+    An [unmanaged access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) was removed from a device.
   `)
 
 export type UnmanagedAccessCodeRemovedEvent = z.infer<
