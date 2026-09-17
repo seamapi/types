@@ -50930,6 +50930,7 @@ const openapi: OpenAPISpec = {
                 'akiles',
                 'aqara',
                 'ecobee',
+                'eufy',
                 'dormakaba_oracode',
                 'dormakaba_oracode_iho',
                 'honeywell_resideo',
@@ -53231,6 +53232,7 @@ const openapi: OpenAPISpec = {
                 'akiles',
                 'aqara',
                 'ecobee',
+                'eufy',
                 'dormakaba_oracode',
                 'dormakaba_oracode_iho',
                 'honeywell_resideo',
@@ -54660,6 +54662,7 @@ const openapi: OpenAPISpec = {
                 'keyincode',
                 'akiles',
                 'aqara',
+                'eufy',
                 'dormakaba_oracode',
                 'dormakaba_oracode_iho',
                 'korelock',
@@ -65226,7 +65229,6 @@ const openapi: OpenAPISpec = {
             schema: { type: 'string' },
           },
         ],
-        requestBody: { content: { 'application/json': { schema: {} } } },
         responses: {
           '200': {
             content: {
