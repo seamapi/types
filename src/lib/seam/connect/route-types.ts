@@ -53180,6 +53180,7 @@ export type Routes = {
             | 'akiles'
             | 'aqara'
             | 'ecobee'
+            | 'eufy'
             | 'dormakaba_oracode'
             | 'dormakaba_oracode_iho'
             | 'honeywell_resideo'
@@ -57506,6 +57507,7 @@ export type Routes = {
             | 'akiles'
             | 'aqara'
             | 'ecobee'
+            | 'eufy'
             | 'dormakaba_oracode'
             | 'dormakaba_oracode_iho'
             | 'honeywell_resideo'
@@ -72716,6 +72718,7 @@ export type Routes = {
             | 'keyincode'
             | 'akiles'
             | 'aqara'
+            | 'eufy'
             | 'dormakaba_oracode'
             | 'dormakaba_oracode_iho'
             | 'korelock'
@@ -106988,7 +106991,7 @@ export type Routes = {
     route: '/seam/webhooks/[provider]/[subscription_id]'
     method: 'POST'
     queryParams: {}
-    jsonBody: any
+    jsonBody: {}
     commonParams: {}
     formData: {}
     jsonResponse: {}
