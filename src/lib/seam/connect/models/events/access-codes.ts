@@ -361,20 +361,20 @@ export type AccessCodeFailedToUpdateEvent = z.infer<
   typeof access_code_failed_to_update_event
 >
 
-export const access_code_failed_to_remove_event = access_code_event
+export const access_code_failed_to_delete_event = access_code_event
   .extend({
-    event_type: z.literal('access_code.failed_to_remove'),
+    event_type: z.literal('access_code.failed_to_delete'),
   })
   .extend(access_code_event_issue_properties).describe(`
     ---
     route_path: /access_codes
     undocumented: Unreleased.
     ---
-    An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) is still active on the device even though its \`ends_at\` has passed, so the recipient may still be able to unlock the device after their access window ended. Seam is attempting to remove it, and the accompanying \`failed_to_remove\` error clears automatically once the access code is no longer active.
+    An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) is still active on the device even though its \`ends_at\` has passed, so the recipient may still be able to unlock the device after their access window ended. Seam is attempting to delete it, and the accompanying \`failed_to_delete\` error clears automatically once the access code is no longer active.
   `)
 
-export type AccessCodeFailedToRemoveEvent = z.infer<
-  typeof access_code_failed_to_remove_event
+export type AccessCodeFailedToDeleteEvent = z.infer<
+  typeof access_code_failed_to_delete_event
 >
 
 export const access_code_deleted_event = access_code_event.extend({
@@ -541,7 +541,7 @@ export const access_code_events = [
   access_code_delay_in_issuing_event,
   access_code_failed_to_issue_event,
   access_code_failed_to_update_event,
-  access_code_failed_to_remove_event,
+  access_code_failed_to_delete_event,
   access_code_deleted_event,
   access_code_delay_in_removing_from_device_event,
   access_code_failed_to_remove_from_device_event,
