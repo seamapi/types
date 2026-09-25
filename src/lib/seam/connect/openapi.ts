@@ -10921,6 +10921,119 @@ const openapi: OpenAPISpec = {
             type: 'object',
           },
           {
+            description: 'Activating the weekly program is pending.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of returning a thermostat to its weekly program.',
+                enum: ['ACTIVATE_WEEKLY_PROGRAM'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Activating the weekly program succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of returning a thermostat to its weekly program.',
+                enum: ['ACTIVATE_WEEKLY_PROGRAM'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
+              result: {
+                description: 'Result of the action.',
+                properties: {},
+                type: 'object',
+              },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Activating the weekly program failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of returning a thermostat to its weekly program.',
+                enum: ['ACTIVATE_WEEKLY_PROGRAM'],
+                type: 'string',
+              },
+              error: {
+                description: 'Error associated with the action.',
+                properties: {
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
             description: 'Simulating a keypad code entry is pending.',
             properties: {
               action_attempt_id: {
@@ -13493,6 +13606,11 @@ const openapi: OpenAPISpec = {
         description:
           'Represents a [device](https://www.seam.co/docs/core-concepts/devices) that has been connected to Seam.',
         properties: {
+          can_activate_weekly_program: {
+            description:
+              'Indicates whether the thermostat can be returned to its weekly program, the schedule that is configured on the device itself, releasing any hold that Seam has set.',
+            type: 'boolean',
+          },
           can_configure_auto_lock: {
             description:
               'Indicates whether the lock supports configuring automatic locking.',
@@ -18067,6 +18185,11 @@ const openapi: OpenAPISpec = {
       },
       device_provider: {
         properties: {
+          can_activate_weekly_program: {
+            description:
+              'Indicates whether the thermostat can be returned to its weekly program, the schedule that is configured on the device itself, releasing any hold that Seam has set.',
+            type: 'boolean',
+          },
           can_configure_auto_lock: {
             description:
               'Indicates whether the lock supports configuring automatic locking.',
@@ -36121,6 +36244,11 @@ const openapi: OpenAPISpec = {
         description:
           'Represents an [unmanaged device](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices). An unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).',
         properties: {
+          can_activate_weekly_program: {
+            description:
+              'Indicates whether the thermostat can be returned to its weekly program, the schedule that is configured on the device itself, releasing any hold that Seam has set.',
+            type: 'boolean',
+          },
           can_configure_auto_lock: {
             description:
               'Indicates whether the lock supports configuring automatic locking.',
@@ -51066,6 +51194,7 @@ const openapi: OpenAPISpec = {
                   'can_hvac_cool',
                   'can_hvac_heat_cool',
                   'can_turn_off_hvac',
+                  'can_activate_weekly_program',
                   'can_simulate_removal',
                   'can_simulate_connection',
                   'can_simulate_disconnection',
@@ -51099,6 +51228,7 @@ const openapi: OpenAPISpec = {
                   'can_hvac_cool',
                   'can_hvac_heat_cool',
                   'can_turn_off_hvac',
+                  'can_activate_weekly_program',
                   'can_simulate_removal',
                   'can_simulate_connection',
                   'can_simulate_disconnection',
@@ -53335,6 +53465,7 @@ const openapi: OpenAPISpec = {
                   'can_hvac_cool',
                   'can_hvac_heat_cool',
                   'can_turn_off_hvac',
+                  'can_activate_weekly_program',
                   'can_simulate_removal',
                   'can_simulate_connection',
                   'can_simulate_disconnection',
@@ -53368,6 +53499,7 @@ const openapi: OpenAPISpec = {
                   'can_hvac_cool',
                   'can_hvac_heat_cool',
                   'can_turn_off_hvac',
+                  'can_activate_weekly_program',
                   'can_simulate_removal',
                   'can_simulate_connection',
                   'can_simulate_disconnection',
@@ -66803,6 +66935,71 @@ const openapi: OpenAPISpec = {
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
         'x-title': 'Activate a Climate Preset',
+      },
+    },
+    '/thermostats/activate_weekly_program': {
+      post: {
+        description:
+          "Returns a specified [thermostat](https://www.seam.co/docs/capability-guides/thermostats) to its [weekly program](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-programs), the schedule that is configured on the device itself, releasing any hold that Seam has set. Seam stops managing the thermostat's climate until you [activate a climate preset](https://www.seam.co/docs/capability-guides/thermostats/configure-current-climate-settings), make a direct climate setting change, or one of the thermostat's [scheduled](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) presets reaches its activation time.",
+        operationId: 'thermostatsActivateWeeklyProgramPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the thermostat device that you want to return to its weekly program.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/activate_weekly_program',
+        tags: ['/thermostats'],
+        'x-action-attempt-type': 'ACTIVATE_WEEKLY_PROGRAM',
+        'x-fern-sdk-group-name': ['thermostats'],
+        'x-fern-sdk-method-name': 'activate_weekly_program',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Activate the Weekly Program',
       },
     },
     '/thermostats/cool': {

@@ -41,6 +41,11 @@ export const device_capability_flags = z
     can_turn_off_hvac: z
       .boolean()
       .describe('Indicates whether the thermostat can be turned off.'),
+    can_activate_weekly_program: z
+      .boolean()
+      .describe(
+        'Indicates whether the thermostat can be returned to its weekly program, the schedule that is configured on the device itself, releasing any hold that Seam has set.',
+      ),
     can_simulate_removal: z
       .boolean()
       .describe(

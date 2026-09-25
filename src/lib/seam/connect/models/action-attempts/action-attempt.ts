@@ -1,6 +1,7 @@
 import * as z from 'zod/v3'
 
 import { activate_climate_preset_action_attempt } from './activate-climate-preset.js'
+import { activate_weekly_program_action_attempt } from './activate-weekly-program.js'
 import { assign_credential_action_attempt } from './assign-credential.js'
 import { configure_auto_lock_action_attempt } from './configure-auto-lock.js'
 import { deprecated_action_attempts } from './deprecated.js'
@@ -27,6 +28,7 @@ export const action_attempt = z.union([
   ...set_fan_mode_action_attempt.options,
   ...set_hvac_mode_action_attempt.options,
   ...activate_climate_preset_action_attempt.options,
+  ...activate_weekly_program_action_attempt.options,
   ...simulate_keypad_code_entry_action_attempt.options,
   ...simulate_manual_lock_via_keypad_action_attempt.options,
   ...push_thermostat_programs_action_attempt.options,
