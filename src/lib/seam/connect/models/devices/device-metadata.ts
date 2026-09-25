@@ -1168,6 +1168,30 @@ export const device_metadata = z
       .optional()
       .describe('Metadata for a Tapo camera.'),
 
+    arlo_metadata: z
+      .object({
+        device_id: z
+          .string()
+          .optional()
+          .describe('Device ID reported by Arlo.'),
+        device_name: z
+          .string()
+          .optional()
+          .describe('Device name reported by Arlo.'),
+        model_id: z.string().optional().describe('Model ID reported by Arlo.'),
+        hardware_version: z
+          .string()
+          .optional()
+          .describe('Hardware version reported by Arlo.'),
+        firmware_version: z
+          .string()
+          .optional()
+          .describe('Firmware version reported by Arlo.'),
+      })
+      .partial()
+      .optional()
+      .describe('Metadata for an Arlo camera.'),
+
     ring_metadata: z
       .object({
         device_id: z
