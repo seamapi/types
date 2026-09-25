@@ -13758,7 +13758,7 @@ const openapi: OpenAPISpec = {
               },
               {
                 description: 'Device type for cameras.',
-                enum: ['ring_camera', 'tapo_camera'],
+                enum: ['ring_camera', 'tapo_camera', 'arlo_camera'],
                 type: 'string',
               },
             ],
@@ -14703,6 +14703,32 @@ const openapi: OpenAPISpec = {
                             description:
                               'Time zone reported for an Aqara device (e.g. GMT-07:00).',
                             nullable: true,
+                            type: 'string',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      arlo_metadata: {
+                        description: 'Metadata for an Arlo camera.',
+                        properties: {
+                          device_id: {
+                            description: 'Device ID reported by Arlo.',
+                            type: 'string',
+                          },
+                          device_name: {
+                            description: 'Device name reported by Arlo.',
+                            type: 'string',
+                          },
+                          firmware_version: {
+                            description: 'Firmware version reported by Arlo.',
+                            type: 'string',
+                          },
+                          hardware_version: {
+                            description: 'Hardware version reported by Arlo.',
+                            type: 'string',
+                          },
+                          model_id: {
+                            description: 'Model ID reported by Arlo.',
                             type: 'string',
                           },
                         },
@@ -18199,6 +18225,7 @@ const openapi: OpenAPISpec = {
               'thirty_three_lock',
               'ring',
               'tapo',
+              'arlo',
               'ical',
               'lodgify',
               'hostaway',
@@ -36303,7 +36330,7 @@ const openapi: OpenAPISpec = {
               },
               {
                 description: 'Device type for cameras.',
-                enum: ['ring_camera', 'tapo_camera'],
+                enum: ['ring_camera', 'tapo_camera', 'arlo_camera'],
                 type: 'string',
               },
             ],
@@ -47135,6 +47162,7 @@ const openapi: OpenAPISpec = {
                         'thirty_three_lock',
                         'ring',
                         'tapo',
+                        'arlo',
                         'ical',
                         'lodgify',
                         'hostaway',
@@ -50806,7 +50834,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description: 'Device type for cameras.',
-                  enum: ['ring_camera', 'tapo_camera'],
+                  enum: ['ring_camera', 'tapo_camera', 'arlo_camera'],
                   type: 'string',
                 },
               ],
@@ -50886,7 +50914,7 @@ const openapi: OpenAPISpec = {
                   },
                   {
                     description: 'Device type for cameras.',
-                    enum: ['ring_camera', 'tapo_camera'],
+                    enum: ['ring_camera', 'tapo_camera', 'arlo_camera'],
                     type: 'string',
                   },
                 ],
@@ -50946,6 +50974,7 @@ const openapi: OpenAPISpec = {
                 'ultraloq',
                 'ring',
                 'tapo',
+                'arlo',
                 'ical',
                 'lodgify',
                 'hostaway',
@@ -53108,7 +53137,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description: 'Device type for cameras.',
-                  enum: ['ring_camera', 'tapo_camera'],
+                  enum: ['ring_camera', 'tapo_camera', 'arlo_camera'],
                   type: 'string',
                 },
               ],
@@ -53188,7 +53217,7 @@ const openapi: OpenAPISpec = {
                   },
                   {
                     description: 'Device type for cameras.',
-                    enum: ['ring_camera', 'tapo_camera'],
+                    enum: ['ring_camera', 'tapo_camera', 'arlo_camera'],
                     type: 'string',
                   },
                 ],
@@ -53248,6 +53277,7 @@ const openapi: OpenAPISpec = {
                 'ultraloq',
                 'ring',
                 'tapo',
+                'arlo',
                 'ical',
                 'lodgify',
                 'hostaway',

@@ -14238,7 +14238,7 @@ export type Routes = {
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
-                | ('ring_camera' | 'tapo_camera')
+                | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -15067,6 +15067,24 @@ export type Routes = {
                           firmware_version?: (string | undefined) | undefined
                           /** Hardware version reported by the camera. */
                           hardware_version?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
+                /** Metadata for an Arlo camera. */
+                arlo_metadata?:
+                  | (
+                      | {
+                          /** Device ID reported by Arlo. */
+                          device_id?: (string | undefined) | undefined
+                          /** Device name reported by Arlo. */
+                          device_name?: (string | undefined) | undefined
+                          /** Model ID reported by Arlo. */
+                          model_id?: (string | undefined) | undefined
+                          /** Hardware version reported by Arlo. */
+                          hardware_version?: (string | undefined) | undefined
+                          /** Firmware version reported by Arlo. */
+                          firmware_version?: (string | undefined) | undefined
                         }
                       | undefined
                     )
@@ -22758,7 +22776,7 @@ export type Routes = {
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
-                | ('ring_camera' | 'tapo_camera')
+                | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -23587,6 +23605,24 @@ export type Routes = {
                           firmware_version?: (string | undefined) | undefined
                           /** Hardware version reported by the camera. */
                           hardware_version?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
+                /** Metadata for an Arlo camera. */
+                arlo_metadata?:
+                  | (
+                      | {
+                          /** Device ID reported by Arlo. */
+                          device_id?: (string | undefined) | undefined
+                          /** Device name reported by Arlo. */
+                          device_name?: (string | undefined) | undefined
+                          /** Model ID reported by Arlo. */
+                          model_id?: (string | undefined) | undefined
+                          /** Hardware version reported by Arlo. */
+                          hardware_version?: (string | undefined) | undefined
+                          /** Firmware version reported by Arlo. */
+                          firmware_version?: (string | undefined) | undefined
                         }
                       | undefined
                     )
@@ -49014,6 +49050,7 @@ export type Routes = {
             | 'thirty_three_lock'
             | 'ring'
             | 'tapo'
+            | 'arlo'
             | 'ical'
             | 'lodgify'
             | 'hostaway'
@@ -51178,7 +51215,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -51982,6 +52019,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Arlo camera. */
+          arlo_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Arlo. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name reported by Arlo. */
+                    device_name?: (string | undefined) | undefined
+                    /** Model ID reported by Arlo. */
+                    model_id?: (string | undefined) | undefined
+                    /** Hardware version reported by Arlo. */
+                    hardware_version?: (string | undefined) | undefined
+                    /** Firmware version reported by Arlo. */
+                    firmware_version?: (string | undefined) | undefined
                   }
                 | undefined
               )
@@ -53094,7 +53149,7 @@ export type Routes = {
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | ('ring_camera' | 'tapo_camera')
+            | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
           )
         | undefined
       /** Array of device types for which you want to list devices. */
@@ -53144,7 +53199,7 @@ export type Routes = {
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | ('ring_camera' | 'tapo_camera')
+            | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
           )[]
         | undefined
       /** Manufacturer for which you want to list devices. */
@@ -53196,6 +53251,7 @@ export type Routes = {
             | 'ultraloq'
             | 'ring'
             | 'tapo'
+            | 'arlo'
             | 'ical'
             | 'lodgify'
             | 'hostaway'
@@ -53332,7 +53388,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -54136,6 +54192,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Arlo camera. */
+          arlo_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Arlo. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name reported by Arlo. */
+                    device_name?: (string | undefined) | undefined
+                    /** Model ID reported by Arlo. */
+                    model_id?: (string | undefined) | undefined
+                    /** Hardware version reported by Arlo. */
+                    hardware_version?: (string | undefined) | undefined
+                    /** Firmware version reported by Arlo. */
+                    firmware_version?: (string | undefined) | undefined
                   }
                 | undefined
               )
@@ -55279,6 +55353,7 @@ export type Routes = {
           | 'thirty_three_lock'
           | 'ring'
           | 'tapo'
+          | 'arlo'
           | 'ical'
           | 'lodgify'
           | 'hostaway'
@@ -56812,7 +56887,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
         /** Location information for the device. */
@@ -57421,7 +57496,7 @@ export type Routes = {
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | ('ring_camera' | 'tapo_camera')
+            | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
           )
         | undefined
       /** Array of device types for which you want to list devices. */
@@ -57471,7 +57546,7 @@ export type Routes = {
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | ('ring_camera' | 'tapo_camera')
+            | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
           )[]
         | undefined
       /** Manufacturer for which you want to list devices. */
@@ -57523,6 +57598,7 @@ export type Routes = {
             | 'ultraloq'
             | 'ring'
             | 'tapo'
+            | 'arlo'
             | 'ical'
             | 'lodgify'
             | 'hostaway'
@@ -57646,7 +57722,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
         /** Location information for the device. */
@@ -68849,7 +68925,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -69653,6 +69729,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Arlo camera. */
+          arlo_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Arlo. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name reported by Arlo. */
+                    device_name?: (string | undefined) | undefined
+                    /** Model ID reported by Arlo. */
+                    model_id?: (string | undefined) | undefined
+                    /** Hardware version reported by Arlo. */
+                    hardware_version?: (string | undefined) | undefined
+                    /** Firmware version reported by Arlo. */
+                    firmware_version?: (string | undefined) | undefined
                   }
                 | undefined
               )
@@ -70751,7 +70845,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -71555,6 +71649,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Arlo camera. */
+          arlo_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Arlo. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name reported by Arlo. */
+                    device_name?: (string | undefined) | undefined
+                    /** Model ID reported by Arlo. */
+                    model_id?: (string | undefined) | undefined
+                    /** Hardware version reported by Arlo. */
+                    hardware_version?: (string | undefined) | undefined
+                    /** Firmware version reported by Arlo. */
+                    firmware_version?: (string | undefined) | undefined
                   }
                 | undefined
               )
@@ -72782,7 +72894,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -73586,6 +73698,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Arlo camera. */
+          arlo_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Arlo. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name reported by Arlo. */
+                    device_name?: (string | undefined) | undefined
+                    /** Model ID reported by Arlo. */
+                    model_id?: (string | undefined) | undefined
+                    /** Hardware version reported by Arlo. */
+                    hardware_version?: (string | undefined) | undefined
+                    /** Firmware version reported by Arlo. */
+                    firmware_version?: (string | undefined) | undefined
                   }
                 | undefined
               )
@@ -74683,7 +74813,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -75487,6 +75617,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Arlo camera. */
+          arlo_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Arlo. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name reported by Arlo. */
+                    device_name?: (string | undefined) | undefined
+                    /** Model ID reported by Arlo. */
+                    model_id?: (string | undefined) | undefined
+                    /** Hardware version reported by Arlo. */
+                    hardware_version?: (string | undefined) | undefined
+                    /** Firmware version reported by Arlo. */
+                    firmware_version?: (string | undefined) | undefined
                   }
                 | undefined
               )
@@ -85078,7 +85226,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -85882,6 +86030,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Arlo camera. */
+          arlo_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Arlo. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name reported by Arlo. */
+                    device_name?: (string | undefined) | undefined
+                    /** Model ID reported by Arlo. */
+                    model_id?: (string | undefined) | undefined
+                    /** Hardware version reported by Arlo. */
+                    hardware_version?: (string | undefined) | undefined
+                    /** Firmware version reported by Arlo. */
+                    firmware_version?: (string | undefined) | undefined
                   }
                 | undefined
               )
@@ -86979,7 +87145,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -87783,6 +87949,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Arlo camera. */
+          arlo_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Arlo. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name reported by Arlo. */
+                    device_name?: (string | undefined) | undefined
+                    /** Model ID reported by Arlo. */
+                    model_id?: (string | undefined) | undefined
+                    /** Hardware version reported by Arlo. */
+                    hardware_version?: (string | undefined) | undefined
+                    /** Firmware version reported by Arlo. */
+                    firmware_version?: (string | undefined) | undefined
                   }
                 | undefined
               )
@@ -111634,7 +111818,7 @@ export type Routes = {
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
-                | ('ring_camera' | 'tapo_camera')
+                | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -112463,6 +112647,24 @@ export type Routes = {
                           firmware_version?: (string | undefined) | undefined
                           /** Hardware version reported by the camera. */
                           hardware_version?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
+                /** Metadata for an Arlo camera. */
+                arlo_metadata?:
+                  | (
+                      | {
+                          /** Device ID reported by Arlo. */
+                          device_id?: (string | undefined) | undefined
+                          /** Device name reported by Arlo. */
+                          device_name?: (string | undefined) | undefined
+                          /** Model ID reported by Arlo. */
+                          model_id?: (string | undefined) | undefined
+                          /** Hardware version reported by Arlo. */
+                          hardware_version?: (string | undefined) | undefined
+                          /** Firmware version reported by Arlo. */
+                          firmware_version?: (string | undefined) | undefined
                         }
                       | undefined
                     )
@@ -121166,7 +121368,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -121970,6 +122172,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Arlo camera. */
+          arlo_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Arlo. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name reported by Arlo. */
+                    device_name?: (string | undefined) | undefined
+                    /** Model ID reported by Arlo. */
+                    model_id?: (string | undefined) | undefined
+                    /** Hardware version reported by Arlo. */
+                    hardware_version?: (string | undefined) | undefined
+                    /** Firmware version reported by Arlo. */
+                    firmware_version?: (string | undefined) | undefined
                   }
                 | undefined
               )
@@ -127366,7 +127586,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -128170,6 +128390,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Arlo camera. */
+          arlo_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Arlo. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name reported by Arlo. */
+                    device_name?: (string | undefined) | undefined
+                    /** Model ID reported by Arlo. */
+                    model_id?: (string | undefined) | undefined
+                    /** Hardware version reported by Arlo. */
+                    hardware_version?: (string | undefined) | undefined
+                    /** Firmware version reported by Arlo. */
+                    firmware_version?: (string | undefined) | undefined
                   }
                 | undefined
               )
@@ -129267,7 +129505,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -130071,6 +130309,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Arlo camera. */
+          arlo_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Arlo. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name reported by Arlo. */
+                    device_name?: (string | undefined) | undefined
+                    /** Model ID reported by Arlo. */
+                    model_id?: (string | undefined) | undefined
+                    /** Hardware version reported by Arlo. */
+                    hardware_version?: (string | undefined) | undefined
+                    /** Firmware version reported by Arlo. */
+                    firmware_version?: (string | undefined) | undefined
                   }
                 | undefined
               )
@@ -140686,7 +140942,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -141490,6 +141746,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Arlo camera. */
+          arlo_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Arlo. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name reported by Arlo. */
+                    device_name?: (string | undefined) | undefined
+                    /** Model ID reported by Arlo. */
+                    model_id?: (string | undefined) | undefined
+                    /** Hardware version reported by Arlo. */
+                    hardware_version?: (string | undefined) | undefined
+                    /** Firmware version reported by Arlo. */
+                    firmware_version?: (string | undefined) | undefined
                   }
                 | undefined
               )
@@ -142589,7 +142863,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -143393,6 +143667,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Arlo camera. */
+          arlo_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Arlo. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name reported by Arlo. */
+                    device_name?: (string | undefined) | undefined
+                    /** Model ID reported by Arlo. */
+                    model_id?: (string | undefined) | undefined
+                    /** Hardware version reported by Arlo. */
+                    hardware_version?: (string | undefined) | undefined
+                    /** Firmware version reported by Arlo. */
+                    firmware_version?: (string | undefined) | undefined
                   }
                 | undefined
               )
@@ -146030,7 +146322,7 @@ export type Routes = {
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
-                | ('ring_camera' | 'tapo_camera')
+                | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -146859,6 +147151,24 @@ export type Routes = {
                           firmware_version?: (string | undefined) | undefined
                           /** Hardware version reported by the camera. */
                           hardware_version?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
+                /** Metadata for an Arlo camera. */
+                arlo_metadata?:
+                  | (
+                      | {
+                          /** Device ID reported by Arlo. */
+                          device_id?: (string | undefined) | undefined
+                          /** Device name reported by Arlo. */
+                          device_name?: (string | undefined) | undefined
+                          /** Model ID reported by Arlo. */
+                          model_id?: (string | undefined) | undefined
+                          /** Hardware version reported by Arlo. */
+                          hardware_version?: (string | undefined) | undefined
+                          /** Firmware version reported by Arlo. */
+                          firmware_version?: (string | undefined) | undefined
                         }
                       | undefined
                     )
@@ -151669,7 +151979,7 @@ export type Routes = {
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
-                | ('ring_camera' | 'tapo_camera')
+                | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
               /** Unique identifier for the account associated with the device. */
               connected_account_id: string
               /** Location information for the device. */
