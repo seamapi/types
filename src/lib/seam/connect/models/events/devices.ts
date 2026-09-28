@@ -852,6 +852,12 @@ export const camera_activated_event = device_event.extend({
     .url()
     .optional()
     .describe('URL to a short video clip captured at the time of activation.'),
+  media_status: z
+    .enum(['pending', 'available', 'unavailable', 'failed'])
+    .optional()
+    .describe(
+      'Status of the recorded clip and thumbnail for this activation, when the camera supports event recordings. `pending` while Seam retrieves the recording, `available` once it is stored, `unavailable` if no recording covers the activation, and `failed` if retrieval failed.',
+    ),
 }).describe(`
   ---
   route_path: /devices
