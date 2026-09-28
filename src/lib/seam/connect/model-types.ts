@@ -13,6 +13,8 @@ export type {
   ActionAttempt,
   Batch,
   Bridge,
+  CameraLiveViewAnswer,
+  CameraLiveViewSession,
   ClientSession,
   ClimatePreset,
   ConnectedAccount,

@@ -106,6 +106,11 @@ export const device_capability_flags = z
       .describe(
         'Indicates whether the lock supports configuring automatic locking.',
       ),
+    can_stream_live_video: z
+      .boolean()
+      .describe(
+        'Indicates whether the camera supports streaming live video through a camera live view session.',
+      ),
   })
   .partial()
 

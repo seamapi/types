@@ -12644,6 +12644,57 @@ const openapi: OpenAPISpec = {
         'x-route-path': '/seam/bridge/v1/bridge_connected_systems',
         'x-undocumented': 'Seam Bridge client only.',
       },
+      camera_live_view_answer: {
+        description:
+          'Represents the WebRTC SDP answer that starts streaming video from a camera for a live view session.',
+        properties: {
+          sdp_answer: {
+            description:
+              'WebRTC SDP answer for the offer, limited to 64 KiB of UTF-8 data.',
+            type: 'string',
+          },
+        },
+        required: ['sdp_answer'],
+        type: 'object',
+        'x-route-path': '/cameras/live_views',
+      },
+      camera_live_view_session: {
+        description:
+          'Represents a short-lived live view session for a single camera. Use the session ID and token to start a WebRTC stream and to stop the session.',
+        properties: {
+          camera_live_view_session_id: {
+            description: 'ID of the camera live view session.',
+            format: 'uuid',
+            type: 'string',
+          },
+          device_id: {
+            description: 'ID of the camera.',
+            format: 'uuid',
+            type: 'string',
+          },
+          expires_at: {
+            description:
+              'Date and time at which the live view session expires.',
+            format: 'date-time',
+            type: 'string',
+          },
+          token: {
+            description:
+              'Token that authorizes the offer and stop requests for this session.',
+            maxLength: 512,
+            minLength: 1,
+            type: 'string',
+          },
+        },
+        required: [
+          'camera_live_view_session_id',
+          'device_id',
+          'token',
+          'expires_at',
+        ],
+        type: 'object',
+        'x-route-path': '/cameras/live_views',
+      },
       client_session: {
         description:
           "Represents a [client session](https://www.seam.co/docs/core-concepts/authentication/client-session-tokens). If you want to restrict your users' access to their own devices, use client sessions.\n\nYou create each client session with a custom `user_identifier_key`. Normally, the `user_identifier_key` is a user ID that your application provides.\n\nWhen calling the Seam API from your backend using an API key, you can pass the `user_identifier_key` as a parameter to limit results to the associated client session. For example, `/devices/list?user_identifier_key=123` only returns devices associated with the client session created with the `user_identifier_key` `123`.\n\nA client session has a token that you can use with the Seam JavaScript SDK to make requests from the client (browser) directly to the Seam API. The token restricts the user's access to only the devices that they own.\n\nSee also [Get Started with React](https://www.seam.co/docs/ui-components/overview/getting-started-with-seam-components/get-started-with-react-components-and-client-session-tokens).",
@@ -13697,6 +13748,11 @@ const openapi: OpenAPISpec = {
           can_simulate_removal: {
             description:
               'Indicates whether the device supports simulating removal in a sandbox.',
+            type: 'boolean',
+          },
+          can_stream_live_video: {
+            description:
+              'Indicates whether the camera supports streaming live video through a camera live view session.',
             type: 'boolean',
           },
           can_turn_off_hvac: {
@@ -18276,6 +18332,11 @@ const openapi: OpenAPISpec = {
           can_simulate_removal: {
             description:
               'Indicates whether the device supports simulating removal in a sandbox.',
+            type: 'boolean',
+          },
+          can_stream_live_video: {
+            description:
+              'Indicates whether the camera supports streaming live video through a camera live view session.',
             type: 'boolean',
           },
           can_turn_off_hvac: {
@@ -36343,6 +36404,11 @@ const openapi: OpenAPISpec = {
               'Indicates whether the device supports simulating removal in a sandbox.',
             type: 'boolean',
           },
+          can_stream_live_video: {
+            description:
+              'Indicates whether the camera supports streaming live video through a camera live view session.',
+            type: 'boolean',
+          },
           can_turn_off_hvac: {
             description: 'Indicates whether the thermostat can be turned off.',
             type: 'boolean',
@@ -46486,7 +46552,8 @@ const openapi: OpenAPISpec = {
     },
     '/cameras/live_views/create': {
       post: {
-        description: 'Creates a short-lived, single-camera live view session.',
+        description:
+          'Creates a short-lived live view session for a single camera. Pass the returned session ID and token to `/cameras/live_views/offer` to start a WebRTC stream, and to `/cameras/live_views/stop` to end the session.\n\nCamera live view is in beta. To enable it for your workspace, contact Seam support. To check whether a camera supports live view, use `device.can_stream_live_video`.',
         operationId: 'camerasLiveViewsCreatePost',
         requestBody: {
           content: {
@@ -46494,14 +46561,25 @@ const openapi: OpenAPISpec = {
               schema: {
                 additionalProperties: false,
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
+                  device_id: {
+                    description: 'ID of the camera to view.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   duration_seconds: {
                     default: 600,
+                    description:
+                      'Number of seconds for which the live view session is valid, up to 600.',
                     maximum: 600,
                     minimum: 1,
                     type: 'integer',
                   },
-                  include_audio: { default: false, type: 'boolean' },
+                  include_audio: {
+                    default: false,
+                    description:
+                      "Indicates whether to include the camera's audio.",
+                    type: 'boolean',
+                  },
                 },
                 required: ['device_id'],
                 type: 'object',
@@ -46516,22 +46594,7 @@ const openapi: OpenAPISpec = {
                 schema: {
                   properties: {
                     camera_live_view_session: {
-                      properties: {
-                        camera_live_view_session_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        device_id: { format: 'uuid', type: 'string' },
-                        expires_at: { format: 'date-time', type: 'string' },
-                        token: { maxLength: 512, minLength: 1, type: 'string' },
-                      },
-                      required: [
-                        'camera_live_view_session_id',
-                        'device_id',
-                        'expires_at',
-                        'token',
-                      ],
-                      type: 'object',
+                      $ref: '#/components/schemas/camera_live_view_session',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -46553,13 +46616,12 @@ const openapi: OpenAPISpec = {
         'x-fern-sdk-return-value': 'camera_live_view_session',
         'x-response-key': 'camera_live_view_session',
         'x-title': 'Create a Camera Live View Session',
-        'x-undocumented': 'Camera pilot; not yet for customer use.',
       },
     },
     '/cameras/live_views/offer': {
       post: {
         description:
-          'Exchanges one WebRTC offer for an authorized camera live view session.',
+          'Exchanges a WebRTC SDP offer for an SDP answer that starts streaming video from the camera, for a live view session that you created using `/cameras/live_views/create`.\n\nCamera live view is in beta. To enable it for your workspace, contact Seam support.',
         operationId: 'camerasLiveViewsOfferPost',
         requestBody: {
           content: {
@@ -46568,16 +46630,24 @@ const openapi: OpenAPISpec = {
                 additionalProperties: false,
                 properties: {
                   camera_live_view_session_id: {
+                    description: 'ID of the camera live view session.',
                     format: 'uuid',
                     type: 'string',
                   },
                   sdp_offer: {
-                    description: 'WebRTC SDP, limited to 64 KiB of UTF-8 data.',
+                    description:
+                      'WebRTC SDP offer from the viewer, limited to 64 KiB of UTF-8 data.',
                     maxLength: 65_536,
                     minLength: 1,
                     type: 'string',
                   },
-                  token: { maxLength: 512, minLength: 1, type: 'string' },
+                  token: {
+                    description:
+                      'Token returned when the camera live view session was created.',
+                    maxLength: 512,
+                    minLength: 1,
+                    type: 'string',
+                  },
                 },
                 required: ['camera_live_view_session_id', 'token', 'sdp_offer'],
                 type: 'object',
@@ -46591,16 +46661,12 @@ const openapi: OpenAPISpec = {
               'application/json': {
                 schema: {
                   properties: {
-                    ok: { type: 'boolean' },
-                    sdp_answer: {
-                      description:
-                        'WebRTC SDP, limited to 64 KiB of UTF-8 data.',
-                      maxLength: 65_536,
-                      minLength: 1,
-                      type: 'string',
+                    camera_live_view_answer: {
+                      $ref: '#/components/schemas/camera_live_view_answer',
                     },
+                    ok: { type: 'boolean' },
                   },
-                  required: ['sdp_answer', 'ok'],
+                  required: ['camera_live_view_answer', 'ok'],
                   type: 'object',
                 },
               },
@@ -46615,15 +46681,15 @@ const openapi: OpenAPISpec = {
         tags: [],
         'x-fern-sdk-group-name': ['cameras', 'live_views'],
         'x-fern-sdk-method-name': 'offer',
-        'x-response-key': null,
+        'x-fern-sdk-return-value': 'camera_live_view_answer',
+        'x-response-key': 'camera_live_view_answer',
         'x-title': 'Negotiate a Camera Live View',
-        'x-undocumented': 'Camera pilot; not yet for customer use.',
       },
     },
     '/cameras/live_views/stop': {
       post: {
         description:
-          'Stops a camera live view session owned by the current client session.',
+          'Stops a camera live view session that the current client session owns.\n\nCamera live view is in beta. To enable it for your workspace, contact Seam support.',
         operationId: 'camerasLiveViewsStopPost',
         requestBody: {
           content: {
@@ -46632,10 +46698,17 @@ const openapi: OpenAPISpec = {
                 additionalProperties: false,
                 properties: {
                   camera_live_view_session_id: {
+                    description: 'ID of the camera live view session.',
                     format: 'uuid',
                     type: 'string',
                   },
-                  token: { maxLength: 512, minLength: 1, type: 'string' },
+                  token: {
+                    description:
+                      'Token returned when the camera live view session was created.',
+                    maxLength: 512,
+                    minLength: 1,
+                    type: 'string',
+                  },
                 },
                 required: ['camera_live_view_session_id', 'token'],
                 type: 'object',
@@ -46666,7 +46739,6 @@ const openapi: OpenAPISpec = {
         'x-fern-sdk-method-name': 'stop',
         'x-response-key': null,
         'x-title': 'Stop a Camera Live View Session',
-        'x-undocumented': 'Camera pilot; not yet for customer use.',
       },
     },
     '/client_sessions/create': {
@@ -51212,6 +51284,7 @@ const openapi: OpenAPISpec = {
                   'can_simulate_hub_disconnection',
                   'can_simulate_paid_subscription',
                   'can_configure_auto_lock',
+                  'can_stream_live_video',
                 ],
                 type: 'string',
               },
@@ -51246,6 +51319,7 @@ const openapi: OpenAPISpec = {
                   'can_simulate_hub_disconnection',
                   'can_simulate_paid_subscription',
                   'can_configure_auto_lock',
+                  'can_stream_live_video',
                 ],
                 type: 'string',
               },
@@ -53483,6 +53557,7 @@ const openapi: OpenAPISpec = {
                   'can_simulate_hub_disconnection',
                   'can_simulate_paid_subscription',
                   'can_configure_auto_lock',
+                  'can_stream_live_video',
                 ],
                 type: 'string',
               },
@@ -53517,6 +53592,7 @@ const openapi: OpenAPISpec = {
                   'can_simulate_hub_disconnection',
                   'can_simulate_paid_subscription',
                   'can_configure_auto_lock',
+                  'can_stream_live_video',
                 ],
                 type: 'string',
               },

@@ -152,7 +152,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'yacan',
   ],
 
-  beta: ['salto_ks_accept', 'aqara'],
+  beta: ['salto_ks_accept', 'aqara', 'tapo', 'arlo'],
 
   thermostats: ['ecobee', 'nest', 'sensi', 'honeywell_resideo', 'first_alert'],
   noise_sensors: ['minut', 'noiseaware'],
@@ -210,7 +210,7 @@ export const PROVIDER_CATEGORY_CAPABILITY_MAP: Record<
 > = {
   stable: ['lock', 'thermostat', 'noise_sensor', 'access_control'],
   consumer_smartlocks: ['lock'],
-  beta: ['lock', 'thermostat', 'noise_sensor', 'access_control'],
+  beta: ['lock', 'thermostat', 'noise_sensor', 'access_control', 'camera'],
   thermostats: ['thermostat'],
   noise_sensors: ['noise_sensor'],
   access_control_systems: ['access_control'],

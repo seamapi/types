@@ -29,6 +29,8 @@ export {
   bridge_connected_system,
   building_resource,
   camera_device_type,
+  camera_live_view_answer,
+  camera_live_view_session,
   capabilities,
   climate_preset,
   climate_setting,

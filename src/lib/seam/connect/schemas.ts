@@ -10,6 +10,8 @@ export {
   batch,
   bridge,
   bridge_client_session,
+  camera_live_view_answer,
+  camera_live_view_session,
   client_session,
   common_failed_action_attempt,
   common_pending_action_attempt,
