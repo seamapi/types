@@ -29111,6 +29111,12 @@ const openapi: OpenAPISpec = {
                 format: 'uri',
                 type: 'string',
               },
+              media_status: {
+                description:
+                  'Status of the recorded clip and thumbnail for this activation, when the camera supports event recordings. `pending` while Seam retrieves the recording, `available` once it is stored, `unavailable` if no recording covers the activation, and `failed` if retrieval failed.',
+                enum: ['pending', 'available', 'unavailable', 'failed'],
+                type: 'string',
+              },
               motion_sub_type: {
                 description: 'Sub-type of motion detected, if available.',
                 enum: ['human', 'vehicle', 'package', 'other'],

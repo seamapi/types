@@ -62715,6 +62715,10 @@ export type Routes = {
                 image_url?: string | undefined
                 /** URL to a short video clip captured at the time of activation. */
                 video_url?: string | undefined
+                /** Status of the recorded clip and thumbnail for this activation, when the camera supports event recordings. `pending` while Seam retrieves the recording, `available` once it is stored, `unavailable` if no recording covers the activation, and `failed` if retrieval failed. */
+                media_status?:
+                  | ('pending' | 'available' | 'unavailable' | 'failed')
+                  | undefined
               }
             | {
                 /** ID of the event. */
@@ -67008,6 +67012,9 @@ export type Routes = {
             image_url?: string | undefined
             /** URL to a short video clip captured at the time of activation. */
             video_url?: string | undefined
+            /** Status of the recorded clip and thumbnail for this activation, when the camera supports event recordings. `pending` while Seam retrieves the recording, `available` once it is stored, `unavailable` if no recording covers the activation, and `failed` if retrieval failed. */
+            media_status?:
+              ('pending' | 'available' | 'unavailable' | 'failed') | undefined
           }
         | {
             /** ID of the event. */
@@ -105533,6 +105540,9 @@ export type Routes = {
             image_url?: string | undefined
             /** URL to a short video clip captured at the time of activation. */
             video_url?: string | undefined
+            /** Status of the recorded clip and thumbnail for this activation, when the camera supports event recordings. `pending` while Seam retrieves the recording, `available` once it is stored, `unavailable` if no recording covers the activation, and `failed` if retrieval failed. */
+            media_status?:
+              ('pending' | 'available' | 'unavailable' | 'failed') | undefined
           }
         | {
             /** ID of the event. */
@@ -112171,6 +112181,9 @@ export type Routes = {
             image_url?: string | undefined
             /** URL to a short video clip captured at the time of activation. */
             video_url?: string | undefined
+            /** Status of the recorded clip and thumbnail for this activation, when the camera supports event recordings. `pending` while Seam retrieves the recording, `available` once it is stored, `unavailable` if no recording covers the activation, and `failed` if retrieval failed. */
+            media_status?:
+              ('pending' | 'available' | 'unavailable' | 'failed') | undefined
           }
         | {
             /** ID of the event. */
@@ -160481,6 +160494,10 @@ export type Routes = {
                   image_url?: string | undefined
                   /** URL to a short video clip captured at the time of activation. */
                   video_url?: string | undefined
+                  /** Status of the recorded clip and thumbnail for this activation, when the camera supports event recordings. `pending` while Seam retrieves the recording, `available` once it is stored, `unavailable` if no recording covers the activation, and `failed` if retrieval failed. */
+                  media_status?:
+                    | ('pending' | 'available' | 'unavailable' | 'failed')
+                    | undefined
                 }
               | {
                   /** ID of the event. */
