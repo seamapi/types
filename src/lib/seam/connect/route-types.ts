@@ -16314,6 +16314,8 @@ export type Routes = {
               can_simulate_paid_subscription?: boolean | undefined
               /** Indicates whether the lock supports configuring automatic locking. */
               can_configure_auto_lock?: boolean | undefined
+              /** Indicates whether the camera supports streaming live video through a camera live view session. */
+              can_stream_live_video?: boolean | undefined
             }[]
           | undefined
         acs_entrances?:
@@ -24930,6 +24932,8 @@ export type Routes = {
               can_simulate_paid_subscription?: boolean | undefined
               /** Indicates whether the lock supports configuring automatic locking. */
               can_configure_auto_lock?: boolean | undefined
+              /** Indicates whether the camera supports streaming live video through a camera live view session. */
+              can_stream_live_video?: boolean | undefined
             }[]
           | undefined
         acs_entrances?:
@@ -49113,18 +49117,26 @@ export type Routes = {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the camera to view. */
       device_id: string
+      /** Indicates whether to include the camera's audio. */
       include_audio?: boolean
+      /** Number of seconds for which the live view session is valid, up to 600. */
       duration_seconds?: number
     }
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /** Represents a short-lived live view session for a single camera. Use the session ID and token to start a WebRTC stream and to stop the session. */
       camera_live_view_session: {
+        /** ID of the camera live view session. */
         camera_live_view_session_id: string
+        /** ID of the camera. */
         device_id: string
-        expires_at: string
+        /** Token that authorizes the offer and stop requests for this session. */
         token: string
+        /** Date and time at which the live view session expires. */
+        expires_at: string
       }
     }
     maxDuration: undefined
@@ -49134,16 +49146,21 @@ export type Routes = {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the camera live view session. */
       camera_live_view_session_id: string
+      /** Token returned when the camera live view session was created. */
       token: string
-      /** WebRTC SDP, limited to 64 KiB of UTF-8 data. */
+      /** WebRTC SDP offer from the viewer, limited to 64 KiB of UTF-8 data. */
       sdp_offer: string
     }
     commonParams: {}
     formData: {}
     jsonResponse: {
-      /** WebRTC SDP, limited to 64 KiB of UTF-8 data. */
-      sdp_answer: string
+      /** Represents the WebRTC SDP answer that starts streaming video from a camera for a live view session. */
+      camera_live_view_answer: {
+        /** WebRTC SDP answer for the offer, limited to 64 KiB of UTF-8 data. */
+        sdp_answer: string
+      }
     }
     maxDuration: undefined
   }
@@ -49152,7 +49169,9 @@ export type Routes = {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the camera live view session. */
       camera_live_view_session_id: string
+      /** Token returned when the camera live view session was created. */
       token: string
     }
     commonParams: {}
@@ -53584,6 +53603,8 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
+        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        can_stream_live_video?: boolean | undefined
       }
     }
     maxDuration: undefined
@@ -53803,6 +53824,7 @@ export type Routes = {
             | 'can_simulate_hub_disconnection'
             | 'can_simulate_paid_subscription'
             | 'can_configure_auto_lock'
+            | 'can_stream_live_video'
           )[]
         | undefined
       /**  */
@@ -53829,6 +53851,7 @@ export type Routes = {
             | 'can_simulate_hub_disconnection'
             | 'can_simulate_paid_subscription'
             | 'can_configure_auto_lock'
+            | 'can_stream_live_video'
           )[]
         | undefined
       /**
@@ -55761,6 +55784,8 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
+        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        can_stream_live_video?: boolean | undefined
       }[]
       /** Information about the current page of results. */
       pagination: {
@@ -55924,6 +55949,8 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
+        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        can_stream_live_video?: boolean | undefined
       }[]
     }
     maxDuration: undefined
@@ -57939,6 +57966,8 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
+        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        can_stream_live_video?: boolean | undefined
       }
     }
     maxDuration: undefined
@@ -58148,6 +58177,7 @@ export type Routes = {
             | 'can_simulate_hub_disconnection'
             | 'can_simulate_paid_subscription'
             | 'can_configure_auto_lock'
+            | 'can_stream_live_video'
           )[]
         | undefined
       /**  */
@@ -58174,6 +58204,7 @@ export type Routes = {
             | 'can_simulate_hub_disconnection'
             | 'can_simulate_paid_subscription'
             | 'can_configure_auto_lock'
+            | 'can_stream_live_video'
           )[]
         | undefined
       /** String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`. */
@@ -58778,6 +58809,8 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
+        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        can_stream_live_video?: boolean | undefined
       }[]
       /** Information about the current page of results. */
       pagination: {
@@ -71353,6 +71386,8 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
+        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        can_stream_live_video?: boolean | undefined
       }
       /** Represents a [device](https://www.seam.co/docs/core-concepts/devices) that has been connected to Seam. */
       device: {
@@ -73275,6 +73310,8 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
+        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        can_stream_live_video?: boolean | undefined
       }
     }
     maxDuration: undefined
@@ -75326,6 +75363,8 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
+        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        can_stream_live_video?: boolean | undefined
       }[]
       devices: {
         /** ID of the device. */
@@ -77247,6 +77286,8 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
+        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        can_stream_live_video?: boolean | undefined
       }[]
     }
     maxDuration: undefined
@@ -87814,6 +87855,8 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
+        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        can_stream_live_video?: boolean | undefined
       }[]
       devices: {
         /** ID of the device. */
@@ -89735,6 +89778,8 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
+        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        can_stream_live_video?: boolean | undefined
       }[]
     }
     maxDuration: undefined
@@ -114621,6 +114666,8 @@ export type Routes = {
               can_simulate_paid_subscription?: boolean | undefined
               /** Indicates whether the lock supports configuring automatic locking. */
               can_configure_auto_lock?: boolean | undefined
+              /** Indicates whether the camera supports streaming live video through a camera live view session. */
+              can_stream_live_video?: boolean | undefined
             }[]
           | undefined
         acs_entrances?:
@@ -126390,6 +126437,8 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
+        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        can_stream_live_video?: boolean | undefined
       }
     }
     maxDuration: undefined
@@ -132686,6 +132735,8 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
+        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        can_stream_live_video?: boolean | undefined
       }[]
       devices: {
         /** ID of the device. */
@@ -134607,6 +134658,8 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
+        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        can_stream_live_video?: boolean | undefined
       }[]
     }
     maxDuration: undefined
@@ -146198,6 +146251,8 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
+        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        can_stream_live_video?: boolean | undefined
       }[]
       /**
        * @deprecated Use devices.*/
@@ -148121,6 +148176,8 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
+        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        can_stream_live_video?: boolean | undefined
       }[]
     }
     maxDuration: undefined
@@ -151635,6 +151692,8 @@ export type Routes = {
               can_simulate_paid_subscription?: boolean | undefined
               /** Indicates whether the lock supports configuring automatic locking. */
               can_configure_auto_lock?: boolean | undefined
+              /** Indicates whether the camera supports streaming live video through a camera live view session. */
+              can_stream_live_video?: boolean | undefined
             }[]
           | undefined
         acs_entrances?:
@@ -155956,6 +156015,8 @@ export type Routes = {
               can_simulate_paid_subscription?: boolean | undefined
               /** Indicates whether the lock supports configuring automatic locking. */
               can_configure_auto_lock?: boolean | undefined
+              /** Indicates whether the camera supports streaming live video through a camera live view session. */
+              can_stream_live_video?: boolean | undefined
             }[]
           | undefined
         connect_webviews?:
