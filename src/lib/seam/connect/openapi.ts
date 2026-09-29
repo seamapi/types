@@ -59391,6 +59391,124 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
+    '/seam/customer/v1/automation_runs/create': {
+      post: {
+        description:
+          "Runs automations for a reservation now instead of waiting for the next connector sync. Use it after deleting a reservation's access grant to issue a new one.",
+        operationId: 'seamCustomerV1AutomationRunsCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  customer_key: {
+                    description:
+                      'Key of the customer that owns the reservation. Not allowed with client_session_with_customer auth.',
+                    minLength: 1,
+                    type: 'string',
+                  },
+                  reservation_key: {
+                    description:
+                      'Key of the reservation to run automations for.',
+                    minLength: 1,
+                    type: 'string',
+                  },
+                  should_ignore_guest_phone_last4_as_code: {
+                    default: false,
+                    description:
+                      "Don't use the last four digits of the guest's phone number as the new access grant's code, even when the automation is configured to.",
+                    type: 'boolean',
+                  },
+                  should_ignore_preferred_code: {
+                    default: false,
+                    description:
+                      "Don't use the reservation's preferred code for the new access grant's code.",
+                    type: 'boolean',
+                  },
+                },
+                required: ['reservation_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    automation_run: {
+                      properties: {
+                        access_grant_id: {
+                          description:
+                            'ID of the access grant the run created.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        message: { nullable: true, type: 'string' },
+                        reservation_id: { format: 'uuid', type: 'string' },
+                        reservation_key: { type: 'string' },
+                        reused_code_source: {
+                          description:
+                            "Set when the new access grant's code is fixed by the reservation instead of generated, so it matches the previous code. `reservation_preferred_code` means the reservation sets a preferred code; `guest_phone_number` means the automation uses the last digits of the guest's phone number.",
+                          enum: [
+                            'reservation_preferred_code',
+                            'guest_phone_number',
+                          ],
+                          nullable: true,
+                          type: 'string',
+                        },
+                        skip_reason: {
+                          description:
+                            'Why the run did not create an access grant.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        status: {
+                          enum: ['access_grant_created', 'skipped'],
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'status',
+                        'reservation_id',
+                        'reservation_key',
+                        'access_grant_id',
+                        'skip_reason',
+                        'message',
+                        'reused_code_source',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['automation_run', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session_with_customer: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/customer/v1/automation_runs/create',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'automation_runs'],
+        'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'automation_run',
+        'x-response-key': 'automation_run',
+        'x-title': 'Create Automation Run',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
     '/seam/customer/v1/automation_runs/list': {
       get: {
         description:

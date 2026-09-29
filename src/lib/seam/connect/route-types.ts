@@ -100521,6 +100521,39 @@ export type Routes = {
     }
     maxDuration: undefined
   }
+  '/seam/customer/v1/automation_runs/create': {
+    route: '/seam/customer/v1/automation_runs/create'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** Key of the customer that owns the reservation. Not allowed with client_session_with_customer auth. */
+      customer_key?: string | undefined
+      /** Key of the reservation to run automations for. */
+      reservation_key: string
+      /** Don't use the reservation's preferred code for the new access grant's code. */
+      should_ignore_preferred_code?: boolean
+      /** Don't use the last four digits of the guest's phone number as the new access grant's code, even when the automation is configured to. */
+      should_ignore_guest_phone_last4_as_code?: boolean
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      automation_run: {
+        status: 'access_grant_created' | 'skipped'
+        reservation_id: string
+        reservation_key: string
+        /** ID of the access grant the run created. */
+        access_grant_id: string | null
+        /** Why the run did not create an access grant. */
+        skip_reason: string | null
+        message: string | null
+        /** Set when the new access grant's code is fixed by the reservation instead of generated, so it matches the previous code. `reservation_preferred_code` means the reservation sets a preferred code; `guest_phone_number` means the automation uses the last digits of the guest's phone number. */
+        reused_code_source:
+          ('reservation_preferred_code' | 'guest_phone_number') | null
+      }
+    }
+    maxDuration: undefined
+  }
   '/seam/customer/v1/automation_runs/list': {
     route: '/seam/customer/v1/automation_runs/list'
     method: 'GET' | 'POST'
