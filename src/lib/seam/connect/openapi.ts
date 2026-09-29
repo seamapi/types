@@ -59647,6 +59647,11 @@ const openapi: OpenAPISpec = {
                           properties: {
                             config: {
                               properties: {
+                                access_ends_minutes_after_reservation: {
+                                  maximum: 1440,
+                                  minimum: 0,
+                                  type: 'integer',
+                                },
                                 access_methods: {
                                   items: {
                                     enum: ['card', 'mobile_key', 'code'],
@@ -59654,6 +59659,11 @@ const openapi: OpenAPISpec = {
                                   },
                                   minItems: 1,
                                   type: 'array',
+                                },
+                                access_starts_minutes_before_reservation: {
+                                  maximum: 1440,
+                                  minimum: 0,
+                                  type: 'integer',
                                 },
                                 allow_shared_email_and_phone_across_user_identities:
                                   { type: 'boolean' },
@@ -59933,6 +59943,11 @@ const openapi: OpenAPISpec = {
                         properties: {
                           config: {
                             properties: {
+                              access_ends_minutes_after_reservation: {
+                                maximum: 1440,
+                                minimum: 0,
+                                type: 'integer',
+                              },
                               access_methods: {
                                 items: {
                                   enum: ['card', 'mobile_key', 'code'],
@@ -59940,6 +59955,11 @@ const openapi: OpenAPISpec = {
                                 },
                                 minItems: 1,
                                 type: 'array',
+                              },
+                              access_starts_minutes_before_reservation: {
+                                maximum: 1440,
+                                minimum: 0,
+                                type: 'integer',
                               },
                               allow_shared_email_and_phone_across_user_identities:
                                 { type: 'boolean' },
@@ -61240,6 +61260,11 @@ const openapi: OpenAPISpec = {
                               properties: {
                                 config: {
                                   properties: {
+                                    access_ends_minutes_after_reservation: {
+                                      maximum: 1440,
+                                      minimum: 0,
+                                      type: 'integer',
+                                    },
                                     access_methods: {
                                       items: {
                                         enum: ['card', 'mobile_key', 'code'],
@@ -61247,6 +61272,11 @@ const openapi: OpenAPISpec = {
                                       },
                                       minItems: 1,
                                       type: 'array',
+                                    },
+                                    access_starts_minutes_before_reservation: {
+                                      maximum: 1440,
+                                      minimum: 0,
+                                      type: 'integer',
                                     },
                                     allow_shared_email_and_phone_across_user_identities:
                                       { type: 'boolean' },
@@ -61543,6 +61573,11 @@ const openapi: OpenAPISpec = {
                         properties: {
                           config: {
                             properties: {
+                              access_ends_minutes_after_reservation: {
+                                maximum: 1440,
+                                minimum: 0,
+                                type: 'integer',
+                              },
                               access_methods: {
                                 items: {
                                   enum: ['card', 'mobile_key', 'code'],
@@ -61550,6 +61585,11 @@ const openapi: OpenAPISpec = {
                                 },
                                 minItems: 1,
                                 type: 'array',
+                              },
+                              access_starts_minutes_before_reservation: {
+                                maximum: 1440,
+                                minimum: 0,
+                                type: 'integer',
                               },
                               allow_shared_email_and_phone_across_user_identities:
                                 { type: 'boolean' },
