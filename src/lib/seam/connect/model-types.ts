@@ -29,6 +29,7 @@ export type {
   DeviceWarning,
   InstantKey,
   MagicLink,
+  Media,
   NoiseThreshold,
   Pagination,
   SeamEvent,

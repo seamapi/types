@@ -62748,10 +62748,8 @@ export type Routes = {
                 image_url?: string | undefined
                 /** URL to a short video clip captured at the time of activation. */
                 video_url?: string | undefined
-                /** Status of the recorded clip and thumbnail for this activation, when the camera supports event recordings. `pending` while Seam retrieves the recording, `available` once it is stored, `unavailable` if no recording covers the activation, and `failed` if retrieval failed. */
-                media_status?:
-                  | ('pending' | 'available' | 'unavailable' | 'failed')
-                  | undefined
+                /** IDs of the media, such as a video clip and a thumbnail image, captured for this activation. Use `/media/get` to retrieve each one. */
+                media_ids?: string[] | undefined
               }
             | {
                 /** ID of the event. */
@@ -62787,6 +62785,8 @@ export type Routes = {
                 image_url?: string | undefined
                 /** URL to a short video clip captured at the time the doorbell was pressed. */
                 video_url?: string | undefined
+                /** IDs of the media, such as a video clip and a thumbnail image, captured when the doorbell was pressed. Use `/media/get` to retrieve each one. */
+                media_ids?: string[] | undefined
               }
             | {
                 /** ID of the event. */
@@ -67045,9 +67045,8 @@ export type Routes = {
             image_url?: string | undefined
             /** URL to a short video clip captured at the time of activation. */
             video_url?: string | undefined
-            /** Status of the recorded clip and thumbnail for this activation, when the camera supports event recordings. `pending` while Seam retrieves the recording, `available` once it is stored, `unavailable` if no recording covers the activation, and `failed` if retrieval failed. */
-            media_status?:
-              ('pending' | 'available' | 'unavailable' | 'failed') | undefined
+            /** IDs of the media, such as a video clip and a thumbnail image, captured for this activation. Use `/media/get` to retrieve each one. */
+            media_ids?: string[] | undefined
           }
         | {
             /** ID of the event. */
@@ -67083,6 +67082,8 @@ export type Routes = {
             image_url?: string | undefined
             /** URL to a short video clip captured at the time the doorbell was pressed. */
             video_url?: string | undefined
+            /** IDs of the media, such as a video clip and a thumbnail image, captured when the doorbell was pressed. Use `/media/get` to retrieve each one. */
+            media_ids?: string[] | undefined
           }
         | {
             /** ID of the event. */
@@ -85911,6 +85912,45 @@ export type Routes = {
               message: string
             }
           }
+    }
+    maxDuration: undefined
+  }
+  '/media/get': {
+    route: '/media/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** ID of the media that you want to get. */
+      media_id: string
+      /** Response format. `json` returns the media object. `redirect` responds with a `302` redirect to the media's download URL, so you can use this endpoint directly as the source of an image or video. */
+      format?: 'json' | 'redirect'
+    }
+    formData: {}
+    jsonResponse: {
+      /** Represents a piece of media, such as a video clip or a thumbnail image, that a device captured for an event. Media is in beta. */
+      media: {
+        /** ID of the media. */
+        media_id: string
+        /** ID of the workspace that contains the media. */
+        workspace_id: string
+        /** ID of the device that captured the media. */
+        device_id: string | null
+        /** ID of the event that the media belongs to. */
+        event_id: string | null
+        /** Type of the media: a video clip or a still image. */
+        media_type: 'video' | 'image'
+        /** MIME type of the media, such as `video/mp4` or `image/jpeg`. */
+        content_type: string | null
+        /** Status of the media. `pending` means that Seam is still retrieving the media. `available` means that `url` can be used to download it. `unavailable` means that no media exists for the event, and `failed` means that Seam could not retrieve it. */
+        status: 'pending' | 'available' | 'unavailable' | 'failed'
+        /** Short-lived URL from which you can download the media. Null unless `status` is `available`. The URL expires after about five minutes. Call `/media/get` again for a new URL. */
+        url: string | null
+        /** Date and time at which the media stops being available. Null when Seam does not know when the media expires. */
+        expires_at: string | null
+        /** Date and time at which the media was created. */
+        created_at: string
+      }
     }
     maxDuration: undefined
   }
@@ -105585,9 +105625,8 @@ export type Routes = {
             image_url?: string | undefined
             /** URL to a short video clip captured at the time of activation. */
             video_url?: string | undefined
-            /** Status of the recorded clip and thumbnail for this activation, when the camera supports event recordings. `pending` while Seam retrieves the recording, `available` once it is stored, `unavailable` if no recording covers the activation, and `failed` if retrieval failed. */
-            media_status?:
-              ('pending' | 'available' | 'unavailable' | 'failed') | undefined
+            /** IDs of the media, such as a video clip and a thumbnail image, captured for this activation. Use `/media/get` to retrieve each one. */
+            media_ids?: string[] | undefined
           }
         | {
             /** ID of the event. */
@@ -105623,6 +105662,8 @@ export type Routes = {
             image_url?: string | undefined
             /** URL to a short video clip captured at the time the doorbell was pressed. */
             video_url?: string | undefined
+            /** IDs of the media, such as a video clip and a thumbnail image, captured when the doorbell was pressed. Use `/media/get` to retrieve each one. */
+            media_ids?: string[] | undefined
           }
         | {
             /** ID of the event. */
@@ -112226,9 +112267,8 @@ export type Routes = {
             image_url?: string | undefined
             /** URL to a short video clip captured at the time of activation. */
             video_url?: string | undefined
-            /** Status of the recorded clip and thumbnail for this activation, when the camera supports event recordings. `pending` while Seam retrieves the recording, `available` once it is stored, `unavailable` if no recording covers the activation, and `failed` if retrieval failed. */
-            media_status?:
-              ('pending' | 'available' | 'unavailable' | 'failed') | undefined
+            /** IDs of the media, such as a video clip and a thumbnail image, captured for this activation. Use `/media/get` to retrieve each one. */
+            media_ids?: string[] | undefined
           }
         | {
             /** ID of the event. */
@@ -112264,6 +112304,8 @@ export type Routes = {
             image_url?: string | undefined
             /** URL to a short video clip captured at the time the doorbell was pressed. */
             video_url?: string | undefined
+            /** IDs of the media, such as a video clip and a thumbnail image, captured when the doorbell was pressed. Use `/media/get` to retrieve each one. */
+            media_ids?: string[] | undefined
           }
         | {
             /** ID of the event. */
@@ -160555,10 +160597,8 @@ export type Routes = {
                   image_url?: string | undefined
                   /** URL to a short video clip captured at the time of activation. */
                   video_url?: string | undefined
-                  /** Status of the recorded clip and thumbnail for this activation, when the camera supports event recordings. `pending` while Seam retrieves the recording, `available` once it is stored, `unavailable` if no recording covers the activation, and `failed` if retrieval failed. */
-                  media_status?:
-                    | ('pending' | 'available' | 'unavailable' | 'failed')
-                    | undefined
+                  /** IDs of the media, such as a video clip and a thumbnail image, captured for this activation. Use `/media/get` to retrieve each one. */
+                  media_ids?: string[] | undefined
                 }
               | {
                   /** ID of the event. */
@@ -160594,6 +160634,8 @@ export type Routes = {
                   image_url?: string | undefined
                   /** URL to a short video clip captured at the time the doorbell was pressed. */
                   video_url?: string | undefined
+                  /** IDs of the media, such as a video clip and a thumbnail image, captured when the doorbell was pressed. Use `/media/get` to retrieve each one. */
+                  media_ids?: string[] | undefined
                 }
               | {
                   /** ID of the event. */

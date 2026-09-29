@@ -25,6 +25,7 @@ export {
   device_provider,
   instant_key,
   magic_link,
+  media,
   noise_threshold,
   pagination,
   seam_event,

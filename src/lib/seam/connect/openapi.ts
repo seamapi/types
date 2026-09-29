@@ -29172,11 +29172,11 @@ const openapi: OpenAPISpec = {
                 format: 'uri',
                 type: 'string',
               },
-              media_status: {
+              media_ids: {
                 description:
-                  'Status of the recorded clip and thumbnail for this activation, when the camera supports event recordings. `pending` while Seam retrieves the recording, `available` once it is stored, `unavailable` if no recording covers the activation, and `failed` if retrieval failed.',
-                enum: ['pending', 'available', 'unavailable', 'failed'],
-                type: 'string',
+                  'IDs of the media, such as a video clip and a thumbnail image, captured for this activation. Use `/media/get` to retrieve each one.',
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
               },
               motion_sub_type: {
                 description: 'Sub-type of motion detected, if available.',
@@ -29269,6 +29269,12 @@ const openapi: OpenAPISpec = {
                   'URL to a thumbnail image captured at the time the doorbell was pressed.',
                 format: 'uri',
                 type: 'string',
+              },
+              media_ids: {
+                description:
+                  'IDs of the media, such as a video clip and a thumbnail image, captured when the doorbell was pressed. Use `/media/get` to retrieve each one.',
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
               },
               occurred_at: {
                 description: 'Date and time at which the event occurred.',
@@ -29731,6 +29737,84 @@ const openapi: OpenAPISpec = {
         type: 'object',
         'x-route-path': '/unstable_partner/building_blocks',
         'x-undocumented': 'Unreleased.',
+      },
+      media: {
+        description:
+          'Represents a piece of media, such as a video clip or a thumbnail image, that a device captured for an event. Media is in beta.',
+        properties: {
+          content_type: {
+            description:
+              'MIME type of the media, such as `video/mp4` or `image/jpeg`.',
+            nullable: true,
+            type: 'string',
+          },
+          created_at: {
+            description: 'Date and time at which the media was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          device_id: {
+            description: 'ID of the device that captured the media.',
+            format: 'uuid',
+            nullable: true,
+            type: 'string',
+          },
+          event_id: {
+            description: 'ID of the event that the media belongs to.',
+            format: 'uuid',
+            nullable: true,
+            type: 'string',
+          },
+          expires_at: {
+            description:
+              'Date and time at which the media stops being available. Null when Seam does not know when the media expires.',
+            format: 'date-time',
+            nullable: true,
+            type: 'string',
+          },
+          media_id: {
+            description: 'ID of the media.',
+            format: 'uuid',
+            type: 'string',
+          },
+          media_type: {
+            description: 'Type of the media: a video clip or a still image.',
+            enum: ['video', 'image'],
+            type: 'string',
+          },
+          status: {
+            description:
+              'Status of the media. `pending` means that Seam is still retrieving the media. `available` means that `url` can be used to download it. `unavailable` means that no media exists for the event, and `failed` means that Seam could not retrieve it.',
+            enum: ['pending', 'available', 'unavailable', 'failed'],
+            type: 'string',
+          },
+          url: {
+            description:
+              'Short-lived URL from which you can download the media. Null unless `status` is `available`. The URL expires after about five minutes. Call `/media/get` again for a new URL.',
+            format: 'uri',
+            nullable: true,
+            type: 'string',
+          },
+          workspace_id: {
+            description: 'ID of the workspace that contains the media.',
+            format: 'uuid',
+            type: 'string',
+          },
+        },
+        required: [
+          'media_id',
+          'workspace_id',
+          'device_id',
+          'event_id',
+          'media_type',
+          'content_type',
+          'status',
+          'url',
+          'expires_at',
+          'created_at',
+        ],
+        type: 'object',
+        'x-route-path': '/media',
       },
       noise_threshold: {
         description:
@@ -55213,6 +55297,72 @@ const openapi: OpenAPISpec = {
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
         'x-title': 'Unlock a Lock',
+      },
+    },
+    '/media/get': {
+      get: {
+        description:
+          'Returns a specified piece of media, such as a video clip or thumbnail image captured for a camera event, with a short-lived URL from which you can download it. Camera events list their media in `media_ids`. This endpoint is in beta.',
+        operationId: 'mediaGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'media_id',
+            required: true,
+            schema: {
+              description: 'ID of the media that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'format',
+            required: false,
+            schema: {
+              default: 'json',
+              description:
+                "Response format. `json` returns the media object. `redirect` responds with a `302` redirect to the media's download URL, so you can use this endpoint directly as the source of an image or video.",
+              enum: ['json', 'redirect'],
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    media: { $ref: '#/components/schemas/media' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['media', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { client_session: [] },
+          { client_session_with_customer: [] },
+          { client_session_with_customer_ro: [] },
+          { support_read_only_token: [] },
+        ],
+        summary: '/media/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['media'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'media',
+        'x-response-key': 'media',
+        'x-title': 'Get Media',
       },
     },
     '/noise_sensors/list': {
