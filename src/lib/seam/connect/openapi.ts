@@ -29795,6 +29795,12 @@ const openapi: OpenAPISpec = {
             nullable: true,
             type: 'string',
           },
+          video_codec: {
+            description:
+              'Video codec used to encode the media. Only present for video media. `hevc` (H.265) playback support varies by browser and device, so check compatibility before assuming a clip plays inline.',
+            enum: ['h264', 'hevc'],
+            type: 'string',
+          },
           workspace_id: {
             description: 'ID of the workspace that contains the media.',
             format: 'uuid',

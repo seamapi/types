@@ -25,6 +25,12 @@ export const media = z.object({
     .string()
     .nullable()
     .describe('MIME type of the media, such as `video/mp4` or `image/jpeg`.'),
+  video_codec: z
+    .enum(['h264', 'hevc'])
+    .optional()
+    .describe(
+      'Video codec used to encode the media. Only present for video media. `hevc` (H.265) playback support varies by browser and device, so check compatibility before assuming a clip plays inline.',
+    ),
   status: z
     .enum(['pending', 'available', 'unavailable', 'failed'])
     .describe(

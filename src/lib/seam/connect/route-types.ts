@@ -85942,6 +85942,8 @@ export type Routes = {
         media_type: 'video' | 'image'
         /** MIME type of the media, such as `video/mp4` or `image/jpeg`. */
         content_type: string | null
+        /** Video codec used to encode the media. Only present for video media. `hevc` (H.265) playback support varies by browser and device, so check compatibility before assuming a clip plays inline. */
+        video_codec?: ('h264' | 'hevc') | undefined
         /** Status of the media. `pending` means that Seam is still retrieving the media. `available` means that `url` can be used to download it. `unavailable` means that no media exists for the event, and `failed` means that Seam could not retrieve it. */
         status: 'pending' | 'available' | 'unavailable' | 'failed'
         /** Short-lived URL from which you can download the media. Null unless `status` is `available`. The URL expires after about five minutes. Call `/media/get` again for a new URL. */
