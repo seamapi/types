@@ -63,6 +63,7 @@ export {
   magic_link,
   access_code as managed_access_code,
   device as managed_device,
+  media,
   message_overrides,
   neutral_resource,
   noise_sensor_device_type,
