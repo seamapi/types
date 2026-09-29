@@ -100626,6 +100626,9 @@ export type Routes = {
                     prefer_guest_phone_last4_as_code?: boolean | undefined
                     allow_shared_email_and_phone_across_user_identities?:
                       boolean | undefined
+                    access_starts_minutes_before_reservation?:
+                      number | undefined
+                    access_ends_minutes_after_reservation?: number | undefined
                   }
                 }
               | undefined
@@ -100739,6 +100742,9 @@ export type Routes = {
                     prefer_guest_phone_last4_as_code?: boolean | undefined
                     allow_shared_email_and_phone_across_user_identities?:
                       boolean | undefined
+                    access_starts_minutes_before_reservation?:
+                      number | undefined
+                    access_ends_minutes_after_reservation?: number | undefined
                   }
                 } | null)
               | undefined
@@ -101207,6 +101213,9 @@ export type Routes = {
                       prefer_guest_phone_last4_as_code?: boolean | undefined
                       allow_shared_email_and_phone_across_user_identities?:
                         boolean | undefined
+                      access_starts_minutes_before_reservation?:
+                        number | undefined
+                      access_ends_minutes_after_reservation?: number | undefined
                     }
                   }
                 | undefined
@@ -101320,6 +101329,9 @@ export type Routes = {
                     prefer_guest_phone_last4_as_code?: boolean | undefined
                     allow_shared_email_and_phone_across_user_identities?:
                       boolean | undefined
+                    access_starts_minutes_before_reservation?:
+                      number | undefined
+                    access_ends_minutes_after_reservation?: number | undefined
                   }
                 } | null)
               | undefined
