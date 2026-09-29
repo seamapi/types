@@ -46866,7 +46866,7 @@ const openapi: OpenAPISpec = {
                   },
                   user_identifier_key: {
                     description:
-                      'Your user ID for the user for whom you want to create a client session.',
+                      'Your user ID for the user for whom you want to create a client session. When you authenticate with a publishable key, the `user_identifier_key` must be a high-entropy secret that only the user knows, such as a UUIDv4 or a salted hash. Do not use an email address, name, phone number, or other guessable value, because anyone who knows the `user_identifier_key` can retrieve the client session.',
                     minLength: 1,
                     type: 'string',
                   },
@@ -47066,7 +47066,7 @@ const openapi: OpenAPISpec = {
                   },
                   user_identifier_key: {
                     description:
-                      'Your user ID for the user that you want to associate with the client session (or that is already associated with the existing client session).',
+                      'Your user ID for the user that you want to associate with the client session (or that is already associated with the existing client session). When you authenticate with a publishable key, the `user_identifier_key` must be a high-entropy secret that only the user knows, such as a UUIDv4 or a salted hash. Do not use an email address, name, phone number, or other guessable value, because anyone who knows the `user_identifier_key` can retrieve the client session.',
                     minLength: 1,
                     type: 'string',
                   },

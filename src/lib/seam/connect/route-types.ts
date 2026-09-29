@@ -49188,7 +49188,7 @@ export type Routes = {
       customer_id?: string | undefined
       /** Customer key that you want to associate with the new client session. */
       customer_key?: string | undefined
-      /** Your user ID for the user for whom you want to create a client session. */
+      /** Your user ID for the user for whom you want to create a client session. When you authenticate with a publishable key, the `user_identifier_key` must be a high-entropy secret that only the user knows, such as a UUIDv4 or a salted hash. Do not use an email address, name, phone number, or other guessable value, because anyone who knows the `user_identifier_key` can retrieve the client session. */
       user_identifier_key?: string | undefined
       /** IDs of the [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews) for which you want to create a client session. */
       connect_webview_ids?: string[] | undefined
@@ -49314,7 +49314,7 @@ export type Routes = {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** Your user ID for the user that you want to associate with the client session (or that is already associated with the existing client session). */
+      /** Your user ID for the user that you want to associate with the client session (or that is already associated with the existing client session). When you authenticate with a publishable key, the `user_identifier_key` must be a high-entropy secret that only the user knows, such as a UUIDv4 or a salted hash. Do not use an email address, name, phone number, or other guessable value, because anyone who knows the `user_identifier_key` can retrieve the client session. */
       user_identifier_key?: string | undefined
       /** IDs of the [Connect Webviews](https://www.seam.co/docs/core-concepts/connect-webviews) that you want to associate with the client session (or that are already associated with the existing client session). */
       connect_webview_ids?: string[] | undefined
