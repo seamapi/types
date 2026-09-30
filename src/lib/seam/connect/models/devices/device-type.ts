@@ -129,6 +129,7 @@ export const CAMERA_DEVICE_TYPE = {
   RING_CAMERA: 'ring_camera',
   TAPO_CAMERA: 'tapo_camera',
   ARLO_CAMERA: 'arlo_camera',
+  REOLINK_CAMERA: 'reolink_camera',
 } as const
 
 type CameraDeviceTypeFromMapping =

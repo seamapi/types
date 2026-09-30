@@ -14390,7 +14390,12 @@ export type Routes = {
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
-                | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+                | (
+                    | 'ring_camera'
+                    | 'tapo_camera'
+                    | 'arlo_camera'
+                    | 'reolink_camera'
+                  )
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -15214,6 +15219,20 @@ export type Routes = {
                   | (
                       | {
                           /** Model reported by the Tapo camera. */
+                          model?: (string | undefined) | undefined
+                          /** Firmware version reported by the camera. */
+                          firmware_version?: (string | undefined) | undefined
+                          /** Hardware version reported by the camera. */
+                          hardware_version?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
+                /** Metadata for a Reolink camera. */
+                reolink_metadata?:
+                  | (
+                      | {
+                          /** Model reported by the Reolink camera. */
                           model?: (string | undefined) | undefined
                           /** Firmware version reported by the camera. */
                           firmware_version?: (string | undefined) | undefined
@@ -23008,7 +23027,12 @@ export type Routes = {
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
-                | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+                | (
+                    | 'ring_camera'
+                    | 'tapo_camera'
+                    | 'arlo_camera'
+                    | 'reolink_camera'
+                  )
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -23832,6 +23856,20 @@ export type Routes = {
                   | (
                       | {
                           /** Model reported by the Tapo camera. */
+                          model?: (string | undefined) | undefined
+                          /** Firmware version reported by the camera. */
+                          firmware_version?: (string | undefined) | undefined
+                          /** Hardware version reported by the camera. */
+                          hardware_version?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
+                /** Metadata for a Reolink camera. */
+                reolink_metadata?:
+                  | (
+                      | {
+                          /** Model reported by the Reolink camera. */
                           model?: (string | undefined) | undefined
                           /** Firmware version reported by the camera. */
                           firmware_version?: (string | undefined) | undefined
@@ -49568,6 +49606,7 @@ export type Routes = {
             | 'ring'
             | 'tapo'
             | 'arlo'
+            | 'reolink'
             | 'ical'
             | 'lodgify'
             | 'hostaway'
@@ -51732,7 +51771,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -52531,6 +52570,20 @@ export type Routes = {
             | (
                 | {
                     /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a Reolink camera. */
+          reolink_metadata?:
+            | (
+                | {
+                    /** Model reported by the Reolink camera. */
                     model?: (string | undefined) | undefined
                     /** Firmware version reported by the camera. */
                     firmware_version?: (string | undefined) | undefined
@@ -53670,7 +53723,7 @@ export type Routes = {
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+            | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
           )
         | undefined
       /** Array of device types for which you want to list devices. */
@@ -53720,7 +53773,7 @@ export type Routes = {
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+            | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
           )[]
         | undefined
       /** Manufacturer for which you want to list devices. */
@@ -53773,6 +53826,7 @@ export type Routes = {
             | 'ring'
             | 'tapo'
             | 'arlo'
+            | 'reolink'
             | 'ical'
             | 'lodgify'
             | 'hostaway'
@@ -53913,7 +53967,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -54712,6 +54766,20 @@ export type Routes = {
             | (
                 | {
                     /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a Reolink camera. */
+          reolink_metadata?:
+            | (
+                | {
+                    /** Model reported by the Reolink camera. */
                     model?: (string | undefined) | undefined
                     /** Firmware version reported by the camera. */
                     firmware_version?: (string | undefined) | undefined
@@ -55883,6 +55951,7 @@ export type Routes = {
           | 'ring'
           | 'tapo'
           | 'arlo'
+          | 'reolink'
           | 'ical'
           | 'lodgify'
           | 'hostaway'
@@ -57420,7 +57489,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
         /** Location information for the device. */
@@ -58033,7 +58102,7 @@ export type Routes = {
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+            | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
           )
         | undefined
       /** Array of device types for which you want to list devices. */
@@ -58083,7 +58152,7 @@ export type Routes = {
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+            | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
           )[]
         | undefined
       /** Manufacturer for which you want to list devices. */
@@ -58136,6 +58205,7 @@ export type Routes = {
             | 'ring'
             | 'tapo'
             | 'arlo'
+            | 'reolink'
             | 'ical'
             | 'lodgify'
             | 'hostaway'
@@ -58263,7 +58333,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
         /** Location information for the device. */
@@ -69516,7 +69586,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -70315,6 +70385,20 @@ export type Routes = {
             | (
                 | {
                     /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a Reolink camera. */
+          reolink_metadata?:
+            | (
+                | {
+                    /** Model reported by the Reolink camera. */
                     model?: (string | undefined) | undefined
                     /** Firmware version reported by the camera. */
                     firmware_version?: (string | undefined) | undefined
@@ -71440,7 +71524,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -72239,6 +72323,20 @@ export type Routes = {
             | (
                 | {
                     /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a Reolink camera. */
+          reolink_metadata?:
+            | (
+                | {
+                    /** Model reported by the Reolink camera. */
                     model?: (string | undefined) | undefined
                     /** Firmware version reported by the camera. */
                     firmware_version?: (string | undefined) | undefined
@@ -73493,7 +73591,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -74292,6 +74390,20 @@ export type Routes = {
             | (
                 | {
                     /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a Reolink camera. */
+          reolink_metadata?:
+            | (
+                | {
+                    /** Model reported by the Reolink camera. */
                     model?: (string | undefined) | undefined
                     /** Firmware version reported by the camera. */
                     firmware_version?: (string | undefined) | undefined
@@ -75416,7 +75528,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -76215,6 +76327,20 @@ export type Routes = {
             | (
                 | {
                     /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a Reolink camera. */
+          reolink_metadata?:
+            | (
+                | {
+                    /** Model reported by the Reolink camera. */
                     model?: (string | undefined) | undefined
                     /** Firmware version reported by the camera. */
                     firmware_version?: (string | undefined) | undefined
@@ -86026,7 +86152,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -86825,6 +86951,20 @@ export type Routes = {
             | (
                 | {
                     /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a Reolink camera. */
+          reolink_metadata?:
+            | (
+                | {
+                    /** Model reported by the Reolink camera. */
                     model?: (string | undefined) | undefined
                     /** Firmware version reported by the camera. */
                     firmware_version?: (string | undefined) | undefined
@@ -87949,7 +88089,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -88748,6 +88888,20 @@ export type Routes = {
             | (
                 | {
                     /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a Reolink camera. */
+          reolink_metadata?:
+            | (
+                | {
+                    /** Model reported by the Reolink camera. */
                     model?: (string | undefined) | undefined
                     /** Firmware version reported by the camera. */
                     firmware_version?: (string | undefined) | undefined
@@ -112831,7 +112985,12 @@ export type Routes = {
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
-                | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+                | (
+                    | 'ring_camera'
+                    | 'tapo_camera'
+                    | 'arlo_camera'
+                    | 'reolink_camera'
+                  )
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -113655,6 +113814,20 @@ export type Routes = {
                   | (
                       | {
                           /** Model reported by the Tapo camera. */
+                          model?: (string | undefined) | undefined
+                          /** Firmware version reported by the camera. */
+                          firmware_version?: (string | undefined) | undefined
+                          /** Hardware version reported by the camera. */
+                          hardware_version?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
+                /** Metadata for a Reolink camera. */
+                reolink_metadata?:
+                  | (
+                      | {
+                          /** Model reported by the Reolink camera. */
                           model?: (string | undefined) | undefined
                           /** Firmware version reported by the camera. */
                           firmware_version?: (string | undefined) | undefined
@@ -124655,7 +124828,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -125454,6 +125627,20 @@ export type Routes = {
             | (
                 | {
                     /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a Reolink camera. */
+          reolink_metadata?:
+            | (
+                | {
+                    /** Model reported by the Reolink camera. */
                     model?: (string | undefined) | undefined
                     /** Firmware version reported by the camera. */
                     firmware_version?: (string | undefined) | undefined
@@ -130953,7 +131140,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -131752,6 +131939,20 @@ export type Routes = {
             | (
                 | {
                     /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a Reolink camera. */
+          reolink_metadata?:
+            | (
+                | {
+                    /** Model reported by the Reolink camera. */
                     model?: (string | undefined) | undefined
                     /** Firmware version reported by the camera. */
                     firmware_version?: (string | undefined) | undefined
@@ -132876,7 +133077,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -133675,6 +133876,20 @@ export type Routes = {
             | (
                 | {
                     /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a Reolink camera. */
+          reolink_metadata?:
+            | (
+                | {
+                    /** Model reported by the Reolink camera. */
                     model?: (string | undefined) | undefined
                     /** Firmware version reported by the camera. */
                     firmware_version?: (string | undefined) | undefined
@@ -144469,7 +144684,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -145268,6 +145483,20 @@ export type Routes = {
             | (
                 | {
                     /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a Reolink camera. */
+          reolink_metadata?:
+            | (
+                | {
+                    /** Model reported by the Reolink camera. */
                     model?: (string | undefined) | undefined
                     /** Firmware version reported by the camera. */
                     firmware_version?: (string | undefined) | undefined
@@ -146394,7 +146623,7 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -147193,6 +147422,20 @@ export type Routes = {
             | (
                 | {
                     /** Model reported by the Tapo camera. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the camera. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Hardware version reported by the camera. */
+                    hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a Reolink camera. */
+          reolink_metadata?:
+            | (
+                | {
+                    /** Model reported by the Reolink camera. */
                     model?: (string | undefined) | undefined
                     /** Firmware version reported by the camera. */
                     firmware_version?: (string | undefined) | undefined
@@ -149857,7 +150100,12 @@ export type Routes = {
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
-                | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+                | (
+                    | 'ring_camera'
+                    | 'tapo_camera'
+                    | 'arlo_camera'
+                    | 'reolink_camera'
+                  )
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -150681,6 +150929,20 @@ export type Routes = {
                   | (
                       | {
                           /** Model reported by the Tapo camera. */
+                          model?: (string | undefined) | undefined
+                          /** Firmware version reported by the camera. */
+                          firmware_version?: (string | undefined) | undefined
+                          /** Hardware version reported by the camera. */
+                          hardware_version?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
+                /** Metadata for a Reolink camera. */
+                reolink_metadata?:
+                  | (
+                      | {
+                          /** Model reported by the Reolink camera. */
                           model?: (string | undefined) | undefined
                           /** Firmware version reported by the camera. */
                           firmware_version?: (string | undefined) | undefined
@@ -155556,7 +155818,12 @@ export type Routes = {
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
-                | ('ring_camera' | 'tapo_camera' | 'arlo_camera')
+                | (
+                    | 'ring_camera'
+                    | 'tapo_camera'
+                    | 'arlo_camera'
+                    | 'reolink_camera'
+                  )
               /** Unique identifier for the account associated with the device. */
               connected_account_id: string
               /** Location information for the device. */
