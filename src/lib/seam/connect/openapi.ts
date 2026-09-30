@@ -13932,7 +13932,12 @@ const openapi: OpenAPISpec = {
               },
               {
                 description: 'Device type for cameras.',
-                enum: ['ring_camera', 'tapo_camera', 'arlo_camera'],
+                enum: [
+                  'ring_camera',
+                  'tapo_camera',
+                  'arlo_camera',
+                  'reolink_camera',
+                ],
                 type: 'string',
               },
             ],
@@ -15763,6 +15768,27 @@ const openapi: OpenAPISpec = {
                               'Static UTC offset of the Omnitec lock in milliseconds. Does not account for DST.',
                             format: 'float',
                             type: 'number',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      reolink_metadata: {
+                        description: 'Metadata for a Reolink camera.',
+                        properties: {
+                          firmware_version: {
+                            description:
+                              'Firmware version reported by the camera.',
+                            type: 'string',
+                          },
+                          hardware_version: {
+                            description:
+                              'Hardware version reported by the camera.',
+                            type: 'string',
+                          },
+                          model: {
+                            description:
+                              'Model reported by the Reolink camera.',
+                            type: 'string',
                           },
                         },
                         type: 'object',
@@ -18410,6 +18436,7 @@ const openapi: OpenAPISpec = {
               'ring',
               'tapo',
               'arlo',
+              'reolink',
               'ical',
               'lodgify',
               'hostaway',
@@ -36620,7 +36647,12 @@ const openapi: OpenAPISpec = {
               },
               {
                 description: 'Device type for cameras.',
-                enum: ['ring_camera', 'tapo_camera', 'arlo_camera'],
+                enum: [
+                  'ring_camera',
+                  'tapo_camera',
+                  'arlo_camera',
+                  'reolink_camera',
+                ],
                 type: 'string',
               },
             ],
@@ -47458,6 +47490,7 @@ const openapi: OpenAPISpec = {
                         'ring',
                         'tapo',
                         'arlo',
+                        'reolink',
                         'ical',
                         'lodgify',
                         'hostaway',
@@ -51129,7 +51162,12 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description: 'Device type for cameras.',
-                  enum: ['ring_camera', 'tapo_camera', 'arlo_camera'],
+                  enum: [
+                    'ring_camera',
+                    'tapo_camera',
+                    'arlo_camera',
+                    'reolink_camera',
+                  ],
                   type: 'string',
                 },
               ],
@@ -51209,7 +51247,12 @@ const openapi: OpenAPISpec = {
                   },
                   {
                     description: 'Device type for cameras.',
-                    enum: ['ring_camera', 'tapo_camera', 'arlo_camera'],
+                    enum: [
+                      'ring_camera',
+                      'tapo_camera',
+                      'arlo_camera',
+                      'reolink_camera',
+                    ],
                     type: 'string',
                   },
                 ],
@@ -51270,6 +51313,7 @@ const openapi: OpenAPISpec = {
                 'ring',
                 'tapo',
                 'arlo',
+                'reolink',
                 'ical',
                 'lodgify',
                 'hostaway',
@@ -53436,7 +53480,12 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description: 'Device type for cameras.',
-                  enum: ['ring_camera', 'tapo_camera', 'arlo_camera'],
+                  enum: [
+                    'ring_camera',
+                    'tapo_camera',
+                    'arlo_camera',
+                    'reolink_camera',
+                  ],
                   type: 'string',
                 },
               ],
@@ -53516,7 +53565,12 @@ const openapi: OpenAPISpec = {
                   },
                   {
                     description: 'Device type for cameras.',
-                    enum: ['ring_camera', 'tapo_camera', 'arlo_camera'],
+                    enum: [
+                      'ring_camera',
+                      'tapo_camera',
+                      'arlo_camera',
+                      'reolink_camera',
+                    ],
                     type: 'string',
                   },
                 ],
@@ -53577,6 +53631,7 @@ const openapi: OpenAPISpec = {
                 'ring',
                 'tapo',
                 'arlo',
+                'reolink',
                 'ical',
                 'lodgify',
                 'hostaway',

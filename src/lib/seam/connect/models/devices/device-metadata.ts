@@ -1168,6 +1168,25 @@ export const device_metadata = z
       .optional()
       .describe('Metadata for a Tapo camera.'),
 
+    reolink_metadata: z
+      .object({
+        model: z
+          .string()
+          .optional()
+          .describe('Model reported by the Reolink camera.'),
+        firmware_version: z
+          .string()
+          .optional()
+          .describe('Firmware version reported by the camera.'),
+        hardware_version: z
+          .string()
+          .optional()
+          .describe('Hardware version reported by the camera.'),
+      })
+      .partial()
+      .optional()
+      .describe('Metadata for a Reolink camera.'),
+
     arlo_metadata: z
       .object({
         device_id: z

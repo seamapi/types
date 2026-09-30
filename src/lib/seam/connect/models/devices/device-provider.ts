@@ -63,6 +63,7 @@ export const DEVICE_PROVIDERS = {
   RING: 'ring',
   TAPO: 'tapo',
   ARLO: 'arlo',
+  REOLINK: 'reolink',
   ICAL: 'ical',
   LODGIFY: 'lodgify',
   HOSTAWAY: 'hostaway',
@@ -170,7 +171,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'hotek',
   ],
 
-  cameras: ['ring', 'tapo', 'arlo'],
+  cameras: ['ring', 'tapo', 'arlo', 'reolink'],
 
   connectors: ['ical', 'lodgify', 'hostaway', 'guesty', 'acuity_scheduling'],
 
