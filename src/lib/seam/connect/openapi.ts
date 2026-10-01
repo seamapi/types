@@ -13560,13 +13560,25 @@ const openapi: OpenAPISpec = {
             description: 'Unique key for the customer within the workspace.',
             type: 'string',
           },
+          customization_profile_id: {
+            description:
+              'ID of the customization profile associated with the customer. Access grants that automations create for this customer use this profile.',
+            format: 'uuid',
+            nullable: true,
+            type: 'string',
+          },
           workspace_id: {
             description: 'ID of the workspace associated with the customer.',
             format: 'uuid',
             type: 'string',
           },
         },
-        required: ['customer_key', 'workspace_id', 'created_at'],
+        required: [
+          'customer_key',
+          'workspace_id',
+          'created_at',
+          'customization_profile_id',
+        ],
         type: 'object',
         'x-route-path': '/customers',
         'x-undocumented': 'Internal resource.',
@@ -49018,6 +49030,13 @@ const openapi: OpenAPISpec = {
                             minLength: 1,
                             type: 'string',
                           },
+                          customization_profile_id: {
+                            description:
+                              "ID of the customization profile to use for this customer. Access grants that automations create for this customer use this profile. Pass `null` to remove the customer's customization profile.",
+                            format: 'uuid',
+                            nullable: true,
+                            type: 'string',
+                          },
                           facilities: {
                             description: 'List of gym or fitness facilities.',
                             items: {
@@ -50194,6 +50213,13 @@ const openapi: OpenAPISpec = {
                   customer_key: {
                     description: 'Your unique identifier for the customer.',
                     minLength: 1,
+                    type: 'string',
+                  },
+                  customization_profile_id: {
+                    description:
+                      "ID of the customization profile to use for this customer. Access grants that automations create for this customer use this profile. Pass `null` to remove the customer's customization profile.",
+                    format: 'uuid',
+                    nullable: true,
                     type: 'string',
                   },
                   facilities: {
@@ -62048,6 +62074,65 @@ const openapi: OpenAPISpec = {
         'x-response-key': null,
         'x-title': 'Update Customer Automation Configuration',
         'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
+    '/seam/customer/v1/customers/get': {
+      get: {
+        description: 'Returns a specified customer.',
+        operationId: 'seamCustomerV1CustomersGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'customer_key',
+            schema: {
+              description: 'Key of the customer that you want to get.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'customer_id',
+            schema: {
+              description: 'ID of the customer that you want to get.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    customer: { $ref: '#/components/schemas/customer' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['customer', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/seam/customer/v1/customers/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'customers'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'customer',
+        'x-has-required-parameters': true,
+        'x-response-key': 'customer',
+        'x-title': 'Get a Customer',
+        'x-undocumented': 'Internal endpoint for Console.',
       },
     },
     '/seam/customer/v1/customers/list': {
