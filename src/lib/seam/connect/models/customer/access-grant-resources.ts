@@ -16,9 +16,10 @@ const base_access_grant_resource = z.object({
     .describe('Ending date and time for the access grant.'),
   preferred_code: z
     .string()
+    .nullable()
     .optional()
     .describe(
-      'Preferred PIN code to use when creating access for this reservation.',
+      'Preferred PIN code to use when creating access for this reservation. Set to `null` to remove a previously set preferred code, so that access falls back to an automatically generated code. Omitting this field keeps any previously set preferred code.',
     ),
 })
 

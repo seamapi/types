@@ -48792,7 +48792,8 @@ const openapi: OpenAPISpec = {
                                 },
                                 preferred_code: {
                                   description:
-                                    'Preferred PIN code to use when creating access for this reservation.',
+                                    'Preferred PIN code to use when creating access for this reservation. Set to `null` to remove a previously set preferred code, so that access falls back to an automatically generated code. Omitting this field keeps any previously set preferred code.',
+                                  nullable: true,
                                   type: 'string',
                                 },
                                 property_keys: {
@@ -48903,7 +48904,8 @@ const openapi: OpenAPISpec = {
                                 },
                                 preferred_code: {
                                   description:
-                                    'Preferred PIN code to use when creating access for this reservation.',
+                                    'Preferred PIN code to use when creating access for this reservation. Set to `null` to remove a previously set preferred code, so that access falls back to an automatically generated code. Omitting this field keeps any previously set preferred code.',
+                                  nullable: true,
                                   type: 'string',
                                 },
                                 property_keys: {
@@ -49202,7 +49204,8 @@ const openapi: OpenAPISpec = {
                                 },
                                 preferred_code: {
                                   description:
-                                    'Preferred PIN code to use when creating access for this reservation.',
+                                    'Preferred PIN code to use when creating access for this reservation. Set to `null` to remove a previously set preferred code, so that access falls back to an automatically generated code. Omitting this field keeps any previously set preferred code.',
+                                  nullable: true,
                                   type: 'string',
                                 },
                                 property_keys: {
@@ -49969,7 +49972,8 @@ const openapi: OpenAPISpec = {
                         },
                         preferred_code: {
                           description:
-                            'Preferred PIN code to use when creating access for this reservation.',
+                            'Preferred PIN code to use when creating access for this reservation. Set to `null` to remove a previously set preferred code, so that access falls back to an automatically generated code. Omitting this field keeps any previously set preferred code.',
+                          nullable: true,
                           type: 'string',
                         },
                         property_keys: {
@@ -50080,7 +50084,8 @@ const openapi: OpenAPISpec = {
                         },
                         preferred_code: {
                           description:
-                            'Preferred PIN code to use when creating access for this reservation.',
+                            'Preferred PIN code to use when creating access for this reservation. Set to `null` to remove a previously set preferred code, so that access falls back to an automatically generated code. Omitting this field keeps any previously set preferred code.',
+                          nullable: true,
                           type: 'string',
                         },
                         property_keys: {
@@ -50375,7 +50380,8 @@ const openapi: OpenAPISpec = {
                         },
                         preferred_code: {
                           description:
-                            'Preferred PIN code to use when creating access for this reservation.',
+                            'Preferred PIN code to use when creating access for this reservation. Set to `null` to remove a previously set preferred code, so that access falls back to an automatically generated code. Omitting this field keeps any previously set preferred code.',
+                          nullable: true,
                           type: 'string',
                         },
                         property_keys: {

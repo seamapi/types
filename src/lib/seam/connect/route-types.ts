@@ -51091,8 +51091,8 @@ export type Routes = {
                   starts_at?: string | undefined
                   /** Ending date and time for the access grant. */
                   ends_at?: string | undefined
-                  /** Preferred PIN code to use when creating access for this reservation. */
-                  preferred_code?: string | undefined
+                  /** Preferred PIN code to use when creating access for this reservation. Set to `null` to remove a previously set preferred code, so that access falls back to an automatically generated code. Omitting this field keeps any previously set preferred code. */
+                  preferred_code?: (string | null) | undefined
                   /** Your unique identifier for the reservation. */
                   reservation_key: string
                   /** Set key:value pairs for filtering reservations by custom criteria. Set a key to `null` or to an empty string to remove that key from the custom metadata. */
@@ -51138,8 +51138,8 @@ export type Routes = {
                   starts_at?: string | undefined
                   /** Ending date and time for the access grant. */
                   ends_at?: string | undefined
-                  /** Preferred PIN code to use when creating access for this reservation. */
-                  preferred_code?: string | undefined
+                  /** Preferred PIN code to use when creating access for this reservation. Set to `null` to remove a previously set preferred code, so that access falls back to an automatically generated code. Omitting this field keeps any previously set preferred code. */
+                  preferred_code?: (string | null) | undefined
                   /** Your unique identifier for the booking. */
                   booking_key: string
                   /** Guest key associated with the access grant. */
@@ -51179,8 +51179,8 @@ export type Routes = {
                   starts_at?: string | undefined
                   /** Ending date and time for the access grant. */
                   ends_at?: string | undefined
-                  /** Preferred PIN code to use when creating access for this reservation. */
-                  preferred_code?: string | undefined
+                  /** Preferred PIN code to use when creating access for this reservation. Set to `null` to remove a previously set preferred code, so that access falls back to an automatically generated code. Omitting this field keeps any previously set preferred code. */
+                  preferred_code?: (string | null) | undefined
                   /** Your unique identifier for the access grant. */
                   access_grant_key: string
                   /** Guest key associated with the access grant. */
@@ -51545,8 +51545,8 @@ export type Routes = {
             starts_at?: string | undefined
             /** Ending date and time for the access grant. */
             ends_at?: string | undefined
-            /** Preferred PIN code to use when creating access for this reservation. */
-            preferred_code?: string | undefined
+            /** Preferred PIN code to use when creating access for this reservation. Set to `null` to remove a previously set preferred code, so that access falls back to an automatically generated code. Omitting this field keeps any previously set preferred code. */
+            preferred_code?: (string | null) | undefined
             /** Your unique identifier for the reservation. */
             reservation_key: string
             /** Set key:value pairs for filtering reservations by custom criteria. Set a key to `null` or to an empty string to remove that key from the custom metadata. */
@@ -51592,8 +51592,8 @@ export type Routes = {
             starts_at?: string | undefined
             /** Ending date and time for the access grant. */
             ends_at?: string | undefined
-            /** Preferred PIN code to use when creating access for this reservation. */
-            preferred_code?: string | undefined
+            /** Preferred PIN code to use when creating access for this reservation. Set to `null` to remove a previously set preferred code, so that access falls back to an automatically generated code. Omitting this field keeps any previously set preferred code. */
+            preferred_code?: (string | null) | undefined
             /** Your unique identifier for the booking. */
             booking_key: string
             /** Guest key associated with the access grant. */
@@ -51633,8 +51633,8 @@ export type Routes = {
             starts_at?: string | undefined
             /** Ending date and time for the access grant. */
             ends_at?: string | undefined
-            /** Preferred PIN code to use when creating access for this reservation. */
-            preferred_code?: string | undefined
+            /** Preferred PIN code to use when creating access for this reservation. Set to `null` to remove a previously set preferred code, so that access falls back to an automatically generated code. Omitting this field keeps any previously set preferred code. */
+            preferred_code?: (string | null) | undefined
             /** Your unique identifier for the access grant. */
             access_grant_key: string
             /** Guest key associated with the access grant. */
