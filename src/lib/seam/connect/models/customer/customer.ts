@@ -13,6 +13,13 @@ export const customer = z.object({
   created_at: datetime.describe(
     'Date and time at which the customer was created.',
   ),
+  customization_profile_id: z
+    .string()
+    .uuid()
+    .nullable()
+    .describe(
+      'ID of the customization profile associated with the customer. Access grants that automations create for this customer use this profile.',
+    ),
 }).describe(`
   ---
   route_path: /customers

@@ -50856,6 +50856,8 @@ export type Routes = {
         | {
             /** Your unique identifier for the customer. */
             customer_key: string
+            /** ID of the customization profile to use for this customer. Access grants that automations create for this customer use this profile. Pass `null` to remove the customer's customization profile. */
+            customization_profile_id?: (string | null) | undefined
             /** List of general spaces or areas. */
             spaces?:
               | {
@@ -51310,6 +51312,8 @@ export type Routes = {
     jsonBody: {
       /** Your unique identifier for the customer. */
       customer_key: string
+      /** ID of the customization profile to use for this customer. Access grants that automations create for this customer use this profile. Pass `null` to remove the customer's customization profile. */
+      customization_profile_id?: (string | null) | undefined
       /** List of general spaces or areas. */
       spaces?:
         | {
@@ -101617,6 +101621,36 @@ export type Routes = {
     jsonResponse: {}
     maxDuration: undefined
   }
+  '/seam/customer/v1/customers/get': {
+    route: '/seam/customer/v1/customers/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams:
+      | {
+          /** Key of the customer that you want to get. */
+          customer_key: string
+        }
+      | {
+          /** ID of the customer that you want to get. */
+          customer_id: string
+        }
+    formData: {}
+    jsonResponse: {
+      /** Represents a customer within a workspace. Customers are used to organize resources and manage access for different clients, such as hotels, property managers, and more. */
+      customer: {
+        /** Unique key for the customer within the workspace. */
+        customer_key: string
+        /** ID of the workspace associated with the customer. */
+        workspace_id: string
+        /** Date and time at which the customer was created. */
+        created_at: string
+        /** ID of the customization profile associated with the customer. Access grants that automations create for this customer use this profile. */
+        customization_profile_id: string | null
+      }
+    }
+    maxDuration: undefined
+  }
   '/seam/customer/v1/customers/list': {
     route: '/seam/customer/v1/customers/list'
     method: 'GET' | 'POST'
@@ -101639,6 +101673,8 @@ export type Routes = {
         workspace_id: string
         /** Date and time at which the customer was created. */
         created_at: string
+        /** ID of the customization profile associated with the customer. Access grants that automations create for this customer use this profile. */
+        customization_profile_id: string | null
       }[]
       /** Information about the current page of results. */
       pagination: {
@@ -101662,6 +101698,7 @@ export type Routes = {
     jsonResponse: {
       customer: {
         customer_key: string
+        customization_profile_id: string | null
       }
       connector?:
         | {

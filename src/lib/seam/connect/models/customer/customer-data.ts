@@ -106,6 +106,14 @@ export const customer_data = z
         message: 'Must not have leading or trailing whitespace',
       })
       .describe('Your unique identifier for the customer.'),
+    customization_profile_id: z
+      .string()
+      .uuid()
+      .nullable()
+      .optional()
+      .describe(
+        "ID of the customization profile to use for this customer. Access grants that automations create for this customer use this profile. Pass `null` to remove the customer's customization profile.",
+      ),
   })
   .merge(external_resources)
 
