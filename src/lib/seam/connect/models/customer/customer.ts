@@ -18,7 +18,7 @@ export const customer = z.object({
     .uuid()
     .nullable()
     .describe(
-      'ID of the customization profile associated with the customer. Access grants that automations create for this customer use this profile.',
+      'ID of the customization profile the customer uses. Access grants that automations create for this customer use this profile. This can differ from the profiles the customer owns.',
     ),
 }).describe(`
   ---

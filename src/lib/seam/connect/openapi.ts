@@ -13562,7 +13562,7 @@ const openapi: OpenAPISpec = {
           },
           customization_profile_id: {
             description:
-              'ID of the customization profile associated with the customer. Access grants that automations create for this customer use this profile.',
+              'ID of the customization profile the customer uses. Access grants that automations create for this customer use this profile. This can differ from the profiles the customer owns.',
             format: 'uuid',
             nullable: true,
             type: 'string',
@@ -72077,7 +72077,8 @@ const openapi: OpenAPISpec = {
     },
     '/workspaces/customization_profiles/list': {
       get: {
-        description: 'Retrieves the customization profile for the workspace.',
+        description:
+          'Returns the customization profiles in the workspace. With `customer_key`, or from a customer client session, returns only the profiles that customer owns. A customer can own a profile without using it: the profile applied to the customer is `customization_profile_id` on `/seam/customer/v1/customers/get`.',
         operationId: 'workspacesCustomizationProfilesListGet',
         parameters: [
           {
@@ -72085,7 +72086,7 @@ const openapi: OpenAPISpec = {
             name: 'customer_key',
             schema: {
               description:
-                'Customer key for which you want to list customization profiles.',
+                'Key of the customer whose owned customization profiles you want to list. This filters by owner, not by the profile the customer uses.',
               minLength: 1,
               type: 'string',
             },
@@ -72128,7 +72129,7 @@ const openapi: OpenAPISpec = {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'customization_profiles',
         'x-response-key': 'customization_profiles',
-        'x-title': 'Get Customization Profile',
+        'x-title': 'List Customization Profiles',
         'x-undocumented': 'Unreleased.',
       },
     },
