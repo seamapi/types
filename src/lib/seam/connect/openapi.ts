@@ -71954,7 +71954,8 @@ const openapi: OpenAPISpec = {
     },
     '/workspaces/customization_profiles/create': {
       post: {
-        description: 'Updates the customization profile for the workspace.',
+        description:
+          "Creates a customization profile. From a customer client session, the profile is owned by that customer, and it becomes the customer's `customization_profile_id` when the customer has none yet.",
         operationId: 'workspacesCustomizationProfilesCreatePost',
         requestBody: {
           content: {
@@ -72021,7 +72022,7 @@ const openapi: OpenAPISpec = {
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'customization_profile',
         'x-response-key': 'customization_profile',
-        'x-title': 'Update Customization Profile',
+        'x-title': 'Create Customization Profile',
         'x-undocumented': 'Unreleased.',
       },
     },
