@@ -101647,7 +101647,7 @@ export type Routes = {
         workspace_id: string
         /** Date and time at which the customer was created. */
         created_at: string
-        /** ID of the customization profile associated with the customer. Access grants that automations create for this customer use this profile. */
+        /** ID of the customization profile the customer uses. Access grants that automations create for this customer use this profile. This can differ from the profiles the customer owns. */
         customization_profile_id: string | null
       }
     }
@@ -101675,7 +101675,7 @@ export type Routes = {
         workspace_id: string
         /** Date and time at which the customer was created. */
         created_at: string
-        /** ID of the customization profile associated with the customer. Access grants that automations create for this customer use this profile. */
+        /** ID of the customization profile the customer uses. Access grants that automations create for this customer use this profile. This can differ from the profiles the customer owns. */
         customization_profile_id: string | null
       }[]
       /** Information about the current page of results. */
@@ -149906,7 +149906,7 @@ export type Routes = {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** Customer key for which you want to list customization profiles. */
+      /** Key of the customer whose owned customization profiles you want to list. This filters by owner, not by the profile the customer uses. */
       customer_key?: string | undefined
     }
     formData: {}
