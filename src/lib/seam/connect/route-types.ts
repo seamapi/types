@@ -14334,6 +14334,15 @@ export type Routes = {
                     longitude: number
                   } | null)
                 | undefined
+              /** Warnings associated with the space. */
+              warnings: {
+                /** Date and time at which Seam created the warning. */
+                created_at: string
+                /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                message: string
+                /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                warning_code: 'being_deleted'
+              }[]
               /**  */
               parent_space_id?: string | undefined
               /**  */
@@ -22971,6 +22980,15 @@ export type Routes = {
                     longitude: number
                   } | null)
                 | undefined
+              /** Warnings associated with the space. */
+              warnings: {
+                /** Date and time at which Seam created the warning. */
+                created_at: string
+                /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                message: string
+                /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                warning_code: 'being_deleted'
+              }[]
               /**  */
               parent_space_id?: string | undefined
               /**  */
@@ -97979,6 +97997,15 @@ export type Routes = {
               longitude: number
             } | null)
           | undefined
+        /** Warnings associated with the space. */
+        warnings: {
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+          warning_code: 'being_deleted'
+        }[]
         /**  */
         parent_space_id?: string | undefined
         /**  */
@@ -98052,6 +98079,15 @@ export type Routes = {
               longitude: number
             } | null)
           | undefined
+        /** Warnings associated with the space. */
+        warnings: {
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+          warning_code: 'being_deleted'
+        }[]
         /**  */
         parent_space_id?: string | undefined
         /**  */
@@ -98117,6 +98153,15 @@ export type Routes = {
               longitude: number
             } | null)
           | undefined
+        /** Warnings associated with the space. */
+        warnings: {
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+          warning_code: 'being_deleted'
+        }[]
         /**  */
         parent_space_id?: string | undefined
         /**  */
@@ -107011,6 +107056,15 @@ export type Routes = {
               longitude: number
             } | null)
           | undefined
+        /** Warnings associated with the space. */
+        warnings: {
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+          warning_code: 'being_deleted'
+        }[]
         /**  */
         parent_space_id?: string | undefined
         /**  */
@@ -107079,6 +107133,15 @@ export type Routes = {
               longitude: number
             } | null)
           | undefined
+        /** Warnings associated with the space. */
+        warnings: {
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+          warning_code: 'being_deleted'
+        }[]
         /**  */
         parent_space_id?: string | undefined
         /**  */
@@ -112804,6 +112867,15 @@ export type Routes = {
               longitude: number
             } | null)
           | undefined
+        /** Warnings associated with the space. */
+        warnings: {
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+          warning_code: 'being_deleted'
+        }[]
         /**  */
         parent_space_id?: string | undefined
         /**  */
@@ -112883,6 +112955,15 @@ export type Routes = {
               longitude: number
             } | null)
           | undefined
+        /** Warnings associated with the space. */
+        warnings: {
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+          warning_code: 'being_deleted'
+        }[]
         /**  */
         parent_space_id?: string | undefined
         /**  */
@@ -112968,6 +113049,15 @@ export type Routes = {
                     longitude: number
                   } | null)
                 | undefined
+              /** Warnings associated with the space. */
+              warnings: {
+                /** Date and time at which Seam created the warning. */
+                created_at: string
+                /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                message: string
+                /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                warning_code: 'being_deleted'
+              }[]
               /**  */
               parent_space_id?: string | undefined
               /**  */
@@ -115898,6 +115988,15 @@ export type Routes = {
               longitude: number
             } | null)
           | undefined
+        /** Warnings associated with the space. */
+        warnings: {
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+          warning_code: 'being_deleted'
+        }[]
         /**  */
         parent_space_id?: string | undefined
         /**  */
@@ -116038,6 +116137,15 @@ export type Routes = {
               longitude: number
             } | null)
           | undefined
+        /** Warnings associated with the space. */
+        warnings: {
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+          warning_code: 'being_deleted'
+        }[]
         /**  */
         parent_space_id?: string | undefined
         /**  */
@@ -156518,6 +156626,15 @@ export type Routes = {
                     longitude: number
                   } | null)
                 | undefined
+              /** Warnings associated with the space. */
+              warnings: {
+                /** Date and time at which Seam created the warning. */
+                created_at: string
+                /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                message: string
+                /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                warning_code: 'being_deleted'
+              }[]
               /**  */
               parent_space_id?: string | undefined
               /**  */

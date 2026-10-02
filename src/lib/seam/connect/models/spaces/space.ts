@@ -37,6 +37,38 @@ export const space_geolocation = z
   })
   .describe('Geographic coordinates of the space.')
 
+const warning_code_description =
+  'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
+
+const common_space_warning = z.object({
+  created_at: datetime.describe(
+    'Date and time at which Seam created the warning.',
+  ),
+  message: z
+    .string()
+    .describe(
+      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+    ),
+})
+
+const space_being_deleted = common_space_warning
+  .extend({
+    warning_code: z.literal('being_deleted').describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that the space is being deleted. Seam removes it, revokes its access grants, and detaches its devices and entrances shortly.',
+  )
+
+const space_warning = z
+  .discriminatedUnion('warning_code', [space_being_deleted])
+  .describe('Warning associated with the space.')
+
+const _space_warning_map = z.object({
+  being_deleted: space_being_deleted.optional().nullable(),
+})
+
+export type SpaceWarningMap = z.infer<typeof _space_warning_map>
+
 export const space = z.object({
   space_id: z.string().uuid().describe('ID of the space.'),
   workspace_id: z
@@ -67,6 +99,9 @@ export const space = z.object({
   geolocation: space_geolocation
     .nullish()
     .describe('Geographic coordinates (latitude and longitude) of the space.'),
+  warnings: z
+    .array(space_warning)
+    .describe('Warnings associated with the space.'),
   parent_space_id: z.string().uuid().optional().describe(`
     ---
     undocumented: Only used internally.

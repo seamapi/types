@@ -31640,6 +31640,41 @@ const openapi: OpenAPISpec = {
             description: 'Unique key for the space within the workspace.',
             type: 'string',
           },
+          warnings: {
+            description: 'Warnings associated with the space.',
+            items: {
+              description: 'Warning associated with the space.',
+              discriminator: { propertyName: 'warning_code' },
+              oneOf: [
+                {
+                  description:
+                    'Indicates that the space is being deleted. Seam removes it, revokes its access grants, and detaches its devices and entrances shortly.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['being_deleted'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
           workspace_id: {
             description: 'ID of the workspace associated with the space.',
             format: 'uuid',
@@ -31654,6 +31689,7 @@ const openapi: OpenAPISpec = {
           'created_at',
           'device_count',
           'acs_entrance_count',
+          'warnings',
         ],
         type: 'object',
         'x-draft': 'Early access.',
