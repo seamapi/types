@@ -21,6 +21,12 @@ export const customization_profile = z.object({
   workspace_id: z.string().uuid(),
   name: z.string().nullable(),
   customization_profile_id: z.string().uuid(),
+  customer_key: z
+    .string()
+    .nullable()
+    .describe(
+      'Key of the customer that owns the profile, or `null` for a workspace-level profile. A customer can own a profile without using it; the profile a customer uses is `customization_profile_id` on the customer.',
+    ),
   created_at: datetime,
   logo_url: z.string().url().optional(),
   primary_color: z.string().optional(),
