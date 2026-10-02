@@ -13629,6 +13629,12 @@ const openapi: OpenAPISpec = {
         description: 'A customization profile.',
         properties: {
           created_at: { format: 'date-time', type: 'string' },
+          customer_key: {
+            description:
+              'Key of the customer that owns the profile, or `null` for a workspace-level profile. A customer can own a profile without using it; the profile a customer uses is `customization_profile_id` on the customer.',
+            nullable: true,
+            type: 'string',
+          },
           customer_portal_theme: {
             properties: {
               font_family: { type: 'string' },
@@ -13658,6 +13664,7 @@ const openapi: OpenAPISpec = {
           'workspace_id',
           'name',
           'customization_profile_id',
+          'customer_key',
           'created_at',
         ],
         type: 'object',

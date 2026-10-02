@@ -97483,6 +97483,8 @@ export type Routes = {
         workspace_id: string
         name: string | null
         customization_profile_id: string
+        /** Key of the customer that owns the profile, or `null` for a workspace-level profile. A customer can own a profile without using it; the profile a customer uses is `customization_profile_id` on the customer. */
+        customer_key: string | null
         created_at: string
         logo_url?: string | undefined
         primary_color?: string | undefined
@@ -149829,6 +149831,8 @@ export type Routes = {
         workspace_id: string
         name: string | null
         customization_profile_id: string
+        /** Key of the customer that owns the profile, or `null` for a workspace-level profile. A customer can own a profile without using it; the profile a customer uses is `customization_profile_id` on the customer. */
+        customer_key: string | null
         created_at: string
         logo_url?: string | undefined
         primary_color?: string | undefined
@@ -149869,6 +149873,8 @@ export type Routes = {
         workspace_id: string
         name: string | null
         customization_profile_id: string
+        /** Key of the customer that owns the profile, or `null` for a workspace-level profile. A customer can own a profile without using it; the profile a customer uses is `customization_profile_id` on the customer. */
+        customer_key: string | null
         created_at: string
         logo_url?: string | undefined
         primary_color?: string | undefined
@@ -149909,6 +149915,8 @@ export type Routes = {
         workspace_id: string
         name: string | null
         customization_profile_id: string
+        /** Key of the customer that owns the profile, or `null` for a workspace-level profile. A customer can own a profile without using it; the profile a customer uses is `customization_profile_id` on the customer. */
+        customer_key: string | null
         created_at: string
         logo_url?: string | undefined
         primary_color?: string | undefined
@@ -162570,6 +162578,8 @@ export type Routes = {
               workspace_id: string
               name: string | null
               customization_profile_id: string
+              /** Key of the customer that owns the profile, or `null` for a workspace-level profile. A customer can own a profile without using it; the profile a customer uses is `customization_profile_id` on the customer. */
+              customer_key: string | null
               created_at: string
               logo_url?: string | undefined
               primary_color?: string | undefined
