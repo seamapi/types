@@ -133,14 +133,29 @@ const failed_to_issue_error = common_access_method_error.extend({
     Indicates that Seam was unable to issue this [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) before its access grant started, so the recipient may be unable to access the space. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access method is eventually issued.
   `)
 
+const access_not_provisioned_error = common_access_method_error.extend({
+  error_code: z
+    .literal('access_not_provisioned')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: access_method
+    ---
+    Indicates that the access system rejected the access that Seam tried to set up for this access method, so its credential cannot open the affected entrances, even after it is issued. For example, a hotel room may already be reserved or checked in for another guest. The message contains the reason that the access system gave. Seam keeps retrying, and this error clears automatically once the access system accepts the access.
+  `)
+
 const access_method_error = z
-  .discriminatedUnion('error_code', [failed_to_issue_error])
+  .discriminatedUnion('error_code', [
+    failed_to_issue_error,
+    access_not_provisioned_error,
+  ])
   .describe(
     'Error associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant).',
   )
 
 const _access_method_error_map = z.object({
   failed_to_issue: failed_to_issue_error.optional().nullable(),
+  access_not_provisioned: access_not_provisioned_error.optional().nullable(),
 })
 
 export type AccessMethodErrorMap = z.infer<typeof _access_method_error_map>
