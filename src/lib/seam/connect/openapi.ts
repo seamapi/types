@@ -1872,6 +1872,32 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-resource-type': 'access_grant',
                 },
+                {
+                  description:
+                    'Indicates that the access system rejected the access that Seam tried to set up for this access grant, so its credentials cannot open the affected entrances. For example, a hotel room may already be reserved or checked in for another guest. The message contains the reason that the access system gave. Seam keeps retrying, and this error clears automatically once the access system accepts the access.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['access_not_provisioned'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                  'x-resource-type': 'access_grant',
+                },
               ],
             },
             type: 'array',
@@ -2484,6 +2510,32 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['failed_to_issue'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                  'x-resource-type': 'access_method',
+                },
+                {
+                  description:
+                    'Indicates that the access system rejected the access that Seam tried to set up for this access method, so its credential cannot open the affected entrances, even after it is issued. For example, a hotel room may already be reserved or checked in for another guest. The message contains the reason that the access system gave. Seam keeps retrying, and this error clears automatically once the access system accepts the access.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['access_not_provisioned'],
                       type: 'string',
                     },
                     message: {
@@ -9922,6 +9974,32 @@ const openapi: OpenAPISpec = {
                               description:
                                 'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                               enum: ['failed_to_issue'],
+                              type: 'string',
+                            },
+                            message: {
+                              description:
+                                'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                              type: 'string',
+                            },
+                          },
+                          required: ['created_at', 'message', 'error_code'],
+                          type: 'object',
+                          'x-resource-type': 'access_method',
+                        },
+                        {
+                          description:
+                            'Indicates that the access system rejected the access that Seam tried to set up for this access method, so its credential cannot open the affected entrances, even after it is issued. For example, a hotel room may already be reserved or checked in for another guest. The message contains the reason that the access system gave. Seam keeps retrying, and this error clears automatically once the access system accepts the access.',
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which Seam created the error.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            error_code: {
+                              description:
+                                'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                              enum: ['access_not_provisioned'],
                               type: 'string',
                             },
                             message: {
@@ -33490,6 +33568,32 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-resource-type': 'access_grant',
                 },
+                {
+                  description:
+                    'Indicates that the access system rejected the access that Seam tried to set up for this access grant, so its credentials cannot open the affected entrances. For example, a hotel room may already be reserved or checked in for another guest. The message contains the reason that the access system gave. Seam keeps retrying, and this error clears automatically once the access system accepts the access.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['access_not_provisioned'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                  'x-resource-type': 'access_grant',
+                },
               ],
             },
             type: 'array',
@@ -34083,6 +34187,32 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['failed_to_issue'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                  'x-resource-type': 'access_method',
+                },
+                {
+                  description:
+                    'Indicates that the access system rejected the access that Seam tried to set up for this access method, so its credential cannot open the affected entrances, even after it is issued. For example, a hotel room may already be reserved or checked in for another guest. The message contains the reason that the access system gave. Seam keeps retrying, and this error clears automatically once the access system accepts the access.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['access_not_provisioned'],
                       type: 'string',
                     },
                     message: {
