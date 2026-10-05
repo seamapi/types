@@ -1457,14 +1457,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -4755,14 +4765,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -9842,14 +9862,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -12991,14 +13021,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -13960,16 +14000,26 @@ export type Routes = {
             }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
-        errors: {
-          /** Date and time at which Seam created the error. */
-          created_at: string
-          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-          error_code: 'cannot_create_requested_access_methods'
-          /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
-          missing_device_ids?: string[] | undefined
-        }[]
+        errors: (
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'cannot_create_requested_access_methods'
+              /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
+              missing_device_ids?: string[] | undefined
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'access_not_provisioned'
+            }
+        )[]
         /** ID of the customization profile associated with the Access Grant. */
         customization_profile_id?: string | undefined
         /** List of pending mutations for the access grant. This shows updates that are in progress. */
@@ -14190,16 +14240,26 @@ export type Routes = {
             }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
-        errors: {
-          /** Date and time at which Seam created the error. */
-          created_at: string
-          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-          error_code: 'cannot_create_requested_access_methods'
-          /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
-          missing_device_ids?: string[] | undefined
-        }[]
+        errors: (
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'cannot_create_requested_access_methods'
+              /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
+              missing_device_ids?: string[] | undefined
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'access_not_provisioned'
+            }
+        )[]
         /** ID of the customization profile associated with the Access Grant. */
         customization_profile_id?: string | undefined
         /** List of pending mutations for the access grant. This shows updates that are in progress. */
@@ -17390,14 +17450,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -17642,16 +17712,26 @@ export type Routes = {
             }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
-        errors: {
-          /** Date and time at which Seam created the error. */
-          created_at: string
-          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-          error_code: 'cannot_create_requested_access_methods'
-          /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
-          missing_device_ids?: string[] | undefined
-        }[]
+        errors: (
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'cannot_create_requested_access_methods'
+              /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
+              missing_device_ids?: string[] | undefined
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'access_not_provisioned'
+            }
+        )[]
         /** ID of the customization profile associated with the Access Grant. */
         customization_profile_id?: string | undefined
         /** List of pending mutations for the access grant. This shows updates that are in progress. */
@@ -17872,16 +17952,26 @@ export type Routes = {
             }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
-        errors: {
-          /** Date and time at which Seam created the error. */
-          created_at: string
-          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-          error_code: 'cannot_create_requested_access_methods'
-          /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
-          missing_device_ids?: string[] | undefined
-        }[]
+        errors: (
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'cannot_create_requested_access_methods'
+              /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
+              missing_device_ids?: string[] | undefined
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'access_not_provisioned'
+            }
+        )[]
         /** ID of the customization profile associated with the Access Grant. */
         customization_profile_id?: string | undefined
         /** List of pending mutations for the access grant. This shows updates that are in progress. */
@@ -18074,16 +18164,26 @@ export type Routes = {
             }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
-        errors: {
-          /** Date and time at which Seam created the error. */
-          created_at: string
-          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-          error_code: 'cannot_create_requested_access_methods'
-          /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
-          missing_device_ids?: string[] | undefined
-        }[]
+        errors: (
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'cannot_create_requested_access_methods'
+              /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
+              missing_device_ids?: string[] | undefined
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'access_not_provisioned'
+            }
+        )[]
         /** List of pending mutations for the access grant. This shows updates that are in progress. */
         pending_mutations: (
           | {
@@ -18285,16 +18385,26 @@ export type Routes = {
             }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
-        errors: {
-          /** Date and time at which Seam created the error. */
-          created_at: string
-          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-          error_code: 'cannot_create_requested_access_methods'
-          /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
-          missing_device_ids?: string[] | undefined
-        }[]
+        errors: (
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'cannot_create_requested_access_methods'
+              /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
+              missing_device_ids?: string[] | undefined
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'access_not_provisioned'
+            }
+        )[]
         /** List of pending mutations for the access grant. This shows updates that are in progress. */
         pending_mutations: (
           | {
@@ -19817,14 +19927,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -21995,14 +22115,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -22826,14 +22956,24 @@ export type Routes = {
             }
         )[]
         /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-        errors: {
-          /** Date and time at which Seam created the error. */
-          created_at: string
-          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-          error_code: 'failed_to_issue'
-        }[]
+        errors: (
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_issue'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'access_not_provisioned'
+            }
+        )[]
         /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
         pending_mutations: (
           | {
@@ -25399,16 +25539,26 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'cannot_create_requested_access_methods'
-                /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
-                missing_device_ids?: string[] | undefined
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'cannot_create_requested_access_methods'
+                    /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
+                    missing_device_ids?: string[] | undefined
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** ID of the customization profile associated with the Access Grant. */
               customization_profile_id?: string | undefined
               /** List of pending mutations for the access grant. This shows updates that are in progress. */
@@ -25546,14 +25696,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -25982,14 +26142,24 @@ export type Routes = {
             }
         )[]
         /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-        errors: {
-          /** Date and time at which Seam created the error. */
-          created_at: string
-          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-          error_code: 'failed_to_issue'
-        }[]
+        errors: (
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_issue'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'access_not_provisioned'
+            }
+        )[]
         /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
         pending_mutations: (
           | {
@@ -27488,14 +27658,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -28315,14 +28495,24 @@ export type Routes = {
             }
         )[]
         /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-        errors: {
-          /** Date and time at which Seam created the error. */
-          created_at: string
-          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-          error_code: 'failed_to_issue'
-        }[]
+        errors: (
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_issue'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'access_not_provisioned'
+            }
+        )[]
         /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
         pending_mutations: (
           | {
@@ -28486,14 +28676,24 @@ export type Routes = {
             }
         )[]
         /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-        errors: {
-          /** Date and time at which Seam created the error. */
-          created_at: string
-          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-          error_code: 'failed_to_issue'
-        }[]
+        errors: (
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_issue'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'access_not_provisioned'
+            }
+        )[]
         /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
         pending_mutations: (
           | {
@@ -33782,14 +33982,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -36048,14 +36258,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -38213,14 +38433,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -41263,14 +41493,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -46227,14 +46467,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -48382,14 +48632,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -68811,14 +69071,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -78863,14 +79133,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -81019,14 +81299,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -83173,14 +83463,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -85329,14 +85629,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -91434,14 +91744,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -93609,14 +93929,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -95840,14 +96170,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -98494,16 +98834,26 @@ export type Routes = {
             }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
-        errors: {
-          /** Date and time at which Seam created the error. */
-          created_at: string
-          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-          error_code: 'cannot_create_requested_access_methods'
-          /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
-          missing_device_ids?: string[] | undefined
-        }[]
+        errors: (
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'cannot_create_requested_access_methods'
+              /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
+              missing_device_ids?: string[] | undefined
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'access_not_provisioned'
+            }
+        )[]
         /** ID of the customization profile associated with the Access Grant. */
         customization_profile_id?: string | undefined
         /** List of pending mutations for the access grant. This shows updates that are in progress. */
@@ -99994,14 +100344,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -106792,16 +107152,26 @@ export type Routes = {
             }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
-        errors: {
-          /** Date and time at which Seam created the error. */
-          created_at: string
-          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-          error_code: 'cannot_create_requested_access_methods'
-          /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
-          missing_device_ids?: string[] | undefined
-        }[]
+        errors: (
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'cannot_create_requested_access_methods'
+              /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
+              missing_device_ids?: string[] | undefined
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'access_not_provisioned'
+            }
+        )[]
         /** ID of the customization profile associated with the Access Grant. */
         customization_profile_id?: string | undefined
         /** List of pending mutations for the access grant. This shows updates that are in progress. */
@@ -107369,16 +107739,26 @@ export type Routes = {
                 }
             )[]
             /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
-            errors: {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-              message: string
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'cannot_create_requested_access_methods'
-              /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
-              missing_device_ids?: string[] | undefined
-            }[]
+            errors: (
+              | {
+                  /** Date and time at which Seam created the error. */
+                  created_at: string
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'cannot_create_requested_access_methods'
+                  /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
+                  missing_device_ids?: string[] | undefined
+                }
+              | {
+                  /** Date and time at which Seam created the error. */
+                  created_at: string
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'access_not_provisioned'
+                }
+            )[]
             /** ID of the customization profile associated with the Access Grant. */
             customization_profile_id?: string | undefined
             /** List of pending mutations for the access grant. This shows updates that are in progress. */
@@ -115845,14 +116225,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -117576,14 +117966,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -119732,14 +120132,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -121892,14 +122302,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -124163,14 +124583,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -128292,14 +128722,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -130456,14 +130896,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -136537,14 +136987,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -138902,14 +139362,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -141094,14 +141564,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -143402,14 +143882,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -154647,14 +155137,24 @@ export type Routes = {
                         }
                     )[]
                     /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-                    errors: {
-                      /** Date and time at which Seam created the error. */
-                      created_at: string
-                      /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                      message: string
-                      /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                      error_code: 'failed_to_issue'
-                    }[]
+                    errors: (
+                      | {
+                          /** Date and time at which Seam created the error. */
+                          created_at: string
+                          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                          message: string
+                          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                          error_code: 'failed_to_issue'
+                        }
+                      | {
+                          /** Date and time at which Seam created the error. */
+                          created_at: string
+                          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                          message: string
+                          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                          error_code: 'access_not_provisioned'
+                        }
+                    )[]
                     /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
                     pending_mutations: (
                       | {
@@ -156727,14 +157227,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
@@ -156938,16 +157448,26 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'cannot_create_requested_access_methods'
-                /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
-                missing_device_ids?: string[] | undefined
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'cannot_create_requested_access_methods'
+                    /** IDs of the devices that did not receive an access code at grant creation. Use these to identify which specific devices failed when the message reports a partial failure. */
+                    missing_device_ids?: string[] | undefined
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** ID of the customization profile associated with the Access Grant. */
               customization_profile_id?: string | undefined
               /** List of pending mutations for the access grant. This shows updates that are in progress. */
@@ -164230,14 +164750,24 @@ export type Routes = {
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
-              errors: {
-                /** Date and time at which Seam created the error. */
-                created_at: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: 'failed_to_issue'
-              }[]
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
               /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
               pending_mutations: (
                 | {
