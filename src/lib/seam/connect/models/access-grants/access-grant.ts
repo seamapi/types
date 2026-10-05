@@ -36,6 +36,17 @@ const cannot_create_requested_access_methods_error =
     Indicates that Seam could not create one or more of the requested access methods for the access grant.
     `)
 
+const access_not_provisioned_error = common_access_grant_error.extend({
+  error_code: z
+    .literal('access_not_provisioned')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: access_grant
+    ---
+    Indicates that the access system rejected the access that Seam tried to set up for this access grant, so its credentials cannot open the affected entrances. For example, a hotel room may already be reserved or checked in for another guest. The message contains the reason that the access system gave. Seam keeps retrying, and this error clears automatically once the access system accepts the access.
+    `)
+
 const common_access_grant_warning = z.object({
   created_at: datetime.describe(
     'Date and time at which Seam created the warning.',
@@ -52,6 +63,7 @@ const warning_code_description =
 
 const access_grant_error = z.discriminatedUnion('error_code', [
   cannot_create_requested_access_methods_error,
+  access_not_provisioned_error,
 ])
 
 export type AccessGrantError = z.infer<typeof access_grant_error>
@@ -59,6 +71,7 @@ export type AccessGrantError = z.infer<typeof access_grant_error>
 export const _access_grant_error_map = z.object({
   cannot_create_requested_access_methods:
     cannot_create_requested_access_methods_error.optional().nullable(),
+  access_not_provisioned: access_not_provisioned_error.optional().nullable(),
 })
 
 export type AccessGrantErrorMap = z.infer<typeof _access_grant_error_map>
