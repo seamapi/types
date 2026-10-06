@@ -50086,7 +50086,7 @@ const openapi: OpenAPISpec = {
     '/customers/delete_data': {
       delete: {
         description:
-          'Deletes customer data including resources like spaces, properties, rooms, users, etc.\nThis will delete the partner resources and any related Seam resources (user identities, access grants, spaces).',
+          'Deletes customer data including resources like spaces, properties, rooms, users, etc.\nThis will delete the partner resources and any related Seam resources (user identities, access grants, spaces).\nSpace keys also match spaces created directly with a `space_key` (for example, through `/spaces/create`).',
         operationId: 'customersDeleteDataDelete',
         parameters: [
           {
