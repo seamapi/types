@@ -2579,7 +2579,7 @@ const openapi: OpenAPISpec = {
           },
           is_ready_for_encoding: {
             description:
-              'Indicates whether the access method is ready to be encoded. This is true when the credential has been created and the card has not yet been issued.',
+              'Indicates whether the access method is ready to be encoded. This is true when the card has not yet been issued and the access system has received all the access the card needs. While it is false, `pending_mutations` contains `waiting_for_access_on_acs_system`.',
             type: 'boolean',
           },
           issued_at: {
@@ -2778,6 +2778,30 @@ const openapi: OpenAPISpec = {
                     'from',
                     'to',
                   ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'The access system has not yet received all the access this card needs. A card encoded now would carry only the access the system already has, so wait until this clears before encoding.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that the access system has not yet received all the access this card needs, so the card is not ready to be encoded.',
+                      enum: ['waiting_for_access_on_acs_system'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'mutation_code'],
                   type: 'object',
                 },
               ],
@@ -10044,7 +10068,7 @@ const openapi: OpenAPISpec = {
                   },
                   is_ready_for_encoding: {
                     description:
-                      'Indicates whether the access method is ready to be encoded. This is true when the credential has been created and the card has not yet been issued.',
+                      'Indicates whether the access method is ready to be encoded. This is true when the card has not yet been issued and the access system has received all the access the card needs. While it is false, `pending_mutations` contains `waiting_for_access_on_acs_system`.',
                     type: 'boolean',
                   },
                   issued_at: {
@@ -10249,6 +10273,31 @@ const openapi: OpenAPISpec = {
                             'from',
                             'to',
                           ],
+                          type: 'object',
+                        },
+                        {
+                          description:
+                            'The access system has not yet received all the access this card needs. A card encoded now would carry only the access the system already has, so wait until this clears before encoding.',
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which the mutation was created.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            message: {
+                              description:
+                                'Detailed description of the mutation.',
+                              type: 'string',
+                            },
+                            mutation_code: {
+                              description:
+                                'Mutation code to indicate that the access system has not yet received all the access this card needs, so the card is not ready to be encoded.',
+                              enum: ['waiting_for_access_on_acs_system'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['created_at', 'message', 'mutation_code'],
                           type: 'object',
                         },
                       ],
@@ -34366,7 +34415,7 @@ const openapi: OpenAPISpec = {
           },
           is_ready_for_encoding: {
             description:
-              'Indicates whether the access method is ready to be encoded. This is true when the credential has been created and the card has not yet been issued.',
+              'Indicates whether the access method is ready to be encoded. This is true when the card has not yet been issued and the access system has received all the access the card needs. While it is false, `pending_mutations` contains `waiting_for_access_on_acs_system`.',
             type: 'boolean',
           },
           issued_at: {
@@ -34565,6 +34614,30 @@ const openapi: OpenAPISpec = {
                     'from',
                     'to',
                   ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'The access system has not yet received all the access this card needs. A card encoded now would carry only the access the system already has, so wait until this clears before encoding.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which the mutation was created.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description: 'Detailed description of the mutation.',
+                      type: 'string',
+                    },
+                    mutation_code: {
+                      description:
+                        'Mutation code to indicate that the access system has not yet received all the access this card needs, so the card is not ready to be encoded.',
+                      enum: ['waiting_for_access_on_acs_system'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'mutation_code'],
                   type: 'object',
                 },
               ],
