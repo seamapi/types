@@ -4,6 +4,7 @@ import { activate_climate_preset_action_attempt } from './activate-climate-prese
 import { activate_weekly_program_action_attempt } from './activate-weekly-program.js'
 import { assign_credential_action_attempt } from './assign-credential.js'
 import { configure_auto_lock_action_attempt } from './configure-auto-lock.js'
+import { convert_access_code_to_managed_action_attempt } from './convert-access-code-to-managed.js'
 import { deprecated_action_attempts } from './deprecated.js'
 import { encode_credential_action_attempt } from './encode-credential.js'
 import { lock_door_action_attempt } from './lock-door.js'
@@ -33,6 +34,7 @@ export const action_attempt = z.union([
   ...simulate_manual_lock_via_keypad_action_attempt.options,
   ...push_thermostat_programs_action_attempt.options,
   ...configure_auto_lock_action_attempt.options,
+  ...convert_access_code_to_managed_action_attempt.options,
   ...deprecated_action_attempts,
 ]).describe(`
   ---

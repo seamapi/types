@@ -11567,6 +11567,122 @@ const openapi: OpenAPISpec = {
             type: 'object',
           },
           {
+            description:
+              'Converting an unmanaged access code to managed is pending.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of converting an unmanaged access code to a managed access code.',
+                enum: ['CONVERT_ACCESS_CODE_TO_MANAGED'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description:
+              'Converting an unmanaged access code to managed succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of converting an unmanaged access code to a managed access code.',
+                enum: ['CONVERT_ACCESS_CODE_TO_MANAGED'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
+              result: {
+                description: 'Result of the action.',
+                properties: {},
+                type: 'object',
+              },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description:
+              'Converting an unmanaged access code to managed failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of converting an unmanaged access code to a managed access code.',
+                enum: ['CONVERT_ACCESS_CODE_TO_MANAGED'],
+                type: 'string',
+              },
+              error: {
+                description: 'Error associated with the action.',
+                properties: {
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
