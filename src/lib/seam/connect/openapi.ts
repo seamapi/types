@@ -2220,7 +2220,8 @@ const openapi: OpenAPISpec = {
                           },
                           error_code: {
                             description:
-                              'Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`).',
+                              'Reason the access code could not be revoked.',
+                            enum: ['offline_access_code_not_revocable'],
                             type: 'string',
                           },
                           message: {
@@ -4413,25 +4414,37 @@ const openapi: OpenAPISpec = {
             description:
               'Errors associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
             items: {
-              properties: {
-                created_at: {
-                  description: 'Date and time at which Seam created the error.',
-                  format: 'date-time',
-                  type: 'string',
-                },
-                error_code: {
+              description:
+                'Error associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
+              discriminator: { propertyName: 'error_code' },
+              oneOf: [
+                {
                   description:
-                    'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                  type: 'string',
+                    'Indicates that the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) was removed from the connected account, so Seam can no longer sync it.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['entrance_removed'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                  'x-resource-type': 'acs_entrance',
                 },
-                message: {
-                  description:
-                    'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                  type: 'string',
-                },
-              },
-              required: ['error_code', 'message', 'created_at'],
-              type: 'object',
+              ],
             },
             type: 'array',
           },
@@ -30217,27 +30230,568 @@ const openapi: OpenAPISpec = {
             type: 'string',
           },
           errors: {
-            description: 'Errors associated with the phone.',
+            description:
+              'Array of errors associated with the device. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
             items: {
-              properties: {
-                created_at: {
-                  description: 'Date and time at which Seam created the error.',
-                  format: 'date-time',
-                  type: 'string',
+              discriminator: { propertyName: 'error_code' },
+              oneOf: [
+                {
+                  description: 'Indicates that the account is disconnected.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['account_disconnected'],
+                      type: 'string',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is not a device error.',
+                      enum: [false],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                    'is_connected_account_error',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'connected_account',
                 },
-                error_code: {
-                  description: 'Unique identifier of the type of error.',
-                  type: 'string',
+                {
+                  description:
+                    'Indicates that the Salto site user limit has been reached.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_ks_subscription_limit_exceeded'],
+                      type: 'string',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is not a device error.',
+                      enum: [false],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                    'is_connected_account_error',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'connected_account',
+                  'x-variant-group-key': 'locks',
                 },
-                message: {
-                  description: 'Detailed description of the error.',
-                  type: 'string',
+                {
+                  description:
+                    "Indicates that the provider's system to which this device belongs is not letting Seam act on it, so Seam cannot manage access codes or unlock the device. The error message says which of three causes applies. Seam's integration user may not have sufficient permissions on the provider's system, or may have been suspended there: grant the integration user the required permissions in the provider's system, or reauthorize the connected account in Seam. The provider account or site may not have a valid subscription with the provider: set up or renew that subscription with the provider. Or the provider may have rejected the credential Seam uses to operate the device's hub: contact Seam support to re-activate it.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['insufficient_permissions'],
+                      type: 'string',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is not a device error.',
+                      enum: [false],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                    'is_connected_account_error',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'connected_account',
                 },
-              },
-              required: ['error_code', 'message', 'created_at'],
-              type: 'object',
+                {
+                  description:
+                    'Indicates that one or more dormakaba sites associated with the connected account could not be connected. Contact dormakaba support.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['dormakaba_sites_disconnected'],
+                      type: 'string',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is not a device error.',
+                      enum: [false],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                    'is_connected_account_error',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'connected_account',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  deprecated: true,
+                  description: 'Indicates that the device is offline.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['device_offline'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                  'x-deprecated': 'Use `device_disconnected` instead.',
+                  'x-resource-type': 'device',
+                },
+                {
+                  description: 'Indicates that the device has been removed.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['device_removed'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'device',
+                },
+                {
+                  description: 'Indicates that the hub is disconnected.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['hub_disconnected'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'device',
+                },
+                {
+                  description: 'Indicates that the device is disconnected.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['device_disconnected'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'device',
+                },
+                {
+                  description:
+                    'Indicates that the [backup access code pool](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/backup-access-codes) is empty.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['empty_backup_access_code_pool'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'device',
+                  'x-variant-group-key': 'access_codes',
+                },
+                {
+                  description:
+                    'Indicates that the user is not authorized to use the August lock.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['august_lock_not_authorized'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'device',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description: 'Indicates that device credentials are missing.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['missing_device_credentials'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'device',
+                },
+                {
+                  description: 'Indicates that the auxiliary heat is running.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['auxiliary_heat_running'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'device',
+                  'x-variant-group-key': 'thermostats',
+                },
+                {
+                  description:
+                    'Indicates that a subscription is required to connect.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['subscription_required'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'device',
+                },
+                {
+                  description:
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline. See also [Troubleshooting Your Access Control System](https://www.seam.co/docs/low-level-apis/access-systems/troubleshooting-your-access-control-system#acs_system-errors-seam_bridge_disconnected).',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['bridge_disconnected'],
+                      type: 'string',
+                    },
+                    is_bridge_error: {
+                      description:
+                        'Indicates whether the error is related to [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge).',
+                      type: 'boolean',
+                    },
+                    is_connected_account_error: {
+                      description:
+                        'Indicates whether the error is related specifically to the connected account.',
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                  'x-resource-type': 'connected_account',
+                },
+              ],
             },
             type: 'array',
+            'x-variant-groups': {
+              access_codes: { name: 'Access Codes' },
+              hardware: { name: 'Hardware' },
+              locks: { name: 'Locks' },
+              noise_sensors: { name: 'Noise Sensors' },
+              phones: { name: 'Phones' },
+              provider_metadata: { name: 'Provider Metadata' },
+              thermostats: { name: 'Thermostats' },
+            },
           },
           nickname: {
             description:
@@ -30293,28 +30847,764 @@ const openapi: OpenAPISpec = {
             type: 'object',
           },
           warnings: {
-            description: 'Warnings associated with the phone.',
+            description:
+              'Array of warnings associated with the device. Each warning object within the array contains two fields: `warning_code` and `message`. `warning_code` is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
             items: {
-              properties: {
-                created_at: {
+              discriminator: { propertyName: 'warning_code' },
+              oneOf: [
+                {
                   description:
-                    'Date and time at which Seam created the warning.',
-                  format: 'date-time',
-                  type: 'string',
+                    'Indicates that the backup access code is unhealthy.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['partial_backup_access_code_pool'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'access_codes',
                 },
-                message: {
-                  description: 'Detailed description of the warning.',
-                  type: 'string',
+                {
+                  description:
+                    'Indicates that there are too many backup codes.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['many_active_backup_codes'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'access_codes',
                 },
-                warning_code: {
-                  description: 'Unique identifier of the type of warning.',
-                  type: 'string',
+                {
+                  description:
+                    'Indicates that a third-party integration has been detected.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['third_party_integration_detected'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
                 },
-              },
-              required: ['warning_code', 'message', 'created_at'],
-              type: 'object',
+                {
+                  description:
+                    'Indicates that the Remote Unlock feature is not enabled in the settings."',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['ttlock_lock_gateway_unlocking_not_enabled'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description: 'Indicates that the gateway signal is weak.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['ttlock_weak_gateway_signal'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    'Indicates that the device is in power saving mode and may have limited functionality.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['power_saving_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    'Indicates that the temperature threshold has been exceeded.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['temperature_threshold_exceeded'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'thermostats',
+                },
+                {
+                  description:
+                    'Indicates that the device appears to be unresponsive.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['device_communication_degraded'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that a scheduled maintenance window has been detected.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['scheduled_maintenance_window'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the device has a flaky connection.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['device_has_flaky_connection'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the Salto KS lock is in Office Mode. Access Codes will not unlock doors.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_ks_office_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'access_codes',
+                },
+                {
+                  deprecated: true,
+                  description:
+                    'Indicates that the Salto KS lock is in Privacy Mode. Access Codes will not unlock doors.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_ks_privacy_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-deprecated': 'Use `privacy_mode` instead.',
+                  'x-variant-group-key': 'access_codes',
+                },
+                {
+                  description:
+                    'Indicates that the lock is in Privacy Mode. Access codes and remote unlock are blocked until Privacy Mode is disabled.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['privacy_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'access_codes',
+                },
+                {
+                  description:
+                    'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_ks_subscription_limit_almost_reached'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    'Indicates that a change in the reported device model has been detected for this Salto KS lock, which may occur after an IQ hub reset. Access code support may be affected. See https://help.getseam.com/articles/5098842588-salto-ks-lock-loses-access-code-support for troubleshooting steps.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_ks_lock_access_code_support_removed'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'access_codes',
+                },
+                {
+                  description:
+                    'Indicates that an unknown issue occurred while syncing the state of the phone with the provider. This issue may affect the proper functioning of the phone.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['unknown_issue_with_phone'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'phones',
+                },
+                {
+                  description:
+                    'Indicates that Seam detected that the Lockly device does not have a time zone configured. Time-bound codes may not work as expected.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['lockly_time_zone_not_configured'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    'Indicates that Seam does not know the time zone of the Ultraloq device. Set a time zone to enable time-bound access codes.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['ultraloq_time_zone_unknown'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    "Indicates that Seam does not know the device's time zone. Set a time zone to enable time-bound access codes.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['time_zone_unknown'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    "Indicates that the device's configured time zone does not match its hardware UTC offset. Time-bound access codes may activate at the wrong local time.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['time_zone_mismatch'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    'Indicates that the 2N device does not have a time zone configured. Configure a time zone on the device to enable access codes.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['two_n_device_missing_timezone'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    'Indicates that a hub or relay must be connected to unlock additional capabilities such as remote unlock.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['hub_required_for_additional_capabilities'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    'Indicates a provider-specific issue that may affect device functionality.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['provider_issue'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'access_codes',
+                },
+                {
+                  description:
+                    'Indicates that the key is in a locker that does not support the access codes API.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['keynest_unsupported_locker'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    'Indicates that the accessory keypad exists, but is not linked to the Igloohome Bridge. Online access code programming will fail until the keypad is linked to the Igloohome Bridge in the Igloohome app.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['accessory_keypad_setup_required'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    'Indicates that the accessory keypad paired with this lock has a low or critically low battery. Replace its batteries so guests can keep entering their access codes.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['accessory_keypad_low_battery'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    'Indicates that the device may optimistically be reported as online because the provider does not reliably report its online status.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['unreliable_online_status'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    'Indicates that the device has reached its maximum number of active access codes. Delete existing codes before creating new ones.',
+                  properties: {
+                    active_access_code_count: {
+                      description:
+                        'Number of active access codes on the device when the warning was set.',
+                      type: 'integer',
+                    },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    max_active_access_code_count: {
+                      description:
+                        'Maximum number of active access codes supported by the device.',
+                      type: 'integer',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['max_access_codes_reached'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'created_at',
+                    'warning_code',
+                    'active_access_code_count',
+                    'max_active_access_code_count',
+                  ],
+                  type: 'object',
+                  'x-variant-group-key': 'access_codes',
+                },
+              ],
             },
             type: 'array',
+            'x-variant-groups': {
+              access_codes: { name: 'Access Codes' },
+              hardware: { name: 'Hardware' },
+              locks: { name: 'Locks' },
+              noise_sensors: { name: 'Noise Sensors' },
+              phones: { name: 'Phones' },
+              provider_metadata: { name: 'Provider Metadata' },
+              thermostats: { name: 'Thermostats' },
+            },
           },
           workspace_id: {
             description: 'ID of the workspace that contains the phone.\n  ',
@@ -30636,30 +31926,41 @@ const openapi: OpenAPISpec = {
                               description:
                                 'Errors associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                               items: {
-                                properties: {
-                                  created_at: {
+                                description:
+                                  'Error associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
+                                discriminator: { propertyName: 'error_code' },
+                                oneOf: [
+                                  {
                                     description:
-                                      'Date and time at which Seam created the error.',
-                                    format: 'date-time',
-                                    type: 'string',
+                                      'Indicates that the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) was removed from the connected account, so Seam can no longer sync it.',
+                                    properties: {
+                                      created_at: {
+                                        description:
+                                          'Date and time at which Seam created the error.',
+                                        format: 'date-time',
+                                        type: 'string',
+                                      },
+                                      error_code: {
+                                        description:
+                                          'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                        enum: ['entrance_removed'],
+                                        type: 'string',
+                                      },
+                                      message: {
+                                        description:
+                                          'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                        type: 'string',
+                                      },
+                                    },
+                                    required: [
+                                      'created_at',
+                                      'message',
+                                      'error_code',
+                                    ],
+                                    type: 'object',
+                                    'x-resource-type': 'acs_entrance',
                                   },
-                                  error_code: {
-                                    description:
-                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'error_code',
-                                  'message',
-                                  'created_at',
                                 ],
-                                type: 'object',
                               },
                               type: 'array',
                             },
@@ -34075,7 +35376,8 @@ const openapi: OpenAPISpec = {
                           },
                           error_code: {
                             description:
-                              'Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`).',
+                              'Reason the access code could not be revoked.',
+                            enum: ['offline_access_code_not_revocable'],
                             type: 'string',
                           },
                           message: {

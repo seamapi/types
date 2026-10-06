@@ -1,6 +1,5 @@
 import * as z from 'zod/v3'
 
-import { datetime } from '../datetime.js'
 import { device } from './device.js'
 import { phone_device_type } from './device-type.js'
 import { phone_specific_properties } from './phone-properties.js'
@@ -14,6 +13,8 @@ const basePhoneDeviceSchema = device.pick({
   workspace_id: true,
   created_at: true,
   custom_metadata: true,
+  errors: true,
+  warnings: true,
 })
 
 export const phone = z.object({
@@ -35,32 +36,8 @@ export const phone = z.object({
     .describe(`Optional [custom metadata](https://www.seam.co/docs/core-concepts/devices/adding-custom-metadata-to-a-device) for the phone.
   `),
 
-  errors: z
-    .array(
-      z.object({
-        error_code: z
-          .string()
-          .describe('Unique identifier of the type of error.'),
-        message: z.string().describe('Detailed description of the error.'),
-        created_at: datetime.describe(
-          'Date and time at which Seam created the error.',
-        ),
-      }),
-    )
-    .describe('Errors associated with the phone.'),
-  warnings: z
-    .array(
-      z.object({
-        warning_code: z
-          .string()
-          .describe('Unique identifier of the type of warning.'),
-        message: z.string().describe('Detailed description of the warning.'),
-        created_at: datetime.describe(
-          'Date and time at which Seam created the warning.',
-        ),
-      }),
-    )
-    .describe('Warnings associated with the phone.'),
+  errors: basePhoneDeviceSchema.shape.errors,
+  warnings: basePhoneDeviceSchema.shape.warnings,
   device_type: phone_device_type.describe(
     'Type of the phone device, such as `ios_phone` or `android_phone`.',
   ),
