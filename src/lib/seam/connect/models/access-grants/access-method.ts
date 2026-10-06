@@ -260,12 +260,25 @@ const notifying_connector_mutation = common_pending_mutation
     "Seam is in the process of notifying the connector about this access method's issuance.",
   )
 
+const waiting_for_access_on_acs_system_mutation = common_pending_mutation
+  .extend({
+    mutation_code: z
+      .literal('waiting_for_access_on_acs_system')
+      .describe(
+        'Mutation code to indicate that the access system has not yet received all the access this card needs, so the card is not ready to be encoded.',
+      ),
+  })
+  .describe(
+    'The access system has not yet received all the access this card needs. A card encoded now would carry only the access the system already has, so wait until this clears before encoding.',
+  )
+
 export const access_method_pending_mutations = z.discriminatedUnion(
   'mutation_code',
   [
     provisioning_access_mutation,
     revoking_access_mutation,
     updating_access_times_mutation,
+    waiting_for_access_on_acs_system_mutation,
   ],
 )
 
@@ -278,6 +291,9 @@ const _access_method_pending_mutations_map = z.object({
   revoking_access: revoking_access_mutation.optional().nullable(),
   updating_access_times: updating_access_times_mutation.optional().nullable(),
   notifying_connector: notifying_connector_mutation.optional().nullable(),
+  waiting_for_access_on_acs_system: waiting_for_access_on_acs_system_mutation
+    .optional()
+    .nullable(),
 })
 
 export type AccessMethodPendingMutationsMap = z.infer<
@@ -329,7 +345,7 @@ export const access_method = z.object({
     .boolean()
     .optional()
     .describe(
-      'Indicates whether the access method is ready to be encoded. This is true when the credential has been created and the card has not yet been issued.',
+      'Indicates whether the access method is ready to be encoded. This is true when the card has not yet been issued and the access system has received all the access the card needs. While it is false, `pending_mutations` contains `waiting_for_access_on_acs_system`.',
     ),
   is_assignment_required: z
     .boolean()
