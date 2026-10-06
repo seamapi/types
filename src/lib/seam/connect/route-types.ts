@@ -1918,6 +1918,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -5210,6 +5248,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of configuring the auto-lock on a lock. */
             action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -10323,6 +10399,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -13466,6 +13580,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of configuring the auto-lock on a lock. */
             action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -20388,6 +20540,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -22560,6 +22750,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of configuring the auto-lock on a lock. */
             action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -28103,6 +28331,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of configuring the auto-lock on a lock. */
             action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -34443,6 +34709,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -36719,6 +37023,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -38878,6 +39220,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of configuring the auto-lock on a lock. */
             action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -41938,6 +42318,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of configuring the auto-lock on a lock. */
             action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -46928,6 +47346,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -49077,6 +49533,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of configuring the auto-lock on a lock. */
             action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -69532,6 +70026,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -79594,6 +80126,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -81744,6 +82314,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of configuring the auto-lock on a lock. */
             action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -83924,6 +84532,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -86074,6 +86720,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of configuring the auto-lock on a lock. */
             action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -92205,6 +92889,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -94374,6 +95096,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of configuring the auto-lock on a lock. */
             action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -96615,6 +97375,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of configuring the auto-lock on a lock. */
             action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -100789,6 +101587,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of configuring the auto-lock on a lock. */
             action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -118427,6 +119263,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -120577,6 +121451,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of configuring the auto-lock on a lock. */
             action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -122747,6 +123659,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of configuring the auto-lock on a lock. */
             action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -125028,6 +125978,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of configuring the auto-lock on a lock. */
             action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -129183,6 +130171,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -131341,6 +132367,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of configuring the auto-lock on a lock. */
             action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -137448,6 +138512,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -139823,6 +140925,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -142009,6 +143149,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of configuring the auto-lock on a lock. */
             action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -144327,6 +145505,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of configuring the auto-lock on a lock. */
             action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -155598,6 +156814,44 @@ export type Routes = {
                   result: null
                   /** Errors associated with the action attempt. Null for pending action attempts. */
                   error: null
+                  /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+                  action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'success'
+                  /** Errors associated with the action attempt. Null for successful action attempts. */
+                  error: null
+                  /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+                  action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+                  /** Result of the action. */
+                  result: {}
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'error'
+                  /** Result of the action attempt. Null for failed action attempts. */
+                  result: null
+                  /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+                  action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+                  /** Error associated with the action. */
+                  error: {
+                    /** Type of the error. */
+                    type: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                  }
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'pending'
+                  /** Result of the action attempt. Null for pending action attempts. */
+                  result: null
+                  /** Errors associated with the action attempt. Null for pending action attempts. */
+                  error: null
                   /** Syncing access codes is pending. */
                   action_type: 'SYNC_ACCESS_CODES'
                 }
@@ -165195,6 +166449,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of configuring the auto-lock on a lock. */
             action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
