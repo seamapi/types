@@ -15,6 +15,41 @@ import {
 } from './metadata/index.js'
 import { acs_entrance_salto_space_metadata } from './metadata/salto-space.js'
 
+const error_code_description =
+  'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.'
+
+const common_acs_entrance_error = z.object({
+  created_at: datetime.describe(
+    'Date and time at which Seam created the error.',
+  ),
+  message: z
+    .string()
+    .describe(
+      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+    ),
+})
+
+const entrance_removed = common_acs_entrance_error.extend({
+  error_code: z.literal('entrance_removed').describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: acs_entrance
+    ---
+    Indicates that the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) was removed from the connected account, so Seam can no longer sync it.
+    `)
+
+const acs_entrance_error = z
+  .discriminatedUnion('error_code', [entrance_removed])
+  .describe(
+    'Error associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
+  )
+
+const _acs_entrance_error_map = z.object({
+  entrance_removed: entrance_removed.optional().nullable(),
+})
+
+export type AcsEntranceErrorMap = z.infer<typeof _acs_entrance_error_map>
+
 const warning_code_description =
   'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
 
@@ -167,23 +202,7 @@ export const acs_entrance = z
         'ID of the [connected account](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
       ),
     errors: z
-      .array(
-        z.object({
-          error_code: z
-            .string()
-            .describe(
-              'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-            ),
-          message: z
-            .string()
-            .describe(
-              'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-            ),
-          created_at: datetime.describe(
-            'Date and time at which Seam created the error.',
-          ),
-        }),
-      )
+      .array(acs_entrance_error)
       .describe(
         'Errors associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
       ),

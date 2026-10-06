@@ -47,7 +47,7 @@ const acs_access_groups_failed_to_create_on_acs_system =
     Indicates that the [access group](https://www.seam.co/docs/low-level-apis/access-systems/user-management/assigning-users-to-access-groups) was not created on the [access system](https://www.seam.co/docs/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
     `)
 
-const acs_access_group_errors = z
+const acs_access_group_error = z
   .discriminatedUnion('error_code', [
     acs_access_groups_failed_to_create_on_acs_system,
   ])
@@ -148,7 +148,7 @@ const common_acs_access_group = z.object({
     'Date and time at which the access group was created.',
   ),
   errors: z
-    .array(acs_access_group_errors)
+    .array(acs_access_group_error)
     .describe('Errors associated with the `acs_access_group`.'),
   warnings: z
     .array(acs_access_group_warning)

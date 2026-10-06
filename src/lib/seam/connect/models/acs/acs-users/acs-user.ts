@@ -32,7 +32,7 @@ const common_acs_user_error = z.object({
     ),
 })
 
-const acs_users_deleted_externally = common_acs_user_error.extend({
+const acs_user_deleted_externally = common_acs_user_error.extend({
   error_code: z.literal('deleted_externally'),
 }).describe(`
     ---
@@ -41,7 +41,7 @@ const acs_users_deleted_externally = common_acs_user_error.extend({
     Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was deleted from the [access system](https://www.seam.co/docs/low-level-apis/access-systems) outside of Seam.
     `)
 
-const acs_users_salto_ks_subscription_limit_exceeded =
+const acs_user_salto_ks_subscription_limit_exceeded =
   common_acs_user_error.extend({
     error_code: z.literal('salto_ks_subscription_limit_exceeded'),
   }).describe(`
@@ -51,7 +51,7 @@ const acs_users_salto_ks_subscription_limit_exceeded =
     Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) could not be subscribed on Salto KS because the subscription limit has been exceeded.
     `)
 
-const acs_users_failed_to_create_on_acs_system = common_acs_user_error.extend({
+const acs_user_failed_to_create_on_acs_system = common_acs_user_error.extend({
   error_code: z.literal('failed_to_create_on_acs_system'),
 }).describe(`
     ---
@@ -60,7 +60,7 @@ const acs_users_failed_to_create_on_acs_system = common_acs_user_error.extend({
     Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was not created on the [access system](https://www.seam.co/docs/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
     `)
 
-const acs_users_failed_to_update_on_acs_system = common_acs_user_error.extend({
+const acs_user_failed_to_update_on_acs_system = common_acs_user_error.extend({
   error_code: z.literal('failed_to_update_on_acs_system'),
 }).describe(`
     ---
@@ -69,7 +69,7 @@ const acs_users_failed_to_update_on_acs_system = common_acs_user_error.extend({
     Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was not updated on the [access system](https://www.seam.co/docs/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
     `)
 
-const acs_users_failed_to_delete_on_acs_system = common_acs_user_error.extend({
+const acs_user_failed_to_delete_on_acs_system = common_acs_user_error.extend({
   error_code: z.literal('failed_to_delete_on_acs_system'),
 }).describe(`
     ---
@@ -78,48 +78,52 @@ const acs_users_failed_to_delete_on_acs_system = common_acs_user_error.extend({
     Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was not deleted on the [access system](https://www.seam.co/docs/low-level-apis/access-systems). This is likely due to an internal unexpected error. Contact Seam [support](mailto:support@seam.co).
     `)
 
-const acs_users_latch_conflict_with_resident_user =
-  common_acs_user_error.extend({
+const acs_user_latch_conflict_with_resident_user = common_acs_user_error.extend(
+  {
     error_code: z.literal('latch_conflict_with_resident_user'),
-  }).describe(`
+  },
+).describe(`
     ---
     resource_type: acs_user
     ---
     Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was created from the Seam API but also exists on Mission Control. This is unsupported. Contact Seam [support](mailto:support@seam.co).
     `)
 
-const acs_user_errors = z
+const acs_user_error = z
   .discriminatedUnion('error_code', [
-    acs_users_deleted_externally,
-    acs_users_salto_ks_subscription_limit_exceeded,
-    acs_users_failed_to_create_on_acs_system,
-    acs_users_failed_to_update_on_acs_system,
-    acs_users_failed_to_delete_on_acs_system,
-    acs_users_latch_conflict_with_resident_user,
+    acs_user_deleted_externally,
+    acs_user_salto_ks_subscription_limit_exceeded,
+    acs_user_failed_to_create_on_acs_system,
+    acs_user_failed_to_update_on_acs_system,
+    acs_user_failed_to_delete_on_acs_system,
+    acs_user_latch_conflict_with_resident_user,
   ])
   .describe(
     'Errors associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
   )
 
-const _acs_users_error_map = z.object({
-  deleted_externally: acs_users_deleted_externally.optional().nullable(),
+const _acs_user_error_map = z.object({
+  deleted_externally: acs_user_deleted_externally.optional().nullable(),
   salto_ks_subscription_limit_exceeded:
-    acs_users_salto_ks_subscription_limit_exceeded.optional().nullable(),
-  failed_to_create_on_acs_system: acs_users_failed_to_create_on_acs_system
+    acs_user_salto_ks_subscription_limit_exceeded.optional().nullable(),
+  failed_to_create_on_acs_system: acs_user_failed_to_create_on_acs_system
     .optional()
     .nullable(),
-  failed_to_update_on_acs_system: acs_users_failed_to_update_on_acs_system
+  failed_to_update_on_acs_system: acs_user_failed_to_update_on_acs_system
     .optional()
     .nullable(),
-  failed_to_delete_on_acs_system: acs_users_failed_to_delete_on_acs_system
+  failed_to_delete_on_acs_system: acs_user_failed_to_delete_on_acs_system
     .optional()
     .nullable(),
-  latch_conflict_with_resident_user: acs_users_latch_conflict_with_resident_user
+  latch_conflict_with_resident_user: acs_user_latch_conflict_with_resident_user
     .optional()
     .nullable(),
 })
 
-export type AcsUsersErrorMap = z.infer<typeof _acs_users_error_map>
+export type AcsUserErrorMap = z.infer<typeof _acs_user_error_map>
+
+/** @deprecated Use AcsUserErrorMap. */
+export type AcsUsersErrorMap = AcsUserErrorMap
 
 const common_acs_user_warning = z.object({
   created_at: datetime.describe(
@@ -132,7 +136,7 @@ const common_acs_user_warning = z.object({
     ),
 })
 
-const acs_users_being_deleted = common_acs_user_warning
+const acs_user_being_deleted = common_acs_user_warning
   .extend({
     warning_code: z.literal('being_deleted'),
   })
@@ -140,7 +144,7 @@ const acs_users_being_deleted = common_acs_user_warning
     'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) is being deleted from the [access system](https://www.seam.co/docs/low-level-apis/access-systems). This is a temporary state, and the access system user will be deleted shortly.',
   )
 
-const acs_users_salto_ks_user_not_subscribed = common_acs_user_warning
+const acs_user_salto_ks_user_not_subscribed = common_acs_user_warning
   .extend({
     warning_code: z.literal('salto_ks_user_not_subscribed'),
   })
@@ -172,9 +176,9 @@ export const latch_resident_user = common_acs_user_warning
     'Indicates that the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) was created on Latch Mission Control. Please use the Latch Mission Control to manage this user.',
   )
 
-const _acs_users_warning_map = z.object({
-  being_deleted: acs_users_being_deleted.optional().nullable(),
-  salto_ks_user_not_subscribed: acs_users_salto_ks_user_not_subscribed
+const _acs_user_warning_map = z.object({
+  being_deleted: acs_user_being_deleted.optional().nullable(),
+  salto_ks_user_not_subscribed: acs_user_salto_ks_user_not_subscribed
     .optional()
     .nullable(),
   acs_user_inactive: acs_user_inactive.optional().nullable(),
@@ -184,10 +188,10 @@ const _acs_users_warning_map = z.object({
   latch_resident_user: latch_resident_user.optional().nullable(),
 })
 
-export const acs_users_warnings = z
+export const acs_user_warning = z
   .discriminatedUnion('warning_code', [
-    acs_users_being_deleted,
-    acs_users_salto_ks_user_not_subscribed,
+    acs_user_being_deleted,
+    acs_user_salto_ks_user_not_subscribed,
     acs_user_inactive,
     unknown_issue_with_acs_user,
     latch_resident_user,
@@ -196,7 +200,13 @@ export const acs_users_warnings = z
     'Warnings associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
   )
 
-export type AcsUsersWarningMap = z.infer<typeof _acs_users_warning_map>
+export type AcsUserWarningMap = z.infer<typeof _acs_user_warning_map>
+
+/** @deprecated Use acs_user_warning. */
+export const acs_users_warnings = acs_user_warning
+
+/** @deprecated Use AcsUserWarningMap. */
+export type AcsUsersWarningMap = AcsUserWarningMap
 
 const user_fields = z.object({
   full_name: z
@@ -311,12 +321,12 @@ const common_acs_user = z
         'Phone number of the user identity associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
       ),
     warnings: z
-      .array(acs_users_warnings)
+      .array(acs_user_warning)
       .describe(
         'Warnings associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
       ),
     errors: z
-      .array(acs_user_errors)
+      .array(acs_user_error)
       .describe(
         'Errors associated with the [access system user](https://www.seam.co/docs/low-level-apis/access-systems/user-management).',
       ),

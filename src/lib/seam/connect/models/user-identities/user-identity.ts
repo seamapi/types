@@ -83,7 +83,7 @@ const _user_identity_error_map = z.object({
 
 export type UserIdentityErrorMap = z.infer<typeof _user_identity_error_map>
 
-const user_identity_warnings = z
+const user_identity_warning = z
   .discriminatedUnion('warning_code', [
     user_identity_being_deleted,
     acs_user_profile_does_not_match_user_identity,
@@ -98,7 +98,7 @@ const _user_identity_warning_map = z.object({
 
 export type UserIdentityWarningMap = z.infer<typeof _user_identity_warning_map>
 
-const user_identity_errors = z
+const user_identity_error = z
   .discriminatedUnion('error_code', [user_identity_issue_with_acs_user])
   .describe('Errors associated with the user identity.')
 
@@ -146,12 +146,12 @@ export const user_identity = z.object({
     .uuid()
     .describe('ID of the workspace that contains the user identity.'),
   errors: z
-    .array(user_identity_errors)
+    .array(user_identity_error)
     .describe(
       'Array of errors associated with the user identity. Each error object within the array contains fields like "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
     ),
   warnings: z
-    .array(user_identity_warnings)
+    .array(user_identity_warning)
     .describe(
       'Array of warnings associated with the user identity. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
     ),

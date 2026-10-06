@@ -94,20 +94,28 @@ const underprovisioned_access = common_access_grant_warning
     'Indicates that the access grant should have access to more locations than it currently does. Access methods are being created for the missing locations.',
   )
 
+export const access_code_revocation_failure_code = z
+  .enum(['offline_access_code_not_revocable'])
+  .describe('Reason the access code could not be revoked.')
+
+export type AccessCodeRevocationFailureCode = z.infer<
+  typeof access_code_revocation_failure_code
+>
+
 const overprovisioned_failed_device = z.object({
   device_id: z
     .string()
     .uuid()
     .describe('Device whose access code could not be revoked.'),
-  error_code: z
-    .string()
-    .describe(
-      'Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`).',
-    ),
+  error_code: access_code_revocation_failure_code,
   message: z
     .string()
     .describe('Human-readable description of why revocation failed.'),
 })
+
+export type AccessGrantOverprovisionedFailedDevice = z.infer<
+  typeof overprovisioned_failed_device
+>
 
 const overprovisioned_access = common_access_grant_warning
   .extend({

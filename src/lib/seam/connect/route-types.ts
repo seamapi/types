@@ -14126,8 +14126,8 @@ export type Routes = {
                 | {
                     /** Device whose access code could not be revoked. */
                     device_id: string
-                    /** Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`). */
-                    error_code: string
+                    /** Reason the access code could not be revoked. */
+                    error_code: 'offline_access_code_not_revocable'
                     /** Human-readable description of why revocation failed. */
                     message: string
                   }[]
@@ -14366,8 +14366,8 @@ export type Routes = {
                 | {
                     /** Device whose access code could not be revoked. */
                     device_id: string
-                    /** Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`). */
-                    error_code: string
+                    /** Reason the access code could not be revoked. */
+                    error_code: 'offline_access_code_not_revocable'
                     /** Human-readable description of why revocation failed. */
                     message: string
                   }[]
@@ -16606,12 +16606,12 @@ export type Routes = {
               connected_account_id: string
               /** Errors associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
               errors: {
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
                 /** Date and time at which Seam created the error. */
                 created_at: string
+                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                message: string
+                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                error_code: 'entrance_removed'
               }[]
               /** Warnings associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
               warnings: (
@@ -17846,8 +17846,8 @@ export type Routes = {
                 | {
                     /** Device whose access code could not be revoked. */
                     device_id: string
-                    /** Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`). */
-                    error_code: string
+                    /** Reason the access code could not be revoked. */
+                    error_code: 'offline_access_code_not_revocable'
                     /** Human-readable description of why revocation failed. */
                     message: string
                   }[]
@@ -18086,8 +18086,8 @@ export type Routes = {
                 | {
                     /** Device whose access code could not be revoked. */
                     device_id: string
-                    /** Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`). */
-                    error_code: string
+                    /** Reason the access code could not be revoked. */
+                    error_code: 'offline_access_code_not_revocable'
                     /** Human-readable description of why revocation failed. */
                     message: string
                   }[]
@@ -18298,8 +18298,8 @@ export type Routes = {
                 | {
                     /** Device whose access code could not be revoked. */
                     device_id: string
-                    /** Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`). */
-                    error_code: string
+                    /** Reason the access code could not be revoked. */
+                    error_code: 'offline_access_code_not_revocable'
                     /** Human-readable description of why revocation failed. */
                     message: string
                   }[]
@@ -18519,8 +18519,8 @@ export type Routes = {
                 | {
                     /** Device whose access code could not be revoked. */
                     device_id: string
-                    /** Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`). */
-                    error_code: string
+                    /** Reason the access code could not be revoked. */
+                    error_code: 'offline_access_code_not_revocable'
                     /** Human-readable description of why revocation failed. */
                     message: string
                   }[]
@@ -25440,12 +25440,12 @@ export type Routes = {
               connected_account_id: string
               /** Errors associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
               errors: {
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
                 /** Date and time at which Seam created the error. */
                 created_at: string
+                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                message: string
+                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                error_code: 'entrance_removed'
               }[]
               /** Warnings associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
               warnings: (
@@ -25773,8 +25773,8 @@ export type Routes = {
                       | {
                           /** Device whose access code could not be revoked. */
                           device_id: string
-                          /** Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`). */
-                          error_code: string
+                          /** Reason the access code could not be revoked. */
+                          error_code: 'offline_access_code_not_revocable'
                           /** Human-readable description of why revocation failed. */
                           message: string
                         }[]
@@ -29624,12 +29624,12 @@ export type Routes = {
         connected_account_id: string
         /** Errors associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
         errors: {
-          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-          error_code: string
-          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-          message: string
           /** Date and time at which Seam created the error. */
           created_at: string
+          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+          error_code: 'entrance_removed'
         }[]
         /** Warnings associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
         warnings: (
@@ -31855,12 +31855,12 @@ export type Routes = {
         connected_account_id: string
         /** Errors associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
         errors: {
-          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-          error_code: string
-          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-          message: string
           /** Date and time at which Seam created the error. */
           created_at: string
+          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+          error_code: 'entrance_removed'
         }[]
         /** Warnings associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
         warnings: (
@@ -39805,12 +39805,12 @@ export type Routes = {
         connected_account_id: string
         /** Errors associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
         errors: {
-          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-          error_code: string
-          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-          message: string
           /** Date and time at which Seam created the error. */
           created_at: string
+          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+          error_code: 'entrance_removed'
         }[]
         /** Warnings associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
         warnings: (
@@ -40119,12 +40119,12 @@ export type Routes = {
         connected_account_id: string
         /** Errors associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
         errors: {
-          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-          error_code: string
-          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-          message: string
           /** Date and time at which Seam created the error. */
           created_at: string
+          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+          error_code: 'entrance_removed'
         }[]
         /** Warnings associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
         warnings: (
@@ -44593,12 +44593,12 @@ export type Routes = {
         connected_account_id: string
         /** Errors associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
         errors: {
-          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-          error_code: string
-          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-          message: string
           /** Date and time at which Seam created the error. */
           created_at: string
+          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+          error_code: 'entrance_removed'
         }[]
         /** Warnings associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
         warnings: (
@@ -97987,24 +97987,390 @@ export type Routes = {
         custom_metadata: {
           [x: string]: string | boolean
         }
-        /** Errors associated with the phone. */
-        errors: {
-          /** Unique identifier of the type of error. */
-          error_code: string
-          /** Detailed description of the error. */
-          message: string
-          /** Date and time at which Seam created the error. */
-          created_at: string
-        }[]
-        /** Warnings associated with the phone. */
-        warnings: {
-          /** Unique identifier of the type of warning. */
-          warning_code: string
-          /** Detailed description of the warning. */
-          message: string
-          /** Date and time at which Seam created the warning. */
-          created_at: string
-        }[]
+        /** Array of errors associated with the device. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+        errors: (
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              /** Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
+              /** Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'dormakaba_sites_disconnected'
+              /** Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates whether the error is related specifically to the connected account. */
+              is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge). */
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
+            }
+        )[]
+        /** Array of warnings associated with the device. Each warning object within the array contains two fields: `warning_code` and `message`. `warning_code` is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
+        warnings: (
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'power_saving_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_office_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_privacy_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'privacy_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_lock_access_code_support_removed'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_time_zone_not_configured'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ultraloq_time_zone_unknown'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'time_zone_unknown'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'time_zone_mismatch'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'two_n_device_missing_timezone'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'hub_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'provider_issue'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'keynest_unsupported_locker'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_setup_required'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'unreliable_online_status'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'max_access_codes_reached'
+              /** Number of active access codes on the device when the warning was set. */
+              active_access_code_count: number
+              /** Maximum number of active access codes supported by the device. */
+              max_active_access_code_count: number
+            }
+        )[]
         /** Type of the phone device, such as `ios_phone` or `android_phone`. */
         device_type: 'ios_phone' | 'android_phone'
         /** Properties of the phone. */
@@ -98074,24 +98440,390 @@ export type Routes = {
         custom_metadata: {
           [x: string]: string | boolean
         }
-        /** Errors associated with the phone. */
-        errors: {
-          /** Unique identifier of the type of error. */
-          error_code: string
-          /** Detailed description of the error. */
-          message: string
-          /** Date and time at which Seam created the error. */
-          created_at: string
-        }[]
-        /** Warnings associated with the phone. */
-        warnings: {
-          /** Unique identifier of the type of warning. */
-          warning_code: string
-          /** Detailed description of the warning. */
-          message: string
-          /** Date and time at which Seam created the warning. */
-          created_at: string
-        }[]
+        /** Array of errors associated with the device. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+        errors: (
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              /** Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
+              /** Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'dormakaba_sites_disconnected'
+              /** Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates whether the error is related specifically to the connected account. */
+              is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge). */
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
+            }
+        )[]
+        /** Array of warnings associated with the device. Each warning object within the array contains two fields: `warning_code` and `message`. `warning_code` is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
+        warnings: (
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'power_saving_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_office_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_privacy_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'privacy_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_lock_access_code_support_removed'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_time_zone_not_configured'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ultraloq_time_zone_unknown'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'time_zone_unknown'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'time_zone_mismatch'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'two_n_device_missing_timezone'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'hub_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'provider_issue'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'keynest_unsupported_locker'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_setup_required'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'unreliable_online_status'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'max_access_codes_reached'
+              /** Number of active access codes on the device when the warning was set. */
+              active_access_code_count: number
+              /** Maximum number of active access codes supported by the device. */
+              max_active_access_code_count: number
+            }
+        )[]
         /** Type of the phone device, such as `ios_phone` or `android_phone`. */
         device_type: 'ios_phone' | 'android_phone'
         /** Properties of the phone. */
@@ -98188,24 +98920,390 @@ export type Routes = {
         custom_metadata: {
           [x: string]: string | boolean
         }
-        /** Errors associated with the phone. */
-        errors: {
-          /** Unique identifier of the type of error. */
-          error_code: string
-          /** Detailed description of the error. */
-          message: string
-          /** Date and time at which Seam created the error. */
-          created_at: string
-        }[]
-        /** Warnings associated with the phone. */
-        warnings: {
-          /** Unique identifier of the type of warning. */
-          warning_code: string
-          /** Detailed description of the warning. */
-          message: string
-          /** Date and time at which Seam created the warning. */
-          created_at: string
-        }[]
+        /** Array of errors associated with the device. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+        errors: (
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              /** Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
+              /** Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'dormakaba_sites_disconnected'
+              /** Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates whether the error is related specifically to the connected account. */
+              is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge). */
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
+            }
+        )[]
+        /** Array of warnings associated with the device. Each warning object within the array contains two fields: `warning_code` and `message`. `warning_code` is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
+        warnings: (
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'power_saving_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_office_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_privacy_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'privacy_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_lock_access_code_support_removed'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_time_zone_not_configured'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ultraloq_time_zone_unknown'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'time_zone_unknown'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'time_zone_mismatch'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'two_n_device_missing_timezone'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'hub_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'provider_issue'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'keynest_unsupported_locker'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_setup_required'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'unreliable_online_status'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'max_access_codes_reached'
+              /** Number of active access codes on the device when the warning was set. */
+              active_access_code_count: number
+              /** Maximum number of active access codes supported by the device. */
+              max_active_access_code_count: number
+            }
+        )[]
         /** Type of the phone device, such as `ios_phone` or `android_phone`. */
         device_type: 'ios_phone' | 'android_phone'
         /** Properties of the phone. */
@@ -99790,8 +100888,8 @@ export type Routes = {
                 | {
                     /** Device whose access code could not be revoked. */
                     device_id: string
-                    /** Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`). */
-                    error_code: string
+                    /** Reason the access code could not be revoked. */
+                    error_code: 'offline_access_code_not_revocable'
                     /** Human-readable description of why revocation failed. */
                     message: string
                   }[]
@@ -108154,8 +109252,8 @@ export type Routes = {
                 | {
                     /** Device whose access code could not be revoked. */
                     device_id: string
-                    /** Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`). */
-                    error_code: string
+                    /** Reason the access code could not be revoked. */
+                    error_code: 'offline_access_code_not_revocable'
                     /** Human-readable description of why revocation failed. */
                     message: string
                   }[]
@@ -108741,8 +109839,8 @@ export type Routes = {
                     | {
                         /** Device whose access code could not be revoked. */
                         device_id: string
-                        /** Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`). */
-                        error_code: string
+                        /** Reason the access code could not be revoked. */
+                        error_code: 'offline_access_code_not_revocable'
                         /** Human-readable description of why revocation failed. */
                         message: string
                       }[]
@@ -109504,12 +110602,12 @@ export type Routes = {
               connected_account_id: string
               /** Errors associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
               errors: {
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
                 /** Date and time at which Seam created the error. */
                 created_at: string
+                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                message: string
+                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                error_code: 'entrance_removed'
               }[]
               /** Warnings associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
               warnings: (
@@ -116517,12 +117615,12 @@ export type Routes = {
               connected_account_id: string
               /** Errors associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
               errors: {
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
                 /** Date and time at which Seam created the error. */
                 created_at: string
+                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                message: string
+                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                error_code: 'entrance_removed'
               }[]
               /** Warnings associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
               warnings: (
@@ -150705,12 +151803,12 @@ export type Routes = {
         connected_account_id: string
         /** Errors associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
         errors: {
-          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-          error_code: string
-          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-          message: string
           /** Date and time at which Seam created the error. */
           created_at: string
+          /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+          error_code: 'entrance_removed'
         }[]
         /** Warnings associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
         warnings: (
@@ -154234,12 +155332,12 @@ export type Routes = {
               connected_account_id: string
               /** Errors associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
               errors: {
-                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                error_code: string
-                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
-                message: string
                 /** Date and time at which Seam created the error. */
                 created_at: string
+                /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                message: string
+                /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                error_code: 'entrance_removed'
               }[]
               /** Warnings associated with the [entrance](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details). */
               warnings: (
@@ -158972,8 +160070,8 @@ export type Routes = {
                       | {
                           /** Device whose access code could not be revoked. */
                           device_id: string
-                          /** Reason the access code could not be revoked (e.g. `offline_access_code_not_revocable`). */
-                          error_code: string
+                          /** Reason the access code could not be revoked. */
+                          error_code: 'offline_access_code_not_revocable'
                           /** Human-readable description of why revocation failed. */
                           message: string
                         }[]
