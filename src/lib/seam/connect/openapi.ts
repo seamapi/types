@@ -50778,6 +50778,7 @@ const openapi: OpenAPISpec = {
                           allow_access_automation_rule_customization: false,
                           allow_climate_automation_rule_customization: false,
                           allow_instant_key_customization: false,
+                          allow_notification_customization: false,
                           exclude: false,
                         },
                         connect: { exclude: false },
@@ -50918,6 +50919,12 @@ const openapi: OpenAPISpec = {
                                 default: false,
                                 description:
                                   'Indicates whether the customer can customize the Instant Key profile for their properties.',
+                                type: 'boolean',
+                              },
+                              allow_notification_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
                                 type: 'boolean',
                               },
                               exclude: {
@@ -64770,6 +64777,129 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
+    '/seam/customer/v1/customers/notifications/get': {
+      get: {
+        description:
+          'Gets the notification settings for the authenticated customer, along with the workspace defaults they inherit when unset.',
+        operationId: 'seamCustomerV1CustomersNotificationsGetGet',
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    notification_settings: {
+                      properties: {
+                        low_battery_alert_threshold: {
+                          description:
+                            "Battery level, from 0 to 1, at or below which `device.low_battery` events fire for this customer's devices. `null` means the workspace or device default applies.",
+                          format: 'float',
+                          nullable: true,
+                          type: 'number',
+                        },
+                        workspace_default_low_battery_alert_threshold: {
+                          description:
+                            'Workspace-level low-battery alert threshold that applies when the customer has not set one. `null` means the device default applies.',
+                          format: 'float',
+                          nullable: true,
+                          type: 'number',
+                        },
+                      },
+                      required: [
+                        'low_battery_alert_threshold',
+                        'workspace_default_low_battery_alert_threshold',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['notification_settings', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session_with_customer: [] },
+          { client_session_with_customer_ro: [] },
+        ],
+        summary: '/seam/customer/v1/customers/notifications/get',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'customers',
+          'notifications',
+        ],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'notification_settings',
+        'x-response-key': 'notification_settings',
+        'x-title': 'Get Customer Notification Settings',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
+    '/seam/customer/v1/customers/notifications/update': {
+      patch: {
+        description:
+          'Updates the notification settings for the authenticated customer. Requires a customer portal with `features.configure.allow_notification_customization` enabled.',
+        operationId: 'seamCustomerV1CustomersNotificationsUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  low_battery_alert_threshold: {
+                    description:
+                      "Battery level, from 0 to 1, at or below which `device.low_battery` events fire for this customer's devices. Pass `null` to fall back to the workspace default.",
+                    format: 'float',
+                    maximum: 1,
+                    minimum: 0,
+                    nullable: true,
+                    type: 'number',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/customers/notifications/update',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'customers',
+          'notifications',
+        ],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
+        'x-title': 'Update Customer Notification Settings',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
     '/seam/customer/v1/customers/open_portal': {
       post: {
         description:
@@ -65392,6 +65522,12 @@ const openapi: OpenAPISpec = {
                                     'Indicates whether the customer can customize the Instant Key profile for their properties.',
                                   type: 'boolean',
                                 },
+                                allow_notification_customization: {
+                                  default: false,
+                                  description:
+                                    'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
+                                  type: 'boolean',
+                                },
                                 exclude: {
                                   default: false,
                                   description:
@@ -65854,6 +65990,12 @@ const openapi: OpenAPISpec = {
                                 default: false,
                                 description:
                                   'Indicates whether the customer can customize the Instant Key profile for their properties.',
+                                type: 'boolean',
+                              },
+                              allow_notification_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
                                 type: 'boolean',
                               },
                               exclude: {
@@ -69929,6 +70071,382 @@ const openapi: OpenAPISpec = {
         'x-fern-sdk-return-value': 'space',
         'x-response-key': 'space',
         'x-title': 'Update a Space',
+      },
+    },
+    '/speakers/mute': {
+      post: {
+        description:
+          'Mutes a specified speaker. To check whether a speaker supports muting, use `device.can_mute_speaker`.',
+        operationId: 'speakersMutePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description: 'ID of the speaker that you want to mute.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/speakers/mute',
+        tags: [],
+        'x-action-attempt-type': 'SET_SPEAKER_MUTE',
+        'x-fern-sdk-group-name': ['speakers'],
+        'x-fern-sdk-method-name': 'mute',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Mute a Speaker',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/speakers/pause': {
+      post: {
+        description:
+          'Pauses playback on a specified speaker. Playback also pauses on the speakers grouped with it, and the action attempt result lists every affected speaker. To check whether a speaker supports pausing playback, use `device.can_pause_speaker_playback`.',
+        operationId: 'speakersPausePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the speaker on which you want to pause playback.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/speakers/pause',
+        tags: [],
+        'x-action-attempt-type': 'PAUSE_SPEAKER_PLAYBACK',
+        'x-fern-sdk-group-name': ['speakers'],
+        'x-fern-sdk-method-name': 'pause',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Pause Playback on a Speaker',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/speakers/play_chime': {
+      post: {
+        description:
+          'Plays a short chime on a specified speaker. To check whether a speaker supports playing a chime, use `device.can_play_speaker_chime`.',
+        operationId: 'speakersPlayChimePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the speaker on which you want to play a chime.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  volume: {
+                    description:
+                      "Volume at which to play the chime, on the speaker's native volume scale. If you omit this parameter, the chime plays at the speaker's current volume.",
+                    format: 'float',
+                    type: 'number',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/speakers/play_chime',
+        tags: [],
+        'x-action-attempt-type': 'PLAY_SPEAKER_CHIME',
+        'x-fern-sdk-group-name': ['speakers'],
+        'x-fern-sdk-method-name': 'play_chime',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Play a Chime on a Speaker',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/speakers/resume': {
+      post: {
+        description:
+          'Resumes playback on a specified speaker. Playback also resumes on the speakers grouped with it, and the action attempt result lists every affected speaker. To check whether a speaker supports resuming playback, use `device.can_pause_speaker_playback`.',
+        operationId: 'speakersResumePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the speaker on which you want to resume playback.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/speakers/resume',
+        tags: [],
+        'x-action-attempt-type': 'RESUME_SPEAKER_PLAYBACK',
+        'x-fern-sdk-group-name': ['speakers'],
+        'x-fern-sdk-method-name': 'resume',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Resume Playback on a Speaker',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/speakers/set_volume': {
+      post: {
+        description:
+          "Sets the volume of a specified speaker. The volume must be between the speaker's `properties.speaker.min_volume` and `properties.speaker.max_volume`, in increments of `properties.speaker.volume_step`. To check whether a speaker supports setting its volume, use `device.can_set_speaker_volume`.",
+        operationId: 'speakersSetVolumePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the speaker for which you want to set the volume.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  volume: {
+                    description:
+                      "Volume that you want to set, on the speaker's native volume scale.",
+                    format: 'float',
+                    type: 'number',
+                  },
+                },
+                required: ['device_id', 'volume'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/speakers/set_volume',
+        tags: [],
+        'x-action-attempt-type': 'SET_SPEAKER_VOLUME',
+        'x-fern-sdk-group-name': ['speakers'],
+        'x-fern-sdk-method-name': 'set_volume',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Set the Volume of a Speaker',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/speakers/unmute': {
+      post: {
+        description:
+          'Unmutes a specified speaker. To check whether a speaker supports unmuting, use `device.can_mute_speaker`.',
+        operationId: 'speakersUnmutePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description: 'ID of the speaker that you want to unmute.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/speakers/unmute',
+        tags: [],
+        'x-action-attempt-type': 'SET_SPEAKER_MUTE',
+        'x-fern-sdk-group-name': ['speakers'],
+        'x-fern-sdk-method-name': 'unmute',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Unmute a Speaker',
+        'x-undocumented': 'Unreleased.',
       },
     },
     '/thermostats/activate_climate_preset': {
