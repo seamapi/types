@@ -8,12 +8,17 @@ import { convert_access_code_to_managed_action_attempt } from './convert-access-
 import { deprecated_action_attempts } from './deprecated.js'
 import { encode_credential_action_attempt } from './encode-credential.js'
 import { lock_door_action_attempt } from './lock-door.js'
+import { pause_speaker_playback_action_attempt } from './pause-speaker-playback.js'
+import { play_speaker_chime_action_attempt } from './play-speaker-chime.js'
 import { push_thermostat_programs_action_attempt } from './push-thermostat-programs.js'
 import { reset_sandbox_workspace_action_attempt } from './reset-sandbox-workspace.js'
+import { resume_speaker_playback_action_attempt } from './resume-speaker-playback.js'
 import { scan_credential_action_attempt } from './scan-credential.js'
 import { scan_to_assign_credential_action_attempt } from './scan-to-assign-credential.js'
 import { set_fan_mode_action_attempt } from './set-fan-mode.js'
 import { set_hvac_mode_action_attempt } from './set-hvac-mode.js'
+import { set_speaker_mute_action_attempt } from './set-speaker-mute.js'
+import { set_speaker_volume_action_attempt } from './set-speaker-volume.js'
 import { simulate_keypad_code_entry_action_attempt } from './simulate-keypad-code-entry.js'
 import { simulate_manual_lock_via_keypad_action_attempt } from './simulate-manual-lock-via-keypad.js'
 import { unlock_door_action_attempt } from './unlock-door.js'
@@ -35,6 +40,11 @@ export const action_attempt = z.union([
   ...push_thermostat_programs_action_attempt.options,
   ...configure_auto_lock_action_attempt.options,
   ...convert_access_code_to_managed_action_attempt.options,
+  ...set_speaker_volume_action_attempt.options,
+  ...set_speaker_mute_action_attempt.options,
+  ...pause_speaker_playback_action_attempt.options,
+  ...resume_speaker_playback_action_attempt.options,
+  ...play_speaker_chime_action_attempt.options,
   ...deprecated_action_attempts,
 ]).describe(`
   ---

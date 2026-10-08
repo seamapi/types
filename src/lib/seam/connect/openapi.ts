@@ -11745,6 +11745,587 @@ const openapi: OpenAPISpec = {
             type: 'object',
           },
           {
+            description: 'Setting the speaker volume is pending.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of setting the volume on a speaker.',
+                enum: ['SET_SPEAKER_VOLUME'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting the speaker volume succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of setting the volume on a speaker.',
+                enum: ['SET_SPEAKER_VOLUME'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
+              result: {
+                description: 'Result of the action.',
+                properties: {},
+                type: 'object',
+              },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting the speaker volume failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of setting the volume on a speaker.',
+                enum: ['SET_SPEAKER_VOLUME'],
+                type: 'string',
+              },
+              error: {
+                description: 'Error associated with the action.',
+                properties: {
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Muting or unmuting the speaker is pending.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of muting or unmuting a speaker.',
+                enum: ['SET_SPEAKER_MUTE'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Muting or unmuting the speaker succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of muting or unmuting a speaker.',
+                enum: ['SET_SPEAKER_MUTE'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
+              result: {
+                description: 'Result of the action.',
+                properties: {},
+                type: 'object',
+              },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Muting or unmuting the speaker failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of muting or unmuting a speaker.',
+                enum: ['SET_SPEAKER_MUTE'],
+                type: 'string',
+              },
+              error: {
+                description: 'Error associated with the action.',
+                properties: {
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Pausing playback on the speaker is pending.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of pausing playback on a speaker.',
+                enum: ['PAUSE_SPEAKER_PLAYBACK'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Pausing playback on the speaker succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of pausing playback on a speaker.',
+                enum: ['PAUSE_SPEAKER_PLAYBACK'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
+              result: {
+                description: 'Result of the action.',
+                properties: {
+                  affected_device_ids: {
+                    description:
+                      'IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                },
+                required: ['affected_device_ids'],
+                type: 'object',
+              },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Pausing playback on the speaker failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of pausing playback on a speaker.',
+                enum: ['PAUSE_SPEAKER_PLAYBACK'],
+                type: 'string',
+              },
+              error: {
+                description: 'Error associated with the action.',
+                properties: {
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Resuming playback on the speaker is pending.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of resuming playback on a speaker.',
+                enum: ['RESUME_SPEAKER_PLAYBACK'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Resuming playback on the speaker succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of resuming playback on a speaker.',
+                enum: ['RESUME_SPEAKER_PLAYBACK'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
+              result: {
+                description: 'Result of the action.',
+                properties: {
+                  affected_device_ids: {
+                    description:
+                      'IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                },
+                required: ['affected_device_ids'],
+                type: 'object',
+              },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Resuming playback on the speaker failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of resuming playback on a speaker.',
+                enum: ['RESUME_SPEAKER_PLAYBACK'],
+                type: 'string',
+              },
+              error: {
+                description: 'Error associated with the action.',
+                properties: {
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Playing a chime on the speaker is pending.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of playing a chime on a speaker.',
+                enum: ['PLAY_SPEAKER_CHIME'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Playing a chime on the speaker succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of playing a chime on a speaker.',
+                enum: ['PLAY_SPEAKER_CHIME'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
+              result: {
+                description: 'Result of the action.',
+                properties: {},
+                type: 'object',
+              },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Playing a chime on the speaker failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of playing a chime on a speaker.',
+                enum: ['PLAY_SPEAKER_CHIME'],
+                type: 'string',
+              },
+              error: {
+                description: 'Error associated with the action.',
+                properties: {
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -13058,6 +13639,7 @@ const openapi: OpenAPISpec = {
                 'noise_sensor',
                 'access_control',
                 'camera',
+                'speaker',
               ],
               type: 'string',
             },
@@ -13225,6 +13807,7 @@ const openapi: OpenAPISpec = {
                 'noise_sensor',
                 'access_control',
                 'camera',
+                'speaker',
               ],
               type: 'string',
             },
@@ -13955,6 +14538,21 @@ const openapi: OpenAPISpec = {
               'Indicates whether the thermostat supports simultaneous heating and cooling.',
             type: 'boolean',
           },
+          can_mute_speaker: {
+            description:
+              'Indicates whether the speaker supports muting and unmuting.',
+            type: 'boolean',
+          },
+          can_pause_speaker_playback: {
+            description:
+              'Indicates whether the speaker supports pausing and resuming playback.',
+            type: 'boolean',
+          },
+          can_play_speaker_chime: {
+            description:
+              'Indicates whether the speaker supports playing a chime.',
+            type: 'boolean',
+          },
           can_program_offline_access_codes: {
             description:
               'Indicates whether the device supports programming offline access codes.',
@@ -13993,6 +14591,11 @@ const openapi: OpenAPISpec = {
           can_run_thermostat_programs: {
             description:
               'Indicates whether the thermostat supports running climate programs.',
+            type: 'boolean',
+          },
+          can_set_speaker_volume: {
+            description:
+              'Indicates whether the speaker supports setting its volume.',
             type: 'boolean',
           },
           can_simulate_connection: {
@@ -14213,6 +14816,11 @@ const openapi: OpenAPISpec = {
                   'arlo_camera',
                   'reolink_camera',
                 ],
+                type: 'string',
+              },
+              {
+                description: 'Device type for speakers.',
+                enum: ['sonos_speaker'],
                 type: 'string',
               },
             ],
@@ -16256,6 +16864,38 @@ const openapi: OpenAPISpec = {
                         },
                         type: 'object',
                       },
+                      sonos_metadata: {
+                        description: 'Metadata for a Sonos speaker.',
+                        properties: {
+                          bonded_member_models: {
+                            description:
+                              'Models of the speakers bonded to this speaker, such as surrounds or a subwoofer.',
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
+                          household_id: {
+                            description:
+                              'ID of the Sonos household that the speaker belongs to.',
+                            type: 'string',
+                          },
+                          model_display_name: {
+                            description:
+                              'Model name of the speaker, as reported by Sonos.',
+                            type: 'string',
+                          },
+                          player_id: {
+                            description:
+                              'ID of the Sonos player for the speaker.',
+                            type: 'string',
+                          },
+                          software_version: {
+                            description:
+                              'Software version running on the speaker.',
+                            type: 'string',
+                          },
+                        },
+                        type: 'object',
+                      },
                       tado_metadata: {
                         description: 'Metadata for a tado° device.',
                         properties: {
@@ -16823,6 +17463,109 @@ const openapi: OpenAPISpec = {
                         },
                         type: 'array',
                         'x-property-group-key': 'access_codes',
+                      },
+                      speaker: {
+                        description:
+                          'Audio state and capabilities of the speaker.',
+                        properties: {
+                          grouped_with_device_ids: {
+                            description:
+                              'IDs of the other speakers that are currently grouped with this speaker. Pausing or resuming playback on a speaker also affects the speakers in its group.',
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                          has_fixed_volume: {
+                            description:
+                              "Indicates whether the speaker's volume is fixed, for example, because the speaker's line-out level is controlled by an external amplifier. A speaker with a fixed volume cannot have its volume set through Seam.",
+                            type: 'boolean',
+                          },
+                          is_muted: {
+                            description:
+                              'Indicates whether the speaker is muted.',
+                            type: 'boolean',
+                          },
+                          max_volume: {
+                            description:
+                              "Maximum volume that you can set on the speaker. This is the ceiling of the speaker's native volume scale, not a limit configured for guests.",
+                            format: 'float',
+                            type: 'number',
+                          },
+                          min_volume: {
+                            description:
+                              'Minimum volume that you can set on the speaker.',
+                            format: 'float',
+                            type: 'number',
+                          },
+                          now_playing: {
+                            description:
+                              'Content that is currently playing on the speaker.',
+                            properties: {
+                              album: {
+                                description:
+                                  'Album of the content that is currently playing.',
+                                type: 'string',
+                              },
+                              artist: {
+                                description:
+                                  'Artist of the content that is currently playing.',
+                                type: 'string',
+                              },
+                              title: {
+                                description:
+                                  'Title of the content that is currently playing.',
+                                type: 'string',
+                              },
+                            },
+                            type: 'object',
+                          },
+                          playback_state: {
+                            description: 'Playback state of the speaker.',
+                            enum: [
+                              'playing',
+                              'paused',
+                              'idle',
+                              'buffering',
+                              'unknown',
+                            ],
+                            type: 'string',
+                          },
+                          supports_chime: {
+                            description:
+                              'Indicates whether the speaker can play a chime.',
+                            type: 'boolean',
+                          },
+                          volume: {
+                            description:
+                              "Current volume of the speaker, on the speaker's native volume scale from `min_volume` to `max_volume`. This is the native volume setting, not a decibel level.",
+                            format: 'float',
+                            type: 'number',
+                          },
+                          volume_reported_at: {
+                            description:
+                              'Date and time at which the speaker last reported its volume.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          volume_step: {
+                            description:
+                              'Increment between the volume values that you can set on the speaker.',
+                            format: 'float',
+                            type: 'number',
+                          },
+                        },
+                        required: [
+                          'volume',
+                          'is_muted',
+                          'has_fixed_volume',
+                          'min_volume',
+                          'max_volume',
+                          'volume_step',
+                          'playback_state',
+                          'grouped_with_device_ids',
+                          'supports_chime',
+                        ],
+                        type: 'object',
+                        'x-property-group-key': 'speakers',
                       },
                       supported_code_lengths: {
                         description: 'Supported code lengths for access codes.',
@@ -17738,6 +18481,7 @@ const openapi: OpenAPISpec = {
               noise_sensors: { name: 'Noise Sensors' },
               phones: { name: 'Phones' },
               provider_metadata: { name: 'Provider Metadata' },
+              speakers: { name: 'Speakers' },
               thermostats: { name: 'Thermostats' },
             },
           },
@@ -18536,6 +19280,7 @@ const openapi: OpenAPISpec = {
           noise_sensors: { name: 'Noise Sensors' },
           phones: { name: 'Phones' },
           provider_metadata: { name: 'Provider Metadata' },
+          speakers: { name: 'Speakers' },
           thermostats: { name: 'Thermostats' },
         },
         'x-route-path': '/devices',
@@ -18563,6 +19308,21 @@ const openapi: OpenAPISpec = {
           can_hvac_heat_cool: {
             description:
               'Indicates whether the thermostat supports simultaneous heating and cooling.',
+            type: 'boolean',
+          },
+          can_mute_speaker: {
+            description:
+              'Indicates whether the speaker supports muting and unmuting.',
+            type: 'boolean',
+          },
+          can_pause_speaker_playback: {
+            description:
+              'Indicates whether the speaker supports pausing and resuming playback.',
+            type: 'boolean',
+          },
+          can_play_speaker_chime: {
+            description:
+              'Indicates whether the speaker supports playing a chime.',
             type: 'boolean',
           },
           can_program_offline_access_codes: {
@@ -18603,6 +19363,11 @@ const openapi: OpenAPISpec = {
           can_run_thermostat_programs: {
             description:
               'Indicates whether the thermostat supports running climate programs.',
+            type: 'boolean',
+          },
+          can_set_speaker_volume: {
+            description:
+              'Indicates whether the speaker supports setting its volume.',
             type: 'boolean',
           },
           can_simulate_connection: {
@@ -38127,6 +38892,21 @@ const openapi: OpenAPISpec = {
               'Indicates whether the thermostat supports simultaneous heating and cooling.',
             type: 'boolean',
           },
+          can_mute_speaker: {
+            description:
+              'Indicates whether the speaker supports muting and unmuting.',
+            type: 'boolean',
+          },
+          can_pause_speaker_playback: {
+            description:
+              'Indicates whether the speaker supports pausing and resuming playback.',
+            type: 'boolean',
+          },
+          can_play_speaker_chime: {
+            description:
+              'Indicates whether the speaker supports playing a chime.',
+            type: 'boolean',
+          },
           can_program_offline_access_codes: {
             description:
               'Indicates whether the device supports programming offline access codes.',
@@ -38165,6 +38945,11 @@ const openapi: OpenAPISpec = {
           can_run_thermostat_programs: {
             description:
               'Indicates whether the thermostat supports running climate programs.',
+            type: 'boolean',
+          },
+          can_set_speaker_volume: {
+            description:
+              'Indicates whether the speaker supports setting its volume.',
             type: 'boolean',
           },
           can_simulate_connection: {
@@ -38329,6 +39114,11 @@ const openapi: OpenAPISpec = {
                   'arlo_camera',
                   'reolink_camera',
                 ],
+                type: 'string',
+              },
+              {
+                description: 'Device type for speakers.',
+                enum: ['sonos_speaker'],
                 type: 'string',
               },
             ],
@@ -49097,6 +49887,7 @@ const openapi: OpenAPISpec = {
                         'noise_sensor',
                         'access_control',
                         'camera',
+                        'speaker',
                       ],
                       type: 'string',
                     },
@@ -49878,6 +50669,7 @@ const openapi: OpenAPISpec = {
                         'noise_sensor',
                         'access_control',
                         'camera',
+                        'speaker',
                       ],
                       type: 'string',
                     },
@@ -52866,6 +53658,11 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'string',
                 },
+                {
+                  description: 'Device type for speakers.',
+                  enum: ['sonos_speaker'],
+                  type: 'string',
+                },
               ],
             },
           },
@@ -52949,6 +53746,11 @@ const openapi: OpenAPISpec = {
                       'arlo_camera',
                       'reolink_camera',
                     ],
+                    type: 'string',
+                  },
+                  {
+                    description: 'Device type for speakers.',
+                    enum: ['sonos_speaker'],
                     type: 'string',
                   },
                 ],
@@ -53115,6 +53917,10 @@ const openapi: OpenAPISpec = {
                   'can_simulate_paid_subscription',
                   'can_configure_auto_lock',
                   'can_stream_live_video',
+                  'can_set_speaker_volume',
+                  'can_mute_speaker',
+                  'can_pause_speaker_playback',
+                  'can_play_speaker_chime',
                 ],
                 type: 'string',
               },
@@ -53150,6 +53956,10 @@ const openapi: OpenAPISpec = {
                   'can_simulate_paid_subscription',
                   'can_configure_auto_lock',
                   'can_stream_live_video',
+                  'can_set_speaker_volume',
+                  'can_mute_speaker',
+                  'can_pause_speaker_playback',
+                  'can_play_speaker_chime',
                 ],
                 type: 'string',
               },
@@ -55184,6 +55994,11 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'string',
                 },
+                {
+                  description: 'Device type for speakers.',
+                  enum: ['sonos_speaker'],
+                  type: 'string',
+                },
               ],
             },
           },
@@ -55267,6 +56082,11 @@ const openapi: OpenAPISpec = {
                       'arlo_camera',
                       'reolink_camera',
                     ],
+                    type: 'string',
+                  },
+                  {
+                    description: 'Device type for speakers.',
+                    enum: ['sonos_speaker'],
                     type: 'string',
                   },
                 ],
@@ -55399,6 +56219,10 @@ const openapi: OpenAPISpec = {
                   'can_simulate_paid_subscription',
                   'can_configure_auto_lock',
                   'can_stream_live_video',
+                  'can_set_speaker_volume',
+                  'can_mute_speaker',
+                  'can_pause_speaker_playback',
+                  'can_play_speaker_chime',
                 ],
                 type: 'string',
               },
@@ -55434,6 +56258,10 @@ const openapi: OpenAPISpec = {
                   'can_simulate_paid_subscription',
                   'can_configure_auto_lock',
                   'can_stream_live_video',
+                  'can_set_speaker_volume',
+                  'can_mute_speaker',
+                  'can_pause_speaker_playback',
+                  'can_play_speaker_chime',
                 ],
                 type: 'string',
               },

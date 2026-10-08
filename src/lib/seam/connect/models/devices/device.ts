@@ -111,6 +111,20 @@ export const device_capability_flags = z
       .describe(
         'Indicates whether the camera supports streaming live video through a camera live view session.',
       ),
+    can_set_speaker_volume: z
+      .boolean()
+      .describe('Indicates whether the speaker supports setting its volume.'),
+    can_mute_speaker: z
+      .boolean()
+      .describe('Indicates whether the speaker supports muting and unmuting.'),
+    can_pause_speaker_playback: z
+      .boolean()
+      .describe(
+        'Indicates whether the speaker supports pausing and resuming playback.',
+      ),
+    can_play_speaker_chime: z
+      .boolean()
+      .describe('Indicates whether the speaker supports playing a chime.'),
   })
   .partial()
 
@@ -1058,6 +1072,8 @@ export const device = z
         name: Hardware
       noise_sensors:
         name: Noise Sensors
+      speakers:
+        name: Speakers
       phones:
         name: Phones
       provider_metadata:
@@ -1189,6 +1205,8 @@ export const device = z
         name: Hardware
       noise_sensors:
         name: Noise Sensors
+      speakers:
+        name: Speakers
       phones:
         name: Phones
       provider_metadata:

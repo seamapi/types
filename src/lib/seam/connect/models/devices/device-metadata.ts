@@ -1323,6 +1323,35 @@ export const device_metadata = z
       })
       .partial()
       .describe(`Metadata for an Aqara device.`),
+
+    sonos_metadata: z
+      .object({
+        household_id: z
+          .string()
+          .optional()
+          .describe('ID of the Sonos household that the speaker belongs to.'),
+        player_id: z
+          .string()
+          .optional()
+          .describe('ID of the Sonos player for the speaker.'),
+        model_display_name: z
+          .string()
+          .optional()
+          .describe('Model name of the speaker, as reported by Sonos.'),
+        software_version: z
+          .string()
+          .optional()
+          .describe('Software version running on the speaker.'),
+        bonded_member_models: z
+          .array(z.string())
+          .optional()
+          .describe(
+            'Models of the speakers bonded to this speaker, such as surrounds or a subwoofer.',
+          ),
+      })
+      .partial()
+      .optional()
+      .describe('Metadata for a Sonos speaker.'),
   })
   .partial().describe(`
           ---

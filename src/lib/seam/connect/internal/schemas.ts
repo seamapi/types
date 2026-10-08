@@ -83,6 +83,7 @@ export {
   space,
   space_customer_data,
   neutral_resource as space_resource,
+  speaker_device_type,
   staff_member_resource,
   tenant_resource,
   thermostat_capability_properties,

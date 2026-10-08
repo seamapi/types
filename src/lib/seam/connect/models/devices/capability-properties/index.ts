@@ -6,12 +6,18 @@ import {
   time_frame_option,
 } from './access-code.js'
 import { lock_capability_properties } from './lock.js'
+import {
+  speaker_capability_properties,
+  speaker_playback_state,
+} from './speaker.js'
 import { thermostat_capability_properties } from './thermostat.js'
 
 export {
   access_code_capability_properties,
   access_code_code_constraint,
   lock_capability_properties,
+  speaker_capability_properties,
+  speaker_playback_state,
   thermostat_capability_properties,
   time_frame_option,
 }
@@ -20,8 +26,10 @@ export {
 export const capability_properties = z.intersection(
   access_code_capability_properties
     .partial()
-    .merge(lock_capability_properties.partial()),
+    .merge(lock_capability_properties.partial())
+    .merge(speaker_capability_properties),
   thermostat_capability_properties,
 )
 
 export type { AccessCodeConstraint, TimeFrameOption } from './access-code.js'
+export type { SpeakerPlaybackState } from './speaker.js'
