@@ -54389,6 +54389,8 @@ export type Routes = {
           allow_climate_automation_rule_customization?: boolean
           /** Indicates whether the customer can customize the Instant Key profile for their properties. */
           allow_instant_key_customization?: boolean
+          /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
+          allow_notification_customization?: boolean
         }
       }
       /** Whether the portal is embedded in another application. */
@@ -109330,6 +109332,36 @@ export type Routes = {
     }
     maxDuration: undefined
   }
+  '/seam/customer/v1/customers/notifications/get': {
+    route: '/seam/customer/v1/customers/notifications/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      notification_settings: {
+        /** Battery level, from 0 to 1, at or below which `device.low_battery` events fire for this customer's devices. `null` means the workspace or device default applies. */
+        low_battery_alert_threshold: number | null
+        /** Workspace-level low-battery alert threshold that applies when the customer has not set one. `null` means the device default applies. */
+        workspace_default_low_battery_alert_threshold: number | null
+      }
+    }
+    maxDuration: undefined
+  }
+  '/seam/customer/v1/customers/notifications/update': {
+    route: '/seam/customer/v1/customers/notifications/update'
+    method: 'PATCH' | 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** Battery level, from 0 to 1, at or below which `device.low_battery` events fire for this customer's devices. Pass `null` to fall back to the workspace default. */
+      low_battery_alert_threshold?: (number | null) | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+    maxDuration: undefined
+  }
   '/seam/customer/v1/customers/open_portal': {
     route: '/seam/customer/v1/customers/open_portal'
     method: 'POST'
@@ -113711,6 +113743,8 @@ export type Routes = {
             allow_climate_automation_rule_customization?: boolean
             /** Indicates whether the customer can customize the Instant Key profile for their properties. */
             allow_instant_key_customization?: boolean
+            /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
+            allow_notification_customization?: boolean
           }
         }
         /** Whether the portal is embedded in another application. */
@@ -113922,6 +113956,8 @@ export type Routes = {
                 allow_climate_automation_rule_customization?: boolean
                 /** Indicates whether the customer can customize the Instant Key profile for their properties. */
                 allow_instant_key_customization?: boolean
+                /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
+                allow_notification_customization?: boolean
               }
             }
           | undefined
