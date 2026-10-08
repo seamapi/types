@@ -14406,6 +14406,13 @@ const openapi: OpenAPISpec = {
             nullable: true,
             type: 'string',
           },
+          low_battery_alert_threshold: {
+            description:
+              "Battery level, from 0 to 1, at or below which `device.low_battery` events fire for this customer's devices. `null` means the workspace or device default applies.",
+            format: 'float',
+            nullable: true,
+            type: 'number',
+          },
           workspace_id: {
             description: 'ID of the workspace associated with the customer.',
             format: 'uuid',
@@ -14417,6 +14424,7 @@ const openapi: OpenAPISpec = {
           'workspace_id',
           'created_at',
           'customization_profile_id',
+          'low_battery_alert_threshold',
         ],
         type: 'object',
         'x-route-path': '/customers',
@@ -51566,6 +51574,15 @@ const openapi: OpenAPISpec = {
                             },
                             type: 'array',
                           },
+                          low_battery_alert_threshold: {
+                            description:
+                              "Battery level, from 0 to 1, at or below which `device.low_battery` events fire for this customer's devices. Overrides the workspace and device defaults. Pass `null` to remove the customer's override.",
+                            format: 'float',
+                            maximum: 1,
+                            minimum: 0,
+                            nullable: true,
+                            type: 'number',
+                          },
                           properties: {
                             description:
                               'List of short-term rental properties.',
@@ -52749,6 +52766,15 @@ const openapi: OpenAPISpec = {
                       type: 'object',
                     },
                     type: 'array',
+                  },
+                  low_battery_alert_threshold: {
+                    description:
+                      "Battery level, from 0 to 1, at or below which `device.low_battery` events fire for this customer's devices. Overrides the workspace and device defaults. Pass `null` to remove the customer's override.",
+                    format: 'float',
+                    maximum: 1,
+                    minimum: 0,
+                    nullable: true,
+                    type: 'number',
                   },
                   properties: {
                     description: 'List of short-term rental properties.',

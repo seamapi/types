@@ -54509,6 +54509,8 @@ export type Routes = {
             customer_key: string
             /** ID of the customization profile to use for this customer. Access grants that automations create for this customer use this profile. Pass `null` to remove the customer's customization profile. */
             customization_profile_id?: (string | null) | undefined
+            /** Battery level, from 0 to 1, at or below which `device.low_battery` events fire for this customer's devices. Overrides the workspace and device defaults. Pass `null` to remove the customer's override. */
+            low_battery_alert_threshold?: (number | null) | undefined
             /** List of general spaces or areas. */
             spaces?:
               | {
@@ -54965,6 +54967,8 @@ export type Routes = {
       customer_key: string
       /** ID of the customization profile to use for this customer. Access grants that automations create for this customer use this profile. Pass `null` to remove the customer's customization profile. */
       customization_profile_id?: (string | null) | undefined
+      /** Battery level, from 0 to 1, at or below which `device.low_battery` events fire for this customer's devices. Overrides the workspace and device defaults. Pass `null` to remove the customer's override. */
+      low_battery_alert_threshold?: (number | null) | undefined
       /** List of general spaces or areas. */
       spaces?:
         | {
@@ -109261,6 +109265,8 @@ export type Routes = {
         created_at: string
         /** ID of the customization profile the customer uses. Access grants that automations create for this customer use this profile. This can differ from the profiles the customer owns. */
         customization_profile_id: string | null
+        /** Battery level, from 0 to 1, at or below which `device.low_battery` events fire for this customer's devices. `null` means the workspace or device default applies. */
+        low_battery_alert_threshold: number | null
       }
     }
     maxDuration: undefined
@@ -109289,6 +109295,8 @@ export type Routes = {
         created_at: string
         /** ID of the customization profile the customer uses. Access grants that automations create for this customer use this profile. This can differ from the profiles the customer owns. */
         customization_profile_id: string | null
+        /** Battery level, from 0 to 1, at or below which `device.low_battery` events fire for this customer's devices. `null` means the workspace or device default applies. */
+        low_battery_alert_threshold: number | null
       }[]
       /** Information about the current page of results. */
       pagination: {
