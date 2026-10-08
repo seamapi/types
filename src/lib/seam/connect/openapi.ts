@@ -17542,7 +17542,7 @@ const openapi: OpenAPISpec = {
                           },
                           volume_reported_at: {
                             description:
-                              'Date and time at which the speaker last reported its volume.',
+                              'Date and time at which the speaker first reported its current volume.',
                             format: 'date-time',
                             type: 'string',
                           },

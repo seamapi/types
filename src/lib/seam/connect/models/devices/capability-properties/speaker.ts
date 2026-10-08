@@ -64,7 +64,7 @@ export const speaker_capability_properties = z.object({
         .datetime()
         .optional()
         .describe(
-          'Date and time at which the speaker last reported its volume.',
+          'Date and time at which the speaker first reported its current volume.',
         ),
     })
     .optional().describe(`
