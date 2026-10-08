@@ -1964,6 +1964,202 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -5302,6 +5498,202 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
             action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -10461,6 +10853,202 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -13666,6 +14254,202 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -14649,6 +15433,7 @@ export type Routes = {
                     | 'arlo_camera'
                     | 'reolink_camera'
                   )
+                | 'sonos_speaker'
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -15576,6 +16361,25 @@ export type Routes = {
                         ((string | null) | undefined) | undefined
                     }
                   | undefined
+                /** Metadata for a Sonos speaker. */
+                sonos_metadata?:
+                  | (
+                      | {
+                          /** ID of the Sonos household that the speaker belongs to. */
+                          household_id?: (string | undefined) | undefined
+                          /** ID of the Sonos player for the speaker. */
+                          player_id?: (string | undefined) | undefined
+                          /** Model name of the speaker, as reported by Sonos. */
+                          model_display_name?: (string | undefined) | undefined
+                          /** Software version running on the speaker. */
+                          software_version?: (string | undefined) | undefined
+                          /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
+                          bonded_member_models?:
+                            (string[] | undefined) | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
               }) &
                 ({
                   /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -15708,6 +16512,47 @@ export type Routes = {
                   auto_lock_enabled?: (boolean | undefined) | undefined
                   /** The delay in seconds before the lock automatically locks after being unlocked. */
                   auto_lock_delay_seconds?: (number | undefined) | undefined
+                  /** Audio state and capabilities of the speaker. */
+                  speaker?:
+                    | {
+                        /** Current volume of the speaker, on the speaker's native volume scale from `min_volume` to `max_volume`. This is the native volume setting, not a decibel level. */
+                        volume: number
+                        /** Indicates whether the speaker is muted. */
+                        is_muted: boolean
+                        /** Indicates whether the speaker's volume is fixed, for example, because the speaker's line-out level is controlled by an external amplifier. A speaker with a fixed volume cannot have its volume set through Seam. */
+                        has_fixed_volume: boolean
+                        /** Minimum volume that you can set on the speaker. */
+                        min_volume: number
+                        /** Maximum volume that you can set on the speaker. This is the ceiling of the speaker's native volume scale, not a limit configured for guests. */
+                        max_volume: number
+                        /** Increment between the volume values that you can set on the speaker. */
+                        volume_step: number
+                        /** Playback state of the speaker. */
+                        playback_state:
+                          | 'playing'
+                          | 'paused'
+                          | 'idle'
+                          | 'buffering'
+                          | 'unknown'
+                        /** Content that is currently playing on the speaker. */
+                        now_playing?:
+                          | {
+                              /** Title of the content that is currently playing. */
+                              title?: string | undefined
+                              /** Artist of the content that is currently playing. */
+                              artist?: string | undefined
+                              /** Album of the content that is currently playing. */
+                              album?: string | undefined
+                            }
+                          | undefined
+                        /** IDs of the other speakers that are currently grouped with this speaker. Pausing or resuming playback on a speaker also affects the speakers in its group. */
+                        grouped_with_device_ids: string[]
+                        /** Indicates whether the speaker can play a chime. */
+                        supports_chime: boolean
+                        /** Date and time at which the speaker last reported its volume. */
+                        volume_reported_at?: string | undefined
+                      }
+                    | undefined
                 } & {
                   /** Reported temperature in °F. */
                   temperature_fahrenheit?: number | undefined
@@ -16588,6 +17433,14 @@ export type Routes = {
               can_configure_auto_lock?: boolean | undefined
               /** Indicates whether the camera supports streaming live video through a camera live view session. */
               can_stream_live_video?: boolean | undefined
+              /** Indicates whether the speaker supports setting its volume. */
+              can_set_speaker_volume?: boolean | undefined
+              /** Indicates whether the speaker supports muting and unmuting. */
+              can_mute_speaker?: boolean | undefined
+              /** Indicates whether the speaker supports pausing and resuming playback. */
+              can_pause_speaker_playback?: boolean | undefined
+              /** Indicates whether the speaker supports playing a chime. */
+              can_play_speaker_chime?: boolean | undefined
             }[]
           | undefined
         acs_entrances?:
@@ -17064,6 +17917,7 @@ export type Routes = {
                 | 'noise_sensor'
                 | 'access_control'
                 | 'camera'
+                | 'speaker'
               )[]
               /** Default reservation check-in time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration — set during the connect_webview for providers like Lodgify whose API does not expose check-in times. */
               default_checkin_time?: string | undefined
@@ -20626,6 +21480,202 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -22860,6 +23910,202 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -23483,6 +24729,7 @@ export type Routes = {
                     | 'arlo_camera'
                     | 'reolink_camera'
                   )
+                | 'sonos_speaker'
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -24410,6 +25657,25 @@ export type Routes = {
                         ((string | null) | undefined) | undefined
                     }
                   | undefined
+                /** Metadata for a Sonos speaker. */
+                sonos_metadata?:
+                  | (
+                      | {
+                          /** ID of the Sonos household that the speaker belongs to. */
+                          household_id?: (string | undefined) | undefined
+                          /** ID of the Sonos player for the speaker. */
+                          player_id?: (string | undefined) | undefined
+                          /** Model name of the speaker, as reported by Sonos. */
+                          model_display_name?: (string | undefined) | undefined
+                          /** Software version running on the speaker. */
+                          software_version?: (string | undefined) | undefined
+                          /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
+                          bonded_member_models?:
+                            (string[] | undefined) | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
               }) &
                 ({
                   /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -24542,6 +25808,47 @@ export type Routes = {
                   auto_lock_enabled?: (boolean | undefined) | undefined
                   /** The delay in seconds before the lock automatically locks after being unlocked. */
                   auto_lock_delay_seconds?: (number | undefined) | undefined
+                  /** Audio state and capabilities of the speaker. */
+                  speaker?:
+                    | {
+                        /** Current volume of the speaker, on the speaker's native volume scale from `min_volume` to `max_volume`. This is the native volume setting, not a decibel level. */
+                        volume: number
+                        /** Indicates whether the speaker is muted. */
+                        is_muted: boolean
+                        /** Indicates whether the speaker's volume is fixed, for example, because the speaker's line-out level is controlled by an external amplifier. A speaker with a fixed volume cannot have its volume set through Seam. */
+                        has_fixed_volume: boolean
+                        /** Minimum volume that you can set on the speaker. */
+                        min_volume: number
+                        /** Maximum volume that you can set on the speaker. This is the ceiling of the speaker's native volume scale, not a limit configured for guests. */
+                        max_volume: number
+                        /** Increment between the volume values that you can set on the speaker. */
+                        volume_step: number
+                        /** Playback state of the speaker. */
+                        playback_state:
+                          | 'playing'
+                          | 'paused'
+                          | 'idle'
+                          | 'buffering'
+                          | 'unknown'
+                        /** Content that is currently playing on the speaker. */
+                        now_playing?:
+                          | {
+                              /** Title of the content that is currently playing. */
+                              title?: string | undefined
+                              /** Artist of the content that is currently playing. */
+                              artist?: string | undefined
+                              /** Album of the content that is currently playing. */
+                              album?: string | undefined
+                            }
+                          | undefined
+                        /** IDs of the other speakers that are currently grouped with this speaker. Pausing or resuming playback on a speaker also affects the speakers in its group. */
+                        grouped_with_device_ids: string[]
+                        /** Indicates whether the speaker can play a chime. */
+                        supports_chime: boolean
+                        /** Date and time at which the speaker last reported its volume. */
+                        volume_reported_at?: string | undefined
+                      }
+                    | undefined
                 } & {
                   /** Reported temperature in °F. */
                   temperature_fahrenheit?: number | undefined
@@ -25422,6 +26729,14 @@ export type Routes = {
               can_configure_auto_lock?: boolean | undefined
               /** Indicates whether the camera supports streaming live video through a camera live view session. */
               can_stream_live_video?: boolean | undefined
+              /** Indicates whether the speaker supports setting its volume. */
+              can_set_speaker_volume?: boolean | undefined
+              /** Indicates whether the speaker supports muting and unmuting. */
+              can_mute_speaker?: boolean | undefined
+              /** Indicates whether the speaker supports pausing and resuming playback. */
+              can_pause_speaker_playback?: boolean | undefined
+              /** Indicates whether the speaker supports playing a chime. */
+              can_play_speaker_chime?: boolean | undefined
             }[]
           | undefined
         acs_entrances?:
@@ -28457,6 +29772,202 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
             action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -34859,6 +36370,202 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -37181,6 +38888,202 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -39386,6 +41289,202 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
             action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -42492,6 +44591,202 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
             action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -47528,6 +49823,202 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -49739,6 +52230,202 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -50572,7 +53259,12 @@ export type Routes = {
       /** List of accepted device capabilities that restrict the types of devices that can be connected through the Connect Webview. If not provided, defaults will be determined based on the accepted providers. */
       accepted_capabilities?:
         | (
-            'lock' | 'thermostat' | 'noise_sensor' | 'access_control' | 'camera'
+            | 'lock'
+            | 'thermostat'
+            | 'noise_sensor'
+            | 'access_control'
+            | 'camera'
+            | 'speaker'
           )[]
         | undefined
       /** List of provider keys to exclude from the Connect Webview. These providers will not be shown when the user tries to connect an account. */
@@ -50609,7 +53301,12 @@ export type Routes = {
         accepted_providers: string[]
         /** High-level device capabilities that the Connect Webview can accept. When creating a Connect Webview, you can specify the types of devices that it can connect to Seam. If you do not set custom `accepted_capabilities`, Seam uses a default set of `accepted_capabilities` for each provider. For example, if you create a Connect Webview that accepts SmartThing devices, without specifying `accepted_capabilities`, Seam accepts only SmartThings locks. To connect SmartThings thermostats and locks to Seam, create a Connect Webview and include both `thermostat` and `lock` in the `accepted_capabilities`. */
         accepted_capabilities: (
-          'lock' | 'thermostat' | 'noise_sensor' | 'access_control' | 'camera'
+          | 'lock'
+          | 'thermostat'
+          | 'noise_sensor'
+          | 'access_control'
+          | 'camera'
+          | 'speaker'
         )[]
         /**
          * @deprecated Unused. Will be removed.*/
@@ -50697,7 +53394,12 @@ export type Routes = {
         accepted_providers: string[]
         /** High-level device capabilities that the Connect Webview can accept. When creating a Connect Webview, you can specify the types of devices that it can connect to Seam. If you do not set custom `accepted_capabilities`, Seam uses a default set of `accepted_capabilities` for each provider. For example, if you create a Connect Webview that accepts SmartThing devices, without specifying `accepted_capabilities`, Seam accepts only SmartThings locks. To connect SmartThings thermostats and locks to Seam, create a Connect Webview and include both `thermostat` and `lock` in the `accepted_capabilities`. */
         accepted_capabilities: (
-          'lock' | 'thermostat' | 'noise_sensor' | 'access_control' | 'camera'
+          | 'lock'
+          | 'thermostat'
+          | 'noise_sensor'
+          | 'access_control'
+          | 'camera'
+          | 'speaker'
         )[]
         /**
          * @deprecated Unused. Will be removed.*/
@@ -50775,7 +53477,12 @@ export type Routes = {
         accepted_providers: string[]
         /** High-level device capabilities that the Connect Webview can accept. When creating a Connect Webview, you can specify the types of devices that it can connect to Seam. If you do not set custom `accepted_capabilities`, Seam uses a default set of `accepted_capabilities` for each provider. For example, if you create a Connect Webview that accepts SmartThing devices, without specifying `accepted_capabilities`, Seam accepts only SmartThings locks. To connect SmartThings thermostats and locks to Seam, create a Connect Webview and include both `thermostat` and `lock` in the `accepted_capabilities`. */
         accepted_capabilities: (
-          'lock' | 'thermostat' | 'noise_sensor' | 'access_control' | 'camera'
+          | 'lock'
+          | 'thermostat'
+          | 'noise_sensor'
+          | 'access_control'
+          | 'camera'
+          | 'speaker'
         )[]
         /**
          * @deprecated Unused. Will be removed.*/
@@ -51051,7 +53758,12 @@ export type Routes = {
         customer_key?: string | undefined
         /** List of capabilities that were accepted during the account connection process. */
         accepted_capabilities: (
-          'lock' | 'thermostat' | 'noise_sensor' | 'access_control' | 'camera'
+          | 'lock'
+          | 'thermostat'
+          | 'noise_sensor'
+          | 'access_control'
+          | 'camera'
+          | 'speaker'
         )[]
         /** Default reservation check-in time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration — set during the connect_webview for providers like Lodgify whose API does not expose check-in times. */
         default_checkin_time?: string | undefined
@@ -51293,7 +54005,12 @@ export type Routes = {
         customer_key?: string | undefined
         /** List of capabilities that were accepted during the account connection process. */
         accepted_capabilities: (
-          'lock' | 'thermostat' | 'noise_sensor' | 'access_control' | 'camera'
+          | 'lock'
+          | 'thermostat'
+          | 'noise_sensor'
+          | 'access_control'
+          | 'camera'
+          | 'speaker'
         )[]
         /** Default reservation check-in time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration — set during the connect_webview for providers like Lodgify whose API does not expose check-in times. */
         default_checkin_time?: string | undefined
@@ -51364,7 +54081,12 @@ export type Routes = {
       /** List of accepted device capabilities that restrict the types of devices that can be connected through this connected account. Valid values are `lock`, `thermostat`, `noise_sensor`, and `access_control`. */
       accepted_capabilities?:
         | (
-            'lock' | 'thermostat' | 'noise_sensor' | 'access_control' | 'camera'
+            | 'lock'
+            | 'thermostat'
+            | 'noise_sensor'
+            | 'access_control'
+            | 'camera'
+            | 'speaker'
           )[]
         | undefined
       /** The customer key to associate with this connected account. If provided, the connected account and all resources under the connected account will be moved to this customer. May only be provided if the connected account is not already associated with a customer. */
@@ -51573,7 +54295,12 @@ export type Routes = {
         customer_key?: string | undefined
         /** List of capabilities that were accepted during the account connection process. */
         accepted_capabilities: (
-          'lock' | 'thermostat' | 'noise_sensor' | 'access_control' | 'camera'
+          | 'lock'
+          | 'thermostat'
+          | 'noise_sensor'
+          | 'access_control'
+          | 'camera'
+          | 'speaker'
         )[]
         /** Default reservation check-in time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration — set during the connect_webview for providers like Lodgify whose API does not expose check-in times. */
         default_checkin_time?: string | undefined
@@ -52700,6 +55427,7 @@ export type Routes = {
             )
           | ('ios_phone' | 'android_phone')
           | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -53601,6 +56329,24 @@ export type Routes = {
                 firmware_version?: ((string | null) | undefined) | undefined
               }
             | undefined
+          /** Metadata for a Sonos speaker. */
+          sonos_metadata?:
+            | (
+                | {
+                    /** ID of the Sonos household that the speaker belongs to. */
+                    household_id?: (string | undefined) | undefined
+                    /** ID of the Sonos player for the speaker. */
+                    player_id?: (string | undefined) | undefined
+                    /** Model name of the speaker, as reported by Sonos. */
+                    model_display_name?: (string | undefined) | undefined
+                    /** Software version running on the speaker. */
+                    software_version?: (string | undefined) | undefined
+                    /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
+                    bonded_member_models?: (string[] | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
         }) &
           ({
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -53730,6 +56476,43 @@ export type Routes = {
             auto_lock_enabled?: (boolean | undefined) | undefined
             /** The delay in seconds before the lock automatically locks after being unlocked. */
             auto_lock_delay_seconds?: (number | undefined) | undefined
+            /** Audio state and capabilities of the speaker. */
+            speaker?:
+              | {
+                  /** Current volume of the speaker, on the speaker's native volume scale from `min_volume` to `max_volume`. This is the native volume setting, not a decibel level. */
+                  volume: number
+                  /** Indicates whether the speaker is muted. */
+                  is_muted: boolean
+                  /** Indicates whether the speaker's volume is fixed, for example, because the speaker's line-out level is controlled by an external amplifier. A speaker with a fixed volume cannot have its volume set through Seam. */
+                  has_fixed_volume: boolean
+                  /** Minimum volume that you can set on the speaker. */
+                  min_volume: number
+                  /** Maximum volume that you can set on the speaker. This is the ceiling of the speaker's native volume scale, not a limit configured for guests. */
+                  max_volume: number
+                  /** Increment between the volume values that you can set on the speaker. */
+                  volume_step: number
+                  /** Playback state of the speaker. */
+                  playback_state:
+                    'playing' | 'paused' | 'idle' | 'buffering' | 'unknown'
+                  /** Content that is currently playing on the speaker. */
+                  now_playing?:
+                    | {
+                        /** Title of the content that is currently playing. */
+                        title?: string | undefined
+                        /** Artist of the content that is currently playing. */
+                        artist?: string | undefined
+                        /** Album of the content that is currently playing. */
+                        album?: string | undefined
+                      }
+                    | undefined
+                  /** IDs of the other speakers that are currently grouped with this speaker. Pausing or resuming playback on a speaker also affects the speakers in its group. */
+                  grouped_with_device_ids: string[]
+                  /** Indicates whether the speaker can play a chime. */
+                  supports_chime: boolean
+                  /** Date and time at which the speaker last reported its volume. */
+                  volume_reported_at?: string | undefined
+                }
+              | undefined
           } & {
             /** Reported temperature in °F. */
             temperature_fahrenheit?: number | undefined
@@ -54586,6 +57369,14 @@ export type Routes = {
         can_configure_auto_lock?: boolean | undefined
         /** Indicates whether the camera supports streaming live video through a camera live view session. */
         can_stream_live_video?: boolean | undefined
+        /** Indicates whether the speaker supports setting its volume. */
+        can_set_speaker_volume?: boolean | undefined
+        /** Indicates whether the speaker supports muting and unmuting. */
+        can_mute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing and resuming playback. */
+        can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports playing a chime. */
+        can_play_speaker_chime?: boolean | undefined
       }
     }
     maxDuration: undefined
@@ -54652,6 +57443,7 @@ export type Routes = {
               )
             | ('ios_phone' | 'android_phone')
             | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+            | 'sonos_speaker'
           )
         | undefined
       /** Array of device types for which you want to list devices. */
@@ -54702,6 +57494,7 @@ export type Routes = {
               )
             | ('ios_phone' | 'android_phone')
             | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+            | 'sonos_speaker'
           )[]
         | undefined
       /** Manufacturer for which you want to list devices. */
@@ -54807,6 +57600,10 @@ export type Routes = {
             | 'can_simulate_paid_subscription'
             | 'can_configure_auto_lock'
             | 'can_stream_live_video'
+            | 'can_set_speaker_volume'
+            | 'can_mute_speaker'
+            | 'can_pause_speaker_playback'
+            | 'can_play_speaker_chime'
           )[]
         | undefined
       /**  */
@@ -54834,6 +57631,10 @@ export type Routes = {
             | 'can_simulate_paid_subscription'
             | 'can_configure_auto_lock'
             | 'can_stream_live_video'
+            | 'can_set_speaker_volume'
+            | 'can_mute_speaker'
+            | 'can_pause_speaker_playback'
+            | 'can_play_speaker_chime'
           )[]
         | undefined
       /**
@@ -54896,6 +57697,7 @@ export type Routes = {
             )
           | ('ios_phone' | 'android_phone')
           | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -55797,6 +58599,24 @@ export type Routes = {
                 firmware_version?: ((string | null) | undefined) | undefined
               }
             | undefined
+          /** Metadata for a Sonos speaker. */
+          sonos_metadata?:
+            | (
+                | {
+                    /** ID of the Sonos household that the speaker belongs to. */
+                    household_id?: (string | undefined) | undefined
+                    /** ID of the Sonos player for the speaker. */
+                    player_id?: (string | undefined) | undefined
+                    /** Model name of the speaker, as reported by Sonos. */
+                    model_display_name?: (string | undefined) | undefined
+                    /** Software version running on the speaker. */
+                    software_version?: (string | undefined) | undefined
+                    /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
+                    bonded_member_models?: (string[] | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
         }) &
           ({
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -55926,6 +58746,43 @@ export type Routes = {
             auto_lock_enabled?: (boolean | undefined) | undefined
             /** The delay in seconds before the lock automatically locks after being unlocked. */
             auto_lock_delay_seconds?: (number | undefined) | undefined
+            /** Audio state and capabilities of the speaker. */
+            speaker?:
+              | {
+                  /** Current volume of the speaker, on the speaker's native volume scale from `min_volume` to `max_volume`. This is the native volume setting, not a decibel level. */
+                  volume: number
+                  /** Indicates whether the speaker is muted. */
+                  is_muted: boolean
+                  /** Indicates whether the speaker's volume is fixed, for example, because the speaker's line-out level is controlled by an external amplifier. A speaker with a fixed volume cannot have its volume set through Seam. */
+                  has_fixed_volume: boolean
+                  /** Minimum volume that you can set on the speaker. */
+                  min_volume: number
+                  /** Maximum volume that you can set on the speaker. This is the ceiling of the speaker's native volume scale, not a limit configured for guests. */
+                  max_volume: number
+                  /** Increment between the volume values that you can set on the speaker. */
+                  volume_step: number
+                  /** Playback state of the speaker. */
+                  playback_state:
+                    'playing' | 'paused' | 'idle' | 'buffering' | 'unknown'
+                  /** Content that is currently playing on the speaker. */
+                  now_playing?:
+                    | {
+                        /** Title of the content that is currently playing. */
+                        title?: string | undefined
+                        /** Artist of the content that is currently playing. */
+                        artist?: string | undefined
+                        /** Album of the content that is currently playing. */
+                        album?: string | undefined
+                      }
+                    | undefined
+                  /** IDs of the other speakers that are currently grouped with this speaker. Pausing or resuming playback on a speaker also affects the speakers in its group. */
+                  grouped_with_device_ids: string[]
+                  /** Indicates whether the speaker can play a chime. */
+                  supports_chime: boolean
+                  /** Date and time at which the speaker last reported its volume. */
+                  volume_reported_at?: string | undefined
+                }
+              | undefined
           } & {
             /** Reported temperature in °F. */
             temperature_fahrenheit?: number | undefined
@@ -56782,6 +59639,14 @@ export type Routes = {
         can_configure_auto_lock?: boolean | undefined
         /** Indicates whether the camera supports streaming live video through a camera live view session. */
         can_stream_live_video?: boolean | undefined
+        /** Indicates whether the speaker supports setting its volume. */
+        can_set_speaker_volume?: boolean | undefined
+        /** Indicates whether the speaker supports muting and unmuting. */
+        can_mute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing and resuming playback. */
+        can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports playing a chime. */
+        can_play_speaker_chime?: boolean | undefined
       }[]
       /** Information about the current page of results. */
       pagination: {
@@ -56948,6 +59813,14 @@ export type Routes = {
         can_configure_auto_lock?: boolean | undefined
         /** Indicates whether the camera supports streaming live video through a camera live view session. */
         can_stream_live_video?: boolean | undefined
+        /** Indicates whether the speaker supports setting its volume. */
+        can_set_speaker_volume?: boolean | undefined
+        /** Indicates whether the speaker supports muting and unmuting. */
+        can_mute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing and resuming playback. */
+        can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports playing a chime. */
+        can_play_speaker_chime?: boolean | undefined
       }[]
     }
     maxDuration: undefined
@@ -58418,6 +61291,7 @@ export type Routes = {
             )
           | ('ios_phone' | 'android_phone')
           | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | 'sonos_speaker'
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
         /** Location information for the device. */
@@ -58965,6 +61839,14 @@ export type Routes = {
         can_configure_auto_lock?: boolean | undefined
         /** Indicates whether the camera supports streaming live video through a camera live view session. */
         can_stream_live_video?: boolean | undefined
+        /** Indicates whether the speaker supports setting its volume. */
+        can_set_speaker_volume?: boolean | undefined
+        /** Indicates whether the speaker supports muting and unmuting. */
+        can_mute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing and resuming playback. */
+        can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports playing a chime. */
+        can_play_speaker_chime?: boolean | undefined
       }
     }
     maxDuration: undefined
@@ -59031,6 +61913,7 @@ export type Routes = {
               )
             | ('ios_phone' | 'android_phone')
             | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+            | 'sonos_speaker'
           )
         | undefined
       /** Array of device types for which you want to list devices. */
@@ -59081,6 +61964,7 @@ export type Routes = {
               )
             | ('ios_phone' | 'android_phone')
             | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+            | 'sonos_speaker'
           )[]
         | undefined
       /** Manufacturer for which you want to list devices. */
@@ -59176,6 +62060,10 @@ export type Routes = {
             | 'can_simulate_paid_subscription'
             | 'can_configure_auto_lock'
             | 'can_stream_live_video'
+            | 'can_set_speaker_volume'
+            | 'can_mute_speaker'
+            | 'can_pause_speaker_playback'
+            | 'can_play_speaker_chime'
           )[]
         | undefined
       /**  */
@@ -59203,6 +62091,10 @@ export type Routes = {
             | 'can_simulate_paid_subscription'
             | 'can_configure_auto_lock'
             | 'can_stream_live_video'
+            | 'can_set_speaker_volume'
+            | 'can_mute_speaker'
+            | 'can_pause_speaker_playback'
+            | 'can_play_speaker_chime'
           )[]
         | undefined
       /** String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`. */
@@ -59262,6 +62154,7 @@ export type Routes = {
             )
           | ('ios_phone' | 'android_phone')
           | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | 'sonos_speaker'
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
         /** Location information for the device. */
@@ -59809,6 +62702,14 @@ export type Routes = {
         can_configure_auto_lock?: boolean | undefined
         /** Indicates whether the camera supports streaming live video through a camera live view session. */
         can_stream_live_video?: boolean | undefined
+        /** Indicates whether the speaker supports setting its volume. */
+        can_set_speaker_volume?: boolean | undefined
+        /** Indicates whether the speaker supports muting and unmuting. */
+        can_mute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing and resuming playback. */
+        can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports playing a chime. */
+        can_play_speaker_chime?: boolean | undefined
       }[]
       /** Information about the current page of results. */
       pagination: {
@@ -70224,6 +73125,202 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -70571,6 +73668,7 @@ export type Routes = {
             )
           | ('ios_phone' | 'android_phone')
           | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -71472,6 +74570,24 @@ export type Routes = {
                 firmware_version?: ((string | null) | undefined) | undefined
               }
             | undefined
+          /** Metadata for a Sonos speaker. */
+          sonos_metadata?:
+            | (
+                | {
+                    /** ID of the Sonos household that the speaker belongs to. */
+                    household_id?: (string | undefined) | undefined
+                    /** ID of the Sonos player for the speaker. */
+                    player_id?: (string | undefined) | undefined
+                    /** Model name of the speaker, as reported by Sonos. */
+                    model_display_name?: (string | undefined) | undefined
+                    /** Software version running on the speaker. */
+                    software_version?: (string | undefined) | undefined
+                    /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
+                    bonded_member_models?: (string[] | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
         }) &
           ({
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -71601,6 +74717,43 @@ export type Routes = {
             auto_lock_enabled?: (boolean | undefined) | undefined
             /** The delay in seconds before the lock automatically locks after being unlocked. */
             auto_lock_delay_seconds?: (number | undefined) | undefined
+            /** Audio state and capabilities of the speaker. */
+            speaker?:
+              | {
+                  /** Current volume of the speaker, on the speaker's native volume scale from `min_volume` to `max_volume`. This is the native volume setting, not a decibel level. */
+                  volume: number
+                  /** Indicates whether the speaker is muted. */
+                  is_muted: boolean
+                  /** Indicates whether the speaker's volume is fixed, for example, because the speaker's line-out level is controlled by an external amplifier. A speaker with a fixed volume cannot have its volume set through Seam. */
+                  has_fixed_volume: boolean
+                  /** Minimum volume that you can set on the speaker. */
+                  min_volume: number
+                  /** Maximum volume that you can set on the speaker. This is the ceiling of the speaker's native volume scale, not a limit configured for guests. */
+                  max_volume: number
+                  /** Increment between the volume values that you can set on the speaker. */
+                  volume_step: number
+                  /** Playback state of the speaker. */
+                  playback_state:
+                    'playing' | 'paused' | 'idle' | 'buffering' | 'unknown'
+                  /** Content that is currently playing on the speaker. */
+                  now_playing?:
+                    | {
+                        /** Title of the content that is currently playing. */
+                        title?: string | undefined
+                        /** Artist of the content that is currently playing. */
+                        artist?: string | undefined
+                        /** Album of the content that is currently playing. */
+                        album?: string | undefined
+                      }
+                    | undefined
+                  /** IDs of the other speakers that are currently grouped with this speaker. Pausing or resuming playback on a speaker also affects the speakers in its group. */
+                  grouped_with_device_ids: string[]
+                  /** Indicates whether the speaker can play a chime. */
+                  supports_chime: boolean
+                  /** Date and time at which the speaker last reported its volume. */
+                  volume_reported_at?: string | undefined
+                }
+              | undefined
           } & {
             /** Reported temperature in °F. */
             temperature_fahrenheit?: number | undefined
@@ -72457,6 +75610,14 @@ export type Routes = {
         can_configure_auto_lock?: boolean | undefined
         /** Indicates whether the camera supports streaming live video through a camera live view session. */
         can_stream_live_video?: boolean | undefined
+        /** Indicates whether the speaker supports setting its volume. */
+        can_set_speaker_volume?: boolean | undefined
+        /** Indicates whether the speaker supports muting and unmuting. */
+        can_mute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing and resuming playback. */
+        can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports playing a chime. */
+        can_play_speaker_chime?: boolean | undefined
       }
       /** Represents a [device](https://www.seam.co/docs/core-concepts/devices) that has been connected to Seam. */
       device: {
@@ -72509,6 +75670,7 @@ export type Routes = {
             )
           | ('ios_phone' | 'android_phone')
           | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -73410,6 +76572,24 @@ export type Routes = {
                 firmware_version?: ((string | null) | undefined) | undefined
               }
             | undefined
+          /** Metadata for a Sonos speaker. */
+          sonos_metadata?:
+            | (
+                | {
+                    /** ID of the Sonos household that the speaker belongs to. */
+                    household_id?: (string | undefined) | undefined
+                    /** ID of the Sonos player for the speaker. */
+                    player_id?: (string | undefined) | undefined
+                    /** Model name of the speaker, as reported by Sonos. */
+                    model_display_name?: (string | undefined) | undefined
+                    /** Software version running on the speaker. */
+                    software_version?: (string | undefined) | undefined
+                    /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
+                    bonded_member_models?: (string[] | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
         }) &
           ({
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -73539,6 +76719,43 @@ export type Routes = {
             auto_lock_enabled?: (boolean | undefined) | undefined
             /** The delay in seconds before the lock automatically locks after being unlocked. */
             auto_lock_delay_seconds?: (number | undefined) | undefined
+            /** Audio state and capabilities of the speaker. */
+            speaker?:
+              | {
+                  /** Current volume of the speaker, on the speaker's native volume scale from `min_volume` to `max_volume`. This is the native volume setting, not a decibel level. */
+                  volume: number
+                  /** Indicates whether the speaker is muted. */
+                  is_muted: boolean
+                  /** Indicates whether the speaker's volume is fixed, for example, because the speaker's line-out level is controlled by an external amplifier. A speaker with a fixed volume cannot have its volume set through Seam. */
+                  has_fixed_volume: boolean
+                  /** Minimum volume that you can set on the speaker. */
+                  min_volume: number
+                  /** Maximum volume that you can set on the speaker. This is the ceiling of the speaker's native volume scale, not a limit configured for guests. */
+                  max_volume: number
+                  /** Increment between the volume values that you can set on the speaker. */
+                  volume_step: number
+                  /** Playback state of the speaker. */
+                  playback_state:
+                    'playing' | 'paused' | 'idle' | 'buffering' | 'unknown'
+                  /** Content that is currently playing on the speaker. */
+                  now_playing?:
+                    | {
+                        /** Title of the content that is currently playing. */
+                        title?: string | undefined
+                        /** Artist of the content that is currently playing. */
+                        artist?: string | undefined
+                        /** Album of the content that is currently playing. */
+                        album?: string | undefined
+                      }
+                    | undefined
+                  /** IDs of the other speakers that are currently grouped with this speaker. Pausing or resuming playback on a speaker also affects the speakers in its group. */
+                  grouped_with_device_ids: string[]
+                  /** Indicates whether the speaker can play a chime. */
+                  supports_chime: boolean
+                  /** Date and time at which the speaker last reported its volume. */
+                  volume_reported_at?: string | undefined
+                }
+              | undefined
           } & {
             /** Reported temperature in °F. */
             temperature_fahrenheit?: number | undefined
@@ -74395,6 +77612,14 @@ export type Routes = {
         can_configure_auto_lock?: boolean | undefined
         /** Indicates whether the camera supports streaming live video through a camera live view session. */
         can_stream_live_video?: boolean | undefined
+        /** Indicates whether the speaker supports setting its volume. */
+        can_set_speaker_volume?: boolean | undefined
+        /** Indicates whether the speaker supports muting and unmuting. */
+        can_mute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing and resuming playback. */
+        can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports playing a chime. */
+        can_play_speaker_chime?: boolean | undefined
       }
     }
     maxDuration: undefined
@@ -74576,6 +77801,7 @@ export type Routes = {
             )
           | ('ios_phone' | 'android_phone')
           | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -75477,6 +78703,24 @@ export type Routes = {
                 firmware_version?: ((string | null) | undefined) | undefined
               }
             | undefined
+          /** Metadata for a Sonos speaker. */
+          sonos_metadata?:
+            | (
+                | {
+                    /** ID of the Sonos household that the speaker belongs to. */
+                    household_id?: (string | undefined) | undefined
+                    /** ID of the Sonos player for the speaker. */
+                    player_id?: (string | undefined) | undefined
+                    /** Model name of the speaker, as reported by Sonos. */
+                    model_display_name?: (string | undefined) | undefined
+                    /** Software version running on the speaker. */
+                    software_version?: (string | undefined) | undefined
+                    /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
+                    bonded_member_models?: (string[] | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
         }) &
           ({
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -75606,6 +78850,43 @@ export type Routes = {
             auto_lock_enabled?: (boolean | undefined) | undefined
             /** The delay in seconds before the lock automatically locks after being unlocked. */
             auto_lock_delay_seconds?: (number | undefined) | undefined
+            /** Audio state and capabilities of the speaker. */
+            speaker?:
+              | {
+                  /** Current volume of the speaker, on the speaker's native volume scale from `min_volume` to `max_volume`. This is the native volume setting, not a decibel level. */
+                  volume: number
+                  /** Indicates whether the speaker is muted. */
+                  is_muted: boolean
+                  /** Indicates whether the speaker's volume is fixed, for example, because the speaker's line-out level is controlled by an external amplifier. A speaker with a fixed volume cannot have its volume set through Seam. */
+                  has_fixed_volume: boolean
+                  /** Minimum volume that you can set on the speaker. */
+                  min_volume: number
+                  /** Maximum volume that you can set on the speaker. This is the ceiling of the speaker's native volume scale, not a limit configured for guests. */
+                  max_volume: number
+                  /** Increment between the volume values that you can set on the speaker. */
+                  volume_step: number
+                  /** Playback state of the speaker. */
+                  playback_state:
+                    'playing' | 'paused' | 'idle' | 'buffering' | 'unknown'
+                  /** Content that is currently playing on the speaker. */
+                  now_playing?:
+                    | {
+                        /** Title of the content that is currently playing. */
+                        title?: string | undefined
+                        /** Artist of the content that is currently playing. */
+                        artist?: string | undefined
+                        /** Album of the content that is currently playing. */
+                        album?: string | undefined
+                      }
+                    | undefined
+                  /** IDs of the other speakers that are currently grouped with this speaker. Pausing or resuming playback on a speaker also affects the speakers in its group. */
+                  grouped_with_device_ids: string[]
+                  /** Indicates whether the speaker can play a chime. */
+                  supports_chime: boolean
+                  /** Date and time at which the speaker last reported its volume. */
+                  volume_reported_at?: string | undefined
+                }
+              | undefined
           } & {
             /** Reported temperature in °F. */
             temperature_fahrenheit?: number | undefined
@@ -76462,6 +79743,14 @@ export type Routes = {
         can_configure_auto_lock?: boolean | undefined
         /** Indicates whether the camera supports streaming live video through a camera live view session. */
         can_stream_live_video?: boolean | undefined
+        /** Indicates whether the speaker supports setting its volume. */
+        can_set_speaker_volume?: boolean | undefined
+        /** Indicates whether the speaker supports muting and unmuting. */
+        can_mute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing and resuming playback. */
+        can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports playing a chime. */
+        can_play_speaker_chime?: boolean | undefined
       }[]
       devices: {
         /** ID of the device. */
@@ -76513,6 +79802,7 @@ export type Routes = {
             )
           | ('ios_phone' | 'android_phone')
           | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -77414,6 +80704,24 @@ export type Routes = {
                 firmware_version?: ((string | null) | undefined) | undefined
               }
             | undefined
+          /** Metadata for a Sonos speaker. */
+          sonos_metadata?:
+            | (
+                | {
+                    /** ID of the Sonos household that the speaker belongs to. */
+                    household_id?: (string | undefined) | undefined
+                    /** ID of the Sonos player for the speaker. */
+                    player_id?: (string | undefined) | undefined
+                    /** Model name of the speaker, as reported by Sonos. */
+                    model_display_name?: (string | undefined) | undefined
+                    /** Software version running on the speaker. */
+                    software_version?: (string | undefined) | undefined
+                    /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
+                    bonded_member_models?: (string[] | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
         }) &
           ({
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -77543,6 +80851,43 @@ export type Routes = {
             auto_lock_enabled?: (boolean | undefined) | undefined
             /** The delay in seconds before the lock automatically locks after being unlocked. */
             auto_lock_delay_seconds?: (number | undefined) | undefined
+            /** Audio state and capabilities of the speaker. */
+            speaker?:
+              | {
+                  /** Current volume of the speaker, on the speaker's native volume scale from `min_volume` to `max_volume`. This is the native volume setting, not a decibel level. */
+                  volume: number
+                  /** Indicates whether the speaker is muted. */
+                  is_muted: boolean
+                  /** Indicates whether the speaker's volume is fixed, for example, because the speaker's line-out level is controlled by an external amplifier. A speaker with a fixed volume cannot have its volume set through Seam. */
+                  has_fixed_volume: boolean
+                  /** Minimum volume that you can set on the speaker. */
+                  min_volume: number
+                  /** Maximum volume that you can set on the speaker. This is the ceiling of the speaker's native volume scale, not a limit configured for guests. */
+                  max_volume: number
+                  /** Increment between the volume values that you can set on the speaker. */
+                  volume_step: number
+                  /** Playback state of the speaker. */
+                  playback_state:
+                    'playing' | 'paused' | 'idle' | 'buffering' | 'unknown'
+                  /** Content that is currently playing on the speaker. */
+                  now_playing?:
+                    | {
+                        /** Title of the content that is currently playing. */
+                        title?: string | undefined
+                        /** Artist of the content that is currently playing. */
+                        artist?: string | undefined
+                        /** Album of the content that is currently playing. */
+                        album?: string | undefined
+                      }
+                    | undefined
+                  /** IDs of the other speakers that are currently grouped with this speaker. Pausing or resuming playback on a speaker also affects the speakers in its group. */
+                  grouped_with_device_ids: string[]
+                  /** Indicates whether the speaker can play a chime. */
+                  supports_chime: boolean
+                  /** Date and time at which the speaker last reported its volume. */
+                  volume_reported_at?: string | undefined
+                }
+              | undefined
           } & {
             /** Reported temperature in °F. */
             temperature_fahrenheit?: number | undefined
@@ -78399,6 +81744,14 @@ export type Routes = {
         can_configure_auto_lock?: boolean | undefined
         /** Indicates whether the camera supports streaming live video through a camera live view session. */
         can_stream_live_video?: boolean | undefined
+        /** Indicates whether the speaker supports setting its volume. */
+        can_set_speaker_volume?: boolean | undefined
+        /** Indicates whether the speaker supports muting and unmuting. */
+        can_mute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing and resuming playback. */
+        can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports playing a chime. */
+        can_play_speaker_chime?: boolean | undefined
       }[]
     }
     maxDuration: undefined
@@ -80316,6 +83669,202 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
             action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -82544,6 +86093,202 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -84738,6 +88483,202 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
             action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -86966,6 +90907,202 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -87361,6 +91498,7 @@ export type Routes = {
             )
           | ('ios_phone' | 'android_phone')
           | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -88262,6 +92400,24 @@ export type Routes = {
                 firmware_version?: ((string | null) | undefined) | undefined
               }
             | undefined
+          /** Metadata for a Sonos speaker. */
+          sonos_metadata?:
+            | (
+                | {
+                    /** ID of the Sonos household that the speaker belongs to. */
+                    household_id?: (string | undefined) | undefined
+                    /** ID of the Sonos player for the speaker. */
+                    player_id?: (string | undefined) | undefined
+                    /** Model name of the speaker, as reported by Sonos. */
+                    model_display_name?: (string | undefined) | undefined
+                    /** Software version running on the speaker. */
+                    software_version?: (string | undefined) | undefined
+                    /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
+                    bonded_member_models?: (string[] | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
         }) &
           ({
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -88391,6 +92547,43 @@ export type Routes = {
             auto_lock_enabled?: (boolean | undefined) | undefined
             /** The delay in seconds before the lock automatically locks after being unlocked. */
             auto_lock_delay_seconds?: (number | undefined) | undefined
+            /** Audio state and capabilities of the speaker. */
+            speaker?:
+              | {
+                  /** Current volume of the speaker, on the speaker's native volume scale from `min_volume` to `max_volume`. This is the native volume setting, not a decibel level. */
+                  volume: number
+                  /** Indicates whether the speaker is muted. */
+                  is_muted: boolean
+                  /** Indicates whether the speaker's volume is fixed, for example, because the speaker's line-out level is controlled by an external amplifier. A speaker with a fixed volume cannot have its volume set through Seam. */
+                  has_fixed_volume: boolean
+                  /** Minimum volume that you can set on the speaker. */
+                  min_volume: number
+                  /** Maximum volume that you can set on the speaker. This is the ceiling of the speaker's native volume scale, not a limit configured for guests. */
+                  max_volume: number
+                  /** Increment between the volume values that you can set on the speaker. */
+                  volume_step: number
+                  /** Playback state of the speaker. */
+                  playback_state:
+                    'playing' | 'paused' | 'idle' | 'buffering' | 'unknown'
+                  /** Content that is currently playing on the speaker. */
+                  now_playing?:
+                    | {
+                        /** Title of the content that is currently playing. */
+                        title?: string | undefined
+                        /** Artist of the content that is currently playing. */
+                        artist?: string | undefined
+                        /** Album of the content that is currently playing. */
+                        album?: string | undefined
+                      }
+                    | undefined
+                  /** IDs of the other speakers that are currently grouped with this speaker. Pausing or resuming playback on a speaker also affects the speakers in its group. */
+                  grouped_with_device_ids: string[]
+                  /** Indicates whether the speaker can play a chime. */
+                  supports_chime: boolean
+                  /** Date and time at which the speaker last reported its volume. */
+                  volume_reported_at?: string | undefined
+                }
+              | undefined
           } & {
             /** Reported temperature in °F. */
             temperature_fahrenheit?: number | undefined
@@ -89247,6 +93440,14 @@ export type Routes = {
         can_configure_auto_lock?: boolean | undefined
         /** Indicates whether the camera supports streaming live video through a camera live view session. */
         can_stream_live_video?: boolean | undefined
+        /** Indicates whether the speaker supports setting its volume. */
+        can_set_speaker_volume?: boolean | undefined
+        /** Indicates whether the speaker supports muting and unmuting. */
+        can_mute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing and resuming playback. */
+        can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports playing a chime. */
+        can_play_speaker_chime?: boolean | undefined
       }[]
       devices: {
         /** ID of the device. */
@@ -89298,6 +93499,7 @@ export type Routes = {
             )
           | ('ios_phone' | 'android_phone')
           | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -90199,6 +94401,24 @@ export type Routes = {
                 firmware_version?: ((string | null) | undefined) | undefined
               }
             | undefined
+          /** Metadata for a Sonos speaker. */
+          sonos_metadata?:
+            | (
+                | {
+                    /** ID of the Sonos household that the speaker belongs to. */
+                    household_id?: (string | undefined) | undefined
+                    /** ID of the Sonos player for the speaker. */
+                    player_id?: (string | undefined) | undefined
+                    /** Model name of the speaker, as reported by Sonos. */
+                    model_display_name?: (string | undefined) | undefined
+                    /** Software version running on the speaker. */
+                    software_version?: (string | undefined) | undefined
+                    /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
+                    bonded_member_models?: (string[] | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
         }) &
           ({
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -90328,6 +94548,43 @@ export type Routes = {
             auto_lock_enabled?: (boolean | undefined) | undefined
             /** The delay in seconds before the lock automatically locks after being unlocked. */
             auto_lock_delay_seconds?: (number | undefined) | undefined
+            /** Audio state and capabilities of the speaker. */
+            speaker?:
+              | {
+                  /** Current volume of the speaker, on the speaker's native volume scale from `min_volume` to `max_volume`. This is the native volume setting, not a decibel level. */
+                  volume: number
+                  /** Indicates whether the speaker is muted. */
+                  is_muted: boolean
+                  /** Indicates whether the speaker's volume is fixed, for example, because the speaker's line-out level is controlled by an external amplifier. A speaker with a fixed volume cannot have its volume set through Seam. */
+                  has_fixed_volume: boolean
+                  /** Minimum volume that you can set on the speaker. */
+                  min_volume: number
+                  /** Maximum volume that you can set on the speaker. This is the ceiling of the speaker's native volume scale, not a limit configured for guests. */
+                  max_volume: number
+                  /** Increment between the volume values that you can set on the speaker. */
+                  volume_step: number
+                  /** Playback state of the speaker. */
+                  playback_state:
+                    'playing' | 'paused' | 'idle' | 'buffering' | 'unknown'
+                  /** Content that is currently playing on the speaker. */
+                  now_playing?:
+                    | {
+                        /** Title of the content that is currently playing. */
+                        title?: string | undefined
+                        /** Artist of the content that is currently playing. */
+                        artist?: string | undefined
+                        /** Album of the content that is currently playing. */
+                        album?: string | undefined
+                      }
+                    | undefined
+                  /** IDs of the other speakers that are currently grouped with this speaker. Pausing or resuming playback on a speaker also affects the speakers in its group. */
+                  grouped_with_device_ids: string[]
+                  /** Indicates whether the speaker can play a chime. */
+                  supports_chime: boolean
+                  /** Date and time at which the speaker last reported its volume. */
+                  volume_reported_at?: string | undefined
+                }
+              | undefined
           } & {
             /** Reported temperature in °F. */
             temperature_fahrenheit?: number | undefined
@@ -91184,6 +95441,14 @@ export type Routes = {
         can_configure_auto_lock?: boolean | undefined
         /** Indicates whether the camera supports streaming live video through a camera live view session. */
         can_stream_live_video?: boolean | undefined
+        /** Indicates whether the speaker supports setting its volume. */
+        can_set_speaker_volume?: boolean | undefined
+        /** Indicates whether the speaker supports muting and unmuting. */
+        can_mute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing and resuming playback. */
+        can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports playing a chime. */
+        can_play_speaker_chime?: boolean | undefined
       }[]
     }
     maxDuration: undefined
@@ -93111,6 +97376,202 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
             action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -95342,6 +99803,202 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
             action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -97629,6 +102286,202 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
             action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -102947,6 +107800,202 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
             action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -115658,6 +120707,7 @@ export type Routes = {
                     | 'arlo_camera'
                     | 'reolink_camera'
                   )
+                | 'sonos_speaker'
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -116585,6 +121635,25 @@ export type Routes = {
                         ((string | null) | undefined) | undefined
                     }
                   | undefined
+                /** Metadata for a Sonos speaker. */
+                sonos_metadata?:
+                  | (
+                      | {
+                          /** ID of the Sonos household that the speaker belongs to. */
+                          household_id?: (string | undefined) | undefined
+                          /** ID of the Sonos player for the speaker. */
+                          player_id?: (string | undefined) | undefined
+                          /** Model name of the speaker, as reported by Sonos. */
+                          model_display_name?: (string | undefined) | undefined
+                          /** Software version running on the speaker. */
+                          software_version?: (string | undefined) | undefined
+                          /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
+                          bonded_member_models?:
+                            (string[] | undefined) | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
               }) &
                 ({
                   /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -116717,6 +121786,47 @@ export type Routes = {
                   auto_lock_enabled?: (boolean | undefined) | undefined
                   /** The delay in seconds before the lock automatically locks after being unlocked. */
                   auto_lock_delay_seconds?: (number | undefined) | undefined
+                  /** Audio state and capabilities of the speaker. */
+                  speaker?:
+                    | {
+                        /** Current volume of the speaker, on the speaker's native volume scale from `min_volume` to `max_volume`. This is the native volume setting, not a decibel level. */
+                        volume: number
+                        /** Indicates whether the speaker is muted. */
+                        is_muted: boolean
+                        /** Indicates whether the speaker's volume is fixed, for example, because the speaker's line-out level is controlled by an external amplifier. A speaker with a fixed volume cannot have its volume set through Seam. */
+                        has_fixed_volume: boolean
+                        /** Minimum volume that you can set on the speaker. */
+                        min_volume: number
+                        /** Maximum volume that you can set on the speaker. This is the ceiling of the speaker's native volume scale, not a limit configured for guests. */
+                        max_volume: number
+                        /** Increment between the volume values that you can set on the speaker. */
+                        volume_step: number
+                        /** Playback state of the speaker. */
+                        playback_state:
+                          | 'playing'
+                          | 'paused'
+                          | 'idle'
+                          | 'buffering'
+                          | 'unknown'
+                        /** Content that is currently playing on the speaker. */
+                        now_playing?:
+                          | {
+                              /** Title of the content that is currently playing. */
+                              title?: string | undefined
+                              /** Artist of the content that is currently playing. */
+                              artist?: string | undefined
+                              /** Album of the content that is currently playing. */
+                              album?: string | undefined
+                            }
+                          | undefined
+                        /** IDs of the other speakers that are currently grouped with this speaker. Pausing or resuming playback on a speaker also affects the speakers in its group. */
+                        grouped_with_device_ids: string[]
+                        /** Indicates whether the speaker can play a chime. */
+                        supports_chime: boolean
+                        /** Date and time at which the speaker last reported its volume. */
+                        volume_reported_at?: string | undefined
+                      }
+                    | undefined
                 } & {
                   /** Reported temperature in °F. */
                   temperature_fahrenheit?: number | undefined
@@ -117597,6 +122707,14 @@ export type Routes = {
               can_configure_auto_lock?: boolean | undefined
               /** Indicates whether the camera supports streaming live video through a camera live view session. */
               can_stream_live_video?: boolean | undefined
+              /** Indicates whether the speaker supports setting its volume. */
+              can_set_speaker_volume?: boolean | undefined
+              /** Indicates whether the speaker supports muting and unmuting. */
+              can_mute_speaker?: boolean | undefined
+              /** Indicates whether the speaker supports pausing and resuming playback. */
+              can_pause_speaker_playback?: boolean | undefined
+              /** Indicates whether the speaker supports playing a chime. */
+              can_play_speaker_chime?: boolean | undefined
             }[]
           | undefined
         acs_entrances?:
@@ -118073,6 +123191,7 @@ export type Routes = {
                 | 'noise_sensor'
                 | 'access_control'
                 | 'camera'
+                | 'speaker'
               )[]
               /** Default reservation check-in time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration — set during the connect_webview for providers like Lodgify whose API does not expose check-in times. */
               default_checkin_time?: string | undefined
@@ -120639,6 +125758,202 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -122835,6 +128150,202 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
             action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -125051,6 +130562,202 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
             action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -127394,6 +133101,202 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -127756,6 +133659,7 @@ export type Routes = {
             )
           | ('ios_phone' | 'android_phone')
           | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -128657,6 +134561,24 @@ export type Routes = {
                 firmware_version?: ((string | null) | undefined) | undefined
               }
             | undefined
+          /** Metadata for a Sonos speaker. */
+          sonos_metadata?:
+            | (
+                | {
+                    /** ID of the Sonos household that the speaker belongs to. */
+                    household_id?: (string | undefined) | undefined
+                    /** ID of the Sonos player for the speaker. */
+                    player_id?: (string | undefined) | undefined
+                    /** Model name of the speaker, as reported by Sonos. */
+                    model_display_name?: (string | undefined) | undefined
+                    /** Software version running on the speaker. */
+                    software_version?: (string | undefined) | undefined
+                    /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
+                    bonded_member_models?: (string[] | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
         }) &
           ({
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -128786,6 +134708,43 @@ export type Routes = {
             auto_lock_enabled?: (boolean | undefined) | undefined
             /** The delay in seconds before the lock automatically locks after being unlocked. */
             auto_lock_delay_seconds?: (number | undefined) | undefined
+            /** Audio state and capabilities of the speaker. */
+            speaker?:
+              | {
+                  /** Current volume of the speaker, on the speaker's native volume scale from `min_volume` to `max_volume`. This is the native volume setting, not a decibel level. */
+                  volume: number
+                  /** Indicates whether the speaker is muted. */
+                  is_muted: boolean
+                  /** Indicates whether the speaker's volume is fixed, for example, because the speaker's line-out level is controlled by an external amplifier. A speaker with a fixed volume cannot have its volume set through Seam. */
+                  has_fixed_volume: boolean
+                  /** Minimum volume that you can set on the speaker. */
+                  min_volume: number
+                  /** Maximum volume that you can set on the speaker. This is the ceiling of the speaker's native volume scale, not a limit configured for guests. */
+                  max_volume: number
+                  /** Increment between the volume values that you can set on the speaker. */
+                  volume_step: number
+                  /** Playback state of the speaker. */
+                  playback_state:
+                    'playing' | 'paused' | 'idle' | 'buffering' | 'unknown'
+                  /** Content that is currently playing on the speaker. */
+                  now_playing?:
+                    | {
+                        /** Title of the content that is currently playing. */
+                        title?: string | undefined
+                        /** Artist of the content that is currently playing. */
+                        artist?: string | undefined
+                        /** Album of the content that is currently playing. */
+                        album?: string | undefined
+                      }
+                    | undefined
+                  /** IDs of the other speakers that are currently grouped with this speaker. Pausing or resuming playback on a speaker also affects the speakers in its group. */
+                  grouped_with_device_ids: string[]
+                  /** Indicates whether the speaker can play a chime. */
+                  supports_chime: boolean
+                  /** Date and time at which the speaker last reported its volume. */
+                  volume_reported_at?: string | undefined
+                }
+              | undefined
           } & {
             /** Reported temperature in °F. */
             temperature_fahrenheit?: number | undefined
@@ -129642,6 +135601,14 @@ export type Routes = {
         can_configure_auto_lock?: boolean | undefined
         /** Indicates whether the camera supports streaming live video through a camera live view session. */
         can_stream_live_video?: boolean | undefined
+        /** Indicates whether the speaker supports setting its volume. */
+        can_set_speaker_volume?: boolean | undefined
+        /** Indicates whether the speaker supports muting and unmuting. */
+        can_mute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing and resuming playback. */
+        can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports playing a chime. */
+        can_play_speaker_chime?: boolean | undefined
       }
     }
     maxDuration: undefined
@@ -131563,6 +137530,202 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
             action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -133799,6 +139962,202 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -134180,6 +140539,7 @@ export type Routes = {
             )
           | ('ios_phone' | 'android_phone')
           | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -135081,6 +141441,24 @@ export type Routes = {
                 firmware_version?: ((string | null) | undefined) | undefined
               }
             | undefined
+          /** Metadata for a Sonos speaker. */
+          sonos_metadata?:
+            | (
+                | {
+                    /** ID of the Sonos household that the speaker belongs to. */
+                    household_id?: (string | undefined) | undefined
+                    /** ID of the Sonos player for the speaker. */
+                    player_id?: (string | undefined) | undefined
+                    /** Model name of the speaker, as reported by Sonos. */
+                    model_display_name?: (string | undefined) | undefined
+                    /** Software version running on the speaker. */
+                    software_version?: (string | undefined) | undefined
+                    /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
+                    bonded_member_models?: (string[] | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
         }) &
           ({
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -135210,6 +141588,43 @@ export type Routes = {
             auto_lock_enabled?: (boolean | undefined) | undefined
             /** The delay in seconds before the lock automatically locks after being unlocked. */
             auto_lock_delay_seconds?: (number | undefined) | undefined
+            /** Audio state and capabilities of the speaker. */
+            speaker?:
+              | {
+                  /** Current volume of the speaker, on the speaker's native volume scale from `min_volume` to `max_volume`. This is the native volume setting, not a decibel level. */
+                  volume: number
+                  /** Indicates whether the speaker is muted. */
+                  is_muted: boolean
+                  /** Indicates whether the speaker's volume is fixed, for example, because the speaker's line-out level is controlled by an external amplifier. A speaker with a fixed volume cannot have its volume set through Seam. */
+                  has_fixed_volume: boolean
+                  /** Minimum volume that you can set on the speaker. */
+                  min_volume: number
+                  /** Maximum volume that you can set on the speaker. This is the ceiling of the speaker's native volume scale, not a limit configured for guests. */
+                  max_volume: number
+                  /** Increment between the volume values that you can set on the speaker. */
+                  volume_step: number
+                  /** Playback state of the speaker. */
+                  playback_state:
+                    'playing' | 'paused' | 'idle' | 'buffering' | 'unknown'
+                  /** Content that is currently playing on the speaker. */
+                  now_playing?:
+                    | {
+                        /** Title of the content that is currently playing. */
+                        title?: string | undefined
+                        /** Artist of the content that is currently playing. */
+                        artist?: string | undefined
+                        /** Album of the content that is currently playing. */
+                        album?: string | undefined
+                      }
+                    | undefined
+                  /** IDs of the other speakers that are currently grouped with this speaker. Pausing or resuming playback on a speaker also affects the speakers in its group. */
+                  grouped_with_device_ids: string[]
+                  /** Indicates whether the speaker can play a chime. */
+                  supports_chime: boolean
+                  /** Date and time at which the speaker last reported its volume. */
+                  volume_reported_at?: string | undefined
+                }
+              | undefined
           } & {
             /** Reported temperature in °F. */
             temperature_fahrenheit?: number | undefined
@@ -136066,6 +142481,14 @@ export type Routes = {
         can_configure_auto_lock?: boolean | undefined
         /** Indicates whether the camera supports streaming live video through a camera live view session. */
         can_stream_live_video?: boolean | undefined
+        /** Indicates whether the speaker supports setting its volume. */
+        can_set_speaker_volume?: boolean | undefined
+        /** Indicates whether the speaker supports muting and unmuting. */
+        can_mute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing and resuming playback. */
+        can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports playing a chime. */
+        can_play_speaker_chime?: boolean | undefined
       }[]
       devices: {
         /** ID of the device. */
@@ -136117,6 +142540,7 @@ export type Routes = {
             )
           | ('ios_phone' | 'android_phone')
           | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -137018,6 +143442,24 @@ export type Routes = {
                 firmware_version?: ((string | null) | undefined) | undefined
               }
             | undefined
+          /** Metadata for a Sonos speaker. */
+          sonos_metadata?:
+            | (
+                | {
+                    /** ID of the Sonos household that the speaker belongs to. */
+                    household_id?: (string | undefined) | undefined
+                    /** ID of the Sonos player for the speaker. */
+                    player_id?: (string | undefined) | undefined
+                    /** Model name of the speaker, as reported by Sonos. */
+                    model_display_name?: (string | undefined) | undefined
+                    /** Software version running on the speaker. */
+                    software_version?: (string | undefined) | undefined
+                    /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
+                    bonded_member_models?: (string[] | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
         }) &
           ({
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -137147,6 +143589,43 @@ export type Routes = {
             auto_lock_enabled?: (boolean | undefined) | undefined
             /** The delay in seconds before the lock automatically locks after being unlocked. */
             auto_lock_delay_seconds?: (number | undefined) | undefined
+            /** Audio state and capabilities of the speaker. */
+            speaker?:
+              | {
+                  /** Current volume of the speaker, on the speaker's native volume scale from `min_volume` to `max_volume`. This is the native volume setting, not a decibel level. */
+                  volume: number
+                  /** Indicates whether the speaker is muted. */
+                  is_muted: boolean
+                  /** Indicates whether the speaker's volume is fixed, for example, because the speaker's line-out level is controlled by an external amplifier. A speaker with a fixed volume cannot have its volume set through Seam. */
+                  has_fixed_volume: boolean
+                  /** Minimum volume that you can set on the speaker. */
+                  min_volume: number
+                  /** Maximum volume that you can set on the speaker. This is the ceiling of the speaker's native volume scale, not a limit configured for guests. */
+                  max_volume: number
+                  /** Increment between the volume values that you can set on the speaker. */
+                  volume_step: number
+                  /** Playback state of the speaker. */
+                  playback_state:
+                    'playing' | 'paused' | 'idle' | 'buffering' | 'unknown'
+                  /** Content that is currently playing on the speaker. */
+                  now_playing?:
+                    | {
+                        /** Title of the content that is currently playing. */
+                        title?: string | undefined
+                        /** Artist of the content that is currently playing. */
+                        artist?: string | undefined
+                        /** Album of the content that is currently playing. */
+                        album?: string | undefined
+                      }
+                    | undefined
+                  /** IDs of the other speakers that are currently grouped with this speaker. Pausing or resuming playback on a speaker also affects the speakers in its group. */
+                  grouped_with_device_ids: string[]
+                  /** Indicates whether the speaker can play a chime. */
+                  supports_chime: boolean
+                  /** Date and time at which the speaker last reported its volume. */
+                  volume_reported_at?: string | undefined
+                }
+              | undefined
           } & {
             /** Reported temperature in °F. */
             temperature_fahrenheit?: number | undefined
@@ -138003,6 +144482,14 @@ export type Routes = {
         can_configure_auto_lock?: boolean | undefined
         /** Indicates whether the camera supports streaming live video through a camera live view session. */
         can_stream_live_video?: boolean | undefined
+        /** Indicates whether the speaker supports setting its volume. */
+        can_set_speaker_volume?: boolean | undefined
+        /** Indicates whether the speaker supports muting and unmuting. */
+        can_mute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing and resuming playback. */
+        can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports playing a chime. */
+        can_play_speaker_chime?: boolean | undefined
       }[]
     }
     maxDuration: undefined
@@ -139920,6 +146407,202 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
             action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -142357,6 +149040,202 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -144589,6 +151468,202 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
             action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -146969,6 +154044,202 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -147948,6 +155219,7 @@ export type Routes = {
             )
           | ('ios_phone' | 'android_phone')
           | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -148849,6 +156121,24 @@ export type Routes = {
                 firmware_version?: ((string | null) | undefined) | undefined
               }
             | undefined
+          /** Metadata for a Sonos speaker. */
+          sonos_metadata?:
+            | (
+                | {
+                    /** ID of the Sonos household that the speaker belongs to. */
+                    household_id?: (string | undefined) | undefined
+                    /** ID of the Sonos player for the speaker. */
+                    player_id?: (string | undefined) | undefined
+                    /** Model name of the speaker, as reported by Sonos. */
+                    model_display_name?: (string | undefined) | undefined
+                    /** Software version running on the speaker. */
+                    software_version?: (string | undefined) | undefined
+                    /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
+                    bonded_member_models?: (string[] | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
         }) &
           ({
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -148978,6 +156268,43 @@ export type Routes = {
             auto_lock_enabled?: (boolean | undefined) | undefined
             /** The delay in seconds before the lock automatically locks after being unlocked. */
             auto_lock_delay_seconds?: (number | undefined) | undefined
+            /** Audio state and capabilities of the speaker. */
+            speaker?:
+              | {
+                  /** Current volume of the speaker, on the speaker's native volume scale from `min_volume` to `max_volume`. This is the native volume setting, not a decibel level. */
+                  volume: number
+                  /** Indicates whether the speaker is muted. */
+                  is_muted: boolean
+                  /** Indicates whether the speaker's volume is fixed, for example, because the speaker's line-out level is controlled by an external amplifier. A speaker with a fixed volume cannot have its volume set through Seam. */
+                  has_fixed_volume: boolean
+                  /** Minimum volume that you can set on the speaker. */
+                  min_volume: number
+                  /** Maximum volume that you can set on the speaker. This is the ceiling of the speaker's native volume scale, not a limit configured for guests. */
+                  max_volume: number
+                  /** Increment between the volume values that you can set on the speaker. */
+                  volume_step: number
+                  /** Playback state of the speaker. */
+                  playback_state:
+                    'playing' | 'paused' | 'idle' | 'buffering' | 'unknown'
+                  /** Content that is currently playing on the speaker. */
+                  now_playing?:
+                    | {
+                        /** Title of the content that is currently playing. */
+                        title?: string | undefined
+                        /** Artist of the content that is currently playing. */
+                        artist?: string | undefined
+                        /** Album of the content that is currently playing. */
+                        album?: string | undefined
+                      }
+                    | undefined
+                  /** IDs of the other speakers that are currently grouped with this speaker. Pausing or resuming playback on a speaker also affects the speakers in its group. */
+                  grouped_with_device_ids: string[]
+                  /** Indicates whether the speaker can play a chime. */
+                  supports_chime: boolean
+                  /** Date and time at which the speaker last reported its volume. */
+                  volume_reported_at?: string | undefined
+                }
+              | undefined
           } & {
             /** Reported temperature in °F. */
             temperature_fahrenheit?: number | undefined
@@ -149834,6 +157161,14 @@ export type Routes = {
         can_configure_auto_lock?: boolean | undefined
         /** Indicates whether the camera supports streaming live video through a camera live view session. */
         can_stream_live_video?: boolean | undefined
+        /** Indicates whether the speaker supports setting its volume. */
+        can_set_speaker_volume?: boolean | undefined
+        /** Indicates whether the speaker supports muting and unmuting. */
+        can_mute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing and resuming playback. */
+        can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports playing a chime. */
+        can_play_speaker_chime?: boolean | undefined
       }[]
       /**
        * @deprecated Use devices.*/
@@ -149887,6 +157222,7 @@ export type Routes = {
             )
           | ('ios_phone' | 'android_phone')
           | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -150788,6 +158124,24 @@ export type Routes = {
                 firmware_version?: ((string | null) | undefined) | undefined
               }
             | undefined
+          /** Metadata for a Sonos speaker. */
+          sonos_metadata?:
+            | (
+                | {
+                    /** ID of the Sonos household that the speaker belongs to. */
+                    household_id?: (string | undefined) | undefined
+                    /** ID of the Sonos player for the speaker. */
+                    player_id?: (string | undefined) | undefined
+                    /** Model name of the speaker, as reported by Sonos. */
+                    model_display_name?: (string | undefined) | undefined
+                    /** Software version running on the speaker. */
+                    software_version?: (string | undefined) | undefined
+                    /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
+                    bonded_member_models?: (string[] | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
         }) &
           ({
             /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -150917,6 +158271,43 @@ export type Routes = {
             auto_lock_enabled?: (boolean | undefined) | undefined
             /** The delay in seconds before the lock automatically locks after being unlocked. */
             auto_lock_delay_seconds?: (number | undefined) | undefined
+            /** Audio state and capabilities of the speaker. */
+            speaker?:
+              | {
+                  /** Current volume of the speaker, on the speaker's native volume scale from `min_volume` to `max_volume`. This is the native volume setting, not a decibel level. */
+                  volume: number
+                  /** Indicates whether the speaker is muted. */
+                  is_muted: boolean
+                  /** Indicates whether the speaker's volume is fixed, for example, because the speaker's line-out level is controlled by an external amplifier. A speaker with a fixed volume cannot have its volume set through Seam. */
+                  has_fixed_volume: boolean
+                  /** Minimum volume that you can set on the speaker. */
+                  min_volume: number
+                  /** Maximum volume that you can set on the speaker. This is the ceiling of the speaker's native volume scale, not a limit configured for guests. */
+                  max_volume: number
+                  /** Increment between the volume values that you can set on the speaker. */
+                  volume_step: number
+                  /** Playback state of the speaker. */
+                  playback_state:
+                    'playing' | 'paused' | 'idle' | 'buffering' | 'unknown'
+                  /** Content that is currently playing on the speaker. */
+                  now_playing?:
+                    | {
+                        /** Title of the content that is currently playing. */
+                        title?: string | undefined
+                        /** Artist of the content that is currently playing. */
+                        artist?: string | undefined
+                        /** Album of the content that is currently playing. */
+                        album?: string | undefined
+                      }
+                    | undefined
+                  /** IDs of the other speakers that are currently grouped with this speaker. Pausing or resuming playback on a speaker also affects the speakers in its group. */
+                  grouped_with_device_ids: string[]
+                  /** Indicates whether the speaker can play a chime. */
+                  supports_chime: boolean
+                  /** Date and time at which the speaker last reported its volume. */
+                  volume_reported_at?: string | undefined
+                }
+              | undefined
           } & {
             /** Reported temperature in °F. */
             temperature_fahrenheit?: number | undefined
@@ -151773,6 +159164,14 @@ export type Routes = {
         can_configure_auto_lock?: boolean | undefined
         /** Indicates whether the camera supports streaming live video through a camera live view session. */
         can_stream_live_video?: boolean | undefined
+        /** Indicates whether the speaker supports setting its volume. */
+        can_set_speaker_volume?: boolean | undefined
+        /** Indicates whether the speaker supports muting and unmuting. */
+        can_mute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing and resuming playback. */
+        can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports playing a chime. */
+        can_play_speaker_chime?: boolean | undefined
       }[]
     }
     maxDuration: undefined
@@ -153375,6 +160774,7 @@ export type Routes = {
                     | 'arlo_camera'
                     | 'reolink_camera'
                   )
+                | 'sonos_speaker'
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -154302,6 +161702,25 @@ export type Routes = {
                         ((string | null) | undefined) | undefined
                     }
                   | undefined
+                /** Metadata for a Sonos speaker. */
+                sonos_metadata?:
+                  | (
+                      | {
+                          /** ID of the Sonos household that the speaker belongs to. */
+                          household_id?: (string | undefined) | undefined
+                          /** ID of the Sonos player for the speaker. */
+                          player_id?: (string | undefined) | undefined
+                          /** Model name of the speaker, as reported by Sonos. */
+                          model_display_name?: (string | undefined) | undefined
+                          /** Software version running on the speaker. */
+                          software_version?: (string | undefined) | undefined
+                          /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
+                          bonded_member_models?:
+                            (string[] | undefined) | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
               }) &
                 ({
                   /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -154434,6 +161853,47 @@ export type Routes = {
                   auto_lock_enabled?: (boolean | undefined) | undefined
                   /** The delay in seconds before the lock automatically locks after being unlocked. */
                   auto_lock_delay_seconds?: (number | undefined) | undefined
+                  /** Audio state and capabilities of the speaker. */
+                  speaker?:
+                    | {
+                        /** Current volume of the speaker, on the speaker's native volume scale from `min_volume` to `max_volume`. This is the native volume setting, not a decibel level. */
+                        volume: number
+                        /** Indicates whether the speaker is muted. */
+                        is_muted: boolean
+                        /** Indicates whether the speaker's volume is fixed, for example, because the speaker's line-out level is controlled by an external amplifier. A speaker with a fixed volume cannot have its volume set through Seam. */
+                        has_fixed_volume: boolean
+                        /** Minimum volume that you can set on the speaker. */
+                        min_volume: number
+                        /** Maximum volume that you can set on the speaker. This is the ceiling of the speaker's native volume scale, not a limit configured for guests. */
+                        max_volume: number
+                        /** Increment between the volume values that you can set on the speaker. */
+                        volume_step: number
+                        /** Playback state of the speaker. */
+                        playback_state:
+                          | 'playing'
+                          | 'paused'
+                          | 'idle'
+                          | 'buffering'
+                          | 'unknown'
+                        /** Content that is currently playing on the speaker. */
+                        now_playing?:
+                          | {
+                              /** Title of the content that is currently playing. */
+                              title?: string | undefined
+                              /** Artist of the content that is currently playing. */
+                              artist?: string | undefined
+                              /** Album of the content that is currently playing. */
+                              album?: string | undefined
+                            }
+                          | undefined
+                        /** IDs of the other speakers that are currently grouped with this speaker. Pausing or resuming playback on a speaker also affects the speakers in its group. */
+                        grouped_with_device_ids: string[]
+                        /** Indicates whether the speaker can play a chime. */
+                        supports_chime: boolean
+                        /** Date and time at which the speaker last reported its volume. */
+                        volume_reported_at?: string | undefined
+                      }
+                    | undefined
                 } & {
                   /** Reported temperature in °F. */
                   temperature_fahrenheit?: number | undefined
@@ -155314,6 +162774,14 @@ export type Routes = {
               can_configure_auto_lock?: boolean | undefined
               /** Indicates whether the camera supports streaming live video through a camera live view session. */
               can_stream_live_video?: boolean | undefined
+              /** Indicates whether the speaker supports setting its volume. */
+              can_set_speaker_volume?: boolean | undefined
+              /** Indicates whether the speaker supports muting and unmuting. */
+              can_mute_speaker?: boolean | undefined
+              /** Indicates whether the speaker supports pausing and resuming playback. */
+              can_pause_speaker_playback?: boolean | undefined
+              /** Indicates whether the speaker supports playing a chime. */
+              can_play_speaker_chime?: boolean | undefined
             }[]
           | undefined
         acs_entrances?:
@@ -158270,6 +165738,202 @@ export type Routes = {
                   result: null
                   /** Errors associated with the action attempt. Null for pending action attempts. */
                   error: null
+                  /** Action attempt to track the status of setting the volume on a speaker. */
+                  action_type: 'SET_SPEAKER_VOLUME'
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'success'
+                  /** Errors associated with the action attempt. Null for successful action attempts. */
+                  error: null
+                  /** Action attempt to track the status of setting the volume on a speaker. */
+                  action_type: 'SET_SPEAKER_VOLUME'
+                  /** Result of the action. */
+                  result: {}
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'error'
+                  /** Result of the action attempt. Null for failed action attempts. */
+                  result: null
+                  /** Action attempt to track the status of setting the volume on a speaker. */
+                  action_type: 'SET_SPEAKER_VOLUME'
+                  /** Error associated with the action. */
+                  error: {
+                    /** Type of the error. */
+                    type: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                  }
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'pending'
+                  /** Result of the action attempt. Null for pending action attempts. */
+                  result: null
+                  /** Errors associated with the action attempt. Null for pending action attempts. */
+                  error: null
+                  /** Action attempt to track the status of muting or unmuting a speaker. */
+                  action_type: 'SET_SPEAKER_MUTE'
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'success'
+                  /** Errors associated with the action attempt. Null for successful action attempts. */
+                  error: null
+                  /** Action attempt to track the status of muting or unmuting a speaker. */
+                  action_type: 'SET_SPEAKER_MUTE'
+                  /** Result of the action. */
+                  result: {}
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'error'
+                  /** Result of the action attempt. Null for failed action attempts. */
+                  result: null
+                  /** Action attempt to track the status of muting or unmuting a speaker. */
+                  action_type: 'SET_SPEAKER_MUTE'
+                  /** Error associated with the action. */
+                  error: {
+                    /** Type of the error. */
+                    type: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                  }
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'pending'
+                  /** Result of the action attempt. Null for pending action attempts. */
+                  result: null
+                  /** Errors associated with the action attempt. Null for pending action attempts. */
+                  error: null
+                  /** Action attempt to track the status of pausing playback on a speaker. */
+                  action_type: 'PAUSE_SPEAKER_PLAYBACK'
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'success'
+                  /** Errors associated with the action attempt. Null for successful action attempts. */
+                  error: null
+                  /** Action attempt to track the status of pausing playback on a speaker. */
+                  action_type: 'PAUSE_SPEAKER_PLAYBACK'
+                  /** Result of the action. */
+                  result: {
+                    /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+                    affected_device_ids: string[]
+                  }
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'error'
+                  /** Result of the action attempt. Null for failed action attempts. */
+                  result: null
+                  /** Action attempt to track the status of pausing playback on a speaker. */
+                  action_type: 'PAUSE_SPEAKER_PLAYBACK'
+                  /** Error associated with the action. */
+                  error: {
+                    /** Type of the error. */
+                    type: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                  }
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'pending'
+                  /** Result of the action attempt. Null for pending action attempts. */
+                  result: null
+                  /** Errors associated with the action attempt. Null for pending action attempts. */
+                  error: null
+                  /** Action attempt to track the status of resuming playback on a speaker. */
+                  action_type: 'RESUME_SPEAKER_PLAYBACK'
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'success'
+                  /** Errors associated with the action attempt. Null for successful action attempts. */
+                  error: null
+                  /** Action attempt to track the status of resuming playback on a speaker. */
+                  action_type: 'RESUME_SPEAKER_PLAYBACK'
+                  /** Result of the action. */
+                  result: {
+                    /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+                    affected_device_ids: string[]
+                  }
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'error'
+                  /** Result of the action attempt. Null for failed action attempts. */
+                  result: null
+                  /** Action attempt to track the status of resuming playback on a speaker. */
+                  action_type: 'RESUME_SPEAKER_PLAYBACK'
+                  /** Error associated with the action. */
+                  error: {
+                    /** Type of the error. */
+                    type: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                  }
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'pending'
+                  /** Result of the action attempt. Null for pending action attempts. */
+                  result: null
+                  /** Errors associated with the action attempt. Null for pending action attempts. */
+                  error: null
+                  /** Action attempt to track the status of playing a chime on a speaker. */
+                  action_type: 'PLAY_SPEAKER_CHIME'
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'success'
+                  /** Errors associated with the action attempt. Null for successful action attempts. */
+                  error: null
+                  /** Action attempt to track the status of playing a chime on a speaker. */
+                  action_type: 'PLAY_SPEAKER_CHIME'
+                  /** Result of the action. */
+                  result: {}
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'error'
+                  /** Result of the action attempt. Null for failed action attempts. */
+                  result: null
+                  /** Action attempt to track the status of playing a chime on a speaker. */
+                  action_type: 'PLAY_SPEAKER_CHIME'
+                  /** Error associated with the action. */
+                  error: {
+                    /** Type of the error. */
+                    type: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                  }
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'pending'
+                  /** Result of the action attempt. Null for pending action attempts. */
+                  result: null
+                  /** Errors associated with the action attempt. Null for pending action attempts. */
+                  error: null
                   /** Syncing access codes is pending. */
                   action_type: 'SYNC_ACCESS_CODES'
                 }
@@ -159149,6 +166813,7 @@ export type Routes = {
                     | 'arlo_camera'
                     | 'reolink_camera'
                   )
+                | 'sonos_speaker'
               /** Unique identifier for the account associated with the device. */
               connected_account_id: string
               /** Location information for the device. */
@@ -159698,6 +167363,14 @@ export type Routes = {
               can_configure_auto_lock?: boolean | undefined
               /** Indicates whether the camera supports streaming live video through a camera live view session. */
               can_stream_live_video?: boolean | undefined
+              /** Indicates whether the speaker supports setting its volume. */
+              can_set_speaker_volume?: boolean | undefined
+              /** Indicates whether the speaker supports muting and unmuting. */
+              can_mute_speaker?: boolean | undefined
+              /** Indicates whether the speaker supports pausing and resuming playback. */
+              can_pause_speaker_playback?: boolean | undefined
+              /** Indicates whether the speaker supports playing a chime. */
+              can_play_speaker_chime?: boolean | undefined
             }[]
           | undefined
         connect_webviews?:
@@ -159723,6 +167396,7 @@ export type Routes = {
                 | 'noise_sensor'
                 | 'access_control'
                 | 'camera'
+                | 'speaker'
               )[]
               /**
                * @deprecated Unused. Will be removed.*/
@@ -160404,6 +168078,7 @@ export type Routes = {
                 | 'noise_sensor'
                 | 'access_control'
                 | 'camera'
+                | 'speaker'
               )[]
               /** Default reservation check-in time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration — set during the connect_webview for providers like Lodgify whose API does not expose check-in times. */
               default_checkin_time?: string | undefined
@@ -167921,6 +175596,202 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
             action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */

@@ -6,6 +6,7 @@ export const provider_capability = z.enum([
   'noise_sensor',
   'access_control',
   'camera',
+  'speaker',
 ]).describe(`
   High-level device capabilities that can be restricted in connect webviews.
   These represent the main device categories that customers can opt into.

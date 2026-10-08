@@ -223,5 +223,6 @@ export const PROVIDER_CATEGORY_CAPABILITY_MAP: Record<
     'noise_sensor',
     'access_control',
     'camera',
+    'speaker',
   ],
 }
