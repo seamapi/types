@@ -16549,7 +16549,7 @@ export type Routes = {
                         grouped_with_device_ids: string[]
                         /** Indicates whether the speaker can play a chime. */
                         supports_chime: boolean
-                        /** Date and time at which the speaker last reported its volume. */
+                        /** Date and time at which the speaker first reported its current volume. */
                         volume_reported_at?: string | undefined
                       }
                     | undefined
@@ -25845,7 +25845,7 @@ export type Routes = {
                         grouped_with_device_ids: string[]
                         /** Indicates whether the speaker can play a chime. */
                         supports_chime: boolean
-                        /** Date and time at which the speaker last reported its volume. */
+                        /** Date and time at which the speaker first reported its current volume. */
                         volume_reported_at?: string | undefined
                       }
                     | undefined
@@ -56509,7 +56509,7 @@ export type Routes = {
                   grouped_with_device_ids: string[]
                   /** Indicates whether the speaker can play a chime. */
                   supports_chime: boolean
-                  /** Date and time at which the speaker last reported its volume. */
+                  /** Date and time at which the speaker first reported its current volume. */
                   volume_reported_at?: string | undefined
                 }
               | undefined
@@ -58779,7 +58779,7 @@ export type Routes = {
                   grouped_with_device_ids: string[]
                   /** Indicates whether the speaker can play a chime. */
                   supports_chime: boolean
-                  /** Date and time at which the speaker last reported its volume. */
+                  /** Date and time at which the speaker first reported its current volume. */
                   volume_reported_at?: string | undefined
                 }
               | undefined
@@ -74750,7 +74750,7 @@ export type Routes = {
                   grouped_with_device_ids: string[]
                   /** Indicates whether the speaker can play a chime. */
                   supports_chime: boolean
-                  /** Date and time at which the speaker last reported its volume. */
+                  /** Date and time at which the speaker first reported its current volume. */
                   volume_reported_at?: string | undefined
                 }
               | undefined
@@ -76752,7 +76752,7 @@ export type Routes = {
                   grouped_with_device_ids: string[]
                   /** Indicates whether the speaker can play a chime. */
                   supports_chime: boolean
-                  /** Date and time at which the speaker last reported its volume. */
+                  /** Date and time at which the speaker first reported its current volume. */
                   volume_reported_at?: string | undefined
                 }
               | undefined
@@ -78883,7 +78883,7 @@ export type Routes = {
                   grouped_with_device_ids: string[]
                   /** Indicates whether the speaker can play a chime. */
                   supports_chime: boolean
-                  /** Date and time at which the speaker last reported its volume. */
+                  /** Date and time at which the speaker first reported its current volume. */
                   volume_reported_at?: string | undefined
                 }
               | undefined
@@ -80884,7 +80884,7 @@ export type Routes = {
                   grouped_with_device_ids: string[]
                   /** Indicates whether the speaker can play a chime. */
                   supports_chime: boolean
-                  /** Date and time at which the speaker last reported its volume. */
+                  /** Date and time at which the speaker first reported its current volume. */
                   volume_reported_at?: string | undefined
                 }
               | undefined
@@ -92580,7 +92580,7 @@ export type Routes = {
                   grouped_with_device_ids: string[]
                   /** Indicates whether the speaker can play a chime. */
                   supports_chime: boolean
-                  /** Date and time at which the speaker last reported its volume. */
+                  /** Date and time at which the speaker first reported its current volume. */
                   volume_reported_at?: string | undefined
                 }
               | undefined
@@ -94581,7 +94581,7 @@ export type Routes = {
                   grouped_with_device_ids: string[]
                   /** Indicates whether the speaker can play a chime. */
                   supports_chime: boolean
-                  /** Date and time at which the speaker last reported its volume. */
+                  /** Date and time at which the speaker first reported its current volume. */
                   volume_reported_at?: string | undefined
                 }
               | undefined
@@ -121823,7 +121823,7 @@ export type Routes = {
                         grouped_with_device_ids: string[]
                         /** Indicates whether the speaker can play a chime. */
                         supports_chime: boolean
-                        /** Date and time at which the speaker last reported its volume. */
+                        /** Date and time at which the speaker first reported its current volume. */
                         volume_reported_at?: string | undefined
                       }
                     | undefined
@@ -134741,7 +134741,7 @@ export type Routes = {
                   grouped_with_device_ids: string[]
                   /** Indicates whether the speaker can play a chime. */
                   supports_chime: boolean
-                  /** Date and time at which the speaker last reported its volume. */
+                  /** Date and time at which the speaker first reported its current volume. */
                   volume_reported_at?: string | undefined
                 }
               | undefined
@@ -141621,7 +141621,7 @@ export type Routes = {
                   grouped_with_device_ids: string[]
                   /** Indicates whether the speaker can play a chime. */
                   supports_chime: boolean
-                  /** Date and time at which the speaker last reported its volume. */
+                  /** Date and time at which the speaker first reported its current volume. */
                   volume_reported_at?: string | undefined
                 }
               | undefined
@@ -143622,7 +143622,7 @@ export type Routes = {
                   grouped_with_device_ids: string[]
                   /** Indicates whether the speaker can play a chime. */
                   supports_chime: boolean
-                  /** Date and time at which the speaker last reported its volume. */
+                  /** Date and time at which the speaker first reported its current volume. */
                   volume_reported_at?: string | undefined
                 }
               | undefined
@@ -156301,7 +156301,7 @@ export type Routes = {
                   grouped_with_device_ids: string[]
                   /** Indicates whether the speaker can play a chime. */
                   supports_chime: boolean
-                  /** Date and time at which the speaker last reported its volume. */
+                  /** Date and time at which the speaker first reported its current volume. */
                   volume_reported_at?: string | undefined
                 }
               | undefined
@@ -158304,7 +158304,7 @@ export type Routes = {
                   grouped_with_device_ids: string[]
                   /** Indicates whether the speaker can play a chime. */
                   supports_chime: boolean
-                  /** Date and time at which the speaker last reported its volume. */
+                  /** Date and time at which the speaker first reported its current volume. */
                   volume_reported_at?: string | undefined
                 }
               | undefined
@@ -161890,7 +161890,7 @@ export type Routes = {
                         grouped_with_device_ids: string[]
                         /** Indicates whether the speaker can play a chime. */
                         supports_chime: boolean
-                        /** Date and time at which the speaker last reported its volume. */
+                        /** Date and time at which the speaker first reported its current volume. */
                         volume_reported_at?: string | undefined
                       }
                     | undefined
