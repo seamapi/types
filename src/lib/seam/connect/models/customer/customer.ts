@@ -20,6 +20,12 @@ export const customer = z.object({
     .describe(
       'ID of the customization profile the customer uses. Access grants that automations create for this customer use this profile. This can differ from the profiles the customer owns.',
     ),
+  low_battery_alert_threshold: z
+    .number()
+    .nullable()
+    .describe(
+      "Battery level, from 0 to 1, at or below which `device.low_battery` events fire for this customer's devices. `null` means the workspace or device default applies.",
+    ),
 }).describe(`
   ---
   route_path: /customers
