@@ -50778,6 +50778,7 @@ const openapi: OpenAPISpec = {
                           allow_access_automation_rule_customization: false,
                           allow_climate_automation_rule_customization: false,
                           allow_instant_key_customization: false,
+                          allow_notification_customization: false,
                           exclude: false,
                         },
                         connect: { exclude: false },
@@ -50918,6 +50919,12 @@ const openapi: OpenAPISpec = {
                                 default: false,
                                 description:
                                   'Indicates whether the customer can customize the Instant Key profile for their properties.',
+                                type: 'boolean',
+                              },
+                              allow_notification_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
                                 type: 'boolean',
                               },
                               exclude: {
@@ -64770,6 +64777,129 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
+    '/seam/customer/v1/customers/notifications/get': {
+      get: {
+        description:
+          'Gets the notification settings for the authenticated customer, along with the workspace defaults they inherit when unset.',
+        operationId: 'seamCustomerV1CustomersNotificationsGetGet',
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    notification_settings: {
+                      properties: {
+                        low_battery_alert_threshold: {
+                          description:
+                            "Battery level, from 0 to 1, at or below which `device.low_battery` events fire for this customer's devices. `null` means the workspace or device default applies.",
+                          format: 'float',
+                          nullable: true,
+                          type: 'number',
+                        },
+                        workspace_default_low_battery_alert_threshold: {
+                          description:
+                            'Workspace-level low-battery alert threshold that applies when the customer has not set one. `null` means the device default applies.',
+                          format: 'float',
+                          nullable: true,
+                          type: 'number',
+                        },
+                      },
+                      required: [
+                        'low_battery_alert_threshold',
+                        'workspace_default_low_battery_alert_threshold',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['notification_settings', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session_with_customer: [] },
+          { client_session_with_customer_ro: [] },
+        ],
+        summary: '/seam/customer/v1/customers/notifications/get',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'customers',
+          'notifications',
+        ],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'notification_settings',
+        'x-response-key': 'notification_settings',
+        'x-title': 'Get Customer Notification Settings',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
+    '/seam/customer/v1/customers/notifications/update': {
+      patch: {
+        description:
+          'Updates the notification settings for the authenticated customer. Requires a customer portal with `features.configure.allow_notification_customization` enabled.',
+        operationId: 'seamCustomerV1CustomersNotificationsUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  low_battery_alert_threshold: {
+                    description:
+                      "Battery level, from 0 to 1, at or below which `device.low_battery` events fire for this customer's devices. Pass `null` to fall back to the workspace default.",
+                    format: 'float',
+                    maximum: 1,
+                    minimum: 0,
+                    nullable: true,
+                    type: 'number',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/customers/notifications/update',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'customers',
+          'notifications',
+        ],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
+        'x-title': 'Update Customer Notification Settings',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
     '/seam/customer/v1/customers/open_portal': {
       post: {
         description:
@@ -65392,6 +65522,12 @@ const openapi: OpenAPISpec = {
                                     'Indicates whether the customer can customize the Instant Key profile for their properties.',
                                   type: 'boolean',
                                 },
+                                allow_notification_customization: {
+                                  default: false,
+                                  description:
+                                    'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
+                                  type: 'boolean',
+                                },
                                 exclude: {
                                   default: false,
                                   description:
@@ -65854,6 +65990,12 @@ const openapi: OpenAPISpec = {
                                 default: false,
                                 description:
                                   'Indicates whether the customer can customize the Instant Key profile for their properties.',
+                                type: 'boolean',
+                              },
+                              allow_notification_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
                                 type: 'boolean',
                               },
                               exclude: {

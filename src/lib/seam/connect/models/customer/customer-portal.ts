@@ -109,6 +109,12 @@ const base_configure_feature = base_feature.extend({
     .describe(
       'Indicates whether the customer can customize the Instant Key profile for their properties.',
     ),
+  allow_notification_customization: z
+    .boolean()
+    .default(false)
+    .describe(
+      'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
+    ),
 })
 
 const base_features = z.object({
@@ -263,6 +269,7 @@ export const portal_configuration = portal_configuration_base
         allow_instant_key_customization: false,
         allow_access_automation_rule_customization: false,
         allow_climate_automation_rule_customization: false,
+        allow_notification_customization: false,
       },
     },
     is_embedded: false,
