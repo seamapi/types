@@ -1334,6 +1334,10 @@ export const device_metadata = z
           .string()
           .optional()
           .describe('ID of the Sonos player for the speaker.'),
+        player_name: z
+          .string()
+          .optional()
+          .describe('Name of the speaker, as set in the Sonos app.'),
         model_display_name: z
           .string()
           .optional()

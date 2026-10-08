@@ -72,6 +72,7 @@ export const DEVICE_PROVIDERS = {
   OMNITEC: 'omnitec',
   KISI: 'kisi',
   AQARA: 'aqara',
+  SONOS: 'sonos',
 } as const
 
 export type DeviceProviderName =

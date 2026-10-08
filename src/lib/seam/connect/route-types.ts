@@ -16369,6 +16369,8 @@ export type Routes = {
                           household_id?: (string | undefined) | undefined
                           /** ID of the Sonos player for the speaker. */
                           player_id?: (string | undefined) | undefined
+                          /** Name of the speaker, as set in the Sonos app. */
+                          player_name?: (string | undefined) | undefined
                           /** Model name of the speaker, as reported by Sonos. */
                           model_display_name?: (string | undefined) | undefined
                           /** Software version running on the speaker. */
@@ -25665,6 +25667,8 @@ export type Routes = {
                           household_id?: (string | undefined) | undefined
                           /** ID of the Sonos player for the speaker. */
                           player_id?: (string | undefined) | undefined
+                          /** Name of the speaker, as set in the Sonos app. */
+                          player_name?: (string | undefined) | undefined
                           /** Model name of the speaker, as reported by Sonos. */
                           model_display_name?: (string | undefined) | undefined
                           /** Software version running on the speaker. */
@@ -53226,6 +53230,7 @@ export type Routes = {
             | 'omnitec'
             | 'kisi'
             | 'aqara'
+            | 'sonos'
             | 'yale_access'
             | 'hid_cm'
             | 'google_nest'
@@ -56343,6 +56348,8 @@ export type Routes = {
                     household_id?: (string | undefined) | undefined
                     /** ID of the Sonos player for the speaker. */
                     player_id?: (string | undefined) | undefined
+                    /** Name of the speaker, as set in the Sonos app. */
+                    player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
@@ -57563,6 +57570,7 @@ export type Routes = {
             | 'kisi'
             | 'slack'
             | 'yacan'
+            | 'sonos'
           )
         | undefined
       /** Array of device IDs for which you want to list devices. */
@@ -58613,6 +58621,8 @@ export type Routes = {
                     household_id?: (string | undefined) | undefined
                     /** ID of the Sonos player for the speaker. */
                     player_id?: (string | undefined) | undefined
+                    /** Name of the speaker, as set in the Sonos app. */
+                    player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
@@ -59759,6 +59769,7 @@ export type Routes = {
           | 'omnitec'
           | 'kisi'
           | 'aqara'
+          | 'sonos'
         /** Display name for the device provider. */
         display_name: string
         /** Image URL for the device provider. */
@@ -62033,6 +62044,7 @@ export type Routes = {
             | 'kisi'
             | 'slack'
             | 'yacan'
+            | 'sonos'
           )
         | undefined
       /** Array of device IDs for which you want to list devices. */
@@ -74584,6 +74596,8 @@ export type Routes = {
                     household_id?: (string | undefined) | undefined
                     /** ID of the Sonos player for the speaker. */
                     player_id?: (string | undefined) | undefined
+                    /** Name of the speaker, as set in the Sonos app. */
+                    player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
@@ -76586,6 +76600,8 @@ export type Routes = {
                     household_id?: (string | undefined) | undefined
                     /** ID of the Sonos player for the speaker. */
                     player_id?: (string | undefined) | undefined
+                    /** Name of the speaker, as set in the Sonos app. */
+                    player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
@@ -78717,6 +78733,8 @@ export type Routes = {
                     household_id?: (string | undefined) | undefined
                     /** ID of the Sonos player for the speaker. */
                     player_id?: (string | undefined) | undefined
+                    /** Name of the speaker, as set in the Sonos app. */
+                    player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
@@ -80718,6 +80736,8 @@ export type Routes = {
                     household_id?: (string | undefined) | undefined
                     /** ID of the Sonos player for the speaker. */
                     player_id?: (string | undefined) | undefined
+                    /** Name of the speaker, as set in the Sonos app. */
+                    player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
@@ -92414,6 +92434,8 @@ export type Routes = {
                     household_id?: (string | undefined) | undefined
                     /** ID of the Sonos player for the speaker. */
                     player_id?: (string | undefined) | undefined
+                    /** Name of the speaker, as set in the Sonos app. */
+                    player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
@@ -94415,6 +94437,8 @@ export type Routes = {
                     household_id?: (string | undefined) | undefined
                     /** ID of the Sonos player for the speaker. */
                     player_id?: (string | undefined) | undefined
+                    /** Name of the speaker, as set in the Sonos app. */
+                    player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
@@ -121921,6 +121945,8 @@ export type Routes = {
                           household_id?: (string | undefined) | undefined
                           /** ID of the Sonos player for the speaker. */
                           player_id?: (string | undefined) | undefined
+                          /** Name of the speaker, as set in the Sonos app. */
+                          player_name?: (string | undefined) | undefined
                           /** Model name of the speaker, as reported by Sonos. */
                           model_display_name?: (string | undefined) | undefined
                           /** Software version running on the speaker. */
@@ -149287,6 +149313,8 @@ export type Routes = {
                     household_id?: (string | undefined) | undefined
                     /** ID of the Sonos player for the speaker. */
                     player_id?: (string | undefined) | undefined
+                    /** Name of the speaker, as set in the Sonos app. */
+                    player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
@@ -156167,6 +156195,8 @@ export type Routes = {
                     household_id?: (string | undefined) | undefined
                     /** ID of the Sonos player for the speaker. */
                     player_id?: (string | undefined) | undefined
+                    /** Name of the speaker, as set in the Sonos app. */
+                    player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
@@ -158168,6 +158198,8 @@ export type Routes = {
                     household_id?: (string | undefined) | undefined
                     /** ID of the Sonos player for the speaker. */
                     player_id?: (string | undefined) | undefined
+                    /** Name of the speaker, as set in the Sonos app. */
+                    player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
@@ -170847,6 +170879,8 @@ export type Routes = {
                     household_id?: (string | undefined) | undefined
                     /** ID of the Sonos player for the speaker. */
                     player_id?: (string | undefined) | undefined
+                    /** Name of the speaker, as set in the Sonos app. */
+                    player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
@@ -172850,6 +172884,8 @@ export type Routes = {
                     household_id?: (string | undefined) | undefined
                     /** ID of the Sonos player for the speaker. */
                     player_id?: (string | undefined) | undefined
+                    /** Name of the speaker, as set in the Sonos app. */
+                    player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
@@ -176428,6 +176464,8 @@ export type Routes = {
                           household_id?: (string | undefined) | undefined
                           /** ID of the Sonos player for the speaker. */
                           player_id?: (string | undefined) | undefined
+                          /** Name of the speaker, as set in the Sonos app. */
+                          player_name?: (string | undefined) | undefined
                           /** Model name of the speaker, as reported by Sonos. */
                           model_display_name?: (string | undefined) | undefined
                           /** Software version running on the speaker. */
