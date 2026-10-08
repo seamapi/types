@@ -108528,6 +108528,63 @@ export type Routes = {
             }
           }
         | undefined
+      sound_rules?:
+        | {
+            rules: {
+              reservation_created?:
+                | {
+                    on_check_in?:
+                      | {
+                          minutes_before_check_in?: number | undefined
+                          speakers?:
+                            | {
+                                set_volume_to?: number | undefined
+                                unmute?: boolean | undefined
+                                play_chime?: boolean | undefined
+                              }
+                            | undefined
+                          noise_sensors?:
+                            | {
+                                noise_thresholds: {
+                                  name?: string | undefined
+                                  starts_daily_at: string
+                                  ends_daily_at: string
+                                  noise_threshold_decibels: number
+                                }[]
+                              }
+                            | undefined
+                        }
+                      | undefined
+                    on_check_out?:
+                      | {
+                          minutes_after_check_out?: number | undefined
+                          speakers?:
+                            | {
+                                pause_playback?: boolean | undefined
+                                unmute?: boolean | undefined
+                                reset_volume_to?: number | undefined
+                              }
+                            | undefined
+                          noise_sensors?:
+                            | {
+                                noise_thresholds: {
+                                  name?: string | undefined
+                                  starts_daily_at: string
+                                  ends_daily_at: string
+                                  noise_threshold_decibels: number
+                                }[]
+                              }
+                            | undefined
+                        }
+                      | undefined
+                  }
+                | undefined
+              reservation_time_updated?: {} | undefined
+              reservation_spaces_updated?: {} | undefined
+              reservation_deleted?: {} | undefined
+            }
+          }
+        | undefined
     }
     maxDuration: undefined
   }
@@ -108643,6 +108700,66 @@ export type Routes = {
                       } | null)
                     | undefined
                   reservation_time_updated?: ({} | null) | undefined
+                  reservation_deleted?: ({} | null) | undefined
+                }
+              | undefined
+          }
+        | undefined
+      /** Sound automation rules configuration. */
+      sound_rules?:
+        | {
+            rules?:
+              | {
+                  reservation_created?:
+                    | ({
+                        on_check_in?:
+                          | {
+                              minutes_before_check_in?: number | undefined
+                              speakers?:
+                                | {
+                                    set_volume_to?: number | undefined
+                                    unmute?: boolean | undefined
+                                    play_chime?: boolean | undefined
+                                  }
+                                | undefined
+                              noise_sensors?:
+                                | {
+                                    noise_thresholds: {
+                                      name?: string | undefined
+                                      starts_daily_at: string
+                                      ends_daily_at: string
+                                      noise_threshold_decibels: number
+                                    }[]
+                                  }
+                                | undefined
+                            }
+                          | undefined
+                        on_check_out?:
+                          | {
+                              minutes_after_check_out?: number | undefined
+                              speakers?:
+                                | {
+                                    pause_playback?: boolean | undefined
+                                    unmute?: boolean | undefined
+                                    reset_volume_to?: number | undefined
+                                  }
+                                | undefined
+                              noise_sensors?:
+                                | {
+                                    noise_thresholds: {
+                                      name?: string | undefined
+                                      starts_daily_at: string
+                                      ends_daily_at: string
+                                      noise_threshold_decibels: number
+                                    }[]
+                                  }
+                                | undefined
+                            }
+                          | undefined
+                      } | null)
+                    | undefined
+                  reservation_time_updated?: ({} | null) | undefined
+                  reservation_spaces_updated?: ({} | null) | undefined
                   reservation_deleted?: ({} | null) | undefined
                 }
               | undefined
@@ -109116,6 +109233,63 @@ export type Routes = {
               }
             }
           | undefined
+        sound_rules?:
+          | {
+              rules: {
+                reservation_created?:
+                  | {
+                      on_check_in?:
+                        | {
+                            minutes_before_check_in?: number | undefined
+                            speakers?:
+                              | {
+                                  set_volume_to?: number | undefined
+                                  unmute?: boolean | undefined
+                                  play_chime?: boolean | undefined
+                                }
+                              | undefined
+                            noise_sensors?:
+                              | {
+                                  noise_thresholds: {
+                                    name?: string | undefined
+                                    starts_daily_at: string
+                                    ends_daily_at: string
+                                    noise_threshold_decibels: number
+                                  }[]
+                                }
+                              | undefined
+                          }
+                        | undefined
+                      on_check_out?:
+                        | {
+                            minutes_after_check_out?: number | undefined
+                            speakers?:
+                              | {
+                                  pause_playback?: boolean | undefined
+                                  unmute?: boolean | undefined
+                                  reset_volume_to?: number | undefined
+                                }
+                              | undefined
+                            noise_sensors?:
+                              | {
+                                  noise_thresholds: {
+                                    name?: string | undefined
+                                    starts_daily_at: string
+                                    ends_daily_at: string
+                                    noise_threshold_decibels: number
+                                  }[]
+                                }
+                              | undefined
+                          }
+                        | undefined
+                    }
+                  | undefined
+                reservation_time_updated?: {} | undefined
+                reservation_spaces_updated?: {} | undefined
+                reservation_deleted?: {} | undefined
+              }
+            }
+          | undefined
       }
     }
     maxDuration: undefined
@@ -109230,6 +109404,66 @@ export type Routes = {
                       } | null)
                     | undefined
                   reservation_time_updated?: ({} | null) | undefined
+                  reservation_deleted?: ({} | null) | undefined
+                }
+              | undefined
+          }
+        | undefined
+      /** Sound automation rules configuration. */
+      sound_rules?:
+        | {
+            rules?:
+              | {
+                  reservation_created?:
+                    | ({
+                        on_check_in?:
+                          | {
+                              minutes_before_check_in?: number | undefined
+                              speakers?:
+                                | {
+                                    set_volume_to?: number | undefined
+                                    unmute?: boolean | undefined
+                                    play_chime?: boolean | undefined
+                                  }
+                                | undefined
+                              noise_sensors?:
+                                | {
+                                    noise_thresholds: {
+                                      name?: string | undefined
+                                      starts_daily_at: string
+                                      ends_daily_at: string
+                                      noise_threshold_decibels: number
+                                    }[]
+                                  }
+                                | undefined
+                            }
+                          | undefined
+                        on_check_out?:
+                          | {
+                              minutes_after_check_out?: number | undefined
+                              speakers?:
+                                | {
+                                    pause_playback?: boolean | undefined
+                                    unmute?: boolean | undefined
+                                    reset_volume_to?: number | undefined
+                                  }
+                                | undefined
+                              noise_sensors?:
+                                | {
+                                    noise_thresholds: {
+                                      name?: string | undefined
+                                      starts_daily_at: string
+                                      ends_daily_at: string
+                                      noise_threshold_decibels: number
+                                    }[]
+                                  }
+                                | undefined
+                            }
+                          | undefined
+                      } | null)
+                    | undefined
+                  reservation_time_updated?: ({} | null) | undefined
+                  reservation_spaces_updated?: ({} | null) | undefined
                   reservation_deleted?: ({} | null) | undefined
                 }
               | undefined

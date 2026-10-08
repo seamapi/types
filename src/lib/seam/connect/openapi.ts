@@ -62640,6 +62640,101 @@ const openapi: OpenAPISpec = {
                       type: 'object',
                     },
                     ok: { type: 'boolean' },
+                    sound_rules: {
+                      properties: {
+                        rules: {
+                          properties: {
+                            reservation_created: {
+                              properties: {
+                                on_check_in: {
+                                  properties: {
+                                    minutes_before_check_in: {
+                                      maximum: 1440,
+                                      minimum: 0,
+                                      type: 'integer',
+                                    },
+                                    noise_sensors: {
+                                      properties: {
+                                        noise_thresholds: {
+                                          items: {
+                                            $ref: '#/components/schemas/noise_threshold',
+                                          },
+                                          maxItems: 10,
+                                          type: 'array',
+                                        },
+                                      },
+                                      required: ['noise_thresholds'],
+                                      type: 'object',
+                                    },
+                                    speakers: {
+                                      properties: {
+                                        play_chime: { type: 'boolean' },
+                                        set_volume_to: {
+                                          maximum: 100,
+                                          minimum: 0,
+                                          type: 'integer',
+                                        },
+                                        unmute: { type: 'boolean' },
+                                      },
+                                      type: 'object',
+                                    },
+                                  },
+                                  type: 'object',
+                                },
+                                on_check_out: {
+                                  properties: {
+                                    minutes_after_check_out: {
+                                      maximum: 1440,
+                                      minimum: 0,
+                                      type: 'integer',
+                                    },
+                                    noise_sensors: {
+                                      properties: {
+                                        noise_thresholds: {
+                                          items: {
+                                            $ref: '#/components/schemas/noise_threshold',
+                                          },
+                                          maxItems: 10,
+                                          type: 'array',
+                                        },
+                                      },
+                                      required: ['noise_thresholds'],
+                                      type: 'object',
+                                    },
+                                    speakers: {
+                                      properties: {
+                                        pause_playback: { type: 'boolean' },
+                                        reset_volume_to: {
+                                          maximum: 100,
+                                          minimum: 0,
+                                          type: 'integer',
+                                        },
+                                        unmute: { type: 'boolean' },
+                                      },
+                                      type: 'object',
+                                    },
+                                  },
+                                  type: 'object',
+                                },
+                              },
+                              type: 'object',
+                            },
+                            reservation_deleted: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            reservation_spaces_updated: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            reservation_time_updated: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                          },
+                          type: 'object',
+                        },
+                      },
+                      required: ['rules'],
+                      type: 'object',
+                    },
                   },
                   required: ['ok'],
                   type: 'object',
@@ -62938,6 +63033,136 @@ const openapi: OpenAPISpec = {
                       'Key of the customer to update automation config for.',
                     minLength: 1,
                     type: 'string',
+                  },
+                  sound_rules: {
+                    description: 'Sound automation rules configuration.',
+                    properties: {
+                      rules: {
+                        properties: {
+                          reservation_created: {
+                            nullable: true,
+                            properties: {
+                              on_check_in: {
+                                properties: {
+                                  minutes_before_check_in: {
+                                    maximum: 1440,
+                                    minimum: 0,
+                                    type: 'integer',
+                                  },
+                                  noise_sensors: {
+                                    properties: {
+                                      noise_thresholds: {
+                                        items: {
+                                          properties: {
+                                            ends_daily_at: { type: 'string' },
+                                            name: { type: 'string' },
+                                            noise_threshold_decibels: {
+                                              format: 'float',
+                                              type: 'number',
+                                            },
+                                            starts_daily_at: { type: 'string' },
+                                          },
+                                          required: [
+                                            'starts_daily_at',
+                                            'ends_daily_at',
+                                            'noise_threshold_decibels',
+                                          ],
+                                          type: 'object',
+                                        },
+                                        maxItems: 10,
+                                        type: 'array',
+                                      },
+                                    },
+                                    required: ['noise_thresholds'],
+                                    type: 'object',
+                                  },
+                                  speakers: {
+                                    properties: {
+                                      play_chime: { type: 'boolean' },
+                                      set_volume_to: {
+                                        maximum: 100,
+                                        minimum: 0,
+                                        type: 'integer',
+                                      },
+                                      unmute: { type: 'boolean' },
+                                    },
+                                    type: 'object',
+                                  },
+                                },
+                                type: 'object',
+                              },
+                              on_check_out: {
+                                properties: {
+                                  minutes_after_check_out: {
+                                    maximum: 1440,
+                                    minimum: 0,
+                                    type: 'integer',
+                                  },
+                                  noise_sensors: {
+                                    properties: {
+                                      noise_thresholds: {
+                                        items: {
+                                          properties: {
+                                            ends_daily_at: { type: 'string' },
+                                            name: { type: 'string' },
+                                            noise_threshold_decibels: {
+                                              format: 'float',
+                                              type: 'number',
+                                            },
+                                            starts_daily_at: { type: 'string' },
+                                          },
+                                          required: [
+                                            'starts_daily_at',
+                                            'ends_daily_at',
+                                            'noise_threshold_decibels',
+                                          ],
+                                          type: 'object',
+                                        },
+                                        maxItems: 10,
+                                        type: 'array',
+                                      },
+                                    },
+                                    required: ['noise_thresholds'],
+                                    type: 'object',
+                                  },
+                                  speakers: {
+                                    properties: {
+                                      pause_playback: { type: 'boolean' },
+                                      reset_volume_to: {
+                                        maximum: 100,
+                                        minimum: 0,
+                                        type: 'integer',
+                                      },
+                                      unmute: { type: 'boolean' },
+                                    },
+                                    type: 'object',
+                                  },
+                                },
+                                type: 'object',
+                              },
+                            },
+                            type: 'object',
+                          },
+                          reservation_deleted: {
+                            nullable: true,
+                            properties: {},
+                            type: 'object',
+                          },
+                          reservation_spaces_updated: {
+                            nullable: true,
+                            properties: {},
+                            type: 'object',
+                          },
+                          reservation_time_updated: {
+                            nullable: true,
+                            properties: {},
+                            type: 'object',
+                          },
+                        },
+                        type: 'object',
+                      },
+                    },
+                    type: 'object',
                   },
                 },
                 type: 'object',
@@ -64256,6 +64481,101 @@ const openapi: OpenAPISpec = {
                           required: ['rules'],
                           type: 'object',
                         },
+                        sound_rules: {
+                          properties: {
+                            rules: {
+                              properties: {
+                                reservation_created: {
+                                  properties: {
+                                    on_check_in: {
+                                      properties: {
+                                        minutes_before_check_in: {
+                                          maximum: 1440,
+                                          minimum: 0,
+                                          type: 'integer',
+                                        },
+                                        noise_sensors: {
+                                          properties: {
+                                            noise_thresholds: {
+                                              items: {
+                                                $ref: '#/components/schemas/noise_threshold',
+                                              },
+                                              maxItems: 10,
+                                              type: 'array',
+                                            },
+                                          },
+                                          required: ['noise_thresholds'],
+                                          type: 'object',
+                                        },
+                                        speakers: {
+                                          properties: {
+                                            play_chime: { type: 'boolean' },
+                                            set_volume_to: {
+                                              maximum: 100,
+                                              minimum: 0,
+                                              type: 'integer',
+                                            },
+                                            unmute: { type: 'boolean' },
+                                          },
+                                          type: 'object',
+                                        },
+                                      },
+                                      type: 'object',
+                                    },
+                                    on_check_out: {
+                                      properties: {
+                                        minutes_after_check_out: {
+                                          maximum: 1440,
+                                          minimum: 0,
+                                          type: 'integer',
+                                        },
+                                        noise_sensors: {
+                                          properties: {
+                                            noise_thresholds: {
+                                              items: {
+                                                $ref: '#/components/schemas/noise_threshold',
+                                              },
+                                              maxItems: 10,
+                                              type: 'array',
+                                            },
+                                          },
+                                          required: ['noise_thresholds'],
+                                          type: 'object',
+                                        },
+                                        speakers: {
+                                          properties: {
+                                            pause_playback: { type: 'boolean' },
+                                            reset_volume_to: {
+                                              maximum: 100,
+                                              minimum: 0,
+                                              type: 'integer',
+                                            },
+                                            unmute: { type: 'boolean' },
+                                          },
+                                          type: 'object',
+                                        },
+                                      },
+                                      type: 'object',
+                                    },
+                                  },
+                                  type: 'object',
+                                },
+                                reservation_deleted: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                                reservation_spaces_updated: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                                reservation_time_updated: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                              },
+                              type: 'object',
+                            },
+                          },
+                          required: ['rules'],
+                          type: 'object',
+                        },
                       },
                       type: 'object',
                     },
@@ -64548,6 +64868,136 @@ const openapi: OpenAPISpec = {
                             type: 'object',
                           },
                           reservation_deleted: {
+                            nullable: true,
+                            properties: {},
+                            type: 'object',
+                          },
+                          reservation_time_updated: {
+                            nullable: true,
+                            properties: {},
+                            type: 'object',
+                          },
+                        },
+                        type: 'object',
+                      },
+                    },
+                    type: 'object',
+                  },
+                  sound_rules: {
+                    description: 'Sound automation rules configuration.',
+                    properties: {
+                      rules: {
+                        properties: {
+                          reservation_created: {
+                            nullable: true,
+                            properties: {
+                              on_check_in: {
+                                properties: {
+                                  minutes_before_check_in: {
+                                    maximum: 1440,
+                                    minimum: 0,
+                                    type: 'integer',
+                                  },
+                                  noise_sensors: {
+                                    properties: {
+                                      noise_thresholds: {
+                                        items: {
+                                          properties: {
+                                            ends_daily_at: { type: 'string' },
+                                            name: { type: 'string' },
+                                            noise_threshold_decibels: {
+                                              format: 'float',
+                                              type: 'number',
+                                            },
+                                            starts_daily_at: { type: 'string' },
+                                          },
+                                          required: [
+                                            'starts_daily_at',
+                                            'ends_daily_at',
+                                            'noise_threshold_decibels',
+                                          ],
+                                          type: 'object',
+                                        },
+                                        maxItems: 10,
+                                        type: 'array',
+                                      },
+                                    },
+                                    required: ['noise_thresholds'],
+                                    type: 'object',
+                                  },
+                                  speakers: {
+                                    properties: {
+                                      play_chime: { type: 'boolean' },
+                                      set_volume_to: {
+                                        maximum: 100,
+                                        minimum: 0,
+                                        type: 'integer',
+                                      },
+                                      unmute: { type: 'boolean' },
+                                    },
+                                    type: 'object',
+                                  },
+                                },
+                                type: 'object',
+                              },
+                              on_check_out: {
+                                properties: {
+                                  minutes_after_check_out: {
+                                    maximum: 1440,
+                                    minimum: 0,
+                                    type: 'integer',
+                                  },
+                                  noise_sensors: {
+                                    properties: {
+                                      noise_thresholds: {
+                                        items: {
+                                          properties: {
+                                            ends_daily_at: { type: 'string' },
+                                            name: { type: 'string' },
+                                            noise_threshold_decibels: {
+                                              format: 'float',
+                                              type: 'number',
+                                            },
+                                            starts_daily_at: { type: 'string' },
+                                          },
+                                          required: [
+                                            'starts_daily_at',
+                                            'ends_daily_at',
+                                            'noise_threshold_decibels',
+                                          ],
+                                          type: 'object',
+                                        },
+                                        maxItems: 10,
+                                        type: 'array',
+                                      },
+                                    },
+                                    required: ['noise_thresholds'],
+                                    type: 'object',
+                                  },
+                                  speakers: {
+                                    properties: {
+                                      pause_playback: { type: 'boolean' },
+                                      reset_volume_to: {
+                                        maximum: 100,
+                                        minimum: 0,
+                                        type: 'integer',
+                                      },
+                                      unmute: { type: 'boolean' },
+                                    },
+                                    type: 'object',
+                                  },
+                                },
+                                type: 'object',
+                              },
+                            },
+                            type: 'object',
+                          },
+                          reservation_deleted: {
+                            nullable: true,
+                            properties: {},
+                            type: 'object',
+                          },
+                          reservation_spaces_updated: {
                             nullable: true,
                             properties: {},
                             type: 'object',
