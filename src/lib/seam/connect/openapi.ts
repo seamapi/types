@@ -16896,6 +16896,11 @@ const openapi: OpenAPISpec = {
                               'ID of the Sonos player for the speaker.',
                             type: 'string',
                           },
+                          player_name: {
+                            description:
+                              'Name of the speaker, as set in the Sonos app.',
+                            type: 'string',
+                          },
                           software_version: {
                             description:
                               'Software version running on the speaker.',
@@ -19493,6 +19498,7 @@ const openapi: OpenAPISpec = {
               'omnitec',
               'kisi',
               'aqara',
+              'sonos',
             ],
             type: 'string',
           },
@@ -49974,6 +49980,7 @@ const openapi: OpenAPISpec = {
                         'omnitec',
                         'kisi',
                         'aqara',
+                        'sonos',
                         'yale_access',
                         'hid_cm',
                         'google_nest',
@@ -53854,6 +53861,7 @@ const openapi: OpenAPISpec = {
                 'kisi',
                 'slack',
                 'yacan',
+                'sonos',
               ],
               type: 'string',
             },
@@ -56190,6 +56198,7 @@ const openapi: OpenAPISpec = {
                 'kisi',
                 'slack',
                 'yacan',
+                'sonos',
               ],
               type: 'string',
             },
