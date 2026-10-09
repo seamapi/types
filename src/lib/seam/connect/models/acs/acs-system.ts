@@ -104,6 +104,17 @@ const salto_ks_subscription_limit_exceeded = common_acs_system_error.extend({
     Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.
     `)
 
+const user_license_limit_reached = common_acs_system_error.extend({
+  error_code: z
+    .literal('user_license_limit_reached')
+    .describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: acs_system
+    ---
+    Indicates that the access control system has reached the maximum number of users its license allows, so Seam cannot create new users on it and access for new guests is not provisioned. Remove unused users from the access control system or increase its license. The error clears once Seam can create users again.
+    `)
+
 const acs_system_disconnected = common_acs_system_error.extend({
   error_code: z
     .literal('acs_system_disconnected')
@@ -164,6 +175,7 @@ const acs_system_error = z
     bridge_disconnected,
     visionline_instance_unreachable,
     salto_ks_subscription_limit_exceeded,
+    user_license_limit_reached,
     insufficient_permissions,
     acs_system_disconnected,
     account_disconnected,
@@ -183,6 +195,7 @@ const _acs_system_error_map = z.object({
   salto_ks_subscription_limit_exceeded: salto_ks_subscription_limit_exceeded
     .optional()
     .nullable(),
+  user_license_limit_reached: user_license_limit_reached.optional().nullable(),
   insufficient_permissions: insufficient_permissions.optional().nullable(),
   acs_system_disconnected: acs_system_disconnected.optional().nullable(),
   account_disconnected: account_disconnected.optional().nullable(),

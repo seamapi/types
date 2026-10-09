@@ -4945,6 +4945,32 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
+                    'Indicates that the access control system has reached the maximum number of users its license allows, so Seam cannot create new users on it and access for new guests is not provisioned. Remove unused users from the access control system or increase its license. The error clears once Seam can create users again.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['user_license_limit_reached'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                  'x-resource-type': 'acs_system',
+                },
+                {
+                  description:
                     "Indicates that the provider's system backing this [access control system](https://www.seam.co/docs/low-level-apis/access-systems) is not letting Seam act on it, so access cannot be managed until this is resolved. The error message says which of two causes applies. Either Seam's integration user does not have sufficient permissions on the provider's system, or has been suspended there: grant the integration user the required permissions in the provider's system, or reauthorize the connected account in Seam. Or the provider account or site does not have a valid subscription with the provider: set up or renew that subscription with the provider.",
                   properties: {
                     created_at: {

@@ -18071,6 +18071,14 @@ export type Routes = {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'user_license_limit_reached'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'insufficient_permissions'
                   }
                 | {
@@ -45244,6 +45252,14 @@ export type Routes = {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'user_license_limit_reached'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'insufficient_permissions'
             }
           | {
@@ -45470,6 +45486,14 @@ export type Routes = {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'user_license_limit_reached'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'insufficient_permissions'
             }
           | {
@@ -45685,6 +45709,14 @@ export type Routes = {
               message: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'user_license_limit_reached'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -123667,6 +123699,14 @@ export type Routes = {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'user_license_limit_reached'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'insufficient_permissions'
                   }
                 | {
@@ -174383,6 +174423,14 @@ export type Routes = {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'user_license_limit_reached'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'insufficient_permissions'
             }
           | {
@@ -177972,6 +178020,14 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'salto_ks_subscription_limit_exceeded'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'user_license_limit_reached'
                   }
                 | {
                     /** Date and time at which Seam created the error. */
