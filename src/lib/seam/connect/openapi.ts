@@ -16881,6 +16881,11 @@ const openapi: OpenAPISpec = {
                             items: { type: 'string' },
                             type: 'array',
                           },
+                          color: {
+                            description:
+                              'Color of the speaker, as reported by Sonos.',
+                            type: 'string',
+                          },
                           household_id: {
                             description:
                               'ID of the Sonos household that the speaker belongs to.',

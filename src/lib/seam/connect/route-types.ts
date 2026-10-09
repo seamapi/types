@@ -16373,6 +16373,8 @@ export type Routes = {
                           player_name?: (string | undefined) | undefined
                           /** Model name of the speaker, as reported by Sonos. */
                           model_display_name?: (string | undefined) | undefined
+                          /** Color of the speaker, as reported by Sonos. */
+                          color?: (string | undefined) | undefined
                           /** Software version running on the speaker. */
                           software_version?: (string | undefined) | undefined
                           /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
@@ -25671,6 +25673,8 @@ export type Routes = {
                           player_name?: (string | undefined) | undefined
                           /** Model name of the speaker, as reported by Sonos. */
                           model_display_name?: (string | undefined) | undefined
+                          /** Color of the speaker, as reported by Sonos. */
+                          color?: (string | undefined) | undefined
                           /** Software version running on the speaker. */
                           software_version?: (string | undefined) | undefined
                           /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
@@ -56352,6 +56356,8 @@ export type Routes = {
                     player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
+                    /** Color of the speaker, as reported by Sonos. */
+                    color?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
                     software_version?: (string | undefined) | undefined
                     /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
@@ -58625,6 +58631,8 @@ export type Routes = {
                     player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
+                    /** Color of the speaker, as reported by Sonos. */
+                    color?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
                     software_version?: (string | undefined) | undefined
                     /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
@@ -74600,6 +74608,8 @@ export type Routes = {
                     player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
+                    /** Color of the speaker, as reported by Sonos. */
+                    color?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
                     software_version?: (string | undefined) | undefined
                     /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
@@ -76604,6 +76614,8 @@ export type Routes = {
                     player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
+                    /** Color of the speaker, as reported by Sonos. */
+                    color?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
                     software_version?: (string | undefined) | undefined
                     /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
@@ -78737,6 +78749,8 @@ export type Routes = {
                     player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
+                    /** Color of the speaker, as reported by Sonos. */
+                    color?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
                     software_version?: (string | undefined) | undefined
                     /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
@@ -80740,6 +80754,8 @@ export type Routes = {
                     player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
+                    /** Color of the speaker, as reported by Sonos. */
+                    color?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
                     software_version?: (string | undefined) | undefined
                     /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
@@ -92438,6 +92454,8 @@ export type Routes = {
                     player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
+                    /** Color of the speaker, as reported by Sonos. */
+                    color?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
                     software_version?: (string | undefined) | undefined
                     /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
@@ -94441,6 +94459,8 @@ export type Routes = {
                     player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
+                    /** Color of the speaker, as reported by Sonos. */
+                    color?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
                     software_version?: (string | undefined) | undefined
                     /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
@@ -121949,6 +121969,8 @@ export type Routes = {
                           player_name?: (string | undefined) | undefined
                           /** Model name of the speaker, as reported by Sonos. */
                           model_display_name?: (string | undefined) | undefined
+                          /** Color of the speaker, as reported by Sonos. */
+                          color?: (string | undefined) | undefined
                           /** Software version running on the speaker. */
                           software_version?: (string | undefined) | undefined
                           /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
@@ -149317,6 +149339,8 @@ export type Routes = {
                     player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
+                    /** Color of the speaker, as reported by Sonos. */
+                    color?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
                     software_version?: (string | undefined) | undefined
                     /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
@@ -156199,6 +156223,8 @@ export type Routes = {
                     player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
+                    /** Color of the speaker, as reported by Sonos. */
+                    color?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
                     software_version?: (string | undefined) | undefined
                     /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
@@ -158202,6 +158228,8 @@ export type Routes = {
                     player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
+                    /** Color of the speaker, as reported by Sonos. */
+                    color?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
                     software_version?: (string | undefined) | undefined
                     /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
@@ -170883,6 +170911,8 @@ export type Routes = {
                     player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
+                    /** Color of the speaker, as reported by Sonos. */
+                    color?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
                     software_version?: (string | undefined) | undefined
                     /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
@@ -172888,6 +172918,8 @@ export type Routes = {
                     player_name?: (string | undefined) | undefined
                     /** Model name of the speaker, as reported by Sonos. */
                     model_display_name?: (string | undefined) | undefined
+                    /** Color of the speaker, as reported by Sonos. */
+                    color?: (string | undefined) | undefined
                     /** Software version running on the speaker. */
                     software_version?: (string | undefined) | undefined
                     /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
@@ -176468,6 +176500,8 @@ export type Routes = {
                           player_name?: (string | undefined) | undefined
                           /** Model name of the speaker, as reported by Sonos. */
                           model_display_name?: (string | undefined) | undefined
+                          /** Color of the speaker, as reported by Sonos. */
+                          color?: (string | undefined) | undefined
                           /** Software version running on the speaker. */
                           software_version?: (string | undefined) | undefined
                           /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
