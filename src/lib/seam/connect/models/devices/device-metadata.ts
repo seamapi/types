@@ -1342,6 +1342,10 @@ export const device_metadata = z
           .string()
           .optional()
           .describe('Model name of the speaker, as reported by Sonos.'),
+        color: z
+          .string()
+          .optional()
+          .describe('Color of the speaker, as reported by Sonos.'),
         software_version: z
           .string()
           .optional()
