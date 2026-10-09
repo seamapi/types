@@ -124,7 +124,6 @@ export const PROVIDER_CATEGORY_MAP = {
     'ring',
     'korelock',
     'keyincode',
-    'sifely',
     'omnitec',
     'dusaw',
     'thirty_three_lock',
@@ -149,12 +148,11 @@ export const PROVIDER_CATEGORY_MAP = {
     'korelock',
     'dusaw',
     'keyincode',
-    'sifely',
     'thirty_three_lock',
     'yacan',
   ],
 
-  beta: ['salto_ks_accept', 'aqara', 'tapo', 'arlo'],
+  beta: ['salto_ks_accept', 'aqara', 'tapo', 'arlo', 'sifely'],
 
   thermostats: ['ecobee', 'nest', 'sensi', 'honeywell_resideo', 'first_alert'],
   noise_sensors: ['minut', 'noiseaware'],
