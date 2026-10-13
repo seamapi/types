@@ -58,6 +58,7 @@ export {
   guest_resource,
   instant_key,
   instant_key_preview,
+  instant_key_theme,
   listing_resource,
   lock_device_type,
   magic_link,

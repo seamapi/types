@@ -14520,6 +14520,318 @@ const openapi: OpenAPISpec = {
             type: 'object',
           },
           customization_profile_id: { format: 'uuid', type: 'string' },
+          instant_key_theme: {
+            description: 'Theme for the Instant Keys apps.',
+            properties: {
+              dark: {
+                additionalProperties: false,
+                description:
+                  'Dark-mode colors, in the same form as `light`. When omitted, dark mode uses the Seam default with your `primary`, `primary_foreground`, and `ring` colors.',
+                properties: {
+                  accent: {
+                    description: 'Pressed and hovered backgrounds.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  accent_foreground: {
+                    description: 'Text color on `accent`.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  background: {
+                    description: 'App background.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  border: {
+                    description: 'Borders and dividers.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  card: {
+                    description: 'Card background.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  card_foreground: {
+                    description: 'Text color on cards.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  destructive: {
+                    description: 'Errors and destructive actions.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  destructive_foreground: {
+                    description: 'Text color on `destructive`.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  foreground: {
+                    description: 'Default text color.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  input: {
+                    description: 'Input borders.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  key_card: {
+                    description: 'Start of the key card gradient.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  key_card_end: {
+                    description: 'End of the key card gradient.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  key_card_foreground: {
+                    description: 'Text and logo color on the key card.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  muted: {
+                    description:
+                      'Subtle backgrounds, such as the unlock sheet header.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  muted_foreground: {
+                    description: 'Secondary text.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  popover: {
+                    description: 'Dialog and sheet background.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  popover_foreground: {
+                    description: 'Text color on dialogs and sheets.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  primary: {
+                    description: 'Primary buttons and highlights.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  primary_foreground: {
+                    description: 'Text color on `primary`.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  ring: {
+                    description: 'Focus rings.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  secondary: {
+                    description: 'Secondary buttons.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  secondary_foreground: {
+                    description: 'Text color on `secondary`.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  success: {
+                    description: 'Successful unlocks.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  success_foreground: {
+                    description: 'Text color on `success`.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  unlock: {
+                    description: 'Start of the unlock button gradient.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  unlock_end: {
+                    description: 'End of the unlock button gradient.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  unlock_foreground: {
+                    description: 'Icon color on the unlock button.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+              font_family: {
+                description:
+                  'Font family for the Instant Key UI. The apps use the closest system typeface: sans-serif, serif, or monospace.',
+                maxLength: 200,
+                type: 'string',
+              },
+              key_card_texture: {
+                description:
+                  'Whether the key card shows its default texture over the key card gradient, or the gradient alone.',
+                enum: ['default', 'none'],
+                type: 'string',
+              },
+              light: {
+                additionalProperties: false,
+                description:
+                  "Light-mode colors, named after shadcn/ui's CSS variables in snake_case. Values are CSS colors in hex, `oklch()`, `rgb()`, or `hsl()` form. Colors you omit use the Seam default.",
+                properties: {
+                  accent: {
+                    description: 'Pressed and hovered backgrounds.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  accent_foreground: {
+                    description: 'Text color on `accent`.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  background: {
+                    description: 'App background.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  border: {
+                    description: 'Borders and dividers.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  card: {
+                    description: 'Card background.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  card_foreground: {
+                    description: 'Text color on cards.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  destructive: {
+                    description: 'Errors and destructive actions.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  destructive_foreground: {
+                    description: 'Text color on `destructive`.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  foreground: {
+                    description: 'Default text color.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  input: {
+                    description: 'Input borders.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  key_card: {
+                    description: 'Start of the key card gradient.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  key_card_end: {
+                    description: 'End of the key card gradient.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  key_card_foreground: {
+                    description: 'Text and logo color on the key card.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  muted: {
+                    description:
+                      'Subtle backgrounds, such as the unlock sheet header.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  muted_foreground: {
+                    description: 'Secondary text.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  popover: {
+                    description: 'Dialog and sheet background.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  popover_foreground: {
+                    description: 'Text color on dialogs and sheets.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  primary: {
+                    description: 'Primary buttons and highlights.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  primary_foreground: {
+                    description: 'Text color on `primary`.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  ring: {
+                    description: 'Focus rings.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  secondary: {
+                    description: 'Secondary buttons.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  secondary_foreground: {
+                    description: 'Text color on `secondary`.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  success: {
+                    description: 'Successful unlocks.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  success_foreground: {
+                    description: 'Text color on `success`.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  unlock: {
+                    description: 'Start of the unlock button gradient.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  unlock_end: {
+                    description: 'End of the unlock button gradient.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                  unlock_foreground: {
+                    description: 'Icon color on the unlock button.',
+                    maxLength: 100,
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+              radius: {
+                description:
+                  'Corner radius for the Instant Key UI, as a CSS length such as `0.875rem` or `14px`.',
+                pattern: '^(?:\\d+\\.?\\d*|\\.\\d+)(?:rem|px)?$',
+                type: 'string',
+              },
+            },
+            type: 'object',
+          },
           logo_url: { format: 'uri', type: 'string' },
           message_overrides: {
             additionalProperties: {
@@ -30748,6 +31060,320 @@ const openapi: OpenAPISpec = {
           customization: {
             description: 'Customization applied to the Instant Key UI.',
             properties: {
+              instant_key_theme: {
+                description:
+                  "Theme for the Instant Keys apps, from the customization profile's `instant_key_theme`. Omitted when the profile has none, in which case the apps use the Seam default theme.",
+                properties: {
+                  dark: {
+                    additionalProperties: false,
+                    description:
+                      'Dark-mode colors, in the same form as `light`. When omitted, dark mode uses the Seam default with your `primary`, `primary_foreground`, and `ring` colors.',
+                    properties: {
+                      accent: {
+                        description: 'Pressed and hovered backgrounds.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      accent_foreground: {
+                        description: 'Text color on `accent`.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      background: {
+                        description: 'App background.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      border: {
+                        description: 'Borders and dividers.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      card: {
+                        description: 'Card background.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      card_foreground: {
+                        description: 'Text color on cards.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      destructive: {
+                        description: 'Errors and destructive actions.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      destructive_foreground: {
+                        description: 'Text color on `destructive`.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      foreground: {
+                        description: 'Default text color.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      input: {
+                        description: 'Input borders.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      key_card: {
+                        description: 'Start of the key card gradient.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      key_card_end: {
+                        description: 'End of the key card gradient.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      key_card_foreground: {
+                        description: 'Text and logo color on the key card.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      muted: {
+                        description:
+                          'Subtle backgrounds, such as the unlock sheet header.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      muted_foreground: {
+                        description: 'Secondary text.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      popover: {
+                        description: 'Dialog and sheet background.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      popover_foreground: {
+                        description: 'Text color on dialogs and sheets.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      primary: {
+                        description: 'Primary buttons and highlights.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      primary_foreground: {
+                        description: 'Text color on `primary`.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      ring: {
+                        description: 'Focus rings.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      secondary: {
+                        description: 'Secondary buttons.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      secondary_foreground: {
+                        description: 'Text color on `secondary`.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      success: {
+                        description: 'Successful unlocks.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      success_foreground: {
+                        description: 'Text color on `success`.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      unlock: {
+                        description: 'Start of the unlock button gradient.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      unlock_end: {
+                        description: 'End of the unlock button gradient.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      unlock_foreground: {
+                        description: 'Icon color on the unlock button.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                    },
+                    type: 'object',
+                  },
+                  font_family: {
+                    description:
+                      'Font family for the Instant Key UI. The apps use the closest system typeface: sans-serif, serif, or monospace.',
+                    maxLength: 200,
+                    type: 'string',
+                  },
+                  key_card_texture: {
+                    description:
+                      'Whether the key card shows its default texture over the key card gradient, or the gradient alone.',
+                    enum: ['default', 'none'],
+                    type: 'string',
+                  },
+                  light: {
+                    additionalProperties: false,
+                    description:
+                      "Light-mode colors, named after shadcn/ui's CSS variables in snake_case. Values are CSS colors in hex, `oklch()`, `rgb()`, or `hsl()` form. Colors you omit use the Seam default.",
+                    properties: {
+                      accent: {
+                        description: 'Pressed and hovered backgrounds.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      accent_foreground: {
+                        description: 'Text color on `accent`.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      background: {
+                        description: 'App background.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      border: {
+                        description: 'Borders and dividers.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      card: {
+                        description: 'Card background.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      card_foreground: {
+                        description: 'Text color on cards.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      destructive: {
+                        description: 'Errors and destructive actions.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      destructive_foreground: {
+                        description: 'Text color on `destructive`.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      foreground: {
+                        description: 'Default text color.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      input: {
+                        description: 'Input borders.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      key_card: {
+                        description: 'Start of the key card gradient.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      key_card_end: {
+                        description: 'End of the key card gradient.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      key_card_foreground: {
+                        description: 'Text and logo color on the key card.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      muted: {
+                        description:
+                          'Subtle backgrounds, such as the unlock sheet header.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      muted_foreground: {
+                        description: 'Secondary text.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      popover: {
+                        description: 'Dialog and sheet background.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      popover_foreground: {
+                        description: 'Text color on dialogs and sheets.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      primary: {
+                        description: 'Primary buttons and highlights.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      primary_foreground: {
+                        description: 'Text color on `primary`.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      ring: {
+                        description: 'Focus rings.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      secondary: {
+                        description: 'Secondary buttons.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      secondary_foreground: {
+                        description: 'Text color on `secondary`.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      success: {
+                        description: 'Successful unlocks.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      success_foreground: {
+                        description: 'Text color on `success`.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      unlock: {
+                        description: 'Start of the unlock button gradient.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      unlock_end: {
+                        description: 'End of the unlock button gradient.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                      unlock_foreground: {
+                        description: 'Icon color on the unlock button.',
+                        maxLength: 100,
+                        type: 'string',
+                      },
+                    },
+                    type: 'object',
+                  },
+                  radius: {
+                    description:
+                      'Corner radius for the Instant Key UI, as a CSS length such as `0.875rem` or `14px`.',
+                    pattern: '^(?:\\d+\\.?\\d*|\\.\\d+)(?:rem|px)?$',
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+                'x-undocumented': 'Unreleased.',
+              },
               logo_url: {
                 description: 'URL of the logo displayed on the Instant Key.',
                 format: 'uri',
@@ -75492,6 +76118,317 @@ const openapi: OpenAPISpec = {
                     },
                     type: 'object',
                   },
+                  instant_key_theme: {
+                    properties: {
+                      dark: {
+                        additionalProperties: false,
+                        description:
+                          'Dark-mode colors, in the same form as `light`. When omitted, dark mode uses the Seam default with your `primary`, `primary_foreground`, and `ring` colors.',
+                        properties: {
+                          accent: {
+                            description: 'Pressed and hovered backgrounds.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          accent_foreground: {
+                            description: 'Text color on `accent`.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          background: {
+                            description: 'App background.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          border: {
+                            description: 'Borders and dividers.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          card: {
+                            description: 'Card background.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          card_foreground: {
+                            description: 'Text color on cards.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          destructive: {
+                            description: 'Errors and destructive actions.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          destructive_foreground: {
+                            description: 'Text color on `destructive`.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          foreground: {
+                            description: 'Default text color.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          input: {
+                            description: 'Input borders.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          key_card: {
+                            description: 'Start of the key card gradient.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          key_card_end: {
+                            description: 'End of the key card gradient.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          key_card_foreground: {
+                            description: 'Text and logo color on the key card.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          muted: {
+                            description:
+                              'Subtle backgrounds, such as the unlock sheet header.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          muted_foreground: {
+                            description: 'Secondary text.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          popover: {
+                            description: 'Dialog and sheet background.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          popover_foreground: {
+                            description: 'Text color on dialogs and sheets.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          primary: {
+                            description: 'Primary buttons and highlights.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          primary_foreground: {
+                            description: 'Text color on `primary`.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          ring: {
+                            description: 'Focus rings.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          secondary: {
+                            description: 'Secondary buttons.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          secondary_foreground: {
+                            description: 'Text color on `secondary`.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          success: {
+                            description: 'Successful unlocks.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          success_foreground: {
+                            description: 'Text color on `success`.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          unlock: {
+                            description: 'Start of the unlock button gradient.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          unlock_end: {
+                            description: 'End of the unlock button gradient.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          unlock_foreground: {
+                            description: 'Icon color on the unlock button.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      font_family: {
+                        description:
+                          'Font family for the Instant Key UI. The apps use the closest system typeface: sans-serif, serif, or monospace.',
+                        maxLength: 200,
+                        type: 'string',
+                      },
+                      key_card_texture: {
+                        description:
+                          'Whether the key card shows its default texture over the key card gradient, or the gradient alone.',
+                        enum: ['default', 'none'],
+                        type: 'string',
+                      },
+                      light: {
+                        additionalProperties: false,
+                        description:
+                          "Light-mode colors, named after shadcn/ui's CSS variables in snake_case. Values are CSS colors in hex, `oklch()`, `rgb()`, or `hsl()` form. Colors you omit use the Seam default.",
+                        properties: {
+                          accent: {
+                            description: 'Pressed and hovered backgrounds.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          accent_foreground: {
+                            description: 'Text color on `accent`.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          background: {
+                            description: 'App background.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          border: {
+                            description: 'Borders and dividers.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          card: {
+                            description: 'Card background.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          card_foreground: {
+                            description: 'Text color on cards.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          destructive: {
+                            description: 'Errors and destructive actions.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          destructive_foreground: {
+                            description: 'Text color on `destructive`.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          foreground: {
+                            description: 'Default text color.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          input: {
+                            description: 'Input borders.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          key_card: {
+                            description: 'Start of the key card gradient.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          key_card_end: {
+                            description: 'End of the key card gradient.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          key_card_foreground: {
+                            description: 'Text and logo color on the key card.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          muted: {
+                            description:
+                              'Subtle backgrounds, such as the unlock sheet header.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          muted_foreground: {
+                            description: 'Secondary text.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          popover: {
+                            description: 'Dialog and sheet background.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          popover_foreground: {
+                            description: 'Text color on dialogs and sheets.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          primary: {
+                            description: 'Primary buttons and highlights.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          primary_foreground: {
+                            description: 'Text color on `primary`.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          ring: {
+                            description: 'Focus rings.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          secondary: {
+                            description: 'Secondary buttons.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          secondary_foreground: {
+                            description: 'Text color on `secondary`.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          success: {
+                            description: 'Successful unlocks.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          success_foreground: {
+                            description: 'Text color on `success`.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          unlock: {
+                            description: 'Start of the unlock button gradient.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          unlock_end: {
+                            description: 'End of the unlock button gradient.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          unlock_foreground: {
+                            description: 'Icon color on the unlock button.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      radius: {
+                        description:
+                          'Corner radius for the Instant Key UI, as a CSS length such as `0.875rem` or `14px`.',
+                        pattern: '^(?:\\d+\\.?\\d*|\\.\\d+)(?:rem|px)?$',
+                        type: 'string',
+                      },
+                    },
+                    type: 'object',
+                  },
                   message_overrides: {
                     additionalProperties: {
                       additionalProperties: { type: 'string' },
@@ -75675,6 +76612,318 @@ const openapi: OpenAPISpec = {
                     type: 'object',
                   },
                   customization_profile_id: { format: 'uuid', type: 'string' },
+                  instant_key_theme: {
+                    nullable: true,
+                    properties: {
+                      dark: {
+                        additionalProperties: false,
+                        description:
+                          'Dark-mode colors, in the same form as `light`. When omitted, dark mode uses the Seam default with your `primary`, `primary_foreground`, and `ring` colors.',
+                        properties: {
+                          accent: {
+                            description: 'Pressed and hovered backgrounds.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          accent_foreground: {
+                            description: 'Text color on `accent`.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          background: {
+                            description: 'App background.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          border: {
+                            description: 'Borders and dividers.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          card: {
+                            description: 'Card background.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          card_foreground: {
+                            description: 'Text color on cards.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          destructive: {
+                            description: 'Errors and destructive actions.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          destructive_foreground: {
+                            description: 'Text color on `destructive`.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          foreground: {
+                            description: 'Default text color.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          input: {
+                            description: 'Input borders.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          key_card: {
+                            description: 'Start of the key card gradient.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          key_card_end: {
+                            description: 'End of the key card gradient.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          key_card_foreground: {
+                            description: 'Text and logo color on the key card.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          muted: {
+                            description:
+                              'Subtle backgrounds, such as the unlock sheet header.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          muted_foreground: {
+                            description: 'Secondary text.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          popover: {
+                            description: 'Dialog and sheet background.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          popover_foreground: {
+                            description: 'Text color on dialogs and sheets.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          primary: {
+                            description: 'Primary buttons and highlights.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          primary_foreground: {
+                            description: 'Text color on `primary`.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          ring: {
+                            description: 'Focus rings.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          secondary: {
+                            description: 'Secondary buttons.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          secondary_foreground: {
+                            description: 'Text color on `secondary`.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          success: {
+                            description: 'Successful unlocks.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          success_foreground: {
+                            description: 'Text color on `success`.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          unlock: {
+                            description: 'Start of the unlock button gradient.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          unlock_end: {
+                            description: 'End of the unlock button gradient.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          unlock_foreground: {
+                            description: 'Icon color on the unlock button.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      font_family: {
+                        description:
+                          'Font family for the Instant Key UI. The apps use the closest system typeface: sans-serif, serif, or monospace.',
+                        maxLength: 200,
+                        type: 'string',
+                      },
+                      key_card_texture: {
+                        description:
+                          'Whether the key card shows its default texture over the key card gradient, or the gradient alone.',
+                        enum: ['default', 'none'],
+                        type: 'string',
+                      },
+                      light: {
+                        additionalProperties: false,
+                        description:
+                          "Light-mode colors, named after shadcn/ui's CSS variables in snake_case. Values are CSS colors in hex, `oklch()`, `rgb()`, or `hsl()` form. Colors you omit use the Seam default.",
+                        properties: {
+                          accent: {
+                            description: 'Pressed and hovered backgrounds.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          accent_foreground: {
+                            description: 'Text color on `accent`.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          background: {
+                            description: 'App background.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          border: {
+                            description: 'Borders and dividers.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          card: {
+                            description: 'Card background.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          card_foreground: {
+                            description: 'Text color on cards.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          destructive: {
+                            description: 'Errors and destructive actions.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          destructive_foreground: {
+                            description: 'Text color on `destructive`.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          foreground: {
+                            description: 'Default text color.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          input: {
+                            description: 'Input borders.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          key_card: {
+                            description: 'Start of the key card gradient.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          key_card_end: {
+                            description: 'End of the key card gradient.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          key_card_foreground: {
+                            description: 'Text and logo color on the key card.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          muted: {
+                            description:
+                              'Subtle backgrounds, such as the unlock sheet header.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          muted_foreground: {
+                            description: 'Secondary text.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          popover: {
+                            description: 'Dialog and sheet background.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          popover_foreground: {
+                            description: 'Text color on dialogs and sheets.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          primary: {
+                            description: 'Primary buttons and highlights.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          primary_foreground: {
+                            description: 'Text color on `primary`.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          ring: {
+                            description: 'Focus rings.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          secondary: {
+                            description: 'Secondary buttons.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          secondary_foreground: {
+                            description: 'Text color on `secondary`.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          success: {
+                            description: 'Successful unlocks.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          success_foreground: {
+                            description: 'Text color on `success`.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          unlock: {
+                            description: 'Start of the unlock button gradient.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          unlock_end: {
+                            description: 'End of the unlock button gradient.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                          unlock_foreground: {
+                            description: 'Icon color on the unlock button.',
+                            maxLength: 100,
+                            type: 'string',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      radius: {
+                        description:
+                          'Corner radius for the Instant Key UI, as a CSS length such as `0.875rem` or `14px`.',
+                        pattern: '^(?:\\d+\\.?\\d*|\\.\\d+)(?:rem|px)?$',
+                        type: 'string',
+                      },
+                    },
+                    type: 'object',
+                  },
                   message_overrides: {
                     additionalProperties: {
                       additionalProperties: { type: 'string' },

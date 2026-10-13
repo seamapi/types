@@ -27437,6 +27437,135 @@ export type Routes = {
                     secondary_color?: string | undefined
                     /** URL of the logo displayed on the Instant Key. */
                     logo_url?: string | undefined
+                    /** Theme for the Instant Keys apps, from the customization profile's `instant_key_theme`. Omitted when the profile has none, in which case the apps use the Seam default theme. */
+                    instant_key_theme?:
+                      | {
+                          /** Corner radius for the Instant Key UI, as a CSS length such as `0.875rem` or `14px`. */
+                          radius?: string | undefined
+                          /** Font family for the Instant Key UI. The apps use the closest system typeface: sans-serif, serif, or monospace. */
+                          font_family?: string | undefined
+                          /** Whether the key card shows its default texture over the key card gradient, or the gradient alone. */
+                          key_card_texture?: ('default' | 'none') | undefined
+                          /** Light-mode colors, named after shadcn/ui's CSS variables in snake_case. Values are CSS colors in hex, `oklch()`, `rgb()`, or `hsl()` form. Colors you omit use the Seam default. */
+                          light?:
+                            | {
+                                /** App background. */
+                                background?: string | undefined
+                                /** Default text color. */
+                                foreground?: string | undefined
+                                /** Card background. */
+                                card?: string | undefined
+                                /** Text color on cards. */
+                                card_foreground?: string | undefined
+                                /** Dialog and sheet background. */
+                                popover?: string | undefined
+                                /** Text color on dialogs and sheets. */
+                                popover_foreground?: string | undefined
+                                /** Primary buttons and highlights. */
+                                primary?: string | undefined
+                                /** Text color on `primary`. */
+                                primary_foreground?: string | undefined
+                                /** Secondary buttons. */
+                                secondary?: string | undefined
+                                /** Text color on `secondary`. */
+                                secondary_foreground?: string | undefined
+                                /** Subtle backgrounds, such as the unlock sheet header. */
+                                muted?: string | undefined
+                                /** Secondary text. */
+                                muted_foreground?: string | undefined
+                                /** Pressed and hovered backgrounds. */
+                                accent?: string | undefined
+                                /** Text color on `accent`. */
+                                accent_foreground?: string | undefined
+                                /** Errors and destructive actions. */
+                                destructive?: string | undefined
+                                /** Text color on `destructive`. */
+                                destructive_foreground?: string | undefined
+                                /** Borders and dividers. */
+                                border?: string | undefined
+                                /** Input borders. */
+                                input?: string | undefined
+                                /** Focus rings. */
+                                ring?: string | undefined
+                                /** Successful unlocks. */
+                                success?: string | undefined
+                                /** Text color on `success`. */
+                                success_foreground?: string | undefined
+                                /** Start of the key card gradient. */
+                                key_card?: string | undefined
+                                /** End of the key card gradient. */
+                                key_card_end?: string | undefined
+                                /** Text and logo color on the key card. */
+                                key_card_foreground?: string | undefined
+                                /** Start of the unlock button gradient. */
+                                unlock?: string | undefined
+                                /** End of the unlock button gradient. */
+                                unlock_end?: string | undefined
+                                /** Icon color on the unlock button. */
+                                unlock_foreground?: string | undefined
+                              }
+                            | undefined
+                          /** Dark-mode colors, in the same form as `light`. When omitted, dark mode uses the Seam default with your `primary`, `primary_foreground`, and `ring` colors. */
+                          dark?:
+                            | {
+                                /** App background. */
+                                background?: string | undefined
+                                /** Default text color. */
+                                foreground?: string | undefined
+                                /** Card background. */
+                                card?: string | undefined
+                                /** Text color on cards. */
+                                card_foreground?: string | undefined
+                                /** Dialog and sheet background. */
+                                popover?: string | undefined
+                                /** Text color on dialogs and sheets. */
+                                popover_foreground?: string | undefined
+                                /** Primary buttons and highlights. */
+                                primary?: string | undefined
+                                /** Text color on `primary`. */
+                                primary_foreground?: string | undefined
+                                /** Secondary buttons. */
+                                secondary?: string | undefined
+                                /** Text color on `secondary`. */
+                                secondary_foreground?: string | undefined
+                                /** Subtle backgrounds, such as the unlock sheet header. */
+                                muted?: string | undefined
+                                /** Secondary text. */
+                                muted_foreground?: string | undefined
+                                /** Pressed and hovered backgrounds. */
+                                accent?: string | undefined
+                                /** Text color on `accent`. */
+                                accent_foreground?: string | undefined
+                                /** Errors and destructive actions. */
+                                destructive?: string | undefined
+                                /** Text color on `destructive`. */
+                                destructive_foreground?: string | undefined
+                                /** Borders and dividers. */
+                                border?: string | undefined
+                                /** Input borders. */
+                                input?: string | undefined
+                                /** Focus rings. */
+                                ring?: string | undefined
+                                /** Successful unlocks. */
+                                success?: string | undefined
+                                /** Text color on `success`. */
+                                success_foreground?: string | undefined
+                                /** Start of the key card gradient. */
+                                key_card?: string | undefined
+                                /** End of the key card gradient. */
+                                key_card_end?: string | undefined
+                                /** Text and logo color on the key card. */
+                                key_card_foreground?: string | undefined
+                                /** Start of the unlock button gradient. */
+                                unlock?: string | undefined
+                                /** End of the unlock button gradient. */
+                                unlock_end?: string | undefined
+                                /** Icon color on the unlock button. */
+                                unlock_foreground?: string | undefined
+                              }
+                            | undefined
+                        }
+                      | undefined
                   }
                 | undefined
             }[]
@@ -71203,6 +71332,135 @@ export type Routes = {
               secondary_color?: string | undefined
               /** URL of the logo displayed on the Instant Key. */
               logo_url?: string | undefined
+              /** Theme for the Instant Keys apps, from the customization profile's `instant_key_theme`. Omitted when the profile has none, in which case the apps use the Seam default theme. */
+              instant_key_theme?:
+                | {
+                    /** Corner radius for the Instant Key UI, as a CSS length such as `0.875rem` or `14px`. */
+                    radius?: string | undefined
+                    /** Font family for the Instant Key UI. The apps use the closest system typeface: sans-serif, serif, or monospace. */
+                    font_family?: string | undefined
+                    /** Whether the key card shows its default texture over the key card gradient, or the gradient alone. */
+                    key_card_texture?: ('default' | 'none') | undefined
+                    /** Light-mode colors, named after shadcn/ui's CSS variables in snake_case. Values are CSS colors in hex, `oklch()`, `rgb()`, or `hsl()` form. Colors you omit use the Seam default. */
+                    light?:
+                      | {
+                          /** App background. */
+                          background?: string | undefined
+                          /** Default text color. */
+                          foreground?: string | undefined
+                          /** Card background. */
+                          card?: string | undefined
+                          /** Text color on cards. */
+                          card_foreground?: string | undefined
+                          /** Dialog and sheet background. */
+                          popover?: string | undefined
+                          /** Text color on dialogs and sheets. */
+                          popover_foreground?: string | undefined
+                          /** Primary buttons and highlights. */
+                          primary?: string | undefined
+                          /** Text color on `primary`. */
+                          primary_foreground?: string | undefined
+                          /** Secondary buttons. */
+                          secondary?: string | undefined
+                          /** Text color on `secondary`. */
+                          secondary_foreground?: string | undefined
+                          /** Subtle backgrounds, such as the unlock sheet header. */
+                          muted?: string | undefined
+                          /** Secondary text. */
+                          muted_foreground?: string | undefined
+                          /** Pressed and hovered backgrounds. */
+                          accent?: string | undefined
+                          /** Text color on `accent`. */
+                          accent_foreground?: string | undefined
+                          /** Errors and destructive actions. */
+                          destructive?: string | undefined
+                          /** Text color on `destructive`. */
+                          destructive_foreground?: string | undefined
+                          /** Borders and dividers. */
+                          border?: string | undefined
+                          /** Input borders. */
+                          input?: string | undefined
+                          /** Focus rings. */
+                          ring?: string | undefined
+                          /** Successful unlocks. */
+                          success?: string | undefined
+                          /** Text color on `success`. */
+                          success_foreground?: string | undefined
+                          /** Start of the key card gradient. */
+                          key_card?: string | undefined
+                          /** End of the key card gradient. */
+                          key_card_end?: string | undefined
+                          /** Text and logo color on the key card. */
+                          key_card_foreground?: string | undefined
+                          /** Start of the unlock button gradient. */
+                          unlock?: string | undefined
+                          /** End of the unlock button gradient. */
+                          unlock_end?: string | undefined
+                          /** Icon color on the unlock button. */
+                          unlock_foreground?: string | undefined
+                        }
+                      | undefined
+                    /** Dark-mode colors, in the same form as `light`. When omitted, dark mode uses the Seam default with your `primary`, `primary_foreground`, and `ring` colors. */
+                    dark?:
+                      | {
+                          /** App background. */
+                          background?: string | undefined
+                          /** Default text color. */
+                          foreground?: string | undefined
+                          /** Card background. */
+                          card?: string | undefined
+                          /** Text color on cards. */
+                          card_foreground?: string | undefined
+                          /** Dialog and sheet background. */
+                          popover?: string | undefined
+                          /** Text color on dialogs and sheets. */
+                          popover_foreground?: string | undefined
+                          /** Primary buttons and highlights. */
+                          primary?: string | undefined
+                          /** Text color on `primary`. */
+                          primary_foreground?: string | undefined
+                          /** Secondary buttons. */
+                          secondary?: string | undefined
+                          /** Text color on `secondary`. */
+                          secondary_foreground?: string | undefined
+                          /** Subtle backgrounds, such as the unlock sheet header. */
+                          muted?: string | undefined
+                          /** Secondary text. */
+                          muted_foreground?: string | undefined
+                          /** Pressed and hovered backgrounds. */
+                          accent?: string | undefined
+                          /** Text color on `accent`. */
+                          accent_foreground?: string | undefined
+                          /** Errors and destructive actions. */
+                          destructive?: string | undefined
+                          /** Text color on `destructive`. */
+                          destructive_foreground?: string | undefined
+                          /** Borders and dividers. */
+                          border?: string | undefined
+                          /** Input borders. */
+                          input?: string | undefined
+                          /** Focus rings. */
+                          ring?: string | undefined
+                          /** Successful unlocks. */
+                          success?: string | undefined
+                          /** Text color on `success`. */
+                          success_foreground?: string | undefined
+                          /** Start of the key card gradient. */
+                          key_card?: string | undefined
+                          /** End of the key card gradient. */
+                          key_card_end?: string | undefined
+                          /** Text and logo color on the key card. */
+                          key_card_foreground?: string | undefined
+                          /** Start of the unlock button gradient. */
+                          unlock?: string | undefined
+                          /** End of the unlock button gradient. */
+                          unlock_end?: string | undefined
+                          /** Icon color on the unlock button. */
+                          unlock_foreground?: string | undefined
+                        }
+                      | undefined
+                  }
+                | undefined
             }
           | undefined
       }
@@ -71246,6 +71504,135 @@ export type Routes = {
               secondary_color?: string | undefined
               /** URL of the logo displayed on the Instant Key. */
               logo_url?: string | undefined
+              /** Theme for the Instant Keys apps, from the customization profile's `instant_key_theme`. Omitted when the profile has none, in which case the apps use the Seam default theme. */
+              instant_key_theme?:
+                | {
+                    /** Corner radius for the Instant Key UI, as a CSS length such as `0.875rem` or `14px`. */
+                    radius?: string | undefined
+                    /** Font family for the Instant Key UI. The apps use the closest system typeface: sans-serif, serif, or monospace. */
+                    font_family?: string | undefined
+                    /** Whether the key card shows its default texture over the key card gradient, or the gradient alone. */
+                    key_card_texture?: ('default' | 'none') | undefined
+                    /** Light-mode colors, named after shadcn/ui's CSS variables in snake_case. Values are CSS colors in hex, `oklch()`, `rgb()`, or `hsl()` form. Colors you omit use the Seam default. */
+                    light?:
+                      | {
+                          /** App background. */
+                          background?: string | undefined
+                          /** Default text color. */
+                          foreground?: string | undefined
+                          /** Card background. */
+                          card?: string | undefined
+                          /** Text color on cards. */
+                          card_foreground?: string | undefined
+                          /** Dialog and sheet background. */
+                          popover?: string | undefined
+                          /** Text color on dialogs and sheets. */
+                          popover_foreground?: string | undefined
+                          /** Primary buttons and highlights. */
+                          primary?: string | undefined
+                          /** Text color on `primary`. */
+                          primary_foreground?: string | undefined
+                          /** Secondary buttons. */
+                          secondary?: string | undefined
+                          /** Text color on `secondary`. */
+                          secondary_foreground?: string | undefined
+                          /** Subtle backgrounds, such as the unlock sheet header. */
+                          muted?: string | undefined
+                          /** Secondary text. */
+                          muted_foreground?: string | undefined
+                          /** Pressed and hovered backgrounds. */
+                          accent?: string | undefined
+                          /** Text color on `accent`. */
+                          accent_foreground?: string | undefined
+                          /** Errors and destructive actions. */
+                          destructive?: string | undefined
+                          /** Text color on `destructive`. */
+                          destructive_foreground?: string | undefined
+                          /** Borders and dividers. */
+                          border?: string | undefined
+                          /** Input borders. */
+                          input?: string | undefined
+                          /** Focus rings. */
+                          ring?: string | undefined
+                          /** Successful unlocks. */
+                          success?: string | undefined
+                          /** Text color on `success`. */
+                          success_foreground?: string | undefined
+                          /** Start of the key card gradient. */
+                          key_card?: string | undefined
+                          /** End of the key card gradient. */
+                          key_card_end?: string | undefined
+                          /** Text and logo color on the key card. */
+                          key_card_foreground?: string | undefined
+                          /** Start of the unlock button gradient. */
+                          unlock?: string | undefined
+                          /** End of the unlock button gradient. */
+                          unlock_end?: string | undefined
+                          /** Icon color on the unlock button. */
+                          unlock_foreground?: string | undefined
+                        }
+                      | undefined
+                    /** Dark-mode colors, in the same form as `light`. When omitted, dark mode uses the Seam default with your `primary`, `primary_foreground`, and `ring` colors. */
+                    dark?:
+                      | {
+                          /** App background. */
+                          background?: string | undefined
+                          /** Default text color. */
+                          foreground?: string | undefined
+                          /** Card background. */
+                          card?: string | undefined
+                          /** Text color on cards. */
+                          card_foreground?: string | undefined
+                          /** Dialog and sheet background. */
+                          popover?: string | undefined
+                          /** Text color on dialogs and sheets. */
+                          popover_foreground?: string | undefined
+                          /** Primary buttons and highlights. */
+                          primary?: string | undefined
+                          /** Text color on `primary`. */
+                          primary_foreground?: string | undefined
+                          /** Secondary buttons. */
+                          secondary?: string | undefined
+                          /** Text color on `secondary`. */
+                          secondary_foreground?: string | undefined
+                          /** Subtle backgrounds, such as the unlock sheet header. */
+                          muted?: string | undefined
+                          /** Secondary text. */
+                          muted_foreground?: string | undefined
+                          /** Pressed and hovered backgrounds. */
+                          accent?: string | undefined
+                          /** Text color on `accent`. */
+                          accent_foreground?: string | undefined
+                          /** Errors and destructive actions. */
+                          destructive?: string | undefined
+                          /** Text color on `destructive`. */
+                          destructive_foreground?: string | undefined
+                          /** Borders and dividers. */
+                          border?: string | undefined
+                          /** Input borders. */
+                          input?: string | undefined
+                          /** Focus rings. */
+                          ring?: string | undefined
+                          /** Successful unlocks. */
+                          success?: string | undefined
+                          /** Text color on `success`. */
+                          success_foreground?: string | undefined
+                          /** Start of the key card gradient. */
+                          key_card?: string | undefined
+                          /** End of the key card gradient. */
+                          key_card_end?: string | undefined
+                          /** Text and logo color on the key card. */
+                          key_card_foreground?: string | undefined
+                          /** Start of the unlock button gradient. */
+                          unlock?: string | undefined
+                          /** End of the unlock button gradient. */
+                          unlock_end?: string | undefined
+                          /** Icon color on the unlock button. */
+                          unlock_foreground?: string | undefined
+                        }
+                      | undefined
+                  }
+                | undefined
             }
           | undefined
       }[]
@@ -104902,6 +105289,135 @@ export type Routes = {
               secondary_foreground_color?: string | undefined
               font_family?: string | undefined
               mono_font_family?: string | undefined
+            }
+          | undefined
+        /** Theme for the Instant Keys apps. */
+        instant_key_theme?:
+          | {
+              /** Corner radius for the Instant Key UI, as a CSS length such as `0.875rem` or `14px`. */
+              radius?: string | undefined
+              /** Font family for the Instant Key UI. The apps use the closest system typeface: sans-serif, serif, or monospace. */
+              font_family?: string | undefined
+              /** Whether the key card shows its default texture over the key card gradient, or the gradient alone. */
+              key_card_texture?: ('default' | 'none') | undefined
+              /** Light-mode colors, named after shadcn/ui's CSS variables in snake_case. Values are CSS colors in hex, `oklch()`, `rgb()`, or `hsl()` form. Colors you omit use the Seam default. */
+              light?:
+                | {
+                    /** App background. */
+                    background?: string | undefined
+                    /** Default text color. */
+                    foreground?: string | undefined
+                    /** Card background. */
+                    card?: string | undefined
+                    /** Text color on cards. */
+                    card_foreground?: string | undefined
+                    /** Dialog and sheet background. */
+                    popover?: string | undefined
+                    /** Text color on dialogs and sheets. */
+                    popover_foreground?: string | undefined
+                    /** Primary buttons and highlights. */
+                    primary?: string | undefined
+                    /** Text color on `primary`. */
+                    primary_foreground?: string | undefined
+                    /** Secondary buttons. */
+                    secondary?: string | undefined
+                    /** Text color on `secondary`. */
+                    secondary_foreground?: string | undefined
+                    /** Subtle backgrounds, such as the unlock sheet header. */
+                    muted?: string | undefined
+                    /** Secondary text. */
+                    muted_foreground?: string | undefined
+                    /** Pressed and hovered backgrounds. */
+                    accent?: string | undefined
+                    /** Text color on `accent`. */
+                    accent_foreground?: string | undefined
+                    /** Errors and destructive actions. */
+                    destructive?: string | undefined
+                    /** Text color on `destructive`. */
+                    destructive_foreground?: string | undefined
+                    /** Borders and dividers. */
+                    border?: string | undefined
+                    /** Input borders. */
+                    input?: string | undefined
+                    /** Focus rings. */
+                    ring?: string | undefined
+                    /** Successful unlocks. */
+                    success?: string | undefined
+                    /** Text color on `success`. */
+                    success_foreground?: string | undefined
+                    /** Start of the key card gradient. */
+                    key_card?: string | undefined
+                    /** End of the key card gradient. */
+                    key_card_end?: string | undefined
+                    /** Text and logo color on the key card. */
+                    key_card_foreground?: string | undefined
+                    /** Start of the unlock button gradient. */
+                    unlock?: string | undefined
+                    /** End of the unlock button gradient. */
+                    unlock_end?: string | undefined
+                    /** Icon color on the unlock button. */
+                    unlock_foreground?: string | undefined
+                  }
+                | undefined
+              /** Dark-mode colors, in the same form as `light`. When omitted, dark mode uses the Seam default with your `primary`, `primary_foreground`, and `ring` colors. */
+              dark?:
+                | {
+                    /** App background. */
+                    background?: string | undefined
+                    /** Default text color. */
+                    foreground?: string | undefined
+                    /** Card background. */
+                    card?: string | undefined
+                    /** Text color on cards. */
+                    card_foreground?: string | undefined
+                    /** Dialog and sheet background. */
+                    popover?: string | undefined
+                    /** Text color on dialogs and sheets. */
+                    popover_foreground?: string | undefined
+                    /** Primary buttons and highlights. */
+                    primary?: string | undefined
+                    /** Text color on `primary`. */
+                    primary_foreground?: string | undefined
+                    /** Secondary buttons. */
+                    secondary?: string | undefined
+                    /** Text color on `secondary`. */
+                    secondary_foreground?: string | undefined
+                    /** Subtle backgrounds, such as the unlock sheet header. */
+                    muted?: string | undefined
+                    /** Secondary text. */
+                    muted_foreground?: string | undefined
+                    /** Pressed and hovered backgrounds. */
+                    accent?: string | undefined
+                    /** Text color on `accent`. */
+                    accent_foreground?: string | undefined
+                    /** Errors and destructive actions. */
+                    destructive?: string | undefined
+                    /** Text color on `destructive`. */
+                    destructive_foreground?: string | undefined
+                    /** Borders and dividers. */
+                    border?: string | undefined
+                    /** Input borders. */
+                    input?: string | undefined
+                    /** Focus rings. */
+                    ring?: string | undefined
+                    /** Successful unlocks. */
+                    success?: string | undefined
+                    /** Text color on `success`. */
+                    success_foreground?: string | undefined
+                    /** Start of the key card gradient. */
+                    key_card?: string | undefined
+                    /** End of the key card gradient. */
+                    key_card_end?: string | undefined
+                    /** Text and logo color on the key card. */
+                    key_card_foreground?: string | undefined
+                    /** Start of the unlock button gradient. */
+                    unlock?: string | undefined
+                    /** End of the unlock button gradient. */
+                    unlock_end?: string | undefined
+                    /** Icon color on the unlock button. */
+                    unlock_foreground?: string | undefined
+                  }
+                | undefined
             }
           | undefined
         message_overrides?:
@@ -169791,6 +170307,135 @@ export type Routes = {
               secondary_color?: string | undefined
               /** URL of the logo displayed on the Instant Key. */
               logo_url?: string | undefined
+              /** Theme for the Instant Keys apps, from the customization profile's `instant_key_theme`. Omitted when the profile has none, in which case the apps use the Seam default theme. */
+              instant_key_theme?:
+                | {
+                    /** Corner radius for the Instant Key UI, as a CSS length such as `0.875rem` or `14px`. */
+                    radius?: string | undefined
+                    /** Font family for the Instant Key UI. The apps use the closest system typeface: sans-serif, serif, or monospace. */
+                    font_family?: string | undefined
+                    /** Whether the key card shows its default texture over the key card gradient, or the gradient alone. */
+                    key_card_texture?: ('default' | 'none') | undefined
+                    /** Light-mode colors, named after shadcn/ui's CSS variables in snake_case. Values are CSS colors in hex, `oklch()`, `rgb()`, or `hsl()` form. Colors you omit use the Seam default. */
+                    light?:
+                      | {
+                          /** App background. */
+                          background?: string | undefined
+                          /** Default text color. */
+                          foreground?: string | undefined
+                          /** Card background. */
+                          card?: string | undefined
+                          /** Text color on cards. */
+                          card_foreground?: string | undefined
+                          /** Dialog and sheet background. */
+                          popover?: string | undefined
+                          /** Text color on dialogs and sheets. */
+                          popover_foreground?: string | undefined
+                          /** Primary buttons and highlights. */
+                          primary?: string | undefined
+                          /** Text color on `primary`. */
+                          primary_foreground?: string | undefined
+                          /** Secondary buttons. */
+                          secondary?: string | undefined
+                          /** Text color on `secondary`. */
+                          secondary_foreground?: string | undefined
+                          /** Subtle backgrounds, such as the unlock sheet header. */
+                          muted?: string | undefined
+                          /** Secondary text. */
+                          muted_foreground?: string | undefined
+                          /** Pressed and hovered backgrounds. */
+                          accent?: string | undefined
+                          /** Text color on `accent`. */
+                          accent_foreground?: string | undefined
+                          /** Errors and destructive actions. */
+                          destructive?: string | undefined
+                          /** Text color on `destructive`. */
+                          destructive_foreground?: string | undefined
+                          /** Borders and dividers. */
+                          border?: string | undefined
+                          /** Input borders. */
+                          input?: string | undefined
+                          /** Focus rings. */
+                          ring?: string | undefined
+                          /** Successful unlocks. */
+                          success?: string | undefined
+                          /** Text color on `success`. */
+                          success_foreground?: string | undefined
+                          /** Start of the key card gradient. */
+                          key_card?: string | undefined
+                          /** End of the key card gradient. */
+                          key_card_end?: string | undefined
+                          /** Text and logo color on the key card. */
+                          key_card_foreground?: string | undefined
+                          /** Start of the unlock button gradient. */
+                          unlock?: string | undefined
+                          /** End of the unlock button gradient. */
+                          unlock_end?: string | undefined
+                          /** Icon color on the unlock button. */
+                          unlock_foreground?: string | undefined
+                        }
+                      | undefined
+                    /** Dark-mode colors, in the same form as `light`. When omitted, dark mode uses the Seam default with your `primary`, `primary_foreground`, and `ring` colors. */
+                    dark?:
+                      | {
+                          /** App background. */
+                          background?: string | undefined
+                          /** Default text color. */
+                          foreground?: string | undefined
+                          /** Card background. */
+                          card?: string | undefined
+                          /** Text color on cards. */
+                          card_foreground?: string | undefined
+                          /** Dialog and sheet background. */
+                          popover?: string | undefined
+                          /** Text color on dialogs and sheets. */
+                          popover_foreground?: string | undefined
+                          /** Primary buttons and highlights. */
+                          primary?: string | undefined
+                          /** Text color on `primary`. */
+                          primary_foreground?: string | undefined
+                          /** Secondary buttons. */
+                          secondary?: string | undefined
+                          /** Text color on `secondary`. */
+                          secondary_foreground?: string | undefined
+                          /** Subtle backgrounds, such as the unlock sheet header. */
+                          muted?: string | undefined
+                          /** Secondary text. */
+                          muted_foreground?: string | undefined
+                          /** Pressed and hovered backgrounds. */
+                          accent?: string | undefined
+                          /** Text color on `accent`. */
+                          accent_foreground?: string | undefined
+                          /** Errors and destructive actions. */
+                          destructive?: string | undefined
+                          /** Text color on `destructive`. */
+                          destructive_foreground?: string | undefined
+                          /** Borders and dividers. */
+                          border?: string | undefined
+                          /** Input borders. */
+                          input?: string | undefined
+                          /** Focus rings. */
+                          ring?: string | undefined
+                          /** Successful unlocks. */
+                          success?: string | undefined
+                          /** Text color on `success`. */
+                          success_foreground?: string | undefined
+                          /** Start of the key card gradient. */
+                          key_card?: string | undefined
+                          /** End of the key card gradient. */
+                          key_card_end?: string | undefined
+                          /** Text and logo color on the key card. */
+                          key_card_foreground?: string | undefined
+                          /** Start of the unlock button gradient. */
+                          unlock?: string | undefined
+                          /** End of the unlock button gradient. */
+                          unlock_end?: string | undefined
+                          /** Icon color on the unlock button. */
+                          unlock_foreground?: string | undefined
+                        }
+                      | undefined
+                  }
+                | undefined
             }
           | undefined
       }
@@ -175272,6 +175917,134 @@ export type Routes = {
             mono_font_family?: string | undefined
           }
         | undefined
+      instant_key_theme?:
+        | {
+            /** Corner radius for the Instant Key UI, as a CSS length such as `0.875rem` or `14px`. */
+            radius?: string | undefined
+            /** Font family for the Instant Key UI. The apps use the closest system typeface: sans-serif, serif, or monospace. */
+            font_family?: string | undefined
+            /** Whether the key card shows its default texture over the key card gradient, or the gradient alone. */
+            key_card_texture?: ('default' | 'none') | undefined
+            /** Light-mode colors, named after shadcn/ui's CSS variables in snake_case. Values are CSS colors in hex, `oklch()`, `rgb()`, or `hsl()` form. Colors you omit use the Seam default. */
+            light?:
+              | {
+                  /** App background. */
+                  background?: string | undefined
+                  /** Default text color. */
+                  foreground?: string | undefined
+                  /** Card background. */
+                  card?: string | undefined
+                  /** Text color on cards. */
+                  card_foreground?: string | undefined
+                  /** Dialog and sheet background. */
+                  popover?: string | undefined
+                  /** Text color on dialogs and sheets. */
+                  popover_foreground?: string | undefined
+                  /** Primary buttons and highlights. */
+                  primary?: string | undefined
+                  /** Text color on `primary`. */
+                  primary_foreground?: string | undefined
+                  /** Secondary buttons. */
+                  secondary?: string | undefined
+                  /** Text color on `secondary`. */
+                  secondary_foreground?: string | undefined
+                  /** Subtle backgrounds, such as the unlock sheet header. */
+                  muted?: string | undefined
+                  /** Secondary text. */
+                  muted_foreground?: string | undefined
+                  /** Pressed and hovered backgrounds. */
+                  accent?: string | undefined
+                  /** Text color on `accent`. */
+                  accent_foreground?: string | undefined
+                  /** Errors and destructive actions. */
+                  destructive?: string | undefined
+                  /** Text color on `destructive`. */
+                  destructive_foreground?: string | undefined
+                  /** Borders and dividers. */
+                  border?: string | undefined
+                  /** Input borders. */
+                  input?: string | undefined
+                  /** Focus rings. */
+                  ring?: string | undefined
+                  /** Successful unlocks. */
+                  success?: string | undefined
+                  /** Text color on `success`. */
+                  success_foreground?: string | undefined
+                  /** Start of the key card gradient. */
+                  key_card?: string | undefined
+                  /** End of the key card gradient. */
+                  key_card_end?: string | undefined
+                  /** Text and logo color on the key card. */
+                  key_card_foreground?: string | undefined
+                  /** Start of the unlock button gradient. */
+                  unlock?: string | undefined
+                  /** End of the unlock button gradient. */
+                  unlock_end?: string | undefined
+                  /** Icon color on the unlock button. */
+                  unlock_foreground?: string | undefined
+                }
+              | undefined
+            /** Dark-mode colors, in the same form as `light`. When omitted, dark mode uses the Seam default with your `primary`, `primary_foreground`, and `ring` colors. */
+            dark?:
+              | {
+                  /** App background. */
+                  background?: string | undefined
+                  /** Default text color. */
+                  foreground?: string | undefined
+                  /** Card background. */
+                  card?: string | undefined
+                  /** Text color on cards. */
+                  card_foreground?: string | undefined
+                  /** Dialog and sheet background. */
+                  popover?: string | undefined
+                  /** Text color on dialogs and sheets. */
+                  popover_foreground?: string | undefined
+                  /** Primary buttons and highlights. */
+                  primary?: string | undefined
+                  /** Text color on `primary`. */
+                  primary_foreground?: string | undefined
+                  /** Secondary buttons. */
+                  secondary?: string | undefined
+                  /** Text color on `secondary`. */
+                  secondary_foreground?: string | undefined
+                  /** Subtle backgrounds, such as the unlock sheet header. */
+                  muted?: string | undefined
+                  /** Secondary text. */
+                  muted_foreground?: string | undefined
+                  /** Pressed and hovered backgrounds. */
+                  accent?: string | undefined
+                  /** Text color on `accent`. */
+                  accent_foreground?: string | undefined
+                  /** Errors and destructive actions. */
+                  destructive?: string | undefined
+                  /** Text color on `destructive`. */
+                  destructive_foreground?: string | undefined
+                  /** Borders and dividers. */
+                  border?: string | undefined
+                  /** Input borders. */
+                  input?: string | undefined
+                  /** Focus rings. */
+                  ring?: string | undefined
+                  /** Successful unlocks. */
+                  success?: string | undefined
+                  /** Text color on `success`. */
+                  success_foreground?: string | undefined
+                  /** Start of the key card gradient. */
+                  key_card?: string | undefined
+                  /** End of the key card gradient. */
+                  key_card_end?: string | undefined
+                  /** Text and logo color on the key card. */
+                  key_card_foreground?: string | undefined
+                  /** Start of the unlock button gradient. */
+                  unlock?: string | undefined
+                  /** End of the unlock button gradient. */
+                  unlock_end?: string | undefined
+                  /** Icon color on the unlock button. */
+                  unlock_foreground?: string | undefined
+                }
+              | undefined
+          }
+        | undefined
       message_overrides?:
         | {
             [x: string]: {
@@ -175302,6 +176075,135 @@ export type Routes = {
               secondary_foreground_color?: string | undefined
               font_family?: string | undefined
               mono_font_family?: string | undefined
+            }
+          | undefined
+        /** Theme for the Instant Keys apps. */
+        instant_key_theme?:
+          | {
+              /** Corner radius for the Instant Key UI, as a CSS length such as `0.875rem` or `14px`. */
+              radius?: string | undefined
+              /** Font family for the Instant Key UI. The apps use the closest system typeface: sans-serif, serif, or monospace. */
+              font_family?: string | undefined
+              /** Whether the key card shows its default texture over the key card gradient, or the gradient alone. */
+              key_card_texture?: ('default' | 'none') | undefined
+              /** Light-mode colors, named after shadcn/ui's CSS variables in snake_case. Values are CSS colors in hex, `oklch()`, `rgb()`, or `hsl()` form. Colors you omit use the Seam default. */
+              light?:
+                | {
+                    /** App background. */
+                    background?: string | undefined
+                    /** Default text color. */
+                    foreground?: string | undefined
+                    /** Card background. */
+                    card?: string | undefined
+                    /** Text color on cards. */
+                    card_foreground?: string | undefined
+                    /** Dialog and sheet background. */
+                    popover?: string | undefined
+                    /** Text color on dialogs and sheets. */
+                    popover_foreground?: string | undefined
+                    /** Primary buttons and highlights. */
+                    primary?: string | undefined
+                    /** Text color on `primary`. */
+                    primary_foreground?: string | undefined
+                    /** Secondary buttons. */
+                    secondary?: string | undefined
+                    /** Text color on `secondary`. */
+                    secondary_foreground?: string | undefined
+                    /** Subtle backgrounds, such as the unlock sheet header. */
+                    muted?: string | undefined
+                    /** Secondary text. */
+                    muted_foreground?: string | undefined
+                    /** Pressed and hovered backgrounds. */
+                    accent?: string | undefined
+                    /** Text color on `accent`. */
+                    accent_foreground?: string | undefined
+                    /** Errors and destructive actions. */
+                    destructive?: string | undefined
+                    /** Text color on `destructive`. */
+                    destructive_foreground?: string | undefined
+                    /** Borders and dividers. */
+                    border?: string | undefined
+                    /** Input borders. */
+                    input?: string | undefined
+                    /** Focus rings. */
+                    ring?: string | undefined
+                    /** Successful unlocks. */
+                    success?: string | undefined
+                    /** Text color on `success`. */
+                    success_foreground?: string | undefined
+                    /** Start of the key card gradient. */
+                    key_card?: string | undefined
+                    /** End of the key card gradient. */
+                    key_card_end?: string | undefined
+                    /** Text and logo color on the key card. */
+                    key_card_foreground?: string | undefined
+                    /** Start of the unlock button gradient. */
+                    unlock?: string | undefined
+                    /** End of the unlock button gradient. */
+                    unlock_end?: string | undefined
+                    /** Icon color on the unlock button. */
+                    unlock_foreground?: string | undefined
+                  }
+                | undefined
+              /** Dark-mode colors, in the same form as `light`. When omitted, dark mode uses the Seam default with your `primary`, `primary_foreground`, and `ring` colors. */
+              dark?:
+                | {
+                    /** App background. */
+                    background?: string | undefined
+                    /** Default text color. */
+                    foreground?: string | undefined
+                    /** Card background. */
+                    card?: string | undefined
+                    /** Text color on cards. */
+                    card_foreground?: string | undefined
+                    /** Dialog and sheet background. */
+                    popover?: string | undefined
+                    /** Text color on dialogs and sheets. */
+                    popover_foreground?: string | undefined
+                    /** Primary buttons and highlights. */
+                    primary?: string | undefined
+                    /** Text color on `primary`. */
+                    primary_foreground?: string | undefined
+                    /** Secondary buttons. */
+                    secondary?: string | undefined
+                    /** Text color on `secondary`. */
+                    secondary_foreground?: string | undefined
+                    /** Subtle backgrounds, such as the unlock sheet header. */
+                    muted?: string | undefined
+                    /** Secondary text. */
+                    muted_foreground?: string | undefined
+                    /** Pressed and hovered backgrounds. */
+                    accent?: string | undefined
+                    /** Text color on `accent`. */
+                    accent_foreground?: string | undefined
+                    /** Errors and destructive actions. */
+                    destructive?: string | undefined
+                    /** Text color on `destructive`. */
+                    destructive_foreground?: string | undefined
+                    /** Borders and dividers. */
+                    border?: string | undefined
+                    /** Input borders. */
+                    input?: string | undefined
+                    /** Focus rings. */
+                    ring?: string | undefined
+                    /** Successful unlocks. */
+                    success?: string | undefined
+                    /** Text color on `success`. */
+                    success_foreground?: string | undefined
+                    /** Start of the key card gradient. */
+                    key_card?: string | undefined
+                    /** End of the key card gradient. */
+                    key_card_end?: string | undefined
+                    /** Text and logo color on the key card. */
+                    key_card_foreground?: string | undefined
+                    /** Start of the unlock button gradient. */
+                    unlock?: string | undefined
+                    /** End of the unlock button gradient. */
+                    unlock_end?: string | undefined
+                    /** Icon color on the unlock button. */
+                    unlock_foreground?: string | undefined
+                  }
+                | undefined
             }
           | undefined
         message_overrides?:
@@ -175346,6 +176248,135 @@ export type Routes = {
               mono_font_family?: string | undefined
             }
           | undefined
+        /** Theme for the Instant Keys apps. */
+        instant_key_theme?:
+          | {
+              /** Corner radius for the Instant Key UI, as a CSS length such as `0.875rem` or `14px`. */
+              radius?: string | undefined
+              /** Font family for the Instant Key UI. The apps use the closest system typeface: sans-serif, serif, or monospace. */
+              font_family?: string | undefined
+              /** Whether the key card shows its default texture over the key card gradient, or the gradient alone. */
+              key_card_texture?: ('default' | 'none') | undefined
+              /** Light-mode colors, named after shadcn/ui's CSS variables in snake_case. Values are CSS colors in hex, `oklch()`, `rgb()`, or `hsl()` form. Colors you omit use the Seam default. */
+              light?:
+                | {
+                    /** App background. */
+                    background?: string | undefined
+                    /** Default text color. */
+                    foreground?: string | undefined
+                    /** Card background. */
+                    card?: string | undefined
+                    /** Text color on cards. */
+                    card_foreground?: string | undefined
+                    /** Dialog and sheet background. */
+                    popover?: string | undefined
+                    /** Text color on dialogs and sheets. */
+                    popover_foreground?: string | undefined
+                    /** Primary buttons and highlights. */
+                    primary?: string | undefined
+                    /** Text color on `primary`. */
+                    primary_foreground?: string | undefined
+                    /** Secondary buttons. */
+                    secondary?: string | undefined
+                    /** Text color on `secondary`. */
+                    secondary_foreground?: string | undefined
+                    /** Subtle backgrounds, such as the unlock sheet header. */
+                    muted?: string | undefined
+                    /** Secondary text. */
+                    muted_foreground?: string | undefined
+                    /** Pressed and hovered backgrounds. */
+                    accent?: string | undefined
+                    /** Text color on `accent`. */
+                    accent_foreground?: string | undefined
+                    /** Errors and destructive actions. */
+                    destructive?: string | undefined
+                    /** Text color on `destructive`. */
+                    destructive_foreground?: string | undefined
+                    /** Borders and dividers. */
+                    border?: string | undefined
+                    /** Input borders. */
+                    input?: string | undefined
+                    /** Focus rings. */
+                    ring?: string | undefined
+                    /** Successful unlocks. */
+                    success?: string | undefined
+                    /** Text color on `success`. */
+                    success_foreground?: string | undefined
+                    /** Start of the key card gradient. */
+                    key_card?: string | undefined
+                    /** End of the key card gradient. */
+                    key_card_end?: string | undefined
+                    /** Text and logo color on the key card. */
+                    key_card_foreground?: string | undefined
+                    /** Start of the unlock button gradient. */
+                    unlock?: string | undefined
+                    /** End of the unlock button gradient. */
+                    unlock_end?: string | undefined
+                    /** Icon color on the unlock button. */
+                    unlock_foreground?: string | undefined
+                  }
+                | undefined
+              /** Dark-mode colors, in the same form as `light`. When omitted, dark mode uses the Seam default with your `primary`, `primary_foreground`, and `ring` colors. */
+              dark?:
+                | {
+                    /** App background. */
+                    background?: string | undefined
+                    /** Default text color. */
+                    foreground?: string | undefined
+                    /** Card background. */
+                    card?: string | undefined
+                    /** Text color on cards. */
+                    card_foreground?: string | undefined
+                    /** Dialog and sheet background. */
+                    popover?: string | undefined
+                    /** Text color on dialogs and sheets. */
+                    popover_foreground?: string | undefined
+                    /** Primary buttons and highlights. */
+                    primary?: string | undefined
+                    /** Text color on `primary`. */
+                    primary_foreground?: string | undefined
+                    /** Secondary buttons. */
+                    secondary?: string | undefined
+                    /** Text color on `secondary`. */
+                    secondary_foreground?: string | undefined
+                    /** Subtle backgrounds, such as the unlock sheet header. */
+                    muted?: string | undefined
+                    /** Secondary text. */
+                    muted_foreground?: string | undefined
+                    /** Pressed and hovered backgrounds. */
+                    accent?: string | undefined
+                    /** Text color on `accent`. */
+                    accent_foreground?: string | undefined
+                    /** Errors and destructive actions. */
+                    destructive?: string | undefined
+                    /** Text color on `destructive`. */
+                    destructive_foreground?: string | undefined
+                    /** Borders and dividers. */
+                    border?: string | undefined
+                    /** Input borders. */
+                    input?: string | undefined
+                    /** Focus rings. */
+                    ring?: string | undefined
+                    /** Successful unlocks. */
+                    success?: string | undefined
+                    /** Text color on `success`. */
+                    success_foreground?: string | undefined
+                    /** Start of the key card gradient. */
+                    key_card?: string | undefined
+                    /** End of the key card gradient. */
+                    key_card_end?: string | undefined
+                    /** Text and logo color on the key card. */
+                    key_card_foreground?: string | undefined
+                    /** Start of the unlock button gradient. */
+                    unlock?: string | undefined
+                    /** End of the unlock button gradient. */
+                    unlock_end?: string | undefined
+                    /** Icon color on the unlock button. */
+                    unlock_foreground?: string | undefined
+                  }
+                | undefined
+            }
+          | undefined
         message_overrides?:
           | {
               [x: string]: {
@@ -175388,6 +176419,135 @@ export type Routes = {
               mono_font_family?: string | undefined
             }
           | undefined
+        /** Theme for the Instant Keys apps. */
+        instant_key_theme?:
+          | {
+              /** Corner radius for the Instant Key UI, as a CSS length such as `0.875rem` or `14px`. */
+              radius?: string | undefined
+              /** Font family for the Instant Key UI. The apps use the closest system typeface: sans-serif, serif, or monospace. */
+              font_family?: string | undefined
+              /** Whether the key card shows its default texture over the key card gradient, or the gradient alone. */
+              key_card_texture?: ('default' | 'none') | undefined
+              /** Light-mode colors, named after shadcn/ui's CSS variables in snake_case. Values are CSS colors in hex, `oklch()`, `rgb()`, or `hsl()` form. Colors you omit use the Seam default. */
+              light?:
+                | {
+                    /** App background. */
+                    background?: string | undefined
+                    /** Default text color. */
+                    foreground?: string | undefined
+                    /** Card background. */
+                    card?: string | undefined
+                    /** Text color on cards. */
+                    card_foreground?: string | undefined
+                    /** Dialog and sheet background. */
+                    popover?: string | undefined
+                    /** Text color on dialogs and sheets. */
+                    popover_foreground?: string | undefined
+                    /** Primary buttons and highlights. */
+                    primary?: string | undefined
+                    /** Text color on `primary`. */
+                    primary_foreground?: string | undefined
+                    /** Secondary buttons. */
+                    secondary?: string | undefined
+                    /** Text color on `secondary`. */
+                    secondary_foreground?: string | undefined
+                    /** Subtle backgrounds, such as the unlock sheet header. */
+                    muted?: string | undefined
+                    /** Secondary text. */
+                    muted_foreground?: string | undefined
+                    /** Pressed and hovered backgrounds. */
+                    accent?: string | undefined
+                    /** Text color on `accent`. */
+                    accent_foreground?: string | undefined
+                    /** Errors and destructive actions. */
+                    destructive?: string | undefined
+                    /** Text color on `destructive`. */
+                    destructive_foreground?: string | undefined
+                    /** Borders and dividers. */
+                    border?: string | undefined
+                    /** Input borders. */
+                    input?: string | undefined
+                    /** Focus rings. */
+                    ring?: string | undefined
+                    /** Successful unlocks. */
+                    success?: string | undefined
+                    /** Text color on `success`. */
+                    success_foreground?: string | undefined
+                    /** Start of the key card gradient. */
+                    key_card?: string | undefined
+                    /** End of the key card gradient. */
+                    key_card_end?: string | undefined
+                    /** Text and logo color on the key card. */
+                    key_card_foreground?: string | undefined
+                    /** Start of the unlock button gradient. */
+                    unlock?: string | undefined
+                    /** End of the unlock button gradient. */
+                    unlock_end?: string | undefined
+                    /** Icon color on the unlock button. */
+                    unlock_foreground?: string | undefined
+                  }
+                | undefined
+              /** Dark-mode colors, in the same form as `light`. When omitted, dark mode uses the Seam default with your `primary`, `primary_foreground`, and `ring` colors. */
+              dark?:
+                | {
+                    /** App background. */
+                    background?: string | undefined
+                    /** Default text color. */
+                    foreground?: string | undefined
+                    /** Card background. */
+                    card?: string | undefined
+                    /** Text color on cards. */
+                    card_foreground?: string | undefined
+                    /** Dialog and sheet background. */
+                    popover?: string | undefined
+                    /** Text color on dialogs and sheets. */
+                    popover_foreground?: string | undefined
+                    /** Primary buttons and highlights. */
+                    primary?: string | undefined
+                    /** Text color on `primary`. */
+                    primary_foreground?: string | undefined
+                    /** Secondary buttons. */
+                    secondary?: string | undefined
+                    /** Text color on `secondary`. */
+                    secondary_foreground?: string | undefined
+                    /** Subtle backgrounds, such as the unlock sheet header. */
+                    muted?: string | undefined
+                    /** Secondary text. */
+                    muted_foreground?: string | undefined
+                    /** Pressed and hovered backgrounds. */
+                    accent?: string | undefined
+                    /** Text color on `accent`. */
+                    accent_foreground?: string | undefined
+                    /** Errors and destructive actions. */
+                    destructive?: string | undefined
+                    /** Text color on `destructive`. */
+                    destructive_foreground?: string | undefined
+                    /** Borders and dividers. */
+                    border?: string | undefined
+                    /** Input borders. */
+                    input?: string | undefined
+                    /** Focus rings. */
+                    ring?: string | undefined
+                    /** Successful unlocks. */
+                    success?: string | undefined
+                    /** Text color on `success`. */
+                    success_foreground?: string | undefined
+                    /** Start of the key card gradient. */
+                    key_card?: string | undefined
+                    /** End of the key card gradient. */
+                    key_card_end?: string | undefined
+                    /** Text and logo color on the key card. */
+                    key_card_foreground?: string | undefined
+                    /** Start of the unlock button gradient. */
+                    unlock?: string | undefined
+                    /** End of the unlock button gradient. */
+                    unlock_end?: string | undefined
+                    /** Icon color on the unlock button. */
+                    unlock_foreground?: string | undefined
+                  }
+                | undefined
+            }
+          | undefined
         message_overrides?:
           | {
               [x: string]: {
@@ -175417,6 +176577,137 @@ export type Routes = {
                 secondary_foreground_color?: string | undefined
                 font_family?: string | undefined
                 mono_font_family?: string | undefined
+              }
+            | undefined
+          )
+        | null
+      instant_key_theme?:
+        | (
+            | {
+                /** Corner radius for the Instant Key UI, as a CSS length such as `0.875rem` or `14px`. */
+                radius?: string | undefined
+                /** Font family for the Instant Key UI. The apps use the closest system typeface: sans-serif, serif, or monospace. */
+                font_family?: string | undefined
+                /** Whether the key card shows its default texture over the key card gradient, or the gradient alone. */
+                key_card_texture?: ('default' | 'none') | undefined
+                /** Light-mode colors, named after shadcn/ui's CSS variables in snake_case. Values are CSS colors in hex, `oklch()`, `rgb()`, or `hsl()` form. Colors you omit use the Seam default. */
+                light?:
+                  | {
+                      /** App background. */
+                      background?: string | undefined
+                      /** Default text color. */
+                      foreground?: string | undefined
+                      /** Card background. */
+                      card?: string | undefined
+                      /** Text color on cards. */
+                      card_foreground?: string | undefined
+                      /** Dialog and sheet background. */
+                      popover?: string | undefined
+                      /** Text color on dialogs and sheets. */
+                      popover_foreground?: string | undefined
+                      /** Primary buttons and highlights. */
+                      primary?: string | undefined
+                      /** Text color on `primary`. */
+                      primary_foreground?: string | undefined
+                      /** Secondary buttons. */
+                      secondary?: string | undefined
+                      /** Text color on `secondary`. */
+                      secondary_foreground?: string | undefined
+                      /** Subtle backgrounds, such as the unlock sheet header. */
+                      muted?: string | undefined
+                      /** Secondary text. */
+                      muted_foreground?: string | undefined
+                      /** Pressed and hovered backgrounds. */
+                      accent?: string | undefined
+                      /** Text color on `accent`. */
+                      accent_foreground?: string | undefined
+                      /** Errors and destructive actions. */
+                      destructive?: string | undefined
+                      /** Text color on `destructive`. */
+                      destructive_foreground?: string | undefined
+                      /** Borders and dividers. */
+                      border?: string | undefined
+                      /** Input borders. */
+                      input?: string | undefined
+                      /** Focus rings. */
+                      ring?: string | undefined
+                      /** Successful unlocks. */
+                      success?: string | undefined
+                      /** Text color on `success`. */
+                      success_foreground?: string | undefined
+                      /** Start of the key card gradient. */
+                      key_card?: string | undefined
+                      /** End of the key card gradient. */
+                      key_card_end?: string | undefined
+                      /** Text and logo color on the key card. */
+                      key_card_foreground?: string | undefined
+                      /** Start of the unlock button gradient. */
+                      unlock?: string | undefined
+                      /** End of the unlock button gradient. */
+                      unlock_end?: string | undefined
+                      /** Icon color on the unlock button. */
+                      unlock_foreground?: string | undefined
+                    }
+                  | undefined
+                /** Dark-mode colors, in the same form as `light`. When omitted, dark mode uses the Seam default with your `primary`, `primary_foreground`, and `ring` colors. */
+                dark?:
+                  | {
+                      /** App background. */
+                      background?: string | undefined
+                      /** Default text color. */
+                      foreground?: string | undefined
+                      /** Card background. */
+                      card?: string | undefined
+                      /** Text color on cards. */
+                      card_foreground?: string | undefined
+                      /** Dialog and sheet background. */
+                      popover?: string | undefined
+                      /** Text color on dialogs and sheets. */
+                      popover_foreground?: string | undefined
+                      /** Primary buttons and highlights. */
+                      primary?: string | undefined
+                      /** Text color on `primary`. */
+                      primary_foreground?: string | undefined
+                      /** Secondary buttons. */
+                      secondary?: string | undefined
+                      /** Text color on `secondary`. */
+                      secondary_foreground?: string | undefined
+                      /** Subtle backgrounds, such as the unlock sheet header. */
+                      muted?: string | undefined
+                      /** Secondary text. */
+                      muted_foreground?: string | undefined
+                      /** Pressed and hovered backgrounds. */
+                      accent?: string | undefined
+                      /** Text color on `accent`. */
+                      accent_foreground?: string | undefined
+                      /** Errors and destructive actions. */
+                      destructive?: string | undefined
+                      /** Text color on `destructive`. */
+                      destructive_foreground?: string | undefined
+                      /** Borders and dividers. */
+                      border?: string | undefined
+                      /** Input borders. */
+                      input?: string | undefined
+                      /** Focus rings. */
+                      ring?: string | undefined
+                      /** Successful unlocks. */
+                      success?: string | undefined
+                      /** Text color on `success`. */
+                      success_foreground?: string | undefined
+                      /** Start of the key card gradient. */
+                      key_card?: string | undefined
+                      /** End of the key card gradient. */
+                      key_card_end?: string | undefined
+                      /** Text and logo color on the key card. */
+                      key_card_foreground?: string | undefined
+                      /** Start of the unlock button gradient. */
+                      unlock?: string | undefined
+                      /** End of the unlock button gradient. */
+                      unlock_end?: string | undefined
+                      /** Icon color on the unlock button. */
+                      unlock_foreground?: string | undefined
+                    }
+                  | undefined
               }
             | undefined
           )
@@ -186965,6 +188256,135 @@ export type Routes = {
                     secondary_color?: string | undefined
                     /** URL of the logo displayed on the Instant Key. */
                     logo_url?: string | undefined
+                    /** Theme for the Instant Keys apps, from the customization profile's `instant_key_theme`. Omitted when the profile has none, in which case the apps use the Seam default theme. */
+                    instant_key_theme?:
+                      | {
+                          /** Corner radius for the Instant Key UI, as a CSS length such as `0.875rem` or `14px`. */
+                          radius?: string | undefined
+                          /** Font family for the Instant Key UI. The apps use the closest system typeface: sans-serif, serif, or monospace. */
+                          font_family?: string | undefined
+                          /** Whether the key card shows its default texture over the key card gradient, or the gradient alone. */
+                          key_card_texture?: ('default' | 'none') | undefined
+                          /** Light-mode colors, named after shadcn/ui's CSS variables in snake_case. Values are CSS colors in hex, `oklch()`, `rgb()`, or `hsl()` form. Colors you omit use the Seam default. */
+                          light?:
+                            | {
+                                /** App background. */
+                                background?: string | undefined
+                                /** Default text color. */
+                                foreground?: string | undefined
+                                /** Card background. */
+                                card?: string | undefined
+                                /** Text color on cards. */
+                                card_foreground?: string | undefined
+                                /** Dialog and sheet background. */
+                                popover?: string | undefined
+                                /** Text color on dialogs and sheets. */
+                                popover_foreground?: string | undefined
+                                /** Primary buttons and highlights. */
+                                primary?: string | undefined
+                                /** Text color on `primary`. */
+                                primary_foreground?: string | undefined
+                                /** Secondary buttons. */
+                                secondary?: string | undefined
+                                /** Text color on `secondary`. */
+                                secondary_foreground?: string | undefined
+                                /** Subtle backgrounds, such as the unlock sheet header. */
+                                muted?: string | undefined
+                                /** Secondary text. */
+                                muted_foreground?: string | undefined
+                                /** Pressed and hovered backgrounds. */
+                                accent?: string | undefined
+                                /** Text color on `accent`. */
+                                accent_foreground?: string | undefined
+                                /** Errors and destructive actions. */
+                                destructive?: string | undefined
+                                /** Text color on `destructive`. */
+                                destructive_foreground?: string | undefined
+                                /** Borders and dividers. */
+                                border?: string | undefined
+                                /** Input borders. */
+                                input?: string | undefined
+                                /** Focus rings. */
+                                ring?: string | undefined
+                                /** Successful unlocks. */
+                                success?: string | undefined
+                                /** Text color on `success`. */
+                                success_foreground?: string | undefined
+                                /** Start of the key card gradient. */
+                                key_card?: string | undefined
+                                /** End of the key card gradient. */
+                                key_card_end?: string | undefined
+                                /** Text and logo color on the key card. */
+                                key_card_foreground?: string | undefined
+                                /** Start of the unlock button gradient. */
+                                unlock?: string | undefined
+                                /** End of the unlock button gradient. */
+                                unlock_end?: string | undefined
+                                /** Icon color on the unlock button. */
+                                unlock_foreground?: string | undefined
+                              }
+                            | undefined
+                          /** Dark-mode colors, in the same form as `light`. When omitted, dark mode uses the Seam default with your `primary`, `primary_foreground`, and `ring` colors. */
+                          dark?:
+                            | {
+                                /** App background. */
+                                background?: string | undefined
+                                /** Default text color. */
+                                foreground?: string | undefined
+                                /** Card background. */
+                                card?: string | undefined
+                                /** Text color on cards. */
+                                card_foreground?: string | undefined
+                                /** Dialog and sheet background. */
+                                popover?: string | undefined
+                                /** Text color on dialogs and sheets. */
+                                popover_foreground?: string | undefined
+                                /** Primary buttons and highlights. */
+                                primary?: string | undefined
+                                /** Text color on `primary`. */
+                                primary_foreground?: string | undefined
+                                /** Secondary buttons. */
+                                secondary?: string | undefined
+                                /** Text color on `secondary`. */
+                                secondary_foreground?: string | undefined
+                                /** Subtle backgrounds, such as the unlock sheet header. */
+                                muted?: string | undefined
+                                /** Secondary text. */
+                                muted_foreground?: string | undefined
+                                /** Pressed and hovered backgrounds. */
+                                accent?: string | undefined
+                                /** Text color on `accent`. */
+                                accent_foreground?: string | undefined
+                                /** Errors and destructive actions. */
+                                destructive?: string | undefined
+                                /** Text color on `destructive`. */
+                                destructive_foreground?: string | undefined
+                                /** Borders and dividers. */
+                                border?: string | undefined
+                                /** Input borders. */
+                                input?: string | undefined
+                                /** Focus rings. */
+                                ring?: string | undefined
+                                /** Successful unlocks. */
+                                success?: string | undefined
+                                /** Text color on `success`. */
+                                success_foreground?: string | undefined
+                                /** Start of the key card gradient. */
+                                key_card?: string | undefined
+                                /** End of the key card gradient. */
+                                key_card_end?: string | undefined
+                                /** Text and logo color on the key card. */
+                                key_card_foreground?: string | undefined
+                                /** Start of the unlock button gradient. */
+                                unlock?: string | undefined
+                                /** End of the unlock button gradient. */
+                                unlock_end?: string | undefined
+                                /** Icon color on the unlock button. */
+                                unlock_foreground?: string | undefined
+                              }
+                            | undefined
+                        }
+                      | undefined
                   }
                 | undefined
             }[]
@@ -188430,6 +189850,135 @@ export type Routes = {
                     secondary_foreground_color?: string | undefined
                     font_family?: string | undefined
                     mono_font_family?: string | undefined
+                  }
+                | undefined
+              /** Theme for the Instant Keys apps. */
+              instant_key_theme?:
+                | {
+                    /** Corner radius for the Instant Key UI, as a CSS length such as `0.875rem` or `14px`. */
+                    radius?: string | undefined
+                    /** Font family for the Instant Key UI. The apps use the closest system typeface: sans-serif, serif, or monospace. */
+                    font_family?: string | undefined
+                    /** Whether the key card shows its default texture over the key card gradient, or the gradient alone. */
+                    key_card_texture?: ('default' | 'none') | undefined
+                    /** Light-mode colors, named after shadcn/ui's CSS variables in snake_case. Values are CSS colors in hex, `oklch()`, `rgb()`, or `hsl()` form. Colors you omit use the Seam default. */
+                    light?:
+                      | {
+                          /** App background. */
+                          background?: string | undefined
+                          /** Default text color. */
+                          foreground?: string | undefined
+                          /** Card background. */
+                          card?: string | undefined
+                          /** Text color on cards. */
+                          card_foreground?: string | undefined
+                          /** Dialog and sheet background. */
+                          popover?: string | undefined
+                          /** Text color on dialogs and sheets. */
+                          popover_foreground?: string | undefined
+                          /** Primary buttons and highlights. */
+                          primary?: string | undefined
+                          /** Text color on `primary`. */
+                          primary_foreground?: string | undefined
+                          /** Secondary buttons. */
+                          secondary?: string | undefined
+                          /** Text color on `secondary`. */
+                          secondary_foreground?: string | undefined
+                          /** Subtle backgrounds, such as the unlock sheet header. */
+                          muted?: string | undefined
+                          /** Secondary text. */
+                          muted_foreground?: string | undefined
+                          /** Pressed and hovered backgrounds. */
+                          accent?: string | undefined
+                          /** Text color on `accent`. */
+                          accent_foreground?: string | undefined
+                          /** Errors and destructive actions. */
+                          destructive?: string | undefined
+                          /** Text color on `destructive`. */
+                          destructive_foreground?: string | undefined
+                          /** Borders and dividers. */
+                          border?: string | undefined
+                          /** Input borders. */
+                          input?: string | undefined
+                          /** Focus rings. */
+                          ring?: string | undefined
+                          /** Successful unlocks. */
+                          success?: string | undefined
+                          /** Text color on `success`. */
+                          success_foreground?: string | undefined
+                          /** Start of the key card gradient. */
+                          key_card?: string | undefined
+                          /** End of the key card gradient. */
+                          key_card_end?: string | undefined
+                          /** Text and logo color on the key card. */
+                          key_card_foreground?: string | undefined
+                          /** Start of the unlock button gradient. */
+                          unlock?: string | undefined
+                          /** End of the unlock button gradient. */
+                          unlock_end?: string | undefined
+                          /** Icon color on the unlock button. */
+                          unlock_foreground?: string | undefined
+                        }
+                      | undefined
+                    /** Dark-mode colors, in the same form as `light`. When omitted, dark mode uses the Seam default with your `primary`, `primary_foreground`, and `ring` colors. */
+                    dark?:
+                      | {
+                          /** App background. */
+                          background?: string | undefined
+                          /** Default text color. */
+                          foreground?: string | undefined
+                          /** Card background. */
+                          card?: string | undefined
+                          /** Text color on cards. */
+                          card_foreground?: string | undefined
+                          /** Dialog and sheet background. */
+                          popover?: string | undefined
+                          /** Text color on dialogs and sheets. */
+                          popover_foreground?: string | undefined
+                          /** Primary buttons and highlights. */
+                          primary?: string | undefined
+                          /** Text color on `primary`. */
+                          primary_foreground?: string | undefined
+                          /** Secondary buttons. */
+                          secondary?: string | undefined
+                          /** Text color on `secondary`. */
+                          secondary_foreground?: string | undefined
+                          /** Subtle backgrounds, such as the unlock sheet header. */
+                          muted?: string | undefined
+                          /** Secondary text. */
+                          muted_foreground?: string | undefined
+                          /** Pressed and hovered backgrounds. */
+                          accent?: string | undefined
+                          /** Text color on `accent`. */
+                          accent_foreground?: string | undefined
+                          /** Errors and destructive actions. */
+                          destructive?: string | undefined
+                          /** Text color on `destructive`. */
+                          destructive_foreground?: string | undefined
+                          /** Borders and dividers. */
+                          border?: string | undefined
+                          /** Input borders. */
+                          input?: string | undefined
+                          /** Focus rings. */
+                          ring?: string | undefined
+                          /** Successful unlocks. */
+                          success?: string | undefined
+                          /** Text color on `success`. */
+                          success_foreground?: string | undefined
+                          /** Start of the key card gradient. */
+                          key_card?: string | undefined
+                          /** End of the key card gradient. */
+                          key_card_end?: string | undefined
+                          /** Text and logo color on the key card. */
+                          key_card_foreground?: string | undefined
+                          /** Start of the unlock button gradient. */
+                          unlock?: string | undefined
+                          /** End of the unlock button gradient. */
+                          unlock_end?: string | undefined
+                          /** Icon color on the unlock button. */
+                          unlock_foreground?: string | undefined
+                        }
+                      | undefined
                   }
                 | undefined
               message_overrides?:

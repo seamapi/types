@@ -1,5 +1,6 @@
 import * as z from 'zod/v3'
 
+import { instant_key_theme } from '../customization-profiles/customization-profile.js'
 import { datetime } from '../datetime.js'
 
 export const instant_key = z.object({
@@ -50,6 +51,12 @@ export const instant_key = z.object({
         .url()
         .optional()
         .describe('URL of the logo displayed on the Instant Key.'),
+      instant_key_theme: instant_key_theme.optional().describe(`
+        ---
+        undocumented: Unreleased.
+        ---
+        Theme for the Instant Keys apps, from the customization profile's \`instant_key_theme\`. Omitted when the profile has none, in which case the apps use the Seam default theme.
+      `),
     })
     .optional()
     .describe('Customization applied to the Instant Key UI.'),
