@@ -51448,6 +51448,7 @@ const openapi: OpenAPISpec = {
                         connect: { exclude: false },
                         manage: {
                           exclude: false,
+                          exclude_device_management: false,
                           exclude_reservation_management: false,
                           exclude_reservation_technical_details: false,
                           exclude_staff_management: false,
@@ -51681,6 +51682,12 @@ const openapi: OpenAPISpec = {
                                 default: false,
                                 description:
                                   'Whether to exclude this feature from the portal.',
+                                type: 'boolean',
+                              },
+                              exclude_device_management: {
+                                default: false,
+                                description:
+                                  'Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed.',
                                 type: 'boolean',
                               },
                               exclude_reservation_management: {
@@ -57091,6 +57098,7 @@ const openapi: OpenAPISpec = {
           { api_key: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/devices/unmanaged/update',
         tags: ['/devices'],
@@ -66740,6 +66748,12 @@ const openapi: OpenAPISpec = {
                                     'Whether to exclude this feature from the portal.',
                                   type: 'boolean',
                                 },
+                                exclude_device_management: {
+                                  default: false,
+                                  description:
+                                    'Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed.',
+                                  type: 'boolean',
+                                },
                                 exclude_reservation_management: {
                                   default: false,
                                   description:
@@ -67204,6 +67218,12 @@ const openapi: OpenAPISpec = {
                                 default: false,
                                 description:
                                   'Whether to exclude this feature from the portal.',
+                                type: 'boolean',
+                              },
+                              exclude_device_management: {
+                                default: false,
+                                description:
+                                  'Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed.',
                                 type: 'boolean',
                               },
                               exclude_reservation_management: {
