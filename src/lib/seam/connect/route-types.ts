@@ -54511,6 +54511,8 @@ export type Routes = {
           exclude_reservation_technical_details?: boolean
           /** Indicates whether the customer can manage staff for their properties. */
           exclude_staff_management?: boolean
+          /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
+          exclude_device_management?: boolean
           /** Configuration for event type filtering in the manage feature. */
           events?:
             | {
@@ -114521,6 +114523,8 @@ export type Routes = {
             exclude_reservation_technical_details?: boolean
             /** Indicates whether the customer can manage staff for their properties. */
             exclude_staff_management?: boolean
+            /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
+            exclude_device_management?: boolean
             /** Configuration for event type filtering in the manage feature. */
             events?:
               | {
@@ -114734,6 +114738,8 @@ export type Routes = {
                 exclude_reservation_technical_details?: boolean
                 /** Indicates whether the customer can manage staff for their properties. */
                 exclude_staff_management?: boolean
+                /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
+                exclude_device_management?: boolean
                 /** Configuration for event type filtering in the manage feature. */
                 events?:
                   | {

@@ -45,6 +45,12 @@ const base_manage_feature = base_feature.extend({
     .describe(
       'Indicates whether the customer can manage staff for their properties.',
     ),
+  exclude_device_management: z
+    .boolean()
+    .default(false)
+    .describe(
+      'Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed.',
+    ),
   events: z
     .object({
       allowed_events: z
@@ -260,6 +266,7 @@ export const portal_configuration = portal_configuration_base
         exclude_reservation_management: false,
         exclude_reservation_technical_details: false,
         exclude_staff_management: false,
+        exclude_device_management: false,
       },
       manage_devices: {
         exclude: false,
