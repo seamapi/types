@@ -997,12 +997,11 @@ export const device_metadata = z
           .string()
           .optional()
           .describe(`Product type for a Sensi device.`),
+        /** @deprecated Seam no longer sets this field. */
         dual_setpoints_not_supported: z
           .boolean()
           .optional()
-          .describe(
-            `Set to true when the device does not support the /dual-setpoints API endpoint.`,
-          ),
+          .describe(`Deprecated. Seam no longer sets this field.`),
       })
       .partial()
       .describe(`Metadata for a Sensi device.`),

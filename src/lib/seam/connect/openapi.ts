@@ -17176,7 +17176,7 @@ const openapi: OpenAPISpec = {
                           },
                           dual_setpoints_not_supported: {
                             description:
-                              'Set to true when the device does not support the /dual-setpoints API endpoint.',
+                              'Deprecated. Seam no longer sets this field.',
                             type: 'boolean',
                           },
                           product_type: {

@@ -16166,7 +16166,7 @@ export type Routes = {
                       device_name?: (string | undefined) | undefined
                       /** Product type for a Sensi device. */
                       product_type?: (string | undefined) | undefined
-                      /** Set to true when the device does not support the /dual-setpoints API endpoint. */
+                      /** Deprecated. Seam no longer sets this field. */
                       dual_setpoints_not_supported?:
                         (boolean | undefined) | undefined
                     }
@@ -25474,7 +25474,7 @@ export type Routes = {
                       device_name?: (string | undefined) | undefined
                       /** Product type for a Sensi device. */
                       product_type?: (string | undefined) | undefined
-                      /** Set to true when the device does not support the /dual-setpoints API endpoint. */
+                      /** Deprecated. Seam no longer sets this field. */
                       dual_setpoints_not_supported?:
                         (boolean | undefined) | undefined
                     }
@@ -56319,7 +56319,7 @@ export type Routes = {
                 device_name?: (string | undefined) | undefined
                 /** Product type for a Sensi device. */
                 product_type?: (string | undefined) | undefined
-                /** Set to true when the device does not support the /dual-setpoints API endpoint. */
+                /** Deprecated. Seam no longer sets this field. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
               }
             | undefined
@@ -58594,7 +58594,7 @@ export type Routes = {
                 device_name?: (string | undefined) | undefined
                 /** Product type for a Sensi device. */
                 product_type?: (string | undefined) | undefined
-                /** Set to true when the device does not support the /dual-setpoints API endpoint. */
+                /** Deprecated. Seam no longer sets this field. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
               }
             | undefined
@@ -74829,7 +74829,7 @@ export type Routes = {
                 device_name?: (string | undefined) | undefined
                 /** Product type for a Sensi device. */
                 product_type?: (string | undefined) | undefined
-                /** Set to true when the device does not support the /dual-setpoints API endpoint. */
+                /** Deprecated. Seam no longer sets this field. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
               }
             | undefined
@@ -76835,7 +76835,7 @@ export type Routes = {
                 device_name?: (string | undefined) | undefined
                 /** Product type for a Sensi device. */
                 product_type?: (string | undefined) | undefined
-                /** Set to true when the device does not support the /dual-setpoints API endpoint. */
+                /** Deprecated. Seam no longer sets this field. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
               }
             | undefined
@@ -78970,7 +78970,7 @@ export type Routes = {
                 device_name?: (string | undefined) | undefined
                 /** Product type for a Sensi device. */
                 product_type?: (string | undefined) | undefined
-                /** Set to true when the device does not support the /dual-setpoints API endpoint. */
+                /** Deprecated. Seam no longer sets this field. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
               }
             | undefined
@@ -80975,7 +80975,7 @@ export type Routes = {
                 device_name?: (string | undefined) | undefined
                 /** Product type for a Sensi device. */
                 product_type?: (string | undefined) | undefined
-                /** Set to true when the device does not support the /dual-setpoints API endpoint. */
+                /** Deprecated. Seam no longer sets this field. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
               }
             | undefined
@@ -92675,7 +92675,7 @@ export type Routes = {
                 device_name?: (string | undefined) | undefined
                 /** Product type for a Sensi device. */
                 product_type?: (string | undefined) | undefined
-                /** Set to true when the device does not support the /dual-setpoints API endpoint. */
+                /** Deprecated. Seam no longer sets this field. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
               }
             | undefined
@@ -94680,7 +94680,7 @@ export type Routes = {
                 device_name?: (string | undefined) | undefined
                 /** Product type for a Sensi device. */
                 product_type?: (string | undefined) | undefined
-                /** Set to true when the device does not support the /dual-setpoints API endpoint. */
+                /** Deprecated. Seam no longer sets this field. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
               }
             | undefined
@@ -122310,7 +122310,7 @@ export type Routes = {
                       device_name?: (string | undefined) | undefined
                       /** Product type for a Sensi device. */
                       product_type?: (string | undefined) | undefined
-                      /** Set to true when the device does not support the /dual-setpoints API endpoint. */
+                      /** Deprecated. Seam no longer sets this field. */
                       dual_setpoints_not_supported?:
                         (boolean | undefined) | undefined
                     }
@@ -149697,7 +149697,7 @@ export type Routes = {
                 device_name?: (string | undefined) | undefined
                 /** Product type for a Sensi device. */
                 product_type?: (string | undefined) | undefined
-                /** Set to true when the device does not support the /dual-setpoints API endpoint. */
+                /** Deprecated. Seam no longer sets this field. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
               }
             | undefined
@@ -156581,7 +156581,7 @@ export type Routes = {
                 device_name?: (string | undefined) | undefined
                 /** Product type for a Sensi device. */
                 product_type?: (string | undefined) | undefined
-                /** Set to true when the device does not support the /dual-setpoints API endpoint. */
+                /** Deprecated. Seam no longer sets this field. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
               }
             | undefined
@@ -158586,7 +158586,7 @@ export type Routes = {
                 device_name?: (string | undefined) | undefined
                 /** Product type for a Sensi device. */
                 product_type?: (string | undefined) | undefined
-                /** Set to true when the device does not support the /dual-setpoints API endpoint. */
+                /** Deprecated. Seam no longer sets this field. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
               }
             | undefined
@@ -171398,7 +171398,7 @@ export type Routes = {
                 device_name?: (string | undefined) | undefined
                 /** Product type for a Sensi device. */
                 product_type?: (string | undefined) | undefined
-                /** Set to true when the device does not support the /dual-setpoints API endpoint. */
+                /** Deprecated. Seam no longer sets this field. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
               }
             | undefined
@@ -173405,7 +173405,7 @@ export type Routes = {
                 device_name?: (string | undefined) | undefined
                 /** Product type for a Sensi device. */
                 product_type?: (string | undefined) | undefined
-                /** Set to true when the device does not support the /dual-setpoints API endpoint. */
+                /** Deprecated. Seam no longer sets this field. */
                 dual_setpoints_not_supported?: (boolean | undefined) | undefined
               }
             | undefined
@@ -177632,7 +177632,7 @@ export type Routes = {
                       device_name?: (string | undefined) | undefined
                       /** Product type for a Sensi device. */
                       product_type?: (string | undefined) | undefined
-                      /** Set to true when the device does not support the /dual-setpoints API endpoint. */
+                      /** Deprecated. Seam no longer sets this field. */
                       dual_setpoints_not_supported?:
                         (boolean | undefined) | undefined
                     }
