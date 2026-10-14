@@ -116096,25 +116096,6 @@ export type Routes = {
     }
     maxDuration: undefined
   }
-  '/seam/mobile_sdk/v1/acs/credentials/get_unlock_result': {
-    route: '/seam/mobile_sdk/v1/acs/credentials/get_unlock_result'
-    method: 'POST'
-    queryParams: {}
-    jsonBody: {
-      acs_credential_id: string
-      unlock_attempted_at: string
-    }
-    commonParams: {}
-    formData: {}
-    jsonResponse: {
-      unlock_result: {
-        status: 'granted' | 'denied' | 'pending' | 'failed'
-        acs_entrance_id?: string | undefined
-        occurred_at?: string | undefined
-      }
-    }
-    maxDuration: undefined
-  }
   '/seam/mobile_sdk/v1/acs/credentials/list': {
     route: '/seam/mobile_sdk/v1/acs/credentials/list'
     method: 'GET' | 'POST'
