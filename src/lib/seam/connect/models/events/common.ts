@@ -65,6 +65,7 @@ export const lock_access_denied_reason = z
     'too_many_attempts',
     'blocked_by_privacy_mode',
     'credential_error',
+    'connection_error',
   ])
   .describe(
     'Normalized reason a lock denied access. Provider-agnostic; not all providers report every value.',
