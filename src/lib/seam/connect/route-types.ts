@@ -66511,6 +66511,7 @@ export type Routes = {
                         | 'too_many_attempts'
                         | 'blocked_by_privacy_mode'
                         | 'credential_error'
+                        | 'connection_error'
                       /** Human-readable explanation of why access was denied. */
                       message: string
                     }
@@ -70811,6 +70812,7 @@ export type Routes = {
                     | 'too_many_attempts'
                     | 'blocked_by_privacy_mode'
                     | 'credential_error'
+                    | 'connection_error'
                   /** Human-readable explanation of why access was denied. */
                   message: string
                 }
@@ -114023,6 +114025,7 @@ export type Routes = {
                     | 'too_many_attempts'
                     | 'blocked_by_privacy_mode'
                     | 'credential_error'
+                    | 'connection_error'
                   /** Human-readable explanation of why access was denied. */
                   message: string
                 }
@@ -116089,6 +116092,25 @@ export type Routes = {
         created_at: string
         /** Date and time at which the token expires. Tokens live for one hour. */
         expires_at: string
+      }
+    }
+    maxDuration: undefined
+  }
+  '/seam/mobile_sdk/v1/acs/credentials/get_unlock_result': {
+    route: '/seam/mobile_sdk/v1/acs/credentials/get_unlock_result'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      acs_credential_id: string
+      unlock_attempted_at: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      unlock_result: {
+        status: 'granted' | 'denied' | 'pending' | 'failed'
+        acs_entrance_id?: string | undefined
+        occurred_at?: string | undefined
       }
     }
     maxDuration: undefined
@@ -120711,6 +120733,7 @@ export type Routes = {
                     | 'too_many_attempts'
                     | 'blocked_by_privacy_mode'
                     | 'credential_error'
+                    | 'connection_error'
                   /** Human-readable explanation of why access was denied. */
                   message: string
                 }
@@ -187764,6 +187787,7 @@ export type Routes = {
                           | 'too_many_attempts'
                           | 'blocked_by_privacy_mode'
                           | 'credential_error'
+                          | 'connection_error'
                         /** Human-readable explanation of why access was denied. */
                         message: string
                       }
