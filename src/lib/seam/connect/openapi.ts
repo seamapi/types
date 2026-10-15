@@ -63570,6 +63570,94 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
+    '/seam/customer/v1/automations/get_guest_phone_last4_usage': {
+      get: {
+        description:
+          'Lists the automations in the workspace, workspace-level and per-customer, that still use the deprecated prefer_guest_phone_last4_as_code setting.',
+        operationId: 'seamCustomerV1AutomationsGetGuestPhoneLast4UsageGet',
+        parameters: [],
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    customer_count: {
+                      description:
+                        'Number of customers whose automation uses prefer_guest_phone_last4_as_code.',
+                      type: 'integer',
+                    },
+                    is_used_by_workspace: {
+                      description:
+                        'Whether the workspace-level automation uses prefer_guest_phone_last4_as_code.',
+                      type: 'boolean',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['is_used_by_workspace', 'customer_count', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_with_workspace: [] }, { api_key: [] }],
+        summary: '/seam/customer/v1/automations/get_guest_phone_last4_usage',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'automations'],
+        'x-fern-sdk-method-name': 'get_guest_phone_last4_usage',
+        'x-response-key': null,
+        'x-title': 'Get Guest Phone Last 4 Usage',
+        'x-undocumented': 'Internal endpoint for the console.',
+      },
+    },
+    '/seam/customer/v1/automations/switch_to_guest_phone_last_digits': {
+      post: {
+        description:
+          'Switches every automation in the workspace, workspace-level and per-customer, from the deprecated prefer_guest_phone_last4_as_code setting to prefer_guest_phone_last_digits_as_code.',
+        operationId:
+          'seamCustomerV1AutomationsSwitchToGuestPhoneLastDigitsPost',
+        requestBody: {
+          content: {
+            'application/json': { schema: { properties: {}, type: 'object' } },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    switched_count: {
+                      description: 'Number of automations that were switched.',
+                      type: 'integer',
+                    },
+                  },
+                  required: ['switched_count', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_with_workspace: [] }, { api_key: [] }],
+        summary:
+          '/seam/customer/v1/automations/switch_to_guest_phone_last_digits',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'automations'],
+        'x-fern-sdk-method-name': 'switch_to_guest_phone_last_digits',
+        'x-response-key': null,
+        'x-title': 'Switch to Guest Phone Last Digits',
+        'x-undocumented': 'Internal endpoint for the console.',
+      },
+    },
     '/seam/customer/v1/automations/update': {
       patch: {
         description:

@@ -109540,6 +109540,34 @@ export type Routes = {
     }
     maxDuration: undefined
   }
+  '/seam/customer/v1/automations/get_guest_phone_last4_usage': {
+    route: '/seam/customer/v1/automations/get_guest_phone_last4_usage'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      /** Whether the workspace-level automation uses prefer_guest_phone_last4_as_code. */
+      is_used_by_workspace: boolean
+      /** Number of customers whose automation uses prefer_guest_phone_last4_as_code. */
+      customer_count: number
+    }
+    maxDuration: undefined
+  }
+  '/seam/customer/v1/automations/switch_to_guest_phone_last_digits': {
+    route: '/seam/customer/v1/automations/switch_to_guest_phone_last_digits'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      /** Number of automations that were switched. */
+      switched_count: number
+    }
+    maxDuration: undefined
+  }
   '/seam/customer/v1/automations/update': {
     route: '/seam/customer/v1/automations/update'
     method: 'PATCH' | 'POST'
