@@ -1455,6 +1455,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -5004,6 +5016,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -10344,6 +10368,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -13745,6 +13781,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -14934,8 +14982,10 @@ export type Routes = {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'requested_code_unavailable'
-              /** ID of the device where the requested code was unavailable. */
-              device_id: string
+              /** ID of the device where the requested code was unavailable. Present when the code was set directly on a device. */
+              device_id?: string | undefined
+              /** ID of the access method whose requested code was unavailable. Present when an access system, such as Salto KS, assigned a different code. */
+              access_method_id?: string | undefined
               /** The originally requested PIN code that was unavailable. */
               original_code: string
               /** The new PIN code that was assigned instead. */
@@ -15174,8 +15224,10 @@ export type Routes = {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'requested_code_unavailable'
-              /** ID of the device where the requested code was unavailable. */
-              device_id: string
+              /** ID of the device where the requested code was unavailable. Present when the code was set directly on a device. */
+              device_id?: string | undefined
+              /** ID of the access method whose requested code was unavailable. Present when an access system, such as Salto KS, assigned a different code. */
+              access_method_id?: string | undefined
               /** The originally requested PIN code that was unavailable. */
               original_code: string
               /** The new PIN code that was assigned instead. */
@@ -18498,6 +18550,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -18736,8 +18800,10 @@ export type Routes = {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'requested_code_unavailable'
-              /** ID of the device where the requested code was unavailable. */
-              device_id: string
+              /** ID of the device where the requested code was unavailable. Present when the code was set directly on a device. */
+              device_id?: string | undefined
+              /** ID of the access method whose requested code was unavailable. Present when an access system, such as Salto KS, assigned a different code. */
+              access_method_id?: string | undefined
               /** The originally requested PIN code that was unavailable. */
               original_code: string
               /** The new PIN code that was assigned instead. */
@@ -18976,8 +19042,10 @@ export type Routes = {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'requested_code_unavailable'
-              /** ID of the device where the requested code was unavailable. */
-              device_id: string
+              /** ID of the device where the requested code was unavailable. Present when the code was set directly on a device. */
+              device_id?: string | undefined
+              /** ID of the access method whose requested code was unavailable. Present when an access system, such as Salto KS, assigned a different code. */
+              access_method_id?: string | undefined
               /** The originally requested PIN code that was unavailable. */
               original_code: string
               /** The new PIN code that was assigned instead. */
@@ -19188,8 +19256,10 @@ export type Routes = {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'requested_code_unavailable'
-              /** ID of the device where the requested code was unavailable. */
-              device_id: string
+              /** ID of the device where the requested code was unavailable. Present when the code was set directly on a device. */
+              device_id?: string | undefined
+              /** ID of the access method whose requested code was unavailable. Present when an access system, such as Salto KS, assigned a different code. */
+              access_method_id?: string | undefined
               /** The originally requested PIN code that was unavailable. */
               original_code: string
               /** The new PIN code that was assigned instead. */
@@ -19409,8 +19479,10 @@ export type Routes = {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'requested_code_unavailable'
-              /** ID of the device where the requested code was unavailable. */
-              device_id: string
+              /** ID of the device where the requested code was unavailable. Present when the code was set directly on a device. */
+              device_id?: string | undefined
+              /** ID of the access method whose requested code was unavailable. Present when an access system, such as Salto KS, assigned a different code. */
+              access_method_id?: string | undefined
               /** The originally requested PIN code that was unavailable. */
               original_code: string
               /** The new PIN code that was assigned instead. */
@@ -20982,6 +21054,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -23413,6 +23497,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -24495,6 +24591,18 @@ export type Routes = {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'user_identity_missing_phone_number'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'requested_code_unavailable'
+              /** The originally requested PIN code that could not be used. */
+              original_code: string
+              /** The PIN code that was assigned instead. */
+              new_code: string
             }
         )[]
         /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -27128,8 +27236,10 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'requested_code_unavailable'
-                    /** ID of the device where the requested code was unavailable. */
-                    device_id: string
+                    /** ID of the device where the requested code was unavailable. Present when the code was set directly on a device. */
+                    device_id?: string | undefined
+                    /** ID of the access method whose requested code was unavailable. Present when an access system, such as Salto KS, assigned a different code. */
+                    access_method_id?: string | undefined
                     /** The originally requested PIN code that was unavailable. */
                     original_code: string
                     /** The new PIN code that was assigned instead. */
@@ -27316,6 +27426,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -27899,6 +28021,18 @@ export type Routes = {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'user_identity_missing_phone_number'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'requested_code_unavailable'
+              /** The originally requested PIN code that could not be used. */
+              original_code: string
+              /** The PIN code that was assigned instead. */
+              new_code: string
             }
         )[]
         /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -29424,6 +29558,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -30503,6 +30649,18 @@ export type Routes = {
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'user_identity_missing_phone_number'
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'requested_code_unavailable'
+              /** The originally requested PIN code that could not be used. */
+              original_code: string
+              /** The PIN code that was assigned instead. */
+              new_code: string
+            }
         )[]
         /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
         errors: (
@@ -30691,6 +30849,18 @@ export type Routes = {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'user_identity_missing_phone_number'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'requested_code_unavailable'
+              /** The originally requested PIN code that could not be used. */
+              original_code: string
+              /** The PIN code that was assigned instead. */
+              new_code: string
             }
         )[]
         /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -36006,6 +36176,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -38524,6 +38706,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -40940,6 +41134,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -44242,6 +44448,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -49483,6 +49701,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -51889,6 +52119,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -73065,6 +73307,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -83641,6 +83895,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -86049,6 +86315,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -88454,6 +88732,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -90862,6 +91152,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -97356,6 +97658,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -99782,6 +100096,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -102265,6 +102591,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -106367,8 +106705,10 @@ export type Routes = {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'requested_code_unavailable'
-              /** ID of the device where the requested code was unavailable. */
-              device_id: string
+              /** ID of the device where the requested code was unavailable. Present when the code was set directly on a device. */
+              device_id?: string | undefined
+              /** ID of the access method whose requested code was unavailable. Present when an access system, such as Salto KS, assigned a different code. */
+              access_method_id?: string | undefined
               /** The originally requested PIN code that was unavailable. */
               original_code: string
               /** The new PIN code that was assigned instead. */
@@ -107908,6 +108248,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -115221,8 +115573,10 @@ export type Routes = {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'requested_code_unavailable'
-              /** ID of the device where the requested code was unavailable. */
-              device_id: string
+              /** ID of the device where the requested code was unavailable. Present when the code was set directly on a device. */
+              device_id?: string | undefined
+              /** ID of the access method whose requested code was unavailable. Present when an access system, such as Salto KS, assigned a different code. */
+              access_method_id?: string | undefined
               /** The originally requested PIN code that was unavailable. */
               original_code: string
               /** The new PIN code that was assigned instead. */
@@ -115808,8 +116162,10 @@ export type Routes = {
                   message: string
                   /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                   warning_code: 'requested_code_unavailable'
-                  /** ID of the device where the requested code was unavailable. */
-                  device_id: string
+                  /** ID of the device where the requested code was unavailable. Present when the code was set directly on a device. */
+                  device_id?: string | undefined
+                  /** ID of the access method whose requested code was unavailable. Present when an access system, such as Salto KS, assigned a different code. */
+                  access_method_id?: string | undefined
                   /** The originally requested PIN code that was unavailable. */
                   original_code: string
                   /** The new PIN code that was assigned instead. */
@@ -124409,6 +124765,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -126155,6 +126523,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -128561,6 +128941,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -130970,6 +131362,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -133375,6 +133779,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -135784,6 +136200,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -138189,6 +138617,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -140598,6 +141038,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -143005,6 +143457,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -145417,6 +145881,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -147940,6 +148416,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -152390,6 +152878,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -154805,6 +155305,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -161275,6 +161787,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -163892,6 +164416,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -166335,6 +166871,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -168895,6 +169443,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -181393,6 +181953,18 @@ export type Routes = {
                           /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                           warning_code: 'user_identity_missing_phone_number'
                         }
+                      | {
+                          /** Date and time at which Seam created the warning. */
+                          created_at: string
+                          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                          message: string
+                          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                          warning_code: 'requested_code_unavailable'
+                          /** The originally requested PIN code that could not be used. */
+                          original_code: string
+                          /** The PIN code that was assigned instead. */
+                          new_code: string
+                        }
                     )[]
                     /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
                     errors: (
@@ -183735,6 +184307,18 @@ export type Routes = {
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -183932,8 +184516,10 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'requested_code_unavailable'
-                    /** ID of the device where the requested code was unavailable. */
-                    device_id: string
+                    /** ID of the device where the requested code was unavailable. Present when the code was set directly on a device. */
+                    device_id?: string | undefined
+                    /** ID of the access method whose requested code was unavailable. Present when an access system, such as Salto KS, assigned a different code. */
+                    access_method_id?: string | undefined
                     /** The originally requested PIN code that was unavailable. */
                     original_code: string
                     /** The new PIN code that was assigned instead. */
@@ -191525,6 +192111,18 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
