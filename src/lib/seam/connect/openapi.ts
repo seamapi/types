@@ -76378,13 +76378,17 @@ const openapi: OpenAPISpec = {
     '/workspaces/customization_profiles/create': {
       post: {
         description:
-          "Creates a customization profile. From a customer client session, the profile is owned by that customer, and it becomes the customer's `customization_profile_id` when the customer has none yet. A workspace's first workspace-level profile becomes its default (`is_workspace_default`).",
+          "Creates a customization profile. With `base_customization_profile_id`, the new profile starts as a copy of that profile and the other fields replace its values.\n\nFrom a customer client session, the profile is owned by that customer, and it becomes the customer's `customization_profile_id` when the customer has none yet or when it's a copy of the customer's current profile. That's how a customer customizes the workspace-level profile it uses without changing it for other customers.\n\nA workspace's first workspace-level profile becomes its default (`is_workspace_default`).",
         operationId: 'workspacesCustomizationProfilesCreatePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
+                  base_customization_profile_id: {
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   customer_portal_theme: {
                     properties: {
                       font_family: { type: 'string' },
