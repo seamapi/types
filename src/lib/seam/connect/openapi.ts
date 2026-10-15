@@ -62551,7 +62551,7 @@ const openapi: OpenAPISpec = {
     },
     '/seam/console/v1/workspace/feature_flags/list': {
       get: {
-        description: 'Lists workspace feature flags.',
+        description: 'Lists the workspace feature flags the Console reads.',
         operationId: 'seamConsoleV1WorkspaceFeatureFlagsListGet',
         responses: {
           '200': {
@@ -62588,79 +62588,6 @@ const openapi: OpenAPISpec = {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'feature_flags',
         'x-response-key': 'feature_flags',
-        'x-undocumented': 'Internal endpoint for Console',
-      },
-    },
-    '/seam/console/v1/workspace/feature_flags/update': {
-      post: {
-        description:
-          'Enables or disables a per-workspace feature flag (e.g. whether the Lynx\nmigration is enabled for the workspace). Only flags in the workspace-toggleable\nset can be updated.',
-        operationId: 'seamConsoleV1WorkspaceFeatureFlagsUpdatePost',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  enabled: {
-                    description:
-                      'Whether the feature flag should be enabled for the workspace.',
-                    type: 'boolean',
-                  },
-                  feature_flag_name: {
-                    description:
-                      'Name of the workspace feature flag to update.',
-                    type: 'string',
-                  },
-                },
-                required: ['feature_flag_name', 'enabled'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          '200': {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    feature_flag: {
-                      properties: {
-                        enabled: { type: 'boolean' },
-                        feature_flag_name: { type: 'string' },
-                      },
-                      required: ['feature_flag_name', 'enabled'],
-                      type: 'object',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['feature_flag', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          '400': { description: 'Bad Request' },
-          '401': { description: 'Unauthorized' },
-        },
-        security: [
-          { pat_with_workspace: [] },
-          { console_session_with_workspace: [] },
-          { api_key: [] },
-        ],
-        summary: '/seam/console/v1/workspace/feature_flags/update',
-        tags: [],
-        'x-fern-sdk-group-name': [
-          'seam',
-          'console',
-          'v1',
-          'workspace',
-          'feature_flags',
-        ],
-        'x-fern-sdk-method-name': 'update',
-        'x-fern-sdk-return-value': 'feature_flag',
-        'x-response-key': 'feature_flag',
         'x-undocumented': 'Internal endpoint for Console',
       },
     },
