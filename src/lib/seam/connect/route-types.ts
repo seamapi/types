@@ -176521,6 +176521,7 @@ export type Routes = {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      base_customization_profile_id?: string | undefined
       name?: string | null
       primary_color?: string | undefined
       secondary_color?: string | undefined
