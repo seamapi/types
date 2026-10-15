@@ -154,7 +154,17 @@ const requested_code_unavailable = common_access_grant_warning
     device_id: z
       .string()
       .uuid()
-      .describe('ID of the device where the requested code was unavailable.'),
+      .optional()
+      .describe(
+        'ID of the device where the requested code was unavailable. Present when the code was set directly on a device.',
+      ),
+    access_method_id: z
+      .string()
+      .uuid()
+      .optional()
+      .describe(
+        'ID of the access method whose requested code was unavailable. Present when an access system, such as Salto KS, assigned a different code.',
+      ),
     original_code: z
       .string()
       .describe('The originally requested PIN code that was unavailable.'),
@@ -163,7 +173,7 @@ const requested_code_unavailable = common_access_grant_warning
       .describe('The new PIN code that was assigned instead.'),
   })
   .describe(
-    'Indicates that the requested PIN code was already in use on a device, so a different code was assigned.',
+    'Indicates that the requested PIN code could not be used, so a different code was assigned. For example, the code was already in use on a device, or the access system rejected it because it did not meet its PIN rules.',
   )
 
 const device_does_not_support_access_codes = common_access_grant_warning
@@ -225,6 +235,10 @@ const _access_grant_warning_map = z.object({
   overprovisioned_access: overprovisioned_access.optional().nullable(),
   updating_access_times: updating_access_times.optional().nullable(),
   requested_code_unavailable_by_device: z
+    .record(z.string().uuid(), requested_code_unavailable)
+    .optional()
+    .nullable(),
+  requested_code_unavailable_by_access_method: z
     .record(z.string().uuid(), requested_code_unavailable)
     .optional()
     .nullable(),

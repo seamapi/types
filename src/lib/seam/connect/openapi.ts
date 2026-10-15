@@ -2287,8 +2287,14 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the requested PIN code was already in use on a device, so a different code was assigned.',
+                    'Indicates that the requested PIN code could not be used, so a different code was assigned. For example, the code was already in use on a device, or the access system rejected it because it did not meet its PIN rules.',
                   properties: {
+                    access_method_id: {
+                      description:
+                        'ID of the access method whose requested code was unavailable. Present when an access system, such as Salto KS, assigned a different code.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
                     created_at: {
                       description:
                         'Date and time at which Seam created the warning.',
@@ -2297,7 +2303,7 @@ const openapi: OpenAPISpec = {
                     },
                     device_id: {
                       description:
-                        'ID of the device where the requested code was unavailable.',
+                        'ID of the device where the requested code was unavailable. Present when the code was set directly on a device.',
                       format: 'uuid',
                       type: 'string',
                     },
@@ -2327,7 +2333,6 @@ const openapi: OpenAPISpec = {
                     'created_at',
                     'message',
                     'warning_code',
-                    'device_id',
                     'original_code',
                     'new_code',
                   ],
@@ -2971,6 +2976,46 @@ const openapi: OpenAPISpec = {
                     },
                   },
                   required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    "Indicates that the access system could not use the PIN code requested for this [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant), for example because it did not meet the access system's PIN rules, so the access system assigned a different code. Give the recipient the assigned code.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    new_code: {
+                      description: 'The PIN code that was assigned instead.',
+                      type: 'string',
+                    },
+                    original_code: {
+                      description:
+                        'The originally requested PIN code that could not be used.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['requested_code_unavailable'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'warning_code',
+                    'original_code',
+                    'new_code',
+                  ],
                   type: 'object',
                 },
               ],
@@ -10505,6 +10550,47 @@ const openapi: OpenAPISpec = {
                             },
                           },
                           required: ['created_at', 'message', 'warning_code'],
+                          type: 'object',
+                        },
+                        {
+                          description:
+                            "Indicates that the access system could not use the PIN code requested for this [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant), for example because it did not meet the access system's PIN rules, so the access system assigned a different code. Give the recipient the assigned code.",
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which Seam created the warning.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            message: {
+                              description:
+                                'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                              type: 'string',
+                            },
+                            new_code: {
+                              description:
+                                'The PIN code that was assigned instead.',
+                              type: 'string',
+                            },
+                            original_code: {
+                              description:
+                                'The originally requested PIN code that could not be used.',
+                              type: 'string',
+                            },
+                            warning_code: {
+                              description:
+                                'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                              enum: ['requested_code_unavailable'],
+                              type: 'string',
+                            },
+                          },
+                          required: [
+                            'created_at',
+                            'message',
+                            'warning_code',
+                            'original_code',
+                            'new_code',
+                          ],
                           type: 'object',
                         },
                       ],
@@ -36880,8 +36966,14 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Indicates that the requested PIN code was already in use on a device, so a different code was assigned.',
+                    'Indicates that the requested PIN code could not be used, so a different code was assigned. For example, the code was already in use on a device, or the access system rejected it because it did not meet its PIN rules.',
                   properties: {
+                    access_method_id: {
+                      description:
+                        'ID of the access method whose requested code was unavailable. Present when an access system, such as Salto KS, assigned a different code.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
                     created_at: {
                       description:
                         'Date and time at which Seam created the warning.',
@@ -36890,7 +36982,7 @@ const openapi: OpenAPISpec = {
                     },
                     device_id: {
                       description:
-                        'ID of the device where the requested code was unavailable.',
+                        'ID of the device where the requested code was unavailable. Present when the code was set directly on a device.',
                       format: 'uuid',
                       type: 'string',
                     },
@@ -36920,7 +37012,6 @@ const openapi: OpenAPISpec = {
                     'created_at',
                     'message',
                     'warning_code',
-                    'device_id',
                     'original_code',
                     'new_code',
                   ],
@@ -37545,6 +37636,46 @@ const openapi: OpenAPISpec = {
                     },
                   },
                   required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    "Indicates that the access system could not use the PIN code requested for this [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant), for example because it did not meet the access system's PIN rules, so the access system assigned a different code. Give the recipient the assigned code.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    new_code: {
+                      description: 'The PIN code that was assigned instead.',
+                      type: 'string',
+                    },
+                    original_code: {
+                      description:
+                        'The originally requested PIN code that could not be used.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['requested_code_unavailable'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'warning_code',
+                    'original_code',
+                    'new_code',
+                  ],
                   type: 'object',
                 },
               ],

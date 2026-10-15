@@ -81,6 +81,20 @@ const user_identity_missing_phone_number_warning = common_access_method_warning
     "Indicates that the access system delivers this mobile key to the recipient's phone number, but the [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities) for this [access grant](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) has no phone number, so the mobile key cannot be delivered. Set a phone number on the user identity when you create the access grant.",
   )
 
+const requested_code_unavailable_warning = common_access_method_warning
+  .extend({
+    warning_code: z
+      .literal('requested_code_unavailable')
+      .describe(warning_code_description),
+    original_code: z
+      .string()
+      .describe('The originally requested PIN code that could not be used.'),
+    new_code: z.string().describe('The PIN code that was assigned instead.'),
+  })
+  .describe(
+    "Indicates that the access system could not use the PIN code requested for this [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant), for example because it did not meet the access system's PIN rules, so the access system assigned a different code. Give the recipient the assigned code.",
+  )
+
 const access_method_warning = z
   .discriminatedUnion('warning_code', [
     being_deleted,
@@ -89,6 +103,7 @@ const access_method_warning = z
     delay_in_issuing_warning,
     user_identity_missing_email_address_warning,
     user_identity_missing_phone_number_warning,
+    requested_code_unavailable_warning,
   ])
   .describe(
     'Warning associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant).',
@@ -104,6 +119,9 @@ const _access_method_warning_map = z.object({
   user_identity_missing_email_address:
     user_identity_missing_email_address_warning.optional().nullable(),
   user_identity_missing_phone_number: user_identity_missing_phone_number_warning
+    .optional()
+    .nullable(),
+  requested_code_unavailable: requested_code_unavailable_warning
     .optional()
     .nullable(),
 })
