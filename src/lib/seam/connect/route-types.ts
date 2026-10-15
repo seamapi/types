@@ -106576,26 +106576,6 @@ export type Routes = {
     }
     maxDuration: undefined
   }
-  '/seam/console/v1/workspace/feature_flags/update': {
-    route: '/seam/console/v1/workspace/feature_flags/update'
-    method: 'POST'
-    queryParams: {}
-    jsonBody: {
-      /** Name of the workspace feature flag to update. */
-      feature_flag_name: string
-      /** Whether the feature flag should be enabled for the workspace. */
-      enabled: boolean
-    }
-    commonParams: {}
-    formData: {}
-    jsonResponse: {
-      feature_flag: {
-        feature_flag_name: string
-        enabled: boolean
-      }
-    }
-    maxDuration: undefined
-  }
   '/seam/customer/v1/access_grants/list': {
     route: '/seam/customer/v1/access_grants/list'
     method: 'GET' | 'POST'
