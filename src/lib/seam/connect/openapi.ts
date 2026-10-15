@@ -14918,6 +14918,11 @@ const openapi: OpenAPISpec = {
             },
             type: 'object',
           },
+          is_workspace_default: {
+            description:
+              "Whether this is the workspace's default profile, used for access grants and Instant Keys created without a customization profile.",
+            type: 'boolean',
+          },
           logo_url: { format: 'uri', type: 'string' },
           message_overrides: {
             additionalProperties: {
@@ -14937,6 +14942,7 @@ const openapi: OpenAPISpec = {
           'customization_profile_id',
           'customer_key',
           'created_at',
+          'is_workspace_default',
         ],
         type: 'object',
         'x-route-path': '/workspaces/customization_profiles',
@@ -76372,7 +76378,7 @@ const openapi: OpenAPISpec = {
     '/workspaces/customization_profiles/create': {
       post: {
         description:
-          "Creates a customization profile. From a customer client session, the profile is owned by that customer, and it becomes the customer's `customization_profile_id` when the customer has none yet.",
+          "Creates a customization profile. From a customer client session, the profile is owned by that customer, and it becomes the customer's `customization_profile_id` when the customer has none yet. A workspace's first workspace-level profile becomes its default (`is_workspace_default`).",
         operationId: 'workspacesCustomizationProfilesCreatePost',
         requestBody: {
           content: {
@@ -76864,7 +76870,8 @@ const openapi: OpenAPISpec = {
     },
     '/workspaces/customization_profiles/update': {
       patch: {
-        description: 'Updates the customization profile for the workspace.',
+        description:
+          "Updates the customization profile for the workspace.\n\n`is_workspace_default: true` makes a workspace-level profile the workspace's default, replacing the previous one: access grants and Instant Keys created without a customization profile use it. `false` removes it, so they use the Seam default again. A customer client session can't change the default.",
         operationId: 'workspacesCustomizationProfilesUpdatePatch',
         requestBody: {
           content: {
@@ -77196,6 +77203,7 @@ const openapi: OpenAPISpec = {
                     },
                     type: 'object',
                   },
+                  is_workspace_default: { type: 'boolean' },
                   message_overrides: {
                     additionalProperties: {
                       additionalProperties: { type: 'string' },

@@ -120,6 +120,11 @@ export const customization_profile = z.object({
       'Key of the customer that owns the profile, or `null` for a workspace-level profile. A customer can own a profile without using it; the profile a customer uses is `customization_profile_id` on the customer.',
     ),
   created_at: datetime,
+  is_workspace_default: z
+    .boolean()
+    .describe(
+      "Whether this is the workspace's default profile, used for access grants and Instant Keys created without a customization profile.",
+    ),
   logo_url: z.string().url().optional(),
   primary_color: z.string().optional(),
   secondary_color: z.string().optional(),

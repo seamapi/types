@@ -105620,6 +105620,8 @@ export type Routes = {
         /** Key of the customer that owns the profile, or `null` for a workspace-level profile. A customer can own a profile without using it; the profile a customer uses is `customization_profile_id` on the customer. */
         customer_key: string | null
         created_at: string
+        /** Whether this is the workspace's default profile, used for access grants and Instant Keys created without a customization profile. */
+        is_workspace_default: boolean
         logo_url?: string | undefined
         primary_color?: string | undefined
         secondary_color?: string | undefined
@@ -176679,6 +176681,8 @@ export type Routes = {
         /** Key of the customer that owns the profile, or `null` for a workspace-level profile. A customer can own a profile without using it; the profile a customer uses is `customization_profile_id` on the customer. */
         customer_key: string | null
         created_at: string
+        /** Whether this is the workspace's default profile, used for access grants and Instant Keys created without a customization profile. */
+        is_workspace_default: boolean
         logo_url?: string | undefined
         primary_color?: string | undefined
         secondary_color?: string | undefined
@@ -176850,6 +176854,8 @@ export type Routes = {
         /** Key of the customer that owns the profile, or `null` for a workspace-level profile. A customer can own a profile without using it; the profile a customer uses is `customization_profile_id` on the customer. */
         customer_key: string | null
         created_at: string
+        /** Whether this is the workspace's default profile, used for access grants and Instant Keys created without a customization profile. */
+        is_workspace_default: boolean
         logo_url?: string | undefined
         primary_color?: string | undefined
         secondary_color?: string | undefined
@@ -177021,6 +177027,8 @@ export type Routes = {
         /** Key of the customer that owns the profile, or `null` for a workspace-level profile. A customer can own a profile without using it; the profile a customer uses is `customization_profile_id` on the customer. */
         customer_key: string | null
         created_at: string
+        /** Whether this is the workspace's default profile, used for access grants and Instant Keys created without a customization profile. */
+        is_workspace_default: boolean
         logo_url?: string | undefined
         primary_color?: string | undefined
         secondary_color?: string | undefined
@@ -177337,6 +177345,7 @@ export type Routes = {
             | undefined
           )
         | null
+      is_workspace_default?: boolean | undefined
     }
     commonParams: {}
     formData: {}
@@ -190481,6 +190490,8 @@ export type Routes = {
               /** Key of the customer that owns the profile, or `null` for a workspace-level profile. A customer can own a profile without using it; the profile a customer uses is `customization_profile_id` on the customer. */
               customer_key: string | null
               created_at: string
+              /** Whether this is the workspace's default profile, used for access grants and Instant Keys created without a customization profile. */
+              is_workspace_default: boolean
               logo_url?: string | undefined
               primary_color?: string | undefined
               secondary_color?: string | undefined
