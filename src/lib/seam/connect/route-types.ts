@@ -109032,7 +109032,11 @@ export type Routes = {
                       | 'all_available'
                     card_count_on_reservation_create?: number | undefined
                     instant_key_max_use_count?: number | undefined
+                    /**
+                     * @deprecated Use `prefer_guest_phone_last_digits_as_code`.*/
                     prefer_guest_phone_last4_as_code?: boolean | undefined
+                    /** Use the last digits of the guest's phone number as the PIN code. The code length is one that all locks in the reservation's spaces support, and digits that form a weak PIN, such as 0303, 1111, or 1234, are skipped in favor of a longer code. */
+                    prefer_guest_phone_last_digits_as_code?: boolean | undefined
                     allow_shared_email_and_phone_across_user_identities?:
                       boolean | undefined
                     access_starts_minutes_before_reservation?:
@@ -109205,7 +109209,11 @@ export type Routes = {
                       | 'all_available'
                     card_count_on_reservation_create?: number | undefined
                     instant_key_max_use_count?: number | undefined
+                    /**
+                     * @deprecated Use `prefer_guest_phone_last_digits_as_code`.*/
                     prefer_guest_phone_last4_as_code?: boolean | undefined
+                    /** Use the last digits of the guest's phone number as the PIN code. The code length is one that all locks in the reservation's spaces support, and digits that form a weak PIN, such as 0303, 1111, or 1234, are skipped in favor of a longer code. */
+                    prefer_guest_phone_last_digits_as_code?: boolean | undefined
                     allow_shared_email_and_phone_across_user_identities?:
                       boolean | undefined
                     access_starts_minutes_before_reservation?:
@@ -109736,7 +109744,12 @@ export type Routes = {
                         | 'all_available'
                       card_count_on_reservation_create?: number | undefined
                       instant_key_max_use_count?: number | undefined
+                      /**
+                       * @deprecated Use `prefer_guest_phone_last_digits_as_code`.*/
                       prefer_guest_phone_last4_as_code?: boolean | undefined
+                      /** Use the last digits of the guest's phone number as the PIN code. The code length is one that all locks in the reservation's spaces support, and digits that form a weak PIN, such as 0303, 1111, or 1234, are skipped in favor of a longer code. */
+                      prefer_guest_phone_last_digits_as_code?:
+                        boolean | undefined
                       allow_shared_email_and_phone_across_user_identities?:
                         boolean | undefined
                       access_starts_minutes_before_reservation?:
@@ -109909,7 +109922,11 @@ export type Routes = {
                       | 'all_available'
                     card_count_on_reservation_create?: number | undefined
                     instant_key_max_use_count?: number | undefined
+                    /**
+                     * @deprecated Use `prefer_guest_phone_last_digits_as_code`.*/
                     prefer_guest_phone_last4_as_code?: boolean | undefined
+                    /** Use the last digits of the guest's phone number as the PIN code. The code length is one that all locks in the reservation's spaces support, and digits that form a weak PIN, such as 0303, 1111, or 1234, are skipped in favor of a longer code. */
+                    prefer_guest_phone_last_digits_as_code?: boolean | undefined
                     allow_shared_email_and_phone_across_user_identities?:
                       boolean | undefined
                     access_starts_minutes_before_reservation?:
