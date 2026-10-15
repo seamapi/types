@@ -63095,6 +63095,14 @@ const openapi: OpenAPISpec = {
                                   type: 'string',
                                 },
                                 prefer_guest_phone_last4_as_code: {
+                                  deprecated: true,
+                                  type: 'boolean',
+                                  'x-deprecated':
+                                    'Use `prefer_guest_phone_last_digits_as_code`.',
+                                },
+                                prefer_guest_phone_last_digits_as_code: {
+                                  description:
+                                    "Use the last digits of the guest's phone number as the PIN code. The code length is one that all locks in the reservation's spaces support, and digits that form a weak PIN, such as 0303, 1111, or 1234, are skipped in favor of a longer code.",
                                   type: 'boolean',
                                 },
                               },
@@ -63486,6 +63494,14 @@ const openapi: OpenAPISpec = {
                                 type: 'string',
                               },
                               prefer_guest_phone_last4_as_code: {
+                                deprecated: true,
+                                type: 'boolean',
+                                'x-deprecated':
+                                  'Use `prefer_guest_phone_last_digits_as_code`.',
+                              },
+                              prefer_guest_phone_last_digits_as_code: {
+                                description:
+                                  "Use the last digits of the guest's phone number as the PIN code. The code length is one that all locks in the reservation's spaces support, and digits that form a weak PIN, such as 0303, 1111, or 1234, are skipped in favor of a longer code.",
                                 type: 'boolean',
                               },
                             },
@@ -64933,6 +64949,14 @@ const openapi: OpenAPISpec = {
                                       type: 'string',
                                     },
                                     prefer_guest_phone_last4_as_code: {
+                                      deprecated: true,
+                                      type: 'boolean',
+                                      'x-deprecated':
+                                        'Use `prefer_guest_phone_last_digits_as_code`.',
+                                    },
+                                    prefer_guest_phone_last_digits_as_code: {
+                                      description:
+                                        "Use the last digits of the guest's phone number as the PIN code. The code length is one that all locks in the reservation's spaces support, and digits that form a weak PIN, such as 0303, 1111, or 1234, are skipped in favor of a longer code.",
                                       type: 'boolean',
                                     },
                                   },
@@ -65341,6 +65365,14 @@ const openapi: OpenAPISpec = {
                                 type: 'string',
                               },
                               prefer_guest_phone_last4_as_code: {
+                                deprecated: true,
+                                type: 'boolean',
+                                'x-deprecated':
+                                  'Use `prefer_guest_phone_last_digits_as_code`.',
+                              },
+                              prefer_guest_phone_last_digits_as_code: {
+                                description:
+                                  "Use the last digits of the guest's phone number as the PIN code. The code length is one that all locks in the reservation's spaces support, and digits that form a weak PIN, such as 0303, 1111, or 1234, are skipped in favor of a longer code.",
                                 type: 'boolean',
                               },
                             },
