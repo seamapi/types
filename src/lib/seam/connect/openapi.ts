@@ -12438,6 +12438,240 @@ const openapi: OpenAPISpec = {
             type: 'object',
           },
           {
+            description: 'Playing a favorite on the speaker is pending.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of playing a favorite on a speaker.',
+                enum: ['PLAY_SPEAKER_FAVORITE'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Playing a favorite on the speaker succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of playing a favorite on a speaker.',
+                enum: ['PLAY_SPEAKER_FAVORITE'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
+              result: {
+                description: 'Result of the action.',
+                properties: {
+                  affected_device_ids: {
+                    description:
+                      'IDs of the speakers now playing the favorite, including speakers grouped with the requested speaker.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                },
+                required: ['affected_device_ids'],
+                type: 'object',
+              },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Playing a favorite on the speaker failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of playing a favorite on a speaker.',
+                enum: ['PLAY_SPEAKER_FAVORITE'],
+                type: 'string',
+              },
+              error: {
+                description: 'Error associated with the action.',
+                properties: {
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Playing an audio clip on the speaker is pending.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of playing an audio clip on a speaker.',
+                enum: ['PLAY_SPEAKER_AUDIO_CLIP'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Playing an audio clip on the speaker succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of playing an audio clip on a speaker.',
+                enum: ['PLAY_SPEAKER_AUDIO_CLIP'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
+              result: {
+                description: 'Result of the action.',
+                properties: {},
+                type: 'object',
+              },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Playing an audio clip on the speaker failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of playing an audio clip on a speaker.',
+                enum: ['PLAY_SPEAKER_AUDIO_CLIP'],
+                type: 'string',
+              },
+              error: {
+                description: 'Error associated with the action.',
+                properties: {
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -14985,9 +15219,19 @@ const openapi: OpenAPISpec = {
               'Indicates whether the speaker supports pausing playback.',
             type: 'boolean',
           },
+          can_play_speaker_audio_clip: {
+            description:
+              'Indicates whether the speaker supports playing an audio clip from a URL.',
+            type: 'boolean',
+          },
           can_play_speaker_chime: {
             description:
               'Indicates whether the speaker supports playing a chime.',
+            type: 'boolean',
+          },
+          can_play_speaker_favorite: {
+            description:
+              "Indicates whether the speaker supports listing and playing the favorites saved in the speaker manufacturer's app, such as playlists and radio stations.",
             type: 'boolean',
           },
           can_program_offline_access_codes: {
@@ -17987,7 +18231,7 @@ const openapi: OpenAPISpec = {
                           },
                           supports_chime: {
                             description:
-                              'Indicates whether the speaker can play a chime.',
+                              'Indicates whether the speaker can play a chime or an audio clip.',
                             type: 'boolean',
                           },
                           volume: {
@@ -19775,9 +20019,19 @@ const openapi: OpenAPISpec = {
               'Indicates whether the speaker supports pausing playback.',
             type: 'boolean',
           },
+          can_play_speaker_audio_clip: {
+            description:
+              'Indicates whether the speaker supports playing an audio clip from a URL.',
+            type: 'boolean',
+          },
           can_play_speaker_chime: {
             description:
               'Indicates whether the speaker supports playing a chime.',
+            type: 'boolean',
+          },
+          can_play_speaker_favorite: {
+            description:
+              "Indicates whether the speaker supports listing and playing the favorites saved in the speaker manufacturer's app, such as playlists and radio stations.",
             type: 'boolean',
           },
           can_program_offline_access_codes: {
@@ -39726,9 +39980,19 @@ const openapi: OpenAPISpec = {
               'Indicates whether the speaker supports pausing playback.',
             type: 'boolean',
           },
+          can_play_speaker_audio_clip: {
+            description:
+              'Indicates whether the speaker supports playing an audio clip from a URL.',
+            type: 'boolean',
+          },
           can_play_speaker_chime: {
             description:
               'Indicates whether the speaker supports playing a chime.',
+            type: 'boolean',
+          },
+          can_play_speaker_favorite: {
+            description:
+              "Indicates whether the speaker supports listing and playing the favorites saved in the speaker manufacturer's app, such as playlists and radio stations.",
             type: 'boolean',
           },
           can_program_offline_access_codes: {
@@ -54797,6 +55061,8 @@ const openapi: OpenAPISpec = {
                   'can_pause_speaker_playback',
                   'can_resume_speaker_playback',
                   'can_play_speaker_chime',
+                  'can_play_speaker_favorite',
+                  'can_play_speaker_audio_clip',
                 ],
                 type: 'string',
               },
@@ -54838,6 +55104,8 @@ const openapi: OpenAPISpec = {
                   'can_pause_speaker_playback',
                   'can_resume_speaker_playback',
                   'can_play_speaker_chime',
+                  'can_play_speaker_favorite',
+                  'can_play_speaker_audio_clip',
                 ],
                 type: 'string',
               },
@@ -57104,6 +57372,8 @@ const openapi: OpenAPISpec = {
                   'can_pause_speaker_playback',
                   'can_resume_speaker_playback',
                   'can_play_speaker_chime',
+                  'can_play_speaker_favorite',
+                  'can_play_speaker_audio_clip',
                 ],
                 type: 'string',
               },
@@ -57145,6 +57415,8 @@ const openapi: OpenAPISpec = {
                   'can_pause_speaker_playback',
                   'can_resume_speaker_playback',
                   'can_play_speaker_chime',
+                  'can_play_speaker_favorite',
+                  'can_play_speaker_audio_clip',
                 ],
                 type: 'string',
               },
@@ -71445,6 +71717,90 @@ const openapi: OpenAPISpec = {
         'x-title': 'Update a Space',
       },
     },
+    '/speakers/list_favorites': {
+      get: {
+        description:
+          "Returns the favorites saved on a speaker's account in the speaker manufacturer's app, such as playlists, albums and radio stations. To play one, pass its `favorite_id` to `/speakers/play_favorite`. To check whether a speaker supports favorites, use `device.can_play_speaker_favorite`.",
+        operationId: 'speakersListFavoritesGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'device_id',
+            required: true,
+            schema: {
+              description:
+                'ID of the speaker for which you want to list favorites.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    speaker_favorites: {
+                      items: {
+                        properties: {
+                          description: {
+                            description:
+                              'Description of the favorite, such as its artist or station.',
+                            type: 'string',
+                          },
+                          favorite_id: {
+                            description:
+                              'ID of the favorite. Pass it to `/speakers/play_favorite`.',
+                            type: 'string',
+                          },
+                          image_url: {
+                            description: "URL of the favorite's artwork.",
+                            type: 'string',
+                          },
+                          name: {
+                            description: 'Name of the favorite.',
+                            type: 'string',
+                          },
+                          service_name: {
+                            description:
+                              'Name of the music service that provides the favorite.',
+                            type: 'string',
+                          },
+                        },
+                        required: ['favorite_id', 'name'],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['speaker_favorites', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/speakers/list_favorites',
+        tags: [],
+        'x-fern-sdk-group-name': ['speakers'],
+        'x-fern-sdk-method-name': 'list_favorites',
+        'x-fern-sdk-return-value': 'speaker_favorites',
+        'x-response-key': 'speaker_favorites',
+        'x-title': 'List Speaker Favorites',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
     '/speakers/mute': {
       post: {
         description:
@@ -71566,6 +71922,80 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Unreleased.',
       },
     },
+    '/speakers/play_audio_clip': {
+      post: {
+        description:
+          'Plays a short audio clip from a URL on a speaker, over whatever the speaker is playing. Use it for a welcome message or announcement. To check whether a speaker supports audio clips, use `device.can_play_speaker_audio_clip`.',
+        operationId: 'speakersPlayAudioClipPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  audio_url: {
+                    description:
+                      'Public HTTPS URL of the MP3 or WAV file to play. The speaker downloads the file itself, so it must be reachable from the internet.',
+                    format: 'uri',
+                    maxLength: 2048,
+                    type: 'string',
+                  },
+                  device_id: {
+                    description:
+                      'ID of the speaker on which you want to play the audio clip.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  volume: {
+                    description:
+                      "Volume at which to play the clip, on the speaker's native volume scale. If you omit this parameter, the clip plays at the speaker's current volume.",
+                    format: 'float',
+                    type: 'number',
+                  },
+                },
+                required: ['device_id', 'audio_url'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/speakers/play_audio_clip',
+        tags: [],
+        'x-action-attempt-type': 'PLAY_SPEAKER_AUDIO_CLIP',
+        'x-fern-sdk-group-name': ['speakers'],
+        'x-fern-sdk-method-name': 'play_audio_clip',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Play an Audio Clip on a Speaker',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
     '/speakers/play_chime': {
       post: {
         description:
@@ -71630,6 +72060,78 @@ const openapi: OpenAPISpec = {
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
         'x-title': 'Play a Chime on a Speaker',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/speakers/play_favorite': {
+      post: {
+        description:
+          'Replaces what a speaker is playing with one of its favorites and starts playback. Speakers grouped with the requested speaker play it too. To check whether a speaker supports favorites, use `device.can_play_speaker_favorite`.',
+        operationId: 'speakersPlayFavoritePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the speaker on which you want to play the favorite.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  favorite_id: {
+                    description:
+                      'ID of the favorite that you want to play, from `/speakers/list_favorites`.',
+                    minLength: 1,
+                    type: 'string',
+                  },
+                  shuffle: {
+                    description:
+                      "Whether to shuffle the favorite's tracks. If you omit this parameter, the speaker keeps its current shuffle setting.",
+                    type: 'boolean',
+                  },
+                },
+                required: ['device_id', 'favorite_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/speakers/play_favorite',
+        tags: [],
+        'x-action-attempt-type': 'PLAY_SPEAKER_FAVORITE',
+        'x-fern-sdk-group-name': ['speakers'],
+        'x-fern-sdk-method-name': 'play_favorite',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Play a Favorite on a Speaker',
         'x-undocumented': 'Unreleased.',
       },
     },

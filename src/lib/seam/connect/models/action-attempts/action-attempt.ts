@@ -9,7 +9,9 @@ import { deprecated_action_attempts } from './deprecated.js'
 import { encode_credential_action_attempt } from './encode-credential.js'
 import { lock_door_action_attempt } from './lock-door.js'
 import { pause_speaker_playback_action_attempt } from './pause-speaker-playback.js'
+import { play_speaker_audio_clip_action_attempt } from './play-speaker-audio-clip.js'
 import { play_speaker_chime_action_attempt } from './play-speaker-chime.js'
+import { play_speaker_favorite_action_attempt } from './play-speaker-favorite.js'
 import { push_thermostat_programs_action_attempt } from './push-thermostat-programs.js'
 import { reset_sandbox_workspace_action_attempt } from './reset-sandbox-workspace.js'
 import { resume_speaker_playback_action_attempt } from './resume-speaker-playback.js'
@@ -45,6 +47,8 @@ export const action_attempt = z.union([
   ...pause_speaker_playback_action_attempt.options,
   ...resume_speaker_playback_action_attempt.options,
   ...play_speaker_chime_action_attempt.options,
+  ...play_speaker_favorite_action_attempt.options,
+  ...play_speaker_audio_clip_action_attempt.options,
   ...deprecated_action_attempts,
 ]).describe(`
   ---

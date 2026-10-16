@@ -129,6 +129,16 @@ export const device_capability_flags = z
     can_play_speaker_chime: z
       .boolean()
       .describe('Indicates whether the speaker supports playing a chime.'),
+    can_play_speaker_favorite: z
+      .boolean()
+      .describe(
+        "Indicates whether the speaker supports listing and playing the favorites saved in the speaker manufacturer's app, such as playlists and radio stations.",
+      ),
+    can_play_speaker_audio_clip: z
+      .boolean()
+      .describe(
+        'Indicates whether the speaker supports playing an audio clip from a URL.',
+      ),
   })
   .partial()
 
