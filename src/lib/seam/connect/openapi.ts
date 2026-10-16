@@ -51581,6 +51581,7 @@ const openapi: OpenAPISpec = {
                           allow_climate_automation_rule_customization: false,
                           allow_instant_key_customization: false,
                           allow_notification_customization: false,
+                          allow_sound_automation_rule_customization: false,
                           exclude: false,
                         },
                         connect: { exclude: false },
@@ -51728,6 +51729,12 @@ const openapi: OpenAPISpec = {
                                 default: false,
                                 description:
                                   'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
+                                type: 'boolean',
+                              },
+                              allow_sound_automation_rule_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize the sound automation rules for their properties.',
                                 type: 'boolean',
                               },
                               exclude: {
@@ -66837,6 +66844,12 @@ const openapi: OpenAPISpec = {
                                     'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
                                   type: 'boolean',
                                 },
+                                allow_sound_automation_rule_customization: {
+                                  default: false,
+                                  description:
+                                    'Indicates whether the customer can customize the sound automation rules for their properties.',
+                                  type: 'boolean',
+                                },
                                 exclude: {
                                   default: false,
                                   description:
@@ -67311,6 +67324,12 @@ const openapi: OpenAPISpec = {
                                 default: false,
                                 description:
                                   'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
+                                type: 'boolean',
+                              },
+                              allow_sound_automation_rule_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize the sound automation rules for their properties.',
                                 type: 'boolean',
                               },
                               exclude: {
