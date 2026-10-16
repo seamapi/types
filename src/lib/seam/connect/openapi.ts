@@ -11869,6 +11869,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of setting the volume on a speaker.',
                 enum: ['SET_SPEAKER_VOLUME'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description:
@@ -11890,6 +11891,7 @@ const openapi: OpenAPISpec = {
               'action_type',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             description: 'Setting the speaker volume succeeded.',
@@ -11904,6 +11906,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of setting the volume on a speaker.',
                 enum: ['SET_SPEAKER_VOLUME'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description:
@@ -11925,6 +11928,7 @@ const openapi: OpenAPISpec = {
               'result',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             description: 'Setting the speaker volume failed.',
@@ -11939,6 +11943,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of setting the volume on a speaker.',
                 enum: ['SET_SPEAKER_VOLUME'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description: 'Error associated with the action.',
@@ -11968,6 +11973,7 @@ const openapi: OpenAPISpec = {
               'error',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             description: 'Muting or unmuting the speaker is pending.',
@@ -11982,6 +11988,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of muting or unmuting a speaker.',
                 enum: ['SET_SPEAKER_MUTE'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description:
@@ -12003,6 +12010,7 @@ const openapi: OpenAPISpec = {
               'action_type',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             description: 'Muting or unmuting the speaker succeeded.',
@@ -12017,6 +12025,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of muting or unmuting a speaker.',
                 enum: ['SET_SPEAKER_MUTE'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description:
@@ -12038,6 +12047,7 @@ const openapi: OpenAPISpec = {
               'result',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             description: 'Muting or unmuting the speaker failed.',
@@ -12052,6 +12062,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of muting or unmuting a speaker.',
                 enum: ['SET_SPEAKER_MUTE'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description: 'Error associated with the action.',
@@ -12081,6 +12092,7 @@ const openapi: OpenAPISpec = {
               'error',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             description: 'Pausing playback on the speaker is pending.',
@@ -12095,6 +12107,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of pausing playback on a speaker.',
                 enum: ['PAUSE_SPEAKER_PLAYBACK'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description:
@@ -12116,6 +12129,7 @@ const openapi: OpenAPISpec = {
               'action_type',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             description: 'Pausing playback on the speaker succeeded.',
@@ -12130,6 +12144,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of pausing playback on a speaker.',
                 enum: ['PAUSE_SPEAKER_PLAYBACK'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description:
@@ -12159,6 +12174,7 @@ const openapi: OpenAPISpec = {
               'result',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             description: 'Pausing playback on the speaker failed.',
@@ -12173,6 +12189,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of pausing playback on a speaker.',
                 enum: ['PAUSE_SPEAKER_PLAYBACK'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description: 'Error associated with the action.',
@@ -12202,6 +12219,7 @@ const openapi: OpenAPISpec = {
               'error',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             description: 'Resuming playback on the speaker is pending.',
@@ -12216,6 +12234,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of resuming playback on a speaker.',
                 enum: ['RESUME_SPEAKER_PLAYBACK'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description:
@@ -12237,6 +12256,7 @@ const openapi: OpenAPISpec = {
               'action_type',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             description: 'Resuming playback on the speaker succeeded.',
@@ -12251,6 +12271,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of resuming playback on a speaker.',
                 enum: ['RESUME_SPEAKER_PLAYBACK'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description:
@@ -12280,6 +12301,7 @@ const openapi: OpenAPISpec = {
               'result',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             description: 'Resuming playback on the speaker failed.',
@@ -12294,6 +12316,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of resuming playback on a speaker.',
                 enum: ['RESUME_SPEAKER_PLAYBACK'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description: 'Error associated with the action.',
@@ -12323,6 +12346,7 @@ const openapi: OpenAPISpec = {
               'error',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             description: 'Playing a chime on the speaker is pending.',
@@ -12337,6 +12361,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of playing a chime on a speaker.',
                 enum: ['PLAY_SPEAKER_CHIME'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description:
@@ -12358,6 +12383,7 @@ const openapi: OpenAPISpec = {
               'action_type',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             description: 'Playing a chime on the speaker succeeded.',
@@ -12372,6 +12398,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of playing a chime on a speaker.',
                 enum: ['PLAY_SPEAKER_CHIME'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description:
@@ -12393,6 +12420,7 @@ const openapi: OpenAPISpec = {
               'result',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             description: 'Playing a chime on the speaker failed.',
@@ -12407,6 +12435,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of playing a chime on a speaker.',
                 enum: ['PLAY_SPEAKER_CHIME'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description: 'Error associated with the action.',
@@ -12436,6 +12465,7 @@ const openapi: OpenAPISpec = {
               'error',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             description: 'Playing a favorite on the speaker is pending.',
@@ -12450,6 +12480,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of playing a favorite on a speaker.',
                 enum: ['PLAY_SPEAKER_FAVORITE'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description:
@@ -12471,6 +12502,7 @@ const openapi: OpenAPISpec = {
               'action_type',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             description: 'Playing a favorite on the speaker succeeded.',
@@ -12485,6 +12517,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of playing a favorite on a speaker.',
                 enum: ['PLAY_SPEAKER_FAVORITE'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description:
@@ -12514,6 +12547,7 @@ const openapi: OpenAPISpec = {
               'result',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             description: 'Playing a favorite on the speaker failed.',
@@ -12528,6 +12562,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of playing a favorite on a speaker.',
                 enum: ['PLAY_SPEAKER_FAVORITE'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description: 'Error associated with the action.',
@@ -12557,6 +12592,7 @@ const openapi: OpenAPISpec = {
               'error',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             description: 'Playing an audio clip on the speaker is pending.',
@@ -12571,6 +12607,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of playing an audio clip on a speaker.',
                 enum: ['PLAY_SPEAKER_AUDIO_CLIP'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description:
@@ -12592,6 +12629,7 @@ const openapi: OpenAPISpec = {
               'action_type',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             description: 'Playing an audio clip on the speaker succeeded.',
@@ -12606,6 +12644,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of playing an audio clip on a speaker.',
                 enum: ['PLAY_SPEAKER_AUDIO_CLIP'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description:
@@ -12627,6 +12666,7 @@ const openapi: OpenAPISpec = {
               'result',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             description: 'Playing an audio clip on the speaker failed.',
@@ -12641,6 +12681,7 @@ const openapi: OpenAPISpec = {
                   'Action attempt to track the status of playing an audio clip on a speaker.',
                 enum: ['PLAY_SPEAKER_AUDIO_CLIP'],
                 type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
               error: {
                 description: 'Error associated with the action.',
@@ -12670,6 +12711,7 @@ const openapi: OpenAPISpec = {
               'error',
             ],
             type: 'object',
+            'x-undocumented': 'Unreleased.',
           },
           {
             properties: {
@@ -15213,26 +15255,31 @@ const openapi: OpenAPISpec = {
           can_mute_speaker: {
             description: 'Indicates whether the speaker supports muting.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_pause_speaker_playback: {
             description:
               'Indicates whether the speaker supports pausing playback.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_play_speaker_audio_clip: {
             description:
               'Indicates whether the speaker supports playing an audio clip from a URL.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_play_speaker_chime: {
             description:
               'Indicates whether the speaker supports playing a chime.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_play_speaker_favorite: {
             description:
               "Indicates whether the speaker supports listing and playing the favorites saved in the speaker manufacturer's app, such as playlists and radio stations.",
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_program_offline_access_codes: {
             description:
@@ -15273,6 +15320,7 @@ const openapi: OpenAPISpec = {
             description:
               'Indicates whether the speaker supports resuming playback.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_run_thermostat_programs: {
             description:
@@ -15283,6 +15331,7 @@ const openapi: OpenAPISpec = {
             description:
               'Indicates whether the speaker supports setting its volume.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_simulate_connection: {
             description:
@@ -15331,6 +15380,7 @@ const openapi: OpenAPISpec = {
           can_unmute_speaker: {
             description: 'Indicates whether the speaker supports unmuting.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           capabilities_supported: {
             description:
@@ -17595,6 +17645,7 @@ const openapi: OpenAPISpec = {
                           },
                         },
                         type: 'object',
+                        'x-undocumented': 'Unreleased.',
                       },
                       tado_metadata: {
                         description: 'Metadata for a tado° device.',
@@ -18266,6 +18317,7 @@ const openapi: OpenAPISpec = {
                         ],
                         type: 'object',
                         'x-property-group-key': 'speakers',
+                        'x-undocumented': 'Unreleased.',
                       },
                       supported_code_lengths: {
                         description: 'Supported code lengths for access codes.',
@@ -20013,26 +20065,31 @@ const openapi: OpenAPISpec = {
           can_mute_speaker: {
             description: 'Indicates whether the speaker supports muting.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_pause_speaker_playback: {
             description:
               'Indicates whether the speaker supports pausing playback.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_play_speaker_audio_clip: {
             description:
               'Indicates whether the speaker supports playing an audio clip from a URL.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_play_speaker_chime: {
             description:
               'Indicates whether the speaker supports playing a chime.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_play_speaker_favorite: {
             description:
               "Indicates whether the speaker supports listing and playing the favorites saved in the speaker manufacturer's app, such as playlists and radio stations.",
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_program_offline_access_codes: {
             description:
@@ -20073,6 +20130,7 @@ const openapi: OpenAPISpec = {
             description:
               'Indicates whether the speaker supports resuming playback.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_run_thermostat_programs: {
             description:
@@ -20083,6 +20141,7 @@ const openapi: OpenAPISpec = {
             description:
               'Indicates whether the speaker supports setting its volume.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_simulate_connection: {
             description:
@@ -20131,6 +20190,7 @@ const openapi: OpenAPISpec = {
           can_unmute_speaker: {
             description: 'Indicates whether the speaker supports unmuting.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           device_provider_name: {
             description: 'Name of the device provider.',
@@ -39974,26 +40034,31 @@ const openapi: OpenAPISpec = {
           can_mute_speaker: {
             description: 'Indicates whether the speaker supports muting.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_pause_speaker_playback: {
             description:
               'Indicates whether the speaker supports pausing playback.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_play_speaker_audio_clip: {
             description:
               'Indicates whether the speaker supports playing an audio clip from a URL.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_play_speaker_chime: {
             description:
               'Indicates whether the speaker supports playing a chime.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_play_speaker_favorite: {
             description:
               "Indicates whether the speaker supports listing and playing the favorites saved in the speaker manufacturer's app, such as playlists and radio stations.",
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_program_offline_access_codes: {
             description:
@@ -40034,6 +40099,7 @@ const openapi: OpenAPISpec = {
             description:
               'Indicates whether the speaker supports resuming playback.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_run_thermostat_programs: {
             description:
@@ -40044,6 +40110,7 @@ const openapi: OpenAPISpec = {
             description:
               'Indicates whether the speaker supports setting its volume.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_simulate_connection: {
             description:
@@ -40092,6 +40159,7 @@ const openapi: OpenAPISpec = {
           can_unmute_speaker: {
             description: 'Indicates whether the speaker supports unmuting.',
             type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           capabilities_supported: {
             description:
@@ -63726,7 +63794,37 @@ const openapi: OpenAPISpec = {
                                     },
                                     speakers: {
                                       properties: {
+                                        play_audio_clip: {
+                                          properties: {
+                                            audio_url: {
+                                              description:
+                                                'Public HTTPS URL of the MP3 or WAV file to play. The speaker downloads the file itself.',
+                                              format: 'uri',
+                                              maxLength: 2048,
+                                              pattern: '^https:\\/\\/',
+                                              type: 'string',
+                                            },
+                                            volume: {
+                                              maximum: 100,
+                                              minimum: 0,
+                                              type: 'integer',
+                                            },
+                                          },
+                                          required: ['audio_url'],
+                                          type: 'object',
+                                        },
                                         play_chime: { type: 'boolean' },
+                                        play_favorite: {
+                                          properties: {
+                                            favorite_id: {
+                                              minLength: 1,
+                                              type: 'string',
+                                            },
+                                            shuffle: { type: 'boolean' },
+                                          },
+                                          required: ['favorite_id'],
+                                          type: 'object',
+                                        },
                                         set_volume_to: {
                                           maximum: 100,
                                           minimum: 0,
@@ -64232,7 +64330,37 @@ const openapi: OpenAPISpec = {
                                   },
                                   speakers: {
                                     properties: {
+                                      play_audio_clip: {
+                                        properties: {
+                                          audio_url: {
+                                            description:
+                                              'Public HTTPS URL of the MP3 or WAV file to play. The speaker downloads the file itself.',
+                                            format: 'uri',
+                                            maxLength: 2048,
+                                            pattern: '^https:\\/\\/',
+                                            type: 'string',
+                                          },
+                                          volume: {
+                                            maximum: 100,
+                                            minimum: 0,
+                                            type: 'integer',
+                                          },
+                                        },
+                                        required: ['audio_url'],
+                                        type: 'object',
+                                      },
                                       play_chime: { type: 'boolean' },
+                                      play_favorite: {
+                                        properties: {
+                                          favorite_id: {
+                                            minLength: 1,
+                                            type: 'string',
+                                          },
+                                          shuffle: { type: 'boolean' },
+                                        },
+                                        required: ['favorite_id'],
+                                        type: 'object',
+                                      },
                                       set_volume_to: {
                                         maximum: 100,
                                         minimum: 0,
@@ -65671,7 +65799,37 @@ const openapi: OpenAPISpec = {
                                         },
                                         speakers: {
                                           properties: {
+                                            play_audio_clip: {
+                                              properties: {
+                                                audio_url: {
+                                                  description:
+                                                    'Public HTTPS URL of the MP3 or WAV file to play. The speaker downloads the file itself.',
+                                                  format: 'uri',
+                                                  maxLength: 2048,
+                                                  pattern: '^https:\\/\\/',
+                                                  type: 'string',
+                                                },
+                                                volume: {
+                                                  maximum: 100,
+                                                  minimum: 0,
+                                                  type: 'integer',
+                                                },
+                                              },
+                                              required: ['audio_url'],
+                                              type: 'object',
+                                            },
                                             play_chime: { type: 'boolean' },
+                                            play_favorite: {
+                                              properties: {
+                                                favorite_id: {
+                                                  minLength: 1,
+                                                  type: 'string',
+                                                },
+                                                shuffle: { type: 'boolean' },
+                                              },
+                                              required: ['favorite_id'],
+                                              type: 'object',
+                                            },
                                             set_volume_to: {
                                               maximum: 100,
                                               minimum: 0,
@@ -66097,7 +66255,37 @@ const openapi: OpenAPISpec = {
                                   },
                                   speakers: {
                                     properties: {
+                                      play_audio_clip: {
+                                        properties: {
+                                          audio_url: {
+                                            description:
+                                              'Public HTTPS URL of the MP3 or WAV file to play. The speaker downloads the file itself.',
+                                            format: 'uri',
+                                            maxLength: 2048,
+                                            pattern: '^https:\\/\\/',
+                                            type: 'string',
+                                          },
+                                          volume: {
+                                            maximum: 100,
+                                            minimum: 0,
+                                            type: 'integer',
+                                          },
+                                        },
+                                        required: ['audio_url'],
+                                        type: 'object',
+                                      },
                                       play_chime: { type: 'boolean' },
+                                      play_favorite: {
+                                        properties: {
+                                          favorite_id: {
+                                            minLength: 1,
+                                            type: 'string',
+                                          },
+                                          shuffle: { type: 'boolean' },
+                                        },
+                                        required: ['favorite_id'],
+                                        type: 'object',
+                                      },
                                       set_volume_to: {
                                         maximum: 100,
                                         minimum: 0,

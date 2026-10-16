@@ -111,34 +111,54 @@ export const device_capability_flags = z
       .describe(
         'Indicates whether the camera supports streaming live video through a camera live view session.',
       ),
-    can_set_speaker_volume: z
-      .boolean()
-      .describe('Indicates whether the speaker supports setting its volume.'),
-    can_mute_speaker: z
-      .boolean()
-      .describe('Indicates whether the speaker supports muting.'),
-    can_unmute_speaker: z
-      .boolean()
-      .describe('Indicates whether the speaker supports unmuting.'),
-    can_pause_speaker_playback: z
-      .boolean()
-      .describe('Indicates whether the speaker supports pausing playback.'),
-    can_resume_speaker_playback: z
-      .boolean()
-      .describe('Indicates whether the speaker supports resuming playback.'),
-    can_play_speaker_chime: z
-      .boolean()
-      .describe('Indicates whether the speaker supports playing a chime.'),
-    can_play_speaker_favorite: z
-      .boolean()
-      .describe(
-        "Indicates whether the speaker supports listing and playing the favorites saved in the speaker manufacturer's app, such as playlists and radio stations.",
-      ),
-    can_play_speaker_audio_clip: z
-      .boolean()
-      .describe(
-        'Indicates whether the speaker supports playing an audio clip from a URL.',
-      ),
+    can_set_speaker_volume: z.boolean().describe(`
+      ---
+      undocumented: Unreleased.
+      ---
+      Indicates whether the speaker supports setting its volume.
+      `),
+    can_mute_speaker: z.boolean().describe(`
+      ---
+      undocumented: Unreleased.
+      ---
+      Indicates whether the speaker supports muting.
+      `),
+    can_unmute_speaker: z.boolean().describe(`
+      ---
+      undocumented: Unreleased.
+      ---
+      Indicates whether the speaker supports unmuting.
+      `),
+    can_pause_speaker_playback: z.boolean().describe(`
+      ---
+      undocumented: Unreleased.
+      ---
+      Indicates whether the speaker supports pausing playback.
+      `),
+    can_resume_speaker_playback: z.boolean().describe(`
+      ---
+      undocumented: Unreleased.
+      ---
+      Indicates whether the speaker supports resuming playback.
+      `),
+    can_play_speaker_chime: z.boolean().describe(`
+      ---
+      undocumented: Unreleased.
+      ---
+      Indicates whether the speaker supports playing a chime.
+      `),
+    can_play_speaker_favorite: z.boolean().describe(`
+      ---
+      undocumented: Unreleased.
+      ---
+      Indicates whether the speaker supports listing and playing the favorites saved in the speaker manufacturer's app, such as playlists and radio stations.
+      `),
+    can_play_speaker_audio_clip: z.boolean().describe(`
+      ---
+      undocumented: Unreleased.
+      ---
+      Indicates whether the speaker supports playing an audio clip from a URL.
+      `),
   })
   .partial()
 

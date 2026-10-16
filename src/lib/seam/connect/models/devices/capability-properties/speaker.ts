@@ -72,6 +72,7 @@ export const speaker_capability_properties = z.object({
     .optional().describe(`
           ---
           property_group_key: speakers
+          undocumented: Unreleased.
           ---
           Audio state and capabilities of the speaker.
           `),
