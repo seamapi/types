@@ -54801,6 +54801,8 @@ export type Routes = {
           allow_access_automation_rule_customization?: boolean
           /** Indicates whether the customer can customize the climate automation rules for their properties. */
           allow_climate_automation_rule_customization?: boolean
+          /** Indicates whether the customer can customize the sound automation rules for their properties. */
+          allow_sound_automation_rule_customization?: boolean
           /** Indicates whether the customer can customize the Instant Key profile for their properties. */
           allow_instant_key_customization?: boolean
           /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
@@ -114953,6 +114955,8 @@ export type Routes = {
             allow_access_automation_rule_customization?: boolean
             /** Indicates whether the customer can customize the climate automation rules for their properties. */
             allow_climate_automation_rule_customization?: boolean
+            /** Indicates whether the customer can customize the sound automation rules for their properties. */
+            allow_sound_automation_rule_customization?: boolean
             /** Indicates whether the customer can customize the Instant Key profile for their properties. */
             allow_instant_key_customization?: boolean
             /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
@@ -115168,6 +115172,8 @@ export type Routes = {
                 allow_access_automation_rule_customization?: boolean
                 /** Indicates whether the customer can customize the climate automation rules for their properties. */
                 allow_climate_automation_rule_customization?: boolean
+                /** Indicates whether the customer can customize the sound automation rules for their properties. */
+                allow_sound_automation_rule_customization?: boolean
                 /** Indicates whether the customer can customize the Instant Key profile for their properties. */
                 allow_instant_key_customization?: boolean
                 /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
