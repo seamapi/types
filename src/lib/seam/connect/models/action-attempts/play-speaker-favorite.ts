@@ -6,11 +6,12 @@ import {
   common_succeeded_action_attempt,
 } from './common.js'
 
-const action_type = z
-  .literal('PLAY_SPEAKER_FAVORITE')
-  .describe(
-    'Action attempt to track the status of playing a favorite on a speaker.',
-  )
+const action_type = z.literal('PLAY_SPEAKER_FAVORITE').describe(`
+    ---
+    undocumented: Unreleased.
+    ---
+    Action attempt to track the status of playing a favorite on a speaker.
+    `)
 
 const error = z
   .object({
@@ -36,19 +37,28 @@ const result = z
 export const play_speaker_favorite_action_attempt = z.discriminatedUnion(
   'status',
   [
-    common_pending_action_attempt
-      .extend({
-        action_type,
-      })
-      .describe('Playing a favorite on the speaker is pending.'),
-    common_succeeded_action_attempt
-      .extend({
-        action_type,
-        result,
-      })
-      .describe('Playing a favorite on the speaker succeeded.'),
-    common_failed_action_attempt
-      .extend({ action_type, error })
-      .describe('Playing a favorite on the speaker failed.'),
+    common_pending_action_attempt.extend({
+      action_type,
+    }).describe(`
+    ---
+    undocumented: Unreleased.
+    ---
+    Playing a favorite on the speaker is pending.
+    `),
+    common_succeeded_action_attempt.extend({
+      action_type,
+      result,
+    }).describe(`
+    ---
+    undocumented: Unreleased.
+    ---
+    Playing a favorite on the speaker succeeded.
+    `),
+    common_failed_action_attempt.extend({ action_type, error }).describe(`
+    ---
+    undocumented: Unreleased.
+    ---
+    Playing a favorite on the speaker failed.
+    `),
   ],
 )

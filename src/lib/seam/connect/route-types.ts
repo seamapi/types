@@ -111335,6 +111335,19 @@ export type Routes = {
                                 set_volume_to?: number | undefined
                                 unmute?: boolean | undefined
                                 play_chime?: boolean | undefined
+                                play_favorite?:
+                                  | {
+                                      favorite_id: string
+                                      shuffle?: boolean | undefined
+                                    }
+                                  | undefined
+                                play_audio_clip?:
+                                  | {
+                                      /** Public HTTPS URL of the MP3 or WAV file to play. The speaker downloads the file itself. */
+                                      audio_url: string
+                                      volume?: number | undefined
+                                    }
+                                  | undefined
                               }
                             | undefined
                           noise_sensors?:
@@ -111546,6 +111559,19 @@ export type Routes = {
                                     set_volume_to?: number | undefined
                                     unmute?: boolean | undefined
                                     play_chime?: boolean | undefined
+                                    play_favorite?:
+                                      | {
+                                          favorite_id: string
+                                          shuffle?: boolean | undefined
+                                        }
+                                      | undefined
+                                    play_audio_clip?:
+                                      | {
+                                          /** Public HTTPS URL of the MP3 or WAV file to play. The speaker downloads the file itself. */
+                                          audio_url: string
+                                          volume?: number | undefined
+                                        }
+                                      | undefined
                                   }
                                 | undefined
                               noise_sensors?:
@@ -112077,6 +112103,19 @@ export type Routes = {
                                   set_volume_to?: number | undefined
                                   unmute?: boolean | undefined
                                   play_chime?: boolean | undefined
+                                  play_favorite?:
+                                    | {
+                                        favorite_id: string
+                                        shuffle?: boolean | undefined
+                                      }
+                                    | undefined
+                                  play_audio_clip?:
+                                    | {
+                                        /** Public HTTPS URL of the MP3 or WAV file to play. The speaker downloads the file itself. */
+                                        audio_url: string
+                                        volume?: number | undefined
+                                      }
+                                    | undefined
                                 }
                               | undefined
                             noise_sensors?:
@@ -112259,6 +112298,19 @@ export type Routes = {
                                     set_volume_to?: number | undefined
                                     unmute?: boolean | undefined
                                     play_chime?: boolean | undefined
+                                    play_favorite?:
+                                      | {
+                                          favorite_id: string
+                                          shuffle?: boolean | undefined
+                                        }
+                                      | undefined
+                                    play_audio_clip?:
+                                      | {
+                                          /** Public HTTPS URL of the MP3 or WAV file to play. The speaker downloads the file itself. */
+                                          audio_url: string
+                                          volume?: number | undefined
+                                        }
+                                      | undefined
                                   }
                                 | undefined
                               noise_sensors?:

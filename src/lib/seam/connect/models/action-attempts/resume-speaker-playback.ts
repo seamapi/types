@@ -6,11 +6,12 @@ import {
   common_succeeded_action_attempt,
 } from './common.js'
 
-const action_type = z
-  .literal('RESUME_SPEAKER_PLAYBACK')
-  .describe(
-    'Action attempt to track the status of resuming playback on a speaker.',
-  )
+const action_type = z.literal('RESUME_SPEAKER_PLAYBACK').describe(`
+    ---
+    undocumented: Unreleased.
+    ---
+    Action attempt to track the status of resuming playback on a speaker.
+    `)
 
 const error = z
   .object({
@@ -36,19 +37,28 @@ const result = z
 export const resume_speaker_playback_action_attempt = z.discriminatedUnion(
   'status',
   [
-    common_pending_action_attempt
-      .extend({
-        action_type,
-      })
-      .describe('Resuming playback on the speaker is pending.'),
-    common_succeeded_action_attempt
-      .extend({
-        action_type,
-        result,
-      })
-      .describe('Resuming playback on the speaker succeeded.'),
-    common_failed_action_attempt
-      .extend({ action_type, error })
-      .describe('Resuming playback on the speaker failed.'),
+    common_pending_action_attempt.extend({
+      action_type,
+    }).describe(`
+    ---
+    undocumented: Unreleased.
+    ---
+    Resuming playback on the speaker is pending.
+    `),
+    common_succeeded_action_attempt.extend({
+      action_type,
+      result,
+    }).describe(`
+    ---
+    undocumented: Unreleased.
+    ---
+    Resuming playback on the speaker succeeded.
+    `),
+    common_failed_action_attempt.extend({ action_type, error }).describe(`
+    ---
+    undocumented: Unreleased.
+    ---
+    Resuming playback on the speaker failed.
+    `),
   ],
 )

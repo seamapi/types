@@ -1357,8 +1357,12 @@ export const device_metadata = z
           ),
       })
       .partial()
-      .optional()
-      .describe('Metadata for a Sonos speaker.'),
+      .optional().describe(`
+      ---
+      undocumented: Unreleased.
+      ---
+      Metadata for a Sonos speaker.
+      `),
   })
   .partial().describe(`
           ---
