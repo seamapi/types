@@ -14977,13 +14977,12 @@ const openapi: OpenAPISpec = {
             type: 'boolean',
           },
           can_mute_speaker: {
-            description:
-              'Indicates whether the speaker supports muting and unmuting.',
+            description: 'Indicates whether the speaker supports muting.',
             type: 'boolean',
           },
           can_pause_speaker_playback: {
             description:
-              'Indicates whether the speaker supports pausing and resuming playback.',
+              'Indicates whether the speaker supports pausing playback.',
             type: 'boolean',
           },
           can_play_speaker_chime: {
@@ -15024,6 +15023,11 @@ const openapi: OpenAPISpec = {
           can_remotely_unlock: {
             description:
               'Indicates whether the device supports remote unlocking.',
+            type: 'boolean',
+          },
+          can_resume_speaker_playback: {
+            description:
+              'Indicates whether the speaker supports resuming playback.',
             type: 'boolean',
           },
           can_run_thermostat_programs: {
@@ -15078,6 +15082,10 @@ const openapi: OpenAPISpec = {
           can_unlock_with_code: {
             description:
               'Indicates whether the lock supports unlocking with an access code.',
+            type: 'boolean',
+          },
+          can_unmute_speaker: {
+            description: 'Indicates whether the speaker supports unmuting.',
             type: 'boolean',
           },
           capabilities_supported: {
@@ -19759,13 +19767,12 @@ const openapi: OpenAPISpec = {
             type: 'boolean',
           },
           can_mute_speaker: {
-            description:
-              'Indicates whether the speaker supports muting and unmuting.',
+            description: 'Indicates whether the speaker supports muting.',
             type: 'boolean',
           },
           can_pause_speaker_playback: {
             description:
-              'Indicates whether the speaker supports pausing and resuming playback.',
+              'Indicates whether the speaker supports pausing playback.',
             type: 'boolean',
           },
           can_play_speaker_chime: {
@@ -19806,6 +19813,11 @@ const openapi: OpenAPISpec = {
           can_remotely_unlock: {
             description:
               'Indicates whether the device supports remote unlocking.',
+            type: 'boolean',
+          },
+          can_resume_speaker_playback: {
+            description:
+              'Indicates whether the speaker supports resuming playback.',
             type: 'boolean',
           },
           can_run_thermostat_programs: {
@@ -19860,6 +19872,10 @@ const openapi: OpenAPISpec = {
           can_unlock_with_code: {
             description:
               'Indicates whether the lock supports unlocking with an access code.',
+            type: 'boolean',
+          },
+          can_unmute_speaker: {
+            description: 'Indicates whether the speaker supports unmuting.',
             type: 'boolean',
           },
           device_provider_name: {
@@ -39702,13 +39718,12 @@ const openapi: OpenAPISpec = {
             type: 'boolean',
           },
           can_mute_speaker: {
-            description:
-              'Indicates whether the speaker supports muting and unmuting.',
+            description: 'Indicates whether the speaker supports muting.',
             type: 'boolean',
           },
           can_pause_speaker_playback: {
             description:
-              'Indicates whether the speaker supports pausing and resuming playback.',
+              'Indicates whether the speaker supports pausing playback.',
             type: 'boolean',
           },
           can_play_speaker_chime: {
@@ -39749,6 +39764,11 @@ const openapi: OpenAPISpec = {
           can_remotely_unlock: {
             description:
               'Indicates whether the device supports remote unlocking.',
+            type: 'boolean',
+          },
+          can_resume_speaker_playback: {
+            description:
+              'Indicates whether the speaker supports resuming playback.',
             type: 'boolean',
           },
           can_run_thermostat_programs: {
@@ -39803,6 +39823,10 @@ const openapi: OpenAPISpec = {
           can_unlock_with_code: {
             description:
               'Indicates whether the lock supports unlocking with an access code.',
+            type: 'boolean',
+          },
+          can_unmute_speaker: {
+            description: 'Indicates whether the speaker supports unmuting.',
             type: 'boolean',
           },
           capabilities_supported: {
@@ -54769,7 +54793,9 @@ const openapi: OpenAPISpec = {
                   'can_stream_live_video',
                   'can_set_speaker_volume',
                   'can_mute_speaker',
+                  'can_unmute_speaker',
                   'can_pause_speaker_playback',
+                  'can_resume_speaker_playback',
                   'can_play_speaker_chime',
                 ],
                 type: 'string',
@@ -54808,7 +54834,9 @@ const openapi: OpenAPISpec = {
                   'can_stream_live_video',
                   'can_set_speaker_volume',
                   'can_mute_speaker',
+                  'can_unmute_speaker',
                   'can_pause_speaker_playback',
+                  'can_resume_speaker_playback',
                   'can_play_speaker_chime',
                 ],
                 type: 'string',
@@ -57072,7 +57100,9 @@ const openapi: OpenAPISpec = {
                   'can_stream_live_video',
                   'can_set_speaker_volume',
                   'can_mute_speaker',
+                  'can_unmute_speaker',
                   'can_pause_speaker_playback',
+                  'can_resume_speaker_playback',
                   'can_play_speaker_chime',
                 ],
                 type: 'string',
@@ -57111,7 +57141,9 @@ const openapi: OpenAPISpec = {
                   'can_stream_live_video',
                   'can_set_speaker_volume',
                   'can_mute_speaker',
+                  'can_unmute_speaker',
                   'can_pause_speaker_playback',
+                  'can_resume_speaker_playback',
                   'can_play_speaker_chime',
                 ],
                 type: 'string',
@@ -71604,7 +71636,7 @@ const openapi: OpenAPISpec = {
     '/speakers/resume': {
       post: {
         description:
-          'Resumes playback on a specified speaker. Playback also resumes on the speakers grouped with it, and the action attempt result lists every affected speaker. To check whether a speaker supports resuming playback, use `device.can_pause_speaker_playback`.',
+          'Resumes playback on a specified speaker. Playback also resumes on the speakers grouped with it, and the action attempt result lists every affected speaker. To check whether a speaker supports resuming playback, use `device.can_resume_speaker_playback`.',
         operationId: 'speakersResumePost',
         requestBody: {
           content: {
@@ -71732,7 +71764,7 @@ const openapi: OpenAPISpec = {
     '/speakers/unmute': {
       post: {
         description:
-          'Unmutes a specified speaker. To check whether a speaker supports unmuting, use `device.can_mute_speaker`.',
+          'Unmutes a specified speaker. To check whether a speaker supports unmuting, use `device.can_unmute_speaker`.',
         operationId: 'speakersUnmutePost',
         requestBody: {
           content: {

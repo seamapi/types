@@ -116,12 +116,16 @@ export const device_capability_flags = z
       .describe('Indicates whether the speaker supports setting its volume.'),
     can_mute_speaker: z
       .boolean()
-      .describe('Indicates whether the speaker supports muting and unmuting.'),
+      .describe('Indicates whether the speaker supports muting.'),
+    can_unmute_speaker: z
+      .boolean()
+      .describe('Indicates whether the speaker supports unmuting.'),
     can_pause_speaker_playback: z
       .boolean()
-      .describe(
-        'Indicates whether the speaker supports pausing and resuming playback.',
-      ),
+      .describe('Indicates whether the speaker supports pausing playback.'),
+    can_resume_speaker_playback: z
+      .boolean()
+      .describe('Indicates whether the speaker supports resuming playback.'),
     can_play_speaker_chime: z
       .boolean()
       .describe('Indicates whether the speaker supports playing a chime.'),
