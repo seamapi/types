@@ -58,7 +58,9 @@ export const speaker_capability_properties = z.object({
         ),
       supports_chime: z
         .boolean()
-        .describe('Indicates whether the speaker can play a chime.'),
+        .describe(
+          'Indicates whether the speaker can play a chime or an audio clip.',
+        ),
       volume_reported_at: z
         .string()
         .datetime()
