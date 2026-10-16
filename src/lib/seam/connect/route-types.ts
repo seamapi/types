@@ -55776,82 +55776,6 @@ export type Routes = {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      features?: {
-        /** Configuration for the connect accounts feature. */
-        connect?: {
-          /** Whether to exclude this feature from the portal. */
-          exclude?: boolean
-          /** List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account. */
-          accepted_providers?: string[] | undefined
-          /** List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account. */
-          excluded_providers?: string[] | undefined
-        }
-        /** Configuration for the manage feature. */
-        manage?: {
-          /** Whether to exclude this feature from the portal. */
-          exclude?: boolean
-          /** Indicates whether the customer can manage reservations for their properties. */
-          exclude_reservation_management?: boolean
-          /** Indicates whether to exclude technical details from reservation views. */
-          exclude_reservation_technical_details?: boolean
-          /** Indicates whether the customer can manage staff for their properties. */
-          exclude_staff_management?: boolean
-          /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
-          exclude_device_management?: boolean
-          /** Configuration for event type filtering in the manage feature. */
-          events?:
-            | {
-                /** List of event types to show in the events filter. When set, only these event types will be available. Leave empty to show all events. */
-                allowed_events?: string[] | undefined
-                /** List of event types that are pre-selected in the events filter when the user first loads the events tab. */
-                default_events?: string[] | undefined
-              }
-            | undefined
-          /**
-                  Custom copy for the confirmation modal shown before unmanaged devices are added to a space and begin being managed (and billed). Only takes effect when the MANAGE_DEVICES_CONFIRMATION_MODAL feature flag is enabled for the workspace. Any omitted string falls back to a localized default.
-                 */
-          device_management_confirmation?:
-            | {
-                /** Custom title for the confirmation modal. */
-                title?: string | undefined
-                /** Custom body text for the confirmation modal. May include the {count} token, which is replaced with the number of devices that will begin being managed. */
-                body?: string | undefined
-                /** Custom label for the confirm button. */
-                confirm_button_label?: string | undefined
-                /** Custom label for the cancel button. */
-                cancel_button_label?: string | undefined
-              }
-            | undefined
-        }
-        /** Configuration for the manage devices feature.
-        ---
-        deprecated: Use `manage` instead.
-        --- */
-        manage_devices?: {
-          /** Whether to exclude this feature from the portal. */
-          exclude?: boolean
-        }
-        /** Configuration for the organize feature. */
-        organize?: {
-          /** Whether to exclude this feature from the portal. */
-          exclude?: boolean
-        }
-        /** Configuration for the configure feature. */
-        configure?: {
-          /** Whether to exclude this feature from the portal. */
-          exclude?: boolean
-          /** Indicates whether the customer can customize the access automation rules for their properties. */
-          allow_access_automation_rule_customization?: boolean
-          /** Indicates whether the customer can customize the climate automation rules for their properties. */
-          allow_climate_automation_rule_customization?: boolean
-          /** Indicates whether the customer can customize the sound automation rules for their properties. */
-          allow_sound_automation_rule_customization?: boolean
-          /** Indicates whether the customer can customize the Instant Key profile for their properties. */
-          allow_instant_key_customization?: boolean
-          /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
-          allow_notification_customization?: boolean
-        }
-      }
       /** Whether the portal is embedded in another application. */
       is_embedded?: boolean
       /** Whether the portal is read-only. When true, the customer can browse the portal but cannot perform any mutating action; write requests made with the portal's client session are rejected. */
@@ -55963,6 +55887,104 @@ export type Routes = {
         | undefined
       /** Whether the portal is in developer mode. Only available for Seam employees. */
       _dev?: boolean
+      /** Features to include in the portal. Settings you omit use the portal's customization profile, then the Seam default. Settings you pass take precedence over the customization profile's, so changing the profile doesn't change them. */
+      features?:
+        | {
+            /** Configuration for the connect accounts feature. */
+            connect?:
+              | {
+                  /** Whether to exclude this feature from the portal. */
+                  exclude?: boolean | undefined
+                  /** List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account. */
+                  accepted_providers?: (string[] | undefined) | undefined
+                  /** List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account. */
+                  excluded_providers?: (string[] | undefined) | undefined
+                }
+              | undefined
+            /** Configuration for the manage feature. */
+            manage?:
+              | {
+                  /** Whether to exclude this feature from the portal. */
+                  exclude?: boolean | undefined
+                  /** Indicates whether the customer can manage reservations for their properties. */
+                  exclude_reservation_management?: boolean | undefined
+                  /** Indicates whether to exclude technical details from reservation views. */
+                  exclude_reservation_technical_details?: boolean | undefined
+                  /** Indicates whether the customer can manage staff for their properties. */
+                  exclude_staff_management?: boolean | undefined
+                  /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
+                  exclude_device_management?: boolean | undefined
+                  /** Configuration for event type filtering in the manage feature. */
+                  events?:
+                    | (
+                        | {
+                            /** List of event types to show in the events filter. When set, only these event types will be available. Leave empty to show all events. */
+                            allowed_events?: string[] | undefined
+                            /** List of event types that are pre-selected in the events filter when the user first loads the events tab. */
+                            default_events?: string[] | undefined
+                          }
+                        | undefined
+                      )
+                    | undefined
+                  /**
+                  Custom copy for the confirmation modal shown before unmanaged devices are added to a space and begin being managed (and billed). Only takes effect when the MANAGE_DEVICES_CONFIRMATION_MODAL feature flag is enabled for the workspace. Any omitted string falls back to a localized default.
+                 */
+                  device_management_confirmation?:
+                    | (
+                        | {
+                            /** Custom title for the confirmation modal. */
+                            title?: string | undefined
+                            /** Custom body text for the confirmation modal. May include the {count} token, which is replaced with the number of devices that will begin being managed. */
+                            body?: string | undefined
+                            /** Custom label for the confirm button. */
+                            confirm_button_label?: string | undefined
+                            /** Custom label for the cancel button. */
+                            cancel_button_label?: string | undefined
+                          }
+                        | undefined
+                      )
+                    | undefined
+                }
+              | undefined
+            /** Configuration for the manage devices feature.
+        ---
+        deprecated: Use `manage` instead.
+        --- */
+            manage_devices?:
+              | {
+                  /** Whether to exclude this feature from the portal. */
+                  exclude?: boolean | undefined
+                }
+              | undefined
+            /** Configuration for the organize feature. */
+            organize?:
+              | {
+                  /** Whether to exclude this feature from the portal. */
+                  exclude?: boolean | undefined
+                }
+              | undefined
+            /** Configuration for the configure feature. */
+            configure?:
+              | {
+                  /** Whether to exclude this feature from the portal. */
+                  exclude?: boolean | undefined
+                  /** Indicates whether the customer can customize the access automation rules for their properties. */
+                  allow_access_automation_rule_customization?:
+                    boolean | undefined
+                  /** Indicates whether the customer can customize the climate automation rules for their properties. */
+                  allow_climate_automation_rule_customization?:
+                    boolean | undefined
+                  /** Indicates whether the customer can customize the sound automation rules for their properties. */
+                  allow_sound_automation_rule_customization?:
+                    boolean | undefined
+                  /** Indicates whether the customer can customize the Instant Key profile for their properties. */
+                  allow_instant_key_customization?: boolean | undefined
+                  /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
+                  allow_notification_customization?: boolean | undefined
+                }
+              | undefined
+          }
+        | undefined
     } & {
       customer_data?:
         | {
@@ -107552,6 +107574,104 @@ export type Routes = {
               }
             }
           | undefined
+        /** Features for customer portals that use this profile. A setting passed when creating the portal takes precedence over the profile's. Changes apply to existing portals the next time they load. */
+        customer_portal_features?:
+          | {
+              /** Configuration for the connect accounts feature. */
+              connect?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                    /** List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account. */
+                    accepted_providers?: (string[] | undefined) | undefined
+                    /** List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account. */
+                    excluded_providers?: (string[] | undefined) | undefined
+                  }
+                | undefined
+              /** Configuration for the manage feature. */
+              manage?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                    /** Indicates whether the customer can manage reservations for their properties. */
+                    exclude_reservation_management?: boolean | undefined
+                    /** Indicates whether to exclude technical details from reservation views. */
+                    exclude_reservation_technical_details?: boolean | undefined
+                    /** Indicates whether the customer can manage staff for their properties. */
+                    exclude_staff_management?: boolean | undefined
+                    /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
+                    exclude_device_management?: boolean | undefined
+                    /** Configuration for event type filtering in the manage feature. */
+                    events?:
+                      | (
+                          | {
+                              /** List of event types to show in the events filter. When set, only these event types will be available. Leave empty to show all events. */
+                              allowed_events?: string[] | undefined
+                              /** List of event types that are pre-selected in the events filter when the user first loads the events tab. */
+                              default_events?: string[] | undefined
+                            }
+                          | undefined
+                        )
+                      | undefined
+                    /**
+                      Custom copy for the confirmation modal shown before unmanaged devices are added to a space and begin being managed (and billed). Only takes effect when the MANAGE_DEVICES_CONFIRMATION_MODAL feature flag is enabled for the workspace. Any omitted string falls back to a localized default.
+                     */
+                    device_management_confirmation?:
+                      | (
+                          | {
+                              /** Custom title for the confirmation modal. */
+                              title?: string | undefined
+                              /** Custom body text for the confirmation modal. May include the {count} token, which is replaced with the number of devices that will begin being managed. */
+                              body?: string | undefined
+                              /** Custom label for the confirm button. */
+                              confirm_button_label?: string | undefined
+                              /** Custom label for the cancel button. */
+                              cancel_button_label?: string | undefined
+                            }
+                          | undefined
+                        )
+                      | undefined
+                  }
+                | undefined
+              /** Configuration for the manage devices feature.
+            ---
+            deprecated: Use `manage` instead.
+            --- */
+              manage_devices?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                  }
+                | undefined
+              /** Configuration for the organize feature. */
+              organize?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                  }
+                | undefined
+              /** Configuration for the configure feature. */
+              configure?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                    /** Indicates whether the customer can customize the access automation rules for their properties. */
+                    allow_access_automation_rule_customization?:
+                      boolean | undefined
+                    /** Indicates whether the customer can customize the climate automation rules for their properties. */
+                    allow_climate_automation_rule_customization?:
+                      boolean | undefined
+                    /** Indicates whether the customer can customize the sound automation rules for their properties. */
+                    allow_sound_automation_rule_customization?:
+                      boolean | undefined
+                    /** Indicates whether the customer can customize the Instant Key profile for their properties. */
+                    allow_instant_key_customization?: boolean | undefined
+                    /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
+                    allow_notification_customization?: boolean | undefined
+                  }
+                | undefined
+            }
+          | undefined
       }
     }
     maxDuration: undefined
@@ -117013,84 +117133,6 @@ export type Routes = {
       customer_portal_id: string
       /** Partial portal configuration to merge with the existing configuration. */
       portal_configuration: {
-        features?:
-          | {
-              /** Configuration for the connect accounts feature. */
-              connect?: {
-                /** Whether to exclude this feature from the portal. */
-                exclude?: boolean
-                /** List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account. */
-                accepted_providers?: string[] | undefined
-                /** List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account. */
-                excluded_providers?: string[] | undefined
-              }
-              /** Configuration for the manage feature. */
-              manage?: {
-                /** Whether to exclude this feature from the portal. */
-                exclude?: boolean
-                /** Indicates whether the customer can manage reservations for their properties. */
-                exclude_reservation_management?: boolean
-                /** Indicates whether to exclude technical details from reservation views. */
-                exclude_reservation_technical_details?: boolean
-                /** Indicates whether the customer can manage staff for their properties. */
-                exclude_staff_management?: boolean
-                /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
-                exclude_device_management?: boolean
-                /** Configuration for event type filtering in the manage feature. */
-                events?:
-                  | {
-                      /** List of event types to show in the events filter. When set, only these event types will be available. Leave empty to show all events. */
-                      allowed_events?: string[] | undefined
-                      /** List of event types that are pre-selected in the events filter when the user first loads the events tab. */
-                      default_events?: string[] | undefined
-                    }
-                  | undefined
-                /**
-                      Custom copy for the confirmation modal shown before unmanaged devices are added to a space and begin being managed (and billed). Only takes effect when the MANAGE_DEVICES_CONFIRMATION_MODAL feature flag is enabled for the workspace. Any omitted string falls back to a localized default.
-                     */
-                device_management_confirmation?:
-                  | {
-                      /** Custom title for the confirmation modal. */
-                      title?: string | undefined
-                      /** Custom body text for the confirmation modal. May include the {count} token, which is replaced with the number of devices that will begin being managed. */
-                      body?: string | undefined
-                      /** Custom label for the confirm button. */
-                      confirm_button_label?: string | undefined
-                      /** Custom label for the cancel button. */
-                      cancel_button_label?: string | undefined
-                    }
-                  | undefined
-              }
-              /** Configuration for the manage devices feature.
-            ---
-            deprecated: Use `manage` instead.
-            --- */
-              manage_devices?: {
-                /** Whether to exclude this feature from the portal. */
-                exclude?: boolean
-              }
-              /** Configuration for the organize feature. */
-              organize?: {
-                /** Whether to exclude this feature from the portal. */
-                exclude?: boolean
-              }
-              /** Configuration for the configure feature. */
-              configure?: {
-                /** Whether to exclude this feature from the portal. */
-                exclude?: boolean
-                /** Indicates whether the customer can customize the access automation rules for their properties. */
-                allow_access_automation_rule_customization?: boolean
-                /** Indicates whether the customer can customize the climate automation rules for their properties. */
-                allow_climate_automation_rule_customization?: boolean
-                /** Indicates whether the customer can customize the sound automation rules for their properties. */
-                allow_sound_automation_rule_customization?: boolean
-                /** Indicates whether the customer can customize the Instant Key profile for their properties. */
-                allow_instant_key_customization?: boolean
-                /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
-                allow_notification_customization?: boolean
-              }
-            }
-          | undefined
         /** Whether the portal is embedded in another application. */
         is_embedded?: boolean | undefined
         /** Whether the portal is read-only. When true, the customer can browse the portal but cannot perform any mutating action; write requests made with the portal's client session are rejected. */
@@ -117211,6 +117253,104 @@ export type Routes = {
                 )
               | undefined
             )
+          | undefined
+        /** Customer portal features. Settings you omit use the Seam default. */
+        features?:
+          | {
+              /** Configuration for the connect accounts feature. */
+              connect?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                    /** List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account. */
+                    accepted_providers?: (string[] | undefined) | undefined
+                    /** List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account. */
+                    excluded_providers?: (string[] | undefined) | undefined
+                  }
+                | undefined
+              /** Configuration for the manage feature. */
+              manage?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                    /** Indicates whether the customer can manage reservations for their properties. */
+                    exclude_reservation_management?: boolean | undefined
+                    /** Indicates whether to exclude technical details from reservation views. */
+                    exclude_reservation_technical_details?: boolean | undefined
+                    /** Indicates whether the customer can manage staff for their properties. */
+                    exclude_staff_management?: boolean | undefined
+                    /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
+                    exclude_device_management?: boolean | undefined
+                    /** Configuration for event type filtering in the manage feature. */
+                    events?:
+                      | (
+                          | {
+                              /** List of event types to show in the events filter. When set, only these event types will be available. Leave empty to show all events. */
+                              allowed_events?: string[] | undefined
+                              /** List of event types that are pre-selected in the events filter when the user first loads the events tab. */
+                              default_events?: string[] | undefined
+                            }
+                          | undefined
+                        )
+                      | undefined
+                    /**
+                      Custom copy for the confirmation modal shown before unmanaged devices are added to a space and begin being managed (and billed). Only takes effect when the MANAGE_DEVICES_CONFIRMATION_MODAL feature flag is enabled for the workspace. Any omitted string falls back to a localized default.
+                     */
+                    device_management_confirmation?:
+                      | (
+                          | {
+                              /** Custom title for the confirmation modal. */
+                              title?: string | undefined
+                              /** Custom body text for the confirmation modal. May include the {count} token, which is replaced with the number of devices that will begin being managed. */
+                              body?: string | undefined
+                              /** Custom label for the confirm button. */
+                              confirm_button_label?: string | undefined
+                              /** Custom label for the cancel button. */
+                              cancel_button_label?: string | undefined
+                            }
+                          | undefined
+                        )
+                      | undefined
+                  }
+                | undefined
+              /** Configuration for the manage devices feature.
+            ---
+            deprecated: Use `manage` instead.
+            --- */
+              manage_devices?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                  }
+                | undefined
+              /** Configuration for the organize feature. */
+              organize?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                  }
+                | undefined
+              /** Configuration for the configure feature. */
+              configure?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                    /** Indicates whether the customer can customize the access automation rules for their properties. */
+                    allow_access_automation_rule_customization?:
+                      boolean | undefined
+                    /** Indicates whether the customer can customize the climate automation rules for their properties. */
+                    allow_climate_automation_rule_customization?:
+                      boolean | undefined
+                    /** Indicates whether the customer can customize the sound automation rules for their properties. */
+                    allow_sound_automation_rule_customization?:
+                      boolean | undefined
+                    /** Indicates whether the customer can customize the Instant Key profile for their properties. */
+                    allow_instant_key_customization?: boolean | undefined
+                    /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
+                    allow_notification_customization?: boolean | undefined
+                  }
+                | undefined
+            }
           | undefined
       }
     }
@@ -184906,6 +185046,104 @@ export type Routes = {
             }
           }
         | undefined
+      /** Features for customer portals that use this profile. Settings passed when creating a portal take precedence. */
+      customer_portal_features?:
+        | {
+            /** Configuration for the connect accounts feature. */
+            connect?:
+              | {
+                  /** Whether to exclude this feature from the portal. */
+                  exclude?: boolean | undefined
+                  /** List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account. */
+                  accepted_providers?: (string[] | undefined) | undefined
+                  /** List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account. */
+                  excluded_providers?: (string[] | undefined) | undefined
+                }
+              | undefined
+            /** Configuration for the manage feature. */
+            manage?:
+              | {
+                  /** Whether to exclude this feature from the portal. */
+                  exclude?: boolean | undefined
+                  /** Indicates whether the customer can manage reservations for their properties. */
+                  exclude_reservation_management?: boolean | undefined
+                  /** Indicates whether to exclude technical details from reservation views. */
+                  exclude_reservation_technical_details?: boolean | undefined
+                  /** Indicates whether the customer can manage staff for their properties. */
+                  exclude_staff_management?: boolean | undefined
+                  /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
+                  exclude_device_management?: boolean | undefined
+                  /** Configuration for event type filtering in the manage feature. */
+                  events?:
+                    | (
+                        | {
+                            /** List of event types to show in the events filter. When set, only these event types will be available. Leave empty to show all events. */
+                            allowed_events?: string[] | undefined
+                            /** List of event types that are pre-selected in the events filter when the user first loads the events tab. */
+                            default_events?: string[] | undefined
+                          }
+                        | undefined
+                      )
+                    | undefined
+                  /**
+                  Custom copy for the confirmation modal shown before unmanaged devices are added to a space and begin being managed (and billed). Only takes effect when the MANAGE_DEVICES_CONFIRMATION_MODAL feature flag is enabled for the workspace. Any omitted string falls back to a localized default.
+                 */
+                  device_management_confirmation?:
+                    | (
+                        | {
+                            /** Custom title for the confirmation modal. */
+                            title?: string | undefined
+                            /** Custom body text for the confirmation modal. May include the {count} token, which is replaced with the number of devices that will begin being managed. */
+                            body?: string | undefined
+                            /** Custom label for the confirm button. */
+                            confirm_button_label?: string | undefined
+                            /** Custom label for the cancel button. */
+                            cancel_button_label?: string | undefined
+                          }
+                        | undefined
+                      )
+                    | undefined
+                }
+              | undefined
+            /** Configuration for the manage devices feature.
+        ---
+        deprecated: Use `manage` instead.
+        --- */
+            manage_devices?:
+              | {
+                  /** Whether to exclude this feature from the portal. */
+                  exclude?: boolean | undefined
+                }
+              | undefined
+            /** Configuration for the organize feature. */
+            organize?:
+              | {
+                  /** Whether to exclude this feature from the portal. */
+                  exclude?: boolean | undefined
+                }
+              | undefined
+            /** Configuration for the configure feature. */
+            configure?:
+              | {
+                  /** Whether to exclude this feature from the portal. */
+                  exclude?: boolean | undefined
+                  /** Indicates whether the customer can customize the access automation rules for their properties. */
+                  allow_access_automation_rule_customization?:
+                    boolean | undefined
+                  /** Indicates whether the customer can customize the climate automation rules for their properties. */
+                  allow_climate_automation_rule_customization?:
+                    boolean | undefined
+                  /** Indicates whether the customer can customize the sound automation rules for their properties. */
+                  allow_sound_automation_rule_customization?:
+                    boolean | undefined
+                  /** Indicates whether the customer can customize the Instant Key profile for their properties. */
+                  allow_instant_key_customization?: boolean | undefined
+                  /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
+                  allow_notification_customization?: boolean | undefined
+                }
+              | undefined
+          }
+        | undefined
     }
     commonParams: {}
     formData: {}
@@ -185067,6 +185305,104 @@ export type Routes = {
               [x: string]: {
                 [x: string]: string
               }
+            }
+          | undefined
+        /** Features for customer portals that use this profile. A setting passed when creating the portal takes precedence over the profile's. Changes apply to existing portals the next time they load. */
+        customer_portal_features?:
+          | {
+              /** Configuration for the connect accounts feature. */
+              connect?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                    /** List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account. */
+                    accepted_providers?: (string[] | undefined) | undefined
+                    /** List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account. */
+                    excluded_providers?: (string[] | undefined) | undefined
+                  }
+                | undefined
+              /** Configuration for the manage feature. */
+              manage?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                    /** Indicates whether the customer can manage reservations for their properties. */
+                    exclude_reservation_management?: boolean | undefined
+                    /** Indicates whether to exclude technical details from reservation views. */
+                    exclude_reservation_technical_details?: boolean | undefined
+                    /** Indicates whether the customer can manage staff for their properties. */
+                    exclude_staff_management?: boolean | undefined
+                    /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
+                    exclude_device_management?: boolean | undefined
+                    /** Configuration for event type filtering in the manage feature. */
+                    events?:
+                      | (
+                          | {
+                              /** List of event types to show in the events filter. When set, only these event types will be available. Leave empty to show all events. */
+                              allowed_events?: string[] | undefined
+                              /** List of event types that are pre-selected in the events filter when the user first loads the events tab. */
+                              default_events?: string[] | undefined
+                            }
+                          | undefined
+                        )
+                      | undefined
+                    /**
+                      Custom copy for the confirmation modal shown before unmanaged devices are added to a space and begin being managed (and billed). Only takes effect when the MANAGE_DEVICES_CONFIRMATION_MODAL feature flag is enabled for the workspace. Any omitted string falls back to a localized default.
+                     */
+                    device_management_confirmation?:
+                      | (
+                          | {
+                              /** Custom title for the confirmation modal. */
+                              title?: string | undefined
+                              /** Custom body text for the confirmation modal. May include the {count} token, which is replaced with the number of devices that will begin being managed. */
+                              body?: string | undefined
+                              /** Custom label for the confirm button. */
+                              confirm_button_label?: string | undefined
+                              /** Custom label for the cancel button. */
+                              cancel_button_label?: string | undefined
+                            }
+                          | undefined
+                        )
+                      | undefined
+                  }
+                | undefined
+              /** Configuration for the manage devices feature.
+            ---
+            deprecated: Use `manage` instead.
+            --- */
+              manage_devices?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                  }
+                | undefined
+              /** Configuration for the organize feature. */
+              organize?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                  }
+                | undefined
+              /** Configuration for the configure feature. */
+              configure?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                    /** Indicates whether the customer can customize the access automation rules for their properties. */
+                    allow_access_automation_rule_customization?:
+                      boolean | undefined
+                    /** Indicates whether the customer can customize the climate automation rules for their properties. */
+                    allow_climate_automation_rule_customization?:
+                      boolean | undefined
+                    /** Indicates whether the customer can customize the sound automation rules for their properties. */
+                    allow_sound_automation_rule_customization?:
+                      boolean | undefined
+                    /** Indicates whether the customer can customize the Instant Key profile for their properties. */
+                    allow_instant_key_customization?: boolean | undefined
+                    /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
+                    allow_notification_customization?: boolean | undefined
+                  }
+                | undefined
             }
           | undefined
       }
@@ -185242,6 +185578,104 @@ export type Routes = {
               }
             }
           | undefined
+        /** Features for customer portals that use this profile. A setting passed when creating the portal takes precedence over the profile's. Changes apply to existing portals the next time they load. */
+        customer_portal_features?:
+          | {
+              /** Configuration for the connect accounts feature. */
+              connect?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                    /** List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account. */
+                    accepted_providers?: (string[] | undefined) | undefined
+                    /** List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account. */
+                    excluded_providers?: (string[] | undefined) | undefined
+                  }
+                | undefined
+              /** Configuration for the manage feature. */
+              manage?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                    /** Indicates whether the customer can manage reservations for their properties. */
+                    exclude_reservation_management?: boolean | undefined
+                    /** Indicates whether to exclude technical details from reservation views. */
+                    exclude_reservation_technical_details?: boolean | undefined
+                    /** Indicates whether the customer can manage staff for their properties. */
+                    exclude_staff_management?: boolean | undefined
+                    /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
+                    exclude_device_management?: boolean | undefined
+                    /** Configuration for event type filtering in the manage feature. */
+                    events?:
+                      | (
+                          | {
+                              /** List of event types to show in the events filter. When set, only these event types will be available. Leave empty to show all events. */
+                              allowed_events?: string[] | undefined
+                              /** List of event types that are pre-selected in the events filter when the user first loads the events tab. */
+                              default_events?: string[] | undefined
+                            }
+                          | undefined
+                        )
+                      | undefined
+                    /**
+                      Custom copy for the confirmation modal shown before unmanaged devices are added to a space and begin being managed (and billed). Only takes effect when the MANAGE_DEVICES_CONFIRMATION_MODAL feature flag is enabled for the workspace. Any omitted string falls back to a localized default.
+                     */
+                    device_management_confirmation?:
+                      | (
+                          | {
+                              /** Custom title for the confirmation modal. */
+                              title?: string | undefined
+                              /** Custom body text for the confirmation modal. May include the {count} token, which is replaced with the number of devices that will begin being managed. */
+                              body?: string | undefined
+                              /** Custom label for the confirm button. */
+                              confirm_button_label?: string | undefined
+                              /** Custom label for the cancel button. */
+                              cancel_button_label?: string | undefined
+                            }
+                          | undefined
+                        )
+                      | undefined
+                  }
+                | undefined
+              /** Configuration for the manage devices feature.
+            ---
+            deprecated: Use `manage` instead.
+            --- */
+              manage_devices?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                  }
+                | undefined
+              /** Configuration for the organize feature. */
+              organize?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                  }
+                | undefined
+              /** Configuration for the configure feature. */
+              configure?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                    /** Indicates whether the customer can customize the access automation rules for their properties. */
+                    allow_access_automation_rule_customization?:
+                      boolean | undefined
+                    /** Indicates whether the customer can customize the climate automation rules for their properties. */
+                    allow_climate_automation_rule_customization?:
+                      boolean | undefined
+                    /** Indicates whether the customer can customize the sound automation rules for their properties. */
+                    allow_sound_automation_rule_customization?:
+                      boolean | undefined
+                    /** Indicates whether the customer can customize the Instant Key profile for their properties. */
+                    allow_instant_key_customization?: boolean | undefined
+                    /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
+                    allow_notification_customization?: boolean | undefined
+                  }
+                | undefined
+            }
+          | undefined
       }
     }
     maxDuration: undefined
@@ -185415,6 +185849,104 @@ export type Routes = {
               }
             }
           | undefined
+        /** Features for customer portals that use this profile. A setting passed when creating the portal takes precedence over the profile's. Changes apply to existing portals the next time they load. */
+        customer_portal_features?:
+          | {
+              /** Configuration for the connect accounts feature. */
+              connect?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                    /** List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account. */
+                    accepted_providers?: (string[] | undefined) | undefined
+                    /** List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account. */
+                    excluded_providers?: (string[] | undefined) | undefined
+                  }
+                | undefined
+              /** Configuration for the manage feature. */
+              manage?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                    /** Indicates whether the customer can manage reservations for their properties. */
+                    exclude_reservation_management?: boolean | undefined
+                    /** Indicates whether to exclude technical details from reservation views. */
+                    exclude_reservation_technical_details?: boolean | undefined
+                    /** Indicates whether the customer can manage staff for their properties. */
+                    exclude_staff_management?: boolean | undefined
+                    /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
+                    exclude_device_management?: boolean | undefined
+                    /** Configuration for event type filtering in the manage feature. */
+                    events?:
+                      | (
+                          | {
+                              /** List of event types to show in the events filter. When set, only these event types will be available. Leave empty to show all events. */
+                              allowed_events?: string[] | undefined
+                              /** List of event types that are pre-selected in the events filter when the user first loads the events tab. */
+                              default_events?: string[] | undefined
+                            }
+                          | undefined
+                        )
+                      | undefined
+                    /**
+                      Custom copy for the confirmation modal shown before unmanaged devices are added to a space and begin being managed (and billed). Only takes effect when the MANAGE_DEVICES_CONFIRMATION_MODAL feature flag is enabled for the workspace. Any omitted string falls back to a localized default.
+                     */
+                    device_management_confirmation?:
+                      | (
+                          | {
+                              /** Custom title for the confirmation modal. */
+                              title?: string | undefined
+                              /** Custom body text for the confirmation modal. May include the {count} token, which is replaced with the number of devices that will begin being managed. */
+                              body?: string | undefined
+                              /** Custom label for the confirm button. */
+                              confirm_button_label?: string | undefined
+                              /** Custom label for the cancel button. */
+                              cancel_button_label?: string | undefined
+                            }
+                          | undefined
+                        )
+                      | undefined
+                  }
+                | undefined
+              /** Configuration for the manage devices feature.
+            ---
+            deprecated: Use `manage` instead.
+            --- */
+              manage_devices?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                  }
+                | undefined
+              /** Configuration for the organize feature. */
+              organize?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                  }
+                | undefined
+              /** Configuration for the configure feature. */
+              configure?:
+                | {
+                    /** Whether to exclude this feature from the portal. */
+                    exclude?: boolean | undefined
+                    /** Indicates whether the customer can customize the access automation rules for their properties. */
+                    allow_access_automation_rule_customization?:
+                      boolean | undefined
+                    /** Indicates whether the customer can customize the climate automation rules for their properties. */
+                    allow_climate_automation_rule_customization?:
+                      boolean | undefined
+                    /** Indicates whether the customer can customize the sound automation rules for their properties. */
+                    allow_sound_automation_rule_customization?:
+                      boolean | undefined
+                    /** Indicates whether the customer can customize the Instant Key profile for their properties. */
+                    allow_instant_key_customization?: boolean | undefined
+                    /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
+                    allow_notification_customization?: boolean | undefined
+                  }
+                | undefined
+            }
+          | undefined
       }[]
     }
     maxDuration: undefined
@@ -185578,6 +186110,108 @@ export type Routes = {
                 [x: string]: {
                   [x: string]: string
                 }
+              }
+            | undefined
+          )
+        | null
+      /** Features for customer portals that use this profile. Replaces the profile's current features; pass `null` to remove them. Portals pick up the change the next time they load. */
+      customer_portal_features?:
+        | (
+            | {
+                /** Configuration for the connect accounts feature. */
+                connect?:
+                  | {
+                      /** Whether to exclude this feature from the portal. */
+                      exclude?: boolean | undefined
+                      /** List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account. */
+                      accepted_providers?: (string[] | undefined) | undefined
+                      /** List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account. */
+                      excluded_providers?: (string[] | undefined) | undefined
+                    }
+                  | undefined
+                /** Configuration for the manage feature. */
+                manage?:
+                  | {
+                      /** Whether to exclude this feature from the portal. */
+                      exclude?: boolean | undefined
+                      /** Indicates whether the customer can manage reservations for their properties. */
+                      exclude_reservation_management?: boolean | undefined
+                      /** Indicates whether to exclude technical details from reservation views. */
+                      exclude_reservation_technical_details?:
+                        boolean | undefined
+                      /** Indicates whether the customer can manage staff for their properties. */
+                      exclude_staff_management?: boolean | undefined
+                      /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
+                      exclude_device_management?: boolean | undefined
+                      /** Configuration for event type filtering in the manage feature. */
+                      events?:
+                        | (
+                            | {
+                                /** List of event types to show in the events filter. When set, only these event types will be available. Leave empty to show all events. */
+                                allowed_events?: string[] | undefined
+                                /** List of event types that are pre-selected in the events filter when the user first loads the events tab. */
+                                default_events?: string[] | undefined
+                              }
+                            | undefined
+                          )
+                        | undefined
+                      /**
+                  Custom copy for the confirmation modal shown before unmanaged devices are added to a space and begin being managed (and billed). Only takes effect when the MANAGE_DEVICES_CONFIRMATION_MODAL feature flag is enabled for the workspace. Any omitted string falls back to a localized default.
+                 */
+                      device_management_confirmation?:
+                        | (
+                            | {
+                                /** Custom title for the confirmation modal. */
+                                title?: string | undefined
+                                /** Custom body text for the confirmation modal. May include the {count} token, which is replaced with the number of devices that will begin being managed. */
+                                body?: string | undefined
+                                /** Custom label for the confirm button. */
+                                confirm_button_label?: string | undefined
+                                /** Custom label for the cancel button. */
+                                cancel_button_label?: string | undefined
+                              }
+                            | undefined
+                          )
+                        | undefined
+                    }
+                  | undefined
+                /** Configuration for the manage devices feature.
+        ---
+        deprecated: Use `manage` instead.
+        --- */
+                manage_devices?:
+                  | {
+                      /** Whether to exclude this feature from the portal. */
+                      exclude?: boolean | undefined
+                    }
+                  | undefined
+                /** Configuration for the organize feature. */
+                organize?:
+                  | {
+                      /** Whether to exclude this feature from the portal. */
+                      exclude?: boolean | undefined
+                    }
+                  | undefined
+                /** Configuration for the configure feature. */
+                configure?:
+                  | {
+                      /** Whether to exclude this feature from the portal. */
+                      exclude?: boolean | undefined
+                      /** Indicates whether the customer can customize the access automation rules for their properties. */
+                      allow_access_automation_rule_customization?:
+                        boolean | undefined
+                      /** Indicates whether the customer can customize the climate automation rules for their properties. */
+                      allow_climate_automation_rule_customization?:
+                        boolean | undefined
+                      /** Indicates whether the customer can customize the sound automation rules for their properties. */
+                      allow_sound_automation_rule_customization?:
+                        boolean | undefined
+                      /** Indicates whether the customer can customize the Instant Key profile for their properties. */
+                      allow_instant_key_customization?: boolean | undefined
+                      /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
+                      allow_notification_customization?: boolean | undefined
+                    }
+                  | undefined
               }
             | undefined
           )
@@ -198971,6 +199605,107 @@ export type Routes = {
                     [x: string]: {
                       [x: string]: string
                     }
+                  }
+                | undefined
+              /** Features for customer portals that use this profile. A setting passed when creating the portal takes precedence over the profile's. Changes apply to existing portals the next time they load. */
+              customer_portal_features?:
+                | {
+                    /** Configuration for the connect accounts feature. */
+                    connect?:
+                      | {
+                          /** Whether to exclude this feature from the portal. */
+                          exclude?: boolean | undefined
+                          /** List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account. */
+                          accepted_providers?:
+                            (string[] | undefined) | undefined
+                          /** List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account. */
+                          excluded_providers?:
+                            (string[] | undefined) | undefined
+                        }
+                      | undefined
+                    /** Configuration for the manage feature. */
+                    manage?:
+                      | {
+                          /** Whether to exclude this feature from the portal. */
+                          exclude?: boolean | undefined
+                          /** Indicates whether the customer can manage reservations for their properties. */
+                          exclude_reservation_management?: boolean | undefined
+                          /** Indicates whether to exclude technical details from reservation views. */
+                          exclude_reservation_technical_details?:
+                            boolean | undefined
+                          /** Indicates whether the customer can manage staff for their properties. */
+                          exclude_staff_management?: boolean | undefined
+                          /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
+                          exclude_device_management?: boolean | undefined
+                          /** Configuration for event type filtering in the manage feature. */
+                          events?:
+                            | (
+                                | {
+                                    /** List of event types to show in the events filter. When set, only these event types will be available. Leave empty to show all events. */
+                                    allowed_events?: string[] | undefined
+                                    /** List of event types that are pre-selected in the events filter when the user first loads the events tab. */
+                                    default_events?: string[] | undefined
+                                  }
+                                | undefined
+                              )
+                            | undefined
+                          /**
+                          Custom copy for the confirmation modal shown before unmanaged devices are added to a space and begin being managed (and billed). Only takes effect when the MANAGE_DEVICES_CONFIRMATION_MODAL feature flag is enabled for the workspace. Any omitted string falls back to a localized default.
+                         */
+                          device_management_confirmation?:
+                            | (
+                                | {
+                                    /** Custom title for the confirmation modal. */
+                                    title?: string | undefined
+                                    /** Custom body text for the confirmation modal. May include the {count} token, which is replaced with the number of devices that will begin being managed. */
+                                    body?: string | undefined
+                                    /** Custom label for the confirm button. */
+                                    confirm_button_label?: string | undefined
+                                    /** Custom label for the cancel button. */
+                                    cancel_button_label?: string | undefined
+                                  }
+                                | undefined
+                              )
+                            | undefined
+                        }
+                      | undefined
+                    /** Configuration for the manage devices feature.
+                ---
+                deprecated: Use `manage` instead.
+                --- */
+                    manage_devices?:
+                      | {
+                          /** Whether to exclude this feature from the portal. */
+                          exclude?: boolean | undefined
+                        }
+                      | undefined
+                    /** Configuration for the organize feature. */
+                    organize?:
+                      | {
+                          /** Whether to exclude this feature from the portal. */
+                          exclude?: boolean | undefined
+                        }
+                      | undefined
+                    /** Configuration for the configure feature. */
+                    configure?:
+                      | {
+                          /** Whether to exclude this feature from the portal. */
+                          exclude?: boolean | undefined
+                          /** Indicates whether the customer can customize the access automation rules for their properties. */
+                          allow_access_automation_rule_customization?:
+                            boolean | undefined
+                          /** Indicates whether the customer can customize the climate automation rules for their properties. */
+                          allow_climate_automation_rule_customization?:
+                            boolean | undefined
+                          /** Indicates whether the customer can customize the sound automation rules for their properties. */
+                          allow_sound_automation_rule_customization?:
+                            boolean | undefined
+                          /** Indicates whether the customer can customize the Instant Key profile for their properties. */
+                          allow_instant_key_customization?: boolean | undefined
+                          /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
+                          allow_notification_customization?: boolean | undefined
+                        }
+                      | undefined
                   }
                 | undefined
             }[]

@@ -44,6 +44,7 @@ export {
   customer,
   customer_data,
   customer_portal,
+  customer_portal_features,
   customer_portal_theme,
   datetime,
   device_capability_flags,

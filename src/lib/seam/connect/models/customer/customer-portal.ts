@@ -150,6 +150,30 @@ const base_features = z.object({
     .describe('Configuration for the configure feature.'),
 })
 
+export const customer_portal_features = z
+  .object({
+    connect: base_connect_feature
+      .partial()
+      .describe('Configuration for the connect accounts feature.'),
+    manage: base_manage_feature
+      .partial()
+      .describe('Configuration for the manage feature.'),
+    manage_devices: base_manage_devices_feature.partial().describe(`
+      Configuration for the manage devices feature.
+      ---
+      deprecated: Use \`manage\` instead.
+      ---
+    `),
+    organize: base_organize_feature
+      .partial()
+      .describe('Configuration for the organize feature.'),
+    configure: base_configure_feature
+      .partial()
+      .describe('Configuration for the configure feature.'),
+  })
+  .partial()
+  .describe('Customer portal features. Settings you omit use the Seam default.')
+
 export const portal_configuration_base = z.object({
   features: base_features.default({}),
   is_embedded: z

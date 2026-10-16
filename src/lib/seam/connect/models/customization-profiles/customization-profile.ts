@@ -1,6 +1,7 @@
 import * as z from 'zod/v3'
 
 import { css_color, hex_color_code } from '../colors.js'
+import { customer_portal_features } from '../customer/customer-portal.js'
 import { datetime } from '../datetime.js'
 
 export const customer_portal_theme = z.object({
@@ -133,6 +134,11 @@ export const customization_profile = z.object({
     .optional()
     .describe('Theme for the Instant Keys apps.'),
   message_overrides: message_overrides.optional(),
+  customer_portal_features: customer_portal_features
+    .optional()
+    .describe(
+      "Features for customer portals that use this profile. A setting passed when creating the portal takes precedence over the profile's. Changes apply to existing portals the next time they load.",
+    ),
 }).describe(`
   ---
   title: Customization Profile

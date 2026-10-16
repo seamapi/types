@@ -14870,6 +14870,183 @@ const openapi: OpenAPISpec = {
             nullable: true,
             type: 'string',
           },
+          customer_portal_features: {
+            description:
+              "Features for customer portals that use this profile. A setting passed when creating the portal takes precedence over the profile's. Changes apply to existing portals the next time they load.",
+            properties: {
+              configure: {
+                description: 'Configuration for the configure feature.',
+                properties: {
+                  allow_access_automation_rule_customization: {
+                    default: false,
+                    description:
+                      'Indicates whether the customer can customize the access automation rules for their properties.',
+                    type: 'boolean',
+                  },
+                  allow_climate_automation_rule_customization: {
+                    default: false,
+                    description:
+                      'Indicates whether the customer can customize the climate automation rules for their properties.',
+                    type: 'boolean',
+                  },
+                  allow_instant_key_customization: {
+                    default: false,
+                    description:
+                      'Indicates whether the customer can customize the Instant Key profile for their properties.',
+                    type: 'boolean',
+                  },
+                  allow_notification_customization: {
+                    default: false,
+                    description:
+                      'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
+                    type: 'boolean',
+                  },
+                  allow_sound_automation_rule_customization: {
+                    default: false,
+                    description:
+                      'Indicates whether the customer can customize the sound automation rules for their properties.',
+                    type: 'boolean',
+                  },
+                  exclude: {
+                    default: false,
+                    description:
+                      'Whether to exclude this feature from the portal.',
+                    type: 'boolean',
+                  },
+                },
+                type: 'object',
+              },
+              connect: {
+                description: 'Configuration for the connect accounts feature.',
+                properties: {
+                  accepted_providers: {
+                    description:
+                      'List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                  exclude: {
+                    default: false,
+                    description:
+                      'Whether to exclude this feature from the portal.',
+                    type: 'boolean',
+                  },
+                  excluded_providers: {
+                    description:
+                      'List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account.',
+                    items: { type: 'string' },
+                    type: 'array',
+                  },
+                },
+                type: 'object',
+              },
+              manage: {
+                description: 'Configuration for the manage feature.',
+                properties: {
+                  device_management_confirmation: {
+                    description:
+                      '\n      Custom copy for the confirmation modal shown before unmanaged devices are added to a space and begin being managed (and billed). Only takes effect when the MANAGE_DEVICES_CONFIRMATION_MODAL feature flag is enabled for the workspace. Any omitted string falls back to a localized default.\n    ',
+                    properties: {
+                      body: {
+                        description:
+                          'Custom body text for the confirmation modal. May include the {count} token, which is replaced with the number of devices that will begin being managed.',
+                        type: 'string',
+                      },
+                      cancel_button_label: {
+                        description: 'Custom label for the cancel button.',
+                        type: 'string',
+                      },
+                      confirm_button_label: {
+                        description: 'Custom label for the confirm button.',
+                        type: 'string',
+                      },
+                      title: {
+                        description: 'Custom title for the confirmation modal.',
+                        type: 'string',
+                      },
+                    },
+                    type: 'object',
+                  },
+                  events: {
+                    description:
+                      'Configuration for event type filtering in the manage feature.',
+                    properties: {
+                      allowed_events: {
+                        description:
+                          'List of event types to show in the events filter. When set, only these event types will be available. Leave empty to show all events.',
+                        items: { type: 'string' },
+                        type: 'array',
+                      },
+                      default_events: {
+                        description:
+                          'List of event types that are pre-selected in the events filter when the user first loads the events tab.',
+                        items: { type: 'string' },
+                        type: 'array',
+                      },
+                    },
+                    type: 'object',
+                  },
+                  exclude: {
+                    default: false,
+                    description:
+                      'Whether to exclude this feature from the portal.',
+                    type: 'boolean',
+                  },
+                  exclude_device_management: {
+                    default: false,
+                    description:
+                      'Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed.',
+                    type: 'boolean',
+                  },
+                  exclude_reservation_management: {
+                    default: false,
+                    description:
+                      'Indicates whether the customer can manage reservations for their properties.',
+                    type: 'boolean',
+                  },
+                  exclude_reservation_technical_details: {
+                    default: false,
+                    description:
+                      'Indicates whether to exclude technical details from reservation views.',
+                    type: 'boolean',
+                  },
+                  exclude_staff_management: {
+                    default: false,
+                    description:
+                      'Indicates whether the customer can manage staff for their properties.',
+                    type: 'boolean',
+                  },
+                },
+                type: 'object',
+              },
+              manage_devices: {
+                description:
+                  'Configuration for the manage devices feature.\n---\ndeprecated: Use `manage` instead.\n---',
+                properties: {
+                  exclude: {
+                    default: false,
+                    description:
+                      'Whether to exclude this feature from the portal.',
+                    type: 'boolean',
+                  },
+                },
+                type: 'object',
+              },
+              organize: {
+                description: 'Configuration for the organize feature.',
+                properties: {
+                  exclude: {
+                    default: false,
+                    description:
+                      'Whether to exclude this feature from the portal.',
+                    type: 'boolean',
+                  },
+                },
+                type: 'object',
+              },
+            },
+            type: 'object',
+          },
           customer_portal_theme: {
             properties: {
               font_family: { type: 'string' },
@@ -51929,32 +52106,6 @@ const openapi: OpenAPISpec = {
               schema: {
                 allOf: [
                   {
-                    default: {
-                      exclude_locale_picker: false,
-                      features: {
-                        configure: {
-                          allow_access_automation_rule_customization: false,
-                          allow_climate_automation_rule_customization: false,
-                          allow_instant_key_customization: false,
-                          allow_notification_customization: false,
-                          allow_sound_automation_rule_customization: false,
-                          exclude: false,
-                        },
-                        connect: { exclude: false },
-                        manage: {
-                          exclude: false,
-                          exclude_device_management: false,
-                          exclude_reservation_management: false,
-                          exclude_reservation_technical_details: false,
-                          exclude_staff_management: false,
-                        },
-                        manage_devices: { exclude: false },
-                        organize: { exclude: false },
-                      },
-                      is_embedded: false,
-                      read_only: false,
-                    },
-                    description: 'Configuration for a customer portal',
                     properties: {
                       _dev: {
                         default: false,
@@ -52056,10 +52207,10 @@ const openapi: OpenAPISpec = {
                         type: 'boolean',
                       },
                       features: {
-                        default: {},
+                        description:
+                          "Features to include in the portal. Settings you omit use the portal's customization profile, then the Seam default. Settings you pass take precedence over the customization profile's, so changing the profile doesn't change them.",
                         properties: {
                           configure: {
-                            default: {},
                             description:
                               'Configuration for the configure feature.',
                             properties: {
@@ -52103,7 +52254,6 @@ const openapi: OpenAPISpec = {
                             type: 'object',
                           },
                           connect: {
-                            default: {},
                             description:
                               'Configuration for the connect accounts feature.',
                             properties: {
@@ -52129,7 +52279,6 @@ const openapi: OpenAPISpec = {
                             type: 'object',
                           },
                           manage: {
-                            default: {},
                             description:
                               'Configuration for the manage feature.',
                             properties: {
@@ -52213,7 +52362,6 @@ const openapi: OpenAPISpec = {
                             type: 'object',
                           },
                           manage_devices: {
-                            default: {},
                             description:
                               'Configuration for the manage devices feature.\n---\ndeprecated: Use `manage` instead.\n---',
                             properties: {
@@ -52227,7 +52375,6 @@ const openapi: OpenAPISpec = {
                             type: 'object',
                           },
                           organize: {
-                            default: {},
                             description:
                               'Configuration for the organize feature.',
                             properties: {
@@ -67787,10 +67934,10 @@ const openapi: OpenAPISpec = {
                         type: 'boolean',
                       },
                       features: {
-                        default: {},
+                        description:
+                          'Customer portal features. Settings you omit use the Seam default.',
                         properties: {
                           configure: {
-                            default: {},
                             description:
                               'Configuration for the configure feature.',
                             properties: {
@@ -67834,7 +67981,6 @@ const openapi: OpenAPISpec = {
                             type: 'object',
                           },
                           connect: {
-                            default: {},
                             description:
                               'Configuration for the connect accounts feature.',
                             properties: {
@@ -67860,7 +68006,6 @@ const openapi: OpenAPISpec = {
                             type: 'object',
                           },
                           manage: {
-                            default: {},
                             description:
                               'Configuration for the manage feature.',
                             properties: {
@@ -67944,7 +68089,6 @@ const openapi: OpenAPISpec = {
                             type: 'object',
                           },
                           manage_devices: {
-                            default: {},
                             description:
                               'Configuration for the manage devices feature.\n---\ndeprecated: Use `manage` instead.\n---',
                             properties: {
@@ -67958,7 +68102,6 @@ const openapi: OpenAPISpec = {
                             type: 'object',
                           },
                           organize: {
-                            default: {},
                             description:
                               'Configuration for the organize feature.',
                             properties: {
@@ -77057,6 +77200,187 @@ const openapi: OpenAPISpec = {
                     format: 'uuid',
                     type: 'string',
                   },
+                  customer_portal_features: {
+                    description:
+                      'Features for customer portals that use this profile. Settings passed when creating a portal take precedence.',
+                    properties: {
+                      configure: {
+                        description: 'Configuration for the configure feature.',
+                        properties: {
+                          allow_access_automation_rule_customization: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can customize the access automation rules for their properties.',
+                            type: 'boolean',
+                          },
+                          allow_climate_automation_rule_customization: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can customize the climate automation rules for their properties.',
+                            type: 'boolean',
+                          },
+                          allow_instant_key_customization: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can customize the Instant Key profile for their properties.',
+                            type: 'boolean',
+                          },
+                          allow_notification_customization: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
+                            type: 'boolean',
+                          },
+                          allow_sound_automation_rule_customization: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can customize the sound automation rules for their properties.',
+                            type: 'boolean',
+                          },
+                          exclude: {
+                            default: false,
+                            description:
+                              'Whether to exclude this feature from the portal.',
+                            type: 'boolean',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      connect: {
+                        description:
+                          'Configuration for the connect accounts feature.',
+                        properties: {
+                          accepted_providers: {
+                            description:
+                              'List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account.',
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
+                          exclude: {
+                            default: false,
+                            description:
+                              'Whether to exclude this feature from the portal.',
+                            type: 'boolean',
+                          },
+                          excluded_providers: {
+                            description:
+                              'List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account.',
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      manage: {
+                        description: 'Configuration for the manage feature.',
+                        properties: {
+                          device_management_confirmation: {
+                            description:
+                              '\n      Custom copy for the confirmation modal shown before unmanaged devices are added to a space and begin being managed (and billed). Only takes effect when the MANAGE_DEVICES_CONFIRMATION_MODAL feature flag is enabled for the workspace. Any omitted string falls back to a localized default.\n    ',
+                            properties: {
+                              body: {
+                                description:
+                                  'Custom body text for the confirmation modal. May include the {count} token, which is replaced with the number of devices that will begin being managed.',
+                                type: 'string',
+                              },
+                              cancel_button_label: {
+                                description:
+                                  'Custom label for the cancel button.',
+                                type: 'string',
+                              },
+                              confirm_button_label: {
+                                description:
+                                  'Custom label for the confirm button.',
+                                type: 'string',
+                              },
+                              title: {
+                                description:
+                                  'Custom title for the confirmation modal.',
+                                type: 'string',
+                              },
+                            },
+                            type: 'object',
+                          },
+                          events: {
+                            description:
+                              'Configuration for event type filtering in the manage feature.',
+                            properties: {
+                              allowed_events: {
+                                description:
+                                  'List of event types to show in the events filter. When set, only these event types will be available. Leave empty to show all events.',
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                              default_events: {
+                                description:
+                                  'List of event types that are pre-selected in the events filter when the user first loads the events tab.',
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                            },
+                            type: 'object',
+                          },
+                          exclude: {
+                            default: false,
+                            description:
+                              'Whether to exclude this feature from the portal.',
+                            type: 'boolean',
+                          },
+                          exclude_device_management: {
+                            default: false,
+                            description:
+                              'Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed.',
+                            type: 'boolean',
+                          },
+                          exclude_reservation_management: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can manage reservations for their properties.',
+                            type: 'boolean',
+                          },
+                          exclude_reservation_technical_details: {
+                            default: false,
+                            description:
+                              'Indicates whether to exclude technical details from reservation views.',
+                            type: 'boolean',
+                          },
+                          exclude_staff_management: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can manage staff for their properties.',
+                            type: 'boolean',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      manage_devices: {
+                        description:
+                          'Configuration for the manage devices feature.\n---\ndeprecated: Use `manage` instead.\n---',
+                        properties: {
+                          exclude: {
+                            default: false,
+                            description:
+                              'Whether to exclude this feature from the portal.',
+                            type: 'boolean',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      organize: {
+                        description: 'Configuration for the organize feature.',
+                        properties: {
+                          exclude: {
+                            default: false,
+                            description:
+                              'Whether to exclude this feature from the portal.',
+                            type: 'boolean',
+                          },
+                        },
+                        type: 'object',
+                      },
+                    },
+                    type: 'object',
+                  },
                   customer_portal_theme: {
                     properties: {
                       font_family: { type: 'string' },
@@ -77550,6 +77874,188 @@ const openapi: OpenAPISpec = {
             'application/json': {
               schema: {
                 properties: {
+                  customer_portal_features: {
+                    description:
+                      "Features for customer portals that use this profile. Replaces the profile's current features; pass `null` to remove them. Portals pick up the change the next time they load.",
+                    nullable: true,
+                    properties: {
+                      configure: {
+                        description: 'Configuration for the configure feature.',
+                        properties: {
+                          allow_access_automation_rule_customization: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can customize the access automation rules for their properties.',
+                            type: 'boolean',
+                          },
+                          allow_climate_automation_rule_customization: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can customize the climate automation rules for their properties.',
+                            type: 'boolean',
+                          },
+                          allow_instant_key_customization: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can customize the Instant Key profile for their properties.',
+                            type: 'boolean',
+                          },
+                          allow_notification_customization: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
+                            type: 'boolean',
+                          },
+                          allow_sound_automation_rule_customization: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can customize the sound automation rules for their properties.',
+                            type: 'boolean',
+                          },
+                          exclude: {
+                            default: false,
+                            description:
+                              'Whether to exclude this feature from the portal.',
+                            type: 'boolean',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      connect: {
+                        description:
+                          'Configuration for the connect accounts feature.',
+                        properties: {
+                          accepted_providers: {
+                            description:
+                              'List of provider keys to allow for the connect feature. These providers will be shown when the customer tries to connect an account.',
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
+                          exclude: {
+                            default: false,
+                            description:
+                              'Whether to exclude this feature from the portal.',
+                            type: 'boolean',
+                          },
+                          excluded_providers: {
+                            description:
+                              'List of provider keys to exclude from the connect feature. These providers will not be shown when the customer tries to connect an account.',
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      manage: {
+                        description: 'Configuration for the manage feature.',
+                        properties: {
+                          device_management_confirmation: {
+                            description:
+                              '\n      Custom copy for the confirmation modal shown before unmanaged devices are added to a space and begin being managed (and billed). Only takes effect when the MANAGE_DEVICES_CONFIRMATION_MODAL feature flag is enabled for the workspace. Any omitted string falls back to a localized default.\n    ',
+                            properties: {
+                              body: {
+                                description:
+                                  'Custom body text for the confirmation modal. May include the {count} token, which is replaced with the number of devices that will begin being managed.',
+                                type: 'string',
+                              },
+                              cancel_button_label: {
+                                description:
+                                  'Custom label for the cancel button.',
+                                type: 'string',
+                              },
+                              confirm_button_label: {
+                                description:
+                                  'Custom label for the confirm button.',
+                                type: 'string',
+                              },
+                              title: {
+                                description:
+                                  'Custom title for the confirmation modal.',
+                                type: 'string',
+                              },
+                            },
+                            type: 'object',
+                          },
+                          events: {
+                            description:
+                              'Configuration for event type filtering in the manage feature.',
+                            properties: {
+                              allowed_events: {
+                                description:
+                                  'List of event types to show in the events filter. When set, only these event types will be available. Leave empty to show all events.',
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                              default_events: {
+                                description:
+                                  'List of event types that are pre-selected in the events filter when the user first loads the events tab.',
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                            },
+                            type: 'object',
+                          },
+                          exclude: {
+                            default: false,
+                            description:
+                              'Whether to exclude this feature from the portal.',
+                            type: 'boolean',
+                          },
+                          exclude_device_management: {
+                            default: false,
+                            description:
+                              'Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed.',
+                            type: 'boolean',
+                          },
+                          exclude_reservation_management: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can manage reservations for their properties.',
+                            type: 'boolean',
+                          },
+                          exclude_reservation_technical_details: {
+                            default: false,
+                            description:
+                              'Indicates whether to exclude technical details from reservation views.',
+                            type: 'boolean',
+                          },
+                          exclude_staff_management: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can manage staff for their properties.',
+                            type: 'boolean',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      manage_devices: {
+                        description:
+                          'Configuration for the manage devices feature.\n---\ndeprecated: Use `manage` instead.\n---',
+                        properties: {
+                          exclude: {
+                            default: false,
+                            description:
+                              'Whether to exclude this feature from the portal.',
+                            type: 'boolean',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      organize: {
+                        description: 'Configuration for the organize feature.',
+                        properties: {
+                          exclude: {
+                            default: false,
+                            description:
+                              'Whether to exclude this feature from the portal.',
+                            type: 'boolean',
+                          },
+                        },
+                        type: 'object',
+                      },
+                    },
+                    type: 'object',
+                  },
                   customer_portal_theme: {
                     nullable: true,
                     properties: {
