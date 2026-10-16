@@ -17491,10 +17491,14 @@ export type Routes = {
               can_stream_live_video?: boolean | undefined
               /** Indicates whether the speaker supports setting its volume. */
               can_set_speaker_volume?: boolean | undefined
-              /** Indicates whether the speaker supports muting and unmuting. */
+              /** Indicates whether the speaker supports muting. */
               can_mute_speaker?: boolean | undefined
-              /** Indicates whether the speaker supports pausing and resuming playback. */
+              /** Indicates whether the speaker supports unmuting. */
+              can_unmute_speaker?: boolean | undefined
+              /** Indicates whether the speaker supports pausing playback. */
               can_pause_speaker_playback?: boolean | undefined
+              /** Indicates whether the speaker supports resuming playback. */
+              can_resume_speaker_playback?: boolean | undefined
               /** Indicates whether the speaker supports playing a chime. */
               can_play_speaker_chime?: boolean | undefined
             }[]
@@ -26855,10 +26859,14 @@ export type Routes = {
               can_stream_live_video?: boolean | undefined
               /** Indicates whether the speaker supports setting its volume. */
               can_set_speaker_volume?: boolean | undefined
-              /** Indicates whether the speaker supports muting and unmuting. */
+              /** Indicates whether the speaker supports muting. */
               can_mute_speaker?: boolean | undefined
-              /** Indicates whether the speaker supports pausing and resuming playback. */
+              /** Indicates whether the speaker supports unmuting. */
+              can_unmute_speaker?: boolean | undefined
+              /** Indicates whether the speaker supports pausing playback. */
               can_pause_speaker_playback?: boolean | undefined
+              /** Indicates whether the speaker supports resuming playback. */
+              can_resume_speaker_playback?: boolean | undefined
               /** Indicates whether the speaker supports playing a chime. */
               can_play_speaker_chime?: boolean | undefined
             }[]
@@ -57797,10 +57805,14 @@ export type Routes = {
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
-        /** Indicates whether the speaker supports muting and unmuting. */
+        /** Indicates whether the speaker supports muting. */
         can_mute_speaker?: boolean | undefined
-        /** Indicates whether the speaker supports pausing and resuming playback. */
+        /** Indicates whether the speaker supports unmuting. */
+        can_unmute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing playback. */
         can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports resuming playback. */
+        can_resume_speaker_playback?: boolean | undefined
         /** Indicates whether the speaker supports playing a chime. */
         can_play_speaker_chime?: boolean | undefined
       }
@@ -58029,7 +58041,9 @@ export type Routes = {
             | 'can_stream_live_video'
             | 'can_set_speaker_volume'
             | 'can_mute_speaker'
+            | 'can_unmute_speaker'
             | 'can_pause_speaker_playback'
+            | 'can_resume_speaker_playback'
             | 'can_play_speaker_chime'
           )[]
         | undefined
@@ -58060,7 +58074,9 @@ export type Routes = {
             | 'can_stream_live_video'
             | 'can_set_speaker_volume'
             | 'can_mute_speaker'
+            | 'can_unmute_speaker'
             | 'can_pause_speaker_playback'
+            | 'can_resume_speaker_playback'
             | 'can_play_speaker_chime'
           )[]
         | undefined
@@ -60072,10 +60088,14 @@ export type Routes = {
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
-        /** Indicates whether the speaker supports muting and unmuting. */
+        /** Indicates whether the speaker supports muting. */
         can_mute_speaker?: boolean | undefined
-        /** Indicates whether the speaker supports pausing and resuming playback. */
+        /** Indicates whether the speaker supports unmuting. */
+        can_unmute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing playback. */
         can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports resuming playback. */
+        can_resume_speaker_playback?: boolean | undefined
         /** Indicates whether the speaker supports playing a chime. */
         can_play_speaker_chime?: boolean | undefined
       }[]
@@ -60247,10 +60267,14 @@ export type Routes = {
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
-        /** Indicates whether the speaker supports muting and unmuting. */
+        /** Indicates whether the speaker supports muting. */
         can_mute_speaker?: boolean | undefined
-        /** Indicates whether the speaker supports pausing and resuming playback. */
+        /** Indicates whether the speaker supports unmuting. */
+        can_unmute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing playback. */
         can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports resuming playback. */
+        can_resume_speaker_playback?: boolean | undefined
         /** Indicates whether the speaker supports playing a chime. */
         can_play_speaker_chime?: boolean | undefined
       }[]
@@ -62273,10 +62297,14 @@ export type Routes = {
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
-        /** Indicates whether the speaker supports muting and unmuting. */
+        /** Indicates whether the speaker supports muting. */
         can_mute_speaker?: boolean | undefined
-        /** Indicates whether the speaker supports pausing and resuming playback. */
+        /** Indicates whether the speaker supports unmuting. */
+        can_unmute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing playback. */
         can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports resuming playback. */
+        can_resume_speaker_playback?: boolean | undefined
         /** Indicates whether the speaker supports playing a chime. */
         can_play_speaker_chime?: boolean | undefined
       }
@@ -62495,7 +62523,9 @@ export type Routes = {
             | 'can_stream_live_video'
             | 'can_set_speaker_volume'
             | 'can_mute_speaker'
+            | 'can_unmute_speaker'
             | 'can_pause_speaker_playback'
+            | 'can_resume_speaker_playback'
             | 'can_play_speaker_chime'
           )[]
         | undefined
@@ -62526,7 +62556,9 @@ export type Routes = {
             | 'can_stream_live_video'
             | 'can_set_speaker_volume'
             | 'can_mute_speaker'
+            | 'can_unmute_speaker'
             | 'can_pause_speaker_playback'
+            | 'can_resume_speaker_playback'
             | 'can_play_speaker_chime'
           )[]
         | undefined
@@ -63137,10 +63169,14 @@ export type Routes = {
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
-        /** Indicates whether the speaker supports muting and unmuting. */
+        /** Indicates whether the speaker supports muting. */
         can_mute_speaker?: boolean | undefined
-        /** Indicates whether the speaker supports pausing and resuming playback. */
+        /** Indicates whether the speaker supports unmuting. */
+        can_unmute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing playback. */
         can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports resuming playback. */
+        can_resume_speaker_playback?: boolean | undefined
         /** Indicates whether the speaker supports playing a chime. */
         can_play_speaker_chime?: boolean | undefined
       }[]
@@ -76321,10 +76357,14 @@ export type Routes = {
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
-        /** Indicates whether the speaker supports muting and unmuting. */
+        /** Indicates whether the speaker supports muting. */
         can_mute_speaker?: boolean | undefined
-        /** Indicates whether the speaker supports pausing and resuming playback. */
+        /** Indicates whether the speaker supports unmuting. */
+        can_unmute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing playback. */
         can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports resuming playback. */
+        can_resume_speaker_playback?: boolean | undefined
         /** Indicates whether the speaker supports playing a chime. */
         can_play_speaker_chime?: boolean | undefined
       }
@@ -78327,10 +78367,14 @@ export type Routes = {
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
-        /** Indicates whether the speaker supports muting and unmuting. */
+        /** Indicates whether the speaker supports muting. */
         can_mute_speaker?: boolean | undefined
-        /** Indicates whether the speaker supports pausing and resuming playback. */
+        /** Indicates whether the speaker supports unmuting. */
+        can_unmute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing playback. */
         can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports resuming playback. */
+        can_resume_speaker_playback?: boolean | undefined
         /** Indicates whether the speaker supports playing a chime. */
         can_play_speaker_chime?: boolean | undefined
       }
@@ -80462,10 +80506,14 @@ export type Routes = {
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
-        /** Indicates whether the speaker supports muting and unmuting. */
+        /** Indicates whether the speaker supports muting. */
         can_mute_speaker?: boolean | undefined
-        /** Indicates whether the speaker supports pausing and resuming playback. */
+        /** Indicates whether the speaker supports unmuting. */
+        can_unmute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing playback. */
         can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports resuming playback. */
+        can_resume_speaker_playback?: boolean | undefined
         /** Indicates whether the speaker supports playing a chime. */
         can_play_speaker_chime?: boolean | undefined
       }[]
@@ -82467,10 +82515,14 @@ export type Routes = {
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
-        /** Indicates whether the speaker supports muting and unmuting. */
+        /** Indicates whether the speaker supports muting. */
         can_mute_speaker?: boolean | undefined
-        /** Indicates whether the speaker supports pausing and resuming playback. */
+        /** Indicates whether the speaker supports unmuting. */
+        can_unmute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing playback. */
         can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports resuming playback. */
+        can_resume_speaker_playback?: boolean | undefined
         /** Indicates whether the speaker supports playing a chime. */
         can_play_speaker_chime?: boolean | undefined
       }[]
@@ -94215,10 +94267,14 @@ export type Routes = {
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
-        /** Indicates whether the speaker supports muting and unmuting. */
+        /** Indicates whether the speaker supports muting. */
         can_mute_speaker?: boolean | undefined
-        /** Indicates whether the speaker supports pausing and resuming playback. */
+        /** Indicates whether the speaker supports unmuting. */
+        can_unmute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing playback. */
         can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports resuming playback. */
+        can_resume_speaker_playback?: boolean | undefined
         /** Indicates whether the speaker supports playing a chime. */
         can_play_speaker_chime?: boolean | undefined
       }[]
@@ -96220,10 +96276,14 @@ export type Routes = {
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
-        /** Indicates whether the speaker supports muting and unmuting. */
+        /** Indicates whether the speaker supports muting. */
         can_mute_speaker?: boolean | undefined
-        /** Indicates whether the speaker supports pausing and resuming playback. */
+        /** Indicates whether the speaker supports unmuting. */
+        can_unmute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing playback. */
         can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports resuming playback. */
+        can_resume_speaker_playback?: boolean | undefined
         /** Indicates whether the speaker supports playing a chime. */
         can_play_speaker_chime?: boolean | undefined
       }[]
@@ -123982,10 +124042,14 @@ export type Routes = {
               can_stream_live_video?: boolean | undefined
               /** Indicates whether the speaker supports setting its volume. */
               can_set_speaker_volume?: boolean | undefined
-              /** Indicates whether the speaker supports muting and unmuting. */
+              /** Indicates whether the speaker supports muting. */
               can_mute_speaker?: boolean | undefined
-              /** Indicates whether the speaker supports pausing and resuming playback. */
+              /** Indicates whether the speaker supports unmuting. */
+              can_unmute_speaker?: boolean | undefined
+              /** Indicates whether the speaker supports pausing playback. */
               can_pause_speaker_playback?: boolean | undefined
+              /** Indicates whether the speaker supports resuming playback. */
+              can_resume_speaker_playback?: boolean | undefined
               /** Indicates whether the speaker supports playing a chime. */
               can_play_speaker_chime?: boolean | undefined
             }[]
@@ -151460,10 +151524,14 @@ export type Routes = {
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
-        /** Indicates whether the speaker supports muting and unmuting. */
+        /** Indicates whether the speaker supports muting. */
         can_mute_speaker?: boolean | undefined
-        /** Indicates whether the speaker supports pausing and resuming playback. */
+        /** Indicates whether the speaker supports unmuting. */
+        can_unmute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing playback. */
         can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports resuming playback. */
+        can_resume_speaker_playback?: boolean | undefined
         /** Indicates whether the speaker supports playing a chime. */
         can_play_speaker_chime?: boolean | undefined
       }
@@ -158368,10 +158436,14 @@ export type Routes = {
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
-        /** Indicates whether the speaker supports muting and unmuting. */
+        /** Indicates whether the speaker supports muting. */
         can_mute_speaker?: boolean | undefined
-        /** Indicates whether the speaker supports pausing and resuming playback. */
+        /** Indicates whether the speaker supports unmuting. */
+        can_unmute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing playback. */
         can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports resuming playback. */
+        can_resume_speaker_playback?: boolean | undefined
         /** Indicates whether the speaker supports playing a chime. */
         can_play_speaker_chime?: boolean | undefined
       }[]
@@ -160373,10 +160445,14 @@ export type Routes = {
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
-        /** Indicates whether the speaker supports muting and unmuting. */
+        /** Indicates whether the speaker supports muting. */
         can_mute_speaker?: boolean | undefined
-        /** Indicates whether the speaker supports pausing and resuming playback. */
+        /** Indicates whether the speaker supports unmuting. */
+        can_unmute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing playback. */
         can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports resuming playback. */
+        can_resume_speaker_playback?: boolean | undefined
         /** Indicates whether the speaker supports playing a chime. */
         can_play_speaker_chime?: boolean | undefined
       }[]
@@ -173233,10 +173309,14 @@ export type Routes = {
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
-        /** Indicates whether the speaker supports muting and unmuting. */
+        /** Indicates whether the speaker supports muting. */
         can_mute_speaker?: boolean | undefined
-        /** Indicates whether the speaker supports pausing and resuming playback. */
+        /** Indicates whether the speaker supports unmuting. */
+        can_unmute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing playback. */
         can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports resuming playback. */
+        can_resume_speaker_playback?: boolean | undefined
         /** Indicates whether the speaker supports playing a chime. */
         can_play_speaker_chime?: boolean | undefined
       }[]
@@ -175240,10 +175320,14 @@ export type Routes = {
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
-        /** Indicates whether the speaker supports muting and unmuting. */
+        /** Indicates whether the speaker supports muting. */
         can_mute_speaker?: boolean | undefined
-        /** Indicates whether the speaker supports pausing and resuming playback. */
+        /** Indicates whether the speaker supports unmuting. */
+        can_unmute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing playback. */
         can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports resuming playback. */
+        can_resume_speaker_playback?: boolean | undefined
         /** Indicates whether the speaker supports playing a chime. */
         can_play_speaker_chime?: boolean | undefined
       }[]
@@ -179516,10 +179600,14 @@ export type Routes = {
               can_stream_live_video?: boolean | undefined
               /** Indicates whether the speaker supports setting its volume. */
               can_set_speaker_volume?: boolean | undefined
-              /** Indicates whether the speaker supports muting and unmuting. */
+              /** Indicates whether the speaker supports muting. */
               can_mute_speaker?: boolean | undefined
-              /** Indicates whether the speaker supports pausing and resuming playback. */
+              /** Indicates whether the speaker supports unmuting. */
+              can_unmute_speaker?: boolean | undefined
+              /** Indicates whether the speaker supports pausing playback. */
               can_pause_speaker_playback?: boolean | undefined
+              /** Indicates whether the speaker supports resuming playback. */
+              can_resume_speaker_playback?: boolean | undefined
               /** Indicates whether the speaker supports playing a chime. */
               can_play_speaker_chime?: boolean | undefined
             }[]
@@ -184125,10 +184213,14 @@ export type Routes = {
               can_stream_live_video?: boolean | undefined
               /** Indicates whether the speaker supports setting its volume. */
               can_set_speaker_volume?: boolean | undefined
-              /** Indicates whether the speaker supports muting and unmuting. */
+              /** Indicates whether the speaker supports muting. */
               can_mute_speaker?: boolean | undefined
-              /** Indicates whether the speaker supports pausing and resuming playback. */
+              /** Indicates whether the speaker supports unmuting. */
+              can_unmute_speaker?: boolean | undefined
+              /** Indicates whether the speaker supports pausing playback. */
               can_pause_speaker_playback?: boolean | undefined
+              /** Indicates whether the speaker supports resuming playback. */
+              can_resume_speaker_playback?: boolean | undefined
               /** Indicates whether the speaker supports playing a chime. */
               can_play_speaker_chime?: boolean | undefined
             }[]
