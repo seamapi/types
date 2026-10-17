@@ -70238,6 +70238,72 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Seam support agent only.',
       },
     },
+    '/seam/mobile_sdk/v1/acs/credentials/get_unlock_result': {
+      post: {
+        description:
+          "Returns the lock's decision for a mobile key unlock attempt, read from the access system's event feed. Returns `pending` until the access system reports the attempt, and `failed` if it hasn't within 30 seconds of the attempt.",
+        operationId: 'seamMobileSdkV1AcsCredentialsGetUnlockResultPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_credential_id: { format: 'uuid', type: 'string' },
+                  unlock_attempted_at: { format: 'date-time', type: 'string' },
+                },
+                required: ['acs_credential_id', 'unlock_attempted_at'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    unlock_result: {
+                      properties: {
+                        acs_entrance_id: { format: 'uuid', type: 'string' },
+                        occurred_at: { format: 'date-time', type: 'string' },
+                        status: {
+                          enum: ['granted', 'denied', 'pending', 'failed'],
+                          type: 'string',
+                        },
+                      },
+                      required: ['status'],
+                      type: 'object',
+                    },
+                  },
+                  required: ['unlock_result', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ client_session: [] }],
+        summary: '/seam/mobile_sdk/v1/acs/credentials/get_unlock_result',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'mobile_sdk',
+          'v1',
+          'acs',
+          'credentials',
+        ],
+        'x-fern-sdk-method-name': 'get_unlock_result',
+        'x-fern-sdk-return-value': 'unlock_result',
+        'x-response-key': 'unlock_result',
+        'x-title': 'Get Unlock Result',
+        'x-undocumented': 'Mobile SDK only.',
+      },
+    },
     '/seam/mobile_sdk/v1/acs/credentials/list': {
       get: {
         description:
