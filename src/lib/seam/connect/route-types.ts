@@ -179061,6 +179061,8 @@ export type Routes = {
       phone_number?: (string | null) | undefined
       /** Full name of the user associated with the new user identity. */
       full_name?: (string | null) | undefined
+      /** Customer key of the customer that owns the new user identity. Set it when the user identity will be used in access grants created through that customer's client session or Customer Portal. */
+      customer_key?: string | undefined
       /** List of access system IDs to associate with the new user identity through access system users. If there's no user with the same email address or phone number in the specified access systems, a new access system user is created. If there is an existing user with the same email or phone number in the specified access systems, the user is linked to the user identity. */
       acs_system_ids?: string[] | undefined
     }

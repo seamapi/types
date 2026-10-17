@@ -75434,6 +75434,12 @@ const openapi: OpenAPISpec = {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
+                  customer_key: {
+                    description:
+                      "Customer key of the customer that owns the new user identity. Set it when the user identity will be used in access grants created through that customer's client session or Customer Portal.",
+                    minLength: 1,
+                    type: 'string',
+                  },
                   email_address: {
                     description:
                       'Unique email address for the new user identity.',
