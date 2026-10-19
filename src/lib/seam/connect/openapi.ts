@@ -67510,15 +67510,7 @@ const openapi: OpenAPISpec = {
                           type: 'boolean',
                         },
                         feature_flags: {
-                          properties: {
-                            MANAGE_DEVICES_CONFIRMATION_MODAL: {
-                              type: 'boolean',
-                            },
-                            RESERVATION_LEGACY: { type: 'boolean' },
-                            SALTO_KS_DEVICES_AND_ENTRANCES_FOR_SPACES: {
-                              type: 'boolean',
-                            },
-                          },
+                          additionalProperties: { type: 'boolean' },
                           type: 'object',
                         },
                         features: {
