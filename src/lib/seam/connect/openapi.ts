@@ -2421,6 +2421,42 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                 },
+                {
+                  description:
+                    "Indicates that one of this access grant's access methods no longer grants access because of a change outside Seam, for example its card was encoded again for another credential. Seam does not replace the access method; issue a new one if the user still needs it.",
+                  properties: {
+                    access_method_id: {
+                      description:
+                        'ID of the access method whose access was revoked.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['access_revoked'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'warning_code',
+                    'access_method_id',
+                  ],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -37610,6 +37646,42 @@ const openapi: OpenAPISpec = {
                     'warning_code',
                     'device_id',
                     'reason',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    "Indicates that one of this access grant's access methods no longer grants access because of a change outside Seam, for example its card was encoded again for another credential. Seam does not replace the access method; issue a new one if the user still needs it.",
+                  properties: {
+                    access_method_id: {
+                      description:
+                        'ID of the access method whose access was revoked.',
+                      format: 'uuid',
+                      type: 'string',
+                    },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['access_revoked'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'warning_code',
+                    'access_method_id',
                   ],
                   type: 'object',
                 },

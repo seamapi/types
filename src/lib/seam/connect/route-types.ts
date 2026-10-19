@@ -15332,6 +15332,16 @@ export type Routes = {
                 | 'times_do_not_match_slots'
                 | 'ongoing_not_supported'
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'access_revoked'
+              /** ID of the access method whose access was revoked. */
+              access_method_id: string
+            }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
         errors: (
@@ -15573,6 +15583,16 @@ export type Routes = {
                 | 'duration_exceeds_max'
                 | 'times_do_not_match_slots'
                 | 'ongoing_not_supported'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'access_revoked'
+              /** ID of the access method whose access was revoked. */
+              access_method_id: string
             }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
@@ -19158,6 +19178,16 @@ export type Routes = {
                 | 'times_do_not_match_slots'
                 | 'ongoing_not_supported'
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'access_revoked'
+              /** ID of the access method whose access was revoked. */
+              access_method_id: string
+            }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
         errors: (
@@ -19400,6 +19430,16 @@ export type Routes = {
                 | 'times_do_not_match_slots'
                 | 'ongoing_not_supported'
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'access_revoked'
+              /** ID of the access method whose access was revoked. */
+              access_method_id: string
+            }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
         errors: (
@@ -19613,6 +19653,16 @@ export type Routes = {
                 | 'duration_exceeds_max'
                 | 'times_do_not_match_slots'
                 | 'ongoing_not_supported'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'access_revoked'
+              /** ID of the access method whose access was revoked. */
+              access_method_id: string
             }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
@@ -19836,6 +19886,16 @@ export type Routes = {
                 | 'duration_exceeds_max'
                 | 'times_do_not_match_slots'
                 | 'ongoing_not_supported'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'access_revoked'
+              /** ID of the access method whose access was revoked. */
+              access_method_id: string
             }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
@@ -27759,6 +27819,16 @@ export type Routes = {
                       | 'duration_exceeds_max'
                       | 'times_do_not_match_slots'
                       | 'ongoing_not_supported'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'access_revoked'
+                    /** ID of the access method whose access was revoked. */
+                    access_method_id: string
                   }
               )[]
               /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
@@ -108622,6 +108692,16 @@ export type Routes = {
                 | 'times_do_not_match_slots'
                 | 'ongoing_not_supported'
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'access_revoked'
+              /** ID of the access method whose access was revoked. */
+              access_method_id: string
+            }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
         errors: (
@@ -117673,6 +117753,16 @@ export type Routes = {
                 | 'times_do_not_match_slots'
                 | 'ongoing_not_supported'
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'access_revoked'
+              /** ID of the access method whose access was revoked. */
+              access_method_id: string
+            }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
         errors: (
@@ -118261,6 +118351,16 @@ export type Routes = {
                     | 'duration_exceeds_max'
                     | 'times_do_not_match_slots'
                     | 'ongoing_not_supported'
+                }
+              | {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: 'access_revoked'
+                  /** ID of the access method whose access was revoked. */
+                  access_method_id: string
                 }
             )[]
             /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
@@ -193554,6 +193654,16 @@ export type Routes = {
                       | 'duration_exceeds_max'
                       | 'times_do_not_match_slots'
                       | 'ongoing_not_supported'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'access_revoked'
+                    /** ID of the access method whose access was revoked. */
+                    access_method_id: string
                   }
               )[]
               /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */

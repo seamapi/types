@@ -215,6 +215,20 @@ const device_time_constraints_violated = common_access_grant_warning
     "Indicates that a device in the access grant cannot program an access code for the grant's time range because of device-specific time constraints.",
   )
 
+const access_revoked = common_access_grant_warning
+  .extend({
+    warning_code: z
+      .literal('access_revoked')
+      .describe(warning_code_description),
+    access_method_id: z
+      .string()
+      .uuid()
+      .describe('ID of the access method whose access was revoked.'),
+  })
+  .describe(
+    "Indicates that one of this access grant's access methods no longer grants access because of a change outside Seam, for example its card was encoded again for another credential. Seam does not replace the access method; issue a new one if the user still needs it.",
+  )
+
 const access_grant_warning = z
   .discriminatedUnion('warning_code', [
     being_deleted,
@@ -224,6 +238,7 @@ const access_grant_warning = z
     requested_code_unavailable,
     device_does_not_support_access_codes,
     device_time_constraints_violated,
+    access_revoked,
   ])
   .describe(
     'Warning associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access).',
@@ -248,6 +263,10 @@ const _access_grant_warning_map = z.object({
     .nullable(),
   device_time_constraints_violated: z
     .record(z.string().uuid(), device_time_constraints_violated)
+    .optional()
+    .nullable(),
+  access_revoked_by_access_method: z
+    .record(z.string().uuid(), access_revoked)
     .optional()
     .nullable(),
 })
