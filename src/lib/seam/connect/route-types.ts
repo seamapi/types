@@ -117195,9 +117195,7 @@ export type Routes = {
           | undefined
         feature_flags?:
           | {
-              RESERVATION_LEGACY?: boolean | undefined
-              SALTO_KS_DEVICES_AND_ENTRANCES_FOR_SPACES?: boolean | undefined
-              MANAGE_DEVICES_CONFIRMATION_MODAL?: boolean | undefined
+              [x: string]: boolean
             }
           | undefined
       }
