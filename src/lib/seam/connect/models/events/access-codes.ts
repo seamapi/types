@@ -338,7 +338,7 @@ export const access_code_failed_to_issue_event = access_code_event
     route_path: /access_codes
     undocumented: Unreleased.
     ---
-    Seam was unable to issue this [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) before its start time, so the recipient may be unable to unlock the device. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and the accompanying \`failed_to_issue\` error clears automatically if the access code is eventually issued.
+    Seam was unable to issue this [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) before its start time, so the recipient may be unable to unlock the device. This usually points to a problem that needs attention, such as an offline or disconnected device. The accompanying \`failed_to_issue\` error clears automatically if the access code is eventually issued.
   `)
 
 export type AccessCodeFailedToIssueEvent = z.infer<

@@ -401,7 +401,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Seam was unable to issue this access code before its start time, so the recipient may be unable to unlock the device. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access code is eventually issued.',
+                    'Seam was unable to issue this access code before its start time, so the recipient may be unable to unlock the device. This usually points to a problem that needs attention, such as an offline or disconnected device. This error clears automatically if the access code is eventually issued.',
                   properties: {
                     created_at: {
                       description:
@@ -22316,7 +22316,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'Seam was unable to issue this [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) before its start time, so the recipient may be unable to unlock the device. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and the accompanying `failed_to_issue` error clears automatically if the access code is eventually issued.',
+              'Seam was unable to issue this [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) before its start time, so the recipient may be unable to unlock the device. This usually points to a problem that needs attention, such as an offline or disconnected device. The accompanying `failed_to_issue` error clears automatically if the access code is eventually issued.',
             properties: {
               access_code_errors: {
                 description: 'Errors associated with the access code.',
@@ -35973,7 +35973,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'Seam was unable to issue this access code before its start time, so the recipient may be unable to unlock the device. This usually points to a problem that needs attention, such as an offline or disconnected device. Seam keeps retrying, and this error clears automatically if the access code is eventually issued.',
+                    'Seam was unable to issue this access code before its start time, so the recipient may be unable to unlock the device. This usually points to a problem that needs attention, such as an offline or disconnected device. This error clears automatically if the access code is eventually issued.',
                   properties: {
                     created_at: {
                       description:
