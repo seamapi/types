@@ -95,6 +95,16 @@ const requested_code_unavailable_warning = common_access_method_warning
     "Indicates that the access system could not use the PIN code requested for this [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant), for example because it did not meet the access system's PIN rules, so the access system assigned a different code. Give the recipient the assigned code.",
   )
 
+const schedule_rounded_up_warning = common_access_method_warning
+  .extend({
+    warning_code: z
+      .literal('schedule_rounded_up')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that the access system can only end card access on fixed time marks, so access was extended past `ends_at` to the next mark. The message states when access actually ends.',
+  )
+
 const access_method_warning = z
   .discriminatedUnion('warning_code', [
     being_deleted,
@@ -104,6 +114,7 @@ const access_method_warning = z
     user_identity_missing_email_address_warning,
     user_identity_missing_phone_number_warning,
     requested_code_unavailable_warning,
+    schedule_rounded_up_warning,
   ])
   .describe(
     'Warning associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant).',
@@ -124,6 +135,7 @@ const _access_method_warning_map = z.object({
   requested_code_unavailable: requested_code_unavailable_warning
     .optional()
     .nullable(),
+  schedule_rounded_up: schedule_rounded_up_warning.optional().nullable(),
 })
 
 export type AccessMethodWarningMap = z.infer<typeof _access_method_warning_map>
