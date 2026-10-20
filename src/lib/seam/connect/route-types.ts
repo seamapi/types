@@ -15803,6 +15803,7 @@ export type Routes = {
                     | 'omnitec_lock'
                     | 'kisi_lock'
                     | 'aqara_lock'
+                    | 'eufy_lock'
                   )
                 | 'keynest_key'
                 | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -16747,6 +16748,14 @@ export type Routes = {
                       /** Firmware version for an Aqara device. */
                       firmware_version?:
                         ((string | null) | undefined) | undefined
+                    }
+                  | undefined
+                /** Metadata for a Eufy device. */
+                eufy_metadata?:
+                  | {
+                      device_id?: (string | undefined) | undefined
+                      device_name?: (string | undefined) | undefined
+                      model?: (string | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for a Sonos speaker. */
@@ -25373,6 +25382,7 @@ export type Routes = {
                     | 'omnitec_lock'
                     | 'kisi_lock'
                     | 'aqara_lock'
+                    | 'eufy_lock'
                   )
                 | 'keynest_key'
                 | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -26317,6 +26327,14 @@ export type Routes = {
                       /** Firmware version for an Aqara device. */
                       firmware_version?:
                         ((string | null) | undefined) | undefined
+                    }
+                  | undefined
+                /** Metadata for a Eufy device. */
+                eufy_metadata?:
+                  | {
+                      device_id?: (string | undefined) | undefined
+                      device_name?: (string | undefined) | undefined
+                      model?: (string | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for a Sonos speaker. */
@@ -56972,6 +56990,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'eufy_lock'
             )
           | 'keynest_key'
           | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -57885,6 +57904,14 @@ export type Routes = {
                 position_id?: ((string | null) | undefined) | undefined
                 /** Firmware version for an Aqara device. */
                 firmware_version?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Eufy device. */
+          eufy_metadata?:
+            | {
+                device_id?: (string | undefined) | undefined
+                device_name?: (string | undefined) | undefined
+                model?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sonos speaker. */
@@ -59000,6 +59027,7 @@ export type Routes = {
                 | 'omnitec_lock'
                 | 'kisi_lock'
                 | 'aqara_lock'
+                | 'eufy_lock'
               )
             | 'keynest_key'
             | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -59051,6 +59079,7 @@ export type Routes = {
                 | 'omnitec_lock'
                 | 'kisi_lock'
                 | 'aqara_lock'
+                | 'eufy_lock'
               )
             | 'keynest_key'
             | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -59263,6 +59292,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'eufy_lock'
             )
           | 'keynest_key'
           | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -60176,6 +60206,14 @@ export type Routes = {
                 position_id?: ((string | null) | undefined) | undefined
                 /** Firmware version for an Aqara device. */
                 firmware_version?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Eufy device. */
+          eufy_metadata?:
+            | {
+                device_id?: (string | undefined) | undefined
+                device_name?: (string | undefined) | undefined
+                model?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sonos speaker. */
@@ -62879,6 +62917,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'eufy_lock'
             )
           | 'keynest_key'
           | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -63509,6 +63548,7 @@ export type Routes = {
                 | 'omnitec_lock'
                 | 'kisi_lock'
                 | 'aqara_lock'
+                | 'eufy_lock'
               )
             | 'keynest_key'
             | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -63560,6 +63600,7 @@ export type Routes = {
                 | 'omnitec_lock'
                 | 'kisi_lock'
                 | 'aqara_lock'
+                | 'eufy_lock'
               )
             | 'keynest_key'
             | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -63759,6 +63800,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'eufy_lock'
             )
           | 'keynest_key'
           | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -75632,6 +75674,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'eufy_lock'
             )
           | 'keynest_key'
           | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -76545,6 +76588,14 @@ export type Routes = {
                 position_id?: ((string | null) | undefined) | undefined
                 /** Firmware version for an Aqara device. */
                 firmware_version?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Eufy device. */
+          eufy_metadata?:
+            | {
+                device_id?: (string | undefined) | undefined
+                device_name?: (string | undefined) | undefined
+                model?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sonos speaker. */
@@ -77646,6 +77697,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'eufy_lock'
             )
           | 'keynest_key'
           | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -78559,6 +78611,14 @@ export type Routes = {
                 position_id?: ((string | null) | undefined) | undefined
                 /** Firmware version for an Aqara device. */
                 firmware_version?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Eufy device. */
+          eufy_metadata?:
+            | {
+                device_id?: (string | undefined) | undefined
+                device_name?: (string | undefined) | undefined
+                model?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sonos speaker. */
@@ -79671,6 +79731,7 @@ export type Routes = {
             | 'omnitec_lock'
             | 'kisi_lock'
             | 'aqara_lock'
+            | 'eufy_lock'
           )
         | undefined
       /** Device types of the locks that you want to list. */
@@ -79707,6 +79768,7 @@ export type Routes = {
             | 'omnitec_lock'
             | 'kisi_lock'
             | 'aqara_lock'
+            | 'eufy_lock'
           )[]
         | undefined
       /** Manufacturer of the locks that you want to list. */
@@ -79789,6 +79851,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'eufy_lock'
             )
           | 'keynest_key'
           | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -80702,6 +80765,14 @@ export type Routes = {
                 position_id?: ((string | null) | undefined) | undefined
                 /** Firmware version for an Aqara device. */
                 firmware_version?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Eufy device. */
+          eufy_metadata?:
+            | {
+                device_id?: (string | undefined) | undefined
+                device_name?: (string | undefined) | undefined
+                model?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sonos speaker. */
@@ -81802,6 +81873,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'eufy_lock'
             )
           | 'keynest_key'
           | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -82715,6 +82787,14 @@ export type Routes = {
                 position_id?: ((string | null) | undefined) | undefined
                 /** Firmware version for an Aqara device. */
                 firmware_version?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Eufy device. */
+          eufy_metadata?:
+            | {
+                device_id?: (string | undefined) | undefined
+                device_name?: (string | undefined) | undefined
+                model?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sonos speaker. */
@@ -93874,6 +93954,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'eufy_lock'
             )
           | 'keynest_key'
           | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -94787,6 +94868,14 @@ export type Routes = {
                 position_id?: ((string | null) | undefined) | undefined
                 /** Firmware version for an Aqara device. */
                 firmware_version?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Eufy device. */
+          eufy_metadata?:
+            | {
+                device_id?: (string | undefined) | undefined
+                device_name?: (string | undefined) | undefined
+                model?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sonos speaker. */
@@ -95887,6 +95976,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'eufy_lock'
             )
           | 'keynest_key'
           | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -96800,6 +96890,14 @@ export type Routes = {
                 position_id?: ((string | null) | undefined) | undefined
                 /** Firmware version for an Aqara device. */
                 firmware_version?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Eufy device. */
+          eufy_metadata?:
+            | {
+                device_id?: (string | undefined) | undefined
+                device_name?: (string | undefined) | undefined
+                model?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sonos speaker. */
@@ -124108,6 +124206,7 @@ export type Routes = {
                     | 'omnitec_lock'
                     | 'kisi_lock'
                     | 'aqara_lock'
+                    | 'eufy_lock'
                   )
                 | 'keynest_key'
                 | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -125052,6 +125151,14 @@ export type Routes = {
                       /** Firmware version for an Aqara device. */
                       firmware_version?:
                         ((string | null) | undefined) | undefined
+                    }
+                  | undefined
+                /** Metadata for a Eufy device. */
+                eufy_metadata?:
+                  | {
+                      device_id?: (string | undefined) | undefined
+                      device_name?: (string | undefined) | undefined
+                      model?: (string | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for a Sonos speaker. */
@@ -157475,6 +157582,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'eufy_lock'
             )
           | 'keynest_key'
           | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -158388,6 +158496,14 @@ export type Routes = {
                 position_id?: ((string | null) | undefined) | undefined
                 /** Firmware version for an Aqara device. */
                 firmware_version?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Eufy device. */
+          eufy_metadata?:
+            | {
+                device_id?: (string | undefined) | undefined
+                device_name?: (string | undefined) | undefined
+                model?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sonos speaker. */
@@ -164549,6 +164665,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'eufy_lock'
             )
           | 'keynest_key'
           | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -165462,6 +165579,14 @@ export type Routes = {
                 position_id?: ((string | null) | undefined) | undefined
                 /** Firmware version for an Aqara device. */
                 firmware_version?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Eufy device. */
+          eufy_metadata?:
+            | {
+                device_id?: (string | undefined) | undefined
+                device_name?: (string | undefined) | undefined
+                model?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sonos speaker. */
@@ -166562,6 +166687,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'eufy_lock'
             )
           | 'keynest_key'
           | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -167475,6 +167601,14 @@ export type Routes = {
                 position_id?: ((string | null) | undefined) | undefined
                 /** Firmware version for an Aqara device. */
                 firmware_version?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Eufy device. */
+          eufy_metadata?:
+            | {
+                device_id?: (string | undefined) | undefined
+                device_name?: (string | undefined) | undefined
+                model?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sonos speaker. */
@@ -179748,6 +179882,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'eufy_lock'
             )
           | 'keynest_key'
           | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -180661,6 +180796,14 @@ export type Routes = {
                 position_id?: ((string | null) | undefined) | undefined
                 /** Firmware version for an Aqara device. */
                 firmware_version?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Eufy device. */
+          eufy_metadata?:
+            | {
+                device_id?: (string | undefined) | undefined
+                device_name?: (string | undefined) | undefined
+                model?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sonos speaker. */
@@ -181763,6 +181906,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'eufy_lock'
             )
           | 'keynest_key'
           | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -182676,6 +182820,14 @@ export type Routes = {
                 position_id?: ((string | null) | undefined) | undefined
                 /** Firmware version for an Aqara device. */
                 firmware_version?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Eufy device. */
+          eufy_metadata?:
+            | {
+                device_id?: (string | undefined) | undefined
+                device_name?: (string | undefined) | undefined
+                model?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sonos speaker. */
@@ -186478,6 +186630,7 @@ export type Routes = {
                     | 'omnitec_lock'
                     | 'kisi_lock'
                     | 'aqara_lock'
+                    | 'eufy_lock'
                   )
                 | 'keynest_key'
                 | ('noiseaware_activity_zone' | 'minut_sensor')
@@ -187422,6 +187575,14 @@ export type Routes = {
                       /** Firmware version for an Aqara device. */
                       firmware_version?:
                         ((string | null) | undefined) | undefined
+                    }
+                  | undefined
+                /** Metadata for a Eufy device. */
+                eufy_metadata?:
+                  | {
+                      device_id?: (string | undefined) | undefined
+                      device_name?: (string | undefined) | undefined
+                      model?: (string | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for a Sonos speaker. */
@@ -192628,6 +192789,7 @@ export type Routes = {
                     | 'omnitec_lock'
                     | 'kisi_lock'
                     | 'aqara_lock'
+                    | 'eufy_lock'
                   )
                 | 'keynest_key'
                 | ('noiseaware_activity_zone' | 'minut_sensor')

@@ -32,6 +32,7 @@ export const LOCK_DEVICE_TYPE = {
   OMNITEC_LOCK: 'omnitec_lock',
   KISI_LOCK: 'kisi_lock',
   AQARA_LOCK: 'aqara_lock',
+  EUFY_LOCK: 'eufy_lock',
 } as const
 
 type LockDeviceTypeFromMapping =

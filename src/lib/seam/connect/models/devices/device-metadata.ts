@@ -1323,6 +1323,15 @@ export const device_metadata = z
       .partial()
       .describe(`Metadata for an Aqara device.`),
 
+    eufy_metadata: z
+      .object({
+        device_id: z.string().optional(),
+        device_name: z.string().optional(),
+        model: z.string().optional(),
+      })
+      .partial()
+      .describe(`Metadata for a Eufy device.`),
+
     sonos_metadata: z
       .object({
         household_id: z
