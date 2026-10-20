@@ -54750,6 +54750,7 @@ export type Routes = {
             | 'omnitec'
             | 'kisi'
             | 'aqara'
+            | 'eufy'
             | 'sonos'
             | 'yale_access'
             | 'hid_cm'
@@ -61343,6 +61344,7 @@ export type Routes = {
           | 'omnitec'
           | 'kisi'
           | 'aqara'
+          | 'eufy'
           | 'sonos'
         /** Display name for the device provider. */
         display_name: string
