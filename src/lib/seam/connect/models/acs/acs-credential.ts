@@ -121,6 +121,16 @@ const requested_code_unavailable = common_acs_credential_warning
     'Indicates that the requested PIN code could not be used, so the access system assigned a different code. Give the guest the assigned code.',
   )
 
+const schedule_rounded_up = common_acs_credential_warning
+  .extend({
+    warning_code: z
+      .literal('schedule_rounded_up')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that the access system can only end card access on fixed time marks, so access was extended past `ends_at` to the next mark. The message states when access actually ends.',
+  )
+
 const acs_credential_warning = z
   .discriminatedUnion('warning_code', [
     waiting_to_be_issued,
@@ -130,6 +140,7 @@ const acs_credential_warning = z
     unknown_issue_with_acs_credential,
     needs_to_be_reissued,
     requested_code_unavailable,
+    schedule_rounded_up,
   ])
   .describe(
     'Warning associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials).',
@@ -147,6 +158,7 @@ const _acs_credential_warning_map = z.object({
     .nullable(),
   needs_to_be_reissued: needs_to_be_reissued.optional().nullable(),
   requested_code_unavailable: requested_code_unavailable.optional().nullable(),
+  schedule_rounded_up: schedule_rounded_up.optional().nullable(),
 })
 
 export type AcsCredentialWarningMap = z.infer<

@@ -3054,6 +3054,31 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Indicates that the access system can only end card access on fixed time marks, so access was extended past `ends_at` to the next mark. The message states when access actually ends.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['schedule_rounded_up'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -4123,6 +4148,31 @@ const openapi: OpenAPISpec = {
                     'original_code',
                     'new_code',
                   ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the access system can only end card access on fixed time marks, so access was extended past `ends_at` to the next mark. The message states when access actually ends.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['schedule_rounded_up'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
               ],
@@ -7270,6 +7320,35 @@ const openapi: OpenAPISpec = {
                                   ],
                                   type: 'object',
                                 },
+                                {
+                                  description:
+                                    'Indicates that the access system can only end card access on fixed time marks, so access was extended past `ends_at` to the next mark. The message states when access actually ends.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['schedule_rounded_up'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
                               ],
                             },
                             type: 'array',
@@ -7786,6 +7865,35 @@ const openapi: OpenAPISpec = {
                                     'warning_code',
                                     'original_code',
                                     'new_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'Indicates that the access system can only end card access on fixed time marks, so access was extended past `ends_at` to the next mark. The message states when access actually ends.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['schedule_rounded_up'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
                                   ],
                                   type: 'object',
                                 },
@@ -8567,6 +8675,35 @@ const openapi: OpenAPISpec = {
                               ],
                               type: 'object',
                             },
+                            {
+                              description:
+                                'Indicates that the access system can only end card access on fixed time marks, so access was extended past `ends_at` to the next mark. The message states when access actually ends.',
+                              properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the warning.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: {
+                                  description:
+                                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                  type: 'string',
+                                },
+                                warning_code: {
+                                  description:
+                                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                  enum: ['schedule_rounded_up'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'created_at',
+                                'message',
+                                'warning_code',
+                              ],
+                              type: 'object',
+                            },
                           ],
                         },
                         type: 'array',
@@ -9080,6 +9217,35 @@ const openapi: OpenAPISpec = {
                                 'warning_code',
                                 'original_code',
                                 'new_code',
+                              ],
+                              type: 'object',
+                            },
+                            {
+                              description:
+                                'Indicates that the access system can only end card access on fixed time marks, so access was extended past `ends_at` to the next mark. The message states when access actually ends.',
+                              properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the warning.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: {
+                                  description:
+                                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                  type: 'string',
+                                },
+                                warning_code: {
+                                  description:
+                                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                  enum: ['schedule_rounded_up'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'created_at',
+                                'message',
+                                'warning_code',
                               ],
                               type: 'object',
                             },
@@ -9873,6 +10039,31 @@ const openapi: OpenAPISpec = {
                           ],
                           type: 'object',
                         },
+                        {
+                          description:
+                            'Indicates that the access system can only end card access on fixed time marks, so access was extended past `ends_at` to the next mark. The message states when access actually ends.',
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which Seam created the warning.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            message: {
+                              description:
+                                'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                              type: 'string',
+                            },
+                            warning_code: {
+                              description:
+                                'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                              enum: ['schedule_rounded_up'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['created_at', 'message', 'warning_code'],
+                          type: 'object',
+                        },
                       ],
                     },
                     type: 'array',
@@ -10627,6 +10818,31 @@ const openapi: OpenAPISpec = {
                             'original_code',
                             'new_code',
                           ],
+                          type: 'object',
+                        },
+                        {
+                          description:
+                            'Indicates that the access system can only end card access on fixed time marks, so access was extended past `ends_at` to the next mark. The message states when access actually ends.',
+                          properties: {
+                            created_at: {
+                              description:
+                                'Date and time at which Seam created the warning.',
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            message: {
+                              description:
+                                'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                              type: 'string',
+                            },
+                            warning_code: {
+                              description:
+                                'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                              enum: ['schedule_rounded_up'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['created_at', 'message', 'warning_code'],
                           type: 'object',
                         },
                       ],
@@ -34884,6 +35100,35 @@ const openapi: OpenAPISpec = {
                               ],
                               type: 'object',
                             },
+                            {
+                              description:
+                                'Indicates that the access system can only end card access on fixed time marks, so access was extended past `ends_at` to the next mark. The message states when access actually ends.',
+                              properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the warning.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: {
+                                  description:
+                                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                  type: 'string',
+                                },
+                                warning_code: {
+                                  description:
+                                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                  enum: ['schedule_rounded_up'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'created_at',
+                                'message',
+                                'warning_code',
+                              ],
+                              type: 'object',
+                            },
                           ],
                         },
                         type: 'array',
@@ -38274,6 +38519,31 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Indicates that the access system can only end card access on fixed time marks, so access was extended past `ends_at` to the next mark. The message states when access actually ends.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['schedule_rounded_up'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -39334,6 +39604,31 @@ const openapi: OpenAPISpec = {
                     'original_code',
                     'new_code',
                   ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the access system can only end card access on fixed time marks, so access was extended past `ends_at` to the next mark. The message states when access actually ends.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['schedule_rounded_up'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
               ],
