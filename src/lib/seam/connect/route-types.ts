@@ -333,6 +333,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -523,6 +531,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -793,6 +809,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -982,6 +1006,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -1263,6 +1295,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -1466,6 +1506,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -3974,6 +4022,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -4164,6 +4220,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -4434,6 +4498,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -4623,6 +4695,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -4904,6 +4984,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -5107,6 +5195,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -9404,6 +9500,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -9594,6 +9698,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -9864,6 +9976,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -10053,6 +10173,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -10334,6 +10462,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -10537,6 +10673,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -12896,6 +13040,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -13086,6 +13238,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -13356,6 +13516,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -13545,6 +13713,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -13826,6 +14002,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -14029,6 +14213,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -18915,6 +19107,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -20326,6 +20526,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -20516,6 +20724,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -20786,6 +21002,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -20975,6 +21199,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -21256,6 +21488,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -21459,6 +21699,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -22847,6 +23095,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -23037,6 +23293,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -23307,6 +23571,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -23496,6 +23768,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -23777,6 +24057,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -23980,6 +24268,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -25154,6 +25450,14 @@ export type Routes = {
               original_code: string
               /** The PIN code that was assigned instead. */
               new_code: string
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_rounded_up'
             }
         )[]
         /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -28017,6 +28321,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -28427,6 +28739,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -28611,6 +28931,14 @@ export type Routes = {
               original_code: string
               /** The PIN code that was assigned instead. */
               new_code: string
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_rounded_up'
             }
         )[]
         /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -29014,6 +29342,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -29204,6 +29540,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -29474,6 +29818,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -29663,6 +30015,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -29944,6 +30304,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -30147,6 +30515,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -31318,6 +31694,14 @@ export type Routes = {
               /** The PIN code that was assigned instead. */
               new_code: string
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_rounded_up'
+            }
         )[]
         /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
         errors: (
@@ -31518,6 +31902,14 @@ export type Routes = {
               original_code: string
               /** The PIN code that was assigned instead. */
               new_code: string
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_rounded_up'
             }
         )[]
         /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -33330,6 +33722,14 @@ export type Routes = {
               /** The PIN code that was assigned instead. */
               new_code: string
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_rounded_up'
+            }
         )[]
         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
@@ -33596,6 +33996,14 @@ export type Routes = {
               /** The PIN code that was assigned instead. */
               new_code: string
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_rounded_up'
+            }
         )[]
         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
@@ -33809,6 +34217,14 @@ export type Routes = {
               original_code: string
               /** The PIN code that was assigned instead. */
               new_code: string
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_rounded_up'
             }
         )[]
         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -34029,6 +34445,14 @@ export type Routes = {
               /** The PIN code that was assigned instead. */
               new_code: string
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_rounded_up'
+            }
         )[]
         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
@@ -34241,6 +34665,14 @@ export type Routes = {
               original_code: string
               /** The PIN code that was assigned instead. */
               new_code: string
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_rounded_up'
             }
         )[]
         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -34737,6 +35169,14 @@ export type Routes = {
               /** The PIN code that was assigned instead. */
               new_code: string
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_rounded_up'
+            }
         )[]
         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
@@ -34936,6 +35376,14 @@ export type Routes = {
               original_code: string
               /** The PIN code that was assigned instead. */
               new_code: string
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_rounded_up'
             }
         )[]
         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -35140,6 +35588,14 @@ export type Routes = {
               original_code: string
               /** The PIN code that was assigned instead. */
               new_code: string
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_rounded_up'
             }
         )[]
         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -35349,6 +35805,14 @@ export type Routes = {
               original_code: string
               /** The PIN code that was assigned instead. */
               new_code: string
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_rounded_up'
             }
         )[]
         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -35711,6 +36175,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -35901,6 +36373,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -36171,6 +36651,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -36360,6 +36848,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -36641,6 +37137,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -36844,6 +37348,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -38320,6 +38832,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -38510,6 +39030,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -38780,6 +39308,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -38969,6 +39505,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -39250,6 +39794,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -39453,6 +40005,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -40828,6 +41388,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -41018,6 +41586,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -41288,6 +41864,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -41477,6 +42061,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -41758,6 +42350,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -41961,6 +42561,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -43862,6 +44470,14 @@ export type Routes = {
               /** The PIN code that was assigned instead. */
               new_code: string
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_rounded_up'
+            }
         )[]
         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
@@ -44221,6 +44837,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -44411,6 +45035,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -44681,6 +45313,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -44870,6 +45510,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -45151,6 +45799,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -45354,6 +46010,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -49552,6 +50216,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -49742,6 +50414,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -50012,6 +50692,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -50201,6 +50889,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -50482,6 +51178,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -50685,6 +51389,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -52050,6 +52762,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -52240,6 +52960,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -52510,6 +53238,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -52699,6 +53435,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -52980,6 +53724,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -53183,6 +53935,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -73422,6 +74182,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -73612,6 +74380,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -73882,6 +74658,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -74071,6 +74855,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -74352,6 +75144,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -74555,6 +75355,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -84159,6 +84967,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -84349,6 +85165,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -84619,6 +85443,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -84808,6 +85640,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -85089,6 +85929,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -85292,6 +86140,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -86658,6 +87514,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -86848,6 +87712,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -87118,6 +87990,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -87307,6 +88187,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -87588,6 +88476,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -87791,6 +88687,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -89155,6 +90059,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -89345,6 +90257,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -89615,6 +90535,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -89804,6 +90732,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -90085,6 +91021,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -90288,6 +91232,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -91654,6 +92606,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -91844,6 +92804,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -92114,6 +93082,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -92303,6 +93279,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -92584,6 +93568,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -92787,6 +93779,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -98272,6 +99272,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -98462,6 +99470,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -98732,6 +99748,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -98921,6 +99945,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -99202,6 +100234,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -99405,6 +100445,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -100790,6 +101838,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -100980,6 +102036,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -101250,6 +102314,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -101439,6 +102511,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -101720,6 +102800,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -101923,6 +103011,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -103364,6 +104460,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -103554,6 +104658,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -103824,6 +104936,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -104013,6 +105133,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -104294,6 +105422,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -104497,6 +105633,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -109190,6 +110334,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -109380,6 +110532,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -109650,6 +110810,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -109839,6 +111007,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -110120,6 +111296,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -110323,6 +111507,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -118868,6 +120060,14 @@ export type Routes = {
               /** The PIN code that was assigned instead. */
               new_code: string
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_rounded_up'
+            }
         )[]
         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
@@ -119092,6 +120292,14 @@ export type Routes = {
                   original_code: string
                   /** The PIN code that was assigned instead. */
                   new_code: string
+                }
+              | {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: 'schedule_rounded_up'
                 }
             )[]
             /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -127058,6 +128266,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
               errors: (
@@ -127709,6 +128925,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -127899,6 +129123,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -128169,6 +129401,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -128358,6 +129598,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -128639,6 +129887,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -128842,6 +130098,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -130206,6 +131470,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -130396,6 +131668,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -130666,6 +131946,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -130855,6 +132143,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -131136,6 +132432,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -131339,6 +132643,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -132707,6 +134019,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -132897,6 +134217,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -133167,6 +134495,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -133356,6 +134692,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -133637,6 +134981,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -133840,6 +135192,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -135206,6 +136566,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -135396,6 +136764,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -135666,6 +137042,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -135855,6 +137239,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -136136,6 +137528,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -136339,6 +137739,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -137707,6 +139115,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -137897,6 +139313,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -138167,6 +139591,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -138356,6 +139788,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -138637,6 +140077,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -138840,6 +140288,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -140204,6 +141660,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -140394,6 +141858,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -140664,6 +142136,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -140853,6 +142333,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -141134,6 +142622,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -141337,6 +142833,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -142703,6 +144207,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -142893,6 +144405,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -143163,6 +144683,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -143352,6 +144880,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -143633,6 +145169,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -143836,6 +145380,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -145200,6 +146752,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -145390,6 +146950,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -145660,6 +147228,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -145849,6 +147425,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -146130,6 +147714,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -146333,6 +147925,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -147699,6 +149299,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -147889,6 +149497,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -148159,6 +149775,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -148348,6 +149972,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -148629,6 +150261,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -148832,6 +150472,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -150198,6 +151846,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -150388,6 +152044,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -150658,6 +152322,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -150847,6 +152519,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -151128,6 +152808,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -151331,6 +153019,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -152701,6 +154397,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -152891,6 +154595,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -153161,6 +154873,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -153350,6 +155070,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -153631,6 +155359,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -153834,6 +155570,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -155315,6 +157059,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -155505,6 +157257,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -155775,6 +157535,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -155964,6 +157732,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -156245,6 +158021,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -156448,6 +158232,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -159872,6 +161664,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -160062,6 +161862,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -160332,6 +162140,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -160521,6 +162337,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -160802,6 +162626,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -161005,6 +162837,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -162379,6 +164219,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -162569,6 +164417,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -162839,6 +164695,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -163028,6 +164892,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -163309,6 +165181,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -163512,6 +165392,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -168973,6 +170861,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -169163,6 +171059,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -169433,6 +171337,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -169622,6 +171534,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -169903,6 +171823,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -170106,6 +172034,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -171681,6 +173617,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -171871,6 +173815,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -172141,6 +174093,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -172330,6 +174290,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -172611,6 +174579,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -172814,6 +174790,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -174216,6 +176200,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -174406,6 +176398,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -174676,6 +176676,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -174865,6 +176873,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -175146,6 +177162,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -175349,6 +177373,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -176867,6 +178899,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -177057,6 +179097,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -177327,6 +179375,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -177516,6 +179572,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -177797,6 +179861,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -178000,6 +180072,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -189989,6 +192069,14 @@ export type Routes = {
                                     /** The PIN code that was assigned instead. */
                                     new_code: string
                                   }
+                                | {
+                                    /** Date and time at which Seam created the warning. */
+                                    created_at: string
+                                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                                    message: string
+                                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                                    warning_code: 'schedule_rounded_up'
+                                  }
                               )[]
                               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                               is_multi_phone_sync_credential?:
@@ -190187,6 +192275,14 @@ export type Routes = {
                                     original_code: string
                                     /** The PIN code that was assigned instead. */
                                     new_code: string
+                                  }
+                                | {
+                                    /** Date and time at which Seam created the warning. */
+                                    created_at: string
+                                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                                    message: string
+                                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                                    warning_code: 'schedule_rounded_up'
                                   }
                               )[]
                               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -190466,6 +192562,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -190656,6 +192760,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -190937,6 +193049,14 @@ export type Routes = {
                           /** The PIN code that was assigned instead. */
                           new_code: string
                         }
+                      | {
+                          /** Date and time at which Seam created the warning. */
+                          created_at: string
+                          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                          message: string
+                          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                          warning_code: 'schedule_rounded_up'
+                        }
                     )[]
                     /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                     is_multi_phone_sync_credential?: boolean | undefined
@@ -191143,6 +193263,14 @@ export type Routes = {
                           original_code: string
                           /** The PIN code that was assigned instead. */
                           new_code: string
+                        }
+                      | {
+                          /** Date and time at which Seam created the warning. */
+                          created_at: string
+                          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                          message: string
+                          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                          warning_code: 'schedule_rounded_up'
                         }
                     )[]
                     /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -193585,6 +195713,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
@@ -198408,6 +200544,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -198596,6 +200740,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -200370,6 +202522,14 @@ export type Routes = {
                               /** The PIN code that was assigned instead. */
                               new_code: string
                             }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
@@ -200560,6 +202720,14 @@ export type Routes = {
                               original_code: string
                               /** The PIN code that was assigned instead. */
                               new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
                             }
                         )[]
                         /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -200830,6 +202998,14 @@ export type Routes = {
                         /** The PIN code that was assigned instead. */
                         new_code: string
                       }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
@@ -201019,6 +203195,14 @@ export type Routes = {
                         original_code: string
                         /** The PIN code that was assigned instead. */
                         new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
                       }
                   )[]
                   /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -201300,6 +203484,14 @@ export type Routes = {
                     /** The PIN code that was assigned instead. */
                     new_code: string
                   }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
               )[]
               /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
               is_multi_phone_sync_credential?: boolean | undefined
@@ -201503,6 +203695,14 @@ export type Routes = {
                     original_code: string
                     /** The PIN code that was assigned instead. */
                     new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
                   }
               )[]
               /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
