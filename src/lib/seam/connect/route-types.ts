@@ -16732,10 +16732,24 @@ export type Routes = {
                 /** Metadata for a tado° device. */
                 tado_metadata?:
                   | {
-                      /** Serial number for a tado° device. */
+                      /** Serial number of the main tado° device in the zone, such as its wall thermostat or Smart AC Control. */
                       serial_no?: (string | undefined) | undefined
-                      /** Device type for a tado° device. */
+                      /** Device type of the main tado° device in the zone, such as `RU02`, `VA02` or `WR02`. */
                       device_type?: (string | undefined) | undefined
+                      /** ID of the tado° home. */
+                      home_id?: (string | undefined) | undefined
+                      /** Name of the tado° home. */
+                      home_name?: (string | undefined) | undefined
+                      /** Generation of the tado° home, such as `PRE_LINE_X`. */
+                      home_generation?: (string | undefined) | undefined
+                      /** ID of the tado° zone within its home. */
+                      zone_id?: (string | undefined) | undefined
+                      /** Name of the tado° zone. */
+                      zone_name?: (string | undefined) | undefined
+                      /** Type of the tado° zone: `HEATING` or `AIR_CONDITIONING`. */
+                      zone_type?: (string | undefined) | undefined
+                      /** Serial numbers of all tado° devices in the zone. */
+                      device_serial_numbers?: (string[] | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for a Sensi device. */
@@ -26423,10 +26437,24 @@ export type Routes = {
                 /** Metadata for a tado° device. */
                 tado_metadata?:
                   | {
-                      /** Serial number for a tado° device. */
+                      /** Serial number of the main tado° device in the zone, such as its wall thermostat or Smart AC Control. */
                       serial_no?: (string | undefined) | undefined
-                      /** Device type for a tado° device. */
+                      /** Device type of the main tado° device in the zone, such as `RU02`, `VA02` or `WR02`. */
                       device_type?: (string | undefined) | undefined
+                      /** ID of the tado° home. */
+                      home_id?: (string | undefined) | undefined
+                      /** Name of the tado° home. */
+                      home_name?: (string | undefined) | undefined
+                      /** Generation of the tado° home, such as `PRE_LINE_X`. */
+                      home_generation?: (string | undefined) | undefined
+                      /** ID of the tado° zone within its home. */
+                      zone_id?: (string | undefined) | undefined
+                      /** Name of the tado° zone. */
+                      zone_name?: (string | undefined) | undefined
+                      /** Type of the tado° zone: `HEATING` or `AIR_CONDITIONING`. */
+                      zone_type?: (string | undefined) | undefined
+                      /** Serial numbers of all tado° devices in the zone. */
+                      device_serial_numbers?: (string[] | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for a Sensi device. */
@@ -58465,10 +58493,24 @@ export type Routes = {
           /** Metadata for a tado° device. */
           tado_metadata?:
             | {
-                /** Serial number for a tado° device. */
+                /** Serial number of the main tado° device in the zone, such as its wall thermostat or Smart AC Control. */
                 serial_no?: (string | undefined) | undefined
-                /** Device type for a tado° device. */
+                /** Device type of the main tado° device in the zone, such as `RU02`, `VA02` or `WR02`. */
                 device_type?: (string | undefined) | undefined
+                /** ID of the tado° home. */
+                home_id?: (string | undefined) | undefined
+                /** Name of the tado° home. */
+                home_name?: (string | undefined) | undefined
+                /** Generation of the tado° home, such as `PRE_LINE_X`. */
+                home_generation?: (string | undefined) | undefined
+                /** ID of the tado° zone within its home. */
+                zone_id?: (string | undefined) | undefined
+                /** Name of the tado° zone. */
+                zone_name?: (string | undefined) | undefined
+                /** Type of the tado° zone: `HEATING` or `AIR_CONDITIONING`. */
+                zone_type?: (string | undefined) | undefined
+                /** Serial numbers of all tado° devices in the zone. */
+                device_serial_numbers?: (string[] | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sensi device. */
@@ -60767,10 +60809,24 @@ export type Routes = {
           /** Metadata for a tado° device. */
           tado_metadata?:
             | {
-                /** Serial number for a tado° device. */
+                /** Serial number of the main tado° device in the zone, such as its wall thermostat or Smart AC Control. */
                 serial_no?: (string | undefined) | undefined
-                /** Device type for a tado° device. */
+                /** Device type of the main tado° device in the zone, such as `RU02`, `VA02` or `WR02`. */
                 device_type?: (string | undefined) | undefined
+                /** ID of the tado° home. */
+                home_id?: (string | undefined) | undefined
+                /** Name of the tado° home. */
+                home_name?: (string | undefined) | undefined
+                /** Generation of the tado° home, such as `PRE_LINE_X`. */
+                home_generation?: (string | undefined) | undefined
+                /** ID of the tado° zone within its home. */
+                zone_id?: (string | undefined) | undefined
+                /** Name of the tado° zone. */
+                zone_name?: (string | undefined) | undefined
+                /** Type of the tado° zone: `HEATING` or `AIR_CONDITIONING`. */
+                zone_type?: (string | undefined) | undefined
+                /** Serial numbers of all tado° devices in the zone. */
+                device_serial_numbers?: (string[] | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sensi device. */
@@ -77197,10 +77253,24 @@ export type Routes = {
           /** Metadata for a tado° device. */
           tado_metadata?:
             | {
-                /** Serial number for a tado° device. */
+                /** Serial number of the main tado° device in the zone, such as its wall thermostat or Smart AC Control. */
                 serial_no?: (string | undefined) | undefined
-                /** Device type for a tado° device. */
+                /** Device type of the main tado° device in the zone, such as `RU02`, `VA02` or `WR02`. */
                 device_type?: (string | undefined) | undefined
+                /** ID of the tado° home. */
+                home_id?: (string | undefined) | undefined
+                /** Name of the tado° home. */
+                home_name?: (string | undefined) | undefined
+                /** Generation of the tado° home, such as `PRE_LINE_X`. */
+                home_generation?: (string | undefined) | undefined
+                /** ID of the tado° zone within its home. */
+                zone_id?: (string | undefined) | undefined
+                /** Name of the tado° zone. */
+                zone_name?: (string | undefined) | undefined
+                /** Type of the tado° zone: `HEATING` or `AIR_CONDITIONING`. */
+                zone_type?: (string | undefined) | undefined
+                /** Serial numbers of all tado° devices in the zone. */
+                device_serial_numbers?: (string[] | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sensi device. */
@@ -79220,10 +79290,24 @@ export type Routes = {
           /** Metadata for a tado° device. */
           tado_metadata?:
             | {
-                /** Serial number for a tado° device. */
+                /** Serial number of the main tado° device in the zone, such as its wall thermostat or Smart AC Control. */
                 serial_no?: (string | undefined) | undefined
-                /** Device type for a tado° device. */
+                /** Device type of the main tado° device in the zone, such as `RU02`, `VA02` or `WR02`. */
                 device_type?: (string | undefined) | undefined
+                /** ID of the tado° home. */
+                home_id?: (string | undefined) | undefined
+                /** Name of the tado° home. */
+                home_name?: (string | undefined) | undefined
+                /** Generation of the tado° home, such as `PRE_LINE_X`. */
+                home_generation?: (string | undefined) | undefined
+                /** ID of the tado° zone within its home. */
+                zone_id?: (string | undefined) | undefined
+                /** Name of the tado° zone. */
+                zone_name?: (string | undefined) | undefined
+                /** Type of the tado° zone: `HEATING` or `AIR_CONDITIONING`. */
+                zone_type?: (string | undefined) | undefined
+                /** Serial numbers of all tado° devices in the zone. */
+                device_serial_numbers?: (string[] | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sensi device. */
@@ -81374,10 +81458,24 @@ export type Routes = {
           /** Metadata for a tado° device. */
           tado_metadata?:
             | {
-                /** Serial number for a tado° device. */
+                /** Serial number of the main tado° device in the zone, such as its wall thermostat or Smart AC Control. */
                 serial_no?: (string | undefined) | undefined
-                /** Device type for a tado° device. */
+                /** Device type of the main tado° device in the zone, such as `RU02`, `VA02` or `WR02`. */
                 device_type?: (string | undefined) | undefined
+                /** ID of the tado° home. */
+                home_id?: (string | undefined) | undefined
+                /** Name of the tado° home. */
+                home_name?: (string | undefined) | undefined
+                /** Generation of the tado° home, such as `PRE_LINE_X`. */
+                home_generation?: (string | undefined) | undefined
+                /** ID of the tado° zone within its home. */
+                zone_id?: (string | undefined) | undefined
+                /** Name of the tado° zone. */
+                zone_name?: (string | undefined) | undefined
+                /** Type of the tado° zone: `HEATING` or `AIR_CONDITIONING`. */
+                zone_type?: (string | undefined) | undefined
+                /** Serial numbers of all tado° devices in the zone. */
+                device_serial_numbers?: (string[] | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sensi device. */
@@ -83396,10 +83494,24 @@ export type Routes = {
           /** Metadata for a tado° device. */
           tado_metadata?:
             | {
-                /** Serial number for a tado° device. */
+                /** Serial number of the main tado° device in the zone, such as its wall thermostat or Smart AC Control. */
                 serial_no?: (string | undefined) | undefined
-                /** Device type for a tado° device. */
+                /** Device type of the main tado° device in the zone, such as `RU02`, `VA02` or `WR02`. */
                 device_type?: (string | undefined) | undefined
+                /** ID of the tado° home. */
+                home_id?: (string | undefined) | undefined
+                /** Name of the tado° home. */
+                home_name?: (string | undefined) | undefined
+                /** Generation of the tado° home, such as `PRE_LINE_X`. */
+                home_generation?: (string | undefined) | undefined
+                /** ID of the tado° zone within its home. */
+                zone_id?: (string | undefined) | undefined
+                /** Name of the tado° zone. */
+                zone_name?: (string | undefined) | undefined
+                /** Type of the tado° zone: `HEATING` or `AIR_CONDITIONING`. */
+                zone_type?: (string | undefined) | undefined
+                /** Serial numbers of all tado° devices in the zone. */
+                device_serial_numbers?: (string[] | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sensi device. */
@@ -95669,10 +95781,24 @@ export type Routes = {
           /** Metadata for a tado° device. */
           tado_metadata?:
             | {
-                /** Serial number for a tado° device. */
+                /** Serial number of the main tado° device in the zone, such as its wall thermostat or Smart AC Control. */
                 serial_no?: (string | undefined) | undefined
-                /** Device type for a tado° device. */
+                /** Device type of the main tado° device in the zone, such as `RU02`, `VA02` or `WR02`. */
                 device_type?: (string | undefined) | undefined
+                /** ID of the tado° home. */
+                home_id?: (string | undefined) | undefined
+                /** Name of the tado° home. */
+                home_name?: (string | undefined) | undefined
+                /** Generation of the tado° home, such as `PRE_LINE_X`. */
+                home_generation?: (string | undefined) | undefined
+                /** ID of the tado° zone within its home. */
+                zone_id?: (string | undefined) | undefined
+                /** Name of the tado° zone. */
+                zone_name?: (string | undefined) | undefined
+                /** Type of the tado° zone: `HEATING` or `AIR_CONDITIONING`. */
+                zone_type?: (string | undefined) | undefined
+                /** Serial numbers of all tado° devices in the zone. */
+                device_serial_numbers?: (string[] | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sensi device. */
@@ -97691,10 +97817,24 @@ export type Routes = {
           /** Metadata for a tado° device. */
           tado_metadata?:
             | {
-                /** Serial number for a tado° device. */
+                /** Serial number of the main tado° device in the zone, such as its wall thermostat or Smart AC Control. */
                 serial_no?: (string | undefined) | undefined
-                /** Device type for a tado° device. */
+                /** Device type of the main tado° device in the zone, such as `RU02`, `VA02` or `WR02`. */
                 device_type?: (string | undefined) | undefined
+                /** ID of the tado° home. */
+                home_id?: (string | undefined) | undefined
+                /** Name of the tado° home. */
+                home_name?: (string | undefined) | undefined
+                /** Generation of the tado° home, such as `PRE_LINE_X`. */
+                home_generation?: (string | undefined) | undefined
+                /** ID of the tado° zone within its home. */
+                zone_id?: (string | undefined) | undefined
+                /** Name of the tado° zone. */
+                zone_name?: (string | undefined) | undefined
+                /** Type of the tado° zone: `HEATING` or `AIR_CONDITIONING`. */
+                zone_type?: (string | undefined) | undefined
+                /** Serial numbers of all tado° devices in the zone. */
+                device_serial_numbers?: (string[] | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sensi device. */
@@ -126151,10 +126291,24 @@ export type Routes = {
                 /** Metadata for a tado° device. */
                 tado_metadata?:
                   | {
-                      /** Serial number for a tado° device. */
+                      /** Serial number of the main tado° device in the zone, such as its wall thermostat or Smart AC Control. */
                       serial_no?: (string | undefined) | undefined
-                      /** Device type for a tado° device. */
+                      /** Device type of the main tado° device in the zone, such as `RU02`, `VA02` or `WR02`. */
                       device_type?: (string | undefined) | undefined
+                      /** ID of the tado° home. */
+                      home_id?: (string | undefined) | undefined
+                      /** Name of the tado° home. */
+                      home_name?: (string | undefined) | undefined
+                      /** Generation of the tado° home, such as `PRE_LINE_X`. */
+                      home_generation?: (string | undefined) | undefined
+                      /** ID of the tado° zone within its home. */
+                      zone_id?: (string | undefined) | undefined
+                      /** Name of the tado° zone. */
+                      zone_name?: (string | undefined) | undefined
+                      /** Type of the tado° zone: `HEATING` or `AIR_CONDITIONING`. */
+                      zone_type?: (string | undefined) | undefined
+                      /** Serial numbers of all tado° devices in the zone. */
+                      device_serial_numbers?: (string[] | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for a Sensi device. */
@@ -160089,10 +160243,24 @@ export type Routes = {
           /** Metadata for a tado° device. */
           tado_metadata?:
             | {
-                /** Serial number for a tado° device. */
+                /** Serial number of the main tado° device in the zone, such as its wall thermostat or Smart AC Control. */
                 serial_no?: (string | undefined) | undefined
-                /** Device type for a tado° device. */
+                /** Device type of the main tado° device in the zone, such as `RU02`, `VA02` or `WR02`. */
                 device_type?: (string | undefined) | undefined
+                /** ID of the tado° home. */
+                home_id?: (string | undefined) | undefined
+                /** Name of the tado° home. */
+                home_name?: (string | undefined) | undefined
+                /** Generation of the tado° home, such as `PRE_LINE_X`. */
+                home_generation?: (string | undefined) | undefined
+                /** ID of the tado° zone within its home. */
+                zone_id?: (string | undefined) | undefined
+                /** Name of the tado° zone. */
+                zone_name?: (string | undefined) | undefined
+                /** Type of the tado° zone: `HEATING` or `AIR_CONDITIONING`. */
+                zone_type?: (string | undefined) | undefined
+                /** Serial numbers of all tado° devices in the zone. */
+                device_serial_numbers?: (string[] | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sensi device. */
@@ -167268,10 +167436,24 @@ export type Routes = {
           /** Metadata for a tado° device. */
           tado_metadata?:
             | {
-                /** Serial number for a tado° device. */
+                /** Serial number of the main tado° device in the zone, such as its wall thermostat or Smart AC Control. */
                 serial_no?: (string | undefined) | undefined
-                /** Device type for a tado° device. */
+                /** Device type of the main tado° device in the zone, such as `RU02`, `VA02` or `WR02`. */
                 device_type?: (string | undefined) | undefined
+                /** ID of the tado° home. */
+                home_id?: (string | undefined) | undefined
+                /** Name of the tado° home. */
+                home_name?: (string | undefined) | undefined
+                /** Generation of the tado° home, such as `PRE_LINE_X`. */
+                home_generation?: (string | undefined) | undefined
+                /** ID of the tado° zone within its home. */
+                zone_id?: (string | undefined) | undefined
+                /** Name of the tado° zone. */
+                zone_name?: (string | undefined) | undefined
+                /** Type of the tado° zone: `HEATING` or `AIR_CONDITIONING`. */
+                zone_type?: (string | undefined) | undefined
+                /** Serial numbers of all tado° devices in the zone. */
+                device_serial_numbers?: (string[] | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sensi device. */
@@ -169290,10 +169472,24 @@ export type Routes = {
           /** Metadata for a tado° device. */
           tado_metadata?:
             | {
-                /** Serial number for a tado° device. */
+                /** Serial number of the main tado° device in the zone, such as its wall thermostat or Smart AC Control. */
                 serial_no?: (string | undefined) | undefined
-                /** Device type for a tado° device. */
+                /** Device type of the main tado° device in the zone, such as `RU02`, `VA02` or `WR02`. */
                 device_type?: (string | undefined) | undefined
+                /** ID of the tado° home. */
+                home_id?: (string | undefined) | undefined
+                /** Name of the tado° home. */
+                home_name?: (string | undefined) | undefined
+                /** Generation of the tado° home, such as `PRE_LINE_X`. */
+                home_generation?: (string | undefined) | undefined
+                /** ID of the tado° zone within its home. */
+                zone_id?: (string | undefined) | undefined
+                /** Name of the tado° zone. */
+                zone_name?: (string | undefined) | undefined
+                /** Type of the tado° zone: `HEATING` or `AIR_CONDITIONING`. */
+                zone_type?: (string | undefined) | undefined
+                /** Serial numbers of all tado° devices in the zone. */
+                device_serial_numbers?: (string[] | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sensi device. */
@@ -182677,10 +182873,24 @@ export type Routes = {
           /** Metadata for a tado° device. */
           tado_metadata?:
             | {
-                /** Serial number for a tado° device. */
+                /** Serial number of the main tado° device in the zone, such as its wall thermostat or Smart AC Control. */
                 serial_no?: (string | undefined) | undefined
-                /** Device type for a tado° device. */
+                /** Device type of the main tado° device in the zone, such as `RU02`, `VA02` or `WR02`. */
                 device_type?: (string | undefined) | undefined
+                /** ID of the tado° home. */
+                home_id?: (string | undefined) | undefined
+                /** Name of the tado° home. */
+                home_name?: (string | undefined) | undefined
+                /** Generation of the tado° home, such as `PRE_LINE_X`. */
+                home_generation?: (string | undefined) | undefined
+                /** ID of the tado° zone within its home. */
+                zone_id?: (string | undefined) | undefined
+                /** Name of the tado° zone. */
+                zone_name?: (string | undefined) | undefined
+                /** Type of the tado° zone: `HEATING` or `AIR_CONDITIONING`. */
+                zone_type?: (string | undefined) | undefined
+                /** Serial numbers of all tado° devices in the zone. */
+                device_serial_numbers?: (string[] | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sensi device. */
@@ -184701,10 +184911,24 @@ export type Routes = {
           /** Metadata for a tado° device. */
           tado_metadata?:
             | {
-                /** Serial number for a tado° device. */
+                /** Serial number of the main tado° device in the zone, such as its wall thermostat or Smart AC Control. */
                 serial_no?: (string | undefined) | undefined
-                /** Device type for a tado° device. */
+                /** Device type of the main tado° device in the zone, such as `RU02`, `VA02` or `WR02`. */
                 device_type?: (string | undefined) | undefined
+                /** ID of the tado° home. */
+                home_id?: (string | undefined) | undefined
+                /** Name of the tado° home. */
+                home_name?: (string | undefined) | undefined
+                /** Generation of the tado° home, such as `PRE_LINE_X`. */
+                home_generation?: (string | undefined) | undefined
+                /** ID of the tado° zone within its home. */
+                zone_id?: (string | undefined) | undefined
+                /** Name of the tado° zone. */
+                zone_name?: (string | undefined) | undefined
+                /** Type of the tado° zone: `HEATING` or `AIR_CONDITIONING`. */
+                zone_type?: (string | undefined) | undefined
+                /** Serial numbers of all tado° devices in the zone. */
+                device_serial_numbers?: (string[] | undefined) | undefined
               }
             | undefined
           /** Metadata for a Sensi device. */
@@ -189447,10 +189671,24 @@ export type Routes = {
                 /** Metadata for a tado° device. */
                 tado_metadata?:
                   | {
-                      /** Serial number for a tado° device. */
+                      /** Serial number of the main tado° device in the zone, such as its wall thermostat or Smart AC Control. */
                       serial_no?: (string | undefined) | undefined
-                      /** Device type for a tado° device. */
+                      /** Device type of the main tado° device in the zone, such as `RU02`, `VA02` or `WR02`. */
                       device_type?: (string | undefined) | undefined
+                      /** ID of the tado° home. */
+                      home_id?: (string | undefined) | undefined
+                      /** Name of the tado° home. */
+                      home_name?: (string | undefined) | undefined
+                      /** Generation of the tado° home, such as `PRE_LINE_X`. */
+                      home_generation?: (string | undefined) | undefined
+                      /** ID of the tado° zone within its home. */
+                      zone_id?: (string | undefined) | undefined
+                      /** Name of the tado° zone. */
+                      zone_name?: (string | undefined) | undefined
+                      /** Type of the tado° zone: `HEATING` or `AIR_CONDITIONING`. */
+                      zone_type?: (string | undefined) | undefined
+                      /** Serial numbers of all tado° devices in the zone. */
+                      device_serial_numbers?: (string[] | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for a Sensi device. */

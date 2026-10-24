@@ -974,11 +974,36 @@ export const device_metadata = z
         serial_no: z
           .string()
           .optional()
-          .describe(`Serial number for a tado° device.`),
+          .describe(
+            `Serial number of the main tado° device in the zone, such as its wall thermostat or Smart AC Control.`,
+          ),
         device_type: z
           .string()
           .optional()
-          .describe(`Device type for a tado° device.`),
+          .describe(
+            `Device type of the main tado° device in the zone, such as \`RU02\`, \`VA02\` or \`WR02\`.`,
+          ),
+        home_id: z.string().optional().describe(`ID of the tado° home.`),
+        home_name: z.string().optional().describe(`Name of the tado° home.`),
+        home_generation: z
+          .string()
+          .optional()
+          .describe(`Generation of the tado° home, such as \`PRE_LINE_X\`.`),
+        zone_id: z
+          .string()
+          .optional()
+          .describe(`ID of the tado° zone within its home.`),
+        zone_name: z.string().optional().describe(`Name of the tado° zone.`),
+        zone_type: z
+          .string()
+          .optional()
+          .describe(
+            `Type of the tado° zone: \`HEATING\` or \`AIR_CONDITIONING\`.`,
+          ),
+        device_serial_numbers: z
+          .array(z.string())
+          .optional()
+          .describe(`Serial numbers of all tado° devices in the zone.`),
       })
       .partial()
       .describe(`Metadata for a tado° device.`),
