@@ -18089,12 +18089,47 @@ const openapi: OpenAPISpec = {
                       tado_metadata: {
                         description: 'Metadata for a tado° device.',
                         properties: {
+                          device_serial_numbers: {
+                            description:
+                              'Serial numbers of all tado° devices in the zone.',
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
                           device_type: {
-                            description: 'Device type for a tado° device.',
+                            description:
+                              'Device type of the main tado° device in the zone, such as `RU02`, `VA02` or `WR02`.',
+                            type: 'string',
+                          },
+                          home_generation: {
+                            description:
+                              'Generation of the tado° home, such as `PRE_LINE_X`.',
+                            type: 'string',
+                          },
+                          home_id: {
+                            description: 'ID of the tado° home.',
+                            type: 'string',
+                          },
+                          home_name: {
+                            description: 'Name of the tado° home.',
                             type: 'string',
                           },
                           serial_no: {
-                            description: 'Serial number for a tado° device.',
+                            description:
+                              'Serial number of the main tado° device in the zone, such as its wall thermostat or Smart AC Control.',
+                            type: 'string',
+                          },
+                          zone_id: {
+                            description:
+                              'ID of the tado° zone within its home.',
+                            type: 'string',
+                          },
+                          zone_name: {
+                            description: 'Name of the tado° zone.',
+                            type: 'string',
+                          },
+                          zone_type: {
+                            description:
+                              'Type of the tado° zone: `HEATING` or `AIR_CONDITIONING`.',
                             type: 'string',
                           },
                         },
