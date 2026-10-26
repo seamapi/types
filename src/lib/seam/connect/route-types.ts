@@ -15943,14 +15943,26 @@ export type Routes = {
                   } | null)
                 | undefined
               /** Warnings associated with the space. */
-              warnings: {
-                /** Date and time at which Seam created the warning. */
-                created_at: string
-                /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                warning_code: 'being_deleted'
-              }[]
+              warnings: (
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'being_deleted'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'noise_sensor_configuration_mismatch'
+                    /** IDs of the noise sensors in the space that Seam could not bring in line with the noise sensor automation. */
+                    device_ids: string[]
+                  }
+              )[]
               /**  */
               parent_space_id?: string | undefined
               /**  */
@@ -25648,14 +25660,26 @@ export type Routes = {
                   } | null)
                 | undefined
               /** Warnings associated with the space. */
-              warnings: {
-                /** Date and time at which Seam created the warning. */
-                created_at: string
-                /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                warning_code: 'being_deleted'
-              }[]
+              warnings: (
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'being_deleted'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'noise_sensor_configuration_mismatch'
+                    /** IDs of the noise sensors in the space that Seam could not bring in line with the noise sensor automation. */
+                    device_ids: string[]
+                  }
+              )[]
               /**  */
               parent_space_id?: string | undefined
               /**  */
@@ -109600,14 +109624,26 @@ export type Routes = {
             } | null)
           | undefined
         /** Warnings associated with the space. */
-        warnings: {
-          /** Date and time at which Seam created the warning. */
-          created_at: string
-          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-          warning_code: 'being_deleted'
-        }[]
+        warnings: (
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'being_deleted'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'noise_sensor_configuration_mismatch'
+              /** IDs of the noise sensors in the space that Seam could not bring in line with the noise sensor automation. */
+              device_ids: string[]
+            }
+        )[]
         /**  */
         parent_space_id?: string | undefined
         /**  */
@@ -109682,14 +109718,26 @@ export type Routes = {
             } | null)
           | undefined
         /** Warnings associated with the space. */
-        warnings: {
-          /** Date and time at which Seam created the warning. */
-          created_at: string
-          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-          warning_code: 'being_deleted'
-        }[]
+        warnings: (
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'being_deleted'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'noise_sensor_configuration_mismatch'
+              /** IDs of the noise sensors in the space that Seam could not bring in line with the noise sensor automation. */
+              device_ids: string[]
+            }
+        )[]
         /**  */
         parent_space_id?: string | undefined
         /**  */
@@ -109756,14 +109804,26 @@ export type Routes = {
             } | null)
           | undefined
         /** Warnings associated with the space. */
-        warnings: {
-          /** Date and time at which Seam created the warning. */
-          created_at: string
-          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-          warning_code: 'being_deleted'
-        }[]
+        warnings: (
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'being_deleted'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'noise_sensor_configuration_mismatch'
+              /** IDs of the noise sensors in the space that Seam could not bring in line with the noise sensor automation. */
+              device_ids: string[]
+            }
+        )[]
         /**  */
         parent_space_id?: string | undefined
         /**  */
@@ -112982,16 +113042,6 @@ export type Routes = {
                                   | undefined
                               }
                             | undefined
-                          noise_sensors?:
-                            | {
-                                noise_thresholds: {
-                                  name?: string | undefined
-                                  starts_daily_at: string
-                                  ends_daily_at: string
-                                  noise_threshold_decibels: number
-                                }[]
-                              }
-                            | undefined
                         }
                       | undefined
                     on_check_out?:
@@ -113004,16 +113054,6 @@ export type Routes = {
                                 reset_volume_to?: number | undefined
                               }
                             | undefined
-                          noise_sensors?:
-                            | {
-                                noise_thresholds: {
-                                  name?: string | undefined
-                                  starts_daily_at: string
-                                  ends_daily_at: string
-                                  noise_threshold_decibels: number
-                                }[]
-                              }
-                            | undefined
                         }
                       | undefined
                   }
@@ -113021,6 +113061,28 @@ export type Routes = {
               reservation_time_updated?: {} | undefined
               reservation_spaces_updated?: {} | undefined
               reservation_deleted?: {} | undefined
+            }
+          }
+        | undefined
+      sensor_rules?:
+        | {
+            rules: {
+              noise_sensors?:
+                | {
+                    normal_hours: {
+                      noise_threshold_decibels: number
+                    }
+                    quiet_hours?:
+                      | ({
+                          /** Time of day as HH:00, in each noise sensor's own time zone. */
+                          starts_daily_at: string
+                          /** Time of day as HH:00, in each noise sensor's own time zone. */
+                          ends_daily_at: string
+                          noise_threshold_decibels: number
+                        } | null)
+                      | undefined
+                  }
+                | undefined
             }
           }
         | undefined
@@ -113206,16 +113268,6 @@ export type Routes = {
                                       | undefined
                                   }
                                 | undefined
-                              noise_sensors?:
-                                | {
-                                    noise_thresholds: {
-                                      name?: string | undefined
-                                      starts_daily_at: string
-                                      ends_daily_at: string
-                                      noise_threshold_decibels: number
-                                    }[]
-                                  }
-                                | undefined
                             }
                           | undefined
                         on_check_out?:
@@ -113228,16 +113280,6 @@ export type Routes = {
                                     reset_volume_to?: number | undefined
                                   }
                                 | undefined
-                              noise_sensors?:
-                                | {
-                                    noise_thresholds: {
-                                      name?: string | undefined
-                                      starts_daily_at: string
-                                      ends_daily_at: string
-                                      noise_threshold_decibels: number
-                                    }[]
-                                  }
-                                | undefined
                             }
                           | undefined
                       } | null)
@@ -113245,6 +113287,31 @@ export type Routes = {
                   reservation_time_updated?: ({} | null) | undefined
                   reservation_spaces_updated?: ({} | null) | undefined
                   reservation_deleted?: ({} | null) | undefined
+                }
+              | undefined
+          }
+        | undefined
+      /** Sensor automation rules configuration. Seam treats it as the source of truth: it is applied to the sensors in every space of the customer when saved and to sensors added to those spaces later, and re-applied when a sensor's settings are changed outside Seam. */
+      sensor_rules?:
+        | {
+            rules?:
+              | {
+                  noise_sensors?:
+                    | ({
+                        normal_hours: {
+                          noise_threshold_decibels: number
+                        }
+                        quiet_hours?:
+                          | ({
+                              /** Time of day as HH:00, in each noise sensor's own time zone. */
+                              starts_daily_at: string
+                              /** Time of day as HH:00, in each noise sensor's own time zone. */
+                              ends_daily_at: string
+                              noise_threshold_decibels: number
+                            } | null)
+                          | undefined
+                      } | null)
+                    | undefined
                 }
               | undefined
           }
@@ -113750,16 +113817,6 @@ export type Routes = {
                                     | undefined
                                 }
                               | undefined
-                            noise_sensors?:
-                              | {
-                                  noise_thresholds: {
-                                    name?: string | undefined
-                                    starts_daily_at: string
-                                    ends_daily_at: string
-                                    noise_threshold_decibels: number
-                                  }[]
-                                }
-                              | undefined
                           }
                         | undefined
                       on_check_out?:
@@ -113772,16 +113829,6 @@ export type Routes = {
                                   reset_volume_to?: number | undefined
                                 }
                               | undefined
-                            noise_sensors?:
-                              | {
-                                  noise_thresholds: {
-                                    name?: string | undefined
-                                    starts_daily_at: string
-                                    ends_daily_at: string
-                                    noise_threshold_decibels: number
-                                  }[]
-                                }
-                              | undefined
                           }
                         | undefined
                     }
@@ -113789,6 +113836,28 @@ export type Routes = {
                 reservation_time_updated?: {} | undefined
                 reservation_spaces_updated?: {} | undefined
                 reservation_deleted?: {} | undefined
+              }
+            }
+          | undefined
+        sensor_rules?:
+          | {
+              rules: {
+                noise_sensors?:
+                  | {
+                      normal_hours: {
+                        noise_threshold_decibels: number
+                      }
+                      quiet_hours?:
+                        | ({
+                            /** Time of day as HH:00, in each noise sensor's own time zone. */
+                            starts_daily_at: string
+                            /** Time of day as HH:00, in each noise sensor's own time zone. */
+                            ends_daily_at: string
+                            noise_threshold_decibels: number
+                          } | null)
+                        | undefined
+                    }
+                  | undefined
               }
             }
           | undefined
@@ -113945,16 +114014,6 @@ export type Routes = {
                                       | undefined
                                   }
                                 | undefined
-                              noise_sensors?:
-                                | {
-                                    noise_thresholds: {
-                                      name?: string | undefined
-                                      starts_daily_at: string
-                                      ends_daily_at: string
-                                      noise_threshold_decibels: number
-                                    }[]
-                                  }
-                                | undefined
                             }
                           | undefined
                         on_check_out?:
@@ -113967,16 +114026,6 @@ export type Routes = {
                                     reset_volume_to?: number | undefined
                                   }
                                 | undefined
-                              noise_sensors?:
-                                | {
-                                    noise_thresholds: {
-                                      name?: string | undefined
-                                      starts_daily_at: string
-                                      ends_daily_at: string
-                                      noise_threshold_decibels: number
-                                    }[]
-                                  }
-                                | undefined
                             }
                           | undefined
                       } | null)
@@ -113984,6 +114033,31 @@ export type Routes = {
                   reservation_time_updated?: ({} | null) | undefined
                   reservation_spaces_updated?: ({} | null) | undefined
                   reservation_deleted?: ({} | null) | undefined
+                }
+              | undefined
+          }
+        | undefined
+      /** Sensor automation rules configuration. */
+      sensor_rules?:
+        | {
+            rules?:
+              | {
+                  noise_sensors?:
+                    | ({
+                        normal_hours: {
+                          noise_threshold_decibels: number
+                        }
+                        quiet_hours?:
+                          | ({
+                              /** Time of day as HH:00, in each noise sensor's own time zone. */
+                              starts_daily_at: string
+                              /** Time of day as HH:00, in each noise sensor's own time zone. */
+                              ends_daily_at: string
+                              noise_threshold_decibels: number
+                            } | null)
+                          | undefined
+                      } | null)
+                    | undefined
                 }
               | undefined
           }
@@ -119470,14 +119544,26 @@ export type Routes = {
             } | null)
           | undefined
         /** Warnings associated with the space. */
-        warnings: {
-          /** Date and time at which Seam created the warning. */
-          created_at: string
-          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-          warning_code: 'being_deleted'
-        }[]
+        warnings: (
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'being_deleted'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'noise_sensor_configuration_mismatch'
+              /** IDs of the noise sensors in the space that Seam could not bring in line with the noise sensor automation. */
+              device_ids: string[]
+            }
+        )[]
         /**  */
         parent_space_id?: string | undefined
         /**  */
@@ -119547,14 +119633,26 @@ export type Routes = {
             } | null)
           | undefined
         /** Warnings associated with the space. */
-        warnings: {
-          /** Date and time at which Seam created the warning. */
-          created_at: string
-          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-          warning_code: 'being_deleted'
-        }[]
+        warnings: (
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'being_deleted'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'noise_sensor_configuration_mismatch'
+              /** IDs of the noise sensors in the space that Seam could not bring in line with the noise sensor automation. */
+              device_ids: string[]
+            }
+        )[]
         /**  */
         parent_space_id?: string | undefined
         /**  */
@@ -125320,14 +125418,26 @@ export type Routes = {
             } | null)
           | undefined
         /** Warnings associated with the space. */
-        warnings: {
-          /** Date and time at which Seam created the warning. */
-          created_at: string
-          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-          warning_code: 'being_deleted'
-        }[]
+        warnings: (
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'being_deleted'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'noise_sensor_configuration_mismatch'
+              /** IDs of the noise sensors in the space that Seam could not bring in line with the noise sensor automation. */
+              device_ids: string[]
+            }
+        )[]
         /**  */
         parent_space_id?: string | undefined
         /**  */
@@ -125408,14 +125518,26 @@ export type Routes = {
             } | null)
           | undefined
         /** Warnings associated with the space. */
-        warnings: {
-          /** Date and time at which Seam created the warning. */
-          created_at: string
-          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-          warning_code: 'being_deleted'
-        }[]
+        warnings: (
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'being_deleted'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'noise_sensor_configuration_mismatch'
+              /** IDs of the noise sensors in the space that Seam could not bring in line with the noise sensor automation. */
+              device_ids: string[]
+            }
+        )[]
         /**  */
         parent_space_id?: string | undefined
         /**  */
@@ -125502,14 +125624,26 @@ export type Routes = {
                   } | null)
                 | undefined
               /** Warnings associated with the space. */
-              warnings: {
-                /** Date and time at which Seam created the warning. */
-                created_at: string
-                /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                warning_code: 'being_deleted'
-              }[]
+              warnings: (
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'being_deleted'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'noise_sensor_configuration_mismatch'
+                    /** IDs of the noise sensors in the space that Seam could not bring in line with the noise sensor automation. */
+                    device_ids: string[]
+                  }
+              )[]
               /**  */
               parent_space_id?: string | undefined
               /**  */
@@ -128592,14 +128726,26 @@ export type Routes = {
             } | null)
           | undefined
         /** Warnings associated with the space. */
-        warnings: {
-          /** Date and time at which Seam created the warning. */
-          created_at: string
-          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-          warning_code: 'being_deleted'
-        }[]
+        warnings: (
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'being_deleted'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'noise_sensor_configuration_mismatch'
+              /** IDs of the noise sensors in the space that Seam could not bring in line with the noise sensor automation. */
+              device_ids: string[]
+            }
+        )[]
         /**  */
         parent_space_id?: string | undefined
         /**  */
@@ -128741,14 +128887,26 @@ export type Routes = {
             } | null)
           | undefined
         /** Warnings associated with the space. */
-        warnings: {
-          /** Date and time at which Seam created the warning. */
-          created_at: string
-          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-          warning_code: 'being_deleted'
-        }[]
+        warnings: (
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'being_deleted'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'noise_sensor_configuration_mismatch'
+              /** IDs of the noise sensors in the space that Seam could not bring in line with the noise sensor automation. */
+              device_ids: string[]
+            }
+        )[]
         /**  */
         parent_space_id?: string | undefined
         /**  */
@@ -195842,14 +196000,26 @@ export type Routes = {
                   } | null)
                 | undefined
               /** Warnings associated with the space. */
-              warnings: {
-                /** Date and time at which Seam created the warning. */
-                created_at: string
-                /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-                message: string
-                /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                warning_code: 'being_deleted'
-              }[]
+              warnings: (
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'being_deleted'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'noise_sensor_configuration_mismatch'
+                    /** IDs of the noise sensors in the space that Seam could not bring in line with the noise sensor automation. */
+                    device_ids: string[]
+                  }
+              )[]
               /**  */
               parent_space_id?: string | undefined
               /**  */
