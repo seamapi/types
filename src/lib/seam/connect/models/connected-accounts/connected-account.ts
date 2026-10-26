@@ -282,6 +282,7 @@ const setup_required = common_connected_account_warning
     'Indicates that the connected account requires additional setup before it can be fully operational. Follow the instructions in the warning message to complete the setup.',
   )
 
+/** @deprecated Seam no longer sets this warning. */
 const dormakaba_sites_unapproved = common_connected_account_warning
   .extend({
     warning_code: z
@@ -289,7 +290,12 @@ const dormakaba_sites_unapproved = common_connected_account_warning
       .describe(warning_code_description),
   })
   .describe(
-    'Indicates that one or more dormakaba sites associated with the connected account are not approved. Contact support@getseam.com to finish setting up your account.',
+    `
+    ---
+    deprecated: Seam no longer sets this warning.
+    ---
+    Indicates that one or more dormakaba sites associated with the connected account are not approved. Contact support@getseam.com to finish setting up your account.
+    `,
   )
 
 const connected_account_warning = z
