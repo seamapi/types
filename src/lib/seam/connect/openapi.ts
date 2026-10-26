@@ -14984,6 +14984,7 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
+                  deprecated: true,
                   description:
                     'Indicates that one or more dormakaba sites associated with the connected account are not approved. Contact support@getseam.com to finish setting up your account.',
                   properties: {
@@ -15007,6 +15008,7 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
+                  'x-deprecated': 'Seam no longer sets this warning.',
                 },
               ],
             },
