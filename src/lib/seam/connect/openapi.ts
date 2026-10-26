@@ -35580,6 +35580,42 @@ const openapi: OpenAPISpec = {
                   required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    "Indicates that Seam could not apply the noise sensor automation to one or more noise sensors in the space, for example because their settings keep changing back after Seam re-applies it, Seam does not know the sensor's time zone yet, or the sensor is shared with spaces that configure it differently.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    device_ids: {
+                      description:
+                        'IDs of the noise sensors in the space that Seam could not bring in line with the noise sensor automation.',
+                      items: { format: 'uuid', type: 'string' },
+                      type: 'array',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['noise_sensor_configuration_mismatch'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'warning_code',
+                    'device_ids',
+                  ],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -64336,6 +64372,64 @@ const openapi: OpenAPISpec = {
                       type: 'object',
                     },
                     ok: { type: 'boolean' },
+                    sensor_rules: {
+                      properties: {
+                        rules: {
+                          properties: {
+                            noise_sensors: {
+                              properties: {
+                                normal_hours: {
+                                  properties: {
+                                    noise_threshold_decibels: {
+                                      format: 'float',
+                                      maximum: 120,
+                                      minimum: 60,
+                                      type: 'number',
+                                    },
+                                  },
+                                  required: ['noise_threshold_decibels'],
+                                  type: 'object',
+                                },
+                                quiet_hours: {
+                                  nullable: true,
+                                  properties: {
+                                    ends_daily_at: {
+                                      description:
+                                        "Time of day as HH:00, in each noise sensor's own time zone.",
+                                      pattern: '^([01]\\d|2[0-3]):00$',
+                                      type: 'string',
+                                    },
+                                    noise_threshold_decibels: {
+                                      format: 'float',
+                                      maximum: 120,
+                                      minimum: 60,
+                                      type: 'number',
+                                    },
+                                    starts_daily_at: {
+                                      description:
+                                        "Time of day as HH:00, in each noise sensor's own time zone.",
+                                      pattern: '^([01]\\d|2[0-3]):00$',
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'starts_daily_at',
+                                    'ends_daily_at',
+                                    'noise_threshold_decibels',
+                                  ],
+                                  type: 'object',
+                                },
+                              },
+                              required: ['normal_hours'],
+                              type: 'object',
+                            },
+                          },
+                          type: 'object',
+                        },
+                      },
+                      required: ['rules'],
+                      type: 'object',
+                    },
                     sound_rules: {
                       properties: {
                         rules: {
@@ -64348,19 +64442,6 @@ const openapi: OpenAPISpec = {
                                       maximum: 1440,
                                       minimum: 0,
                                       type: 'integer',
-                                    },
-                                    noise_sensors: {
-                                      properties: {
-                                        noise_thresholds: {
-                                          items: {
-                                            $ref: '#/components/schemas/noise_threshold',
-                                          },
-                                          maxItems: 10,
-                                          type: 'array',
-                                        },
-                                      },
-                                      required: ['noise_thresholds'],
-                                      type: 'object',
                                     },
                                     speakers: {
                                       properties: {
@@ -64413,19 +64494,6 @@ const openapi: OpenAPISpec = {
                                       maximum: 1440,
                                       minimum: 0,
                                       type: 'integer',
-                                    },
-                                    noise_sensors: {
-                                      properties: {
-                                        noise_thresholds: {
-                                          items: {
-                                            $ref: '#/components/schemas/noise_threshold',
-                                          },
-                                          maxItems: 10,
-                                          type: 'array',
-                                        },
-                                      },
-                                      required: ['noise_thresholds'],
-                                      type: 'object',
                                     },
                                     speakers: {
                                       properties: {
@@ -64856,6 +64924,66 @@ const openapi: OpenAPISpec = {
                     minLength: 1,
                     type: 'string',
                   },
+                  sensor_rules: {
+                    description:
+                      "Sensor automation rules configuration. Seam treats it as the source of truth: it is applied to the sensors in every space of the customer when saved and to sensors added to those spaces later, and re-applied when a sensor's settings are changed outside Seam.",
+                    properties: {
+                      rules: {
+                        properties: {
+                          noise_sensors: {
+                            nullable: true,
+                            properties: {
+                              normal_hours: {
+                                properties: {
+                                  noise_threshold_decibels: {
+                                    format: 'float',
+                                    maximum: 120,
+                                    minimum: 60,
+                                    type: 'number',
+                                  },
+                                },
+                                required: ['noise_threshold_decibels'],
+                                type: 'object',
+                              },
+                              quiet_hours: {
+                                nullable: true,
+                                properties: {
+                                  ends_daily_at: {
+                                    description:
+                                      "Time of day as HH:00, in each noise sensor's own time zone.",
+                                    pattern: '^([01]\\d|2[0-3]):00$',
+                                    type: 'string',
+                                  },
+                                  noise_threshold_decibels: {
+                                    format: 'float',
+                                    maximum: 120,
+                                    minimum: 60,
+                                    type: 'number',
+                                  },
+                                  starts_daily_at: {
+                                    description:
+                                      "Time of day as HH:00, in each noise sensor's own time zone.",
+                                    pattern: '^([01]\\d|2[0-3]):00$',
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'starts_daily_at',
+                                  'ends_daily_at',
+                                  'noise_threshold_decibels',
+                                ],
+                                type: 'object',
+                              },
+                            },
+                            required: ['normal_hours'],
+                            type: 'object',
+                          },
+                        },
+                        type: 'object',
+                      },
+                    },
+                    type: 'object',
+                  },
                   sound_rules: {
                     description: 'Sound automation rules configuration.',
                     properties: {
@@ -64870,33 +64998,6 @@ const openapi: OpenAPISpec = {
                                     maximum: 1440,
                                     minimum: 0,
                                     type: 'integer',
-                                  },
-                                  noise_sensors: {
-                                    properties: {
-                                      noise_thresholds: {
-                                        items: {
-                                          properties: {
-                                            ends_daily_at: { type: 'string' },
-                                            name: { type: 'string' },
-                                            noise_threshold_decibels: {
-                                              format: 'float',
-                                              type: 'number',
-                                            },
-                                            starts_daily_at: { type: 'string' },
-                                          },
-                                          required: [
-                                            'starts_daily_at',
-                                            'ends_daily_at',
-                                            'noise_threshold_decibels',
-                                          ],
-                                          type: 'object',
-                                        },
-                                        maxItems: 10,
-                                        type: 'array',
-                                      },
-                                    },
-                                    required: ['noise_thresholds'],
-                                    type: 'object',
                                   },
                                   speakers: {
                                     properties: {
@@ -64949,33 +65050,6 @@ const openapi: OpenAPISpec = {
                                     maximum: 1440,
                                     minimum: 0,
                                     type: 'integer',
-                                  },
-                                  noise_sensors: {
-                                    properties: {
-                                      noise_thresholds: {
-                                        items: {
-                                          properties: {
-                                            ends_daily_at: { type: 'string' },
-                                            name: { type: 'string' },
-                                            noise_threshold_decibels: {
-                                              format: 'float',
-                                              type: 'number',
-                                            },
-                                            starts_daily_at: { type: 'string' },
-                                          },
-                                          required: [
-                                            'starts_daily_at',
-                                            'ends_daily_at',
-                                            'noise_threshold_decibels',
-                                          ],
-                                          type: 'object',
-                                        },
-                                        maxItems: 10,
-                                        type: 'array',
-                                      },
-                                    },
-                                    required: ['noise_thresholds'],
-                                    type: 'object',
                                   },
                                   speakers: {
                                     properties: {
@@ -66341,6 +66415,64 @@ const openapi: OpenAPISpec = {
                           required: ['rules'],
                           type: 'object',
                         },
+                        sensor_rules: {
+                          properties: {
+                            rules: {
+                              properties: {
+                                noise_sensors: {
+                                  properties: {
+                                    normal_hours: {
+                                      properties: {
+                                        noise_threshold_decibels: {
+                                          format: 'float',
+                                          maximum: 120,
+                                          minimum: 60,
+                                          type: 'number',
+                                        },
+                                      },
+                                      required: ['noise_threshold_decibels'],
+                                      type: 'object',
+                                    },
+                                    quiet_hours: {
+                                      nullable: true,
+                                      properties: {
+                                        ends_daily_at: {
+                                          description:
+                                            "Time of day as HH:00, in each noise sensor's own time zone.",
+                                          pattern: '^([01]\\d|2[0-3]):00$',
+                                          type: 'string',
+                                        },
+                                        noise_threshold_decibels: {
+                                          format: 'float',
+                                          maximum: 120,
+                                          minimum: 60,
+                                          type: 'number',
+                                        },
+                                        starts_daily_at: {
+                                          description:
+                                            "Time of day as HH:00, in each noise sensor's own time zone.",
+                                          pattern: '^([01]\\d|2[0-3]):00$',
+                                          type: 'string',
+                                        },
+                                      },
+                                      required: [
+                                        'starts_daily_at',
+                                        'ends_daily_at',
+                                        'noise_threshold_decibels',
+                                      ],
+                                      type: 'object',
+                                    },
+                                  },
+                                  required: ['normal_hours'],
+                                  type: 'object',
+                                },
+                              },
+                              type: 'object',
+                            },
+                          },
+                          required: ['rules'],
+                          type: 'object',
+                        },
                         sound_rules: {
                           properties: {
                             rules: {
@@ -66353,19 +66485,6 @@ const openapi: OpenAPISpec = {
                                           maximum: 1440,
                                           minimum: 0,
                                           type: 'integer',
-                                        },
-                                        noise_sensors: {
-                                          properties: {
-                                            noise_thresholds: {
-                                              items: {
-                                                $ref: '#/components/schemas/noise_threshold',
-                                              },
-                                              maxItems: 10,
-                                              type: 'array',
-                                            },
-                                          },
-                                          required: ['noise_thresholds'],
-                                          type: 'object',
                                         },
                                         speakers: {
                                           properties: {
@@ -66418,19 +66537,6 @@ const openapi: OpenAPISpec = {
                                           maximum: 1440,
                                           minimum: 0,
                                           type: 'integer',
-                                        },
-                                        noise_sensors: {
-                                          properties: {
-                                            noise_thresholds: {
-                                              items: {
-                                                $ref: '#/components/schemas/noise_threshold',
-                                              },
-                                              maxItems: 10,
-                                              type: 'array',
-                                            },
-                                          },
-                                          required: ['noise_thresholds'],
-                                          type: 'object',
                                         },
                                         speakers: {
                                           properties: {
@@ -66781,6 +66887,65 @@ const openapi: OpenAPISpec = {
                     },
                     type: 'object',
                   },
+                  sensor_rules: {
+                    description: 'Sensor automation rules configuration.',
+                    properties: {
+                      rules: {
+                        properties: {
+                          noise_sensors: {
+                            nullable: true,
+                            properties: {
+                              normal_hours: {
+                                properties: {
+                                  noise_threshold_decibels: {
+                                    format: 'float',
+                                    maximum: 120,
+                                    minimum: 60,
+                                    type: 'number',
+                                  },
+                                },
+                                required: ['noise_threshold_decibels'],
+                                type: 'object',
+                              },
+                              quiet_hours: {
+                                nullable: true,
+                                properties: {
+                                  ends_daily_at: {
+                                    description:
+                                      "Time of day as HH:00, in each noise sensor's own time zone.",
+                                    pattern: '^([01]\\d|2[0-3]):00$',
+                                    type: 'string',
+                                  },
+                                  noise_threshold_decibels: {
+                                    format: 'float',
+                                    maximum: 120,
+                                    minimum: 60,
+                                    type: 'number',
+                                  },
+                                  starts_daily_at: {
+                                    description:
+                                      "Time of day as HH:00, in each noise sensor's own time zone.",
+                                    pattern: '^([01]\\d|2[0-3]):00$',
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'starts_daily_at',
+                                  'ends_daily_at',
+                                  'noise_threshold_decibels',
+                                ],
+                                type: 'object',
+                              },
+                            },
+                            required: ['normal_hours'],
+                            type: 'object',
+                          },
+                        },
+                        type: 'object',
+                      },
+                    },
+                    type: 'object',
+                  },
                   sound_rules: {
                     description: 'Sound automation rules configuration.',
                     properties: {
@@ -66795,33 +66960,6 @@ const openapi: OpenAPISpec = {
                                     maximum: 1440,
                                     minimum: 0,
                                     type: 'integer',
-                                  },
-                                  noise_sensors: {
-                                    properties: {
-                                      noise_thresholds: {
-                                        items: {
-                                          properties: {
-                                            ends_daily_at: { type: 'string' },
-                                            name: { type: 'string' },
-                                            noise_threshold_decibels: {
-                                              format: 'float',
-                                              type: 'number',
-                                            },
-                                            starts_daily_at: { type: 'string' },
-                                          },
-                                          required: [
-                                            'starts_daily_at',
-                                            'ends_daily_at',
-                                            'noise_threshold_decibels',
-                                          ],
-                                          type: 'object',
-                                        },
-                                        maxItems: 10,
-                                        type: 'array',
-                                      },
-                                    },
-                                    required: ['noise_thresholds'],
-                                    type: 'object',
                                   },
                                   speakers: {
                                     properties: {
@@ -66874,33 +67012,6 @@ const openapi: OpenAPISpec = {
                                     maximum: 1440,
                                     minimum: 0,
                                     type: 'integer',
-                                  },
-                                  noise_sensors: {
-                                    properties: {
-                                      noise_thresholds: {
-                                        items: {
-                                          properties: {
-                                            ends_daily_at: { type: 'string' },
-                                            name: { type: 'string' },
-                                            noise_threshold_decibels: {
-                                              format: 'float',
-                                              type: 'number',
-                                            },
-                                            starts_daily_at: { type: 'string' },
-                                          },
-                                          required: [
-                                            'starts_daily_at',
-                                            'ends_daily_at',
-                                            'noise_threshold_decibels',
-                                          ],
-                                          type: 'object',
-                                        },
-                                        maxItems: 10,
-                                        type: 'array',
-                                      },
-                                    },
-                                    required: ['noise_thresholds'],
-                                    type: 'object',
                                   },
                                   speakers: {
                                     properties: {

@@ -59,12 +59,33 @@ const space_being_deleted = common_space_warning
     'Indicates that the space is being deleted. Seam removes it, revokes its access grants, and detaches its devices and entrances shortly.',
   )
 
+const space_noise_sensor_configuration_mismatch = common_space_warning
+  .extend({
+    warning_code: z
+      .literal('noise_sensor_configuration_mismatch')
+      .describe(warning_code_description),
+    device_ids: z
+      .array(z.string().uuid())
+      .describe(
+        'IDs of the noise sensors in the space that Seam could not bring in line with the noise sensor automation.',
+      ),
+  })
+  .describe(
+    "Indicates that Seam could not apply the noise sensor automation to one or more noise sensors in the space, for example because their settings keep changing back after Seam re-applies it, Seam does not know the sensor's time zone yet, or the sensor is shared with spaces that configure it differently.",
+  )
+
 const space_warning = z
-  .discriminatedUnion('warning_code', [space_being_deleted])
+  .discriminatedUnion('warning_code', [
+    space_being_deleted,
+    space_noise_sensor_configuration_mismatch,
+  ])
   .describe('Warning associated with the space.')
 
 const _space_warning_map = z.object({
   being_deleted: space_being_deleted.optional().nullable(),
+  noise_sensor_configuration_mismatch: space_noise_sensor_configuration_mismatch
+    .optional()
+    .nullable(),
 })
 
 export type SpaceWarningMap = z.infer<typeof _space_warning_map>
