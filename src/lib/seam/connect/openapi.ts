@@ -15149,6 +15149,12 @@ const openapi: OpenAPISpec = {
                       'Indicates whether the customer can customize the Instant Key profile for their properties.',
                     type: 'boolean',
                   },
+                  allow_noise_automation_rule_customization: {
+                    default: false,
+                    description:
+                      'Indicates whether the customer can customize the noise sensor automation rules for their properties.',
+                    type: 'boolean',
+                  },
                   allow_notification_customization: {
                     default: false,
                     description:
@@ -52685,6 +52691,12 @@ const openapi: OpenAPISpec = {
                                   'Indicates whether the customer can customize the Instant Key profile for their properties.',
                                 type: 'boolean',
                               },
+                              allow_noise_automation_rule_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize the noise sensor automation rules for their properties.',
+                                type: 'boolean',
+                              },
                               allow_notification_customization: {
                                 default: false,
                                 description:
@@ -68083,6 +68095,12 @@ const openapi: OpenAPISpec = {
                                     'Indicates whether the customer can customize the Instant Key profile for their properties.',
                                   type: 'boolean',
                                 },
+                                allow_noise_automation_rule_customization: {
+                                  default: false,
+                                  description:
+                                    'Indicates whether the customer can customize the noise sensor automation rules for their properties.',
+                                  type: 'boolean',
+                                },
                                 allow_notification_customization: {
                                   default: false,
                                   description:
@@ -68563,6 +68581,12 @@ const openapi: OpenAPISpec = {
                                 default: false,
                                 description:
                                   'Indicates whether the customer can customize the Instant Key profile for their properties.',
+                                type: 'boolean',
+                              },
+                              allow_noise_automation_rule_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize the noise sensor automation rules for their properties.',
                                 type: 'boolean',
                               },
                               allow_notification_customization: {
@@ -77837,6 +77861,12 @@ const openapi: OpenAPISpec = {
                               'Indicates whether the customer can customize the Instant Key profile for their properties.',
                             type: 'boolean',
                           },
+                          allow_noise_automation_rule_customization: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can customize the noise sensor automation rules for their properties.',
+                            type: 'boolean',
+                          },
                           allow_notification_customization: {
                             default: false,
                             description:
@@ -78510,6 +78540,12 @@ const openapi: OpenAPISpec = {
                             default: false,
                             description:
                               'Indicates whether the customer can customize the Instant Key profile for their properties.',
+                            type: 'boolean',
+                          },
+                          allow_noise_automation_rule_customization: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can customize the noise sensor automation rules for their properties.',
                             type: 'boolean',
                           },
                           allow_notification_customization: {
