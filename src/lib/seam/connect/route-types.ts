@@ -113081,6 +113081,13 @@ export type Routes = {
                           noise_threshold_decibels: number
                         } | null)
                       | undefined
+                    /** All-day level for spaces with no stay in progress. Only applies to spaces that have had reservations, and starts minutes_after_check_out after a stay ends. */
+                    vacant?:
+                      | ({
+                          noise_threshold_decibels: number
+                          minutes_after_check_out?: number | undefined
+                        } | null)
+                      | undefined
                   }
                 | undefined
             }
@@ -113308,6 +113315,13 @@ export type Routes = {
                               /** Time of day as HH:00, in each noise sensor's own time zone. */
                               ends_daily_at: string
                               noise_threshold_decibels: number
+                            } | null)
+                          | undefined
+                        /** All-day level for spaces with no stay in progress. Only applies to spaces that have had reservations, and starts minutes_after_check_out after a stay ends. */
+                        vacant?:
+                          | ({
+                              noise_threshold_decibels: number
+                              minutes_after_check_out?: number | undefined
                             } | null)
                           | undefined
                       } | null)
@@ -113856,6 +113870,13 @@ export type Routes = {
                             noise_threshold_decibels: number
                           } | null)
                         | undefined
+                      /** All-day level for spaces with no stay in progress. Only applies to spaces that have had reservations, and starts minutes_after_check_out after a stay ends. */
+                      vacant?:
+                        | ({
+                            noise_threshold_decibels: number
+                            minutes_after_check_out?: number | undefined
+                          } | null)
+                        | undefined
                     }
                   | undefined
               }
@@ -114054,6 +114075,13 @@ export type Routes = {
                               /** Time of day as HH:00, in each noise sensor's own time zone. */
                               ends_daily_at: string
                               noise_threshold_decibels: number
+                            } | null)
+                          | undefined
+                        /** All-day level for spaces with no stay in progress. Only applies to spaces that have had reservations, and starts minutes_after_check_out after a stay ends. */
+                        vacant?:
+                          | ({
+                              noise_threshold_decibels: number
+                              minutes_after_check_out?: number | undefined
                             } | null)
                           | undefined
                       } | null)

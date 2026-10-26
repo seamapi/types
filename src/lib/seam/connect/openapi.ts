@@ -64419,6 +64419,26 @@ const openapi: OpenAPISpec = {
                                   ],
                                   type: 'object',
                                 },
+                                vacant: {
+                                  description:
+                                    'All-day level for spaces with no stay in progress. Only applies to spaces that have had reservations, and starts minutes_after_check_out after a stay ends.',
+                                  nullable: true,
+                                  properties: {
+                                    minutes_after_check_out: {
+                                      maximum: 1440,
+                                      minimum: 0,
+                                      type: 'integer',
+                                    },
+                                    noise_threshold_decibels: {
+                                      format: 'float',
+                                      maximum: 120,
+                                      minimum: 60,
+                                      type: 'number',
+                                    },
+                                  },
+                                  required: ['noise_threshold_decibels'],
+                                  type: 'object',
+                                },
                               },
                               required: ['normal_hours'],
                               type: 'object',
@@ -64972,6 +64992,26 @@ const openapi: OpenAPISpec = {
                                   'ends_daily_at',
                                   'noise_threshold_decibels',
                                 ],
+                                type: 'object',
+                              },
+                              vacant: {
+                                description:
+                                  'All-day level for spaces with no stay in progress. Only applies to spaces that have had reservations, and starts minutes_after_check_out after a stay ends.',
+                                nullable: true,
+                                properties: {
+                                  minutes_after_check_out: {
+                                    maximum: 1440,
+                                    minimum: 0,
+                                    type: 'integer',
+                                  },
+                                  noise_threshold_decibels: {
+                                    format: 'float',
+                                    maximum: 120,
+                                    minimum: 60,
+                                    type: 'number',
+                                  },
+                                },
+                                required: ['noise_threshold_decibels'],
                                 type: 'object',
                               },
                             },
@@ -66462,6 +66502,26 @@ const openapi: OpenAPISpec = {
                                       ],
                                       type: 'object',
                                     },
+                                    vacant: {
+                                      description:
+                                        'All-day level for spaces with no stay in progress. Only applies to spaces that have had reservations, and starts minutes_after_check_out after a stay ends.',
+                                      nullable: true,
+                                      properties: {
+                                        minutes_after_check_out: {
+                                          maximum: 1440,
+                                          minimum: 0,
+                                          type: 'integer',
+                                        },
+                                        noise_threshold_decibels: {
+                                          format: 'float',
+                                          maximum: 120,
+                                          minimum: 60,
+                                          type: 'number',
+                                        },
+                                      },
+                                      required: ['noise_threshold_decibels'],
+                                      type: 'object',
+                                    },
                                   },
                                   required: ['normal_hours'],
                                   type: 'object',
@@ -66934,6 +66994,26 @@ const openapi: OpenAPISpec = {
                                   'ends_daily_at',
                                   'noise_threshold_decibels',
                                 ],
+                                type: 'object',
+                              },
+                              vacant: {
+                                description:
+                                  'All-day level for spaces with no stay in progress. Only applies to spaces that have had reservations, and starts minutes_after_check_out after a stay ends.',
+                                nullable: true,
+                                properties: {
+                                  minutes_after_check_out: {
+                                    maximum: 1440,
+                                    minimum: 0,
+                                    type: 'integer',
+                                  },
+                                  noise_threshold_decibels: {
+                                    format: 'float',
+                                    maximum: 120,
+                                    minimum: 60,
+                                    type: 'number',
+                                  },
+                                },
+                                required: ['noise_threshold_decibels'],
                                 type: 'object',
                               },
                             },
