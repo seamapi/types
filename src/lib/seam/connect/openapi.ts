@@ -15149,16 +15149,16 @@ const openapi: OpenAPISpec = {
                       'Indicates whether the customer can customize the Instant Key profile for their properties.',
                     type: 'boolean',
                   },
-                  allow_noise_automation_rule_customization: {
-                    default: false,
-                    description:
-                      'Indicates whether the customer can customize the noise sensor automation rules for their properties.',
-                    type: 'boolean',
-                  },
                   allow_notification_customization: {
                     default: false,
                     description:
                       'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
+                    type: 'boolean',
+                  },
+                  allow_sensor_automation_rule_customization: {
+                    default: false,
+                    description:
+                      'Indicates whether the customer can customize the sensor automation rules for their properties.',
                     type: 'boolean',
                   },
                   allow_sound_automation_rule_customization: {
@@ -52691,16 +52691,16 @@ const openapi: OpenAPISpec = {
                                   'Indicates whether the customer can customize the Instant Key profile for their properties.',
                                 type: 'boolean',
                               },
-                              allow_noise_automation_rule_customization: {
-                                default: false,
-                                description:
-                                  'Indicates whether the customer can customize the noise sensor automation rules for their properties.',
-                                type: 'boolean',
-                              },
                               allow_notification_customization: {
                                 default: false,
                                 description:
                                   'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
+                                type: 'boolean',
+                              },
+                              allow_sensor_automation_rule_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize the sensor automation rules for their properties.',
                                 type: 'boolean',
                               },
                               allow_sound_automation_rule_customization: {
@@ -68095,16 +68095,16 @@ const openapi: OpenAPISpec = {
                                     'Indicates whether the customer can customize the Instant Key profile for their properties.',
                                   type: 'boolean',
                                 },
-                                allow_noise_automation_rule_customization: {
-                                  default: false,
-                                  description:
-                                    'Indicates whether the customer can customize the noise sensor automation rules for their properties.',
-                                  type: 'boolean',
-                                },
                                 allow_notification_customization: {
                                   default: false,
                                   description:
                                     'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
+                                  type: 'boolean',
+                                },
+                                allow_sensor_automation_rule_customization: {
+                                  default: false,
+                                  description:
+                                    'Indicates whether the customer can customize the sensor automation rules for their properties.',
                                   type: 'boolean',
                                 },
                                 allow_sound_automation_rule_customization: {
@@ -68583,16 +68583,16 @@ const openapi: OpenAPISpec = {
                                   'Indicates whether the customer can customize the Instant Key profile for their properties.',
                                 type: 'boolean',
                               },
-                              allow_noise_automation_rule_customization: {
-                                default: false,
-                                description:
-                                  'Indicates whether the customer can customize the noise sensor automation rules for their properties.',
-                                type: 'boolean',
-                              },
                               allow_notification_customization: {
                                 default: false,
                                 description:
                                   'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
+                                type: 'boolean',
+                              },
+                              allow_sensor_automation_rule_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize the sensor automation rules for their properties.',
                                 type: 'boolean',
                               },
                               allow_sound_automation_rule_customization: {
@@ -77861,16 +77861,16 @@ const openapi: OpenAPISpec = {
                               'Indicates whether the customer can customize the Instant Key profile for their properties.',
                             type: 'boolean',
                           },
-                          allow_noise_automation_rule_customization: {
-                            default: false,
-                            description:
-                              'Indicates whether the customer can customize the noise sensor automation rules for their properties.',
-                            type: 'boolean',
-                          },
                           allow_notification_customization: {
                             default: false,
                             description:
                               'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
+                            type: 'boolean',
+                          },
+                          allow_sensor_automation_rule_customization: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can customize the sensor automation rules for their properties.',
                             type: 'boolean',
                           },
                           allow_sound_automation_rule_customization: {
@@ -78542,16 +78542,16 @@ const openapi: OpenAPISpec = {
                               'Indicates whether the customer can customize the Instant Key profile for their properties.',
                             type: 'boolean',
                           },
-                          allow_noise_automation_rule_customization: {
-                            default: false,
-                            description:
-                              'Indicates whether the customer can customize the noise sensor automation rules for their properties.',
-                            type: 'boolean',
-                          },
                           allow_notification_customization: {
                             default: false,
                             description:
                               'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
+                            type: 'boolean',
+                          },
+                          allow_sensor_automation_rule_customization: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can customize the sensor automation rules for their properties.',
                             type: 'boolean',
                           },
                           allow_sound_automation_rule_customization: {

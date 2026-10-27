@@ -115,11 +115,11 @@ const base_configure_feature = base_feature.extend({
     .describe(
       'Indicates whether the customer can customize the sound automation rules for their properties.',
     ),
-  allow_noise_automation_rule_customization: z
+  allow_sensor_automation_rule_customization: z
     .boolean()
     .default(false)
     .describe(
-      'Indicates whether the customer can customize the noise sensor automation rules for their properties.',
+      'Indicates whether the customer can customize the sensor automation rules for their properties.',
     ),
   allow_instant_key_customization: z
     .boolean()
@@ -313,7 +313,7 @@ export const portal_configuration = portal_configuration_base
         allow_access_automation_rule_customization: false,
         allow_climate_automation_rule_customization: false,
         allow_sound_automation_rule_customization: false,
-        allow_noise_automation_rule_customization: false,
+        allow_sensor_automation_rule_customization: false,
         allow_notification_customization: false,
       },
     },
