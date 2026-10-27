@@ -20471,6 +20471,31 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-variant-group-key': 'access_codes',
                 },
+                {
+                  description:
+                    "Indicates that the camera's account plan does not include cloud recording, so event media such as motion clips is unavailable.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['cloud_recording_not_enabled'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -33935,6 +33960,31 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                   'x-variant-group-key': 'access_codes',
                 },
+                {
+                  description:
+                    "Indicates that the camera's account plan does not include cloud recording, so event media such as motion clips is unavailable.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['cloud_recording_not_enabled'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -42431,6 +42481,31 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                   'x-variant-group-key': 'access_codes',
+                },
+                {
+                  description:
+                    "Indicates that the camera's account plan does not include cloud recording, so event media such as motion clips is unavailable.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['cloud_recording_not_enabled'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
                 },
               ],
             },

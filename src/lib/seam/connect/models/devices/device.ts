@@ -725,6 +725,16 @@ const max_access_codes_reached = common_device_warning.extend({
     Indicates that the device has reached its maximum number of active access codes. Delete existing codes before creating new ones.
     `)
 
+const cloud_recording_not_enabled = common_device_warning
+  .extend({
+    warning_code: z
+      .literal('cloud_recording_not_enabled')
+      .describe(warning_code_description),
+  })
+  .describe(
+    "Indicates that the camera's account plan does not include cloud recording, so event media such as motion clips is unavailable.",
+  )
+
 const device_warning = z.discriminatedUnion('warning_code', [
   partial_backup_access_code_pool,
   many_active_backup_codes,
@@ -754,6 +764,7 @@ const device_warning = z.discriminatedUnion('warning_code', [
   accessory_keypad_low_battery,
   unreliable_online_status,
   max_access_codes_reached,
+  cloud_recording_not_enabled,
 ])
 
 export type DeviceWarning = z.infer<typeof device_warning>
@@ -811,6 +822,9 @@ export const device_warning_map = z.object({
     .nullable(),
   unreliable_online_status: unreliable_online_status.optional().nullable(),
   max_access_codes_reached: max_access_codes_reached.optional().nullable(),
+  cloud_recording_not_enabled: cloud_recording_not_enabled
+    .optional()
+    .nullable(),
 })
 
 export type DeviceWarningMap = z.infer<typeof device_warning_map>

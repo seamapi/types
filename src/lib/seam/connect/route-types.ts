@@ -17972,6 +17972,14 @@ export type Routes = {
                     /** Maximum number of active access codes supported by the device. */
                     max_active_access_code_count: number
                   }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'cloud_recording_not_enabled'
+                  }
               )[]
               /** Date and time at which the device object was created. */
               created_at: string
@@ -27688,6 +27696,14 @@ export type Routes = {
                     active_access_code_count: number
                     /** Maximum number of active access codes supported by the device. */
                     max_active_access_code_count: number
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'cloud_recording_not_enabled'
                   }
               )[]
               /** Date and time at which the device object was created. */
@@ -59709,6 +59725,14 @@ export type Routes = {
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
             }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'cloud_recording_not_enabled'
+            }
         )[]
         /** Date and time at which the device object was created. */
         created_at: string
@@ -62025,6 +62049,14 @@ export type Routes = {
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
             }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'cloud_recording_not_enabled'
+            }
         )[]
         /** Date and time at which the device object was created. */
         created_at: string
@@ -64190,6 +64222,14 @@ export type Routes = {
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
             }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'cloud_recording_not_enabled'
+            }
         )[]
         /** Date and time at which the device object was created. */
         created_at: string
@@ -65072,6 +65112,14 @@ export type Routes = {
               active_access_code_count: number
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'cloud_recording_not_enabled'
             }
         )[]
         /** Date and time at which the device object was created. */
@@ -78469,6 +78517,14 @@ export type Routes = {
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
             }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'cloud_recording_not_enabled'
+            }
         )[]
         /** Date and time at which the device object was created. */
         created_at: string
@@ -80505,6 +80561,14 @@ export type Routes = {
               active_access_code_count: number
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'cloud_recording_not_enabled'
             }
         )[]
         /** Date and time at which the device object was created. */
@@ -82674,6 +82738,14 @@ export type Routes = {
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
             }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'cloud_recording_not_enabled'
+            }
         )[]
         /** Date and time at which the device object was created. */
         created_at: string
@@ -84709,6 +84781,14 @@ export type Routes = {
               active_access_code_count: number
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'cloud_recording_not_enabled'
             }
         )[]
         /** Date and time at which the device object was created. */
@@ -96997,6 +97077,14 @@ export type Routes = {
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
             }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'cloud_recording_not_enabled'
+            }
         )[]
         /** Date and time at which the device object was created. */
         created_at: string
@@ -99032,6 +99120,14 @@ export type Routes = {
               active_access_code_count: number
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'cloud_recording_not_enabled'
             }
         )[]
         /** Date and time at which the device object was created. */
@@ -107318,6 +107414,14 @@ export type Routes = {
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
             }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'cloud_recording_not_enabled'
+            }
         )[]
         /** Type of the phone device, such as `ios_phone` or `android_phone`. */
         device_type: 'ios_phone' | 'android_phone'
@@ -107770,6 +107874,14 @@ export type Routes = {
               active_access_code_count: number
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'cloud_recording_not_enabled'
             }
         )[]
         /** Type of the phone device, such as `ios_phone` or `android_phone`. */
@@ -108250,6 +108362,14 @@ export type Routes = {
               active_access_code_count: number
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'cloud_recording_not_enabled'
             }
         )[]
         /** Type of the phone device, such as `ios_phone` or `android_phone`. */
@@ -127691,6 +127811,14 @@ export type Routes = {
                     active_access_code_count: number
                     /** Maximum number of active access codes supported by the device. */
                     max_active_access_code_count: number
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'cloud_recording_not_enabled'
                   }
               )[]
               /** Date and time at which the device object was created. */
@@ -161629,6 +161757,14 @@ export type Routes = {
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
             }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'cloud_recording_not_enabled'
+            }
         )[]
         /** Date and time at which the device object was created. */
         created_at: string
@@ -168822,6 +168958,14 @@ export type Routes = {
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
             }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'cloud_recording_not_enabled'
+            }
         )[]
         /** Date and time at which the device object was created. */
         created_at: string
@@ -170857,6 +171001,14 @@ export type Routes = {
               active_access_code_count: number
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'cloud_recording_not_enabled'
             }
         )[]
         /** Date and time at which the device object was created. */
@@ -184259,6 +184411,14 @@ export type Routes = {
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
             }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'cloud_recording_not_enabled'
+            }
         )[]
         /** Date and time at which the device object was created. */
         created_at: string
@@ -186296,6 +186456,14 @@ export type Routes = {
               active_access_code_count: number
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'cloud_recording_not_enabled'
             }
         )[]
         /** Date and time at which the device object was created. */
@@ -191111,6 +191279,14 @@ export type Routes = {
                     /** Maximum number of active access codes supported by the device. */
                     max_active_access_code_count: number
                   }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'cloud_recording_not_enabled'
+                  }
               )[]
               /** Date and time at which the device object was created. */
               created_at: string
@@ -195801,6 +195977,14 @@ export type Routes = {
                     active_access_code_count: number
                     /** Maximum number of active access codes supported by the device. */
                     max_active_access_code_count: number
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'cloud_recording_not_enabled'
                   }
               )[]
               /** Date and time at which the device object was created. */
