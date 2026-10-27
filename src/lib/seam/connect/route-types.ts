@@ -56878,8 +56878,8 @@ export type Routes = {
                   /** Indicates whether the customer can customize the sound automation rules for their properties. */
                   allow_sound_automation_rule_customization?:
                     boolean | undefined
-                  /** Indicates whether the customer can customize the noise sensor automation rules for their properties. */
-                  allow_noise_automation_rule_customization?:
+                  /** Indicates whether the customer can customize the sensor automation rules for their properties. */
+                  allow_sensor_automation_rule_customization?:
                     boolean | undefined
                   /** Indicates whether the customer can customize the Instant Key profile for their properties. */
                   allow_instant_key_customization?: boolean | undefined
@@ -109145,8 +109145,8 @@ export type Routes = {
                     /** Indicates whether the customer can customize the sound automation rules for their properties. */
                     allow_sound_automation_rule_customization?:
                       boolean | undefined
-                    /** Indicates whether the customer can customize the noise sensor automation rules for their properties. */
-                    allow_noise_automation_rule_customization?:
+                    /** Indicates whether the customer can customize the sensor automation rules for their properties. */
+                    allow_sensor_automation_rule_customization?:
                       boolean | undefined
                     /** Indicates whether the customer can customize the Instant Key profile for their properties. */
                     allow_instant_key_customization?: boolean | undefined
@@ -118607,8 +118607,8 @@ export type Routes = {
             allow_climate_automation_rule_customization?: boolean
             /** Indicates whether the customer can customize the sound automation rules for their properties. */
             allow_sound_automation_rule_customization?: boolean
-            /** Indicates whether the customer can customize the noise sensor automation rules for their properties. */
-            allow_noise_automation_rule_customization?: boolean
+            /** Indicates whether the customer can customize the sensor automation rules for their properties. */
+            allow_sensor_automation_rule_customization?: boolean
             /** Indicates whether the customer can customize the Instant Key profile for their properties. */
             allow_instant_key_customization?: boolean
             /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
@@ -118964,8 +118964,8 @@ export type Routes = {
                     /** Indicates whether the customer can customize the sound automation rules for their properties. */
                     allow_sound_automation_rule_customization?:
                       boolean | undefined
-                    /** Indicates whether the customer can customize the noise sensor automation rules for their properties. */
-                    allow_noise_automation_rule_customization?:
+                    /** Indicates whether the customer can customize the sensor automation rules for their properties. */
+                    allow_sensor_automation_rule_customization?:
                       boolean | undefined
                     /** Indicates whether the customer can customize the Instant Key profile for their properties. */
                     allow_instant_key_customization?: boolean | undefined
@@ -187891,8 +187891,8 @@ export type Routes = {
                   /** Indicates whether the customer can customize the sound automation rules for their properties. */
                   allow_sound_automation_rule_customization?:
                     boolean | undefined
-                  /** Indicates whether the customer can customize the noise sensor automation rules for their properties. */
-                  allow_noise_automation_rule_customization?:
+                  /** Indicates whether the customer can customize the sensor automation rules for their properties. */
+                  allow_sensor_automation_rule_customization?:
                     boolean | undefined
                   /** Indicates whether the customer can customize the Instant Key profile for their properties. */
                   allow_instant_key_customization?: boolean | undefined
@@ -188155,8 +188155,8 @@ export type Routes = {
                     /** Indicates whether the customer can customize the sound automation rules for their properties. */
                     allow_sound_automation_rule_customization?:
                       boolean | undefined
-                    /** Indicates whether the customer can customize the noise sensor automation rules for their properties. */
-                    allow_noise_automation_rule_customization?:
+                    /** Indicates whether the customer can customize the sensor automation rules for their properties. */
+                    allow_sensor_automation_rule_customization?:
                       boolean | undefined
                     /** Indicates whether the customer can customize the Instant Key profile for their properties. */
                     allow_instant_key_customization?: boolean | undefined
@@ -188429,8 +188429,8 @@ export type Routes = {
                     /** Indicates whether the customer can customize the sound automation rules for their properties. */
                     allow_sound_automation_rule_customization?:
                       boolean | undefined
-                    /** Indicates whether the customer can customize the noise sensor automation rules for their properties. */
-                    allow_noise_automation_rule_customization?:
+                    /** Indicates whether the customer can customize the sensor automation rules for their properties. */
+                    allow_sensor_automation_rule_customization?:
                       boolean | undefined
                     /** Indicates whether the customer can customize the Instant Key profile for their properties. */
                     allow_instant_key_customization?: boolean | undefined
@@ -188703,8 +188703,8 @@ export type Routes = {
                     /** Indicates whether the customer can customize the sound automation rules for their properties. */
                     allow_sound_automation_rule_customization?:
                       boolean | undefined
-                    /** Indicates whether the customer can customize the noise sensor automation rules for their properties. */
-                    allow_noise_automation_rule_customization?:
+                    /** Indicates whether the customer can customize the sensor automation rules for their properties. */
+                    allow_sensor_automation_rule_customization?:
                       boolean | undefined
                     /** Indicates whether the customer can customize the Instant Key profile for their properties. */
                     allow_instant_key_customization?: boolean | undefined
@@ -188973,8 +188973,8 @@ export type Routes = {
                       /** Indicates whether the customer can customize the sound automation rules for their properties. */
                       allow_sound_automation_rule_customization?:
                         boolean | undefined
-                      /** Indicates whether the customer can customize the noise sensor automation rules for their properties. */
-                      allow_noise_automation_rule_customization?:
+                      /** Indicates whether the customer can customize the sensor automation rules for their properties. */
+                      allow_sensor_automation_rule_customization?:
                         boolean | undefined
                       /** Indicates whether the customer can customize the Instant Key profile for their properties. */
                       allow_instant_key_customization?: boolean | undefined
@@ -202588,8 +202588,8 @@ export type Routes = {
                           /** Indicates whether the customer can customize the sound automation rules for their properties. */
                           allow_sound_automation_rule_customization?:
                             boolean | undefined
-                          /** Indicates whether the customer can customize the noise sensor automation rules for their properties. */
-                          allow_noise_automation_rule_customization?:
+                          /** Indicates whether the customer can customize the sensor automation rules for their properties. */
+                          allow_sensor_automation_rule_customization?:
                             boolean | undefined
                           /** Indicates whether the customer can customize the Instant Key profile for their properties. */
                           allow_instant_key_customization?: boolean | undefined
