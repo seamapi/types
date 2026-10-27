@@ -53601,6 +53601,131 @@ const openapi: OpenAPISpec = {
                                   format: 'date-time',
                                   type: 'string',
                                 },
+                                sub_reservations: {
+                                  description:
+                                    "Parts of the reservation that each get their own access, for example one per room. Each sub-reservation inherits the reservation's name, times, preferred code, guest and custom metadata unless it sets its own, and must set its own location keys. A reservation with sub-reservations must not set location keys itself. Sending this list replaces the reservation's sub-reservations: any not included are removed, and an empty list removes all of them. Omitting it leaves existing sub-reservations unchanged.",
+                                  items: {
+                                    properties: {
+                                      building_keys: {
+                                        description:
+                                          'Building keys associated with the access grant.',
+                                        items: { type: 'string' },
+                                        type: 'array',
+                                      },
+                                      common_area_keys: {
+                                        description:
+                                          'Common area keys associated with the access grant.',
+                                        items: { type: 'string' },
+                                        type: 'array',
+                                      },
+                                      custom_metadata: {
+                                        additionalProperties: {
+                                          nullable: true,
+                                          oneOf: [
+                                            { maxLength: 500, type: 'string' },
+                                            { type: 'boolean' },
+                                          ],
+                                        },
+                                        description:
+                                          "Set key:value pairs for filtering sub-reservations by custom criteria. Merged over the reservation's custom metadata. Set a key to `null` or to an empty string to remove that key from the custom metadata.",
+                                        type: 'object',
+                                      },
+                                      ends_at: {
+                                        description:
+                                          'Ending date and time for the access grant.',
+                                        format: 'date-time',
+                                        type: 'string',
+                                      },
+                                      facility_keys: {
+                                        description:
+                                          'Facility keys associated with the access grant.',
+                                        items: { type: 'string' },
+                                        type: 'array',
+                                      },
+                                      guest_key: {
+                                        description:
+                                          'Guest key associated with the access grant.',
+                                        type: 'string',
+                                      },
+                                      listing_keys: {
+                                        description:
+                                          'Listing keys associated with the access grant.',
+                                        items: { type: 'string' },
+                                        type: 'array',
+                                      },
+                                      name: {
+                                        description:
+                                          'Your name for this access grant resource.',
+                                        type: 'string',
+                                      },
+                                      preferred_code: {
+                                        description:
+                                          'Preferred PIN code to use when creating access for this reservation. Set to `null` to remove a previously set preferred code, so that access falls back to an automatically generated code. Omitting this field keeps any previously set preferred code.',
+                                        nullable: true,
+                                        type: 'string',
+                                      },
+                                      property_keys: {
+                                        description:
+                                          'Property keys associated with the access grant.',
+                                        items: { type: 'string' },
+                                        type: 'array',
+                                      },
+                                      resident_key: {
+                                        description:
+                                          'Resident key associated with the access grant.',
+                                        type: 'string',
+                                      },
+                                      room_keys: {
+                                        description:
+                                          'Room keys associated with the access grant.',
+                                        items: { type: 'string' },
+                                        type: 'array',
+                                      },
+                                      space_keys: {
+                                        description:
+                                          'Space keys associated with the access grant.',
+                                        items: { type: 'string' },
+                                        type: 'array',
+                                      },
+                                      starts_at: {
+                                        description:
+                                          'Starting date and time for the access grant.',
+                                        format: 'date-time',
+                                        type: 'string',
+                                      },
+                                      sub_reservation_key: {
+                                        description:
+                                          'Your identifier for the sub-reservation. Must be unique within its reservation.',
+                                        minLength: 1,
+                                        type: 'string',
+                                      },
+                                      tenant_key: {
+                                        description:
+                                          'Tenant key associated with the access grant.',
+                                        type: 'string',
+                                      },
+                                      unit_keys: {
+                                        description:
+                                          'Unit keys associated with the access grant.',
+                                        items: { type: 'string' },
+                                        type: 'array',
+                                      },
+                                      user_identity_key: {
+                                        description:
+                                          'User identity key associated with the access grant.',
+                                        type: 'string',
+                                      },
+                                      user_key: {
+                                        description:
+                                          'User key associated with the access grant.',
+                                        type: 'string',
+                                      },
+                                    },
+                                    required: ['sub_reservation_key'],
+                                    type: 'object',
+                                  },
+                                  type: 'array',
+                                },
                                 tenant_key: {
                                   description:
                                     'Tenant key associated with the access grant.',
@@ -54792,6 +54917,131 @@ const openapi: OpenAPISpec = {
                             'Starting date and time for the access grant.',
                           format: 'date-time',
                           type: 'string',
+                        },
+                        sub_reservations: {
+                          description:
+                            "Parts of the reservation that each get their own access, for example one per room. Each sub-reservation inherits the reservation's name, times, preferred code, guest and custom metadata unless it sets its own, and must set its own location keys. A reservation with sub-reservations must not set location keys itself. Sending this list replaces the reservation's sub-reservations: any not included are removed, and an empty list removes all of them. Omitting it leaves existing sub-reservations unchanged.",
+                          items: {
+                            properties: {
+                              building_keys: {
+                                description:
+                                  'Building keys associated with the access grant.',
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                              common_area_keys: {
+                                description:
+                                  'Common area keys associated with the access grant.',
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                              custom_metadata: {
+                                additionalProperties: {
+                                  nullable: true,
+                                  oneOf: [
+                                    { maxLength: 500, type: 'string' },
+                                    { type: 'boolean' },
+                                  ],
+                                },
+                                description:
+                                  "Set key:value pairs for filtering sub-reservations by custom criteria. Merged over the reservation's custom metadata. Set a key to `null` or to an empty string to remove that key from the custom metadata.",
+                                type: 'object',
+                              },
+                              ends_at: {
+                                description:
+                                  'Ending date and time for the access grant.',
+                                format: 'date-time',
+                                type: 'string',
+                              },
+                              facility_keys: {
+                                description:
+                                  'Facility keys associated with the access grant.',
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                              guest_key: {
+                                description:
+                                  'Guest key associated with the access grant.',
+                                type: 'string',
+                              },
+                              listing_keys: {
+                                description:
+                                  'Listing keys associated with the access grant.',
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                              name: {
+                                description:
+                                  'Your name for this access grant resource.',
+                                type: 'string',
+                              },
+                              preferred_code: {
+                                description:
+                                  'Preferred PIN code to use when creating access for this reservation. Set to `null` to remove a previously set preferred code, so that access falls back to an automatically generated code. Omitting this field keeps any previously set preferred code.',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              property_keys: {
+                                description:
+                                  'Property keys associated with the access grant.',
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                              resident_key: {
+                                description:
+                                  'Resident key associated with the access grant.',
+                                type: 'string',
+                              },
+                              room_keys: {
+                                description:
+                                  'Room keys associated with the access grant.',
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                              space_keys: {
+                                description:
+                                  'Space keys associated with the access grant.',
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                              starts_at: {
+                                description:
+                                  'Starting date and time for the access grant.',
+                                format: 'date-time',
+                                type: 'string',
+                              },
+                              sub_reservation_key: {
+                                description:
+                                  'Your identifier for the sub-reservation. Must be unique within its reservation.',
+                                minLength: 1,
+                                type: 'string',
+                              },
+                              tenant_key: {
+                                description:
+                                  'Tenant key associated with the access grant.',
+                                type: 'string',
+                              },
+                              unit_keys: {
+                                description:
+                                  'Unit keys associated with the access grant.',
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                              user_identity_key: {
+                                description:
+                                  'User identity key associated with the access grant.',
+                                type: 'string',
+                              },
+                              user_key: {
+                                description:
+                                  'User key associated with the access grant.',
+                                type: 'string',
+                              },
+                            },
+                            required: ['sub_reservation_key'],
+                            type: 'object',
+                          },
+                          type: 'array',
                         },
                         tenant_key: {
                           description:

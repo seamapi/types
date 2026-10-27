@@ -57159,6 +57159,53 @@ export type Routes = {
                         [x: string]: string | boolean | null
                       }
                     | undefined
+                  /** Parts of the reservation that each get their own access, for example one per room. Each sub-reservation inherits the reservation's name, times, preferred code, guest and custom metadata unless it sets its own, and must set its own location keys. A reservation with sub-reservations must not set location keys itself. Sending this list replaces the reservation's sub-reservations: any not included are removed, and an empty list removes all of them. Omitting it leaves existing sub-reservations unchanged. */
+                  sub_reservations?:
+                    | {
+                        /** Your name for this access grant resource. */
+                        name?: string | undefined
+                        /** Starting date and time for the access grant. */
+                        starts_at?: string | undefined
+                        /** Ending date and time for the access grant. */
+                        ends_at?: string | undefined
+                        /** Preferred PIN code to use when creating access for this reservation. Set to `null` to remove a previously set preferred code, so that access falls back to an automatically generated code. Omitting this field keeps any previously set preferred code. */
+                        preferred_code?: (string | null) | undefined
+                        /** Your identifier for the sub-reservation. Must be unique within its reservation. */
+                        sub_reservation_key: string
+                        /** Set key:value pairs for filtering sub-reservations by custom criteria. Merged over the reservation's custom metadata. Set a key to `null` or to an empty string to remove that key from the custom metadata. */
+                        custom_metadata?:
+                          | {
+                              [x: string]: string | boolean | null
+                            }
+                          | undefined
+                        /** Guest key associated with the access grant. */
+                        guest_key?: string | undefined
+                        /** Tenant key associated with the access grant. */
+                        tenant_key?: string | undefined
+                        /** Resident key associated with the access grant. */
+                        resident_key?: string | undefined
+                        /** User key associated with the access grant. */
+                        user_key?: string | undefined
+                        /** User identity key associated with the access grant. */
+                        user_identity_key?: string | undefined
+                        /** Space keys associated with the access grant. */
+                        space_keys?: string[] | undefined
+                        /** Property keys associated with the access grant. */
+                        property_keys?: string[] | undefined
+                        /** Room keys associated with the access grant. */
+                        room_keys?: string[] | undefined
+                        /** Common area keys associated with the access grant. */
+                        common_area_keys?: string[] | undefined
+                        /** Unit keys associated with the access grant. */
+                        unit_keys?: string[] | undefined
+                        /** Facility keys associated with the access grant. */
+                        facility_keys?: string[] | undefined
+                        /** Building keys associated with the access grant. */
+                        building_keys?: string[] | undefined
+                        /** Listing keys associated with the access grant. */
+                        listing_keys?: string[] | undefined
+                      }[]
+                    | undefined
                   /** Guest key associated with the access grant. */
                   guest_key?: string | undefined
                   /** Tenant key associated with the access grant. */
@@ -57616,6 +57663,53 @@ export type Routes = {
               | {
                   [x: string]: string | boolean | null
                 }
+              | undefined
+            /** Parts of the reservation that each get their own access, for example one per room. Each sub-reservation inherits the reservation's name, times, preferred code, guest and custom metadata unless it sets its own, and must set its own location keys. A reservation with sub-reservations must not set location keys itself. Sending this list replaces the reservation's sub-reservations: any not included are removed, and an empty list removes all of them. Omitting it leaves existing sub-reservations unchanged. */
+            sub_reservations?:
+              | {
+                  /** Your name for this access grant resource. */
+                  name?: string | undefined
+                  /** Starting date and time for the access grant. */
+                  starts_at?: string | undefined
+                  /** Ending date and time for the access grant. */
+                  ends_at?: string | undefined
+                  /** Preferred PIN code to use when creating access for this reservation. Set to `null` to remove a previously set preferred code, so that access falls back to an automatically generated code. Omitting this field keeps any previously set preferred code. */
+                  preferred_code?: (string | null) | undefined
+                  /** Your identifier for the sub-reservation. Must be unique within its reservation. */
+                  sub_reservation_key: string
+                  /** Set key:value pairs for filtering sub-reservations by custom criteria. Merged over the reservation's custom metadata. Set a key to `null` or to an empty string to remove that key from the custom metadata. */
+                  custom_metadata?:
+                    | {
+                        [x: string]: string | boolean | null
+                      }
+                    | undefined
+                  /** Guest key associated with the access grant. */
+                  guest_key?: string | undefined
+                  /** Tenant key associated with the access grant. */
+                  tenant_key?: string | undefined
+                  /** Resident key associated with the access grant. */
+                  resident_key?: string | undefined
+                  /** User key associated with the access grant. */
+                  user_key?: string | undefined
+                  /** User identity key associated with the access grant. */
+                  user_identity_key?: string | undefined
+                  /** Space keys associated with the access grant. */
+                  space_keys?: string[] | undefined
+                  /** Property keys associated with the access grant. */
+                  property_keys?: string[] | undefined
+                  /** Room keys associated with the access grant. */
+                  room_keys?: string[] | undefined
+                  /** Common area keys associated with the access grant. */
+                  common_area_keys?: string[] | undefined
+                  /** Unit keys associated with the access grant. */
+                  unit_keys?: string[] | undefined
+                  /** Facility keys associated with the access grant. */
+                  facility_keys?: string[] | undefined
+                  /** Building keys associated with the access grant. */
+                  building_keys?: string[] | undefined
+                  /** Listing keys associated with the access grant. */
+                  listing_keys?: string[] | undefined
+                }[]
               | undefined
             /** Guest key associated with the access grant. */
             guest_key?: string | undefined
