@@ -103,21 +103,17 @@ const acs_user_error = z
   )
 
 const _acs_user_error_map = z.object({
-  deleted_externally: acs_user_deleted_externally.optional().nullable(),
+  deleted_externally: acs_user_deleted_externally.optional(),
   salto_ks_subscription_limit_exceeded:
-    acs_user_salto_ks_subscription_limit_exceeded.optional().nullable(),
-  failed_to_create_on_acs_system: acs_user_failed_to_create_on_acs_system
-    .optional()
-    .nullable(),
-  failed_to_update_on_acs_system: acs_user_failed_to_update_on_acs_system
-    .optional()
-    .nullable(),
-  failed_to_delete_on_acs_system: acs_user_failed_to_delete_on_acs_system
-    .optional()
-    .nullable(),
-  latch_conflict_with_resident_user: acs_user_latch_conflict_with_resident_user
-    .optional()
-    .nullable(),
+    acs_user_salto_ks_subscription_limit_exceeded.optional(),
+  failed_to_create_on_acs_system:
+    acs_user_failed_to_create_on_acs_system.optional(),
+  failed_to_update_on_acs_system:
+    acs_user_failed_to_update_on_acs_system.optional(),
+  failed_to_delete_on_acs_system:
+    acs_user_failed_to_delete_on_acs_system.optional(),
+  latch_conflict_with_resident_user:
+    acs_user_latch_conflict_with_resident_user.optional(),
 })
 
 export type AcsUserErrorMap = z.infer<typeof _acs_user_error_map>
@@ -177,15 +173,12 @@ export const latch_resident_user = common_acs_user_warning
   )
 
 const _acs_user_warning_map = z.object({
-  being_deleted: acs_user_being_deleted.optional().nullable(),
-  salto_ks_user_not_subscribed: acs_user_salto_ks_user_not_subscribed
-    .optional()
-    .nullable(),
-  acs_user_inactive: acs_user_inactive.optional().nullable(),
-  unknown_issue_with_acs_user: unknown_issue_with_acs_user
-    .optional()
-    .nullable(),
-  latch_resident_user: latch_resident_user.optional().nullable(),
+  being_deleted: acs_user_being_deleted.optional(),
+  salto_ks_user_not_subscribed:
+    acs_user_salto_ks_user_not_subscribed.optional(),
+  acs_user_inactive: acs_user_inactive.optional(),
+  unknown_issue_with_acs_user: unknown_issue_with_acs_user.optional(),
+  latch_resident_user: latch_resident_user.optional(),
 })
 
 export const acs_user_warning = z

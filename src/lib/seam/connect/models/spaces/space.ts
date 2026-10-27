@@ -82,10 +82,9 @@ const space_warning = z
   .describe('Warning associated with the space.')
 
 const _space_warning_map = z.object({
-  being_deleted: space_being_deleted.optional().nullable(),
-  noise_sensor_configuration_mismatch: space_noise_sensor_configuration_mismatch
-    .optional()
-    .nullable(),
+  being_deleted: space_being_deleted.optional(),
+  noise_sensor_configuration_mismatch:
+    space_noise_sensor_configuration_mismatch.optional(),
 })
 
 export type SpaceWarningMap = z.infer<typeof _space_warning_map>

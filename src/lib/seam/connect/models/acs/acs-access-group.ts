@@ -55,7 +55,7 @@ const acs_access_group_error = z
 
 const _acs_access_group_error_map = z.object({
   failed_to_create_on_acs_system:
-    acs_access_groups_failed_to_create_on_acs_system.optional().nullable(),
+    acs_access_groups_failed_to_create_on_acs_system.optional(),
 })
 
 export type AcsAccessGroupErrorMap = z.infer<typeof _acs_access_group_error_map>
@@ -98,10 +98,9 @@ const acs_access_group_warning = z
   .describe('Warning associated with the `acs_access_group`.')
 
 const _acs_access_group_warning_map = z.object({
-  unknown_issue_with_acs_access_group: unknown_issue_with_acs_access_group
-    .optional()
-    .nullable(),
-  being_deleted: acs_access_group_being_deleted.optional().nullable(),
+  unknown_issue_with_acs_access_group:
+    unknown_issue_with_acs_access_group.optional(),
+  being_deleted: acs_access_group_being_deleted.optional(),
 })
 
 export type AcsAccessGroupWarningMap = z.infer<

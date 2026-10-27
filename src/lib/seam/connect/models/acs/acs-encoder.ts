@@ -28,7 +28,7 @@ const acs_encoder_error = acs_encoder_removed.describe(`
     `)
 
 const _acs_encoder_error_map = z.object({
-  acs_encoder_removed: acs_encoder_removed.optional().nullable(),
+  acs_encoder_removed: acs_encoder_removed.optional(),
 })
 
 export type AcsEncoderErrorMap = z.infer<typeof _acs_encoder_error_map>

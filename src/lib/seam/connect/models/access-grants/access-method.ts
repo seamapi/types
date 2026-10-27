@@ -121,21 +121,16 @@ const access_method_warning = z
   )
 
 const _access_method_warning_map = z.object({
-  being_deleted: being_deleted.optional().nullable(),
-  updating_access_times: updating_access_times_warning.optional().nullable(),
-  pulled_backup_access_code: pulled_backup_access_code_warning
-    .optional()
-    .nullable(),
-  delay_in_issuing: delay_in_issuing_warning.optional().nullable(),
+  being_deleted: being_deleted.optional(),
+  updating_access_times: updating_access_times_warning.optional(),
+  pulled_backup_access_code: pulled_backup_access_code_warning.optional(),
+  delay_in_issuing: delay_in_issuing_warning.optional(),
   user_identity_missing_email_address:
-    user_identity_missing_email_address_warning.optional().nullable(),
-  user_identity_missing_phone_number: user_identity_missing_phone_number_warning
-    .optional()
-    .nullable(),
-  requested_code_unavailable: requested_code_unavailable_warning
-    .optional()
-    .nullable(),
-  schedule_rounded_up: schedule_rounded_up_warning.optional().nullable(),
+    user_identity_missing_email_address_warning.optional(),
+  user_identity_missing_phone_number:
+    user_identity_missing_phone_number_warning.optional(),
+  requested_code_unavailable: requested_code_unavailable_warning.optional(),
+  schedule_rounded_up: schedule_rounded_up_warning.optional(),
 })
 
 export type AccessMethodWarningMap = z.infer<typeof _access_method_warning_map>
@@ -184,8 +179,8 @@ const access_method_error = z
   )
 
 const _access_method_error_map = z.object({
-  failed_to_issue: failed_to_issue_error.optional().nullable(),
-  access_not_provisioned: access_not_provisioned_error.optional().nullable(),
+  failed_to_issue: failed_to_issue_error.optional(),
+  access_not_provisioned: access_not_provisioned_error.optional(),
 })
 
 export type AccessMethodErrorMap = z.infer<typeof _access_method_error_map>

@@ -45,7 +45,7 @@ const acs_entrance_error = z
   )
 
 const _acs_entrance_error_map = z.object({
-  entrance_removed: entrance_removed.optional().nullable(),
+  entrance_removed: entrance_removed.optional(),
 })
 
 export type AcsEntranceErrorMap = z.infer<typeof _acs_entrance_error_map>
@@ -128,11 +128,11 @@ const acs_entrance_warning = z
 
 const _acs_entrance_warning_map = z.object({
   salto_ks_entrance_access_code_support_removed:
-    salto_ks_entrance_access_code_support_removed.optional().nullable(),
-  entrance_shares_zone: entrance_shares_zone.optional().nullable(),
-  entrance_setup_required: entrance_setup_required.optional().nullable(),
-  salto_ks_privacy_mode: salto_ks_privacy_mode.optional().nullable(),
-  privacy_mode: privacy_mode.optional().nullable(),
+    salto_ks_entrance_access_code_support_removed.optional(),
+  entrance_shares_zone: entrance_shares_zone.optional(),
+  entrance_setup_required: entrance_setup_required.optional(),
+  salto_ks_privacy_mode: salto_ks_privacy_mode.optional(),
+  privacy_mode: privacy_mode.optional(),
 })
 
 export type AcsEntranceWarningMap = z.infer<typeof _acs_entrance_warning_map>
