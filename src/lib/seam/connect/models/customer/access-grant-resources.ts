@@ -81,6 +81,26 @@ export const location_references = z.object({
     .describe('Listing keys associated with the access grant.'),
 })
 
+export const sub_reservation_resource = base_access_grant_resource
+  .extend({
+    sub_reservation_key: z
+      .string()
+      .min(1)
+      .refine((val) => val === val.trim(), {
+        message: 'Must not have leading or trailing whitespace',
+      })
+      .describe(
+        'Your identifier for the sub-reservation. Must be unique within its reservation.',
+      ),
+    custom_metadata: custom_metadata_input
+      .optional()
+      .describe(
+        "Set key:value pairs for filtering sub-reservations by custom criteria. Merged over the reservation's custom metadata. Set a key to `null` or to an empty string to remove that key from the custom metadata.",
+      ),
+  })
+  .merge(user_identity_reference)
+  .merge(location_references)
+
 export const reservation_resource = base_access_grant_resource
   .extend({
     reservation_key: z
@@ -94,6 +114,12 @@ export const reservation_resource = base_access_grant_resource
       .optional()
       .describe(
         'Set key:value pairs for filtering reservations by custom criteria. Set a key to `null` or to an empty string to remove that key from the custom metadata.',
+      ),
+    sub_reservations: z
+      .array(sub_reservation_resource)
+      .optional()
+      .describe(
+        "Parts of the reservation that each get their own access, for example one per room. Each sub-reservation inherits the reservation's name, times, preferred code, guest and custom metadata unless it sets its own, and must set its own location keys. A reservation with sub-reservations must not set location keys itself. Sending this list replaces the reservation's sub-reservations: any not included are removed, and an empty list removes all of them. Omitting it leaves existing sub-reservations unchanged.",
       ),
   })
   .merge(user_identity_reference)
