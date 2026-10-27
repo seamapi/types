@@ -64311,7 +64311,11 @@ const openapi: OpenAPISpec = {
                         staff_member_created: {
                           properties: {
                             config: {
-                              $ref: '#/components/schemas/access_code',
+                              properties: {
+                                allow_shared_email_and_phone_across_user_identities:
+                                  { type: 'boolean' },
+                              },
+                              type: 'object',
                             },
                             rule: {
                               enum: ['staff_member_created'],
@@ -64876,7 +64880,13 @@ const openapi: OpenAPISpec = {
                       staff_member_created: {
                         nullable: true,
                         properties: {
-                          config: { properties: {}, type: 'object' },
+                          config: {
+                            properties: {
+                              allow_shared_email_and_phone_across_user_identities:
+                                { type: 'boolean' },
+                            },
+                            type: 'object',
+                          },
                           rule: {
                             enum: ['staff_member_created'],
                             type: 'string',
@@ -66391,7 +66401,11 @@ const openapi: OpenAPISpec = {
                             staff_member_created: {
                               properties: {
                                 config: {
-                                  $ref: '#/components/schemas/access_code',
+                                  properties: {
+                                    allow_shared_email_and_phone_across_user_identities:
+                                      { type: 'boolean' },
+                                  },
+                                  type: 'object',
                                 },
                                 rule: {
                                   enum: ['staff_member_created'],
@@ -66885,7 +66899,13 @@ const openapi: OpenAPISpec = {
                       staff_member_created: {
                         nullable: true,
                         properties: {
-                          config: { properties: {}, type: 'object' },
+                          config: {
+                            properties: {
+                              allow_shared_email_and_phone_across_user_identities:
+                                { type: 'boolean' },
+                            },
+                            type: 'object',
+                          },
                           rule: {
                             enum: ['staff_member_created'],
                             type: 'string',
