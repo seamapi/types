@@ -147,18 +147,15 @@ const acs_credential_warning = z
   )
 
 const _acs_credential_warning_map = z.object({
-  waiting_to_be_issued: waiting_to_be_issued.optional().nullable(),
-  schedule_externally_modified: schedule_externally_modified
-    .optional()
-    .nullable(),
-  schedule_modified: schedule_modified.optional().nullable(),
-  being_deleted: being_deleted.optional().nullable(),
-  unknown_issue_with_acs_credential: unknown_issue_with_acs_credential
-    .optional()
-    .nullable(),
-  needs_to_be_reissued: needs_to_be_reissued.optional().nullable(),
-  requested_code_unavailable: requested_code_unavailable.optional().nullable(),
-  schedule_rounded_up: schedule_rounded_up.optional().nullable(),
+  waiting_to_be_issued: waiting_to_be_issued.optional(),
+  schedule_externally_modified: schedule_externally_modified.optional(),
+  schedule_modified: schedule_modified.optional(),
+  being_deleted: being_deleted.optional(),
+  unknown_issue_with_acs_credential:
+    unknown_issue_with_acs_credential.optional(),
+  needs_to_be_reissued: needs_to_be_reissued.optional(),
+  requested_code_unavailable: requested_code_unavailable.optional(),
+  schedule_rounded_up: schedule_rounded_up.optional(),
 })
 
 export type AcsCredentialWarningMap = z.infer<

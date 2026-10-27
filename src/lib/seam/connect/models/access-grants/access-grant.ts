@@ -70,8 +70,8 @@ export type AccessGrantError = z.infer<typeof access_grant_error>
 
 export const _access_grant_error_map = z.object({
   cannot_create_requested_access_methods:
-    cannot_create_requested_access_methods_error.optional().nullable(),
-  access_not_provisioned: access_not_provisioned_error.optional().nullable(),
+    cannot_create_requested_access_methods_error.optional(),
+  access_not_provisioned: access_not_provisioned_error.optional(),
 })
 
 export type AccessGrantErrorMap = z.infer<typeof _access_grant_error_map>
@@ -245,30 +245,25 @@ const access_grant_warning = z
   )
 
 const _access_grant_warning_map = z.object({
-  being_deleted: being_deleted.optional().nullable(),
-  underprovisioned_access: underprovisioned_access.optional().nullable(),
-  overprovisioned_access: overprovisioned_access.optional().nullable(),
-  updating_access_times: updating_access_times.optional().nullable(),
+  being_deleted: being_deleted.optional(),
+  underprovisioned_access: underprovisioned_access.optional(),
+  overprovisioned_access: overprovisioned_access.optional(),
+  updating_access_times: updating_access_times.optional(),
   requested_code_unavailable_by_device: z
     .record(z.string().uuid(), requested_code_unavailable)
-    .optional()
-    .nullable(),
+    .optional(),
   requested_code_unavailable_by_access_method: z
     .record(z.string().uuid(), requested_code_unavailable)
-    .optional()
-    .nullable(),
+    .optional(),
   device_does_not_support_access_codes: z
     .record(z.string().uuid(), device_does_not_support_access_codes)
-    .optional()
-    .nullable(),
+    .optional(),
   device_time_constraints_violated: z
     .record(z.string().uuid(), device_time_constraints_violated)
-    .optional()
-    .nullable(),
+    .optional(),
   access_revoked_by_access_method: z
     .record(z.string().uuid(), access_revoked)
-    .optional()
-    .nullable(),
+    .optional(),
 })
 
 export type AccessGrantWarningMap = z.infer<typeof _access_grant_warning_map>

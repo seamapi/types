@@ -196,23 +196,19 @@ const access_code_error = z
 export type AccessCodeError = z.infer<typeof access_code_error>
 
 const _access_code_error_map = z.object({
-  provider_issue: provider_issue.optional().nullable(),
-  failed_to_set_on_device: failed_to_set_on_device.optional().nullable(),
-  failed_to_remove_from_device: failed_to_remove_from_device
-    .optional()
-    .nullable(),
-  no_space_for_access_code_on_device: no_space_for_access_code_on_device
-    .optional()
-    .nullable(),
-  duplicate_code_on_device: duplicate_code_on_device.optional().nullable(),
-  conflicting_external_modification: conflicting_external_modification_error
-    .optional()
-    .nullable(),
-  access_code_inactive: access_code_inactive_error.optional().nullable(),
-  code_constraints_violated: code_constraints_violated.optional().nullable(),
-  failed_to_issue: failed_to_issue.optional().nullable(),
-  failed_to_update: failed_to_update.optional().nullable(),
-  failed_to_delete: failed_to_delete.optional().nullable(),
+  provider_issue: provider_issue.optional(),
+  failed_to_set_on_device: failed_to_set_on_device.optional(),
+  failed_to_remove_from_device: failed_to_remove_from_device.optional(),
+  no_space_for_access_code_on_device:
+    no_space_for_access_code_on_device.optional(),
+  duplicate_code_on_device: duplicate_code_on_device.optional(),
+  conflicting_external_modification:
+    conflicting_external_modification_error.optional(),
+  access_code_inactive: access_code_inactive_error.optional(),
+  code_constraints_violated: code_constraints_violated.optional(),
+  failed_to_issue: failed_to_issue.optional(),
+  failed_to_update: failed_to_update.optional(),
+  failed_to_delete: failed_to_delete.optional(),
 })
 
 export type AccessCodeErrorMap = z.infer<typeof _access_code_error_map>
@@ -376,28 +372,21 @@ const access_code_warning = z
 export type AccessCodeWarning = z.infer<typeof access_code_warning>
 
 const _access_code_warning_map = z.object({
-  code_rotates_periodically: code_rotates_periodically.optional().nullable(),
+  code_rotates_periodically: code_rotates_periodically.optional(),
   time_frame_adjusted_for_unknown_time_zone:
-    time_frame_adjusted_for_unknown_time_zone.optional().nullable(),
-  external_modification_in_effect: external_modification_in_effect_warning
-    .optional()
-    .nullable(),
-  delay_in_setting_on_device: delay_in_setting_on_device.optional().nullable(),
-  delay_in_removing_from_device: delay_in_removing_from_device
-    .optional()
-    .nullable(),
-  delay_in_issuing: delay_in_issuing.optional().nullable(),
-  third_party_integration_detected: third_party_integration_detected
-    .optional()
-    .nullable(),
+    time_frame_adjusted_for_unknown_time_zone.optional(),
+  external_modification_in_effect:
+    external_modification_in_effect_warning.optional(),
+  delay_in_setting_on_device: delay_in_setting_on_device.optional(),
+  delay_in_removing_from_device: delay_in_removing_from_device.optional(),
+  delay_in_issuing: delay_in_issuing.optional(),
+  third_party_integration_detected: third_party_integration_detected.optional(),
   igloo_algopin_must_be_used_within_24_hours:
-    igloo_algopin_must_be_used_within_24_hours.optional().nullable(),
-  management_transferred: management_transferred.optional().nullable(),
-  using_backup_access_code: using_backup_access_code.optional().nullable(),
-  being_deleted: being_deleted.optional().nullable(),
-  unknown_issue_with_access_code: unknown_issue_with_access_code
-    .optional()
-    .nullable(),
+    igloo_algopin_must_be_used_within_24_hours.optional(),
+  management_transferred: management_transferred.optional(),
+  using_backup_access_code: using_backup_access_code.optional(),
+  being_deleted: being_deleted.optional(),
+  unknown_issue_with_access_code: unknown_issue_with_access_code.optional(),
 })
 
 export type AccessCodeWarningMap = z.infer<typeof _access_code_warning_map>

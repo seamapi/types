@@ -149,14 +149,11 @@ export type ConnectedAccountError = z.infer<typeof connected_account_error>
 export type ConnectedAccountWarning = z.infer<typeof connected_account_warning>
 
 export const connected_account_error_map = z.object({
-  account_disconnected: account_disconnected.nullable().optional(),
-  bridge_disconnected: bridge_disconnected.nullable().optional(),
-  salto_ks_subscription_limit_exceeded: salto_ks_subscription_limit_exceeded
-    .nullable()
-    .optional(),
-  dormakaba_sites_disconnected: dormakaba_sites_disconnected
-    .nullable()
-    .optional(),
+  account_disconnected: account_disconnected.optional(),
+  bridge_disconnected: bridge_disconnected.optional(),
+  salto_ks_subscription_limit_exceeded:
+    salto_ks_subscription_limit_exceeded.optional(),
+  dormakaba_sites_disconnected: dormakaba_sites_disconnected.optional(),
 })
 
 export type ConnectedAccountErrorMap = z.infer<
@@ -312,23 +309,17 @@ const connected_account_warning = z
   .describe('Warning associated with the connected account.')
 
 export const connected_account_warning_map = z.object({
-  scheduled_maintenance_window: scheduled_maintenance_window
-    .nullable()
-    .optional(),
-  unknown_issue_with_connected_account: unknown_issue_with_connected_account
-    .nullable()
-    .optional(),
+  scheduled_maintenance_window: scheduled_maintenance_window.optional(),
+  unknown_issue_with_connected_account:
+    unknown_issue_with_connected_account.optional(),
   salto_ks_subscription_limit_almost_reached:
-    salto_ks_subscription_limit_almost_reached.nullable().optional(),
-  account_reauthorization_requested: account_reauthorization_requested
-    .nullable()
-    .optional(),
-  being_deleted: being_deleted.nullable().optional(),
-  provider_service_unavailable: provider_service_unavailable
-    .nullable()
-    .optional(),
-  setup_required: setup_required.nullable().optional(),
-  dormakaba_sites_unapproved: dormakaba_sites_unapproved.nullable().optional(),
+    salto_ks_subscription_limit_almost_reached.optional(),
+  account_reauthorization_requested:
+    account_reauthorization_requested.optional(),
+  being_deleted: being_deleted.optional(),
+  provider_service_unavailable: provider_service_unavailable.optional(),
+  setup_required: setup_required.optional(),
+  dormakaba_sites_unapproved: dormakaba_sites_unapproved.optional(),
 })
 
 export type ConnectedAccountWarningMap = z.infer<

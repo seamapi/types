@@ -383,25 +383,20 @@ export const device_error = z
 export type DeviceError = z.infer<typeof device_error>
 
 export const device_error_map = z.object({
-  device_offline: device_offline.optional().nullable(),
-  device_removed: device_removed.optional().nullable(),
-  hub_disconnected: hub_disconnected.optional().nullable(),
-  device_disconnected: device_disconnected.optional().nullable(),
-  account_disconnected: account_disconnected.optional().nullable(),
-  empty_backup_access_code_pool: empty_backup_access_code_pool
-    .optional()
-    .nullable(),
-  august_lock_not_authorized: august_lock_not_authorized.optional().nullable(),
-  salto_ks_subscription_limit_exceeded: salto_ks_subscription_limit_exceeded
-    .optional()
-    .nullable(),
-  insufficient_permissions: insufficient_permissions.optional().nullable(),
-  dormakaba_sites_disconnected: dormakaba_sites_disconnected
-    .optional()
-    .nullable(),
-  missing_device_credentials: missing_device_credentials.optional().nullable(),
-  auxiliary_heat_running: auxiliary_heat_running.optional().nullable(),
-  subscription_required: subscription_required.optional().nullable(),
+  device_offline: device_offline.optional(),
+  device_removed: device_removed.optional(),
+  hub_disconnected: hub_disconnected.optional(),
+  device_disconnected: device_disconnected.optional(),
+  account_disconnected: account_disconnected.optional(),
+  empty_backup_access_code_pool: empty_backup_access_code_pool.optional(),
+  august_lock_not_authorized: august_lock_not_authorized.optional(),
+  salto_ks_subscription_limit_exceeded:
+    salto_ks_subscription_limit_exceeded.optional(),
+  insufficient_permissions: insufficient_permissions.optional(),
+  dormakaba_sites_disconnected: dormakaba_sites_disconnected.optional(),
+  missing_device_credentials: missing_device_credentials.optional(),
+  auxiliary_heat_running: auxiliary_heat_running.optional(),
+  subscription_required: subscription_required.optional(),
 })
 
 export type DeviceErrorMap = z.infer<typeof device_error_map>
@@ -770,61 +765,39 @@ const device_warning = z.discriminatedUnion('warning_code', [
 export type DeviceWarning = z.infer<typeof device_warning>
 
 export const device_warning_map = z.object({
-  partial_backup_access_code_pool: partial_backup_access_code_pool
-    .optional()
-    .nullable(),
-  many_active_backup_codes: many_active_backup_codes.optional().nullable(),
-  device_has_flaky_connection: device_has_flaky_connection
-    .optional()
-    .nullable(),
-  third_party_integration_detected: third_party_integration_detected
-    .optional()
-    .nullable(),
+  partial_backup_access_code_pool: partial_backup_access_code_pool.optional(),
+  many_active_backup_codes: many_active_backup_codes.optional(),
+  device_has_flaky_connection: device_has_flaky_connection.optional(),
+  third_party_integration_detected: third_party_integration_detected.optional(),
   ttlock_lock_gateway_unlocking_not_enabled:
-    ttlock_lock_gateway_unlocking_not_enabled.optional().nullable(),
-  ttlock_weak_gateway_signal: ttlock_weak_gateway_signal.optional().nullable(),
-  power_saving_mode: power_saving_mode.optional().nullable(),
-  temperature_threshold_exceeded: temperature_threshold_exceeded
-    .optional()
-    .nullable(),
-  device_communication_degraded: device_communication_degraded
-    .optional()
-    .nullable(),
-  scheduled_maintenance_window: scheduled_maintenance_window
-    .optional()
-    .nullable(),
-  salto_ks_office_mode: salto_ks_office_mode.optional().nullable(),
-  salto_ks_privacy_mode: salto_ks_privacy_mode.optional().nullable(),
-  privacy_mode: privacy_mode.optional().nullable(),
+    ttlock_lock_gateway_unlocking_not_enabled.optional(),
+  ttlock_weak_gateway_signal: ttlock_weak_gateway_signal.optional(),
+  power_saving_mode: power_saving_mode.optional(),
+  temperature_threshold_exceeded: temperature_threshold_exceeded.optional(),
+  device_communication_degraded: device_communication_degraded.optional(),
+  scheduled_maintenance_window: scheduled_maintenance_window.optional(),
+  salto_ks_office_mode: salto_ks_office_mode.optional(),
+  salto_ks_privacy_mode: salto_ks_privacy_mode.optional(),
+  privacy_mode: privacy_mode.optional(),
   salto_ks_subscription_limit_almost_reached:
-    salto_ks_subscription_limit_almost_reached.optional().nullable(),
+    salto_ks_subscription_limit_almost_reached.optional(),
   salto_ks_lock_access_code_support_removed:
-    salto_ks_lock_access_code_support_removed.optional().nullable(),
-  unknown_issue_with_phone: unknown_issue_with_phone.optional().nullable(),
-  lockly_time_zone_not_configured: lockly_time_zone_not_configured
-    .optional()
-    .nullable(),
-  ultraloq_time_zone_unknown: ultraloq_time_zone_unknown.optional().nullable(),
-  time_zone_unknown: time_zone_unknown.optional().nullable(),
-  time_zone_mismatch: time_zone_mismatch.optional().nullable(),
-  two_n_device_missing_timezone: two_n_device_missing_timezone
-    .optional()
-    .nullable(),
+    salto_ks_lock_access_code_support_removed.optional(),
+  unknown_issue_with_phone: unknown_issue_with_phone.optional(),
+  lockly_time_zone_not_configured: lockly_time_zone_not_configured.optional(),
+  ultraloq_time_zone_unknown: ultraloq_time_zone_unknown.optional(),
+  time_zone_unknown: time_zone_unknown.optional(),
+  time_zone_mismatch: time_zone_mismatch.optional(),
+  two_n_device_missing_timezone: two_n_device_missing_timezone.optional(),
   hub_required_for_additional_capabilities:
-    hub_required_for_additional_capabilities.optional().nullable(),
-  provider_issue: provider_issue.optional().nullable(),
-  keynest_unsupported_locker: keynest_unsupported_locker.optional().nullable(),
-  accessory_keypad_setup_required: accessory_keypad_setup_required
-    .optional()
-    .nullable(),
-  accessory_keypad_low_battery: accessory_keypad_low_battery
-    .optional()
-    .nullable(),
-  unreliable_online_status: unreliable_online_status.optional().nullable(),
-  max_access_codes_reached: max_access_codes_reached.optional().nullable(),
-  cloud_recording_not_enabled: cloud_recording_not_enabled
-    .optional()
-    .nullable(),
+    hub_required_for_additional_capabilities.optional(),
+  provider_issue: provider_issue.optional(),
+  keynest_unsupported_locker: keynest_unsupported_locker.optional(),
+  accessory_keypad_setup_required: accessory_keypad_setup_required.optional(),
+  accessory_keypad_low_battery: accessory_keypad_low_battery.optional(),
+  unreliable_online_status: unreliable_online_status.optional(),
+  max_access_codes_reached: max_access_codes_reached.optional(),
+  cloud_recording_not_enabled: cloud_recording_not_enabled.optional(),
 })
 
 export type DeviceWarningMap = z.infer<typeof device_warning_map>

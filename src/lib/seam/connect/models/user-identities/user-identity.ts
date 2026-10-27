@@ -75,7 +75,6 @@ const _user_identity_error_map = z.object({
   issue_with_acs_user: z
     .record(z.string().uuid(), user_identity_issue_with_acs_user)
     .optional()
-    .nullable()
     .describe(
       'Map of access system user IDs to issues with the access system user. The key is the access system user ID, and the value is the issue with the access system user.',
     ),
@@ -91,9 +90,9 @@ const user_identity_warning = z
   .describe('Warnings associated with the user identity.')
 
 const _user_identity_warning_map = z.object({
-  being_deleted: user_identity_being_deleted.optional().nullable(),
+  being_deleted: user_identity_being_deleted.optional(),
   acs_user_profile_does_not_match_user_identity:
-    acs_user_profile_does_not_match_user_identity.optional().nullable(),
+    acs_user_profile_does_not_match_user_identity.optional(),
 })
 
 export type UserIdentityWarningMap = z.infer<typeof _user_identity_warning_map>

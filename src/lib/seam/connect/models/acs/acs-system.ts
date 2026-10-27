@@ -187,24 +187,17 @@ const acs_system_error = z
   )
 
 const _acs_system_error_map = z.object({
-  seam_bridge_disconnected: seam_bridge_disconnected.optional().nullable(),
-  bridge_disconnected: bridge_disconnected.optional().nullable(),
-  visionline_instance_unreachable: visionline_instance_unreachable
-    .optional()
-    .nullable(),
-  salto_ks_subscription_limit_exceeded: salto_ks_subscription_limit_exceeded
-    .optional()
-    .nullable(),
-  user_license_limit_reached: user_license_limit_reached.optional().nullable(),
-  insufficient_permissions: insufficient_permissions.optional().nullable(),
-  acs_system_disconnected: acs_system_disconnected.optional().nullable(),
-  account_disconnected: account_disconnected.optional().nullable(),
-  salto_ks_certification_expired: salto_ks_certification_expired
-    .optional()
-    .nullable(),
-  provider_service_unavailable: provider_service_unavailable
-    .optional()
-    .nullable(),
+  seam_bridge_disconnected: seam_bridge_disconnected.optional(),
+  bridge_disconnected: bridge_disconnected.optional(),
+  visionline_instance_unreachable: visionline_instance_unreachable.optional(),
+  salto_ks_subscription_limit_exceeded:
+    salto_ks_subscription_limit_exceeded.optional(),
+  user_license_limit_reached: user_license_limit_reached.optional(),
+  insufficient_permissions: insufficient_permissions.optional(),
+  acs_system_disconnected: acs_system_disconnected.optional(),
+  account_disconnected: account_disconnected.optional(),
+  salto_ks_certification_expired: salto_ks_certification_expired.optional(),
+  provider_service_unavailable: provider_service_unavailable.optional(),
 })
 
 export type AcsSystemErrorMap = z.infer<typeof _acs_system_error_map>
@@ -284,14 +277,11 @@ const acs_system_warning = z
 
 const _acs_system_warning_map = z.object({
   salto_ks_subscription_limit_almost_reached:
-    salto_ks_subscription_limit_almost_reached.optional().nullable(),
-  time_zone_does_not_match_location: time_zone_does_not_match_location
-    .optional()
-    .nullable(),
-  setup_required: setup_required.optional().nullable(),
-  unknown_issue_with_acs_system: unknown_issue_with_acs_system
-    .optional()
-    .nullable(),
+    salto_ks_subscription_limit_almost_reached.optional(),
+  time_zone_does_not_match_location:
+    time_zone_does_not_match_location.optional(),
+  setup_required: setup_required.optional(),
+  unknown_issue_with_acs_system: unknown_issue_with_acs_system.optional(),
 })
 
 export type AcsSystemWarningMap = z.infer<typeof _acs_system_warning_map>
