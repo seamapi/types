@@ -113096,7 +113096,10 @@ export type Routes = {
             staff_member_created?:
               | {
                   rule: 'staff_member_created'
-                  config: {}
+                  config: {
+                    allow_shared_email_and_phone_across_user_identities?:
+                      boolean | undefined
+                  }
                 }
               | undefined
           }
@@ -113323,7 +113326,10 @@ export type Routes = {
             staff_member_created?:
               | ({
                   rule: 'staff_member_created'
-                  config: {}
+                  config: {
+                    allow_shared_email_and_phone_across_user_identities?:
+                      boolean | undefined
+                  }
                 } | null)
               | undefined
           }
@@ -113884,7 +113890,10 @@ export type Routes = {
               staff_member_created?:
                 | {
                     rule: 'staff_member_created'
-                    config: {}
+                    config: {
+                      allow_shared_email_and_phone_across_user_identities?:
+                        boolean | undefined
+                    }
                   }
                 | undefined
             }
@@ -114083,7 +114092,10 @@ export type Routes = {
             staff_member_created?:
               | ({
                   rule: 'staff_member_created'
-                  config: {}
+                  config: {
+                    allow_shared_email_and_phone_across_user_identities?:
+                      boolean | undefined
+                  }
                 } | null)
               | undefined
           }
