@@ -63913,6 +63913,76 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for Console',
       },
     },
+    '/seam/console/v1/workspace/get_summary': {
+      get: {
+        description:
+          'Returns the device and access code counts shown on the Console home page.',
+        operationId: 'seamConsoleV1WorkspaceGetSummaryGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'customer_key',
+            schema: {
+              description:
+                'Customer key for which you want to summarize the workspace.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    workspace_summary: {
+                      properties: {
+                        access_code_delivery_7d: {
+                          properties: {
+                            delivered_count: { type: 'integer' },
+                            failed_count: { type: 'integer' },
+                          },
+                          required: ['delivered_count', 'failed_count'],
+                          type: 'object',
+                        },
+                        active_access_code_count: { type: 'integer' },
+                        device_count: { type: 'integer' },
+                        devices_needing_attention_count: { type: 'integer' },
+                        online_device_count: { type: 'integer' },
+                      },
+                      required: [
+                        'device_count',
+                        'online_device_count',
+                        'devices_needing_attention_count',
+                        'active_access_code_count',
+                        'access_code_delivery_7d',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['workspace_summary', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_with_workspace: [] }],
+        summary: '/seam/console/v1/workspace/get_summary',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'workspace'],
+        'x-fern-sdk-method-name': 'get_summary',
+        'x-fern-sdk-return-value': 'workspace_summary',
+        'x-response-key': 'workspace_summary',
+        'x-title': 'Get Workspace Summary',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
     '/seam/customer/v1/access_grants/list': {
       get: {
         description: 'Gets an Access Grant.',
