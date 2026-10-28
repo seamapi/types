@@ -110211,6 +110211,30 @@ export type Routes = {
     }
     maxDuration: undefined
   }
+  '/seam/console/v1/workspace/get_summary': {
+    route: '/seam/console/v1/workspace/get_summary'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** Customer key for which you want to summarize the workspace. */
+      customer_key?: string | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      workspace_summary: {
+        device_count: number
+        online_device_count: number
+        devices_needing_attention_count: number
+        active_access_code_count: number
+        access_code_delivery_7d: {
+          delivered_count: number
+          failed_count: number
+        }
+      }
+    }
+    maxDuration: undefined
+  }
   '/seam/customer/v1/access_grants/list': {
     route: '/seam/customer/v1/access_grants/list'
     method: 'GET' | 'POST'
