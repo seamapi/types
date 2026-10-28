@@ -69459,9 +69459,9 @@ export type Routes = {
       customer_key?: string | undefined
       /** Offset for the events that you want to list. */
       unstable_offset?: number | undefined
-      /** Timestamp to indicate the beginning generation time for the events that you want to list. You must include `since` or `between`. */
+      /** Timestamp to indicate the beginning generation time for the events that you want to list. You must include `since` or `between`. Only events from the last 90 days are returned, so a `since` older than 90 days is treated as 90 days ago. */
       since?: string | undefined
-      /** Lower and upper timestamps to define an exclusive interval containing the events that you want to list. You must include `since` or `between`. */
+      /** Lower and upper timestamps to define an exclusive interval containing the events that you want to list. You must include `since` or `between`. Only events from the last 90 days are returned, so a lower timestamp older than 90 days is treated as 90 days ago. */
       between?: string[] | undefined
       /** ID of the device for which you want to list events. */
       device_id?: string | undefined
@@ -114531,9 +114531,9 @@ export type Routes = {
     commonParams: {
       /** ID of the space for which you want to list events. */
       space_id: string
-      /** Timestamp to indicate the beginning generation time for the events that you want to list. You must include `since` or `between`. */
+      /** Timestamp to indicate the beginning generation time for the events that you want to list. You must include `since` or `between`. Only events from the last 90 days are returned, so a `since` older than 90 days is treated as 90 days ago. */
       since?: string | undefined
-      /** Lower and upper timestamps to define an exclusive interval containing the events that you want to list. You must include `since` or `between`. */
+      /** Lower and upper timestamps to define an exclusive interval containing the events that you want to list. You must include `since` or `between`. Only events from the last 90 days are returned, so a lower timestamp older than 90 days is treated as 90 days ago. */
       between?: string[] | undefined
       /** Type of the events that you want to list. */
       event_type?:
