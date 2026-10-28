@@ -58660,7 +58660,7 @@ const openapi: OpenAPISpec = {
     '/events/get': {
       get: {
         description:
-          'Returns a specified event. This endpoint returns the same event that would be sent to a [webhook](https://www.seam.co/docs/developer-tools/webhooks), but it enables you to retrieve an event that already took place.',
+          'Returns a specified event. This endpoint returns the same event that would be sent to a [webhook](https://www.seam.co/docs/developer-tools/webhooks), but it enables you to retrieve an event that already took place. Events older than 90 days are not returned.',
         operationId: 'eventsGetGet',
         parameters: [
           {
@@ -58735,7 +58735,7 @@ const openapi: OpenAPISpec = {
     '/events/list': {
       get: {
         description:
-          'Returns a list of all events. This endpoint returns the same events that would be sent to a [webhook](https://www.seam.co/docs/developer-tools/webhooks), but it enables you to filter or see events that already took place.',
+          'Returns a list of all events. This endpoint returns the same events that would be sent to a [webhook](https://www.seam.co/docs/developer-tools/webhooks), but it enables you to filter or see events that already took place. Only events from the last 90 days are returned.',
         operationId: 'eventsListGet',
         parameters: [
           {
@@ -58761,7 +58761,7 @@ const openapi: OpenAPISpec = {
             name: 'since',
             schema: {
               description:
-                'Timestamp to indicate the beginning generation time for the events that you want to list. You must include `since` or `between`.',
+                'Timestamp to indicate the beginning generation time for the events that you want to list. You must include `since` or `between`. Only events from the last 90 days are returned, so a `since` older than 90 days is treated as 90 days ago.',
               type: 'string',
             },
           },
@@ -58770,7 +58770,7 @@ const openapi: OpenAPISpec = {
             name: 'between',
             schema: {
               description:
-                'Lower and upper timestamps to define an exclusive interval containing the events that you want to list. You must include `since` or `between`.',
+                'Lower and upper timestamps to define an exclusive interval containing the events that you want to list. You must include `since` or `between`. Only events from the last 90 days are returned, so a lower timestamp older than 90 days is treated as 90 days ago.',
               items: { type: 'string' },
               maxItems: 2,
               minItems: 2,
@@ -68027,7 +68027,7 @@ const openapi: OpenAPISpec = {
             required: false,
             schema: {
               description:
-                'Timestamp to indicate the beginning generation time for the events that you want to list. You must include `since` or `between`.',
+                'Timestamp to indicate the beginning generation time for the events that you want to list. You must include `since` or `between`. Only events from the last 90 days are returned, so a `since` older than 90 days is treated as 90 days ago.',
               type: 'string',
             },
           },
@@ -68037,7 +68037,7 @@ const openapi: OpenAPISpec = {
             required: false,
             schema: {
               description:
-                'Lower and upper timestamps to define an exclusive interval containing the events that you want to list. You must include `since` or `between`.',
+                'Lower and upper timestamps to define an exclusive interval containing the events that you want to list. You must include `since` or `between`. Only events from the last 90 days are returned, so a lower timestamp older than 90 days is treated as 90 days ago.',
               items: { type: 'string' },
               maxItems: 2,
               minItems: 2,
