@@ -119270,6 +119270,30 @@ export type Routes = {
           message?: string | undefined
           created_at: string
         } | null
+        /** ID of the parent reservation when this reservation is a sub-reservation, one part of a larger reservation that holds its own access. Null otherwise. */
+        parent_reservation_id: string | null
+        /** Key of the parent reservation when this reservation is a sub-reservation. Its `reservation_key` is then `<parent_reservation_key>::<sub-reservation key>`. Null otherwise. */
+        parent_reservation_key: string | null
+        /** Parts of the reservation that each hold their own access, for example one per room. When present, the reservation's spaces are the union of its sub-reservations' spaces. */
+        sub_reservations: {
+          sub_reservation_id: string
+          sub_reservation_key: string
+          name: string | null
+          starts_at: string | null
+          ends_at: string | null
+          is_resource_syncing: boolean
+          access_grant_id: string | null
+          spaces: {
+            space_id: string | null
+            space_key: string
+            name: string | null
+          }[]
+          access_methods: {
+            access_method_id: string
+            mode: string
+            is_issued: boolean
+          }[]
+        }[]
       }
     }
     maxDuration: undefined
@@ -119359,6 +119383,26 @@ export type Routes = {
           message?: string | undefined
           created_at: string
         } | null
+        /** Parts of the reservation that each hold their own access, for example one per room. When present, the reservation's spaces are the union of its sub-reservations' spaces. */
+        sub_reservations: {
+          sub_reservation_id: string
+          sub_reservation_key: string
+          name: string | null
+          starts_at: string | null
+          ends_at: string | null
+          is_resource_syncing: boolean
+          access_grant_id: string | null
+          spaces: {
+            space_id: string | null
+            space_key: string
+            name: string | null
+          }[]
+          access_methods: {
+            access_method_id: string
+            mode: string
+            is_issued: boolean
+          }[]
+        }[]
       }[]
       /** Information about the current page of results. */
       pagination: {
@@ -119967,6 +120011,10 @@ export type Routes = {
           message?: string | undefined
           created_at: string
         } | null
+        /** ID of the parent reservation when this reservation is a sub-reservation, one part of a larger reservation that holds its own access. Null otherwise. */
+        parent_reservation_id: string | null
+        /** Key of the parent reservation when this reservation is a sub-reservation. Its `reservation_key` is then `<parent_reservation_key>::<sub-reservation key>`. Null otherwise. */
+        parent_reservation_key: string | null
       }[]
     }
     maxDuration: undefined

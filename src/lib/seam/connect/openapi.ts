@@ -69432,6 +69432,19 @@ const openapi: OpenAPISpec = {
                           type: 'object',
                         },
                         name: { nullable: true, type: 'string' },
+                        parent_reservation_id: {
+                          description:
+                            'ID of the parent reservation when this reservation is a sub-reservation, one part of a larger reservation that holds its own access. Null otherwise.',
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        parent_reservation_key: {
+                          description:
+                            'Key of the parent reservation when this reservation is a sub-reservation. Its `reservation_key` is then `<parent_reservation_key>::<sub-reservation key>`. Null otherwise.',
+                          nullable: true,
+                          type: 'string',
+                        },
                         reservation_id: { format: 'uuid', type: 'string' },
                         reservation_key: { type: 'string' },
                         spaces: {
@@ -69455,6 +69468,71 @@ const openapi: OpenAPISpec = {
                           nullable: true,
                           type: 'string',
                         },
+                        sub_reservations: {
+                          description:
+                            "Parts of the reservation that each hold their own access, for example one per room. When present, the reservation's spaces are the union of its sub-reservations' spaces.",
+                          items: {
+                            properties: {
+                              access_grant_id: {
+                                format: 'uuid',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              access_methods: {
+                                items: {
+                                  $ref: '#/components/schemas/access_method',
+                                },
+                                type: 'array',
+                              },
+                              ends_at: {
+                                format: 'date-time',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              is_resource_syncing: { type: 'boolean' },
+                              name: { nullable: true, type: 'string' },
+                              spaces: {
+                                items: {
+                                  properties: {
+                                    name: { nullable: true, type: 'string' },
+                                    space_id: {
+                                      format: 'uuid',
+                                      nullable: true,
+                                      type: 'string',
+                                    },
+                                    space_key: { type: 'string' },
+                                  },
+                                  required: ['space_id', 'space_key', 'name'],
+                                  type: 'object',
+                                },
+                                type: 'array',
+                              },
+                              starts_at: {
+                                format: 'date-time',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              sub_reservation_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              sub_reservation_key: { type: 'string' },
+                            },
+                            required: [
+                              'sub_reservation_id',
+                              'sub_reservation_key',
+                              'name',
+                              'starts_at',
+                              'ends_at',
+                              'is_resource_syncing',
+                              'access_grant_id',
+                              'spaces',
+                              'access_methods',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                       },
                       required: [
                         'reservation_id',
@@ -69471,6 +69549,9 @@ const openapi: OpenAPISpec = {
                         'access_methods',
                         'connected_account_id',
                         'last_automation_result',
+                        'parent_reservation_id',
+                        'parent_reservation_key',
+                        'sub_reservations',
                       ],
                       type: 'object',
                     },
@@ -69785,6 +69866,71 @@ const openapi: OpenAPISpec = {
                             nullable: true,
                             type: 'string',
                           },
+                          sub_reservations: {
+                            description:
+                              "Parts of the reservation that each hold their own access, for example one per room. When present, the reservation's spaces are the union of its sub-reservations' spaces.",
+                            items: {
+                              properties: {
+                                access_grant_id: {
+                                  format: 'uuid',
+                                  nullable: true,
+                                  type: 'string',
+                                },
+                                access_methods: {
+                                  items: {
+                                    $ref: '#/components/schemas/access_method',
+                                  },
+                                  type: 'array',
+                                },
+                                ends_at: {
+                                  format: 'date-time',
+                                  nullable: true,
+                                  type: 'string',
+                                },
+                                is_resource_syncing: { type: 'boolean' },
+                                name: { nullable: true, type: 'string' },
+                                spaces: {
+                                  items: {
+                                    properties: {
+                                      name: { nullable: true, type: 'string' },
+                                      space_id: {
+                                        format: 'uuid',
+                                        nullable: true,
+                                        type: 'string',
+                                      },
+                                      space_key: { type: 'string' },
+                                    },
+                                    required: ['space_id', 'space_key', 'name'],
+                                    type: 'object',
+                                  },
+                                  type: 'array',
+                                },
+                                starts_at: {
+                                  format: 'date-time',
+                                  nullable: true,
+                                  type: 'string',
+                                },
+                                sub_reservation_id: {
+                                  format: 'uuid',
+                                  type: 'string',
+                                },
+                                sub_reservation_key: { type: 'string' },
+                              },
+                              required: [
+                                'sub_reservation_id',
+                                'sub_reservation_key',
+                                'name',
+                                'starts_at',
+                                'ends_at',
+                                'is_resource_syncing',
+                                'access_grant_id',
+                                'spaces',
+                                'access_methods',
+                              ],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
                           warnings: {
                             items: {
                               properties: {
@@ -69820,6 +69966,7 @@ const openapi: OpenAPISpec = {
                           'spaces',
                           'connected_account_id',
                           'last_automation_result',
+                          'sub_reservations',
                         ],
                         type: 'object',
                       },
@@ -70581,6 +70728,19 @@ const openapi: OpenAPISpec = {
                             type: 'object',
                           },
                           name: { nullable: true, type: 'string' },
+                          parent_reservation_id: {
+                            description:
+                              'ID of the parent reservation when this reservation is a sub-reservation, one part of a larger reservation that holds its own access. Null otherwise.',
+                            format: 'uuid',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          parent_reservation_key: {
+                            description:
+                              'Key of the parent reservation when this reservation is a sub-reservation. Its `reservation_key` is then `<parent_reservation_key>::<sub-reservation key>`. Null otherwise.',
+                            nullable: true,
+                            type: 'string',
+                          },
                           reservation_id: { format: 'uuid', type: 'string' },
                           reservation_key: { type: 'string' },
                           starts_at: {
@@ -70600,6 +70760,8 @@ const openapi: OpenAPISpec = {
                           'has_issued_access',
                           'access_methods',
                           'last_automation_result',
+                          'parent_reservation_id',
+                          'parent_reservation_key',
                         ],
                         type: 'object',
                       },
