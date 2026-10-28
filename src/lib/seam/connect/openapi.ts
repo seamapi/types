@@ -63983,6 +63983,499 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for Console',
       },
     },
+    '/seam/console/v1/workspace/list_access_codes_for_today': {
+      get: {
+        description:
+          "Lists the managed time-bound access codes that start, and those that end,\nduring the viewer's day, in time order, with the total of each.",
+        operationId: 'seamConsoleV1WorkspaceListAccessCodesForTodayGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'customer_key',
+            schema: {
+              description:
+                'Customer key for which you want to list access codes.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'starts_at',
+            schema: {
+              description:
+                "Start of the viewer's day, inclusive. Pass with `ends_at`; defaults to the start of the current UTC day.",
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'ends_at',
+            schema: {
+              description:
+                "End of the viewer's day, exclusive. Pass with `starts_at`; defaults to the end of the current UTC day.",
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 50,
+              description:
+                'Maximum number of starting, and of ending, access codes to return.',
+              exclusiveMinimum: true,
+              maximum: 200,
+              minimum: 0,
+              type: 'integer',
+            },
+          },
+        ],
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_codes_for_today: {
+                      properties: {
+                        ending: {
+                          items: {
+                            properties: {
+                              access_code_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              code: { nullable: true, type: 'string' },
+                              device_id: { format: 'uuid', type: 'string' },
+                              device_name: { type: 'string' },
+                              ends_at: {
+                                format: 'date-time',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              name: { nullable: true, type: 'string' },
+                              starts_at: {
+                                format: 'date-time',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              status: {
+                                enum: [
+                                  'setting',
+                                  'set',
+                                  'unset',
+                                  'removing',
+                                  'unknown',
+                                ],
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'access_code_id',
+                              'code',
+                              'name',
+                              'device_id',
+                              'device_name',
+                              'starts_at',
+                              'ends_at',
+                              'status',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                        ending_count: { type: 'integer' },
+                        starting: {
+                          items: {
+                            properties: {
+                              access_code_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              code: { nullable: true, type: 'string' },
+                              device_id: { format: 'uuid', type: 'string' },
+                              device_name: { type: 'string' },
+                              ends_at: {
+                                format: 'date-time',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              name: { nullable: true, type: 'string' },
+                              starts_at: {
+                                format: 'date-time',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              status: {
+                                enum: [
+                                  'setting',
+                                  'set',
+                                  'unset',
+                                  'removing',
+                                  'unknown',
+                                ],
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'access_code_id',
+                              'code',
+                              'name',
+                              'device_id',
+                              'device_name',
+                              'starts_at',
+                              'ends_at',
+                              'status',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                        starting_count: { type: 'integer' },
+                      },
+                      required: [
+                        'starting_count',
+                        'starting',
+                        'ending_count',
+                        'ending',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_codes_for_today', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_with_workspace: [] }],
+        summary: '/seam/console/v1/workspace/list_access_codes_for_today',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'workspace'],
+        'x-fern-sdk-method-name': 'list_access_codes_for_today',
+        'x-fern-sdk-return-value': 'access_codes_for_today',
+        'x-response-key': 'access_codes_for_today',
+        'x-title': 'List Access Codes for Today',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/workspace/list_attention_items': {
+      get: {
+        description:
+          'Lists the devices with errors and the managed access codes that failed to\nreach their device in the last 7 days, newest first, with the total of each.',
+        operationId: 'seamConsoleV1WorkspaceListAttentionItemsGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'customer_key',
+            schema: {
+              description:
+                'Customer key for which you want to list attention items.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 5,
+              description:
+                'Maximum number of devices, and of access codes, to return.',
+              exclusiveMinimum: true,
+              maximum: 50,
+              minimum: 0,
+              type: 'integer',
+            },
+          },
+        ],
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    attention_items: {
+                      properties: {
+                        access_code_count: { type: 'integer' },
+                        access_codes: {
+                          items: {
+                            properties: {
+                              access_code_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              code: { nullable: true, type: 'string' },
+                              device_id: { format: 'uuid', type: 'string' },
+                              device_name: { type: 'string' },
+                              error: {
+                                properties: {
+                                  error_code: { type: 'string' },
+                                  message: { type: 'string' },
+                                },
+                                required: ['error_code', 'message'],
+                                type: 'object',
+                              },
+                              name: { nullable: true, type: 'string' },
+                            },
+                            required: [
+                              'access_code_id',
+                              'code',
+                              'name',
+                              'device_id',
+                              'device_name',
+                              'error',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                        device_count: { type: 'integer' },
+                        devices: {
+                          items: {
+                            properties: {
+                              device_id: { format: 'uuid', type: 'string' },
+                              display_name: { type: 'string' },
+                              error: {
+                                properties: {
+                                  error_code: { type: 'string' },
+                                  message: { type: 'string' },
+                                },
+                                required: ['error_code', 'message'],
+                                type: 'object',
+                              },
+                            },
+                            required: ['device_id', 'display_name', 'error'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                      },
+                      required: [
+                        'device_count',
+                        'devices',
+                        'access_code_count',
+                        'access_codes',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['attention_items', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_with_workspace: [] }],
+        summary: '/seam/console/v1/workspace/list_attention_items',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'workspace'],
+        'x-fern-sdk-method-name': 'list_attention_items',
+        'x-fern-sdk-return-value': 'attention_items',
+        'x-response-key': 'attention_items',
+        'x-title': 'List Workspace Attention Items',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/workspace/list_reservations_for_today': {
+      get: {
+        description:
+          "Lists the reservations that check in, and those that check out, during the\nviewer's day, in time order, with the total of each.",
+        operationId: 'seamConsoleV1WorkspaceListReservationsForTodayGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'customer_key',
+            schema: {
+              description:
+                'Customer key for which you want to list reservations.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'starts_at',
+            schema: {
+              description:
+                "Start of the viewer's day, inclusive. Pass with `ends_at`; defaults to the start of the current UTC day.",
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'ends_at',
+            schema: {
+              description:
+                "End of the viewer's day, exclusive. Pass with `starts_at`; defaults to the end of the current UTC day.",
+              format: 'date-time',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 50,
+              description:
+                'Maximum number of check-ins, and of check-outs, to return.',
+              exclusiveMinimum: true,
+              maximum: 200,
+              minimum: 0,
+              type: 'integer',
+            },
+          },
+        ],
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    reservations_for_today: {
+                      properties: {
+                        check_in_count: { type: 'integer' },
+                        check_ins: {
+                          items: {
+                            properties: {
+                              ends_at: {
+                                format: 'date-time',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              guest_name: { nullable: true, type: 'string' },
+                              name: { nullable: true, type: 'string' },
+                              reservation_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              reservation_key: { type: 'string' },
+                              space: {
+                                nullable: true,
+                                properties: {
+                                  name: { nullable: true, type: 'string' },
+                                  space_id: {
+                                    format: 'uuid',
+                                    nullable: true,
+                                    type: 'string',
+                                  },
+                                },
+                                required: ['space_id', 'name'],
+                                type: 'object',
+                              },
+                              starts_at: {
+                                format: 'date-time',
+                                nullable: true,
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'reservation_id',
+                              'reservation_key',
+                              'guest_name',
+                              'name',
+                              'starts_at',
+                              'ends_at',
+                              'space',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                        check_out_count: { type: 'integer' },
+                        check_outs: {
+                          items: {
+                            properties: {
+                              ends_at: {
+                                format: 'date-time',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              guest_name: { nullable: true, type: 'string' },
+                              name: { nullable: true, type: 'string' },
+                              reservation_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              reservation_key: { type: 'string' },
+                              space: {
+                                nullable: true,
+                                properties: {
+                                  name: { nullable: true, type: 'string' },
+                                  space_id: {
+                                    format: 'uuid',
+                                    nullable: true,
+                                    type: 'string',
+                                  },
+                                },
+                                required: ['space_id', 'name'],
+                                type: 'object',
+                              },
+                              starts_at: {
+                                format: 'date-time',
+                                nullable: true,
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'reservation_id',
+                              'reservation_key',
+                              'guest_name',
+                              'name',
+                              'starts_at',
+                              'ends_at',
+                              'space',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                      },
+                      required: [
+                        'check_in_count',
+                        'check_ins',
+                        'check_out_count',
+                        'check_outs',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['reservations_for_today', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_with_workspace: [] }],
+        summary: '/seam/console/v1/workspace/list_reservations_for_today',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'workspace'],
+        'x-fern-sdk-method-name': 'list_reservations_for_today',
+        'x-fern-sdk-return-value': 'reservations_for_today',
+        'x-response-key': 'reservations_for_today',
+        'x-title': 'List Reservations for Today',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
     '/seam/customer/v1/access_grants/list': {
       get: {
         description: 'Gets an Access Grant.',
