@@ -110235,6 +110235,137 @@ export type Routes = {
     }
     maxDuration: undefined
   }
+  '/seam/console/v1/workspace/list_access_codes_for_today': {
+    route: '/seam/console/v1/workspace/list_access_codes_for_today'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** Customer key for which you want to list access codes. */
+      customer_key?: string | undefined
+      /** Start of the viewer's day, inclusive. Pass with `ends_at`; defaults to the start of the current UTC day. */
+      starts_at?: Date | undefined
+      /** End of the viewer's day, exclusive. Pass with `starts_at`; defaults to the end of the current UTC day. */
+      ends_at?: Date | undefined
+      /** Maximum number of starting, and of ending, access codes to return. */
+      limit?: number
+    }
+    formData: {}
+    jsonResponse: {
+      access_codes_for_today: {
+        starting_count: number
+        starting: {
+          access_code_id: string
+          code: string | null
+          name: string | null
+          device_id: string
+          device_name: string
+          starts_at: string | null
+          ends_at: string | null
+          status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
+        }[]
+        ending_count: number
+        ending: {
+          access_code_id: string
+          code: string | null
+          name: string | null
+          device_id: string
+          device_name: string
+          starts_at: string | null
+          ends_at: string | null
+          status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
+        }[]
+      }
+    }
+    maxDuration: undefined
+  }
+  '/seam/console/v1/workspace/list_attention_items': {
+    route: '/seam/console/v1/workspace/list_attention_items'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** Customer key for which you want to list attention items. */
+      customer_key?: string | undefined
+      /** Maximum number of devices, and of access codes, to return. */
+      limit?: number
+    }
+    formData: {}
+    jsonResponse: {
+      attention_items: {
+        device_count: number
+        devices: {
+          device_id: string
+          display_name: string
+          error: {
+            error_code: string
+            message: string
+          }
+        }[]
+        access_code_count: number
+        access_codes: {
+          access_code_id: string
+          code: string | null
+          name: string | null
+          device_id: string
+          device_name: string
+          error: {
+            error_code: string
+            message: string
+          }
+        }[]
+      }
+    }
+    maxDuration: undefined
+  }
+  '/seam/console/v1/workspace/list_reservations_for_today': {
+    route: '/seam/console/v1/workspace/list_reservations_for_today'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** Customer key for which you want to list reservations. */
+      customer_key?: string | undefined
+      /** Start of the viewer's day, inclusive. Pass with `ends_at`; defaults to the start of the current UTC day. */
+      starts_at?: Date | undefined
+      /** End of the viewer's day, exclusive. Pass with `starts_at`; defaults to the end of the current UTC day. */
+      ends_at?: Date | undefined
+      /** Maximum number of check-ins, and of check-outs, to return. */
+      limit?: number
+    }
+    formData: {}
+    jsonResponse: {
+      reservations_for_today: {
+        check_in_count: number
+        check_ins: {
+          reservation_id: string
+          reservation_key: string
+          guest_name: string | null
+          name: string | null
+          starts_at: string | null
+          ends_at: string | null
+          space: {
+            space_id: string | null
+            name: string | null
+          } | null
+        }[]
+        check_out_count: number
+        check_outs: {
+          reservation_id: string
+          reservation_key: string
+          guest_name: string | null
+          name: string | null
+          starts_at: string | null
+          ends_at: string | null
+          space: {
+            space_id: string | null
+            name: string | null
+          } | null
+        }[]
+      }
+    }
+    maxDuration: undefined
+  }
   '/seam/customer/v1/access_grants/list': {
     route: '/seam/customer/v1/access_grants/list'
     method: 'GET' | 'POST'
