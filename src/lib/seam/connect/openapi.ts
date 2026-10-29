@@ -43923,7 +43923,7 @@ const openapi: OpenAPISpec = {
     '/access_codes/list': {
       get: {
         description:
-          'Returns a list of all [access codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes).\n\nSpecify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
+          'Returns a list of all [access codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes).\n\nWithout `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`, returns access codes across the workspace, or across the customer when `customer_key` is set. Use `limit` and `page_cursor` to page through them.',
         operationId: 'accessCodesListGet',
         parameters: [
           {
@@ -43941,7 +43941,7 @@ const openapi: OpenAPISpec = {
             name: 'device_id',
             schema: {
               description:
-                'ID of the device for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
+                'ID of the device for which you want to list access codes.',
               format: 'uuid',
               type: 'string',
             },
@@ -43950,8 +43950,7 @@ const openapi: OpenAPISpec = {
             in: 'query',
             name: 'access_code_ids',
             schema: {
-              description:
-                'IDs of the access codes that you want to retrieve. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
+              description: 'IDs of the access codes that you want to retrieve.',
               items: { format: 'uuid', type: 'string' },
               type: 'array',
             },
@@ -43961,7 +43960,7 @@ const openapi: OpenAPISpec = {
             name: 'access_method_id',
             schema: {
               description:
-                'ID of the access method for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
+                'ID of the access method for which you want to list access codes.',
               format: 'uuid',
               type: 'string',
             },
@@ -43971,7 +43970,7 @@ const openapi: OpenAPISpec = {
             name: 'access_grant_id',
             schema: {
               description:
-                'ID of the access grant for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
+                'ID of the access grant for which you want to list access codes.',
               format: 'uuid',
               type: 'string',
             },
@@ -43981,7 +43980,7 @@ const openapi: OpenAPISpec = {
             name: 'access_grant_key',
             schema: {
               description:
-                'Key of the access grant for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`.',
+                'Key of the access grant for which you want to list access codes.',
               minLength: 1,
               type: 'string',
             },
@@ -44065,7 +44064,6 @@ const openapi: OpenAPISpec = {
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'access_codes',
-        'x-has-required-parameters': true,
         'x-response-key': 'access_codes',
         'x-title': 'List Access Codes',
       },
@@ -45687,6 +45685,16 @@ const openapi: OpenAPISpec = {
         parameters: [
           {
             in: 'query',
+            name: 'customer_key',
+            schema: {
+              description:
+                'Customer key for which you want to list unmanaged Access Grants.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'user_identity_id',
             schema: {
               description:
@@ -46328,6 +46336,16 @@ const openapi: OpenAPISpec = {
           'Lists all access methods, usually filtered by Access Grant.',
         operationId: 'accessMethodsListGet',
         parameters: [
+          {
+            in: 'query',
+            name: 'customer_key',
+            schema: {
+              description:
+                'Customer key for which you want to list access methods.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
           {
             in: 'query',
             name: 'access_grant_id',
@@ -77687,6 +77705,16 @@ const openapi: OpenAPISpec = {
           'Returns a list of all [user identities](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesListGet',
         parameters: [
+          {
+            in: 'query',
+            name: 'customer_key',
+            schema: {
+              description:
+                'Customer key for which you want to list user identities.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
           {
             in: 'query',
             name: 'user_identity_ids',
