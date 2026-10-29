@@ -2998,6 +2998,16 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_unreachable_for_extended_period'
+              /** Date and time since which Seam has been unable to reach the device. */
+              device_unreachable_since: string
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_access_code'
             }
         )[]
@@ -3577,6 +3587,16 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'being_deleted'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_unreachable_for_extended_period'
+              /** Date and time since which Seam has been unable to reach the device. */
+              device_unreachable_since: string
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -6723,6 +6743,16 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_unreachable_for_extended_period'
+              /** Date and time since which Seam has been unable to reach the device. */
+              device_unreachable_since: string
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_access_code'
             }
         )[]
@@ -7420,6 +7450,16 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_unreachable_for_extended_period'
+              /** Date and time since which Seam has been unable to reach the device. */
+              device_unreachable_since: string
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_access_code'
             }
         )[]
@@ -7997,6 +8037,16 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_unreachable_for_extended_period'
+              /** Date and time since which Seam has been unable to reach the device. */
+              device_unreachable_since: string
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_access_code'
             }
         )[]
@@ -8544,6 +8594,16 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'being_deleted'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_unreachable_for_extended_period'
+              /** Date and time since which Seam has been unable to reach the device. */
+              device_unreachable_since: string
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -9131,6 +9191,16 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'being_deleted'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_unreachable_for_extended_period'
+              /** Date and time since which Seam has been unable to reach the device. */
+              device_unreachable_since: string
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -12179,6 +12249,16 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_unreachable_for_extended_period'
+              /** Date and time since which Seam has been unable to reach the device. */
+              device_unreachable_since: string
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_access_code'
             }
         )[]
@@ -12638,6 +12718,16 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'being_deleted'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at?: string | undefined
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_unreachable_for_extended_period'
+              /** Date and time since which Seam has been unable to reach the device. */
+              device_unreachable_since: string
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -202175,6 +202265,16 @@ export type Routes = {
                     /** Date and time at which Seam created the warning. */
                     created_at?: string | undefined
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'device_unreachable_for_extended_period'
+                    /** Date and time since which Seam has been unable to reach the device. */
+                    device_unreachable_since: string
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at?: string | undefined
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'unknown_issue_with_access_code'
                   }
               )[]
@@ -202620,6 +202720,16 @@ export type Routes = {
                     created_at?: string | undefined
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'being_deleted'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at?: string | undefined
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'device_unreachable_for_extended_period'
+                    /** Date and time since which Seam has been unable to reach the device. */
+                    device_unreachable_since: string
                   }
                 | {
                     /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
