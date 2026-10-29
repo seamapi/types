@@ -342,6 +342,19 @@ const being_deleted = common_access_code_warning
   })
   .describe('Access code is being deleted.')
 
+const device_unreachable_for_extended_period = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('device_unreachable_for_extended_period')
+      .describe(warning_code_description),
+    device_unreachable_since: datetime.describe(
+      'Date and time since which Seam has been unable to reach the device.',
+    ),
+  })
+  .describe(
+    "Seam had been unable to reach the device for an extended period when this access code was created, so the code is unlikely to be set until the device reconnects. Check the device's connection. This warning clears automatically when the device comes back online or the code is set on the device.",
+  )
+
 const unknown_issue_with_access_code = common_access_code_warning
   .extend({
     warning_code: z
@@ -363,6 +376,7 @@ const access_code_warning = z
     management_transferred,
     using_backup_access_code,
     being_deleted,
+    device_unreachable_for_extended_period,
     unknown_issue_with_access_code,
   ])
   .describe(
@@ -386,6 +400,8 @@ const _access_code_warning_map = z.object({
   management_transferred: management_transferred.optional(),
   using_backup_access_code: using_backup_access_code.optional(),
   being_deleted: being_deleted.optional(),
+  device_unreachable_for_extended_period:
+    device_unreachable_for_extended_period.optional(),
   unknown_issue_with_access_code: unknown_issue_with_access_code.optional(),
 })
 

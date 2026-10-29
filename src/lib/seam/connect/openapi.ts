@@ -1717,6 +1717,41 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
+                    "Seam had been unable to reach the device for an extended period when this access code was created, so the code is unlikely to be set until the device reconnects. Check the device's connection. This warning clears automatically when the device comes back online or the code is set on the device.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    device_unreachable_since: {
+                      description:
+                        'Date and time since which Seam has been unable to reach the device.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['device_unreachable_for_extended_period'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'warning_code',
+                    'device_unreachable_since',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
                     'An unknown issue occurred with the access code.',
                   properties: {
                     created_at: {
@@ -37359,6 +37394,41 @@ const openapi: OpenAPISpec = {
                     },
                   },
                   required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    "Seam had been unable to reach the device for an extended period when this access code was created, so the code is unlikely to be set until the device reconnects. Check the device's connection. This warning clears automatically when the device comes back online or the code is set on the device.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    device_unreachable_since: {
+                      description:
+                        'Date and time since which Seam has been unable to reach the device.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['device_unreachable_for_extended_period'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'warning_code',
+                    'device_unreachable_since',
+                  ],
                   type: 'object',
                 },
                 {
