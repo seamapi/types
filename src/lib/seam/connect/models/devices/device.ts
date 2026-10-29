@@ -490,7 +490,7 @@ const salto_ks_lock_access_code_support_removed = common_device_warning.extend({
     ---
     variant_group_key: access_codes
     ---
-    Indicates that a change in the reported device model has been detected for this Salto KS lock, which may occur after an IQ hub reset. Access code support may be affected. See https://help.getseam.com/articles/5098842588-salto-ks-lock-loses-access-code-support for troubleshooting steps.
+    Indicates that a change in the reported device model has been detected for this Salto KS lock, which may occur after an IQ hub reset. Access code support may be affected. See https://www.seam.co/help/salto-ks-lock-loses-access-code-support for troubleshooting steps.
   `)
 
 const third_party_integration_detected = common_device_warning

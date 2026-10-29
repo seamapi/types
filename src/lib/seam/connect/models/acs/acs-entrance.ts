@@ -72,7 +72,7 @@ const salto_ks_entrance_access_code_support_removed =
         .describe(warning_code_description),
     })
     .describe(
-      'Indicates that a change in the reported device model has been detected for this Salto KS entrance, which may occur after an IQ hub reset. Access code support may be affected. See https://help.getseam.com/articles/5098842588-salto-ks-lock-loses-access-code-support for troubleshooting steps.',
+      'Indicates that a change in the reported device model has been detected for this Salto KS entrance, which may occur after an IQ hub reset. Access code support may be affected. See https://www.seam.co/help/salto-ks-lock-loses-access-code-support for troubleshooting steps.',
     )
 
 const entrance_shares_zone = common_acs_entrance_warning
