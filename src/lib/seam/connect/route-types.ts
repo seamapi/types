@@ -6989,15 +6989,15 @@ export type Routes = {
     commonParams: {
       /** Customer key for which you want to list access codes. */
       customer_key?: string | undefined
-      /** ID of the device for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`. */
+      /** ID of the device for which you want to list access codes. */
       device_id?: string | undefined
-      /** IDs of the access codes that you want to retrieve. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`. */
+      /** IDs of the access codes that you want to retrieve. */
       access_code_ids?: string[] | undefined
-      /** ID of the access method for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`. */
+      /** ID of the access method for which you want to list access codes. */
       access_method_id?: string | undefined
-      /** ID of the access grant for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`. */
+      /** ID of the access grant for which you want to list access codes. */
       access_grant_id?: string | undefined
-      /** Key of the access grant for which you want to list access codes. Specify `device_id`, `access_code_ids`, `access_method_id`, `access_grant_id`, or `access_grant_key`. */
+      /** Key of the access grant for which you want to list access codes. */
       access_grant_key?: string | undefined
       /** Your user ID for the user by which to filter access codes. */
       user_identifier_key?: string | undefined
@@ -19988,6 +19988,8 @@ export type Routes = {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** Customer key for which you want to list unmanaged Access Grants. */
+      customer_key?: string | undefined
       /** ID of user identity by which you want to filter the list of unmanaged Access Grants. */
       user_identity_id?: string | undefined
       /** ID of the access system by which you want to filter the list of unmanaged Access Grants. */
@@ -28886,6 +28888,8 @@ export type Routes = {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** Customer key for which you want to list access methods. */
+      customer_key?: string | undefined
       /** ID of Access Grant to list access methods for. */
       access_grant_id?: string | undefined
       /** Key of Access Grant to list access methods for. */
@@ -182685,6 +182689,8 @@ export type Routes = {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** Customer key for which you want to list user identities. */
+      customer_key?: string | undefined
       /** Array of user identity IDs by which to filter the list of user identities. */
       user_identity_ids?: string[] | undefined
       /** String for which to search. Filters returned user identities to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address` or `user_identity_id`. */
