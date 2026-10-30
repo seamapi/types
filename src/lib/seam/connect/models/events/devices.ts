@@ -862,7 +862,7 @@ export const camera_activated_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A camera was activated, for example, by motion detection.
+  A camera was activated, for example, by motion detection. For Ring cameras, this event is available only in the Seam Console, not through the API or webhooks.
 `)
 
 export type CameraActivatedEvent = z.infer<typeof camera_activated_event>
@@ -893,7 +893,7 @@ export const device_doorbell_rang_event = device_event.extend({
   ---
   route_path: /devices
   ---
-  A doorbell button was pressed on a device.
+  A doorbell button was pressed on a device. For Ring cameras, this event is available only in the Seam Console, not through the API or webhooks.
 `)
 
 export type DeviceDoorbellRangEvent = z.infer<typeof device_doorbell_rang_event>
