@@ -70019,6 +70019,12 @@ const openapi: OpenAPISpec = {
                           type: 'string',
                         },
                         created_at: { format: 'date-time', type: 'string' },
+                        customer_key: {
+                          description:
+                            'Key of the customer the reservation belongs to, or null when it belongs to none.',
+                          nullable: true,
+                          type: 'string',
+                        },
                         ends_at: {
                           format: 'date-time',
                           nullable: true,
@@ -70221,6 +70227,7 @@ const openapi: OpenAPISpec = {
                         'access_grant_id',
                         'access_methods',
                         'connected_account_id',
+                        'customer_key',
                         'last_automation_result',
                         'parent_reservation_id',
                         'parent_reservation_key',
@@ -70449,6 +70456,12 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                           created_at: { format: 'date-time', type: 'string' },
+                          customer_key: {
+                            description:
+                              'Key of the customer the reservation belongs to, or null when it belongs to none.',
+                            nullable: true,
+                            type: 'string',
+                          },
                           ends_at: {
                             format: 'date-time',
                             nullable: true,
@@ -70645,6 +70658,7 @@ const openapi: OpenAPISpec = {
                           'access_methods',
                           'spaces',
                           'connected_account_id',
+                          'customer_key',
                           'last_automation_result',
                           'sub_reservations',
                         ],
