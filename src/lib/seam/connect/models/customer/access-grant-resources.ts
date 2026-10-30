@@ -92,6 +92,12 @@ export const sub_reservation_resource = base_access_grant_resource
       .describe(
         'Your identifier for the sub-reservation. Must be unique within its reservation.',
       ),
+    is_primary: z
+      .boolean()
+      .optional()
+      .describe(
+        "Whether this is the reservation's primary sub-reservation, for example the room the guest stays in. Only the primary sub-reservation passes the guest's phone number to access systems that require a phone number to be unique per user. At most one sub-reservation of a reservation can be primary. If none is, the first sub-reservation in the list is primary.",
+      ),
     custom_metadata: custom_metadata_input
       .optional()
       .describe(

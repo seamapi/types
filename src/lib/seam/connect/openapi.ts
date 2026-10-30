@@ -53735,6 +53735,11 @@ const openapi: OpenAPISpec = {
                                           'Guest key associated with the access grant.',
                                         type: 'string',
                                       },
+                                      is_primary: {
+                                        description:
+                                          "Whether this is the reservation's primary sub-reservation, for example the room the guest stays in. Only the primary sub-reservation passes the guest's phone number to access systems that require a phone number to be unique per user. At most one sub-reservation of a reservation can be primary. If none is, the first sub-reservation in the list is primary.",
+                                        type: 'boolean',
+                                      },
                                       listing_keys: {
                                         description:
                                           'Listing keys associated with the access grant.',
@@ -55051,6 +55056,11 @@ const openapi: OpenAPISpec = {
                                 description:
                                   'Guest key associated with the access grant.',
                                 type: 'string',
+                              },
+                              is_primary: {
+                                description:
+                                  "Whether this is the reservation's primary sub-reservation, for example the room the guest stays in. Only the primary sub-reservation passes the guest's phone number to access systems that require a phone number to be unique per user. At most one sub-reservation of a reservation can be primary. If none is, the first sub-reservation in the list is primary.",
+                                type: 'boolean',
                               },
                               listing_keys: {
                                 description:
@@ -70039,6 +70049,12 @@ const openapi: OpenAPISpec = {
                           type: 'object',
                         },
                         guest_name: { nullable: true, type: 'string' },
+                        is_primary: {
+                          description:
+                            "Whether this sub-reservation is its reservation's primary one, the only one that passes the guest's phone number to access systems that require it to be unique per user. Null when this reservation is not a sub-reservation.",
+                          nullable: true,
+                          type: 'boolean',
+                        },
                         is_resource_syncing: { type: 'boolean' },
                         last_automation_result: {
                           nullable: true,
@@ -70140,6 +70156,11 @@ const openapi: OpenAPISpec = {
                                 nullable: true,
                                 type: 'string',
                               },
+                              is_primary: {
+                                description:
+                                  "Whether this is the reservation's primary sub-reservation, the only one that passes the guest's phone number to access systems that require it to be unique per user.",
+                                type: 'boolean',
+                              },
                               is_resource_syncing: { type: 'boolean' },
                               name: { nullable: true, type: 'string' },
                               spaces: {
@@ -70172,6 +70193,7 @@ const openapi: OpenAPISpec = {
                             required: [
                               'sub_reservation_id',
                               'sub_reservation_key',
+                              'is_primary',
                               'name',
                               'starts_at',
                               'ends_at',
@@ -70202,6 +70224,7 @@ const openapi: OpenAPISpec = {
                         'last_automation_result',
                         'parent_reservation_id',
                         'parent_reservation_key',
+                        'is_primary',
                         'sub_reservations',
                       ],
                       type: 'object',
@@ -70538,6 +70561,11 @@ const openapi: OpenAPISpec = {
                                   nullable: true,
                                   type: 'string',
                                 },
+                                is_primary: {
+                                  description:
+                                    "Whether this is the reservation's primary sub-reservation, the only one that passes the guest's phone number to access systems that require it to be unique per user.",
+                                  type: 'boolean',
+                                },
                                 is_resource_syncing: { type: 'boolean' },
                                 name: { nullable: true, type: 'string' },
                                 spaces: {
@@ -70570,6 +70598,7 @@ const openapi: OpenAPISpec = {
                               required: [
                                 'sub_reservation_id',
                                 'sub_reservation_key',
+                                'is_primary',
                                 'name',
                                 'starts_at',
                                 'ends_at',
@@ -71333,6 +71362,12 @@ const openapi: OpenAPISpec = {
                           },
                           guest_name: { nullable: true, type: 'string' },
                           has_issued_access: { type: 'boolean' },
+                          is_primary: {
+                            description:
+                              "Whether this sub-reservation is its reservation's primary one, the only one that passes the guest's phone number to access systems that require it to be unique per user. Null when this reservation is not a sub-reservation.",
+                            nullable: true,
+                            type: 'boolean',
+                          },
                           last_automation_result: {
                             nullable: true,
                             properties: {
@@ -71413,6 +71448,7 @@ const openapi: OpenAPISpec = {
                           'last_automation_result',
                           'parent_reservation_id',
                           'parent_reservation_key',
+                          'is_primary',
                         ],
                         type: 'object',
                       },

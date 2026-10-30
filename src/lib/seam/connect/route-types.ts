@@ -57266,6 +57266,8 @@ export type Routes = {
                         preferred_code?: (string | null) | undefined
                         /** Your identifier for the sub-reservation. Must be unique within its reservation. */
                         sub_reservation_key: string
+                        /** Whether this is the reservation's primary sub-reservation, for example the room the guest stays in. Only the primary sub-reservation passes the guest's phone number to access systems that require a phone number to be unique per user. At most one sub-reservation of a reservation can be primary. If none is, the first sub-reservation in the list is primary. */
+                        is_primary?: boolean | undefined
                         /** Set key:value pairs for filtering sub-reservations by custom criteria. Merged over the reservation's custom metadata. Set a key to `null` or to an empty string to remove that key from the custom metadata. */
                         custom_metadata?:
                           | {
@@ -57771,6 +57773,8 @@ export type Routes = {
                   preferred_code?: (string | null) | undefined
                   /** Your identifier for the sub-reservation. Must be unique within its reservation. */
                   sub_reservation_key: string
+                  /** Whether this is the reservation's primary sub-reservation, for example the room the guest stays in. Only the primary sub-reservation passes the guest's phone number to access systems that require a phone number to be unique per user. At most one sub-reservation of a reservation can be primary. If none is, the first sub-reservation in the list is primary. */
+                  is_primary?: boolean | undefined
                   /** Set key:value pairs for filtering sub-reservations by custom criteria. Merged over the reservation's custom metadata. Set a key to `null` or to an empty string to remove that key from the custom metadata. */
                   custom_metadata?:
                     | {
@@ -119523,10 +119527,14 @@ export type Routes = {
         parent_reservation_id: string | null
         /** Key of the parent reservation when this reservation is a sub-reservation. Its `reservation_key` is then `<parent_reservation_key>::<sub-reservation key>`. Null otherwise. */
         parent_reservation_key: string | null
+        /** Whether this sub-reservation is its reservation's primary one, the only one that passes the guest's phone number to access systems that require it to be unique per user. Null when this reservation is not a sub-reservation. */
+        is_primary: boolean | null
         /** Parts of the reservation that each hold their own access, for example one per room. When present, the reservation's spaces are the union of its sub-reservations' spaces. */
         sub_reservations: {
           sub_reservation_id: string
           sub_reservation_key: string
+          /** Whether this is the reservation's primary sub-reservation, the only one that passes the guest's phone number to access systems that require it to be unique per user. */
+          is_primary: boolean
           name: string | null
           starts_at: string | null
           ends_at: string | null
@@ -119636,6 +119644,8 @@ export type Routes = {
         sub_reservations: {
           sub_reservation_id: string
           sub_reservation_key: string
+          /** Whether this is the reservation's primary sub-reservation, the only one that passes the guest's phone number to access systems that require it to be unique per user. */
+          is_primary: boolean
           name: string | null
           starts_at: string | null
           ends_at: string | null
@@ -120264,6 +120274,8 @@ export type Routes = {
         parent_reservation_id: string | null
         /** Key of the parent reservation when this reservation is a sub-reservation. Its `reservation_key` is then `<parent_reservation_key>::<sub-reservation key>`. Null otherwise. */
         parent_reservation_key: string | null
+        /** Whether this sub-reservation is its reservation's primary one, the only one that passes the guest's phone number to access systems that require it to be unique per user. Null when this reservation is not a sub-reservation. */
+        is_primary: boolean | null
       }[]
     }
     maxDuration: undefined
