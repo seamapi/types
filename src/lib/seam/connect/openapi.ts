@@ -31501,7 +31501,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'A camera was activated, for example, by motion detection.',
+              'A camera was activated, for example, by motion detection. For Ring cameras, this event is available only in the Seam Console, not through the API or webhooks.',
             properties: {
               activation_reason: {
                 description: 'The reason the camera was activated.',
@@ -31604,7 +31604,8 @@ const openapi: OpenAPISpec = {
             'x-route-path': '/devices',
           },
           {
-            description: 'A doorbell button was pressed on a device.',
+            description:
+              'A doorbell button was pressed on a device. For Ring cameras, this event is available only in the Seam Console, not through the API or webhooks.',
             properties: {
               connected_account_custom_metadata: {
                 additionalProperties: {
