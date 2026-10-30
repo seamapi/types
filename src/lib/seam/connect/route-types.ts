@@ -119509,6 +119509,8 @@ export type Routes = {
           instant_key_url?: string | undefined
         }[]
         connected_account_id: string | null
+        /** Key of the customer the reservation belongs to, or null when it belongs to none. */
+        customer_key: string | null
         last_automation_result: {
           success: boolean
           rule: string
@@ -119626,6 +119628,8 @@ export type Routes = {
           name: string | null
         }[]
         connected_account_id: string | null
+        /** Key of the customer the reservation belongs to, or null when it belongs to none. */
+        customer_key: string | null
         last_automation_result: {
           success: boolean
           rule: string
