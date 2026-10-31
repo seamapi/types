@@ -63970,6 +63970,249 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for Console',
       },
     },
+    '/seam/console/v1/workspace/console_settings/get': {
+      get: {
+        description:
+          "Gets the signed-in user's console settings for the workspace: the sidebar shortcuts and pinned resources, in order, and the customer the console was last scoped to.",
+        operationId: 'seamConsoleV1WorkspaceConsoleSettingsGetGet',
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    console_settings: {
+                      properties: {
+                        pinned_resources: {
+                          description:
+                            'Resources pinned in the console sidebar, in order.',
+                          items: {
+                            properties: {
+                              display_name: {
+                                description:
+                                  'Name shown in the sidebar, as it was when pinned.',
+                                type: 'string',
+                              },
+                              resource_id: { type: 'string' },
+                              resource_type: {
+                                enum: [
+                                  'device',
+                                  'space',
+                                  'access_grant',
+                                  'access_code',
+                                  'reservation',
+                                  'user_identity',
+                                  'connected_account',
+                                  'acs_system',
+                                ],
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'resource_type',
+                              'resource_id',
+                              'display_name',
+                            ],
+                            type: 'object',
+                          },
+                          maxItems: 100,
+                          type: 'array',
+                        },
+                        selected_customer_key: {
+                          description:
+                            'Customer the console was last scoped to. `null` means all customers.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        sidebar_shortcuts: {
+                          description:
+                            'Pages shown as shortcuts in the console sidebar, in order.',
+                          items: { type: 'string' },
+                          maxItems: 100,
+                          type: 'array',
+                        },
+                      },
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['console_settings', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_with_workspace: [] }],
+        summary: '/seam/console/v1/workspace/console_settings/get',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'workspace',
+          'console_settings',
+        ],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'console_settings',
+        'x-response-key': 'console_settings',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/workspace/console_settings/update': {
+      patch: {
+        description:
+          "Updates the signed-in user's console settings for the workspace. Only the settings you pass change.",
+        operationId: 'seamConsoleV1WorkspaceConsoleSettingsUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  pinned_resources: {
+                    description:
+                      'Resources pinned in the console sidebar, in order.',
+                    items: {
+                      properties: {
+                        display_name: {
+                          description:
+                            'Name shown in the sidebar, as it was when pinned.',
+                          type: 'string',
+                        },
+                        resource_id: { type: 'string' },
+                        resource_type: {
+                          enum: [
+                            'device',
+                            'space',
+                            'access_grant',
+                            'access_code',
+                            'reservation',
+                            'user_identity',
+                            'connected_account',
+                            'acs_system',
+                          ],
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'resource_type',
+                        'resource_id',
+                        'display_name',
+                      ],
+                      type: 'object',
+                    },
+                    maxItems: 100,
+                    type: 'array',
+                  },
+                  selected_customer_key: {
+                    description:
+                      'Customer the console was last scoped to. `null` means all customers.',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  sidebar_shortcuts: {
+                    description:
+                      'Pages shown as shortcuts in the console sidebar, in order.',
+                    items: { type: 'string' },
+                    maxItems: 100,
+                    type: 'array',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    console_settings: {
+                      properties: {
+                        pinned_resources: {
+                          description:
+                            'Resources pinned in the console sidebar, in order.',
+                          items: {
+                            properties: {
+                              display_name: {
+                                description:
+                                  'Name shown in the sidebar, as it was when pinned.',
+                                type: 'string',
+                              },
+                              resource_id: { type: 'string' },
+                              resource_type: {
+                                enum: [
+                                  'device',
+                                  'space',
+                                  'access_grant',
+                                  'access_code',
+                                  'reservation',
+                                  'user_identity',
+                                  'connected_account',
+                                  'acs_system',
+                                ],
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'resource_type',
+                              'resource_id',
+                              'display_name',
+                            ],
+                            type: 'object',
+                          },
+                          maxItems: 100,
+                          type: 'array',
+                        },
+                        selected_customer_key: {
+                          description:
+                            'Customer the console was last scoped to. `null` means all customers.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        sidebar_shortcuts: {
+                          description:
+                            'Pages shown as shortcuts in the console sidebar, in order.',
+                          items: { type: 'string' },
+                          maxItems: 100,
+                          type: 'array',
+                        },
+                      },
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['console_settings', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_with_workspace: [] }],
+        summary: '/seam/console/v1/workspace/console_settings/update',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'workspace',
+          'console_settings',
+        ],
+        'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-return-value': 'console_settings',
+        'x-response-key': 'console_settings',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
     '/seam/console/v1/workspace/feature_flags/list': {
       get: {
         description: 'Lists the workspace feature flags the Console reads.',

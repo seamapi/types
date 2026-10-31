@@ -110295,6 +110295,96 @@ export type Routes = {
     }
     maxDuration: undefined
   }
+  '/seam/console/v1/workspace/console_settings/get': {
+    route: '/seam/console/v1/workspace/console_settings/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      console_settings: {
+        /** Pages shown as shortcuts in the console sidebar, in order. */
+        sidebar_shortcuts?: string[] | undefined
+        /** Resources pinned in the console sidebar, in order. */
+        pinned_resources?:
+          | {
+              resource_type:
+                | 'device'
+                | 'space'
+                | 'access_grant'
+                | 'access_code'
+                | 'reservation'
+                | 'user_identity'
+                | 'connected_account'
+                | 'acs_system'
+              resource_id: string
+              /** Name shown in the sidebar, as it was when pinned. */
+              display_name: string
+            }[]
+          | undefined
+        /** Customer the console was last scoped to. `null` means all customers. */
+        selected_customer_key?: (string | null) | undefined
+      }
+    }
+    maxDuration: undefined
+  }
+  '/seam/console/v1/workspace/console_settings/update': {
+    route: '/seam/console/v1/workspace/console_settings/update'
+    method: 'PATCH' | 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** Pages shown as shortcuts in the console sidebar, in order. */
+      sidebar_shortcuts?: string[] | undefined
+      /** Resources pinned in the console sidebar, in order. */
+      pinned_resources?:
+        | {
+            resource_type:
+              | 'device'
+              | 'space'
+              | 'access_grant'
+              | 'access_code'
+              | 'reservation'
+              | 'user_identity'
+              | 'connected_account'
+              | 'acs_system'
+            resource_id: string
+            /** Name shown in the sidebar, as it was when pinned. */
+            display_name: string
+          }[]
+        | undefined
+      /** Customer the console was last scoped to. `null` means all customers. */
+      selected_customer_key?: (string | null) | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      console_settings: {
+        /** Pages shown as shortcuts in the console sidebar, in order. */
+        sidebar_shortcuts?: string[] | undefined
+        /** Resources pinned in the console sidebar, in order. */
+        pinned_resources?:
+          | {
+              resource_type:
+                | 'device'
+                | 'space'
+                | 'access_grant'
+                | 'access_code'
+                | 'reservation'
+                | 'user_identity'
+                | 'connected_account'
+                | 'acs_system'
+              resource_id: string
+              /** Name shown in the sidebar, as it was when pinned. */
+              display_name: string
+            }[]
+          | undefined
+        /** Customer the console was last scoped to. `null` means all customers. */
+        selected_customer_key?: (string | null) | undefined
+      }
+    }
+    maxDuration: undefined
+  }
   '/seam/console/v1/workspace/feature_flags/list': {
     route: '/seam/console/v1/workspace/feature_flags/list'
     method: 'GET' | 'POST'
