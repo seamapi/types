@@ -16115,6 +16115,7 @@ export type Routes = {
                     | 'tapo_camera'
                     | 'arlo_camera'
                     | 'reolink_camera'
+                    | 'unifi_protect_camera'
                   )
                 | 'sonos_speaker'
               /** IDs of the spaces the device is in. */
@@ -16973,6 +16974,26 @@ export type Routes = {
                           firmware_version?: (string | undefined) | undefined
                           /** Hardware version reported by the camera. */
                           hardware_version?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
+                /** Metadata for a UniFi Protect camera. */
+                unifi_protect_metadata?:
+                  | (
+                      | {
+                          /** Camera ID reported by UniFi Protect. */
+                          camera_id?: (string | undefined) | undefined
+                          /** Camera name reported by UniFi Protect. */
+                          camera_name?: (string | undefined) | undefined
+                          /** Model reported by the UniFi Protect camera. */
+                          model?: (string | undefined) | undefined
+                          /** MAC address reported by the UniFi Protect camera. */
+                          mac?: (string | undefined) | undefined
+                          /** Name of the UniFi Protect console that manages the camera. */
+                          nvr_name?: (string | undefined) | undefined
+                          /** Whether the camera has a microphone. */
+                          has_mic?: (boolean | undefined) | undefined
                         }
                       | undefined
                     )
@@ -25842,6 +25863,7 @@ export type Routes = {
                     | 'tapo_camera'
                     | 'arlo_camera'
                     | 'reolink_camera'
+                    | 'unifi_protect_camera'
                   )
                 | 'sonos_speaker'
               /** IDs of the spaces the device is in. */
@@ -26700,6 +26722,26 @@ export type Routes = {
                           firmware_version?: (string | undefined) | undefined
                           /** Hardware version reported by the camera. */
                           hardware_version?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
+                /** Metadata for a UniFi Protect camera. */
+                unifi_protect_metadata?:
+                  | (
+                      | {
+                          /** Camera ID reported by UniFi Protect. */
+                          camera_id?: (string | undefined) | undefined
+                          /** Camera name reported by UniFi Protect. */
+                          camera_name?: (string | undefined) | undefined
+                          /** Model reported by the UniFi Protect camera. */
+                          model?: (string | undefined) | undefined
+                          /** MAC address reported by the UniFi Protect camera. */
+                          mac?: (string | undefined) | undefined
+                          /** Name of the UniFi Protect console that manages the camera. */
+                          nvr_name?: (string | undefined) | undefined
+                          /** Whether the camera has a microphone. */
+                          has_mic?: (boolean | undefined) | undefined
                         }
                       | undefined
                     )
@@ -55682,6 +55724,7 @@ export type Routes = {
             | 'tapo'
             | 'arlo'
             | 'reolink'
+            | 'unifi_protect'
             | 'ical'
             | 'lodgify'
             | 'hostaway'
@@ -58026,7 +58069,13 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | (
+              | 'ring_camera'
+              | 'tapo_camera'
+              | 'arlo_camera'
+              | 'reolink_camera'
+              | 'unifi_protect_camera'
+            )
           | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
@@ -58859,6 +58908,26 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a UniFi Protect camera. */
+          unifi_protect_metadata?:
+            | (
+                | {
+                    /** Camera ID reported by UniFi Protect. */
+                    camera_id?: (string | undefined) | undefined
+                    /** Camera name reported by UniFi Protect. */
+                    camera_name?: (string | undefined) | undefined
+                    /** Model reported by the UniFi Protect camera. */
+                    model?: (string | undefined) | undefined
+                    /** MAC address reported by the UniFi Protect camera. */
+                    mac?: (string | undefined) | undefined
+                    /** Name of the UniFi Protect console that manages the camera. */
+                    nvr_name?: (string | undefined) | undefined
+                    /** Whether the camera has a microphone. */
+                    has_mic?: (boolean | undefined) | undefined
                   }
                 | undefined
               )
@@ -60085,7 +60154,13 @@ export type Routes = {
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+            | (
+                | 'ring_camera'
+                | 'tapo_camera'
+                | 'arlo_camera'
+                | 'reolink_camera'
+                | 'unifi_protect_camera'
+              )
             | 'sonos_speaker'
           )
         | undefined
@@ -60137,7 +60212,13 @@ export type Routes = {
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+            | (
+                | 'ring_camera'
+                | 'tapo_camera'
+                | 'arlo_camera'
+                | 'reolink_camera'
+                | 'unifi_protect_camera'
+              )
             | 'sonos_speaker'
           )[]
         | undefined
@@ -60171,6 +60252,7 @@ export type Routes = {
             | 'controlbyweb'
             | 'tedee'
             | 'keyincode'
+            | 'ubiquiti'
             | 'akiles'
             | 'aqara'
             | 'ecobee'
@@ -60192,6 +60274,7 @@ export type Routes = {
             | 'tapo'
             | 'arlo'
             | 'reolink'
+            | 'unifi_protect'
             | 'ical'
             | 'lodgify'
             | 'hostaway'
@@ -60350,7 +60433,13 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | (
+              | 'ring_camera'
+              | 'tapo_camera'
+              | 'arlo_camera'
+              | 'reolink_camera'
+              | 'unifi_protect_camera'
+            )
           | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
@@ -61183,6 +61272,26 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a UniFi Protect camera. */
+          unifi_protect_metadata?:
+            | (
+                | {
+                    /** Camera ID reported by UniFi Protect. */
+                    camera_id?: (string | undefined) | undefined
+                    /** Camera name reported by UniFi Protect. */
+                    camera_name?: (string | undefined) | undefined
+                    /** Model reported by the UniFi Protect camera. */
+                    model?: (string | undefined) | undefined
+                    /** MAC address reported by the UniFi Protect camera. */
+                    mac?: (string | undefined) | undefined
+                    /** Name of the UniFi Protect console that manages the camera. */
+                    nvr_name?: (string | undefined) | undefined
+                    /** Whether the camera has a microphone. */
+                    has_mic?: (boolean | undefined) | undefined
                   }
                 | undefined
               )
@@ -62441,6 +62550,7 @@ export type Routes = {
           | 'tapo'
           | 'arlo'
           | 'reolink'
+          | 'unifi_protect'
           | 'ical'
           | 'lodgify'
           | 'hostaway'
@@ -63997,7 +64107,13 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | (
+              | 'ring_camera'
+              | 'tapo_camera'
+              | 'arlo_camera'
+              | 'reolink_camera'
+              | 'unifi_protect_camera'
+            )
           | 'sonos_speaker'
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
@@ -64636,7 +64752,13 @@ export type Routes = {
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+            | (
+                | 'ring_camera'
+                | 'tapo_camera'
+                | 'arlo_camera'
+                | 'reolink_camera'
+                | 'unifi_protect_camera'
+              )
             | 'sonos_speaker'
           )
         | undefined
@@ -64688,7 +64810,13 @@ export type Routes = {
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+            | (
+                | 'ring_camera'
+                | 'tapo_camera'
+                | 'arlo_camera'
+                | 'reolink_camera'
+                | 'unifi_protect_camera'
+              )
             | 'sonos_speaker'
           )[]
         | undefined
@@ -64722,6 +64850,7 @@ export type Routes = {
             | 'controlbyweb'
             | 'tedee'
             | 'keyincode'
+            | 'ubiquiti'
             | 'akiles'
             | 'aqara'
             | 'ecobee'
@@ -64743,6 +64872,7 @@ export type Routes = {
             | 'tapo'
             | 'arlo'
             | 'reolink'
+            | 'unifi_protect'
             | 'ical'
             | 'lodgify'
             | 'hostaway'
@@ -64888,7 +65018,13 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | (
+              | 'ring_camera'
+              | 'tapo_camera'
+              | 'arlo_camera'
+              | 'reolink_camera'
+              | 'unifi_protect_camera'
+            )
           | 'sonos_speaker'
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
@@ -76818,7 +76954,13 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | (
+              | 'ring_camera'
+              | 'tapo_camera'
+              | 'arlo_camera'
+              | 'reolink_camera'
+              | 'unifi_protect_camera'
+            )
           | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
@@ -77651,6 +77793,26 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a UniFi Protect camera. */
+          unifi_protect_metadata?:
+            | (
+                | {
+                    /** Camera ID reported by UniFi Protect. */
+                    camera_id?: (string | undefined) | undefined
+                    /** Camera name reported by UniFi Protect. */
+                    camera_name?: (string | undefined) | undefined
+                    /** Model reported by the UniFi Protect camera. */
+                    model?: (string | undefined) | undefined
+                    /** MAC address reported by the UniFi Protect camera. */
+                    mac?: (string | undefined) | undefined
+                    /** Name of the UniFi Protect console that manages the camera. */
+                    nvr_name?: (string | undefined) | undefined
+                    /** Whether the camera has a microphone. */
+                    has_mic?: (boolean | undefined) | undefined
                   }
                 | undefined
               )
@@ -78863,7 +79025,13 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | (
+              | 'ring_camera'
+              | 'tapo_camera'
+              | 'arlo_camera'
+              | 'reolink_camera'
+              | 'unifi_protect_camera'
+            )
           | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
@@ -79696,6 +79864,26 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a UniFi Protect camera. */
+          unifi_protect_metadata?:
+            | (
+                | {
+                    /** Camera ID reported by UniFi Protect. */
+                    camera_id?: (string | undefined) | undefined
+                    /** Camera name reported by UniFi Protect. */
+                    camera_name?: (string | undefined) | undefined
+                    /** Model reported by the UniFi Protect camera. */
+                    model?: (string | undefined) | undefined
+                    /** MAC address reported by the UniFi Protect camera. */
+                    mac?: (string | undefined) | undefined
+                    /** Name of the UniFi Protect console that manages the camera. */
+                    nvr_name?: (string | undefined) | undefined
+                    /** Whether the camera has a microphone. */
+                    has_mic?: (boolean | undefined) | undefined
                   }
                 | undefined
               )
@@ -81039,7 +81227,13 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | (
+              | 'ring_camera'
+              | 'tapo_camera'
+              | 'arlo_camera'
+              | 'reolink_camera'
+              | 'unifi_protect_camera'
+            )
           | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
@@ -81872,6 +82066,26 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a UniFi Protect camera. */
+          unifi_protect_metadata?:
+            | (
+                | {
+                    /** Camera ID reported by UniFi Protect. */
+                    camera_id?: (string | undefined) | undefined
+                    /** Camera name reported by UniFi Protect. */
+                    camera_name?: (string | undefined) | undefined
+                    /** Model reported by the UniFi Protect camera. */
+                    model?: (string | undefined) | undefined
+                    /** MAC address reported by the UniFi Protect camera. */
+                    mac?: (string | undefined) | undefined
+                    /** Name of the UniFi Protect console that manages the camera. */
+                    nvr_name?: (string | undefined) | undefined
+                    /** Whether the camera has a microphone. */
+                    has_mic?: (boolean | undefined) | undefined
                   }
                 | undefined
               )
@@ -83083,7 +83297,13 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | (
+              | 'ring_camera'
+              | 'tapo_camera'
+              | 'arlo_camera'
+              | 'reolink_camera'
+              | 'unifi_protect_camera'
+            )
           | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
@@ -83916,6 +84136,26 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a UniFi Protect camera. */
+          unifi_protect_metadata?:
+            | (
+                | {
+                    /** Camera ID reported by UniFi Protect. */
+                    camera_id?: (string | undefined) | undefined
+                    /** Camera name reported by UniFi Protect. */
+                    camera_name?: (string | undefined) | undefined
+                    /** Model reported by the UniFi Protect camera. */
+                    model?: (string | undefined) | undefined
+                    /** MAC address reported by the UniFi Protect camera. */
+                    mac?: (string | undefined) | undefined
+                    /** Name of the UniFi Protect console that manages the camera. */
+                    nvr_name?: (string | undefined) | undefined
+                    /** Whether the camera has a microphone. */
+                    has_mic?: (boolean | undefined) | undefined
                   }
                 | undefined
               )
@@ -95378,7 +95618,13 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | (
+              | 'ring_camera'
+              | 'tapo_camera'
+              | 'arlo_camera'
+              | 'reolink_camera'
+              | 'unifi_protect_camera'
+            )
           | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
@@ -96211,6 +96457,26 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a UniFi Protect camera. */
+          unifi_protect_metadata?:
+            | (
+                | {
+                    /** Camera ID reported by UniFi Protect. */
+                    camera_id?: (string | undefined) | undefined
+                    /** Camera name reported by UniFi Protect. */
+                    camera_name?: (string | undefined) | undefined
+                    /** Model reported by the UniFi Protect camera. */
+                    model?: (string | undefined) | undefined
+                    /** MAC address reported by the UniFi Protect camera. */
+                    mac?: (string | undefined) | undefined
+                    /** Name of the UniFi Protect console that manages the camera. */
+                    nvr_name?: (string | undefined) | undefined
+                    /** Whether the camera has a microphone. */
+                    has_mic?: (boolean | undefined) | undefined
                   }
                 | undefined
               )
@@ -97422,7 +97688,13 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | (
+              | 'ring_camera'
+              | 'tapo_camera'
+              | 'arlo_camera'
+              | 'reolink_camera'
+              | 'unifi_protect_camera'
+            )
           | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
@@ -98255,6 +98527,26 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a UniFi Protect camera. */
+          unifi_protect_metadata?:
+            | (
+                | {
+                    /** Camera ID reported by UniFi Protect. */
+                    camera_id?: (string | undefined) | undefined
+                    /** Camera name reported by UniFi Protect. */
+                    camera_name?: (string | undefined) | undefined
+                    /** Model reported by the UniFi Protect camera. */
+                    model?: (string | undefined) | undefined
+                    /** MAC address reported by the UniFi Protect camera. */
+                    mac?: (string | undefined) | undefined
+                    /** Name of the UniFi Protect console that manages the camera. */
+                    nvr_name?: (string | undefined) | undefined
+                    /** Whether the camera has a microphone. */
+                    has_mic?: (boolean | undefined) | undefined
                   }
                 | undefined
               )
@@ -126407,6 +126699,7 @@ export type Routes = {
                     | 'tapo_camera'
                     | 'arlo_camera'
                     | 'reolink_camera'
+                    | 'unifi_protect_camera'
                   )
                 | 'sonos_speaker'
               /** IDs of the spaces the device is in. */
@@ -127265,6 +127558,26 @@ export type Routes = {
                           firmware_version?: (string | undefined) | undefined
                           /** Hardware version reported by the camera. */
                           hardware_version?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
+                /** Metadata for a UniFi Protect camera. */
+                unifi_protect_metadata?:
+                  | (
+                      | {
+                          /** Camera ID reported by UniFi Protect. */
+                          camera_id?: (string | undefined) | undefined
+                          /** Camera name reported by UniFi Protect. */
+                          camera_name?: (string | undefined) | undefined
+                          /** Model reported by the UniFi Protect camera. */
+                          model?: (string | undefined) | undefined
+                          /** MAC address reported by the UniFi Protect camera. */
+                          mac?: (string | undefined) | undefined
+                          /** Name of the UniFi Protect console that manages the camera. */
+                          nvr_name?: (string | undefined) | undefined
+                          /** Whether the camera has a microphone. */
+                          has_mic?: (boolean | undefined) | undefined
                         }
                       | undefined
                     )
@@ -160408,7 +160721,13 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | (
+              | 'ring_camera'
+              | 'tapo_camera'
+              | 'arlo_camera'
+              | 'reolink_camera'
+              | 'unifi_protect_camera'
+            )
           | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
@@ -161241,6 +161560,26 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a UniFi Protect camera. */
+          unifi_protect_metadata?:
+            | (
+                | {
+                    /** Camera ID reported by UniFi Protect. */
+                    camera_id?: (string | undefined) | undefined
+                    /** Camera name reported by UniFi Protect. */
+                    camera_name?: (string | undefined) | undefined
+                    /** Model reported by the UniFi Protect camera. */
+                    model?: (string | undefined) | undefined
+                    /** MAC address reported by the UniFi Protect camera. */
+                    mac?: (string | undefined) | undefined
+                    /** Name of the UniFi Protect console that manages the camera. */
+                    nvr_name?: (string | undefined) | undefined
+                    /** Whether the camera has a microphone. */
+                    has_mic?: (boolean | undefined) | undefined
                   }
                 | undefined
               )
@@ -167609,7 +167948,13 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | (
+              | 'ring_camera'
+              | 'tapo_camera'
+              | 'arlo_camera'
+              | 'reolink_camera'
+              | 'unifi_protect_camera'
+            )
           | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
@@ -168442,6 +168787,26 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a UniFi Protect camera. */
+          unifi_protect_metadata?:
+            | (
+                | {
+                    /** Camera ID reported by UniFi Protect. */
+                    camera_id?: (string | undefined) | undefined
+                    /** Camera name reported by UniFi Protect. */
+                    camera_name?: (string | undefined) | undefined
+                    /** Model reported by the UniFi Protect camera. */
+                    model?: (string | undefined) | undefined
+                    /** MAC address reported by the UniFi Protect camera. */
+                    mac?: (string | undefined) | undefined
+                    /** Name of the UniFi Protect console that manages the camera. */
+                    nvr_name?: (string | undefined) | undefined
+                    /** Whether the camera has a microphone. */
+                    has_mic?: (boolean | undefined) | undefined
                   }
                 | undefined
               )
@@ -169653,7 +170018,13 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | (
+              | 'ring_camera'
+              | 'tapo_camera'
+              | 'arlo_camera'
+              | 'reolink_camera'
+              | 'unifi_protect_camera'
+            )
           | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
@@ -170486,6 +170857,26 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a UniFi Protect camera. */
+          unifi_protect_metadata?:
+            | (
+                | {
+                    /** Camera ID reported by UniFi Protect. */
+                    camera_id?: (string | undefined) | undefined
+                    /** Camera name reported by UniFi Protect. */
+                    camera_name?: (string | undefined) | undefined
+                    /** Model reported by the UniFi Protect camera. */
+                    model?: (string | undefined) | undefined
+                    /** MAC address reported by the UniFi Protect camera. */
+                    mac?: (string | undefined) | undefined
+                    /** Name of the UniFi Protect console that manages the camera. */
+                    nvr_name?: (string | undefined) | undefined
+                    /** Whether the camera has a microphone. */
+                    has_mic?: (boolean | undefined) | undefined
                   }
                 | undefined
               )
@@ -183064,7 +183455,13 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | (
+              | 'ring_camera'
+              | 'tapo_camera'
+              | 'arlo_camera'
+              | 'reolink_camera'
+              | 'unifi_protect_camera'
+            )
           | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
@@ -183897,6 +184294,26 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a UniFi Protect camera. */
+          unifi_protect_metadata?:
+            | (
+                | {
+                    /** Camera ID reported by UniFi Protect. */
+                    camera_id?: (string | undefined) | undefined
+                    /** Camera name reported by UniFi Protect. */
+                    camera_name?: (string | undefined) | undefined
+                    /** Model reported by the UniFi Protect camera. */
+                    model?: (string | undefined) | undefined
+                    /** MAC address reported by the UniFi Protect camera. */
+                    mac?: (string | undefined) | undefined
+                    /** Name of the UniFi Protect console that manages the camera. */
+                    nvr_name?: (string | undefined) | undefined
+                    /** Whether the camera has a microphone. */
+                    has_mic?: (boolean | undefined) | undefined
                   }
                 | undefined
               )
@@ -185110,7 +185527,13 @@ export type Routes = {
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | ('ring_camera' | 'tapo_camera' | 'arlo_camera' | 'reolink_camera')
+          | (
+              | 'ring_camera'
+              | 'tapo_camera'
+              | 'arlo_camera'
+              | 'reolink_camera'
+              | 'unifi_protect_camera'
+            )
           | 'sonos_speaker'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
@@ -185943,6 +186366,26 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for a UniFi Protect camera. */
+          unifi_protect_metadata?:
+            | (
+                | {
+                    /** Camera ID reported by UniFi Protect. */
+                    camera_id?: (string | undefined) | undefined
+                    /** Camera name reported by UniFi Protect. */
+                    camera_name?: (string | undefined) | undefined
+                    /** Model reported by the UniFi Protect camera. */
+                    model?: (string | undefined) | undefined
+                    /** MAC address reported by the UniFi Protect camera. */
+                    mac?: (string | undefined) | undefined
+                    /** Name of the UniFi Protect console that manages the camera. */
+                    nvr_name?: (string | undefined) | undefined
+                    /** Whether the camera has a microphone. */
+                    has_mic?: (boolean | undefined) | undefined
                   }
                 | undefined
               )
@@ -189876,6 +190319,7 @@ export type Routes = {
                     | 'tapo_camera'
                     | 'arlo_camera'
                     | 'reolink_camera'
+                    | 'unifi_protect_camera'
                   )
                 | 'sonos_speaker'
               /** IDs of the spaces the device is in. */
@@ -190734,6 +191178,26 @@ export type Routes = {
                           firmware_version?: (string | undefined) | undefined
                           /** Hardware version reported by the camera. */
                           hardware_version?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
+                /** Metadata for a UniFi Protect camera. */
+                unifi_protect_metadata?:
+                  | (
+                      | {
+                          /** Camera ID reported by UniFi Protect. */
+                          camera_id?: (string | undefined) | undefined
+                          /** Camera name reported by UniFi Protect. */
+                          camera_name?: (string | undefined) | undefined
+                          /** Model reported by the UniFi Protect camera. */
+                          model?: (string | undefined) | undefined
+                          /** MAC address reported by the UniFi Protect camera. */
+                          mac?: (string | undefined) | undefined
+                          /** Name of the UniFi Protect console that manages the camera. */
+                          nvr_name?: (string | undefined) | undefined
+                          /** Whether the camera has a microphone. */
+                          has_mic?: (boolean | undefined) | undefined
                         }
                       | undefined
                     )
@@ -196105,6 +196569,7 @@ export type Routes = {
                     | 'tapo_camera'
                     | 'arlo_camera'
                     | 'reolink_camera'
+                    | 'unifi_protect_camera'
                   )
                 | 'sonos_speaker'
               /** Unique identifier for the account associated with the device. */

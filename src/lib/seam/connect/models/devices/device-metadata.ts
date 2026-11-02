@@ -1211,6 +1211,39 @@ export const device_metadata = z
       .optional()
       .describe('Metadata for a Reolink camera.'),
 
+    unifi_protect_metadata: z
+      .object({
+        camera_id: z
+          .string()
+          .optional()
+          .describe('Camera ID reported by UniFi Protect.'),
+        camera_name: z
+          .string()
+          .optional()
+          .describe('Camera name reported by UniFi Protect.'),
+        model: z
+          .string()
+          .optional()
+          .describe('Model reported by the UniFi Protect camera.'),
+        mac: z
+          .string()
+          .optional()
+          .describe('MAC address reported by the UniFi Protect camera.'),
+        nvr_name: z
+          .string()
+          .optional()
+          .describe(
+            'Name of the UniFi Protect console that manages the camera.',
+          ),
+        has_mic: z
+          .boolean()
+          .optional()
+          .describe('Whether the camera has a microphone.'),
+      })
+      .partial()
+      .optional()
+      .describe('Metadata for a UniFi Protect camera.'),
+
     arlo_metadata: z
       .object({
         device_id: z
