@@ -109042,6 +109042,39 @@ export type Routes = {
     }
     maxDuration: undefined
   }
+  '/seam/console/v1/cameras/live_views/create': {
+    route: '/seam/console/v1/cameras/live_views/create'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** ID of the camera to view. */
+      device_id: string
+      /** Indicates whether to include the camera's audio. */
+      include_audio?: boolean
+      /** Number of seconds for which the live view session is valid, up to 600. */
+      duration_seconds?: number
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      /** Represents a short-lived live view session for a single camera. Use the session ID and token to start a WebRTC stream and to stop the session. */
+      camera_live_view_session: {
+        /** ID of the camera live view session. */
+        camera_live_view_session_id: string
+        /** ID of the camera. */
+        device_id: string
+        /** Token that authorizes the offer and stop requests for this session. */
+        token: string
+        /** Date and time at which the live view session expires. */
+        expires_at: string
+      }
+      client_session: {
+        client_session_id: string
+        token: string
+      }
+    }
+    maxDuration: undefined
+  }
   '/seam/console/v1/get_resource_locator': {
     route: '/seam/console/v1/get_resource_locator'
     method: 'GET' | 'POST'

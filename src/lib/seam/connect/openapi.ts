@@ -61558,6 +61558,88 @@ const openapi: OpenAPISpec = {
           'Internal endpoint for driving Connect Webview flows programmatically.',
       },
     },
+    '/seam/console/v1/cameras/live_views/create': {
+      post: {
+        description:
+          'Creates a camera live view session and a short-lived client session that owns it. Console passes the returned client session token to `/cameras/live_views/offer` and `/cameras/live_views/stop`.',
+        operationId: 'seamConsoleV1CamerasLiveViewsCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                additionalProperties: false,
+                properties: {
+                  device_id: {
+                    description: 'ID of the camera to view.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  duration_seconds: {
+                    default: 600,
+                    description:
+                      'Number of seconds for which the live view session is valid, up to 600.',
+                    maximum: 600,
+                    minimum: 1,
+                    type: 'integer',
+                  },
+                  include_audio: {
+                    default: false,
+                    description:
+                      "Indicates whether to include the camera's audio.",
+                    type: 'boolean',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    camera_live_view_session: {
+                      $ref: '#/components/schemas/camera_live_view_session',
+                    },
+                    client_session: {
+                      $ref: '#/components/schemas/client_session',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: [
+                    'camera_live_view_session',
+                    'client_session',
+                    'ok',
+                  ],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_with_workspace: [] }],
+        summary: '/seam/console/v1/cameras/live_views/create',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'cameras',
+          'live_views',
+        ],
+        'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'camera_live_view_session',
+        'x-response-key': 'camera_live_view_session',
+        'x-title': 'Create a Camera Live View Session for Console',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
     '/seam/console/v1/get_resource_locator': {
       get: {
         description:
