@@ -15837,7 +15837,7 @@ const openapi: OpenAPISpec = {
           },
           can_stream_live_video: {
             description:
-              'Indicates whether the camera supports streaming live video through a camera live view session.',
+              'Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline.',
             type: 'boolean',
           },
           can_turn_off_hvac: {
@@ -20752,7 +20752,7 @@ const openapi: OpenAPISpec = {
           },
           can_stream_live_video: {
             description:
-              'Indicates whether the camera supports streaming live video through a camera live view session.',
+              'Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline.',
             type: 'boolean',
           },
           can_turn_off_hvac: {
@@ -40935,7 +40935,7 @@ const openapi: OpenAPISpec = {
           },
           can_stream_live_video: {
             description:
-              'Indicates whether the camera supports streaming live video through a camera live view session.',
+              'Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline.',
             type: 'boolean',
           },
           can_turn_off_hvac: {

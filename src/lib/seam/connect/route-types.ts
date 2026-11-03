@@ -18169,7 +18169,7 @@ export type Routes = {
               can_simulate_paid_subscription?: boolean | undefined
               /** Indicates whether the lock supports configuring automatic locking. */
               can_configure_auto_lock?: boolean | undefined
-              /** Indicates whether the camera supports streaming live video through a camera live view session. */
+              /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
               can_stream_live_video?: boolean | undefined
               /** Indicates whether the speaker supports setting its volume. */
               can_set_speaker_volume?: boolean | undefined
@@ -27917,7 +27917,7 @@ export type Routes = {
               can_simulate_paid_subscription?: boolean | undefined
               /** Indicates whether the lock supports configuring automatic locking. */
               can_configure_auto_lock?: boolean | undefined
-              /** Indicates whether the camera supports streaming live video through a camera live view session. */
+              /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
               can_stream_live_video?: boolean | undefined
               /** Indicates whether the speaker supports setting its volume. */
               can_set_speaker_volume?: boolean | undefined
@@ -60070,7 +60070,7 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
-        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
@@ -62434,7 +62434,7 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
-        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
@@ -62619,7 +62619,7 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
-        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
@@ -64668,7 +64668,7 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
-        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
@@ -65579,7 +65579,7 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
-        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
@@ -78955,7 +78955,7 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
-        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
@@ -81026,7 +81026,7 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
-        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
@@ -83228,7 +83228,7 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
-        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
@@ -85298,7 +85298,7 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
-        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
@@ -97619,7 +97619,7 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
-        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
@@ -99689,7 +99689,7 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
-        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
@@ -128886,7 +128886,7 @@ export type Routes = {
               can_simulate_paid_subscription?: boolean | undefined
               /** Indicates whether the lock supports configuring automatic locking. */
               can_configure_auto_lock?: boolean | undefined
-              /** Indicates whether the camera supports streaming live video through a camera live view session. */
+              /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
               can_stream_live_video?: boolean | undefined
               /** Indicates whether the speaker supports setting its volume. */
               can_set_speaker_volume?: boolean | undefined
@@ -162855,7 +162855,7 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
-        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
@@ -170082,7 +170082,7 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
-        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
@@ -172152,7 +172152,7 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
-        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
@@ -185589,7 +185589,7 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
-        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
@@ -187661,7 +187661,7 @@ export type Routes = {
         can_simulate_paid_subscription?: boolean | undefined
         /** Indicates whether the lock supports configuring automatic locking. */
         can_configure_auto_lock?: boolean | undefined
-        /** Indicates whether the camera supports streaming live video through a camera live view session. */
+        /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
         can_stream_live_video?: boolean | undefined
         /** Indicates whether the speaker supports setting its volume. */
         can_set_speaker_volume?: boolean | undefined
@@ -192506,7 +192506,7 @@ export type Routes = {
               can_simulate_paid_subscription?: boolean | undefined
               /** Indicates whether the lock supports configuring automatic locking. */
               can_configure_auto_lock?: boolean | undefined
-              /** Indicates whether the camera supports streaming live video through a camera live view session. */
+              /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
               can_stream_live_video?: boolean | undefined
               /** Indicates whether the speaker supports setting its volume. */
               can_set_speaker_volume?: boolean | undefined
@@ -197260,7 +197260,7 @@ export type Routes = {
               can_simulate_paid_subscription?: boolean | undefined
               /** Indicates whether the lock supports configuring automatic locking. */
               can_configure_auto_lock?: boolean | undefined
-              /** Indicates whether the camera supports streaming live video through a camera live view session. */
+              /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
               can_stream_live_video?: boolean | undefined
               /** Indicates whether the speaker supports setting its volume. */
               can_set_speaker_volume?: boolean | undefined

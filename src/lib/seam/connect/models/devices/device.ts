@@ -109,7 +109,7 @@ export const device_capability_flags = z
     can_stream_live_video: z
       .boolean()
       .describe(
-        'Indicates whether the camera supports streaming live video through a camera live view session.',
+        'Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline.',
       ),
     can_set_speaker_volume: z.boolean().describe(`
       ---
