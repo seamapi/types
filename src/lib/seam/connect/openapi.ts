@@ -62008,6 +62008,15 @@ const openapi: OpenAPISpec = {
                           },
                           invoice_id: { type: 'string' },
                           issued_at: { format: 'date-time', type: 'string' },
+                          kind: {
+                            enum: ['package', 'usage', 'other'],
+                            type: 'string',
+                          },
+                          package_quantity: {
+                            format: 'float',
+                            nullable: true,
+                            type: 'number',
+                          },
                           period_ends_at: {
                             format: 'date-time',
                             type: 'string',
@@ -62027,6 +62036,8 @@ const openapi: OpenAPISpec = {
                           'status',
                           'hosted_invoice_url',
                           'issued_at',
+                          'package_quantity',
+                          'kind',
                         ],
                         type: 'object',
                       },
