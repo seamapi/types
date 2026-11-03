@@ -90,7 +90,7 @@ export const sub_reservation_resource = base_access_grant_resource
         message: 'Must not have leading or trailing whitespace',
       })
       .describe(
-        'Your identifier for the sub-reservation. Must be unique within its reservation.',
+        'Your identifier for the sub-reservation. Must be unique across all your reservations and sub-reservations, and stay with the same reservation.',
       ),
     is_primary: z
       .boolean()

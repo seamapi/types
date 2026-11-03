@@ -53827,7 +53827,7 @@ const openapi: OpenAPISpec = {
                                       },
                                       sub_reservation_key: {
                                         description:
-                                          'Your identifier for the sub-reservation. Must be unique within its reservation.',
+                                          'Your identifier for the sub-reservation. Must be unique across all your reservations and sub-reservations, and stay with the same reservation.',
                                         minLength: 1,
                                         type: 'string',
                                       },
@@ -55149,7 +55149,7 @@ const openapi: OpenAPISpec = {
                               },
                               sub_reservation_key: {
                                 description:
-                                  'Your identifier for the sub-reservation. Must be unique within its reservation.',
+                                  'Your identifier for the sub-reservation. Must be unique across all your reservations and sub-reservations, and stay with the same reservation.',
                                 minLength: 1,
                                 type: 'string',
                               },
@@ -70994,7 +70994,7 @@ const openapi: OpenAPISpec = {
                         },
                         parent_reservation_key: {
                           description:
-                            'Key of the parent reservation when this reservation is a sub-reservation. Its `reservation_key` is then `<parent_reservation_key>::<sub-reservation key>`. Null otherwise.',
+                            'Key of the parent reservation when this reservation is a sub-reservation. Null otherwise.',
                           nullable: true,
                           type: 'string',
                         },
@@ -71049,6 +71049,11 @@ const openapi: OpenAPISpec = {
                               },
                               is_resource_syncing: { type: 'boolean' },
                               name: { nullable: true, type: 'string' },
+                              parent_reservation_key: {
+                                description:
+                                  'Key of the reservation this sub-reservation belongs to.',
+                                type: 'string',
+                              },
                               spaces: {
                                 items: {
                                   properties: {
@@ -71079,6 +71084,7 @@ const openapi: OpenAPISpec = {
                             required: [
                               'sub_reservation_id',
                               'sub_reservation_key',
+                              'parent_reservation_key',
                               'is_primary',
                               'name',
                               'starts_at',
@@ -71461,6 +71467,11 @@ const openapi: OpenAPISpec = {
                                 },
                                 is_resource_syncing: { type: 'boolean' },
                                 name: { nullable: true, type: 'string' },
+                                parent_reservation_key: {
+                                  description:
+                                    'Key of the reservation this sub-reservation belongs to.',
+                                  type: 'string',
+                                },
                                 spaces: {
                                   items: {
                                     properties: {
@@ -71491,6 +71502,7 @@ const openapi: OpenAPISpec = {
                               required: [
                                 'sub_reservation_id',
                                 'sub_reservation_key',
+                                'parent_reservation_key',
                                 'is_primary',
                                 'name',
                                 'starts_at',
@@ -72317,7 +72329,7 @@ const openapi: OpenAPISpec = {
                           },
                           parent_reservation_key: {
                             description:
-                              'Key of the parent reservation when this reservation is a sub-reservation. Its `reservation_key` is then `<parent_reservation_key>::<sub-reservation key>`. Null otherwise.',
+                              'Key of the parent reservation when this reservation is a sub-reservation. Null otherwise.',
                             nullable: true,
                             type: 'string',
                           },
