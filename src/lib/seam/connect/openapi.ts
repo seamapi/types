@@ -55702,7 +55702,7 @@ const openapi: OpenAPISpec = {
     '/devices/delete': {
       delete: {
         description:
-          'Deletes a specified [device](https://www.seam.co/docs/core-concepts/devices).',
+          'Unmanages a specified [device](https://www.seam.co/docs/core-concepts/devices), the same as [`/devices/update`](https://www.seam.co/docs/api/devices/update) with `is_managed: false`. The device is no longer billed and stops appearing in `/devices/list`, but keeps syncing and can be managed again with [`/devices/unmanaged/update`](https://www.seam.co/docs/api/devices/unmanaged/update).',
         operationId: 'devicesDeleteDelete',
         parameters: [
           {
@@ -55740,13 +55740,13 @@ const openapi: OpenAPISpec = {
         summary: '/devices/delete',
         tags: ['/devices'],
         'x-deprecated':
-          'Deleting a device is no longer supported and will be removed.',
+          'Deleting a device is no longer supported. Use `/devices/update` with `is_managed: false` to unmanage the device instead.',
         'x-fern-sdk-group-name': ['devices'],
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
         'x-title': 'Delete a Device',
         'x-undocumented':
-          'Deleting a device is no longer supported and will be removed.',
+          'Deleting a device is no longer supported. Unmanage the device instead.',
       },
     },
     '/devices/get': {
