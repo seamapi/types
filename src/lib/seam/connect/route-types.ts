@@ -109367,6 +109367,139 @@ export type Routes = {
     }
     maxDuration: undefined
   }
+  '/seam/console/v1/credits/checkout/start': {
+    route: '/seam/console/v1/credits/checkout/start'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      organization_id: string
+      package_quantity: number
+      success_url: string
+      cancel_url: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      checkout_url: string
+      credit_subscription_id: string
+    }
+    maxDuration: undefined
+  }
+  '/seam/console/v1/credits/get': {
+    route: '/seam/console/v1/credits/get'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      organization_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      credits: {
+        is_test_mode: boolean
+        credit_subscription: {
+          credit_subscription_id: string
+          status: string
+          package_quantity: number
+          price_cents: number
+          current_period_started_at: string | null
+          current_period_ends_at: string | null
+          past_due_since: string | null
+          canceled_at: string | null
+        } | null
+        usage: {
+          period_started_at: string
+          period_ends_at: string
+          package_tokens: number
+          used_tokens: number
+          remaining_tokens: number
+          extra_tokens: number
+          extra_cents_per_token: number
+          estimated_extra_cents: number
+          percent_used: number
+          breakdown: {
+            billable_action: string
+            label: string
+            count: number
+            token_weight: number
+            tokens: number
+          }[]
+          connectivity: {
+            metric: string
+            label: string
+            device_months: number
+            tokens: number
+          }[]
+        } | null
+      }
+    }
+    maxDuration: undefined
+  }
+  '/seam/console/v1/credits/invoices/list': {
+    route: '/seam/console/v1/credits/invoices/list'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      organization_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      invoices: {
+        invoice_id: string
+        period_started_at: string
+        period_ends_at: string
+        total_cents: number
+        status: string
+        hosted_invoice_url: string | null
+        issued_at: string
+      }[]
+    }
+    maxDuration: undefined
+  }
+  '/seam/console/v1/credits/packages/list': {
+    route: '/seam/console/v1/credits/packages/list'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      organization_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      packages: {
+        package_quantity: number
+        price_cents: number
+        included_cents_per_token: number
+        extra_cents_per_token: number
+      }[]
+      recommended_package_quantity: number
+      recommendation_basis: {
+        trailing_30_day_tokens: number
+      }
+    }
+    maxDuration: undefined
+  }
+  '/seam/console/v1/credits/purchases/get': {
+    route: '/seam/console/v1/credits/purchases/get'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      organization_id: string
+      credit_subscription_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      purchase: {
+        status: string
+        package_quantity: number
+        hosted_invoice_url: string | null
+        failure_reason: string | null
+      }
+    }
+    maxDuration: undefined
+  }
   '/seam/console/v1/get_resource_locator': {
     route: '/seam/console/v1/get_resource_locator'
     method: 'GET' | 'POST'

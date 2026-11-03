@@ -61686,6 +61686,514 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for Console',
       },
     },
+    '/seam/console/v1/credits/checkout/start': {
+      post: {
+        description:
+          "Starts the Stripe Checkout for the first purchase of a monthly token package, or resumes the organization's pending one.",
+        operationId: 'seamConsoleV1CreditsCheckoutStartPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  cancel_url: { format: 'uri', type: 'string' },
+                  organization_id: { format: 'uuid', type: 'string' },
+                  package_quantity: {
+                    exclusiveMinimum: true,
+                    minimum: 0,
+                    type: 'integer',
+                  },
+                  success_url: { format: 'uri', type: 'string' },
+                },
+                required: [
+                  'organization_id',
+                  'package_quantity',
+                  'success_url',
+                  'cancel_url',
+                ],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    checkout_url: { format: 'uri', type: 'string' },
+                    credit_subscription_id: { format: 'uuid', type: 'string' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['checkout_url', 'credit_subscription_id', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/credits/checkout/start',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'credits',
+          'checkout',
+        ],
+        'x-fern-sdk-method-name': 'start',
+        'x-response-key': null,
+        'x-title': 'Start a Credit Subscription Checkout',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/credits/get': {
+      post: {
+        description:
+          "Returns the organization's credit subscription and its token usage for the subscription's current period.",
+        operationId: 'seamConsoleV1CreditsGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  organization_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    credits: {
+                      properties: {
+                        credit_subscription: {
+                          nullable: true,
+                          properties: {
+                            canceled_at: {
+                              format: 'date-time',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            credit_subscription_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            current_period_ends_at: {
+                              format: 'date-time',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            current_period_started_at: {
+                              format: 'date-time',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            package_quantity: {
+                              format: 'float',
+                              type: 'number',
+                            },
+                            past_due_since: {
+                              format: 'date-time',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            price_cents: { format: 'float', type: 'number' },
+                            status: { type: 'string' },
+                          },
+                          required: [
+                            'credit_subscription_id',
+                            'status',
+                            'package_quantity',
+                            'price_cents',
+                            'current_period_started_at',
+                            'current_period_ends_at',
+                            'past_due_since',
+                            'canceled_at',
+                          ],
+                          type: 'object',
+                        },
+                        is_test_mode: { type: 'boolean' },
+                        usage: {
+                          nullable: true,
+                          properties: {
+                            breakdown: {
+                              items: {
+                                properties: {
+                                  billable_action: { type: 'string' },
+                                  count: { format: 'float', type: 'number' },
+                                  label: { type: 'string' },
+                                  token_weight: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  tokens: { format: 'float', type: 'number' },
+                                },
+                                required: [
+                                  'billable_action',
+                                  'label',
+                                  'count',
+                                  'token_weight',
+                                  'tokens',
+                                ],
+                                type: 'object',
+                              },
+                              type: 'array',
+                            },
+                            connectivity: {
+                              items: {
+                                properties: {
+                                  device_months: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  label: { type: 'string' },
+                                  metric: { type: 'string' },
+                                  tokens: { format: 'float', type: 'number' },
+                                },
+                                required: [
+                                  'metric',
+                                  'label',
+                                  'device_months',
+                                  'tokens',
+                                ],
+                                type: 'object',
+                              },
+                              type: 'array',
+                            },
+                            estimated_extra_cents: {
+                              format: 'float',
+                              type: 'number',
+                            },
+                            extra_cents_per_token: {
+                              format: 'float',
+                              type: 'number',
+                            },
+                            extra_tokens: { format: 'float', type: 'number' },
+                            package_tokens: { format: 'float', type: 'number' },
+                            percent_used: { format: 'float', type: 'number' },
+                            period_ends_at: {
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            period_started_at: {
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            remaining_tokens: {
+                              format: 'float',
+                              type: 'number',
+                            },
+                            used_tokens: { format: 'float', type: 'number' },
+                          },
+                          required: [
+                            'period_started_at',
+                            'period_ends_at',
+                            'package_tokens',
+                            'used_tokens',
+                            'remaining_tokens',
+                            'extra_tokens',
+                            'extra_cents_per_token',
+                            'estimated_extra_cents',
+                            'percent_used',
+                            'breakdown',
+                            'connectivity',
+                          ],
+                          type: 'object',
+                        },
+                      },
+                      required: [
+                        'is_test_mode',
+                        'credit_subscription',
+                        'usage',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['credits', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/credits/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'credits'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'credits',
+        'x-response-key': 'credits',
+        'x-title': "Get an Organization's Credits",
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/credits/invoices/list': {
+      post: {
+        description:
+          "Lists the organization's most recent token package invoices, newest first.",
+        operationId: 'seamConsoleV1CreditsInvoicesListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  organization_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    invoices: {
+                      items: {
+                        properties: {
+                          hosted_invoice_url: {
+                            nullable: true,
+                            type: 'string',
+                          },
+                          invoice_id: { type: 'string' },
+                          issued_at: { format: 'date-time', type: 'string' },
+                          period_ends_at: {
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          period_started_at: {
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          status: { type: 'string' },
+                          total_cents: { format: 'float', type: 'number' },
+                        },
+                        required: [
+                          'invoice_id',
+                          'period_started_at',
+                          'period_ends_at',
+                          'total_cents',
+                          'status',
+                          'hosted_invoice_url',
+                          'issued_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['invoices', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/credits/invoices/list',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'credits',
+          'invoices',
+        ],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'invoices',
+        'x-response-key': 'invoices',
+        'x-title': 'List Credit Invoices',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/credits/packages/list': {
+      post: {
+        description:
+          "Lists the purchasable monthly token packages and the package recommended for the organization's trailing 30 days of usage.",
+        operationId: 'seamConsoleV1CreditsPackagesListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  organization_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    packages: {
+                      items: {
+                        properties: {
+                          extra_cents_per_token: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          included_cents_per_token: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          package_quantity: { format: 'float', type: 'number' },
+                          price_cents: { format: 'float', type: 'number' },
+                        },
+                        required: [
+                          'package_quantity',
+                          'price_cents',
+                          'included_cents_per_token',
+                          'extra_cents_per_token',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    recommendation_basis: {
+                      properties: {
+                        trailing_30_day_tokens: {
+                          format: 'float',
+                          type: 'number',
+                        },
+                      },
+                      required: ['trailing_30_day_tokens'],
+                      type: 'object',
+                    },
+                    recommended_package_quantity: {
+                      format: 'float',
+                      type: 'number',
+                    },
+                  },
+                  required: [
+                    'packages',
+                    'recommended_package_quantity',
+                    'recommendation_basis',
+                    'ok',
+                  ],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/credits/packages/list',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'credits',
+          'packages',
+        ],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'packages',
+        'x-response-key': 'packages',
+        'x-title': 'List Credit Packages',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/credits/purchases/get': {
+      post: {
+        description:
+          'Advances a pending credit subscription purchase and returns its status.',
+        operationId: 'seamConsoleV1CreditsPurchasesGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  credit_subscription_id: { format: 'uuid', type: 'string' },
+                  organization_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id', 'credit_subscription_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    purchase: {
+                      properties: {
+                        failure_reason: { nullable: true, type: 'string' },
+                        hosted_invoice_url: { nullable: true, type: 'string' },
+                        package_quantity: { format: 'float', type: 'number' },
+                        status: { type: 'string' },
+                      },
+                      required: [
+                        'status',
+                        'package_quantity',
+                        'hosted_invoice_url',
+                        'failure_reason',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['purchase', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/credits/purchases/get',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'credits',
+          'purchases',
+        ],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'purchase',
+        'x-response-key': 'purchase',
+        'x-title': 'Get a Credit Purchase',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
     '/seam/console/v1/get_resource_locator': {
       get: {
         description:
