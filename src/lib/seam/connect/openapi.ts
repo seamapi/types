@@ -51730,6 +51730,16 @@ const openapi: OpenAPISpec = {
         parameters: [
           {
             in: 'query',
+            name: 'customer_key',
+            schema: {
+              description:
+                'Customer key for which you want to list client sessions.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
             name: 'client_session_id',
             schema: {
               description:
@@ -51777,6 +51787,27 @@ const openapi: OpenAPISpec = {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: {
+              default: 50_000,
+              description: 'Maximum number of records to return per page.',
+              exclusiveMinimum: true,
+              minimum: 0,
+              type: 'integer',
+            },
+          },
+          {
+            in: 'query',
+            name: 'page_cursor',
+            schema: {
+              description:
+                "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+              nullable: true,
+              type: 'string',
+            },
+          },
         ],
         responses: {
           '200': {
@@ -51789,8 +51820,9 @@ const openapi: OpenAPISpec = {
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                   },
-                  required: ['client_sessions', 'ok'],
+                  required: ['client_sessions', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
