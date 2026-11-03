@@ -109512,6 +109512,8 @@ export type Routes = {
         status: string
         package_quantity: number
         hosted_invoice_url: string | null
+        checkout_state: ('awaiting_checkout' | 'processing') | null
+        checkout_url: string | null
         failure_reason: string | null
       }
     }

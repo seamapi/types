@@ -61721,7 +61721,7 @@ const openapi: OpenAPISpec = {
     '/seam/console/v1/credits/checkout/start': {
       post: {
         description:
-          "Starts the Stripe Checkout for the first purchase of a monthly token package, or resumes the organization's pending one.",
+          "Starts the Stripe Checkout for the first purchase of a monthly token package, or replaces the organization's unfinished one.",
         operationId: 'seamConsoleV1CreditsCheckoutStartPost',
         requestBody: {
           content: {
@@ -62172,7 +62172,7 @@ const openapi: OpenAPISpec = {
     '/seam/console/v1/credits/purchases/get': {
       post: {
         description:
-          'Advances a pending credit subscription purchase and returns its status.',
+          'Advances a pending credit subscription purchase and returns its status, including whether its Stripe Checkout was left unfinished.',
         operationId: 'seamConsoleV1CreditsPurchasesGetPost',
         requestBody: {
           content: {
@@ -62197,6 +62197,12 @@ const openapi: OpenAPISpec = {
                     ok: { type: 'boolean' },
                     purchase: {
                       properties: {
+                        checkout_state: {
+                          enum: ['awaiting_checkout', 'processing'],
+                          nullable: true,
+                          type: 'string',
+                        },
+                        checkout_url: { nullable: true, type: 'string' },
                         failure_reason: { nullable: true, type: 'string' },
                         hosted_invoice_url: { nullable: true, type: 'string' },
                         package_quantity: { format: 'float', type: 'number' },
@@ -62206,6 +62212,8 @@ const openapi: OpenAPISpec = {
                         'status',
                         'package_quantity',
                         'hosted_invoice_url',
+                        'checkout_state',
+                        'checkout_url',
                         'failure_reason',
                       ],
                       type: 'object',
