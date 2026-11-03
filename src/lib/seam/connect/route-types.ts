@@ -109500,6 +109500,52 @@ export type Routes = {
     }
     maxDuration: undefined
   }
+  '/seam/console/v1/credits/subscription/cancel': {
+    route: '/seam/console/v1/credits/subscription/cancel'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      organization_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      credit_subscription: {
+        credit_subscription_id: string
+        status: string
+        package_quantity: number
+        price_cents: number
+        current_period_started_at: string | null
+        current_period_ends_at: string | null
+        past_due_since: string | null
+        canceled_at: string | null
+      }
+    }
+    maxDuration: undefined
+  }
+  '/seam/console/v1/credits/subscription/resume': {
+    route: '/seam/console/v1/credits/subscription/resume'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      organization_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      credit_subscription: {
+        credit_subscription_id: string
+        status: string
+        package_quantity: number
+        price_cents: number
+        current_period_started_at: string | null
+        current_period_ends_at: string | null
+        past_due_since: string | null
+        canceled_at: string | null
+      }
+    }
+    maxDuration: undefined
+  }
   '/seam/console/v1/get_resource_locator': {
     route: '/seam/console/v1/get_resource_locator'
     method: 'GET' | 'POST'
