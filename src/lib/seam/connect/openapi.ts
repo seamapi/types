@@ -62194,6 +62194,194 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for Console',
       },
     },
+    '/seam/console/v1/credits/subscription/cancel': {
+      post: {
+        description:
+          "Cancels the organization's credit subscription at the end of its current period. The package stays available until then.",
+        operationId: 'seamConsoleV1CreditsSubscriptionCancelPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  organization_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    credit_subscription: {
+                      properties: {
+                        canceled_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        credit_subscription_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        current_period_ends_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        current_period_started_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        package_quantity: { format: 'float', type: 'number' },
+                        past_due_since: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        price_cents: { format: 'float', type: 'number' },
+                        status: { type: 'string' },
+                      },
+                      required: [
+                        'credit_subscription_id',
+                        'status',
+                        'package_quantity',
+                        'price_cents',
+                        'current_period_started_at',
+                        'current_period_ends_at',
+                        'past_due_since',
+                        'canceled_at',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['credit_subscription', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/credits/subscription/cancel',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'credits',
+          'subscription',
+        ],
+        'x-fern-sdk-method-name': 'cancel',
+        'x-response-key': null,
+        'x-title': 'Cancel a Credit Subscription at Period End',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/credits/subscription/resume': {
+      post: {
+        description:
+          'Undoes a cancellation that has not taken effect yet, so the credit subscription renews at the end of its current period.',
+        operationId: 'seamConsoleV1CreditsSubscriptionResumePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  organization_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    credit_subscription: {
+                      properties: {
+                        canceled_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        credit_subscription_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        current_period_ends_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        current_period_started_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        package_quantity: { format: 'float', type: 'number' },
+                        past_due_since: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        price_cents: { format: 'float', type: 'number' },
+                        status: { type: 'string' },
+                      },
+                      required: [
+                        'credit_subscription_id',
+                        'status',
+                        'package_quantity',
+                        'price_cents',
+                        'current_period_started_at',
+                        'current_period_ends_at',
+                        'past_due_since',
+                        'canceled_at',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['credit_subscription', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/credits/subscription/resume',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'credits',
+          'subscription',
+        ],
+        'x-fern-sdk-method-name': 'resume',
+        'x-response-key': null,
+        'x-title': 'Resume a Canceled Credit Subscription',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
     '/seam/console/v1/get_resource_locator': {
       get: {
         description:
