@@ -109468,6 +109468,8 @@ export type Routes = {
         status: string
         hosted_invoice_url: string | null
         issued_at: string
+        package_quantity: number | null
+        kind: 'package' | 'usage' | 'other'
       }[]
     }
     maxDuration: undefined
