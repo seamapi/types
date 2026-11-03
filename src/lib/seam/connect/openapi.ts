@@ -62114,6 +62114,7 @@ const openapi: OpenAPISpec = {
                       properties: {
                         trailing_30_day_tokens: {
                           format: 'float',
+                          nullable: true,
                           type: 'number',
                         },
                       },
