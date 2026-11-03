@@ -109490,7 +109490,7 @@ export type Routes = {
       }[]
       recommended_package_quantity: number
       recommendation_basis: {
-        trailing_30_day_tokens: number
+        trailing_30_day_tokens: number | null
       }
     }
     maxDuration: undefined
