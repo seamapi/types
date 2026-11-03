@@ -55592,6 +55592,8 @@ export type Routes = {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** Customer key for which you want to list client sessions. */
+      customer_key?: string | undefined
       /** ID of the client session that you want to retrieve. */
       client_session_id?: string | undefined
       /** Your user ID for the user by which you want to filter client sessions. */
@@ -55602,6 +55604,10 @@ export type Routes = {
       without_user_identifier_key?: boolean | undefined
       /** ID of the [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) for which you want to retrieve client sessions. Specify `null` to retrieve client sessions that are not associated with a user identity. */
       user_identity_id?: (string | null) | undefined
+      /** Maximum number of records to return per page. */
+      limit?: number
+      /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
+      page_cursor?: (string | undefined) | null
     }
     formData: {}
     jsonResponse: {
@@ -55632,6 +55638,15 @@ export type Routes = {
         /** ID of the [user identity](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with the client session. */
         user_identity_id?: string | undefined
       }[]
+      /** Information about the current page of results. */
+      pagination: {
+        /** Opaque value that can be used to select the next page of results via the `page_cursor` parameter. */
+        next_page_cursor: string | null
+        /** Indicates whether there is another page of results after this one. */
+        has_next_page: boolean
+        /** URL to get the next page of results. */
+        next_page_url: string | null
+      }
     }
     maxDuration: undefined
   }
