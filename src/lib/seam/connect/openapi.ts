@@ -43235,6 +43235,11 @@ const openapi: OpenAPISpec = {
         scheme: 'bearer',
         type: 'http',
       },
+      internal_billing_service_account: {
+        bearerFormat: 'Seam Internal Billing Service Account Key',
+        scheme: 'bearer',
+        type: 'http',
+      },
       internal_service_agent: {
         bearerFormat: 'Internal Service Agent Key',
         scheme: 'bearer',
