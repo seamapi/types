@@ -15954,7 +15954,8 @@ const openapi: OpenAPISpec = {
             'x-property-group-key': 'hardware',
           },
           device_type: {
-            description: 'Type of the device.',
+            description:
+              'Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`.',
             oneOf: [
               {
                 description: 'Device type for smartlocks.\n          ',
@@ -15976,6 +15977,8 @@ const openapi: OpenAPISpec = {
                   'smartthings_lock',
                   'wyze_lock',
                   'yale_lock',
+                  'yale_access_lock',
+                  'yale_home_lock',
                   'two_n_intercom',
                   'controlbyweb_device',
                   'ttlock_lock',
@@ -40996,7 +40999,8 @@ const openapi: OpenAPISpec = {
             type: 'string',
           },
           device_type: {
-            description: 'Type of the device.',
+            description:
+              'Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`.',
             oneOf: [
               {
                 description: 'Device type for smartlocks.\n          ',
@@ -41018,6 +41022,8 @@ const openapi: OpenAPISpec = {
                   'smartthings_lock',
                   'wyze_lock',
                   'yale_lock',
+                  'yale_access_lock',
+                  'yale_home_lock',
                   'two_n_intercom',
                   'controlbyweb_device',
                   'ttlock_lock',
@@ -55920,6 +55926,8 @@ const openapi: OpenAPISpec = {
                     'smartthings_lock',
                     'wyze_lock',
                     'yale_lock',
+                    'yale_access_lock',
+                    'yale_home_lock',
                     'two_n_intercom',
                     'controlbyweb_device',
                     'ttlock_lock',
@@ -56012,6 +56020,8 @@ const openapi: OpenAPISpec = {
                       'smartthings_lock',
                       'wyze_lock',
                       'yale_lock',
+                      'yale_access_lock',
+                      'yale_home_lock',
                       'two_n_intercom',
                       'controlbyweb_device',
                       'ttlock_lock',
@@ -58271,6 +58281,8 @@ const openapi: OpenAPISpec = {
                     'smartthings_lock',
                     'wyze_lock',
                     'yale_lock',
+                    'yale_access_lock',
+                    'yale_home_lock',
                     'two_n_intercom',
                     'controlbyweb_device',
                     'ttlock_lock',
@@ -58363,6 +58375,8 @@ const openapi: OpenAPISpec = {
                       'smartthings_lock',
                       'wyze_lock',
                       'yale_lock',
+                      'yale_access_lock',
+                      'yale_home_lock',
                       'two_n_intercom',
                       'controlbyweb_device',
                       'ttlock_lock',
@@ -59827,6 +59841,8 @@ const openapi: OpenAPISpec = {
                 'smartthings_lock',
                 'wyze_lock',
                 'yale_lock',
+                'yale_access_lock',
+                'yale_home_lock',
                 'two_n_intercom',
                 'controlbyweb_device',
                 'ttlock_lock',
@@ -59871,6 +59887,8 @@ const openapi: OpenAPISpec = {
                   'smartthings_lock',
                   'wyze_lock',
                   'yale_lock',
+                  'yale_access_lock',
+                  'yale_home_lock',
                   'two_n_intercom',
                   'controlbyweb_device',
                   'ttlock_lock',

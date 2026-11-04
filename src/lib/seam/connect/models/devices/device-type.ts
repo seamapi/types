@@ -2,6 +2,7 @@ import * as z from 'zod/v3'
 
 export const LOCK_DEVICE_TYPE = {
   AKUVOX_LOCK: 'akuvox_lock',
+  /** @deprecated Use YALE_ACCESS_LOCK or YALE_HOME_LOCK. */
   AUGUST_LOCK: 'august_lock',
   BRIVO_ACCESS_POINT: 'brivo_access_point',
   BUTTERFLYMX_PANEL: 'butterflymx_panel',
@@ -17,7 +18,10 @@ export const LOCK_DEVICE_TYPE = {
   SCHLAGE_LOCK: 'schlage_lock',
   SMARTTHINGS_LOCK: 'smartthings_lock',
   WYZE_LOCK: 'wyze_lock',
+  /** @deprecated Use YALE_ACCESS_LOCK or YALE_HOME_LOCK. */
   YALE_LOCK: 'yale_lock',
+  YALE_ACCESS_LOCK: 'yale_access_lock',
+  YALE_HOME_LOCK: 'yale_home_lock',
   TWO_N_INTERCOM: 'two_n_intercom',
   CONTROLBYWEB_DEVICE: 'controlbyweb_device',
   TTLOCK_LOCK: 'ttlock_lock',

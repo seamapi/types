@@ -1059,7 +1059,9 @@ export const device_and_connected_account_error_options = [
 export const device = z
   .object({
     device_id: z.string().uuid().describe('ID of the device.'),
-    device_type: any_device_type.describe('Type of the device.'),
+    device_type: any_device_type.describe(
+      'Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`.',
+    ),
     space_ids: z
       .array(z.string().uuid())
       .describe('IDs of the spaces the device is in.'),
