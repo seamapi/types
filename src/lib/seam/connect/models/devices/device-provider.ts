@@ -15,6 +15,8 @@ export const DEVICE_PROVIDERS = {
   SCHLAGE: 'schlage',
   SMARTTHINGS: 'smartthings',
   YALE: 'yale',
+  YALE_ACCESS: 'yale_access',
+  YALE_HOME: 'yale_home',
   GENIE: 'genie',
   DOORKING: 'doorking',
   SALTO: 'salto',
