@@ -16063,7 +16063,7 @@ export type Routes = {
           | {
               /** ID of the device. */
               device_id: string
-              /** Type of the device. */
+              /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
               device_type:
                 | (
                     | 'akuvox_lock'
@@ -16083,6 +16083,8 @@ export type Routes = {
                     | 'smartthings_lock'
                     | 'wyze_lock'
                     | 'yale_lock'
+                    | 'yale_access_lock'
+                    | 'yale_home_lock'
                     | 'two_n_intercom'
                     | 'controlbyweb_device'
                     | 'ttlock_lock'
@@ -25811,7 +25813,7 @@ export type Routes = {
           | {
               /** ID of the device. */
               device_id: string
-              /** Type of the device. */
+              /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
               device_type:
                 | (
                     | 'akuvox_lock'
@@ -25831,6 +25833,8 @@ export type Routes = {
                     | 'smartthings_lock'
                     | 'wyze_lock'
                     | 'yale_lock'
+                    | 'yale_access_lock'
+                    | 'yale_home_lock'
                     | 'two_n_intercom'
                     | 'controlbyweb_device'
                     | 'ttlock_lock'
@@ -58037,7 +58041,7 @@ export type Routes = {
       device: {
         /** ID of the device. */
         device_id: string
-        /** Type of the device. */
+        /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -58057,6 +58061,8 @@ export type Routes = {
               | 'smartthings_lock'
               | 'wyze_lock'
               | 'yale_lock'
+              | 'yale_access_lock'
+              | 'yale_home_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -60142,6 +60148,8 @@ export type Routes = {
                 | 'smartthings_lock'
                 | 'wyze_lock'
                 | 'yale_lock'
+                | 'yale_access_lock'
+                | 'yale_home_lock'
                 | 'two_n_intercom'
                 | 'controlbyweb_device'
                 | 'ttlock_lock'
@@ -60200,6 +60208,8 @@ export type Routes = {
                 | 'smartthings_lock'
                 | 'wyze_lock'
                 | 'yale_lock'
+                | 'yale_access_lock'
+                | 'yale_home_lock'
                 | 'two_n_intercom'
                 | 'controlbyweb_device'
                 | 'ttlock_lock'
@@ -60401,7 +60411,7 @@ export type Routes = {
       devices: {
         /** ID of the device. */
         device_id: string
-        /** Type of the device. */
+        /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -60421,6 +60431,8 @@ export type Routes = {
               | 'smartthings_lock'
               | 'wyze_lock'
               | 'yale_lock'
+              | 'yale_access_lock'
+              | 'yale_home_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -64075,7 +64087,7 @@ export type Routes = {
       device: {
         /** ID of the device. */
         device_id: string
-        /** Type of the device. */
+        /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -64095,6 +64107,8 @@ export type Routes = {
               | 'smartthings_lock'
               | 'wyze_lock'
               | 'yale_lock'
+              | 'yale_access_lock'
+              | 'yale_home_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -64740,6 +64754,8 @@ export type Routes = {
                 | 'smartthings_lock'
                 | 'wyze_lock'
                 | 'yale_lock'
+                | 'yale_access_lock'
+                | 'yale_home_lock'
                 | 'two_n_intercom'
                 | 'controlbyweb_device'
                 | 'ttlock_lock'
@@ -64798,6 +64814,8 @@ export type Routes = {
                 | 'smartthings_lock'
                 | 'wyze_lock'
                 | 'yale_lock'
+                | 'yale_access_lock'
+                | 'yale_home_lock'
                 | 'two_n_intercom'
                 | 'controlbyweb_device'
                 | 'ttlock_lock'
@@ -64986,7 +65004,7 @@ export type Routes = {
       devices: {
         /** ID of the device. */
         device_id: string
-        /** Type of the device. */
+        /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -65006,6 +65024,8 @@ export type Routes = {
               | 'smartthings_lock'
               | 'wyze_lock'
               | 'yale_lock'
+              | 'yale_access_lock'
+              | 'yale_home_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -76922,7 +76942,7 @@ export type Routes = {
       lock: {
         /** ID of the device. */
         device_id: string
-        /** Type of the device. */
+        /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -76942,6 +76962,8 @@ export type Routes = {
               | 'smartthings_lock'
               | 'wyze_lock'
               | 'yale_lock'
+              | 'yale_access_lock'
+              | 'yale_home_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -78993,7 +79015,7 @@ export type Routes = {
       device: {
         /** ID of the device. */
         device_id: string
-        /** Type of the device. */
+        /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -79013,6 +79035,8 @@ export type Routes = {
               | 'smartthings_lock'
               | 'wyze_lock'
               | 'yale_lock'
+              | 'yale_access_lock'
+              | 'yale_home_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -81095,6 +81119,8 @@ export type Routes = {
             | 'smartthings_lock'
             | 'wyze_lock'
             | 'yale_lock'
+            | 'yale_access_lock'
+            | 'yale_home_lock'
             | 'two_n_intercom'
             | 'controlbyweb_device'
             | 'ttlock_lock'
@@ -81132,6 +81158,8 @@ export type Routes = {
             | 'smartthings_lock'
             | 'wyze_lock'
             | 'yale_lock'
+            | 'yale_access_lock'
+            | 'yale_home_lock'
             | 'two_n_intercom'
             | 'controlbyweb_device'
             | 'ttlock_lock'
@@ -81195,7 +81223,7 @@ export type Routes = {
       locks: {
         /** ID of the device. */
         device_id: string
-        /** Type of the device. */
+        /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -81215,6 +81243,8 @@ export type Routes = {
               | 'smartthings_lock'
               | 'wyze_lock'
               | 'yale_lock'
+              | 'yale_access_lock'
+              | 'yale_home_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -83265,7 +83295,7 @@ export type Routes = {
       devices: {
         /** ID of the device. */
         device_id: string
-        /** Type of the device. */
+        /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -83285,6 +83315,8 @@ export type Routes = {
               | 'smartthings_lock'
               | 'wyze_lock'
               | 'yale_lock'
+              | 'yale_access_lock'
+              | 'yale_home_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -95586,7 +95618,7 @@ export type Routes = {
       noise_sensors: {
         /** ID of the device. */
         device_id: string
-        /** Type of the device. */
+        /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -95606,6 +95638,8 @@ export type Routes = {
               | 'smartthings_lock'
               | 'wyze_lock'
               | 'yale_lock'
+              | 'yale_access_lock'
+              | 'yale_home_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -97656,7 +97690,7 @@ export type Routes = {
       devices: {
         /** ID of the device. */
         device_id: string
-        /** Type of the device. */
+        /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -97676,6 +97710,8 @@ export type Routes = {
               | 'smartthings_lock'
               | 'wyze_lock'
               | 'yale_lock'
+              | 'yale_access_lock'
+              | 'yale_home_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -127012,7 +127048,7 @@ export type Routes = {
           | {
               /** ID of the device. */
               device_id: string
-              /** Type of the device. */
+              /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
               device_type:
                 | (
                     | 'akuvox_lock'
@@ -127032,6 +127068,8 @@ export type Routes = {
                     | 'smartthings_lock'
                     | 'wyze_lock'
                     | 'yale_lock'
+                    | 'yale_access_lock'
+                    | 'yale_home_lock'
                     | 'two_n_intercom'
                     | 'controlbyweb_device'
                     | 'ttlock_lock'
@@ -161039,7 +161077,7 @@ export type Routes = {
       thermostat: {
         /** ID of the device. */
         device_id: string
-        /** Type of the device. */
+        /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -161059,6 +161097,8 @@ export type Routes = {
               | 'smartthings_lock'
               | 'wyze_lock'
               | 'yale_lock'
+              | 'yale_access_lock'
+              | 'yale_home_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -168266,7 +168306,7 @@ export type Routes = {
       thermostats: {
         /** ID of the device. */
         device_id: string
-        /** Type of the device. */
+        /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -168286,6 +168326,8 @@ export type Routes = {
               | 'smartthings_lock'
               | 'wyze_lock'
               | 'yale_lock'
+              | 'yale_access_lock'
+              | 'yale_home_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -170336,7 +170378,7 @@ export type Routes = {
       devices: {
         /** ID of the device. */
         device_id: string
-        /** Type of the device. */
+        /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -170356,6 +170398,8 @@ export type Routes = {
               | 'smartthings_lock'
               | 'wyze_lock'
               | 'yale_lock'
+              | 'yale_access_lock'
+              | 'yale_home_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -183773,7 +183817,7 @@ export type Routes = {
       devices: {
         /** ID of the device. */
         device_id: string
-        /** Type of the device. */
+        /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -183793,6 +183837,8 @@ export type Routes = {
               | 'smartthings_lock'
               | 'wyze_lock'
               | 'yale_lock'
+              | 'yale_access_lock'
+              | 'yale_home_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -185845,7 +185891,7 @@ export type Routes = {
       accessible_devices: {
         /** ID of the device. */
         device_id: string
-        /** Type of the device. */
+        /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -185865,6 +185911,8 @@ export type Routes = {
               | 'smartthings_lock'
               | 'wyze_lock'
               | 'yale_lock'
+              | 'yale_access_lock'
+              | 'yale_home_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -190632,7 +190680,7 @@ export type Routes = {
           | {
               /** ID of the device. */
               device_id: string
-              /** Type of the device. */
+              /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
               device_type:
                 | (
                     | 'akuvox_lock'
@@ -190652,6 +190700,8 @@ export type Routes = {
                     | 'smartthings_lock'
                     | 'wyze_lock'
                     | 'yale_lock'
+                    | 'yale_access_lock'
+                    | 'yale_home_lock'
                     | 'two_n_intercom'
                     | 'controlbyweb_device'
                     | 'ttlock_lock'
@@ -196882,7 +196932,7 @@ export type Routes = {
           | {
               /** ID of the device. */
               device_id: string
-              /** Type of the device. */
+              /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
               device_type:
                 | (
                     | 'akuvox_lock'
@@ -196902,6 +196952,8 @@ export type Routes = {
                     | 'smartthings_lock'
                     | 'wyze_lock'
                     | 'yale_lock'
+                    | 'yale_access_lock'
+                    | 'yale_home_lock'
                     | 'two_n_intercom'
                     | 'controlbyweb_device'
                     | 'ttlock_lock'
