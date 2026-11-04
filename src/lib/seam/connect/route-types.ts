@@ -109421,6 +109421,13 @@ export type Routes = {
           current_period_ends_at: string | null
           past_due_since: string | null
           canceled_at: string | null
+          scheduled_package_quantity: number | null
+          scheduled_price_cents: number | null
+          scheduled_change_at: string | null
+          pending_upgrade: {
+            package_quantity: number
+            hosted_invoice_url: string | null
+          } | null
         } | null
         usage: {
           as_of: string
@@ -109539,6 +109546,81 @@ export type Routes = {
         current_period_ends_at: string | null
         past_due_since: string | null
         canceled_at: string | null
+        scheduled_package_quantity: number | null
+        scheduled_price_cents: number | null
+        scheduled_change_at: string | null
+        pending_upgrade: {
+          package_quantity: number
+          hosted_invoice_url: string | null
+        } | null
+      }
+    }
+    maxDuration: undefined
+  }
+  '/seam/console/v1/credits/subscription/change': {
+    route: '/seam/console/v1/credits/subscription/change'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      organization_id: string
+      package_quantity: number
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      credit_subscription: {
+        credit_subscription_id: string
+        status: string
+        package_quantity: number
+        price_cents: number
+        current_period_started_at: string | null
+        current_period_ends_at: string | null
+        past_due_since: string | null
+        canceled_at: string | null
+        scheduled_package_quantity: number | null
+        scheduled_price_cents: number | null
+        scheduled_change_at: string | null
+        pending_upgrade: {
+          package_quantity: number
+          hosted_invoice_url: string | null
+        } | null
+      }
+      change: {
+        kind: 'upgrade' | 'downgrade'
+        status:
+          'applied' | 'scheduled' | 'awaiting_authentication' | 'processing'
+        hosted_invoice_url: string | null
+        carried_credits: number | null
+      }
+    }
+    maxDuration: undefined
+  }
+  '/seam/console/v1/credits/subscription/change/cancel': {
+    route: '/seam/console/v1/credits/subscription/change/cancel'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      organization_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      credit_subscription: {
+        credit_subscription_id: string
+        status: string
+        package_quantity: number
+        price_cents: number
+        current_period_started_at: string | null
+        current_period_ends_at: string | null
+        past_due_since: string | null
+        canceled_at: string | null
+        scheduled_package_quantity: number | null
+        scheduled_price_cents: number | null
+        scheduled_change_at: string | null
+        pending_upgrade: {
+          package_quantity: number
+          hosted_invoice_url: string | null
+        } | null
       }
     }
     maxDuration: undefined
@@ -109562,6 +109644,13 @@ export type Routes = {
         current_period_ends_at: string | null
         past_due_since: string | null
         canceled_at: string | null
+        scheduled_package_quantity: number | null
+        scheduled_price_cents: number | null
+        scheduled_change_at: string | null
+        pending_upgrade: {
+          package_quantity: number
+          hosted_invoice_url: string | null
+        } | null
       }
     }
     maxDuration: undefined
