@@ -61860,6 +61860,7 @@ const openapi: OpenAPISpec = {
                         usage: {
                           nullable: true,
                           properties: {
+                            as_of: { format: 'date-time', type: 'string' },
                             breakdown: {
                               items: {
                                 properties: {
@@ -61930,6 +61931,7 @@ const openapi: OpenAPISpec = {
                             used_tokens: { format: 'float', type: 'number' },
                           },
                           required: [
+                            'as_of',
                             'period_started_at',
                             'period_ends_at',
                             'package_tokens',
@@ -62431,6 +62433,231 @@ const openapi: OpenAPISpec = {
         'x-fern-sdk-method-name': 'resume',
         'x-response-key': null,
         'x-title': 'Resume a Canceled Credit Subscription',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/credits/usage/get': {
+      post: {
+        description:
+          "Returns the organization's credit usage for the current subscription period (or the trailing 30 days without a subscription), broken down by workspace, by action and by day.",
+        operationId: 'seamConsoleV1CreditsUsageGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  organization_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    usage: {
+                      properties: {
+                        as_of: { format: 'date-time', type: 'string' },
+                        by_category: {
+                          items: {
+                            properties: {
+                              credits: { format: 'float', type: 'number' },
+                              credits_per_unit: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              key: { type: 'string' },
+                              kind: {
+                                enum: ['connectivity', 'action'],
+                                type: 'string',
+                              },
+                              label: { type: 'string' },
+                              percent_of_total: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              quantity: { format: 'float', type: 'number' },
+                            },
+                            required: [
+                              'kind',
+                              'key',
+                              'label',
+                              'quantity',
+                              'credits_per_unit',
+                              'credits',
+                              'percent_of_total',
+                            ],
+                            type: 'object',
+                          },
+                          nullable: true,
+                          type: 'array',
+                        },
+                        by_workspace: {
+                          items: {
+                            properties: {
+                              actions: {
+                                items: {
+                                  properties: {
+                                    billable_action: { type: 'string' },
+                                    count: { format: 'float', type: 'number' },
+                                    credits: {
+                                      format: 'float',
+                                      type: 'number',
+                                    },
+                                    label: { type: 'string' },
+                                  },
+                                  required: [
+                                    'billable_action',
+                                    'label',
+                                    'count',
+                                    'credits',
+                                  ],
+                                  type: 'object',
+                                },
+                                type: 'array',
+                              },
+                              connectivity: {
+                                items: {
+                                  properties: {
+                                    credits: {
+                                      format: 'float',
+                                      type: 'number',
+                                    },
+                                    credits_per_device_month: {
+                                      format: 'float',
+                                      type: 'number',
+                                    },
+                                    device_months: {
+                                      format: 'float',
+                                      type: 'number',
+                                    },
+                                    label: { type: 'string' },
+                                    metric: { type: 'string' },
+                                  },
+                                  required: [
+                                    'metric',
+                                    'label',
+                                    'device_months',
+                                    'credits_per_device_month',
+                                    'credits',
+                                  ],
+                                  type: 'object',
+                                },
+                                type: 'array',
+                              },
+                              credits: { format: 'float', type: 'number' },
+                              percent_of_total: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              workspace_id: { nullable: true, type: 'string' },
+                              workspace_name: {
+                                nullable: true,
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'workspace_id',
+                              'workspace_name',
+                              'connectivity',
+                              'actions',
+                              'credits',
+                              'percent_of_total',
+                            ],
+                            type: 'object',
+                          },
+                          nullable: true,
+                          type: 'array',
+                        },
+                        daily: {
+                          items: {
+                            properties: {
+                              action_credits: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              connectivity_credits: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              date: { type: 'string' },
+                              previous_period_credits: {
+                                format: 'float',
+                                nullable: true,
+                                type: 'number',
+                              },
+                            },
+                            required: [
+                              'date',
+                              'connectivity_credits',
+                              'action_credits',
+                              'previous_period_credits',
+                            ],
+                            type: 'object',
+                          },
+                          nullable: true,
+                          type: 'array',
+                        },
+                        is_daily_connectivity_included: { type: 'boolean' },
+                        package_credits: {
+                          format: 'float',
+                          nullable: true,
+                          type: 'number',
+                        },
+                        period_ends_at: { format: 'date-time', type: 'string' },
+                        period_started_at: {
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        source: {
+                          enum: ['metronome', 'estimate'],
+                          type: 'string',
+                        },
+                        used_credits: {
+                          format: 'float',
+                          nullable: true,
+                          type: 'number',
+                        },
+                      },
+                      required: [
+                        'source',
+                        'as_of',
+                        'period_started_at',
+                        'period_ends_at',
+                        'package_credits',
+                        'used_credits',
+                        'by_workspace',
+                        'by_category',
+                        'daily',
+                        'is_daily_connectivity_included',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['usage', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/credits/usage/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'credits', 'usage'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'usage',
+        'x-response-key': 'usage',
+        'x-title': "Get an Organization's Credit Usage in Detail",
         'x-undocumented': 'Internal endpoint for Console',
       },
     },

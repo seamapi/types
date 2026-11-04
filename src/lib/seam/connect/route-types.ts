@@ -109423,6 +109423,7 @@ export type Routes = {
           canceled_at: string | null
         } | null
         usage: {
+          as_of: string
           period_started_at: string
           period_ends_at: string
           package_tokens: number
@@ -109561,6 +109562,68 @@ export type Routes = {
         current_period_ends_at: string | null
         past_due_since: string | null
         canceled_at: string | null
+      }
+    }
+    maxDuration: undefined
+  }
+  '/seam/console/v1/credits/usage/get': {
+    route: '/seam/console/v1/credits/usage/get'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      organization_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      usage: {
+        source: 'metronome' | 'estimate'
+        as_of: string
+        period_started_at: string
+        period_ends_at: string
+        package_credits: number | null
+        used_credits: number | null
+        by_workspace:
+          | {
+              workspace_id: string | null
+              workspace_name: string | null
+              connectivity: {
+                metric: string
+                label: string
+                device_months: number
+                credits_per_device_month: number
+                credits: number
+              }[]
+              actions: {
+                billable_action: string
+                label: string
+                count: number
+                credits: number
+              }[]
+              credits: number
+              percent_of_total: number
+            }[]
+          | null
+        by_category:
+          | {
+              kind: 'connectivity' | 'action'
+              key: string
+              label: string
+              quantity: number
+              credits_per_unit: number
+              credits: number
+              percent_of_total: number
+            }[]
+          | null
+        daily:
+          | {
+              date: string
+              connectivity_credits: number
+              action_credits: number
+              previous_period_credits: number | null
+            }[]
+          | null
+        is_daily_connectivity_included: boolean
       }
     }
     maxDuration: undefined
