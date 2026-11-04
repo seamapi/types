@@ -61841,7 +61841,40 @@ const openapi: OpenAPISpec = {
                               nullable: true,
                               type: 'string',
                             },
+                            pending_upgrade: {
+                              nullable: true,
+                              properties: {
+                                hosted_invoice_url: {
+                                  nullable: true,
+                                  type: 'string',
+                                },
+                                package_quantity: {
+                                  format: 'float',
+                                  type: 'number',
+                                },
+                              },
+                              required: [
+                                'package_quantity',
+                                'hosted_invoice_url',
+                              ],
+                              type: 'object',
+                            },
                             price_cents: { format: 'float', type: 'number' },
+                            scheduled_change_at: {
+                              format: 'date-time',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            scheduled_package_quantity: {
+                              format: 'float',
+                              nullable: true,
+                              type: 'number',
+                            },
+                            scheduled_price_cents: {
+                              format: 'float',
+                              nullable: true,
+                              type: 'number',
+                            },
                             status: { type: 'string' },
                           },
                           required: [
@@ -61853,6 +61886,10 @@ const openapi: OpenAPISpec = {
                             'current_period_ends_at',
                             'past_due_since',
                             'canceled_at',
+                            'scheduled_package_quantity',
+                            'scheduled_price_cents',
+                            'scheduled_change_at',
+                            'pending_upgrade',
                           ],
                           type: 'object',
                         },
@@ -62299,7 +62336,37 @@ const openapi: OpenAPISpec = {
                           nullable: true,
                           type: 'string',
                         },
+                        pending_upgrade: {
+                          nullable: true,
+                          properties: {
+                            hosted_invoice_url: {
+                              nullable: true,
+                              type: 'string',
+                            },
+                            package_quantity: {
+                              format: 'float',
+                              type: 'number',
+                            },
+                          },
+                          required: ['package_quantity', 'hosted_invoice_url'],
+                          type: 'object',
+                        },
                         price_cents: { format: 'float', type: 'number' },
+                        scheduled_change_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        scheduled_package_quantity: {
+                          format: 'float',
+                          nullable: true,
+                          type: 'number',
+                        },
+                        scheduled_price_cents: {
+                          format: 'float',
+                          nullable: true,
+                          type: 'number',
+                        },
                         status: { type: 'string' },
                       },
                       required: [
@@ -62311,6 +62378,10 @@ const openapi: OpenAPISpec = {
                         'current_period_ends_at',
                         'past_due_since',
                         'canceled_at',
+                        'scheduled_package_quantity',
+                        'scheduled_price_cents',
+                        'scheduled_change_at',
+                        'pending_upgrade',
                       ],
                       type: 'object',
                     },
@@ -62339,6 +62410,298 @@ const openapi: OpenAPISpec = {
         'x-fern-sdk-method-name': 'cancel',
         'x-response-key': null,
         'x-title': 'Cancel a Credit Subscription at Period End',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/credits/subscription/change': {
+      post: {
+        description:
+          'Upgrades to a larger package immediately, charging its full price and carrying the unused credits over, or schedules a downgrade to a smaller package for the end of the current period.',
+        operationId: 'seamConsoleV1CreditsSubscriptionChangePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  organization_id: { format: 'uuid', type: 'string' },
+                  package_quantity: {
+                    exclusiveMinimum: true,
+                    minimum: 0,
+                    type: 'integer',
+                  },
+                },
+                required: ['organization_id', 'package_quantity'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    change: {
+                      properties: {
+                        carried_credits: {
+                          format: 'float',
+                          nullable: true,
+                          type: 'number',
+                        },
+                        hosted_invoice_url: { nullable: true, type: 'string' },
+                        kind: {
+                          enum: ['upgrade', 'downgrade'],
+                          type: 'string',
+                        },
+                        status: {
+                          enum: [
+                            'applied',
+                            'scheduled',
+                            'awaiting_authentication',
+                            'processing',
+                          ],
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'kind',
+                        'status',
+                        'hosted_invoice_url',
+                        'carried_credits',
+                      ],
+                      type: 'object',
+                    },
+                    credit_subscription: {
+                      properties: {
+                        canceled_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        credit_subscription_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        current_period_ends_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        current_period_started_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        package_quantity: { format: 'float', type: 'number' },
+                        past_due_since: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        pending_upgrade: {
+                          nullable: true,
+                          properties: {
+                            hosted_invoice_url: {
+                              nullable: true,
+                              type: 'string',
+                            },
+                            package_quantity: {
+                              format: 'float',
+                              type: 'number',
+                            },
+                          },
+                          required: ['package_quantity', 'hosted_invoice_url'],
+                          type: 'object',
+                        },
+                        price_cents: { format: 'float', type: 'number' },
+                        scheduled_change_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        scheduled_package_quantity: {
+                          format: 'float',
+                          nullable: true,
+                          type: 'number',
+                        },
+                        scheduled_price_cents: {
+                          format: 'float',
+                          nullable: true,
+                          type: 'number',
+                        },
+                        status: { type: 'string' },
+                      },
+                      required: [
+                        'credit_subscription_id',
+                        'status',
+                        'package_quantity',
+                        'price_cents',
+                        'current_period_started_at',
+                        'current_period_ends_at',
+                        'past_due_since',
+                        'canceled_at',
+                        'scheduled_package_quantity',
+                        'scheduled_price_cents',
+                        'scheduled_change_at',
+                        'pending_upgrade',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['credit_subscription', 'change', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/credits/subscription/change',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'credits',
+          'subscription',
+        ],
+        'x-fern-sdk-method-name': 'change',
+        'x-response-key': null,
+        'x-title': "Change a Credit Subscription's Package",
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/credits/subscription/change/cancel': {
+      post: {
+        description:
+          'Undoes a package downgrade that has not taken effect yet, so the credit subscription keeps its current package.',
+        operationId: 'seamConsoleV1CreditsSubscriptionChangeCancelPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  organization_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    credit_subscription: {
+                      properties: {
+                        canceled_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        credit_subscription_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        current_period_ends_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        current_period_started_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        package_quantity: { format: 'float', type: 'number' },
+                        past_due_since: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        pending_upgrade: {
+                          nullable: true,
+                          properties: {
+                            hosted_invoice_url: {
+                              nullable: true,
+                              type: 'string',
+                            },
+                            package_quantity: {
+                              format: 'float',
+                              type: 'number',
+                            },
+                          },
+                          required: ['package_quantity', 'hosted_invoice_url'],
+                          type: 'object',
+                        },
+                        price_cents: { format: 'float', type: 'number' },
+                        scheduled_change_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        scheduled_package_quantity: {
+                          format: 'float',
+                          nullable: true,
+                          type: 'number',
+                        },
+                        scheduled_price_cents: {
+                          format: 'float',
+                          nullable: true,
+                          type: 'number',
+                        },
+                        status: { type: 'string' },
+                      },
+                      required: [
+                        'credit_subscription_id',
+                        'status',
+                        'package_quantity',
+                        'price_cents',
+                        'current_period_started_at',
+                        'current_period_ends_at',
+                        'past_due_since',
+                        'canceled_at',
+                        'scheduled_package_quantity',
+                        'scheduled_price_cents',
+                        'scheduled_change_at',
+                        'pending_upgrade',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['credit_subscription', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/credits/subscription/change/cancel',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'credits',
+          'subscription',
+          'change',
+        ],
+        'x-fern-sdk-method-name': 'cancel',
+        'x-response-key': null,
+        'x-title': 'Cancel a Scheduled Credit Package Change',
         'x-undocumented': 'Internal endpoint for Console',
       },
     },
@@ -62393,7 +62756,37 @@ const openapi: OpenAPISpec = {
                           nullable: true,
                           type: 'string',
                         },
+                        pending_upgrade: {
+                          nullable: true,
+                          properties: {
+                            hosted_invoice_url: {
+                              nullable: true,
+                              type: 'string',
+                            },
+                            package_quantity: {
+                              format: 'float',
+                              type: 'number',
+                            },
+                          },
+                          required: ['package_quantity', 'hosted_invoice_url'],
+                          type: 'object',
+                        },
                         price_cents: { format: 'float', type: 'number' },
+                        scheduled_change_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        scheduled_package_quantity: {
+                          format: 'float',
+                          nullable: true,
+                          type: 'number',
+                        },
+                        scheduled_price_cents: {
+                          format: 'float',
+                          nullable: true,
+                          type: 'number',
+                        },
                         status: { type: 'string' },
                       },
                       required: [
@@ -62405,6 +62798,10 @@ const openapi: OpenAPISpec = {
                         'current_period_ends_at',
                         'past_due_since',
                         'canceled_at',
+                        'scheduled_package_quantity',
+                        'scheduled_price_cents',
+                        'scheduled_change_at',
+                        'pending_upgrade',
                       ],
                       type: 'object',
                     },
