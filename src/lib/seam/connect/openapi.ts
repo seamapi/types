@@ -62219,7 +62219,7 @@ const openapi: OpenAPISpec = {
     '/seam/console/v1/credits/packages/list': {
       post: {
         description:
-          "Lists the purchasable monthly token packages and the package recommended for the organization's trailing 30 days of usage.",
+          "Lists the self-serve monthly token packages and the package recommended for the organization's trailing 30 days of usage.",
         operationId: 'seamConsoleV1CreditsPackagesListPost',
         requestBody: {
           content: {
@@ -62267,6 +62267,7 @@ const openapi: OpenAPISpec = {
                     },
                     recommendation_basis: {
                       properties: {
+                        exceeds_self_serve: { type: 'boolean' },
                         is_projected_from_trial: { type: 'boolean' },
                         trailing_30_day_tokens: {
                           format: 'float',
@@ -62277,6 +62278,7 @@ const openapi: OpenAPISpec = {
                       required: [
                         'trailing_30_day_tokens',
                         'is_projected_from_trial',
+                        'exceeds_self_serve',
                       ],
                       type: 'object',
                     },
