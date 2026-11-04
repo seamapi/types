@@ -61894,6 +61894,44 @@ const openapi: OpenAPISpec = {
                           type: 'object',
                         },
                         is_test_mode: { type: 'boolean' },
+                        trial: {
+                          nullable: true,
+                          properties: {
+                            is_active: { type: 'boolean' },
+                            is_credits_used_up: { type: 'boolean' },
+                            is_suspended: { type: 'boolean' },
+                            remaining_credits: {
+                              format: 'float',
+                              nullable: true,
+                              type: 'number',
+                            },
+                            trial_credits: { format: 'float', type: 'number' },
+                            trial_ends_at: {
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            trial_started_at: {
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            used_credits: {
+                              format: 'float',
+                              nullable: true,
+                              type: 'number',
+                            },
+                          },
+                          required: [
+                            'trial_started_at',
+                            'trial_ends_at',
+                            'is_active',
+                            'is_suspended',
+                            'trial_credits',
+                            'used_credits',
+                            'remaining_credits',
+                            'is_credits_used_up',
+                          ],
+                          type: 'object',
+                        },
                         usage: {
                           nullable: true,
                           properties: {
@@ -61987,6 +62025,7 @@ const openapi: OpenAPISpec = {
                       required: [
                         'is_test_mode',
                         'credit_subscription',
+                        'trial',
                         'usage',
                       ],
                       type: 'object',
@@ -62162,13 +62201,17 @@ const openapi: OpenAPISpec = {
                     },
                     recommendation_basis: {
                       properties: {
+                        is_projected_from_trial: { type: 'boolean' },
                         trailing_30_day_tokens: {
                           format: 'float',
                           nullable: true,
                           type: 'number',
                         },
                       },
-                      required: ['trailing_30_day_tokens'],
+                      required: [
+                        'trailing_30_day_tokens',
+                        'is_projected_from_trial',
+                      ],
                       type: 'object',
                     },
                     recommended_package_quantity: {
