@@ -61958,6 +61958,10 @@ const openapi: OpenAPISpec = {
                         usage: {
                           nullable: true,
                           properties: {
+                            allowance_tokens: {
+                              format: 'float',
+                              type: 'number',
+                            },
                             as_of: { format: 'date-time', type: 'string' },
                             breakdown: {
                               items: {
@@ -61982,6 +61986,33 @@ const openapi: OpenAPISpec = {
                               },
                               type: 'array',
                             },
+                            carried_credit_grants: {
+                              items: {
+                                properties: {
+                                  expires_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  remaining_tokens: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  tokens: { format: 'float', type: 'number' },
+                                },
+                                required: [
+                                  'tokens',
+                                  'remaining_tokens',
+                                  'expires_at',
+                                ],
+                                type: 'object',
+                              },
+                              type: 'array',
+                            },
+                            carried_remaining_tokens: {
+                              format: 'float',
+                              type: 'number',
+                            },
+                            carried_tokens: { format: 'float', type: 'number' },
                             connectivity: {
                               items: {
                                 properties: {
@@ -62012,6 +62043,10 @@ const openapi: OpenAPISpec = {
                               type: 'number',
                             },
                             extra_tokens: { format: 'float', type: 'number' },
+                            package_remaining_tokens: {
+                              format: 'float',
+                              type: 'number',
+                            },
                             package_tokens: { format: 'float', type: 'number' },
                             percent_used: { format: 'float', type: 'number' },
                             period_ends_at: {
@@ -62033,8 +62068,13 @@ const openapi: OpenAPISpec = {
                             'period_started_at',
                             'period_ends_at',
                             'package_tokens',
-                            'used_tokens',
+                            'package_remaining_tokens',
+                            'allowance_tokens',
+                            'carried_tokens',
+                            'carried_remaining_tokens',
+                            'carried_credit_grants',
                             'remaining_tokens',
+                            'used_tokens',
                             'extra_tokens',
                             'extra_cents_per_token',
                             'estimated_extra_cents',
@@ -62926,6 +62966,59 @@ const openapi: OpenAPISpec = {
                     ok: { type: 'boolean' },
                     usage: {
                       properties: {
+                        allowance: {
+                          nullable: true,
+                          properties: {
+                            allowance_tokens: {
+                              format: 'float',
+                              type: 'number',
+                            },
+                            carried_credit_grants: {
+                              items: {
+                                properties: {
+                                  expires_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  remaining_tokens: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  tokens: { format: 'float', type: 'number' },
+                                },
+                                required: [
+                                  'tokens',
+                                  'remaining_tokens',
+                                  'expires_at',
+                                ],
+                                type: 'object',
+                              },
+                              type: 'array',
+                            },
+                            carried_remaining_tokens: {
+                              format: 'float',
+                              type: 'number',
+                            },
+                            carried_tokens: { format: 'float', type: 'number' },
+                            package_remaining_tokens: {
+                              format: 'float',
+                              type: 'number',
+                            },
+                            remaining_tokens: {
+                              format: 'float',
+                              type: 'number',
+                            },
+                          },
+                          required: [
+                            'package_remaining_tokens',
+                            'allowance_tokens',
+                            'carried_tokens',
+                            'carried_remaining_tokens',
+                            'carried_credit_grants',
+                            'remaining_tokens',
+                          ],
+                          type: 'object',
+                        },
                         as_of: { format: 'date-time', type: 'string' },
                         by_category: {
                           items: {
@@ -63094,6 +63187,7 @@ const openapi: OpenAPISpec = {
                         'period_started_at',
                         'period_ends_at',
                         'package_credits',
+                        'allowance',
                         'used_credits',
                         'by_workspace',
                         'by_category',

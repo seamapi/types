@@ -109480,8 +109480,17 @@ export type Routes = {
           period_started_at: string
           period_ends_at: string
           package_tokens: number
-          used_tokens: number
+          package_remaining_tokens: number
+          allowance_tokens: number
+          carried_tokens: number
+          carried_remaining_tokens: number
+          carried_credit_grants: {
+            tokens: number
+            remaining_tokens: number
+            expires_at: string
+          }[]
           remaining_tokens: number
+          used_tokens: number
           extra_tokens: number
           extra_cents_per_token: number
           estimated_extra_cents: number
@@ -109718,6 +109727,18 @@ export type Routes = {
         period_started_at: string
         period_ends_at: string
         package_credits: number | null
+        allowance: {
+          package_remaining_tokens: number
+          allowance_tokens: number
+          carried_tokens: number
+          carried_remaining_tokens: number
+          carried_credit_grants: {
+            tokens: number
+            remaining_tokens: number
+            expires_at: string
+          }[]
+          remaining_tokens: number
+        } | null
         used_credits: number | null
         by_workspace:
           | {
