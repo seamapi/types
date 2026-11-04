@@ -109560,6 +109560,7 @@ export type Routes = {
       recommendation_basis: {
         trailing_30_day_tokens: number | null
         is_projected_from_trial: boolean
+        exceeds_self_serve: boolean
       }
     }
     maxDuration: undefined
