@@ -109429,6 +109429,16 @@ export type Routes = {
             hosted_invoice_url: string | null
           } | null
         } | null
+        trial: {
+          trial_started_at: string
+          trial_ends_at: string
+          is_active: boolean
+          is_suspended: boolean
+          trial_credits: number
+          used_credits: number | null
+          remaining_credits: number | null
+          is_credits_used_up: boolean
+        } | null
         usage: {
           as_of: string
           period_started_at: string
@@ -109501,6 +109511,7 @@ export type Routes = {
       recommended_package_quantity: number
       recommendation_basis: {
         trailing_30_day_tokens: number | null
+        is_projected_from_trial: boolean
       }
     }
     maxDuration: undefined
