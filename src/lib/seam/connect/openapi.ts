@@ -61747,7 +61747,7 @@ const openapi: OpenAPISpec = {
     '/seam/console/v1/credits/checkout/start': {
       post: {
         description:
-          "Starts the Stripe Checkout for the first purchase of a monthly token package, or replaces the organization's unfinished one.",
+          "Starts the Stripe Checkout for the first purchase of a monthly credit package, or replaces the organization's unfinished one.",
         operationId: 'seamConsoleV1CreditsCheckoutStartPost',
         requestBody: {
           content: {
@@ -61813,7 +61813,7 @@ const openapi: OpenAPISpec = {
     '/seam/console/v1/credits/get': {
       post: {
         description:
-          "Returns the organization's credit subscription and its token usage for the subscription's current period.",
+          "Returns the organization's credit subscription and its credit usage for the subscription's current period.",
         operationId: 'seamConsoleV1CreditsGetPost',
         requestBody: {
           content: {
@@ -62139,7 +62139,7 @@ const openapi: OpenAPISpec = {
     '/seam/console/v1/credits/invoices/list': {
       post: {
         description:
-          "Lists the organization's most recent token package invoices, newest first.",
+          "Lists the organization's most recent credit package invoices, newest first.",
         operationId: 'seamConsoleV1CreditsInvoicesListPost',
         requestBody: {
           content: {
@@ -62236,7 +62236,7 @@ const openapi: OpenAPISpec = {
     '/seam/console/v1/credits/packages/list': {
       post: {
         description:
-          "Lists the self-serve monthly token packages and the package recommended for the organization's trailing 30 days of usage.",
+          "Lists the purchasable monthly credit packages and the package recommended for the organization's trailing 30 days of usage.",
         operationId: 'seamConsoleV1CreditsPackagesListPost',
         requestBody: {
           content: {
@@ -62284,7 +62284,6 @@ const openapi: OpenAPISpec = {
                     },
                     recommendation_basis: {
                       properties: {
-                        exceeds_self_serve: { type: 'boolean' },
                         is_projected_from_trial: { type: 'boolean' },
                         trailing_30_day_tokens: {
                           format: 'float',
@@ -62295,7 +62294,6 @@ const openapi: OpenAPISpec = {
                       required: [
                         'trailing_30_day_tokens',
                         'is_projected_from_trial',
-                        'exceeds_self_serve',
                       ],
                       type: 'object',
                     },
