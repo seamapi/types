@@ -22,6 +22,7 @@ export const LOCK_DEVICE_TYPE = {
   YALE_LOCK: 'yale_lock',
   YALE_ACCESS_LOCK: 'yale_access_lock',
   YALE_HOME_LOCK: 'yale_home_lock',
+  YALE_CONNECT_LOCK: 'yale_connect_lock',
   TWO_N_INTERCOM: 'two_n_intercom',
   CONTROLBYWEB_DEVICE: 'controlbyweb_device',
   TTLOCK_LOCK: 'ttlock_lock',
