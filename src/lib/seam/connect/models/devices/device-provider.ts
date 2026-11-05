@@ -126,6 +126,10 @@ export const PROVIDER_CATEGORY_MAP = {
     'ultraloq',
     'dormakaba_oracode',
     'ring',
+    'tapo',
+    'arlo',
+    'reolink',
+    'unifi_protect',
     'korelock',
     'keyincode',
     'omnitec',
@@ -156,7 +160,15 @@ export const PROVIDER_CATEGORY_MAP = {
     'yacan',
   ],
 
-  beta: ['salto_ks_accept', 'aqara', 'tapo', 'arlo', 'sifely'],
+  beta: [
+    'salto_ks_accept',
+    'aqara',
+    'tapo',
+    'arlo',
+    'sifely',
+    'reolink',
+    'unifi_protect',
+  ],
 
   thermostats: ['ecobee', 'nest', 'sensi', 'honeywell_resideo', 'first_alert'],
   noise_sensors: ['minut', 'noiseaware'],
