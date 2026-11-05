@@ -109459,6 +109459,10 @@ export type Routes = {
           current_period_started_at: string | null
           current_period_ends_at: string | null
           past_due_since: string | null
+          payment_failure: {
+            grace_ends_at: string
+            amount_due_cents: number | null
+          } | null
           canceled_at: string | null
           scheduled_package_quantity: number | null
           scheduled_price_cents: number | null
@@ -109565,6 +109569,59 @@ export type Routes = {
     }
     maxDuration: undefined
   }
+  '/seam/console/v1/credits/payment_method/confirm': {
+    route: '/seam/console/v1/credits/payment_method/confirm'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      organization_id: string
+      checkout_session_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      credit_subscription: {
+        credit_subscription_id: string
+        status: string
+        package_quantity: number
+        price_cents: number
+        current_period_started_at: string | null
+        current_period_ends_at: string | null
+        past_due_since: string | null
+        payment_failure: {
+          grace_ends_at: string
+          amount_due_cents: number | null
+        } | null
+        canceled_at: string | null
+        scheduled_package_quantity: number | null
+        scheduled_price_cents: number | null
+        scheduled_change_at: string | null
+        pending_upgrade: {
+          package_quantity: number
+          hosted_invoice_url: string | null
+        } | null
+      } | null
+      paid_invoice_count: number
+      unpaid_invoice_count: number
+    }
+    maxDuration: undefined
+  }
+  '/seam/console/v1/credits/payment_method/update': {
+    route: '/seam/console/v1/credits/payment_method/update'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      organization_id: string
+      success_url: string
+      cancel_url: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      checkout_url: string
+    }
+    maxDuration: undefined
+  }
   '/seam/console/v1/credits/purchases/get': {
     route: '/seam/console/v1/credits/purchases/get'
     method: 'POST'
@@ -109605,6 +109662,10 @@ export type Routes = {
         current_period_started_at: string | null
         current_period_ends_at: string | null
         past_due_since: string | null
+        payment_failure: {
+          grace_ends_at: string
+          amount_due_cents: number | null
+        } | null
         canceled_at: string | null
         scheduled_package_quantity: number | null
         scheduled_price_cents: number | null
@@ -109636,6 +109697,10 @@ export type Routes = {
         current_period_started_at: string | null
         current_period_ends_at: string | null
         past_due_since: string | null
+        payment_failure: {
+          grace_ends_at: string
+          amount_due_cents: number | null
+        } | null
         canceled_at: string | null
         scheduled_package_quantity: number | null
         scheduled_price_cents: number | null
@@ -109673,6 +109738,10 @@ export type Routes = {
         current_period_started_at: string | null
         current_period_ends_at: string | null
         past_due_since: string | null
+        payment_failure: {
+          grace_ends_at: string
+          amount_due_cents: number | null
+        } | null
         canceled_at: string | null
         scheduled_package_quantity: number | null
         scheduled_price_cents: number | null
@@ -109703,6 +109772,10 @@ export type Routes = {
         current_period_started_at: string | null
         current_period_ends_at: string | null
         past_due_since: string | null
+        payment_failure: {
+          grace_ends_at: string
+          amount_due_cents: number | null
+        } | null
         canceled_at: string | null
         scheduled_package_quantity: number | null
         scheduled_price_cents: number | null
