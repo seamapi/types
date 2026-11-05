@@ -16085,6 +16085,7 @@ export type Routes = {
                     | 'yale_lock'
                     | 'yale_access_lock'
                     | 'yale_home_lock'
+                    | 'yale_connect_lock'
                     | 'two_n_intercom'
                     | 'controlbyweb_device'
                     | 'ttlock_lock'
@@ -16937,6 +16938,23 @@ export type Routes = {
                       device_type?: (string | undefined) | undefined
                       /** IANA timezone for the Ultraloq device. */
                       time_zone?: ((string | null) | undefined) | undefined
+                    }
+                  | undefined
+                /** Metadata for a Yale Connect lock. */
+                yale_connect_metadata?:
+                  | {
+                      /** Device ID for a Yale Connect lock. */
+                      device_id?: (string | undefined) | undefined
+                      /** Device name for a Yale Connect lock. */
+                      device_name?: (string | undefined) | undefined
+                      /** Model reported by the Yale Connect lock. */
+                      model?: (string | undefined) | undefined
+                      /** Firmware version reported by the Yale Connect lock. */
+                      firmware_version?: (string | undefined) | undefined
+                      /** Name of the Yale Connect home that contains the lock. */
+                      home_name?: (string | undefined) | undefined
+                      /** Time zone of the Yale Connect home, as Yale reports it. */
+                      time_zone_description?: (string | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for a Yacan device. */
@@ -25835,6 +25853,7 @@ export type Routes = {
                     | 'yale_lock'
                     | 'yale_access_lock'
                     | 'yale_home_lock'
+                    | 'yale_connect_lock'
                     | 'two_n_intercom'
                     | 'controlbyweb_device'
                     | 'ttlock_lock'
@@ -26687,6 +26706,23 @@ export type Routes = {
                       device_type?: (string | undefined) | undefined
                       /** IANA timezone for the Ultraloq device. */
                       time_zone?: ((string | null) | undefined) | undefined
+                    }
+                  | undefined
+                /** Metadata for a Yale Connect lock. */
+                yale_connect_metadata?:
+                  | {
+                      /** Device ID for a Yale Connect lock. */
+                      device_id?: (string | undefined) | undefined
+                      /** Device name for a Yale Connect lock. */
+                      device_name?: (string | undefined) | undefined
+                      /** Model reported by the Yale Connect lock. */
+                      model?: (string | undefined) | undefined
+                      /** Firmware version reported by the Yale Connect lock. */
+                      firmware_version?: (string | undefined) | undefined
+                      /** Name of the Yale Connect home that contains the lock. */
+                      home_name?: (string | undefined) | undefined
+                      /** Time zone of the Yale Connect home, as Yale reports it. */
+                      time_zone_description?: (string | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for a Yacan device. */
@@ -55746,6 +55782,7 @@ export type Routes = {
             | 'arlo'
             | 'reolink'
             | 'unifi_protect'
+            | 'yale_connect'
             | 'ical'
             | 'lodgify'
             | 'hostaway'
@@ -58064,6 +58101,7 @@ export type Routes = {
               | 'yale_lock'
               | 'yale_access_lock'
               | 'yale_home_lock'
+              | 'yale_connect_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -58891,6 +58929,23 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yale Connect lock. */
+          yale_connect_metadata?:
+            | {
+                /** Device ID for a Yale Connect lock. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yale Connect lock. */
+                device_name?: (string | undefined) | undefined
+                /** Model reported by the Yale Connect lock. */
+                model?: (string | undefined) | undefined
+                /** Firmware version reported by the Yale Connect lock. */
+                firmware_version?: (string | undefined) | undefined
+                /** Name of the Yale Connect home that contains the lock. */
+                home_name?: (string | undefined) | undefined
+                /** Time zone of the Yale Connect home, as Yale reports it. */
+                time_zone_description?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Yacan device. */
@@ -60151,6 +60206,7 @@ export type Routes = {
                 | 'yale_lock'
                 | 'yale_access_lock'
                 | 'yale_home_lock'
+                | 'yale_connect_lock'
                 | 'two_n_intercom'
                 | 'controlbyweb_device'
                 | 'ttlock_lock'
@@ -60211,6 +60267,7 @@ export type Routes = {
                 | 'yale_lock'
                 | 'yale_access_lock'
                 | 'yale_home_lock'
+                | 'yale_connect_lock'
                 | 'two_n_intercom'
                 | 'controlbyweb_device'
                 | 'ttlock_lock'
@@ -60301,6 +60358,7 @@ export type Routes = {
             | 'arlo'
             | 'reolink'
             | 'unifi_protect'
+            | 'yale_connect'
             | 'ical'
             | 'lodgify'
             | 'hostaway'
@@ -60434,6 +60492,7 @@ export type Routes = {
               | 'yale_lock'
               | 'yale_access_lock'
               | 'yale_home_lock'
+              | 'yale_connect_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -61261,6 +61320,23 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yale Connect lock. */
+          yale_connect_metadata?:
+            | {
+                /** Device ID for a Yale Connect lock. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yale Connect lock. */
+                device_name?: (string | undefined) | undefined
+                /** Model reported by the Yale Connect lock. */
+                model?: (string | undefined) | undefined
+                /** Firmware version reported by the Yale Connect lock. */
+                firmware_version?: (string | undefined) | undefined
+                /** Name of the Yale Connect home that contains the lock. */
+                home_name?: (string | undefined) | undefined
+                /** Time zone of the Yale Connect home, as Yale reports it. */
+                time_zone_description?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Yacan device. */
@@ -62581,6 +62657,7 @@ export type Routes = {
           | 'arlo'
           | 'reolink'
           | 'unifi_protect'
+          | 'yale_connect'
           | 'ical'
           | 'lodgify'
           | 'hostaway'
@@ -64112,6 +64189,7 @@ export type Routes = {
               | 'yale_lock'
               | 'yale_access_lock'
               | 'yale_home_lock'
+              | 'yale_connect_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -64759,6 +64837,7 @@ export type Routes = {
                 | 'yale_lock'
                 | 'yale_access_lock'
                 | 'yale_home_lock'
+                | 'yale_connect_lock'
                 | 'two_n_intercom'
                 | 'controlbyweb_device'
                 | 'ttlock_lock'
@@ -64819,6 +64898,7 @@ export type Routes = {
                 | 'yale_lock'
                 | 'yale_access_lock'
                 | 'yale_home_lock'
+                | 'yale_connect_lock'
                 | 'two_n_intercom'
                 | 'controlbyweb_device'
                 | 'ttlock_lock'
@@ -64909,6 +64989,7 @@ export type Routes = {
             | 'arlo'
             | 'reolink'
             | 'unifi_protect'
+            | 'yale_connect'
             | 'ical'
             | 'lodgify'
             | 'hostaway'
@@ -65029,6 +65110,7 @@ export type Routes = {
               | 'yale_lock'
               | 'yale_access_lock'
               | 'yale_home_lock'
+              | 'yale_connect_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -76967,6 +77049,7 @@ export type Routes = {
               | 'yale_lock'
               | 'yale_access_lock'
               | 'yale_home_lock'
+              | 'yale_connect_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -77794,6 +77877,23 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yale Connect lock. */
+          yale_connect_metadata?:
+            | {
+                /** Device ID for a Yale Connect lock. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yale Connect lock. */
+                device_name?: (string | undefined) | undefined
+                /** Model reported by the Yale Connect lock. */
+                model?: (string | undefined) | undefined
+                /** Firmware version reported by the Yale Connect lock. */
+                firmware_version?: (string | undefined) | undefined
+                /** Name of the Yale Connect home that contains the lock. */
+                home_name?: (string | undefined) | undefined
+                /** Time zone of the Yale Connect home, as Yale reports it. */
+                time_zone_description?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Yacan device. */
@@ -79040,6 +79140,7 @@ export type Routes = {
               | 'yale_lock'
               | 'yale_access_lock'
               | 'yale_home_lock'
+              | 'yale_connect_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -79867,6 +79968,23 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yale Connect lock. */
+          yale_connect_metadata?:
+            | {
+                /** Device ID for a Yale Connect lock. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yale Connect lock. */
+                device_name?: (string | undefined) | undefined
+                /** Model reported by the Yale Connect lock. */
+                model?: (string | undefined) | undefined
+                /** Firmware version reported by the Yale Connect lock. */
+                firmware_version?: (string | undefined) | undefined
+                /** Name of the Yale Connect home that contains the lock. */
+                home_name?: (string | undefined) | undefined
+                /** Time zone of the Yale Connect home, as Yale reports it. */
+                time_zone_description?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Yacan device. */
@@ -81124,6 +81242,7 @@ export type Routes = {
             | 'yale_lock'
             | 'yale_access_lock'
             | 'yale_home_lock'
+            | 'yale_connect_lock'
             | 'two_n_intercom'
             | 'controlbyweb_device'
             | 'ttlock_lock'
@@ -81163,6 +81282,7 @@ export type Routes = {
             | 'yale_lock'
             | 'yale_access_lock'
             | 'yale_home_lock'
+            | 'yale_connect_lock'
             | 'two_n_intercom'
             | 'controlbyweb_device'
             | 'ttlock_lock'
@@ -81215,6 +81335,7 @@ export type Routes = {
             | 'lockly'
             | 'smartthings'
             | 'ultraloq'
+            | 'yale_connect'
             | 'omnitec'
             | 'kisi'
             | 'yacan'
@@ -81248,6 +81369,7 @@ export type Routes = {
               | 'yale_lock'
               | 'yale_access_lock'
               | 'yale_home_lock'
+              | 'yale_connect_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -82075,6 +82197,23 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yale Connect lock. */
+          yale_connect_metadata?:
+            | {
+                /** Device ID for a Yale Connect lock. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yale Connect lock. */
+                device_name?: (string | undefined) | undefined
+                /** Model reported by the Yale Connect lock. */
+                model?: (string | undefined) | undefined
+                /** Firmware version reported by the Yale Connect lock. */
+                firmware_version?: (string | undefined) | undefined
+                /** Name of the Yale Connect home that contains the lock. */
+                home_name?: (string | undefined) | undefined
+                /** Time zone of the Yale Connect home, as Yale reports it. */
+                time_zone_description?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Yacan device. */
@@ -83320,6 +83459,7 @@ export type Routes = {
               | 'yale_lock'
               | 'yale_access_lock'
               | 'yale_home_lock'
+              | 'yale_connect_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -84147,6 +84287,23 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yale Connect lock. */
+          yale_connect_metadata?:
+            | {
+                /** Device ID for a Yale Connect lock. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yale Connect lock. */
+                device_name?: (string | undefined) | undefined
+                /** Model reported by the Yale Connect lock. */
+                model?: (string | undefined) | undefined
+                /** Firmware version reported by the Yale Connect lock. */
+                firmware_version?: (string | undefined) | undefined
+                /** Name of the Yale Connect home that contains the lock. */
+                home_name?: (string | undefined) | undefined
+                /** Time zone of the Yale Connect home, as Yale reports it. */
+                time_zone_description?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Yacan device. */
@@ -95643,6 +95800,7 @@ export type Routes = {
               | 'yale_lock'
               | 'yale_access_lock'
               | 'yale_home_lock'
+              | 'yale_connect_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -96470,6 +96628,23 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yale Connect lock. */
+          yale_connect_metadata?:
+            | {
+                /** Device ID for a Yale Connect lock. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yale Connect lock. */
+                device_name?: (string | undefined) | undefined
+                /** Model reported by the Yale Connect lock. */
+                model?: (string | undefined) | undefined
+                /** Firmware version reported by the Yale Connect lock. */
+                firmware_version?: (string | undefined) | undefined
+                /** Name of the Yale Connect home that contains the lock. */
+                home_name?: (string | undefined) | undefined
+                /** Time zone of the Yale Connect home, as Yale reports it. */
+                time_zone_description?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Yacan device. */
@@ -97715,6 +97890,7 @@ export type Routes = {
               | 'yale_lock'
               | 'yale_access_lock'
               | 'yale_home_lock'
+              | 'yale_connect_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -98542,6 +98718,23 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yale Connect lock. */
+          yale_connect_metadata?:
+            | {
+                /** Device ID for a Yale Connect lock. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yale Connect lock. */
+                device_name?: (string | undefined) | undefined
+                /** Model reported by the Yale Connect lock. */
+                model?: (string | undefined) | undefined
+                /** Firmware version reported by the Yale Connect lock. */
+                firmware_version?: (string | undefined) | undefined
+                /** Name of the Yale Connect home that contains the lock. */
+                home_name?: (string | undefined) | undefined
+                /** Time zone of the Yale Connect home, as Yale reports it. */
+                time_zone_description?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Yacan device. */
@@ -127167,6 +127360,7 @@ export type Routes = {
                     | 'yale_lock'
                     | 'yale_access_lock'
                     | 'yale_home_lock'
+                    | 'yale_connect_lock'
                     | 'two_n_intercom'
                     | 'controlbyweb_device'
                     | 'ttlock_lock'
@@ -128019,6 +128213,23 @@ export type Routes = {
                       device_type?: (string | undefined) | undefined
                       /** IANA timezone for the Ultraloq device. */
                       time_zone?: ((string | null) | undefined) | undefined
+                    }
+                  | undefined
+                /** Metadata for a Yale Connect lock. */
+                yale_connect_metadata?:
+                  | {
+                      /** Device ID for a Yale Connect lock. */
+                      device_id?: (string | undefined) | undefined
+                      /** Device name for a Yale Connect lock. */
+                      device_name?: (string | undefined) | undefined
+                      /** Model reported by the Yale Connect lock. */
+                      model?: (string | undefined) | undefined
+                      /** Firmware version reported by the Yale Connect lock. */
+                      firmware_version?: (string | undefined) | undefined
+                      /** Name of the Yale Connect home that contains the lock. */
+                      home_name?: (string | undefined) | undefined
+                      /** Time zone of the Yale Connect home, as Yale reports it. */
+                      time_zone_description?: (string | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for a Yacan device. */
@@ -161196,6 +161407,7 @@ export type Routes = {
               | 'yale_lock'
               | 'yale_access_lock'
               | 'yale_home_lock'
+              | 'yale_connect_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -162023,6 +162235,23 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yale Connect lock. */
+          yale_connect_metadata?:
+            | {
+                /** Device ID for a Yale Connect lock. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yale Connect lock. */
+                device_name?: (string | undefined) | undefined
+                /** Model reported by the Yale Connect lock. */
+                model?: (string | undefined) | undefined
+                /** Firmware version reported by the Yale Connect lock. */
+                firmware_version?: (string | undefined) | undefined
+                /** Name of the Yale Connect home that contains the lock. */
+                home_name?: (string | undefined) | undefined
+                /** Time zone of the Yale Connect home, as Yale reports it. */
+                time_zone_description?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Yacan device. */
@@ -168425,6 +168654,7 @@ export type Routes = {
               | 'yale_lock'
               | 'yale_access_lock'
               | 'yale_home_lock'
+              | 'yale_connect_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -169252,6 +169482,23 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yale Connect lock. */
+          yale_connect_metadata?:
+            | {
+                /** Device ID for a Yale Connect lock. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yale Connect lock. */
+                device_name?: (string | undefined) | undefined
+                /** Model reported by the Yale Connect lock. */
+                model?: (string | undefined) | undefined
+                /** Firmware version reported by the Yale Connect lock. */
+                firmware_version?: (string | undefined) | undefined
+                /** Name of the Yale Connect home that contains the lock. */
+                home_name?: (string | undefined) | undefined
+                /** Time zone of the Yale Connect home, as Yale reports it. */
+                time_zone_description?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Yacan device. */
@@ -170497,6 +170744,7 @@ export type Routes = {
               | 'yale_lock'
               | 'yale_access_lock'
               | 'yale_home_lock'
+              | 'yale_connect_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -171324,6 +171572,23 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yale Connect lock. */
+          yale_connect_metadata?:
+            | {
+                /** Device ID for a Yale Connect lock. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yale Connect lock. */
+                device_name?: (string | undefined) | undefined
+                /** Model reported by the Yale Connect lock. */
+                model?: (string | undefined) | undefined
+                /** Firmware version reported by the Yale Connect lock. */
+                firmware_version?: (string | undefined) | undefined
+                /** Name of the Yale Connect home that contains the lock. */
+                home_name?: (string | undefined) | undefined
+                /** Time zone of the Yale Connect home, as Yale reports it. */
+                time_zone_description?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Yacan device. */
@@ -183936,6 +184201,7 @@ export type Routes = {
               | 'yale_lock'
               | 'yale_access_lock'
               | 'yale_home_lock'
+              | 'yale_connect_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -184763,6 +185029,23 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yale Connect lock. */
+          yale_connect_metadata?:
+            | {
+                /** Device ID for a Yale Connect lock. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yale Connect lock. */
+                device_name?: (string | undefined) | undefined
+                /** Model reported by the Yale Connect lock. */
+                model?: (string | undefined) | undefined
+                /** Firmware version reported by the Yale Connect lock. */
+                firmware_version?: (string | undefined) | undefined
+                /** Name of the Yale Connect home that contains the lock. */
+                home_name?: (string | undefined) | undefined
+                /** Time zone of the Yale Connect home, as Yale reports it. */
+                time_zone_description?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Yacan device. */
@@ -186010,6 +186293,7 @@ export type Routes = {
               | 'yale_lock'
               | 'yale_access_lock'
               | 'yale_home_lock'
+              | 'yale_connect_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
               | 'ttlock_lock'
@@ -186837,6 +187121,23 @@ export type Routes = {
                 device_type?: (string | undefined) | undefined
                 /** IANA timezone for the Ultraloq device. */
                 time_zone?: ((string | null) | undefined) | undefined
+              }
+            | undefined
+          /** Metadata for a Yale Connect lock. */
+          yale_connect_metadata?:
+            | {
+                /** Device ID for a Yale Connect lock. */
+                device_id?: (string | undefined) | undefined
+                /** Device name for a Yale Connect lock. */
+                device_name?: (string | undefined) | undefined
+                /** Model reported by the Yale Connect lock. */
+                model?: (string | undefined) | undefined
+                /** Firmware version reported by the Yale Connect lock. */
+                firmware_version?: (string | undefined) | undefined
+                /** Name of the Yale Connect home that contains the lock. */
+                home_name?: (string | undefined) | undefined
+                /** Time zone of the Yale Connect home, as Yale reports it. */
+                time_zone_description?: (string | undefined) | undefined
               }
             | undefined
           /** Metadata for a Yacan device. */
@@ -190799,6 +191100,7 @@ export type Routes = {
                     | 'yale_lock'
                     | 'yale_access_lock'
                     | 'yale_home_lock'
+                    | 'yale_connect_lock'
                     | 'two_n_intercom'
                     | 'controlbyweb_device'
                     | 'ttlock_lock'
@@ -191651,6 +191953,23 @@ export type Routes = {
                       device_type?: (string | undefined) | undefined
                       /** IANA timezone for the Ultraloq device. */
                       time_zone?: ((string | null) | undefined) | undefined
+                    }
+                  | undefined
+                /** Metadata for a Yale Connect lock. */
+                yale_connect_metadata?:
+                  | {
+                      /** Device ID for a Yale Connect lock. */
+                      device_id?: (string | undefined) | undefined
+                      /** Device name for a Yale Connect lock. */
+                      device_name?: (string | undefined) | undefined
+                      /** Model reported by the Yale Connect lock. */
+                      model?: (string | undefined) | undefined
+                      /** Firmware version reported by the Yale Connect lock. */
+                      firmware_version?: (string | undefined) | undefined
+                      /** Name of the Yale Connect home that contains the lock. */
+                      home_name?: (string | undefined) | undefined
+                      /** Time zone of the Yale Connect home, as Yale reports it. */
+                      time_zone_description?: (string | undefined) | undefined
                     }
                   | undefined
                 /** Metadata for a Yacan device. */
@@ -197051,6 +197370,7 @@ export type Routes = {
                     | 'yale_lock'
                     | 'yale_access_lock'
                     | 'yale_home_lock'
+                    | 'yale_connect_lock'
                     | 'two_n_intercom'
                     | 'controlbyweb_device'
                     | 'ttlock_lock'

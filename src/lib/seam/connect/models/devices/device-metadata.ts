@@ -1151,6 +1151,36 @@ export const device_metadata = z
       .partial()
       .describe(`Metadata for an Ultraloq device.`),
 
+    yale_connect_metadata: z
+      .object({
+        device_id: z
+          .string()
+          .optional()
+          .describe(`Device ID for a Yale Connect lock.`),
+        device_name: z
+          .string()
+          .optional()
+          .describe(`Device name for a Yale Connect lock.`),
+        model: z
+          .string()
+          .optional()
+          .describe(`Model reported by the Yale Connect lock.`),
+        firmware_version: z
+          .string()
+          .optional()
+          .describe(`Firmware version reported by the Yale Connect lock.`),
+        home_name: z
+          .string()
+          .optional()
+          .describe(`Name of the Yale Connect home that contains the lock.`),
+        time_zone_description: z
+          .string()
+          .optional()
+          .describe(`Time zone of the Yale Connect home, as Yale reports it.`),
+      })
+      .partial()
+      .describe(`Metadata for a Yale Connect lock.`),
+
     yacan_metadata: z
       .object({
         device_id: z
