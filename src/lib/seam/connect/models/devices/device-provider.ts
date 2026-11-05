@@ -172,7 +172,14 @@ export const PROVIDER_CATEGORY_MAP = {
     'yale_connect',
   ],
 
-  thermostats: ['ecobee', 'nest', 'sensi', 'honeywell_resideo', 'first_alert'],
+  thermostats: [
+    'ecobee',
+    'nest',
+    'sensi',
+    'honeywell_resideo',
+    'first_alert',
+    'tado',
+  ],
   noise_sensors: ['minut', 'noiseaware'],
   access_control_systems: [
     'brivo',
