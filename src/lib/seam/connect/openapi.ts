@@ -61867,6 +61867,22 @@ const openapi: OpenAPISpec = {
                               nullable: true,
                               type: 'string',
                             },
+                            payment_failure: {
+                              nullable: true,
+                              properties: {
+                                amount_due_cents: {
+                                  format: 'float',
+                                  nullable: true,
+                                  type: 'number',
+                                },
+                                grace_ends_at: {
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                              },
+                              required: ['grace_ends_at', 'amount_due_cents'],
+                              type: 'object',
+                            },
                             pending_upgrade: {
                               nullable: true,
                               properties: {
@@ -61911,6 +61927,7 @@ const openapi: OpenAPISpec = {
                             'current_period_started_at',
                             'current_period_ends_at',
                             'past_due_since',
+                            'payment_failure',
                             'canceled_at',
                             'scheduled_package_quantity',
                             'scheduled_price_cents',
@@ -62319,6 +62336,215 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for Console',
       },
     },
+    '/seam/console/v1/credits/payment_method/confirm': {
+      post: {
+        description:
+          "Finishes a payment method update after the Stripe Checkout returns: saves the card as the default, retries the open credit invoices and refreshes the subscription's payment status. Safe to call more than once.",
+        operationId: 'seamConsoleV1CreditsPaymentMethodConfirmPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  checkout_session_id: { minLength: 1, type: 'string' },
+                  organization_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id', 'checkout_session_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    credit_subscription: {
+                      nullable: true,
+                      properties: {
+                        canceled_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        credit_subscription_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        current_period_ends_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        current_period_started_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        package_quantity: { format: 'float', type: 'number' },
+                        past_due_since: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        payment_failure: {
+                          nullable: true,
+                          properties: {
+                            amount_due_cents: {
+                              format: 'float',
+                              nullable: true,
+                              type: 'number',
+                            },
+                            grace_ends_at: {
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                          },
+                          required: ['grace_ends_at', 'amount_due_cents'],
+                          type: 'object',
+                        },
+                        pending_upgrade: {
+                          nullable: true,
+                          properties: {
+                            hosted_invoice_url: {
+                              nullable: true,
+                              type: 'string',
+                            },
+                            package_quantity: {
+                              format: 'float',
+                              type: 'number',
+                            },
+                          },
+                          required: ['package_quantity', 'hosted_invoice_url'],
+                          type: 'object',
+                        },
+                        price_cents: { format: 'float', type: 'number' },
+                        scheduled_change_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        scheduled_package_quantity: {
+                          format: 'float',
+                          nullable: true,
+                          type: 'number',
+                        },
+                        scheduled_price_cents: {
+                          format: 'float',
+                          nullable: true,
+                          type: 'number',
+                        },
+                        status: { type: 'string' },
+                      },
+                      required: [
+                        'credit_subscription_id',
+                        'status',
+                        'package_quantity',
+                        'price_cents',
+                        'current_period_started_at',
+                        'current_period_ends_at',
+                        'past_due_since',
+                        'payment_failure',
+                        'canceled_at',
+                        'scheduled_package_quantity',
+                        'scheduled_price_cents',
+                        'scheduled_change_at',
+                        'pending_upgrade',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                    paid_invoice_count: { format: 'float', type: 'number' },
+                    unpaid_invoice_count: { format: 'float', type: 'number' },
+                  },
+                  required: [
+                    'credit_subscription',
+                    'paid_invoice_count',
+                    'unpaid_invoice_count',
+                    'ok',
+                  ],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/credits/payment_method/confirm',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'credits',
+          'payment_method',
+        ],
+        'x-fern-sdk-method-name': 'confirm',
+        'x-response-key': null,
+        'x-title': 'Confirm a Credit Payment Method Update',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/credits/payment_method/update': {
+      post: {
+        description:
+          "Starts a Stripe Checkout that saves a new default card for the organization's credit subscription. Open credit invoices are retried once the card is confirmed.",
+        operationId: 'seamConsoleV1CreditsPaymentMethodUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  cancel_url: { format: 'uri', type: 'string' },
+                  organization_id: { format: 'uuid', type: 'string' },
+                  success_url: { format: 'uri', type: 'string' },
+                },
+                required: ['organization_id', 'success_url', 'cancel_url'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    checkout_url: { format: 'uri', type: 'string' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['checkout_url', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/credits/payment_method/update',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'credits',
+          'payment_method',
+        ],
+        'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
+        'x-title': 'Start a Credit Payment Method Update',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
     '/seam/console/v1/credits/purchases/get': {
       post: {
         description:
@@ -62447,6 +62673,22 @@ const openapi: OpenAPISpec = {
                           nullable: true,
                           type: 'string',
                         },
+                        payment_failure: {
+                          nullable: true,
+                          properties: {
+                            amount_due_cents: {
+                              format: 'float',
+                              nullable: true,
+                              type: 'number',
+                            },
+                            grace_ends_at: {
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                          },
+                          required: ['grace_ends_at', 'amount_due_cents'],
+                          type: 'object',
+                        },
                         pending_upgrade: {
                           nullable: true,
                           properties: {
@@ -62488,6 +62730,7 @@ const openapi: OpenAPISpec = {
                         'current_period_started_at',
                         'current_period_ends_at',
                         'past_due_since',
+                        'payment_failure',
                         'canceled_at',
                         'scheduled_package_quantity',
                         'scheduled_price_cents',
@@ -62610,6 +62853,22 @@ const openapi: OpenAPISpec = {
                           nullable: true,
                           type: 'string',
                         },
+                        payment_failure: {
+                          nullable: true,
+                          properties: {
+                            amount_due_cents: {
+                              format: 'float',
+                              nullable: true,
+                              type: 'number',
+                            },
+                            grace_ends_at: {
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                          },
+                          required: ['grace_ends_at', 'amount_due_cents'],
+                          type: 'object',
+                        },
                         pending_upgrade: {
                           nullable: true,
                           properties: {
@@ -62651,6 +62910,7 @@ const openapi: OpenAPISpec = {
                         'current_period_started_at',
                         'current_period_ends_at',
                         'past_due_since',
+                        'payment_failure',
                         'canceled_at',
                         'scheduled_package_quantity',
                         'scheduled_price_cents',
@@ -62738,6 +62998,22 @@ const openapi: OpenAPISpec = {
                           nullable: true,
                           type: 'string',
                         },
+                        payment_failure: {
+                          nullable: true,
+                          properties: {
+                            amount_due_cents: {
+                              format: 'float',
+                              nullable: true,
+                              type: 'number',
+                            },
+                            grace_ends_at: {
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                          },
+                          required: ['grace_ends_at', 'amount_due_cents'],
+                          type: 'object',
+                        },
                         pending_upgrade: {
                           nullable: true,
                           properties: {
@@ -62779,6 +63055,7 @@ const openapi: OpenAPISpec = {
                         'current_period_started_at',
                         'current_period_ends_at',
                         'past_due_since',
+                        'payment_failure',
                         'canceled_at',
                         'scheduled_package_quantity',
                         'scheduled_price_cents',
@@ -62867,6 +63144,22 @@ const openapi: OpenAPISpec = {
                           nullable: true,
                           type: 'string',
                         },
+                        payment_failure: {
+                          nullable: true,
+                          properties: {
+                            amount_due_cents: {
+                              format: 'float',
+                              nullable: true,
+                              type: 'number',
+                            },
+                            grace_ends_at: {
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                          },
+                          required: ['grace_ends_at', 'amount_due_cents'],
+                          type: 'object',
+                        },
                         pending_upgrade: {
                           nullable: true,
                           properties: {
@@ -62908,6 +63201,7 @@ const openapi: OpenAPISpec = {
                         'current_period_started_at',
                         'current_period_ends_at',
                         'past_due_since',
+                        'payment_failure',
                         'canceled_at',
                         'scheduled_package_quantity',
                         'scheduled_price_cents',
