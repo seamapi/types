@@ -69364,6 +69364,99 @@ export type Routes = {
                       [x: string]: string | boolean
                     }
                   | undefined
+                event_type: 'lock.jammed'
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the workspace associated with the event. */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                event_description?: string | undefined
+                /** ID of the affected device. */
+                device_id: string
+                /** ID of the connected account associated with the event. */
+                connected_account_id: string
+                /** The customer key associated with the device, if any. */
+                customer_key?: string | undefined
+                /** Custom metadata of the device, present when device_id is provided. */
+                device_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                connected_account_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                event_type: 'lock.door_opened'
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the workspace associated with the event. */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                event_description?: string | undefined
+                /** ID of the affected device. */
+                device_id: string
+                /** ID of the connected account associated with the event. */
+                connected_account_id: string
+                /** The customer key associated with the device, if any. */
+                customer_key?: string | undefined
+                /** Custom metadata of the device, present when device_id is provided. */
+                device_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                connected_account_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                event_type: 'lock.door_closed'
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the workspace associated with the event. */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                event_description?: string | undefined
+                /** ID of the affected device. */
+                device_id: string
+                /** ID of the connected account associated with the event. */
+                connected_account_id: string
+                /** The customer key associated with the device, if any. */
+                customer_key?: string | undefined
+                /** Custom metadata of the device, present when device_id is provided. */
+                device_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                connected_account_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
                 event_type: 'thermostat.climate_preset_activated'
                 /** ID of the thermostat schedule that prompted the affected climate preset to be activated. */
                 thermostat_schedule_id: string | null
@@ -69932,6 +70025,9 @@ export type Routes = {
             | 'lock.locked'
             | 'lock.unlocked'
             | 'lock.access_denied'
+            | 'lock.jammed'
+            | 'lock.door_opened'
+            | 'lock.door_closed'
             | 'thermostat.climate_preset_activated'
             | 'thermostat.manually_adjusted'
             | 'thermostat.temperature_threshold_exceeded'
@@ -70051,6 +70147,9 @@ export type Routes = {
             | 'lock.locked'
             | 'lock.unlocked'
             | 'lock.access_denied'
+            | 'lock.jammed'
+            | 'lock.door_opened'
+            | 'lock.door_closed'
             | 'thermostat.climate_preset_activated'
             | 'thermostat.manually_adjusted'
             | 'thermostat.temperature_threshold_exceeded'
@@ -73635,6 +73734,99 @@ export type Routes = {
                   message: string
                 }
               | undefined
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'lock.jammed'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'lock.door_opened'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'lock.door_closed'
           }
         | {
             /** ID of the event. */
@@ -115969,6 +116161,9 @@ export type Routes = {
             | 'lock.locked'
             | 'lock.unlocked'
             | 'lock.access_denied'
+            | 'lock.jammed'
+            | 'lock.door_opened'
+            | 'lock.door_closed'
             | 'thermostat.climate_preset_activated'
             | 'thermostat.manually_adjusted'
             | 'thermostat.temperature_threshold_exceeded'
@@ -116088,6 +116283,9 @@ export type Routes = {
             | 'lock.locked'
             | 'lock.unlocked'
             | 'lock.access_denied'
+            | 'lock.jammed'
+            | 'lock.door_opened'
+            | 'lock.door_closed'
             | 'thermostat.climate_preset_activated'
             | 'thermostat.manually_adjusted'
             | 'thermostat.temperature_threshold_exceeded'
@@ -119672,6 +119870,99 @@ export type Routes = {
                   [x: string]: string | boolean
                 }
               | undefined
+            event_type: 'lock.jammed'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'lock.door_opened'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'lock.door_closed'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
             event_type: 'thermostat.climate_preset_activated'
             /** ID of the thermostat schedule that prompted the affected climate preset to be activated. */
             thermostat_schedule_id: string | null
@@ -122786,6 +123077,9 @@ export type Routes = {
         | 'lock.locked'
         | 'lock.unlocked'
         | 'lock.access_denied'
+        | 'lock.jammed'
+        | 'lock.door_opened'
+        | 'lock.door_closed'
         | 'thermostat.climate_preset_activated'
         | 'thermostat.manually_adjusted'
         | 'thermostat.temperature_threshold_exceeded'
@@ -122928,6 +123222,9 @@ export type Routes = {
         | 'lock.locked'
         | 'lock.unlocked'
         | 'lock.access_denied'
+        | 'lock.jammed'
+        | 'lock.door_opened'
+        | 'lock.door_closed'
         | 'thermostat.climate_preset_activated'
         | 'thermostat.manually_adjusted'
         | 'thermostat.temperature_threshold_exceeded'
@@ -126486,6 +126783,99 @@ export type Routes = {
                   message: string
                 }
               | undefined
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'lock.jammed'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'lock.door_opened'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'lock.door_closed'
           }
         | {
             /** ID of the event. */
@@ -202278,6 +202668,99 @@ export type Routes = {
                         message: string
                       }
                     | undefined
+                }
+              | {
+                  /** ID of the event. */
+                  event_id: string
+                  /** ID of the workspace associated with the event. */
+                  workspace_id: string
+                  /** Date and time at which the event was created. */
+                  created_at: string
+                  /** Date and time at which the event occurred. */
+                  occurred_at: string
+                  /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                  event_description?: string | undefined
+                  /** ID of the affected device. */
+                  device_id: string
+                  /** ID of the connected account associated with the event. */
+                  connected_account_id: string
+                  /** The customer key associated with the device, if any. */
+                  customer_key?: string | undefined
+                  /** Custom metadata of the device, present when device_id is provided. */
+                  device_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                  connected_account_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  event_type: 'lock.jammed'
+                }
+              | {
+                  /** ID of the event. */
+                  event_id: string
+                  /** ID of the workspace associated with the event. */
+                  workspace_id: string
+                  /** Date and time at which the event was created. */
+                  created_at: string
+                  /** Date and time at which the event occurred. */
+                  occurred_at: string
+                  /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                  event_description?: string | undefined
+                  /** ID of the affected device. */
+                  device_id: string
+                  /** ID of the connected account associated with the event. */
+                  connected_account_id: string
+                  /** The customer key associated with the device, if any. */
+                  customer_key?: string | undefined
+                  /** Custom metadata of the device, present when device_id is provided. */
+                  device_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                  connected_account_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  event_type: 'lock.door_opened'
+                }
+              | {
+                  /** ID of the event. */
+                  event_id: string
+                  /** ID of the workspace associated with the event. */
+                  workspace_id: string
+                  /** Date and time at which the event was created. */
+                  created_at: string
+                  /** Date and time at which the event occurred. */
+                  occurred_at: string
+                  /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                  event_description?: string | undefined
+                  /** ID of the affected device. */
+                  device_id: string
+                  /** ID of the connected account associated with the event. */
+                  connected_account_id: string
+                  /** The customer key associated with the device, if any. */
+                  customer_key?: string | undefined
+                  /** Custom metadata of the device, present when device_id is provided. */
+                  device_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                  connected_account_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  event_type: 'lock.door_closed'
                 }
               | {
                   /** ID of the event. */

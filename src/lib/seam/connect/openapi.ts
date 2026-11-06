@@ -30837,6 +30837,231 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
+              'The [lock](https://www.seam.co/docs/low-level-apis/smart-locks) reported that its bolt is jammed.',
+            properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
+              },
+              device_id: {
+                description: 'ID of the affected device.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: { enum: ['lock.jammed'], type: 'string' },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description: 'ID of the workspace associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+            ],
+            type: 'object',
+            'x-route-path': '/locks',
+          },
+          {
+            description:
+              'The door sensor of the [lock](https://www.seam.co/docs/low-level-apis/smart-locks) reported that the door was opened.',
+            properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
+              },
+              device_id: {
+                description: 'ID of the affected device.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: { enum: ['lock.door_opened'], type: 'string' },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description: 'ID of the workspace associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+            ],
+            type: 'object',
+            'x-route-path': '/locks',
+          },
+          {
+            description:
+              'The door sensor of the [lock](https://www.seam.co/docs/low-level-apis/smart-locks) reported that the door was closed.',
+            properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
+              },
+              device_id: {
+                description: 'ID of the affected device.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: { enum: ['lock.door_closed'], type: 'string' },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description: 'ID of the workspace associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+            ],
+            type: 'object',
+            'x-route-path': '/locks',
+          },
+          {
+            description:
               'A thermostat [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) was activated.',
             properties: {
               climate_preset_key: {
@@ -59186,6 +59411,9 @@ const openapi: OpenAPISpec = {
                 'lock.locked',
                 'lock.unlocked',
                 'lock.access_denied',
+                'lock.jammed',
+                'lock.door_opened',
+                'lock.door_closed',
                 'thermostat.climate_preset_activated',
                 'thermostat.manually_adjusted',
                 'thermostat.temperature_threshold_exceeded',
@@ -59311,6 +59539,9 @@ const openapi: OpenAPISpec = {
                   'lock.locked',
                   'lock.unlocked',
                   'lock.access_denied',
+                  'lock.jammed',
+                  'lock.door_opened',
+                  'lock.door_closed',
                   'thermostat.climate_preset_activated',
                   'thermostat.manually_adjusted',
                   'thermostat.temperature_threshold_exceeded',
@@ -70990,6 +71221,9 @@ const openapi: OpenAPISpec = {
                 'lock.locked',
                 'lock.unlocked',
                 'lock.access_denied',
+                'lock.jammed',
+                'lock.door_opened',
+                'lock.door_closed',
                 'thermostat.climate_preset_activated',
                 'thermostat.manually_adjusted',
                 'thermostat.temperature_threshold_exceeded',
@@ -71116,6 +71350,9 @@ const openapi: OpenAPISpec = {
                   'lock.locked',
                   'lock.unlocked',
                   'lock.access_denied',
+                  'lock.jammed',
+                  'lock.door_opened',
+                  'lock.door_closed',
                   'thermostat.climate_preset_activated',
                   'thermostat.manually_adjusted',
                   'thermostat.temperature_threshold_exceeded',
@@ -74803,6 +75040,9 @@ const openapi: OpenAPISpec = {
                       'lock.locked',
                       'lock.unlocked',
                       'lock.access_denied',
+                      'lock.jammed',
+                      'lock.door_opened',
+                      'lock.door_closed',
                       'thermostat.climate_preset_activated',
                       'thermostat.manually_adjusted',
                       'thermostat.temperature_threshold_exceeded',
@@ -75014,6 +75254,9 @@ const openapi: OpenAPISpec = {
                       'lock.locked',
                       'lock.unlocked',
                       'lock.access_denied',
+                      'lock.jammed',
+                      'lock.door_opened',
+                      'lock.door_closed',
                       'thermostat.climate_preset_activated',
                       'thermostat.manually_adjusted',
                       'thermostat.temperature_threshold_exceeded',

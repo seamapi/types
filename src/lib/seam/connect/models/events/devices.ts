@@ -633,6 +633,39 @@ export const lock_access_denied_event = device_event.extend({
 
 export type LockAccessDeniedEvent = z.infer<typeof lock_access_denied_event>
 
+export const lock_jammed_event = device_event.extend({
+  event_type: z.literal('lock.jammed'),
+}).describe(`
+  ---
+  route_path: /locks
+  ---
+  The [lock](https://www.seam.co/docs/low-level-apis/smart-locks) reported that its bolt is jammed.
+`)
+
+export type LockJammedEvent = z.infer<typeof lock_jammed_event>
+
+export const lock_door_opened_event = device_event.extend({
+  event_type: z.literal('lock.door_opened'),
+}).describe(`
+  ---
+  route_path: /locks
+  ---
+  The door sensor of the [lock](https://www.seam.co/docs/low-level-apis/smart-locks) reported that the door was opened.
+`)
+
+export type LockDoorOpenedEvent = z.infer<typeof lock_door_opened_event>
+
+export const lock_door_closed_event = device_event.extend({
+  event_type: z.literal('lock.door_closed'),
+}).describe(`
+  ---
+  route_path: /locks
+  ---
+  The door sensor of the [lock](https://www.seam.co/docs/low-level-apis/smart-locks) reported that the door was closed.
+`)
+
+export type LockDoorClosedEvent = z.infer<typeof lock_door_closed_event>
+
 export const thermostat_climate_preset_activated_event = device_event.extend({
   event_type: z.literal('thermostat.climate_preset_activated'),
   thermostat_schedule_id: z
@@ -925,6 +958,9 @@ export const device_events = [
   lock_locked_event,
   lock_unlocked_event,
   lock_access_denied_event,
+  lock_jammed_event,
+  lock_door_opened_event,
+  lock_door_closed_event,
   thermostat_climate_preset_activated_event,
   thermostat_manually_adjusted_event,
   temperature_threshold_exceeded_event,
