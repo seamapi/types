@@ -21,7 +21,7 @@ jobs:
           - ubuntu-latest
         node:
           - '22'
-          - '24'
+          - '26'
         include:
           - os: ubuntu-latest
             os_name: Linux
@@ -44,7 +44,7 @@ jobs:
       matrix:
         node:
           - '22'
-          - '24'
+          - '26'
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -72,7 +72,7 @@ jobs:
           - ubuntu-latest
         node:
           - '22'
-          - '24'
+          - '26'
         include:
           - os: ubuntu-latest
             os_name: Linux
@@ -130,7 +130,7 @@ jobs:
       matrix:
         node:
           - '22'
-          - '24'
+          - '26'
     steps:
       - name: Checkout
         uses: actions/checkout@v7
