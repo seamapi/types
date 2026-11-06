@@ -63525,7 +63525,7 @@ const openapi: OpenAPISpec = {
     '/seam/console/v1/credits/trial/extend': {
       post: {
         description:
-          "Moves the end of the organization's credits trial 14 days later. The trial keeps its 1,000 credits. An organization can extend its trial once; Seam support can extend it further.",
+          "Moves the end of the organization's credits trial 14 days later. The trial keeps the credits it already has. An organization can extend its trial once; Seam support can extend it further.",
         operationId: 'seamConsoleV1CreditsTrialExtendPost',
         requestBody: {
           content: {
