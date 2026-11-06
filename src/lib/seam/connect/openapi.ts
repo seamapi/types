@@ -62218,6 +62218,12 @@ const openapi: OpenAPISpec = {
                         trial: {
                           nullable: true,
                           properties: {
+                            can_extend_trial: { type: 'boolean' },
+                            extended_trial_ends_at: {
+                              format: 'date-time',
+                              nullable: true,
+                              type: 'string',
+                            },
                             is_active: { type: 'boolean' },
                             is_credits_used_up: { type: 'boolean' },
                             is_suspended: { type: 'boolean' },
@@ -62250,6 +62256,8 @@ const openapi: OpenAPISpec = {
                             'used_credits',
                             'remaining_credits',
                             'is_credits_used_up',
+                            'can_extend_trial',
+                            'extended_trial_ends_at',
                           ],
                           type: 'object',
                         },
@@ -63511,6 +63519,95 @@ const openapi: OpenAPISpec = {
         'x-fern-sdk-method-name': 'resume',
         'x-response-key': null,
         'x-title': 'Resume a Canceled Credit Subscription',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/credits/trial/extend': {
+      post: {
+        description:
+          "Moves the end of the organization's credits trial 14 days later. The trial keeps its 1,000 credits. An organization can extend its trial once; Seam support can extend it further.",
+        operationId: 'seamConsoleV1CreditsTrialExtendPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  organization_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    trial: {
+                      properties: {
+                        can_extend_trial: { type: 'boolean' },
+                        extended_trial_ends_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        is_active: { type: 'boolean' },
+                        is_credits_used_up: { type: 'boolean' },
+                        is_suspended: { type: 'boolean' },
+                        remaining_credits: {
+                          format: 'float',
+                          nullable: true,
+                          type: 'number',
+                        },
+                        trial_credits: { format: 'float', type: 'number' },
+                        trial_ends_at: { format: 'date-time', type: 'string' },
+                        trial_started_at: {
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        used_credits: {
+                          format: 'float',
+                          nullable: true,
+                          type: 'number',
+                        },
+                      },
+                      required: [
+                        'trial_started_at',
+                        'trial_ends_at',
+                        'is_active',
+                        'is_suspended',
+                        'trial_credits',
+                        'used_credits',
+                        'remaining_credits',
+                        'is_credits_used_up',
+                        'can_extend_trial',
+                        'extended_trial_ends_at',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['trial', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/credits/trial/extend',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'credits', 'trial'],
+        'x-fern-sdk-method-name': 'extend',
+        'x-fern-sdk-return-value': 'trial',
+        'x-response-key': 'trial',
+        'x-title': "Extend an Organization's Credits Trial",
         'x-undocumented': 'Internal endpoint for Console',
       },
     },
