@@ -109866,6 +109866,8 @@ export type Routes = {
           used_credits: number | null
           remaining_credits: number | null
           is_credits_used_up: boolean
+          can_extend_trial: boolean
+          extended_trial_ends_at: string | null
         } | null
         usage: {
           as_of: string
@@ -110168,6 +110170,31 @@ export type Routes = {
           package_quantity: number
           hosted_invoice_url: string | null
         } | null
+      }
+    }
+    maxDuration: undefined
+  }
+  '/seam/console/v1/credits/trial/extend': {
+    route: '/seam/console/v1/credits/trial/extend'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      organization_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      trial: {
+        trial_started_at: string
+        trial_ends_at: string
+        is_active: boolean
+        is_suspended: boolean
+        trial_credits: number
+        used_credits: number | null
+        remaining_credits: number | null
+        is_credits_used_up: boolean
+        can_extend_trial: boolean
+        extended_trial_ends_at: string | null
       }
     }
     maxDuration: undefined
