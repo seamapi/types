@@ -853,6 +853,178 @@ export const device_manufacturer_info = z
 
 export type DeviceManufacturerInfo = z.infer<typeof device_manufacturer_info>
 
+const additional_sensor_measurement_properties = z.object({
+  noise_level_nrs: z
+    .number()
+    .nullable()
+    .describe(
+      `
+          ---
+          property_group_key: sensors
+          ---
+          Noise level as a Noise Risk Score (NRS), if the device reports one. \`null\` until the first value arrives.
+          `,
+    )
+    .optional(),
+  co2_ppm: z
+    .number()
+    .nullable()
+    .describe(
+      `
+          ---
+          property_group_key: sensors
+          ---
+          Carbon dioxide concentration in parts per million, if the device measures it. \`null\` until the first value arrives.
+          `,
+    )
+    .optional(),
+  co_ppm: z
+    .number()
+    .nullable()
+    .describe(
+      `
+          ---
+          property_group_key: sensors
+          ---
+          Carbon monoxide concentration in parts per million, if the device measures it. \`null\` until the first value arrives.
+          `,
+    )
+    .optional(),
+  air_quality_index: z
+    .number()
+    .nullable()
+    .describe(
+      `
+          ---
+          property_group_key: sensors
+          ---
+          Air quality index, if the device measures it. \`null\` until the first value arrives.
+          `,
+    )
+    .optional(),
+  mold_risk_level: z
+    .string()
+    .nullable()
+    .describe(
+      `
+          ---
+          property_group_key: sensors
+          ---
+          Mold risk level as reported by the device, if the device measures it. \`null\` until the first value arrives.
+          `,
+    )
+    .optional(),
+  is_occupied: z
+    .boolean()
+    .nullable()
+    .describe(
+      `
+          ---
+          property_group_key: sensors
+          ---
+          Indicates whether the device detects that the space is occupied, if the device measures occupancy. \`null\` until the first value arrives.
+          `,
+    )
+    .optional(),
+  occupant_count: z
+    .number()
+    .nullable()
+    .describe(
+      `
+          ---
+          property_group_key: sensors
+          ---
+          Number of occupants the device detects, if the device counts occupants. \`null\` until the first value arrives.
+          `,
+    )
+    .optional(),
+  is_smoking_detected: z
+    .boolean()
+    .nullable()
+    .describe(
+      `
+          ---
+          property_group_key: sensors
+          ---
+          Indicates whether the device detects smoking, if the device measures it. \`null\` until the first value arrives.
+          `,
+    )
+    .optional(),
+})
+
+export const named_sensor = z.object({
+  sensor_name: z.string().describe(`
+          ---
+          property_group_key: sensors
+          ---
+          Stable, hardware-defined name of the sensor, such as a port number.
+          `),
+  display_name: z.string().describe(`
+          ---
+          property_group_key: sensors
+          ---
+          Display name of the sensor. Defaults to \`sensor_name\`.
+          `),
+  temperature_celsius: z
+    .number()
+    .nullable()
+    .describe(
+      `
+          ---
+          property_group_key: sensors
+          ---
+          Reported temperature in °C. \`null\` until the first value arrives.
+          `,
+    )
+    .optional(),
+  temperature_fahrenheit: z
+    .number()
+    .nullable()
+    .describe(
+      `
+          ---
+          property_group_key: sensors
+          ---
+          Reported temperature in °F. \`null\` until the first value arrives.
+          `,
+    )
+    .optional(),
+  relative_humidity: z
+    .number()
+    .min(0)
+    .max(1)
+    .nullable()
+    .describe(
+      `
+          ---
+          property_group_key: sensors
+          ---
+          Reported relative humidity, as a value between 0 and 1, inclusive. \`null\` until the first value arrives.
+          `,
+    )
+    .optional(),
+  noise_level_decibels: z
+    .number()
+    .nullable()
+    .describe(
+      `
+          ---
+          property_group_key: sensors
+          ---
+          Noise level in decibels. \`null\` until the first value arrives.
+          `,
+    )
+    .optional(),
+  ...additional_sensor_measurement_properties.shape,
+}).describe(`
+  ---
+  property_groups:
+    sensors:
+      name: Sensors
+  ---
+  A sensor on the device, with the same measurement fields as the device.
+`)
+
 export const common_device_properties = z.object({
   online: z.boolean().describe('Indicates whether the device is online.'),
   name: z.string().describe(`
@@ -1022,6 +1194,7 @@ export const common_device_properties = z.object({
     .optional(),
   noise_level_decibels: z
     .number()
+    .nullable()
     .describe(
       `
           ---
@@ -1039,6 +1212,18 @@ export const common_device_properties = z.object({
           property_group_key: noise_sensors
           ---
           Array of noise threshold IDs that are currently triggering.
+          `,
+    )
+    .optional(),
+  ...additional_sensor_measurement_properties.shape,
+  named_sensors: z
+    .array(named_sensor)
+    .describe(
+      `
+          ---
+          property_group_key: sensors
+          ---
+          Additional sensors of the same kind on the device, each with a stable \`sensor_name\`. Present only when the device has more than one sensor of a kind or no single main sensor.
           `,
     )
     .optional(),
@@ -1095,6 +1280,8 @@ export const device = z
         name: Hardware
       noise_sensors:
         name: Noise Sensors
+      sensors:
+        name: Sensors
       speakers:
         name: Speakers
       phones:
