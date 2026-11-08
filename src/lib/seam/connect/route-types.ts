@@ -16229,9 +16229,58 @@ export type Routes = {
                  * @deprecated use offline_access_codes_enabled*/
                 supports_offline_access_codes?: boolean | undefined
                 /** Indicates current noise level in decibels, if the device supports noise detection. */
-                noise_level_decibels?: number | undefined
+                noise_level_decibels?: (number | null) | undefined
                 /** Array of noise threshold IDs that are currently triggering. */
                 currently_triggering_noise_threshold_ids?: string[] | undefined
+                /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                noise_level_nrs?: (number | null) | undefined
+                /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co2_ppm?: (number | null) | undefined
+                /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co_ppm?: (number | null) | undefined
+                /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                air_quality_index?: (number | null) | undefined
+                /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                mold_risk_level?: (string | null) | undefined
+                /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                is_occupied?: (boolean | null) | undefined
+                /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                occupant_count?: (number | null) | undefined
+                /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                is_smoking_detected?: (boolean | null) | undefined
+                /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
+                named_sensors?:
+                  | {
+                      /** Stable, hardware-defined name of the sensor, such as a port number. */
+                      sensor_name: string
+                      /** Display name of the sensor. Defaults to `sensor_name`. */
+                      display_name: string
+                      /** Reported temperature in °C. `null` until the first value arrives. */
+                      temperature_celsius?: (number | null) | undefined
+                      /** Reported temperature in °F. `null` until the first value arrives. */
+                      temperature_fahrenheit?: (number | null) | undefined
+                      /** Reported relative humidity, as a value between 0 and 1, inclusive. `null` until the first value arrives. */
+                      relative_humidity?: (number | null) | undefined
+                      /** Noise level in decibels. `null` until the first value arrives. */
+                      noise_level_decibels?: (number | null) | undefined
+                      /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                      noise_level_nrs?: (number | null) | undefined
+                      /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                      co2_ppm?: (number | null) | undefined
+                      /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                      co_ppm?: (number | null) | undefined
+                      /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                      air_quality_index?: (number | null) | undefined
+                      /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                      mold_risk_level?: (string | null) | undefined
+                      /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                      is_occupied?: (boolean | null) | undefined
+                      /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                      occupant_count?: (number | null) | undefined
+                      /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                      is_smoking_detected?: (boolean | null) | undefined
+                    }[]
+                  | undefined
               } & {
                 /** ASSA ABLOY Credential Service metadata for the phone. */
                 assa_abloy_credential_service_metadata?:
@@ -17305,11 +17354,11 @@ export type Routes = {
                     | undefined
                 } & {
                   /** Reported temperature in °F. */
-                  temperature_fahrenheit?: number | undefined
+                  temperature_fahrenheit?: (number | null) | undefined
                   /** Reported temperature in °C. */
-                  temperature_celsius?: number | undefined
+                  temperature_celsius?: (number | null) | undefined
                   /** Reported relative humidity, as a value between 0 and 1, inclusive. */
-                  relative_humidity?: number | undefined
+                  relative_humidity?: (number | null) | undefined
                   /** HVAC mode settings that the thermostat supports. */
                   available_hvac_mode_settings?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')[]
@@ -25997,9 +26046,58 @@ export type Routes = {
                  * @deprecated use offline_access_codes_enabled*/
                 supports_offline_access_codes?: boolean | undefined
                 /** Indicates current noise level in decibels, if the device supports noise detection. */
-                noise_level_decibels?: number | undefined
+                noise_level_decibels?: (number | null) | undefined
                 /** Array of noise threshold IDs that are currently triggering. */
                 currently_triggering_noise_threshold_ids?: string[] | undefined
+                /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                noise_level_nrs?: (number | null) | undefined
+                /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co2_ppm?: (number | null) | undefined
+                /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co_ppm?: (number | null) | undefined
+                /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                air_quality_index?: (number | null) | undefined
+                /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                mold_risk_level?: (string | null) | undefined
+                /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                is_occupied?: (boolean | null) | undefined
+                /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                occupant_count?: (number | null) | undefined
+                /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                is_smoking_detected?: (boolean | null) | undefined
+                /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
+                named_sensors?:
+                  | {
+                      /** Stable, hardware-defined name of the sensor, such as a port number. */
+                      sensor_name: string
+                      /** Display name of the sensor. Defaults to `sensor_name`. */
+                      display_name: string
+                      /** Reported temperature in °C. `null` until the first value arrives. */
+                      temperature_celsius?: (number | null) | undefined
+                      /** Reported temperature in °F. `null` until the first value arrives. */
+                      temperature_fahrenheit?: (number | null) | undefined
+                      /** Reported relative humidity, as a value between 0 and 1, inclusive. `null` until the first value arrives. */
+                      relative_humidity?: (number | null) | undefined
+                      /** Noise level in decibels. `null` until the first value arrives. */
+                      noise_level_decibels?: (number | null) | undefined
+                      /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                      noise_level_nrs?: (number | null) | undefined
+                      /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                      co2_ppm?: (number | null) | undefined
+                      /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                      co_ppm?: (number | null) | undefined
+                      /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                      air_quality_index?: (number | null) | undefined
+                      /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                      mold_risk_level?: (string | null) | undefined
+                      /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                      is_occupied?: (boolean | null) | undefined
+                      /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                      occupant_count?: (number | null) | undefined
+                      /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                      is_smoking_detected?: (boolean | null) | undefined
+                    }[]
+                  | undefined
               } & {
                 /** ASSA ABLOY Credential Service metadata for the phone. */
                 assa_abloy_credential_service_metadata?:
@@ -27073,11 +27171,11 @@ export type Routes = {
                     | undefined
                 } & {
                   /** Reported temperature in °F. */
-                  temperature_fahrenheit?: number | undefined
+                  temperature_fahrenheit?: (number | null) | undefined
                   /** Reported temperature in °C. */
-                  temperature_celsius?: number | undefined
+                  temperature_celsius?: (number | null) | undefined
                   /** Reported relative humidity, as a value between 0 and 1, inclusive. */
-                  relative_humidity?: number | undefined
+                  relative_humidity?: (number | null) | undefined
                   /** HVAC mode settings that the thermostat supports. */
                   available_hvac_mode_settings?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')[]
@@ -58245,9 +58343,58 @@ export type Routes = {
            * @deprecated use offline_access_codes_enabled*/
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
-          noise_level_decibels?: number | undefined
+          noise_level_decibels?: (number | null) | undefined
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
+          /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+          noise_level_nrs?: (number | null) | undefined
+          /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co2_ppm?: (number | null) | undefined
+          /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co_ppm?: (number | null) | undefined
+          /** Air quality index, if the device measures it. `null` until the first value arrives. */
+          air_quality_index?: (number | null) | undefined
+          /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+          mold_risk_level?: (string | null) | undefined
+          /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+          is_occupied?: (boolean | null) | undefined
+          /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+          occupant_count?: (number | null) | undefined
+          /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+          is_smoking_detected?: (boolean | null) | undefined
+          /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
+          named_sensors?:
+            | {
+                /** Stable, hardware-defined name of the sensor, such as a port number. */
+                sensor_name: string
+                /** Display name of the sensor. Defaults to `sensor_name`. */
+                display_name: string
+                /** Reported temperature in °C. `null` until the first value arrives. */
+                temperature_celsius?: (number | null) | undefined
+                /** Reported temperature in °F. `null` until the first value arrives. */
+                temperature_fahrenheit?: (number | null) | undefined
+                /** Reported relative humidity, as a value between 0 and 1, inclusive. `null` until the first value arrives. */
+                relative_humidity?: (number | null) | undefined
+                /** Noise level in decibels. `null` until the first value arrives. */
+                noise_level_decibels?: (number | null) | undefined
+                /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                noise_level_nrs?: (number | null) | undefined
+                /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co2_ppm?: (number | null) | undefined
+                /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co_ppm?: (number | null) | undefined
+                /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                air_quality_index?: (number | null) | undefined
+                /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                mold_risk_level?: (string | null) | undefined
+                /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                is_occupied?: (boolean | null) | undefined
+                /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                occupant_count?: (number | null) | undefined
+                /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                is_smoking_detected?: (boolean | null) | undefined
+              }[]
+            | undefined
         } & {
           /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
@@ -59287,11 +59434,11 @@ export type Routes = {
               | undefined
           } & {
             /** Reported temperature in °F. */
-            temperature_fahrenheit?: number | undefined
+            temperature_fahrenheit?: (number | null) | undefined
             /** Reported temperature in °C. */
-            temperature_celsius?: number | undefined
+            temperature_celsius?: (number | null) | undefined
             /** Reported relative humidity, as a value between 0 and 1, inclusive. */
-            relative_humidity?: number | undefined
+            relative_humidity?: (number | null) | undefined
             /** HVAC mode settings that the thermostat supports. */
             available_hvac_mode_settings?:
               ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')[] | undefined
@@ -60636,9 +60783,58 @@ export type Routes = {
            * @deprecated use offline_access_codes_enabled*/
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
-          noise_level_decibels?: number | undefined
+          noise_level_decibels?: (number | null) | undefined
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
+          /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+          noise_level_nrs?: (number | null) | undefined
+          /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co2_ppm?: (number | null) | undefined
+          /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co_ppm?: (number | null) | undefined
+          /** Air quality index, if the device measures it. `null` until the first value arrives. */
+          air_quality_index?: (number | null) | undefined
+          /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+          mold_risk_level?: (string | null) | undefined
+          /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+          is_occupied?: (boolean | null) | undefined
+          /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+          occupant_count?: (number | null) | undefined
+          /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+          is_smoking_detected?: (boolean | null) | undefined
+          /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
+          named_sensors?:
+            | {
+                /** Stable, hardware-defined name of the sensor, such as a port number. */
+                sensor_name: string
+                /** Display name of the sensor. Defaults to `sensor_name`. */
+                display_name: string
+                /** Reported temperature in °C. `null` until the first value arrives. */
+                temperature_celsius?: (number | null) | undefined
+                /** Reported temperature in °F. `null` until the first value arrives. */
+                temperature_fahrenheit?: (number | null) | undefined
+                /** Reported relative humidity, as a value between 0 and 1, inclusive. `null` until the first value arrives. */
+                relative_humidity?: (number | null) | undefined
+                /** Noise level in decibels. `null` until the first value arrives. */
+                noise_level_decibels?: (number | null) | undefined
+                /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                noise_level_nrs?: (number | null) | undefined
+                /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co2_ppm?: (number | null) | undefined
+                /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co_ppm?: (number | null) | undefined
+                /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                air_quality_index?: (number | null) | undefined
+                /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                mold_risk_level?: (string | null) | undefined
+                /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                is_occupied?: (boolean | null) | undefined
+                /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                occupant_count?: (number | null) | undefined
+                /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                is_smoking_detected?: (boolean | null) | undefined
+              }[]
+            | undefined
         } & {
           /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
@@ -61678,11 +61874,11 @@ export type Routes = {
               | undefined
           } & {
             /** Reported temperature in °F. */
-            temperature_fahrenheit?: number | undefined
+            temperature_fahrenheit?: (number | null) | undefined
             /** Reported temperature in °C. */
-            temperature_celsius?: number | undefined
+            temperature_celsius?: (number | null) | undefined
             /** Reported relative humidity, as a value between 0 and 1, inclusive. */
-            relative_humidity?: number | undefined
+            relative_humidity?: (number | null) | undefined
             /** HVAC mode settings that the thermostat supports. */
             available_hvac_mode_settings?:
               ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')[] | undefined
@@ -77385,9 +77581,58 @@ export type Routes = {
            * @deprecated use offline_access_codes_enabled*/
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
-          noise_level_decibels?: number | undefined
+          noise_level_decibels?: (number | null) | undefined
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
+          /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+          noise_level_nrs?: (number | null) | undefined
+          /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co2_ppm?: (number | null) | undefined
+          /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co_ppm?: (number | null) | undefined
+          /** Air quality index, if the device measures it. `null` until the first value arrives. */
+          air_quality_index?: (number | null) | undefined
+          /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+          mold_risk_level?: (string | null) | undefined
+          /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+          is_occupied?: (boolean | null) | undefined
+          /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+          occupant_count?: (number | null) | undefined
+          /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+          is_smoking_detected?: (boolean | null) | undefined
+          /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
+          named_sensors?:
+            | {
+                /** Stable, hardware-defined name of the sensor, such as a port number. */
+                sensor_name: string
+                /** Display name of the sensor. Defaults to `sensor_name`. */
+                display_name: string
+                /** Reported temperature in °C. `null` until the first value arrives. */
+                temperature_celsius?: (number | null) | undefined
+                /** Reported temperature in °F. `null` until the first value arrives. */
+                temperature_fahrenheit?: (number | null) | undefined
+                /** Reported relative humidity, as a value between 0 and 1, inclusive. `null` until the first value arrives. */
+                relative_humidity?: (number | null) | undefined
+                /** Noise level in decibels. `null` until the first value arrives. */
+                noise_level_decibels?: (number | null) | undefined
+                /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                noise_level_nrs?: (number | null) | undefined
+                /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co2_ppm?: (number | null) | undefined
+                /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co_ppm?: (number | null) | undefined
+                /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                air_quality_index?: (number | null) | undefined
+                /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                mold_risk_level?: (string | null) | undefined
+                /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                is_occupied?: (boolean | null) | undefined
+                /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                occupant_count?: (number | null) | undefined
+                /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                is_smoking_detected?: (boolean | null) | undefined
+              }[]
+            | undefined
         } & {
           /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
@@ -78427,11 +78672,11 @@ export type Routes = {
               | undefined
           } & {
             /** Reported temperature in °F. */
-            temperature_fahrenheit?: number | undefined
+            temperature_fahrenheit?: (number | null) | undefined
             /** Reported temperature in °C. */
-            temperature_celsius?: number | undefined
+            temperature_celsius?: (number | null) | undefined
             /** Reported relative humidity, as a value between 0 and 1, inclusive. */
-            relative_humidity?: number | undefined
+            relative_humidity?: (number | null) | undefined
             /** HVAC mode settings that the thermostat supports. */
             available_hvac_mode_settings?:
               ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')[] | undefined
@@ -79476,9 +79721,58 @@ export type Routes = {
            * @deprecated use offline_access_codes_enabled*/
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
-          noise_level_decibels?: number | undefined
+          noise_level_decibels?: (number | null) | undefined
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
+          /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+          noise_level_nrs?: (number | null) | undefined
+          /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co2_ppm?: (number | null) | undefined
+          /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co_ppm?: (number | null) | undefined
+          /** Air quality index, if the device measures it. `null` until the first value arrives. */
+          air_quality_index?: (number | null) | undefined
+          /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+          mold_risk_level?: (string | null) | undefined
+          /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+          is_occupied?: (boolean | null) | undefined
+          /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+          occupant_count?: (number | null) | undefined
+          /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+          is_smoking_detected?: (boolean | null) | undefined
+          /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
+          named_sensors?:
+            | {
+                /** Stable, hardware-defined name of the sensor, such as a port number. */
+                sensor_name: string
+                /** Display name of the sensor. Defaults to `sensor_name`. */
+                display_name: string
+                /** Reported temperature in °C. `null` until the first value arrives. */
+                temperature_celsius?: (number | null) | undefined
+                /** Reported temperature in °F. `null` until the first value arrives. */
+                temperature_fahrenheit?: (number | null) | undefined
+                /** Reported relative humidity, as a value between 0 and 1, inclusive. `null` until the first value arrives. */
+                relative_humidity?: (number | null) | undefined
+                /** Noise level in decibels. `null` until the first value arrives. */
+                noise_level_decibels?: (number | null) | undefined
+                /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                noise_level_nrs?: (number | null) | undefined
+                /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co2_ppm?: (number | null) | undefined
+                /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co_ppm?: (number | null) | undefined
+                /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                air_quality_index?: (number | null) | undefined
+                /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                mold_risk_level?: (string | null) | undefined
+                /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                is_occupied?: (boolean | null) | undefined
+                /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                occupant_count?: (number | null) | undefined
+                /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                is_smoking_detected?: (boolean | null) | undefined
+              }[]
+            | undefined
         } & {
           /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
@@ -80518,11 +80812,11 @@ export type Routes = {
               | undefined
           } & {
             /** Reported temperature in °F. */
-            temperature_fahrenheit?: number | undefined
+            temperature_fahrenheit?: (number | null) | undefined
             /** Reported temperature in °C. */
-            temperature_celsius?: number | undefined
+            temperature_celsius?: (number | null) | undefined
             /** Reported relative humidity, as a value between 0 and 1, inclusive. */
-            relative_humidity?: number | undefined
+            relative_humidity?: (number | null) | undefined
             /** HVAC mode settings that the thermostat supports. */
             available_hvac_mode_settings?:
               ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')[] | undefined
@@ -81705,9 +81999,58 @@ export type Routes = {
            * @deprecated use offline_access_codes_enabled*/
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
-          noise_level_decibels?: number | undefined
+          noise_level_decibels?: (number | null) | undefined
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
+          /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+          noise_level_nrs?: (number | null) | undefined
+          /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co2_ppm?: (number | null) | undefined
+          /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co_ppm?: (number | null) | undefined
+          /** Air quality index, if the device measures it. `null` until the first value arrives. */
+          air_quality_index?: (number | null) | undefined
+          /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+          mold_risk_level?: (string | null) | undefined
+          /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+          is_occupied?: (boolean | null) | undefined
+          /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+          occupant_count?: (number | null) | undefined
+          /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+          is_smoking_detected?: (boolean | null) | undefined
+          /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
+          named_sensors?:
+            | {
+                /** Stable, hardware-defined name of the sensor, such as a port number. */
+                sensor_name: string
+                /** Display name of the sensor. Defaults to `sensor_name`. */
+                display_name: string
+                /** Reported temperature in °C. `null` until the first value arrives. */
+                temperature_celsius?: (number | null) | undefined
+                /** Reported temperature in °F. `null` until the first value arrives. */
+                temperature_fahrenheit?: (number | null) | undefined
+                /** Reported relative humidity, as a value between 0 and 1, inclusive. `null` until the first value arrives. */
+                relative_humidity?: (number | null) | undefined
+                /** Noise level in decibels. `null` until the first value arrives. */
+                noise_level_decibels?: (number | null) | undefined
+                /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                noise_level_nrs?: (number | null) | undefined
+                /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co2_ppm?: (number | null) | undefined
+                /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co_ppm?: (number | null) | undefined
+                /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                air_quality_index?: (number | null) | undefined
+                /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                mold_risk_level?: (string | null) | undefined
+                /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                is_occupied?: (boolean | null) | undefined
+                /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                occupant_count?: (number | null) | undefined
+                /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                is_smoking_detected?: (boolean | null) | undefined
+              }[]
+            | undefined
         } & {
           /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
@@ -82747,11 +83090,11 @@ export type Routes = {
               | undefined
           } & {
             /** Reported temperature in °F. */
-            temperature_fahrenheit?: number | undefined
+            temperature_fahrenheit?: (number | null) | undefined
             /** Reported temperature in °C. */
-            temperature_celsius?: number | undefined
+            temperature_celsius?: (number | null) | undefined
             /** Reported relative humidity, as a value between 0 and 1, inclusive. */
-            relative_humidity?: number | undefined
+            relative_humidity?: (number | null) | undefined
             /** HVAC mode settings that the thermostat supports. */
             available_hvac_mode_settings?:
               ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')[] | undefined
@@ -83795,9 +84138,58 @@ export type Routes = {
            * @deprecated use offline_access_codes_enabled*/
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
-          noise_level_decibels?: number | undefined
+          noise_level_decibels?: (number | null) | undefined
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
+          /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+          noise_level_nrs?: (number | null) | undefined
+          /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co2_ppm?: (number | null) | undefined
+          /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co_ppm?: (number | null) | undefined
+          /** Air quality index, if the device measures it. `null` until the first value arrives. */
+          air_quality_index?: (number | null) | undefined
+          /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+          mold_risk_level?: (string | null) | undefined
+          /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+          is_occupied?: (boolean | null) | undefined
+          /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+          occupant_count?: (number | null) | undefined
+          /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+          is_smoking_detected?: (boolean | null) | undefined
+          /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
+          named_sensors?:
+            | {
+                /** Stable, hardware-defined name of the sensor, such as a port number. */
+                sensor_name: string
+                /** Display name of the sensor. Defaults to `sensor_name`. */
+                display_name: string
+                /** Reported temperature in °C. `null` until the first value arrives. */
+                temperature_celsius?: (number | null) | undefined
+                /** Reported temperature in °F. `null` until the first value arrives. */
+                temperature_fahrenheit?: (number | null) | undefined
+                /** Reported relative humidity, as a value between 0 and 1, inclusive. `null` until the first value arrives. */
+                relative_humidity?: (number | null) | undefined
+                /** Noise level in decibels. `null` until the first value arrives. */
+                noise_level_decibels?: (number | null) | undefined
+                /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                noise_level_nrs?: (number | null) | undefined
+                /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co2_ppm?: (number | null) | undefined
+                /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co_ppm?: (number | null) | undefined
+                /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                air_quality_index?: (number | null) | undefined
+                /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                mold_risk_level?: (string | null) | undefined
+                /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                is_occupied?: (boolean | null) | undefined
+                /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                occupant_count?: (number | null) | undefined
+                /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                is_smoking_detected?: (boolean | null) | undefined
+              }[]
+            | undefined
         } & {
           /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
@@ -84837,11 +85229,11 @@ export type Routes = {
               | undefined
           } & {
             /** Reported temperature in °F. */
-            temperature_fahrenheit?: number | undefined
+            temperature_fahrenheit?: (number | null) | undefined
             /** Reported temperature in °C. */
-            temperature_celsius?: number | undefined
+            temperature_celsius?: (number | null) | undefined
             /** Reported relative humidity, as a value between 0 and 1, inclusive. */
-            relative_humidity?: number | undefined
+            relative_humidity?: (number | null) | undefined
             /** HVAC mode settings that the thermostat supports. */
             available_hvac_mode_settings?:
               ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')[] | undefined
@@ -96136,9 +96528,58 @@ export type Routes = {
            * @deprecated use offline_access_codes_enabled*/
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
-          noise_level_decibels?: number | undefined
+          noise_level_decibels?: (number | null) | undefined
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
+          /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+          noise_level_nrs?: (number | null) | undefined
+          /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co2_ppm?: (number | null) | undefined
+          /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co_ppm?: (number | null) | undefined
+          /** Air quality index, if the device measures it. `null` until the first value arrives. */
+          air_quality_index?: (number | null) | undefined
+          /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+          mold_risk_level?: (string | null) | undefined
+          /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+          is_occupied?: (boolean | null) | undefined
+          /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+          occupant_count?: (number | null) | undefined
+          /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+          is_smoking_detected?: (boolean | null) | undefined
+          /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
+          named_sensors?:
+            | {
+                /** Stable, hardware-defined name of the sensor, such as a port number. */
+                sensor_name: string
+                /** Display name of the sensor. Defaults to `sensor_name`. */
+                display_name: string
+                /** Reported temperature in °C. `null` until the first value arrives. */
+                temperature_celsius?: (number | null) | undefined
+                /** Reported temperature in °F. `null` until the first value arrives. */
+                temperature_fahrenheit?: (number | null) | undefined
+                /** Reported relative humidity, as a value between 0 and 1, inclusive. `null` until the first value arrives. */
+                relative_humidity?: (number | null) | undefined
+                /** Noise level in decibels. `null` until the first value arrives. */
+                noise_level_decibels?: (number | null) | undefined
+                /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                noise_level_nrs?: (number | null) | undefined
+                /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co2_ppm?: (number | null) | undefined
+                /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co_ppm?: (number | null) | undefined
+                /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                air_quality_index?: (number | null) | undefined
+                /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                mold_risk_level?: (string | null) | undefined
+                /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                is_occupied?: (boolean | null) | undefined
+                /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                occupant_count?: (number | null) | undefined
+                /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                is_smoking_detected?: (boolean | null) | undefined
+              }[]
+            | undefined
         } & {
           /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
@@ -97178,11 +97619,11 @@ export type Routes = {
               | undefined
           } & {
             /** Reported temperature in °F. */
-            temperature_fahrenheit?: number | undefined
+            temperature_fahrenheit?: (number | null) | undefined
             /** Reported temperature in °C. */
-            temperature_celsius?: number | undefined
+            temperature_celsius?: (number | null) | undefined
             /** Reported relative humidity, as a value between 0 and 1, inclusive. */
-            relative_humidity?: number | undefined
+            relative_humidity?: (number | null) | undefined
             /** HVAC mode settings that the thermostat supports. */
             available_hvac_mode_settings?:
               ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')[] | undefined
@@ -98226,9 +98667,58 @@ export type Routes = {
            * @deprecated use offline_access_codes_enabled*/
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
-          noise_level_decibels?: number | undefined
+          noise_level_decibels?: (number | null) | undefined
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
+          /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+          noise_level_nrs?: (number | null) | undefined
+          /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co2_ppm?: (number | null) | undefined
+          /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co_ppm?: (number | null) | undefined
+          /** Air quality index, if the device measures it. `null` until the first value arrives. */
+          air_quality_index?: (number | null) | undefined
+          /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+          mold_risk_level?: (string | null) | undefined
+          /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+          is_occupied?: (boolean | null) | undefined
+          /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+          occupant_count?: (number | null) | undefined
+          /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+          is_smoking_detected?: (boolean | null) | undefined
+          /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
+          named_sensors?:
+            | {
+                /** Stable, hardware-defined name of the sensor, such as a port number. */
+                sensor_name: string
+                /** Display name of the sensor. Defaults to `sensor_name`. */
+                display_name: string
+                /** Reported temperature in °C. `null` until the first value arrives. */
+                temperature_celsius?: (number | null) | undefined
+                /** Reported temperature in °F. `null` until the first value arrives. */
+                temperature_fahrenheit?: (number | null) | undefined
+                /** Reported relative humidity, as a value between 0 and 1, inclusive. `null` until the first value arrives. */
+                relative_humidity?: (number | null) | undefined
+                /** Noise level in decibels. `null` until the first value arrives. */
+                noise_level_decibels?: (number | null) | undefined
+                /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                noise_level_nrs?: (number | null) | undefined
+                /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co2_ppm?: (number | null) | undefined
+                /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co_ppm?: (number | null) | undefined
+                /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                air_quality_index?: (number | null) | undefined
+                /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                mold_risk_level?: (string | null) | undefined
+                /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                is_occupied?: (boolean | null) | undefined
+                /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                occupant_count?: (number | null) | undefined
+                /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                is_smoking_detected?: (boolean | null) | undefined
+              }[]
+            | undefined
         } & {
           /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
@@ -99268,11 +99758,11 @@ export type Routes = {
               | undefined
           } & {
             /** Reported temperature in °F. */
-            temperature_fahrenheit?: number | undefined
+            temperature_fahrenheit?: (number | null) | undefined
             /** Reported temperature in °C. */
-            temperature_celsius?: number | undefined
+            temperature_celsius?: (number | null) | undefined
             /** Reported relative humidity, as a value between 0 and 1, inclusive. */
-            relative_humidity?: number | undefined
+            relative_humidity?: (number | null) | undefined
             /** HVAC mode settings that the thermostat supports. */
             available_hvac_mode_settings?:
               ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')[] | undefined
@@ -127921,9 +128411,58 @@ export type Routes = {
                  * @deprecated use offline_access_codes_enabled*/
                 supports_offline_access_codes?: boolean | undefined
                 /** Indicates current noise level in decibels, if the device supports noise detection. */
-                noise_level_decibels?: number | undefined
+                noise_level_decibels?: (number | null) | undefined
                 /** Array of noise threshold IDs that are currently triggering. */
                 currently_triggering_noise_threshold_ids?: string[] | undefined
+                /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                noise_level_nrs?: (number | null) | undefined
+                /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co2_ppm?: (number | null) | undefined
+                /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co_ppm?: (number | null) | undefined
+                /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                air_quality_index?: (number | null) | undefined
+                /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                mold_risk_level?: (string | null) | undefined
+                /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                is_occupied?: (boolean | null) | undefined
+                /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                occupant_count?: (number | null) | undefined
+                /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                is_smoking_detected?: (boolean | null) | undefined
+                /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
+                named_sensors?:
+                  | {
+                      /** Stable, hardware-defined name of the sensor, such as a port number. */
+                      sensor_name: string
+                      /** Display name of the sensor. Defaults to `sensor_name`. */
+                      display_name: string
+                      /** Reported temperature in °C. `null` until the first value arrives. */
+                      temperature_celsius?: (number | null) | undefined
+                      /** Reported temperature in °F. `null` until the first value arrives. */
+                      temperature_fahrenheit?: (number | null) | undefined
+                      /** Reported relative humidity, as a value between 0 and 1, inclusive. `null` until the first value arrives. */
+                      relative_humidity?: (number | null) | undefined
+                      /** Noise level in decibels. `null` until the first value arrives. */
+                      noise_level_decibels?: (number | null) | undefined
+                      /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                      noise_level_nrs?: (number | null) | undefined
+                      /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                      co2_ppm?: (number | null) | undefined
+                      /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                      co_ppm?: (number | null) | undefined
+                      /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                      air_quality_index?: (number | null) | undefined
+                      /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                      mold_risk_level?: (string | null) | undefined
+                      /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                      is_occupied?: (boolean | null) | undefined
+                      /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                      occupant_count?: (number | null) | undefined
+                      /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                      is_smoking_detected?: (boolean | null) | undefined
+                    }[]
+                  | undefined
               } & {
                 /** ASSA ABLOY Credential Service metadata for the phone. */
                 assa_abloy_credential_service_metadata?:
@@ -128997,11 +129536,11 @@ export type Routes = {
                     | undefined
                 } & {
                   /** Reported temperature in °F. */
-                  temperature_fahrenheit?: number | undefined
+                  temperature_fahrenheit?: (number | null) | undefined
                   /** Reported temperature in °C. */
-                  temperature_celsius?: number | undefined
+                  temperature_celsius?: (number | null) | undefined
                   /** Reported relative humidity, as a value between 0 and 1, inclusive. */
-                  relative_humidity?: number | undefined
+                  relative_humidity?: (number | null) | undefined
                   /** HVAC mode settings that the thermostat supports. */
                   available_hvac_mode_settings?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')[]
@@ -161968,9 +162507,58 @@ export type Routes = {
            * @deprecated use offline_access_codes_enabled*/
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
-          noise_level_decibels?: number | undefined
+          noise_level_decibels?: (number | null) | undefined
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
+          /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+          noise_level_nrs?: (number | null) | undefined
+          /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co2_ppm?: (number | null) | undefined
+          /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co_ppm?: (number | null) | undefined
+          /** Air quality index, if the device measures it. `null` until the first value arrives. */
+          air_quality_index?: (number | null) | undefined
+          /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+          mold_risk_level?: (string | null) | undefined
+          /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+          is_occupied?: (boolean | null) | undefined
+          /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+          occupant_count?: (number | null) | undefined
+          /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+          is_smoking_detected?: (boolean | null) | undefined
+          /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
+          named_sensors?:
+            | {
+                /** Stable, hardware-defined name of the sensor, such as a port number. */
+                sensor_name: string
+                /** Display name of the sensor. Defaults to `sensor_name`. */
+                display_name: string
+                /** Reported temperature in °C. `null` until the first value arrives. */
+                temperature_celsius?: (number | null) | undefined
+                /** Reported temperature in °F. `null` until the first value arrives. */
+                temperature_fahrenheit?: (number | null) | undefined
+                /** Reported relative humidity, as a value between 0 and 1, inclusive. `null` until the first value arrives. */
+                relative_humidity?: (number | null) | undefined
+                /** Noise level in decibels. `null` until the first value arrives. */
+                noise_level_decibels?: (number | null) | undefined
+                /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                noise_level_nrs?: (number | null) | undefined
+                /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co2_ppm?: (number | null) | undefined
+                /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co_ppm?: (number | null) | undefined
+                /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                air_quality_index?: (number | null) | undefined
+                /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                mold_risk_level?: (string | null) | undefined
+                /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                is_occupied?: (boolean | null) | undefined
+                /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                occupant_count?: (number | null) | undefined
+                /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                is_smoking_detected?: (boolean | null) | undefined
+              }[]
+            | undefined
         } & {
           /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
@@ -163010,11 +163598,11 @@ export type Routes = {
               | undefined
           } & {
             /** Reported temperature in °F. */
-            temperature_fahrenheit?: number | undefined
+            temperature_fahrenheit?: (number | null) | undefined
             /** Reported temperature in °C. */
-            temperature_celsius?: number | undefined
+            temperature_celsius?: (number | null) | undefined
             /** Reported relative humidity, as a value between 0 and 1, inclusive. */
-            relative_humidity?: number | undefined
+            relative_humidity?: (number | null) | undefined
             /** HVAC mode settings that the thermostat supports. */
             available_hvac_mode_settings?:
               ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')[] | undefined
@@ -169215,9 +169803,58 @@ export type Routes = {
            * @deprecated use offline_access_codes_enabled*/
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
-          noise_level_decibels?: number | undefined
+          noise_level_decibels?: (number | null) | undefined
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
+          /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+          noise_level_nrs?: (number | null) | undefined
+          /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co2_ppm?: (number | null) | undefined
+          /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co_ppm?: (number | null) | undefined
+          /** Air quality index, if the device measures it. `null` until the first value arrives. */
+          air_quality_index?: (number | null) | undefined
+          /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+          mold_risk_level?: (string | null) | undefined
+          /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+          is_occupied?: (boolean | null) | undefined
+          /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+          occupant_count?: (number | null) | undefined
+          /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+          is_smoking_detected?: (boolean | null) | undefined
+          /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
+          named_sensors?:
+            | {
+                /** Stable, hardware-defined name of the sensor, such as a port number. */
+                sensor_name: string
+                /** Display name of the sensor. Defaults to `sensor_name`. */
+                display_name: string
+                /** Reported temperature in °C. `null` until the first value arrives. */
+                temperature_celsius?: (number | null) | undefined
+                /** Reported temperature in °F. `null` until the first value arrives. */
+                temperature_fahrenheit?: (number | null) | undefined
+                /** Reported relative humidity, as a value between 0 and 1, inclusive. `null` until the first value arrives. */
+                relative_humidity?: (number | null) | undefined
+                /** Noise level in decibels. `null` until the first value arrives. */
+                noise_level_decibels?: (number | null) | undefined
+                /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                noise_level_nrs?: (number | null) | undefined
+                /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co2_ppm?: (number | null) | undefined
+                /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co_ppm?: (number | null) | undefined
+                /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                air_quality_index?: (number | null) | undefined
+                /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                mold_risk_level?: (string | null) | undefined
+                /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                is_occupied?: (boolean | null) | undefined
+                /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                occupant_count?: (number | null) | undefined
+                /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                is_smoking_detected?: (boolean | null) | undefined
+              }[]
+            | undefined
         } & {
           /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
@@ -170257,11 +170894,11 @@ export type Routes = {
               | undefined
           } & {
             /** Reported temperature in °F. */
-            temperature_fahrenheit?: number | undefined
+            temperature_fahrenheit?: (number | null) | undefined
             /** Reported temperature in °C. */
-            temperature_celsius?: number | undefined
+            temperature_celsius?: (number | null) | undefined
             /** Reported relative humidity, as a value between 0 and 1, inclusive. */
-            relative_humidity?: number | undefined
+            relative_humidity?: (number | null) | undefined
             /** HVAC mode settings that the thermostat supports. */
             available_hvac_mode_settings?:
               ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')[] | undefined
@@ -171305,9 +171942,58 @@ export type Routes = {
            * @deprecated use offline_access_codes_enabled*/
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
-          noise_level_decibels?: number | undefined
+          noise_level_decibels?: (number | null) | undefined
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
+          /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+          noise_level_nrs?: (number | null) | undefined
+          /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co2_ppm?: (number | null) | undefined
+          /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co_ppm?: (number | null) | undefined
+          /** Air quality index, if the device measures it. `null` until the first value arrives. */
+          air_quality_index?: (number | null) | undefined
+          /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+          mold_risk_level?: (string | null) | undefined
+          /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+          is_occupied?: (boolean | null) | undefined
+          /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+          occupant_count?: (number | null) | undefined
+          /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+          is_smoking_detected?: (boolean | null) | undefined
+          /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
+          named_sensors?:
+            | {
+                /** Stable, hardware-defined name of the sensor, such as a port number. */
+                sensor_name: string
+                /** Display name of the sensor. Defaults to `sensor_name`. */
+                display_name: string
+                /** Reported temperature in °C. `null` until the first value arrives. */
+                temperature_celsius?: (number | null) | undefined
+                /** Reported temperature in °F. `null` until the first value arrives. */
+                temperature_fahrenheit?: (number | null) | undefined
+                /** Reported relative humidity, as a value between 0 and 1, inclusive. `null` until the first value arrives. */
+                relative_humidity?: (number | null) | undefined
+                /** Noise level in decibels. `null` until the first value arrives. */
+                noise_level_decibels?: (number | null) | undefined
+                /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                noise_level_nrs?: (number | null) | undefined
+                /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co2_ppm?: (number | null) | undefined
+                /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co_ppm?: (number | null) | undefined
+                /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                air_quality_index?: (number | null) | undefined
+                /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                mold_risk_level?: (string | null) | undefined
+                /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                is_occupied?: (boolean | null) | undefined
+                /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                occupant_count?: (number | null) | undefined
+                /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                is_smoking_detected?: (boolean | null) | undefined
+              }[]
+            | undefined
         } & {
           /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
@@ -172347,11 +173033,11 @@ export type Routes = {
               | undefined
           } & {
             /** Reported temperature in °F. */
-            temperature_fahrenheit?: number | undefined
+            temperature_fahrenheit?: (number | null) | undefined
             /** Reported temperature in °C. */
-            temperature_celsius?: number | undefined
+            temperature_celsius?: (number | null) | undefined
             /** Reported relative humidity, as a value between 0 and 1, inclusive. */
-            relative_humidity?: number | undefined
+            relative_humidity?: (number | null) | undefined
             /** HVAC mode settings that the thermostat supports. */
             available_hvac_mode_settings?:
               ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')[] | undefined
@@ -184762,9 +185448,58 @@ export type Routes = {
            * @deprecated use offline_access_codes_enabled*/
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
-          noise_level_decibels?: number | undefined
+          noise_level_decibels?: (number | null) | undefined
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
+          /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+          noise_level_nrs?: (number | null) | undefined
+          /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co2_ppm?: (number | null) | undefined
+          /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co_ppm?: (number | null) | undefined
+          /** Air quality index, if the device measures it. `null` until the first value arrives. */
+          air_quality_index?: (number | null) | undefined
+          /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+          mold_risk_level?: (string | null) | undefined
+          /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+          is_occupied?: (boolean | null) | undefined
+          /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+          occupant_count?: (number | null) | undefined
+          /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+          is_smoking_detected?: (boolean | null) | undefined
+          /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
+          named_sensors?:
+            | {
+                /** Stable, hardware-defined name of the sensor, such as a port number. */
+                sensor_name: string
+                /** Display name of the sensor. Defaults to `sensor_name`. */
+                display_name: string
+                /** Reported temperature in °C. `null` until the first value arrives. */
+                temperature_celsius?: (number | null) | undefined
+                /** Reported temperature in °F. `null` until the first value arrives. */
+                temperature_fahrenheit?: (number | null) | undefined
+                /** Reported relative humidity, as a value between 0 and 1, inclusive. `null` until the first value arrives. */
+                relative_humidity?: (number | null) | undefined
+                /** Noise level in decibels. `null` until the first value arrives. */
+                noise_level_decibels?: (number | null) | undefined
+                /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                noise_level_nrs?: (number | null) | undefined
+                /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co2_ppm?: (number | null) | undefined
+                /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co_ppm?: (number | null) | undefined
+                /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                air_quality_index?: (number | null) | undefined
+                /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                mold_risk_level?: (string | null) | undefined
+                /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                is_occupied?: (boolean | null) | undefined
+                /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                occupant_count?: (number | null) | undefined
+                /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                is_smoking_detected?: (boolean | null) | undefined
+              }[]
+            | undefined
         } & {
           /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
@@ -185804,11 +186539,11 @@ export type Routes = {
               | undefined
           } & {
             /** Reported temperature in °F. */
-            temperature_fahrenheit?: number | undefined
+            temperature_fahrenheit?: (number | null) | undefined
             /** Reported temperature in °C. */
-            temperature_celsius?: number | undefined
+            temperature_celsius?: (number | null) | undefined
             /** Reported relative humidity, as a value between 0 and 1, inclusive. */
-            relative_humidity?: number | undefined
+            relative_humidity?: (number | null) | undefined
             /** HVAC mode settings that the thermostat supports. */
             available_hvac_mode_settings?:
               ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')[] | undefined
@@ -186854,9 +187589,58 @@ export type Routes = {
            * @deprecated use offline_access_codes_enabled*/
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
-          noise_level_decibels?: number | undefined
+          noise_level_decibels?: (number | null) | undefined
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
+          /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+          noise_level_nrs?: (number | null) | undefined
+          /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co2_ppm?: (number | null) | undefined
+          /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+          co_ppm?: (number | null) | undefined
+          /** Air quality index, if the device measures it. `null` until the first value arrives. */
+          air_quality_index?: (number | null) | undefined
+          /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+          mold_risk_level?: (string | null) | undefined
+          /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+          is_occupied?: (boolean | null) | undefined
+          /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+          occupant_count?: (number | null) | undefined
+          /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+          is_smoking_detected?: (boolean | null) | undefined
+          /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
+          named_sensors?:
+            | {
+                /** Stable, hardware-defined name of the sensor, such as a port number. */
+                sensor_name: string
+                /** Display name of the sensor. Defaults to `sensor_name`. */
+                display_name: string
+                /** Reported temperature in °C. `null` until the first value arrives. */
+                temperature_celsius?: (number | null) | undefined
+                /** Reported temperature in °F. `null` until the first value arrives. */
+                temperature_fahrenheit?: (number | null) | undefined
+                /** Reported relative humidity, as a value between 0 and 1, inclusive. `null` until the first value arrives. */
+                relative_humidity?: (number | null) | undefined
+                /** Noise level in decibels. `null` until the first value arrives. */
+                noise_level_decibels?: (number | null) | undefined
+                /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                noise_level_nrs?: (number | null) | undefined
+                /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co2_ppm?: (number | null) | undefined
+                /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co_ppm?: (number | null) | undefined
+                /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                air_quality_index?: (number | null) | undefined
+                /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                mold_risk_level?: (string | null) | undefined
+                /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                is_occupied?: (boolean | null) | undefined
+                /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                occupant_count?: (number | null) | undefined
+                /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                is_smoking_detected?: (boolean | null) | undefined
+              }[]
+            | undefined
         } & {
           /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
@@ -187896,11 +188680,11 @@ export type Routes = {
               | undefined
           } & {
             /** Reported temperature in °F. */
-            temperature_fahrenheit?: number | undefined
+            temperature_fahrenheit?: (number | null) | undefined
             /** Reported temperature in °C. */
-            temperature_celsius?: number | undefined
+            temperature_celsius?: (number | null) | undefined
             /** Reported relative humidity, as a value between 0 and 1, inclusive. */
-            relative_humidity?: number | undefined
+            relative_humidity?: (number | null) | undefined
             /** HVAC mode settings that the thermostat supports. */
             available_hvac_mode_settings?:
               ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')[] | undefined
@@ -191661,9 +192445,58 @@ export type Routes = {
                  * @deprecated use offline_access_codes_enabled*/
                 supports_offline_access_codes?: boolean | undefined
                 /** Indicates current noise level in decibels, if the device supports noise detection. */
-                noise_level_decibels?: number | undefined
+                noise_level_decibels?: (number | null) | undefined
                 /** Array of noise threshold IDs that are currently triggering. */
                 currently_triggering_noise_threshold_ids?: string[] | undefined
+                /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                noise_level_nrs?: (number | null) | undefined
+                /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co2_ppm?: (number | null) | undefined
+                /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                co_ppm?: (number | null) | undefined
+                /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                air_quality_index?: (number | null) | undefined
+                /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                mold_risk_level?: (string | null) | undefined
+                /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                is_occupied?: (boolean | null) | undefined
+                /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                occupant_count?: (number | null) | undefined
+                /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                is_smoking_detected?: (boolean | null) | undefined
+                /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
+                named_sensors?:
+                  | {
+                      /** Stable, hardware-defined name of the sensor, such as a port number. */
+                      sensor_name: string
+                      /** Display name of the sensor. Defaults to `sensor_name`. */
+                      display_name: string
+                      /** Reported temperature in °C. `null` until the first value arrives. */
+                      temperature_celsius?: (number | null) | undefined
+                      /** Reported temperature in °F. `null` until the first value arrives. */
+                      temperature_fahrenheit?: (number | null) | undefined
+                      /** Reported relative humidity, as a value between 0 and 1, inclusive. `null` until the first value arrives. */
+                      relative_humidity?: (number | null) | undefined
+                      /** Noise level in decibels. `null` until the first value arrives. */
+                      noise_level_decibels?: (number | null) | undefined
+                      /** Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives. */
+                      noise_level_nrs?: (number | null) | undefined
+                      /** Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                      co2_ppm?: (number | null) | undefined
+                      /** Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives. */
+                      co_ppm?: (number | null) | undefined
+                      /** Air quality index, if the device measures it. `null` until the first value arrives. */
+                      air_quality_index?: (number | null) | undefined
+                      /** Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives. */
+                      mold_risk_level?: (string | null) | undefined
+                      /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives. */
+                      is_occupied?: (boolean | null) | undefined
+                      /** Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives. */
+                      occupant_count?: (number | null) | undefined
+                      /** Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives. */
+                      is_smoking_detected?: (boolean | null) | undefined
+                    }[]
+                  | undefined
               } & {
                 /** ASSA ABLOY Credential Service metadata for the phone. */
                 assa_abloy_credential_service_metadata?:
@@ -192737,11 +193570,11 @@ export type Routes = {
                     | undefined
                 } & {
                   /** Reported temperature in °F. */
-                  temperature_fahrenheit?: number | undefined
+                  temperature_fahrenheit?: (number | null) | undefined
                   /** Reported temperature in °C. */
-                  temperature_celsius?: number | undefined
+                  temperature_celsius?: (number | null) | undefined
                   /** Reported relative humidity, as a value between 0 and 1, inclusive. */
-                  relative_humidity?: number | undefined
+                  relative_humidity?: (number | null) | undefined
                   /** HVAC mode settings that the thermostat supports. */
                   available_hvac_mode_settings?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')[]

@@ -13,19 +13,19 @@ import {
 
 export const thermostat_capability_properties = z
   .object({
-    temperature_fahrenheit: z.number().describe(`
+    temperature_fahrenheit: z.number().nullable().describe(`
           ---
           property_group_key: thermostats
           ---
           Reported temperature in °F.
           `),
-    temperature_celsius: z.number().describe(`
+    temperature_celsius: z.number().nullable().describe(`
           ---
           property_group_key: thermostats
           ---
           Reported temperature in °C.
           `),
-    relative_humidity: z.number().min(0).max(1).describe(`
+    relative_humidity: z.number().min(0).max(1).nullable().describe(`
           ---
           property_group_key: thermostats
           ---
