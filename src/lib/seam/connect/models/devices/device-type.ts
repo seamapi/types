@@ -165,6 +165,21 @@ export const speaker_device_type = z
 
 export type SpeakerDeviceType = z.infer<typeof speaker_device_type>
 
+export const SENSOR_DEVICE_TYPE = {
+  ALERTIFY_SENSOR: 'alertify_sensor',
+} as const
+
+type SensorDeviceTypeFromMapping =
+  (typeof SENSOR_DEVICE_TYPE)[keyof typeof SENSOR_DEVICE_TYPE]
+
+export const SENSOR_DEVICE_TYPE_LIST = Object.values(SENSOR_DEVICE_TYPE)
+
+export const sensor_device_type = z
+  .enum(Object.values(SENSOR_DEVICE_TYPE) as [SensorDeviceTypeFromMapping])
+  .describe('Device type for environmental sensors.')
+
+export type SensorDeviceType = z.infer<typeof sensor_device_type>
+
 export const any_device_type = z.union([
   lock_device_type,
   key_device_type,
@@ -173,6 +188,7 @@ export const any_device_type = z.union([
   phone_device_type,
   camera_device_type,
   speaker_device_type,
+  sensor_device_type,
 ])
 
 export type AnyDeviceType = z.infer<typeof any_device_type>

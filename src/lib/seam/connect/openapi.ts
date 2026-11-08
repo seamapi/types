@@ -16041,6 +16041,11 @@ const openapi: OpenAPISpec = {
                 enum: ['sonos_speaker'],
                 type: 'string',
               },
+              {
+                description: 'Device type for environmental sensors.',
+                enum: ['alertify_sensor'],
+                type: 'string',
+              },
             ],
           },
           display_name: {
@@ -17126,6 +17131,38 @@ const openapi: OpenAPISpec = {
                           },
                         },
                         type: 'object',
+                      },
+                      alertify_metadata: {
+                        description: 'Metadata for an Alertify sensor.',
+                        properties: {
+                          building_id: {
+                            description:
+                              'ID of the Alertify building that contains the unit.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          device_id: {
+                            description: 'Device ID reported by Alertify.',
+                            type: 'string',
+                          },
+                          device_name: {
+                            description:
+                              'Device name, as set in the Alertify dashboard.',
+                            type: 'string',
+                          },
+                          unit_id: {
+                            description:
+                              'ID of the Alertify unit where the device is installed.',
+                            type: 'string',
+                          },
+                          unit_name: {
+                            description:
+                              'Name of the Alertify unit where the device is installed.',
+                            type: 'string',
+                          },
+                        },
+                        type: 'object',
+                        'x-undocumented': 'Unreleased.',
                       },
                       aqara_metadata: {
                         description: 'Metadata for an Aqara device.',
@@ -21064,6 +21101,7 @@ const openapi: OpenAPISpec = {
               'reolink',
               'unifi_protect',
               'yale_connect',
+              'alertify',
               'ical',
               'lodgify',
               'hostaway',
@@ -41539,6 +41577,11 @@ const openapi: OpenAPISpec = {
                 enum: ['sonos_speaker'],
                 type: 'string',
               },
+              {
+                description: 'Device type for environmental sensors.',
+                enum: ['alertify_sensor'],
+                type: 'string',
+              },
             ],
           },
           display_name: {
@@ -52460,6 +52503,7 @@ const openapi: OpenAPISpec = {
                         'reolink',
                         'unifi_protect',
                         'yale_connect',
+                        'alertify',
                         'ical',
                         'lodgify',
                         'hostaway',
@@ -56446,6 +56490,11 @@ const openapi: OpenAPISpec = {
                   enum: ['sonos_speaker'],
                   type: 'string',
                 },
+                {
+                  description: 'Device type for environmental sensors.',
+                  enum: ['alertify_sensor'],
+                  type: 'string',
+                },
               ],
             },
           },
@@ -56541,6 +56590,11 @@ const openapi: OpenAPISpec = {
                     enum: ['sonos_speaker'],
                     type: 'string',
                   },
+                  {
+                    description: 'Device type for environmental sensors.',
+                    enum: ['alertify_sensor'],
+                    type: 'string',
+                  },
                 ],
               },
               type: 'array',
@@ -56603,6 +56657,7 @@ const openapi: OpenAPISpec = {
                 'reolink',
                 'unifi_protect',
                 'yale_connect',
+                'alertify',
                 'ical',
                 'lodgify',
                 'hostaway',
@@ -58804,6 +58859,11 @@ const openapi: OpenAPISpec = {
                   enum: ['sonos_speaker'],
                   type: 'string',
                 },
+                {
+                  description: 'Device type for environmental sensors.',
+                  enum: ['alertify_sensor'],
+                  type: 'string',
+                },
               ],
             },
           },
@@ -58899,6 +58959,11 @@ const openapi: OpenAPISpec = {
                     enum: ['sonos_speaker'],
                     type: 'string',
                   },
+                  {
+                    description: 'Device type for environmental sensors.',
+                    enum: ['alertify_sensor'],
+                    type: 'string',
+                  },
                 ],
               },
               type: 'array',
@@ -58961,6 +59026,7 @@ const openapi: OpenAPISpec = {
                 'reolink',
                 'unifi_protect',
                 'yale_connect',
+                'alertify',
                 'ical',
                 'lodgify',
                 'hostaway',
@@ -60853,7 +60919,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Manufacturers of the noise sensors that you want to list.',
-              enum: ['minut', 'noiseaware'],
+              enum: ['minut', 'noiseaware', 'alertify'],
               type: 'string',
             },
           },
