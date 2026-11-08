@@ -1241,6 +1241,38 @@ export const device_metadata = z
       .optional()
       .describe('Metadata for a Reolink camera.'),
 
+    alertify_metadata: z
+      .object({
+        device_id: z
+          .string()
+          .optional()
+          .describe('Device ID reported by Alertify.'),
+        device_name: z
+          .string()
+          .optional()
+          .describe('Device name, as set in the Alertify dashboard.'),
+        unit_id: z
+          .string()
+          .optional()
+          .describe('ID of the Alertify unit where the device is installed.'),
+        unit_name: z
+          .string()
+          .optional()
+          .describe('Name of the Alertify unit where the device is installed.'),
+        building_id: z
+          .string()
+          .nullable()
+          .optional()
+          .describe('ID of the Alertify building that contains the unit.'),
+      })
+      .partial()
+      .optional().describe(`
+      ---
+      undocumented: Unreleased.
+      ---
+      Metadata for an Alertify sensor.
+    `),
+
     unifi_protect_metadata: z
       .object({
         camera_id: z

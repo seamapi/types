@@ -16121,6 +16121,7 @@ export type Routes = {
                     | 'unifi_protect_camera'
                   )
                 | 'sonos_speaker'
+                | 'alertify_sensor'
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -17043,6 +17044,25 @@ export type Routes = {
                           firmware_version?: (string | undefined) | undefined
                           /** Hardware version reported by the camera. */
                           hardware_version?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
+                /** Metadata for an Alertify sensor. */
+                alertify_metadata?:
+                  | (
+                      | {
+                          /** Device ID reported by Alertify. */
+                          device_id?: (string | undefined) | undefined
+                          /** Device name, as set in the Alertify dashboard. */
+                          device_name?: (string | undefined) | undefined
+                          /** ID of the Alertify unit where the device is installed. */
+                          unit_id?: (string | undefined) | undefined
+                          /** Name of the Alertify unit where the device is installed. */
+                          unit_name?: (string | undefined) | undefined
+                          /** ID of the Alertify building that contains the unit. */
+                          building_id?:
+                            ((string | null) | undefined) | undefined
                         }
                       | undefined
                     )
@@ -25938,6 +25958,7 @@ export type Routes = {
                     | 'unifi_protect_camera'
                   )
                 | 'sonos_speaker'
+                | 'alertify_sensor'
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -26860,6 +26881,25 @@ export type Routes = {
                           firmware_version?: (string | undefined) | undefined
                           /** Hardware version reported by the camera. */
                           hardware_version?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
+                /** Metadata for an Alertify sensor. */
+                alertify_metadata?:
+                  | (
+                      | {
+                          /** Device ID reported by Alertify. */
+                          device_id?: (string | undefined) | undefined
+                          /** Device name, as set in the Alertify dashboard. */
+                          device_name?: (string | undefined) | undefined
+                          /** ID of the Alertify unit where the device is installed. */
+                          unit_id?: (string | undefined) | undefined
+                          /** Name of the Alertify unit where the device is installed. */
+                          unit_name?: (string | undefined) | undefined
+                          /** ID of the Alertify building that contains the unit. */
+                          building_id?:
+                            ((string | null) | undefined) | undefined
                         }
                       | undefined
                     )
@@ -55881,6 +55921,7 @@ export type Routes = {
             | 'reolink'
             | 'unifi_protect'
             | 'yale_connect'
+            | 'alertify'
             | 'ical'
             | 'lodgify'
             | 'hostaway'
@@ -58235,6 +58276,7 @@ export type Routes = {
               | 'unifi_protect_camera'
             )
           | 'sonos_speaker'
+          | 'alertify_sensor'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -59132,6 +59174,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Alertify sensor. */
+          alertify_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Alertify. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name, as set in the Alertify dashboard. */
+                    device_name?: (string | undefined) | undefined
+                    /** ID of the Alertify unit where the device is installed. */
+                    unit_id?: (string | undefined) | undefined
+                    /** Name of the Alertify unit where the device is installed. */
+                    unit_name?: (string | undefined) | undefined
+                    /** ID of the Alertify building that contains the unit. */
+                    building_id?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               )
@@ -60389,6 +60449,7 @@ export type Routes = {
                 | 'unifi_protect_camera'
               )
             | 'sonos_speaker'
+            | 'alertify_sensor'
           )
         | undefined
       /** Array of device types for which you want to list devices. */
@@ -60450,6 +60511,7 @@ export type Routes = {
                 | 'unifi_protect_camera'
               )
             | 'sonos_speaker'
+            | 'alertify_sensor'
           )[]
         | undefined
       /** Manufacturer for which you want to list devices. */
@@ -60506,6 +60568,7 @@ export type Routes = {
             | 'reolink'
             | 'unifi_protect'
             | 'yale_connect'
+            | 'alertify'
             | 'ical'
             | 'lodgify'
             | 'hostaway'
@@ -60675,6 +60738,7 @@ export type Routes = {
               | 'unifi_protect_camera'
             )
           | 'sonos_speaker'
+          | 'alertify_sensor'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -61572,6 +61636,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Alertify sensor. */
+          alertify_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Alertify. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name, as set in the Alertify dashboard. */
+                    device_name?: (string | undefined) | undefined
+                    /** ID of the Alertify unit where the device is installed. */
+                    unit_id?: (string | undefined) | undefined
+                    /** Name of the Alertify unit where the device is installed. */
+                    unit_name?: (string | undefined) | undefined
+                    /** ID of the Alertify building that contains the unit. */
+                    building_id?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               )
@@ -62854,6 +62936,7 @@ export type Routes = {
           | 'reolink'
           | 'unifi_protect'
           | 'yale_connect'
+          | 'alertify'
           | 'ical'
           | 'lodgify'
           | 'hostaway'
@@ -64421,6 +64504,7 @@ export type Routes = {
               | 'unifi_protect_camera'
             )
           | 'sonos_speaker'
+          | 'alertify_sensor'
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
         /** Location information for the device. */
@@ -65069,6 +65153,7 @@ export type Routes = {
                 | 'unifi_protect_camera'
               )
             | 'sonos_speaker'
+            | 'alertify_sensor'
           )
         | undefined
       /** Array of device types for which you want to list devices. */
@@ -65130,6 +65215,7 @@ export type Routes = {
                 | 'unifi_protect_camera'
               )
             | 'sonos_speaker'
+            | 'alertify_sensor'
           )[]
         | undefined
       /** Manufacturer for which you want to list devices. */
@@ -65186,6 +65272,7 @@ export type Routes = {
             | 'reolink'
             | 'unifi_protect'
             | 'yale_connect'
+            | 'alertify'
             | 'ical'
             | 'lodgify'
             | 'hostaway'
@@ -65342,6 +65429,7 @@ export type Routes = {
               | 'unifi_protect_camera'
             )
           | 'sonos_speaker'
+          | 'alertify_sensor'
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
         /** Location information for the device. */
@@ -77473,6 +77561,7 @@ export type Routes = {
               | 'unifi_protect_camera'
             )
           | 'sonos_speaker'
+          | 'alertify_sensor'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -78370,6 +78459,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Alertify sensor. */
+          alertify_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Alertify. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name, as set in the Alertify dashboard. */
+                    device_name?: (string | undefined) | undefined
+                    /** ID of the Alertify unit where the device is installed. */
+                    unit_id?: (string | undefined) | undefined
+                    /** Name of the Alertify unit where the device is installed. */
+                    unit_name?: (string | undefined) | undefined
+                    /** ID of the Alertify building that contains the unit. */
+                    building_id?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               )
@@ -79613,6 +79720,7 @@ export type Routes = {
               | 'unifi_protect_camera'
             )
           | 'sonos_speaker'
+          | 'alertify_sensor'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -80510,6 +80618,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Alertify sensor. */
+          alertify_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Alertify. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name, as set in the Alertify dashboard. */
+                    device_name?: (string | undefined) | undefined
+                    /** ID of the Alertify unit where the device is installed. */
+                    unit_id?: (string | undefined) | undefined
+                    /** Name of the Alertify unit where the device is installed. */
+                    unit_name?: (string | undefined) | undefined
+                    /** ID of the Alertify building that contains the unit. */
+                    building_id?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               )
@@ -81891,6 +82017,7 @@ export type Routes = {
               | 'unifi_protect_camera'
             )
           | 'sonos_speaker'
+          | 'alertify_sensor'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -82788,6 +82915,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Alertify sensor. */
+          alertify_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Alertify. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name, as set in the Alertify dashboard. */
+                    device_name?: (string | undefined) | undefined
+                    /** ID of the Alertify unit where the device is installed. */
+                    unit_id?: (string | undefined) | undefined
+                    /** Name of the Alertify unit where the device is installed. */
+                    unit_name?: (string | undefined) | undefined
+                    /** ID of the Alertify building that contains the unit. */
+                    building_id?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               )
@@ -84030,6 +84175,7 @@ export type Routes = {
               | 'unifi_protect_camera'
             )
           | 'sonos_speaker'
+          | 'alertify_sensor'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -84927,6 +85073,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Alertify sensor. */
+          alertify_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Alertify. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name, as set in the Alertify dashboard. */
+                    device_name?: (string | undefined) | undefined
+                    /** ID of the Alertify unit where the device is installed. */
+                    unit_id?: (string | undefined) | undefined
+                    /** Name of the Alertify unit where the device is installed. */
+                    unit_name?: (string | undefined) | undefined
+                    /** ID of the Alertify building that contains the unit. */
+                    building_id?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               )
@@ -96355,7 +96519,7 @@ export type Routes = {
       /** Device types of the noise sensors that you want to list. */
       device_types?: ('noiseaware_activity_zone' | 'minut_sensor')[] | undefined
       /** Manufacturers of the noise sensors that you want to list. */
-      manufacturer?: ('minut' | 'noiseaware') | undefined
+      manufacturer?: ('minut' | 'noiseaware' | 'alertify') | undefined
     }
     formData: {}
     jsonResponse: {
@@ -96420,6 +96584,7 @@ export type Routes = {
               | 'unifi_protect_camera'
             )
           | 'sonos_speaker'
+          | 'alertify_sensor'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -97317,6 +97482,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Alertify sensor. */
+          alertify_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Alertify. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name, as set in the Alertify dashboard. */
+                    device_name?: (string | undefined) | undefined
+                    /** ID of the Alertify unit where the device is installed. */
+                    unit_id?: (string | undefined) | undefined
+                    /** Name of the Alertify unit where the device is installed. */
+                    unit_name?: (string | undefined) | undefined
+                    /** ID of the Alertify building that contains the unit. */
+                    building_id?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               )
@@ -98559,6 +98742,7 @@ export type Routes = {
               | 'unifi_protect_camera'
             )
           | 'sonos_speaker'
+          | 'alertify_sensor'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -99456,6 +99640,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Alertify sensor. */
+          alertify_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Alertify. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name, as set in the Alertify dashboard. */
+                    device_name?: (string | undefined) | undefined
+                    /** ID of the Alertify unit where the device is installed. */
+                    unit_id?: (string | undefined) | undefined
+                    /** Name of the Alertify unit where the device is installed. */
+                    unit_name?: (string | undefined) | undefined
+                    /** ID of the Alertify building that contains the unit. */
+                    building_id?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               )
@@ -128303,6 +128505,7 @@ export type Routes = {
                     | 'unifi_protect_camera'
                   )
                 | 'sonos_speaker'
+                | 'alertify_sensor'
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -129225,6 +129428,25 @@ export type Routes = {
                           firmware_version?: (string | undefined) | undefined
                           /** Hardware version reported by the camera. */
                           hardware_version?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
+                /** Metadata for an Alertify sensor. */
+                alertify_metadata?:
+                  | (
+                      | {
+                          /** Device ID reported by Alertify. */
+                          device_id?: (string | undefined) | undefined
+                          /** Device name, as set in the Alertify dashboard. */
+                          device_name?: (string | undefined) | undefined
+                          /** ID of the Alertify unit where the device is installed. */
+                          unit_id?: (string | undefined) | undefined
+                          /** Name of the Alertify unit where the device is installed. */
+                          unit_name?: (string | undefined) | undefined
+                          /** ID of the Alertify building that contains the unit. */
+                          building_id?:
+                            ((string | null) | undefined) | undefined
                         }
                       | undefined
                     )
@@ -162399,6 +162621,7 @@ export type Routes = {
               | 'unifi_protect_camera'
             )
           | 'sonos_speaker'
+          | 'alertify_sensor'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -163296,6 +163519,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Alertify sensor. */
+          alertify_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Alertify. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name, as set in the Alertify dashboard. */
+                    device_name?: (string | undefined) | undefined
+                    /** ID of the Alertify unit where the device is installed. */
+                    unit_id?: (string | undefined) | undefined
+                    /** Name of the Alertify unit where the device is installed. */
+                    unit_name?: (string | undefined) | undefined
+                    /** ID of the Alertify building that contains the unit. */
+                    building_id?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               )
@@ -169695,6 +169936,7 @@ export type Routes = {
               | 'unifi_protect_camera'
             )
           | 'sonos_speaker'
+          | 'alertify_sensor'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -170592,6 +170834,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Alertify sensor. */
+          alertify_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Alertify. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name, as set in the Alertify dashboard. */
+                    device_name?: (string | undefined) | undefined
+                    /** ID of the Alertify unit where the device is installed. */
+                    unit_id?: (string | undefined) | undefined
+                    /** Name of the Alertify unit where the device is installed. */
+                    unit_name?: (string | undefined) | undefined
+                    /** ID of the Alertify building that contains the unit. */
+                    building_id?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               )
@@ -171834,6 +172094,7 @@ export type Routes = {
               | 'unifi_protect_camera'
             )
           | 'sonos_speaker'
+          | 'alertify_sensor'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -172731,6 +172992,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Alertify sensor. */
+          alertify_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Alertify. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name, as set in the Alertify dashboard. */
+                    device_name?: (string | undefined) | undefined
+                    /** ID of the Alertify unit where the device is installed. */
+                    unit_id?: (string | undefined) | undefined
+                    /** Name of the Alertify unit where the device is installed. */
+                    unit_name?: (string | undefined) | undefined
+                    /** ID of the Alertify building that contains the unit. */
+                    building_id?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               )
@@ -185340,6 +185619,7 @@ export type Routes = {
               | 'unifi_protect_camera'
             )
           | 'sonos_speaker'
+          | 'alertify_sensor'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -186237,6 +186517,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Alertify sensor. */
+          alertify_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Alertify. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name, as set in the Alertify dashboard. */
+                    device_name?: (string | undefined) | undefined
+                    /** ID of the Alertify unit where the device is installed. */
+                    unit_id?: (string | undefined) | undefined
+                    /** Name of the Alertify unit where the device is installed. */
+                    unit_name?: (string | undefined) | undefined
+                    /** ID of the Alertify building that contains the unit. */
+                    building_id?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               )
@@ -187481,6 +187779,7 @@ export type Routes = {
               | 'unifi_protect_camera'
             )
           | 'sonos_speaker'
+          | 'alertify_sensor'
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -188378,6 +188677,24 @@ export type Routes = {
                     firmware_version?: (string | undefined) | undefined
                     /** Hardware version reported by the camera. */
                     hardware_version?: (string | undefined) | undefined
+                  }
+                | undefined
+              )
+            | undefined
+          /** Metadata for an Alertify sensor. */
+          alertify_metadata?:
+            | (
+                | {
+                    /** Device ID reported by Alertify. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name, as set in the Alertify dashboard. */
+                    device_name?: (string | undefined) | undefined
+                    /** ID of the Alertify unit where the device is installed. */
+                    unit_id?: (string | undefined) | undefined
+                    /** Name of the Alertify unit where the device is installed. */
+                    unit_name?: (string | undefined) | undefined
+                    /** ID of the Alertify building that contains the unit. */
+                    building_id?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               )
@@ -192337,6 +192654,7 @@ export type Routes = {
                     | 'unifi_protect_camera'
                   )
                 | 'sonos_speaker'
+                | 'alertify_sensor'
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -193259,6 +193577,25 @@ export type Routes = {
                           firmware_version?: (string | undefined) | undefined
                           /** Hardware version reported by the camera. */
                           hardware_version?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
+                /** Metadata for an Alertify sensor. */
+                alertify_metadata?:
+                  | (
+                      | {
+                          /** Device ID reported by Alertify. */
+                          device_id?: (string | undefined) | undefined
+                          /** Device name, as set in the Alertify dashboard. */
+                          device_name?: (string | undefined) | undefined
+                          /** ID of the Alertify unit where the device is installed. */
+                          unit_id?: (string | undefined) | undefined
+                          /** Name of the Alertify unit where the device is installed. */
+                          unit_name?: (string | undefined) | undefined
+                          /** ID of the Alertify building that contains the unit. */
+                          building_id?:
+                            ((string | null) | undefined) | undefined
                         }
                       | undefined
                     )
@@ -198656,6 +198993,7 @@ export type Routes = {
                     | 'unifi_protect_camera'
                   )
                 | 'sonos_speaker'
+                | 'alertify_sensor'
               /** Unique identifier for the account associated with the device. */
               connected_account_id: string
               /** Location information for the device. */

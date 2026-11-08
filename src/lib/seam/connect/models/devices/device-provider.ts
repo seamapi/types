@@ -68,6 +68,7 @@ export const DEVICE_PROVIDERS = {
   REOLINK: 'reolink',
   UNIFI_PROTECT: 'unifi_protect',
   YALE_CONNECT: 'yale_connect',
+  ALERTIFY: 'alertify',
   ICAL: 'ical',
   LODGIFY: 'lodgify',
   HOSTAWAY: 'hostaway',
@@ -170,6 +171,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'reolink',
     'unifi_protect',
     'yale_connect',
+    'alertify',
   ],
 
   thermostats: [
