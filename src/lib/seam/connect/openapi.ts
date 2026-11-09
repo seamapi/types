@@ -15701,6 +15701,12 @@ const openapi: OpenAPISpec = {
         description:
           'Represents a [device](https://www.seam.co/docs/core-concepts/devices) that has been connected to Seam.',
         properties: {
+          air_quality_index: {
+            description: 'Air quality index, if the device measures it.',
+            format: 'float',
+            type: 'number',
+            'x-property-group-key': 'sensors',
+          },
           can_activate_weekly_program: {
             description:
               'Indicates whether the thermostat can be returned to its weekly program, the schedule that is configured on the device itself, releasing any hold that Seam has set.',
@@ -15871,6 +15877,20 @@ const openapi: OpenAPISpec = {
               type: 'string',
             },
             type: 'array',
+          },
+          co2_ppm: {
+            description:
+              'Carbon dioxide concentration in parts per million, if the device measures it.',
+            format: 'float',
+            type: 'number',
+            'x-property-group-key': 'sensors',
+          },
+          co_ppm: {
+            description:
+              'Carbon monoxide concentration in parts per million, if the device measures it.',
+            format: 'float',
+            type: 'number',
+            'x-property-group-key': 'sensors',
           },
           connected_account_id: {
             description:
@@ -16623,6 +16643,18 @@ const openapi: OpenAPISpec = {
             enum: [true],
             type: 'boolean',
           },
+          is_occupied: {
+            description:
+              'Indicates whether the device detects that the space is occupied, if the device measures occupancy.',
+            type: 'boolean',
+            'x-property-group-key': 'sensors',
+          },
+          is_smoking_detected: {
+            description:
+              'Indicates whether the device detects smoking, if the device measures it.',
+            type: 'boolean',
+            'x-property-group-key': 'sensors',
+          },
           location: {
             description: 'Location information for the device.',
             properties: {
@@ -16649,10 +16681,146 @@ const openapi: OpenAPISpec = {
             type: 'object',
             'x-property-group-key': 'hardware',
           },
+          mold_risk_level: {
+            description:
+              'Mold risk level as reported by the device, if the device measures it.',
+            type: 'string',
+            'x-property-group-key': 'sensors',
+          },
+          named_sensors: {
+            description:
+              'Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor.',
+            items: {
+              description:
+                'A sensor on the device, with the same measurement fields as the device.',
+              properties: {
+                air_quality_index: {
+                  description: 'Air quality index, if the device measures it.',
+                  format: 'float',
+                  type: 'number',
+                  'x-property-group-key': 'sensors',
+                },
+                co2_ppm: {
+                  description:
+                    'Carbon dioxide concentration in parts per million, if the device measures it.',
+                  format: 'float',
+                  type: 'number',
+                  'x-property-group-key': 'sensors',
+                },
+                co_ppm: {
+                  description:
+                    'Carbon monoxide concentration in parts per million, if the device measures it.',
+                  format: 'float',
+                  type: 'number',
+                  'x-property-group-key': 'sensors',
+                },
+                display_name: {
+                  description:
+                    'Display name of the sensor. Defaults to `sensor_name`.',
+                  type: 'string',
+                  'x-property-group-key': 'sensors',
+                },
+                is_occupied: {
+                  description:
+                    'Indicates whether the device detects that the space is occupied, if the device measures occupancy.',
+                  type: 'boolean',
+                  'x-property-group-key': 'sensors',
+                },
+                is_smoking_detected: {
+                  description:
+                    'Indicates whether the device detects smoking, if the device measures it.',
+                  type: 'boolean',
+                  'x-property-group-key': 'sensors',
+                },
+                mold_risk_level: {
+                  description:
+                    'Mold risk level as reported by the device, if the device measures it.',
+                  type: 'string',
+                  'x-property-group-key': 'sensors',
+                },
+                noise_level_decibels: {
+                  description:
+                    'Noise level in decibels, if the device measures noise.',
+                  format: 'float',
+                  type: 'number',
+                  'x-property-group-key': 'sensors',
+                },
+                noise_level_nrs: {
+                  description:
+                    'Noise level as a Noise Risk Score (NRS), if the device reports one.',
+                  format: 'float',
+                  type: 'number',
+                  'x-property-group-key': 'sensors',
+                },
+                occupant_count: {
+                  description:
+                    'Number of occupants the device detects, if the device counts occupants.',
+                  format: 'float',
+                  type: 'number',
+                  'x-property-group-key': 'sensors',
+                },
+                relative_humidity: {
+                  description:
+                    'Relative humidity, as a value between 0 and 1, inclusive, if the device measures humidity.',
+                  format: 'float',
+                  maximum: 1,
+                  minimum: 0,
+                  type: 'number',
+                  'x-property-group-key': 'sensors',
+                },
+                sensor_name: {
+                  description:
+                    'Stable, hardware-defined name of the sensor, such as a port number.',
+                  type: 'string',
+                  'x-property-group-key': 'sensors',
+                },
+                temperature_celsius: {
+                  description:
+                    'Temperature in °C, if the device measures temperature.',
+                  format: 'float',
+                  type: 'number',
+                  'x-property-group-key': 'sensors',
+                },
+                temperature_fahrenheit: {
+                  description:
+                    'Temperature in °F, if the device measures temperature.',
+                  format: 'float',
+                  type: 'number',
+                  'x-property-group-key': 'sensors',
+                },
+              },
+              required: ['sensor_name', 'display_name'],
+              type: 'object',
+              'x-property-groups': { sensors: { name: 'Sensors' } },
+            },
+            type: 'array',
+            'x-property-group-key': 'sensors',
+          },
           nickname: {
             description:
               'Optional nickname to describe the device, settable through Seam.',
             type: 'string',
+          },
+          noise_level_decibels: {
+            description:
+              'Noise level in decibels, if the device measures noise.',
+            format: 'float',
+            type: 'number',
+            'x-property-group-key': 'sensors',
+          },
+          noise_level_nrs: {
+            description:
+              'Noise level as a Noise Risk Score (NRS), if the device reports one.',
+            format: 'float',
+            type: 'number',
+            'x-property-group-key': 'sensors',
+          },
+          occupant_count: {
+            description:
+              'Number of occupants the device detects, if the device counts occupants.',
+            format: 'float',
+            type: 'number',
+            'x-property-group-key': 'sensors',
           },
           properties: {
             allOf: [
@@ -16689,14 +16857,6 @@ const openapi: OpenAPISpec = {
                             required: ['is_connected'],
                             type: 'object',
                             'x-property-group-key': 'hardware',
-                          },
-                          air_quality_index: {
-                            description:
-                              'Air quality index, if the device measures it. `null` until the first value arrives.',
-                            format: 'float',
-                            nullable: true,
-                            type: 'number',
-                            'x-property-group-key': 'sensors',
                           },
                           appearance: {
                             description:
@@ -16744,22 +16904,6 @@ const openapi: OpenAPISpec = {
                             type: 'number',
                             'x-property-group-key': 'hardware',
                           },
-                          co2_ppm: {
-                            description:
-                              'Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives.',
-                            format: 'float',
-                            nullable: true,
-                            type: 'number',
-                            'x-property-group-key': 'sensors',
-                          },
-                          co_ppm: {
-                            description:
-                              'Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives.',
-                            format: 'float',
-                            nullable: true,
-                            type: 'number',
-                            'x-property-group-key': 'sensors',
-                          },
                           currently_triggering_noise_threshold_ids: {
                             description:
                               'Array of noise threshold IDs that are currently triggering.',
@@ -16783,20 +16927,6 @@ const openapi: OpenAPISpec = {
                             format: 'uri',
                             type: 'string',
                             'x-property-group-key': 'hardware',
-                          },
-                          is_occupied: {
-                            description:
-                              'Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives.',
-                            nullable: true,
-                            type: 'boolean',
-                            'x-property-group-key': 'sensors',
-                          },
-                          is_smoking_detected: {
-                            description:
-                              'Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives.',
-                            nullable: true,
-                            type: 'boolean',
-                            'x-property-group-key': 'sensors',
                           },
                           manufacturer: {
                             description:
@@ -16852,166 +16982,18 @@ const openapi: OpenAPISpec = {
                             ],
                             type: 'object',
                           },
-                          mold_risk_level: {
-                            description:
-                              'Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives.',
-                            nullable: true,
-                            type: 'string',
-                            'x-property-group-key': 'sensors',
-                          },
                           name: {
                             deprecated: true,
                             description: 'Name of the device.',
                             type: 'string',
                             'x-deprecated': 'use device.display_name instead',
                           },
-                          named_sensors: {
-                            description:
-                              'Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor.',
-                            items: {
-                              description:
-                                'A sensor on the device, with the same measurement fields as the device.',
-                              properties: {
-                                air_quality_index: {
-                                  description:
-                                    'Air quality index, if the device measures it. `null` until the first value arrives.',
-                                  format: 'float',
-                                  nullable: true,
-                                  type: 'number',
-                                  'x-property-group-key': 'sensors',
-                                },
-                                co2_ppm: {
-                                  description:
-                                    'Carbon dioxide concentration in parts per million, if the device measures it. `null` until the first value arrives.',
-                                  format: 'float',
-                                  nullable: true,
-                                  type: 'number',
-                                  'x-property-group-key': 'sensors',
-                                },
-                                co_ppm: {
-                                  description:
-                                    'Carbon monoxide concentration in parts per million, if the device measures it. `null` until the first value arrives.',
-                                  format: 'float',
-                                  nullable: true,
-                                  type: 'number',
-                                  'x-property-group-key': 'sensors',
-                                },
-                                display_name: {
-                                  description:
-                                    'Display name of the sensor. Defaults to `sensor_name`.',
-                                  type: 'string',
-                                  'x-property-group-key': 'sensors',
-                                },
-                                is_occupied: {
-                                  description:
-                                    'Indicates whether the device detects that the space is occupied, if the device measures occupancy. `null` until the first value arrives.',
-                                  nullable: true,
-                                  type: 'boolean',
-                                  'x-property-group-key': 'sensors',
-                                },
-                                is_smoking_detected: {
-                                  description:
-                                    'Indicates whether the device detects smoking, if the device measures it. `null` until the first value arrives.',
-                                  nullable: true,
-                                  type: 'boolean',
-                                  'x-property-group-key': 'sensors',
-                                },
-                                mold_risk_level: {
-                                  description:
-                                    'Mold risk level as reported by the device, if the device measures it. `null` until the first value arrives.',
-                                  nullable: true,
-                                  type: 'string',
-                                  'x-property-group-key': 'sensors',
-                                },
-                                noise_level_decibels: {
-                                  description:
-                                    'Noise level in decibels. `null` until the first value arrives.',
-                                  format: 'float',
-                                  nullable: true,
-                                  type: 'number',
-                                  'x-property-group-key': 'sensors',
-                                },
-                                noise_level_nrs: {
-                                  description:
-                                    'Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives.',
-                                  format: 'float',
-                                  nullable: true,
-                                  type: 'number',
-                                  'x-property-group-key': 'sensors',
-                                },
-                                occupant_count: {
-                                  description:
-                                    'Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives.',
-                                  format: 'float',
-                                  nullable: true,
-                                  type: 'number',
-                                  'x-property-group-key': 'sensors',
-                                },
-                                relative_humidity: {
-                                  description:
-                                    'Reported relative humidity, as a value between 0 and 1, inclusive. `null` until the first value arrives.',
-                                  format: 'float',
-                                  maximum: 1,
-                                  minimum: 0,
-                                  nullable: true,
-                                  type: 'number',
-                                  'x-property-group-key': 'sensors',
-                                },
-                                sensor_name: {
-                                  description:
-                                    'Stable, hardware-defined name of the sensor, such as a port number.',
-                                  type: 'string',
-                                  'x-property-group-key': 'sensors',
-                                },
-                                temperature_celsius: {
-                                  description:
-                                    'Reported temperature in °C. `null` until the first value arrives.',
-                                  format: 'float',
-                                  nullable: true,
-                                  type: 'number',
-                                  'x-property-group-key': 'sensors',
-                                },
-                                temperature_fahrenheit: {
-                                  description:
-                                    'Reported temperature in °F. `null` until the first value arrives.',
-                                  format: 'float',
-                                  nullable: true,
-                                  type: 'number',
-                                  'x-property-group-key': 'sensors',
-                                },
-                              },
-                              required: ['sensor_name', 'display_name'],
-                              type: 'object',
-                              'x-property-groups': {
-                                sensors: { name: 'Sensors' },
-                              },
-                            },
-                            type: 'array',
-                            'x-property-group-key': 'sensors',
-                          },
                           noise_level_decibels: {
                             description:
                               'Indicates current noise level in decibels, if the device supports noise detection.',
                             format: 'float',
-                            nullable: true,
                             type: 'number',
                             'x-property-group-key': 'noise_sensors',
-                          },
-                          noise_level_nrs: {
-                            description:
-                              'Noise level as a Noise Risk Score (NRS), if the device reports one. `null` until the first value arrives.',
-                            format: 'float',
-                            nullable: true,
-                            type: 'number',
-                            'x-property-group-key': 'sensors',
-                          },
-                          occupant_count: {
-                            description:
-                              'Number of occupants the device detects, if the device counts occupants. `null` until the first value arrives.',
-                            format: 'float',
-                            nullable: true,
-                            type: 'number',
-                            'x-property-group-key': 'sensors',
                           },
                           offline_access_codes_enabled: {
                             deprecated: true,
@@ -19814,21 +19796,18 @@ const openapi: OpenAPISpec = {
                         format: 'float',
                         maximum: 1,
                         minimum: 0,
-                        nullable: true,
                         type: 'number',
                         'x-property-group-key': 'thermostats',
                       },
                       temperature_celsius: {
                         description: 'Reported temperature in °C.',
                         format: 'float',
-                        nullable: true,
                         type: 'number',
                         'x-property-group-key': 'thermostats',
                       },
                       temperature_fahrenheit: {
                         description: 'Reported temperature in °F.',
                         format: 'float',
-                        nullable: true,
                         type: 'number',
                         'x-property-group-key': 'thermostats',
                       },
@@ -20049,15 +20028,37 @@ const openapi: OpenAPISpec = {
               noise_sensors: { name: 'Noise Sensors' },
               phones: { name: 'Phones' },
               provider_metadata: { name: 'Provider Metadata' },
-              sensors: { name: 'Sensors' },
               speakers: { name: 'Speakers' },
               thermostats: { name: 'Thermostats' },
             },
+          },
+          relative_humidity: {
+            description:
+              'Relative humidity, as a value between 0 and 1, inclusive, if the device measures humidity.',
+            format: 'float',
+            maximum: 1,
+            minimum: 0,
+            type: 'number',
+            'x-property-group-key': 'sensors',
           },
           space_ids: {
             description: 'IDs of the spaces the device is in.',
             items: { format: 'uuid', type: 'string' },
             type: 'array',
+          },
+          temperature_celsius: {
+            description:
+              'Temperature in °C, if the device measures temperature.',
+            format: 'float',
+            type: 'number',
+            'x-property-group-key': 'sensors',
+          },
+          temperature_fahrenheit: {
+            description:
+              'Temperature in °F, if the device measures temperature.',
+            format: 'float',
+            type: 'number',
+            'x-property-group-key': 'sensors',
           },
           warnings: {
             description:
@@ -20874,6 +20875,7 @@ const openapi: OpenAPISpec = {
           noise_sensors: { name: 'Noise Sensors' },
           phones: { name: 'Phones' },
           provider_metadata: { name: 'Provider Metadata' },
+          sensors: { name: 'Sensors' },
           speakers: { name: 'Speakers' },
           thermostats: { name: 'Thermostats' },
         },
