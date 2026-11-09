@@ -57250,6 +57250,8 @@ export type Routes = {
                   allow_instant_key_customization?: boolean | undefined
                   /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
                   allow_notification_customization?: boolean | undefined
+                  /** Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected. */
+                  allow_bridge_replacement?: boolean | undefined
                 }
               | undefined
           }
@@ -110578,6 +110580,21 @@ export type Routes = {
     }
     maxDuration: undefined
   }
+  '/seam/console/v1/connected_accounts/replace_bridge': {
+    route: '/seam/console/v1/connected_accounts/replace_bridge'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** ID of the connected account whose Seam Bridge you want to replace. */
+      connected_account_id: string
+      /** Pairing code shown in the new Seam Bridge app. */
+      pairing_code: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+    maxDuration: undefined
+  }
   '/seam/console/v1/credits/checkout/start': {
     route: '/seam/console/v1/credits/checkout/start'
     method: 'POST'
@@ -111467,6 +111484,8 @@ export type Routes = {
                     allow_instant_key_customization?: boolean | undefined
                     /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
                     allow_notification_customization?: boolean | undefined
+                    /** Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected. */
+                    allow_bridge_replacement?: boolean | undefined
                   }
                 | undefined
             }
@@ -115902,6 +115921,21 @@ export type Routes = {
               | undefined
           }
         | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+    maxDuration: undefined
+  }
+  '/seam/customer/v1/connected_accounts/replace_bridge': {
+    route: '/seam/customer/v1/connected_accounts/replace_bridge'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** ID of the connected account whose Seam Bridge you want to replace. */
+      connected_account_id: string
+      /** Pairing code shown in the new Seam Bridge app. */
+      pairing_code: string
     }
     commonParams: {}
     formData: {}
@@ -121284,6 +121318,8 @@ export type Routes = {
             allow_instant_key_customization?: boolean
             /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
             allow_notification_customization?: boolean
+            /** Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected. */
+            allow_bridge_replacement?: boolean
           }
         }
         /** Whether the portal is embedded in another application. */
@@ -121642,6 +121678,8 @@ export type Routes = {
                     allow_instant_key_customization?: boolean | undefined
                     /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
                     allow_notification_customization?: boolean | undefined
+                    /** Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected. */
+                    allow_bridge_replacement?: boolean | undefined
                   }
                 | undefined
             }
@@ -191510,6 +191548,8 @@ export type Routes = {
                   allow_instant_key_customization?: boolean | undefined
                   /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
                   allow_notification_customization?: boolean | undefined
+                  /** Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected. */
+                  allow_bridge_replacement?: boolean | undefined
                 }
               | undefined
           }
@@ -191774,6 +191814,8 @@ export type Routes = {
                     allow_instant_key_customization?: boolean | undefined
                     /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
                     allow_notification_customization?: boolean | undefined
+                    /** Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected. */
+                    allow_bridge_replacement?: boolean | undefined
                   }
                 | undefined
             }
@@ -192048,6 +192090,8 @@ export type Routes = {
                     allow_instant_key_customization?: boolean | undefined
                     /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
                     allow_notification_customization?: boolean | undefined
+                    /** Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected. */
+                    allow_bridge_replacement?: boolean | undefined
                   }
                 | undefined
             }
@@ -192322,6 +192366,8 @@ export type Routes = {
                     allow_instant_key_customization?: boolean | undefined
                     /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
                     allow_notification_customization?: boolean | undefined
+                    /** Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected. */
+                    allow_bridge_replacement?: boolean | undefined
                   }
                 | undefined
             }
@@ -192592,6 +192638,8 @@ export type Routes = {
                       allow_instant_key_customization?: boolean | undefined
                       /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
                       allow_notification_customization?: boolean | undefined
+                      /** Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected. */
+                      allow_bridge_replacement?: boolean | undefined
                     }
                   | undefined
               }
@@ -206459,6 +206507,8 @@ export type Routes = {
                           allow_instant_key_customization?: boolean | undefined
                           /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
                           allow_notification_customization?: boolean | undefined
+                          /** Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected. */
+                          allow_bridge_replacement?: boolean | undefined
                         }
                       | undefined
                   }

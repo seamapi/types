@@ -15172,6 +15172,12 @@ const openapi: OpenAPISpec = {
                       'Indicates whether the customer can customize the access automation rules for their properties.',
                     type: 'boolean',
                   },
+                  allow_bridge_replacement: {
+                    default: false,
+                    description:
+                      'Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected.',
+                    type: 'boolean',
+                  },
                   allow_climate_automation_rule_customization: {
                     default: false,
                     description:
@@ -53426,6 +53432,12 @@ const openapi: OpenAPISpec = {
                                   'Indicates whether the customer can customize the access automation rules for their properties.',
                                 type: 'boolean',
                               },
+                              allow_bridge_replacement: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected.',
+                                type: 'boolean',
+                              },
                               allow_climate_automation_rule_customization: {
                                 default: false,
                                 description:
@@ -62280,6 +62292,66 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for Console',
       },
     },
+    '/seam/console/v1/connected_accounts/replace_bridge': {
+      post: {
+        description:
+          "Moves a [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) whose [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge) is disconnected onto a newly installed Seam Bridge, identified by the pairing code it shows. The connected account, its devices and its ID stay the same, and no provider sign-in is needed. Seam first checks that it can reach the provider through the new bridge. Only available for providers whose account doesn't depend on the bridge, such as Salto Space.",
+        operationId: 'seamConsoleV1ConnectedAccountsReplaceBridgePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connected_account_id: {
+                    description:
+                      'ID of the connected account whose Seam Bridge you want to replace.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  pairing_code: {
+                    description:
+                      'Pairing code shown in the new Seam Bridge app.',
+                    minLength: 1,
+                    type: 'string',
+                  },
+                },
+                required: ['connected_account_id', 'pairing_code'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_with_workspace: [] }],
+        summary: '/seam/console/v1/connected_accounts/replace_bridge',
+        tags: ['/connected_accounts'],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'console',
+          'v1',
+          'connected_accounts',
+        ],
+        'x-fern-sdk-method-name': 'replace_bridge',
+        'x-response-key': null,
+        'x-title': 'Replace the Seam Bridge of a Connected Account',
+        'x-undocumented': 'Internal endpoint for Console.',
+      },
+    },
     '/seam/console/v1/credits/checkout/start': {
       post: {
         description:
@@ -69004,6 +69076,66 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
+    '/seam/customer/v1/connected_accounts/replace_bridge': {
+      post: {
+        description:
+          "Moves one of the authenticated customer's connected accounts whose Seam Bridge is disconnected onto a newly installed Seam Bridge, identified by the pairing code it shows. No provider sign-in is needed. Requires a customer portal with `features.configure.allow_bridge_replacement` enabled.",
+        operationId: 'seamCustomerV1ConnectedAccountsReplaceBridgePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connected_account_id: {
+                    description:
+                      'ID of the connected account whose Seam Bridge you want to replace.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  pairing_code: {
+                    description:
+                      'Pairing code shown in the new Seam Bridge app.',
+                    minLength: 1,
+                    type: 'string',
+                  },
+                },
+                required: ['connected_account_id', 'pairing_code'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/connected_accounts/replace_bridge',
+        tags: ['/connected_accounts'],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'connected_accounts',
+        ],
+        'x-fern-sdk-method-name': 'replace_bridge',
+        'x-response-key': null,
+        'x-title': "Replace the Seam Bridge of a Customer's Connected Account",
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
     '/seam/customer/v1/connector_customers/list': {
       get: {
         description: 'Lists connector customers for a given connector.',
@@ -71929,6 +72061,12 @@ const openapi: OpenAPISpec = {
                                     'Indicates whether the customer can customize the access automation rules for their properties.',
                                   type: 'boolean',
                                 },
+                                allow_bridge_replacement: {
+                                  default: false,
+                                  description:
+                                    'Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected.',
+                                  type: 'boolean',
+                                },
                                 allow_climate_automation_rule_customization: {
                                   default: false,
                                   description:
@@ -72415,6 +72553,12 @@ const openapi: OpenAPISpec = {
                                 default: false,
                                 description:
                                   'Indicates whether the customer can customize the access automation rules for their properties.',
+                                type: 'boolean',
+                              },
+                              allow_bridge_replacement: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected.',
                                 type: 'boolean',
                               },
                               allow_climate_automation_rule_customization: {
@@ -81925,6 +82069,12 @@ const openapi: OpenAPISpec = {
                               'Indicates whether the customer can customize the access automation rules for their properties.',
                             type: 'boolean',
                           },
+                          allow_bridge_replacement: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected.',
+                            type: 'boolean',
+                          },
                           allow_climate_automation_rule_customization: {
                             default: false,
                             description:
@@ -82604,6 +82754,12 @@ const openapi: OpenAPISpec = {
                             default: false,
                             description:
                               'Indicates whether the customer can customize the access automation rules for their properties.',
+                            type: 'boolean',
+                          },
+                          allow_bridge_replacement: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected.',
                             type: 'boolean',
                           },
                           allow_climate_automation_rule_customization: {

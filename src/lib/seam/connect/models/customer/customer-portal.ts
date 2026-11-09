@@ -133,6 +133,12 @@ const base_configure_feature = base_feature.extend({
     .describe(
       'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
     ),
+  allow_bridge_replacement: z
+    .boolean()
+    .default(false)
+    .describe(
+      'Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected.',
+    ),
 })
 
 const base_features = z.object({
@@ -315,6 +321,7 @@ export const portal_configuration = portal_configuration_base
         allow_sound_automation_rule_customization: false,
         allow_sensor_automation_rule_customization: false,
         allow_notification_customization: false,
+        allow_bridge_replacement: false,
       },
     },
     is_embedded: false,
