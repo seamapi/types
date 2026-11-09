@@ -1239,10 +1239,25 @@ export const device = z
     capabilities_supported: z.array(capabilities).describe(`
         Collection of capabilities that the device supports when connected to Seam. Values are \`access_code\`, which indicates that the device can manage and utilize digital PIN codes for secure access; \`lock\`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; \`noise_detection\`, which indicates that the device supports monitoring and responding to ambient noise levels; \`thermostat\`, which indicates that the device can regulate and adjust indoor temperatures; \`battery\`, which indicates that the device can manage battery life and health; and \`phone\`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://www.seam.co/docs/capability-guides/device-and-system-capabilities#capability-flags).
         `),
+    is_online: z.boolean().describe(`
+      ---
+      undocumented: Unreleased.
+      property_group_key: hardware
+      ---
+      Indicates whether the device is online.
+      `),
+    is_door_locked: z.boolean().optional().describe(`
+      ---
+      undocumented: Unreleased.
+      property_group_key: locks
+      ---
+      Indicates whether the lock is locked.
+      `),
     properties: common_device_properties
       .and(phone_specific_properties.partial())
       .and(device_metadata)
-      .and(capability_properties).describe(`
+      .and(capability_properties)
+      .optional().describe(`
     ---
     property_groups:
       locks:
@@ -1412,4 +1427,8 @@ export const device = z
     Represents a [device](https://www.seam.co/docs/core-concepts/devices) that has been connected to Seam.
   `)
 
-export type Device = z.infer<typeof device>
+type DeviceFromSchema = z.infer<typeof device>
+
+export type Device = Omit<DeviceFromSchema, 'properties'> & {
+  properties: NonNullable<DeviceFromSchema['properties']>
+}
