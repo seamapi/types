@@ -19,24 +19,27 @@ export const unmanaged_device = device
     created_at: true,
     custom_metadata: true,
     display_name: true,
+    is_online: true,
   })
   .extend({
     is_managed: z
       .literal(false)
       .describe('Indicates that Seam does not manage the device.'),
-    properties: common_device_properties.pick({
-      accessory_keypad: true,
-      name: true,
-      online: true,
-      manufacturer: true,
-      image_url: true,
-      image_alt_text: true,
-      battery_level: true,
-      battery: true,
-      online_access_codes_enabled: true,
-      offline_access_codes_enabled: true,
-      model: true,
-    }).describe(`
+    properties: common_device_properties
+      .pick({
+        accessory_keypad: true,
+        name: true,
+        online: true,
+        manufacturer: true,
+        image_url: true,
+        image_alt_text: true,
+        battery_level: true,
+        battery: true,
+        online_access_codes_enabled: true,
+        offline_access_codes_enabled: true,
+        model: true,
+      })
+      .optional().describe(`
     ---
     property_groups:
       locks:
@@ -79,4 +82,8 @@ export const unmanaged_device = device
     Represents an [unmanaged device](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices). An unmanaged device has a limited set of visible properties and a subset of supported events. You cannot control an unmanaged device. Any [access codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/migrating-existing-access-codes) on an unmanaged device are unmanaged. To control an unmanaged device with Seam, [convert it to a managed device](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices#convert-an-unmanaged-device-to-managed).
   `)
 
-export type UnmanagedDevice = z.infer<typeof unmanaged_device>
+type UnmanagedDeviceFromSchema = z.infer<typeof unmanaged_device>
+
+export type UnmanagedDevice = Omit<UnmanagedDeviceFromSchema, 'properties'> & {
+  properties: NonNullable<UnmanagedDeviceFromSchema['properties']>
+}

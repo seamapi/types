@@ -16643,6 +16643,12 @@ const openapi: OpenAPISpec = {
               thermostats: { name: 'Thermostats' },
             },
           },
+          is_door_locked: {
+            description: 'Indicates whether the lock is locked.',
+            type: 'boolean',
+            'x-property-group-key': 'locks',
+            'x-undocumented': 'Unreleased.',
+          },
           is_managed: {
             description:
               'Indicates whether Seam manages the device. See also [Managed and Unmanaged Devices](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices).',
@@ -16654,6 +16660,12 @@ const openapi: OpenAPISpec = {
               'Indicates whether the device detects that the space is occupied, if the device measures occupancy.',
             type: 'boolean',
             'x-property-group-key': 'sensors',
+          },
+          is_online: {
+            description: 'Indicates whether the device is online.',
+            type: 'boolean',
+            'x-property-group-key': 'hardware',
+            'x-undocumented': 'Unreleased.',
           },
           is_smoking_detected: {
             description:
@@ -20864,7 +20876,7 @@ const openapi: OpenAPISpec = {
           'space_ids',
           'display_name',
           'capabilities_supported',
-          'properties',
+          'is_online',
           'connected_account_id',
           'workspace_id',
           'errors',
@@ -42166,6 +42178,12 @@ const openapi: OpenAPISpec = {
             enum: [false],
             type: 'boolean',
           },
+          is_online: {
+            description: 'Indicates whether the device is online.',
+            type: 'boolean',
+            'x-property-group-key': 'hardware',
+            'x-undocumented': 'Unreleased.',
+          },
           location: {
             description: 'Location information for the device.',
             properties: {
@@ -43157,8 +43175,8 @@ const openapi: OpenAPISpec = {
           'created_at',
           'custom_metadata',
           'display_name',
+          'is_online',
           'is_managed',
-          'properties',
         ],
         type: 'object',
         'x-property-groups': {
