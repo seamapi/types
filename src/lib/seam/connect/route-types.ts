@@ -125307,6 +125307,25 @@ export type Routes = {
     jsonResponse: {}
     maxDuration: undefined
   }
+  '/seam/customer/v1/connector_customers/delete': {
+    route: '/seam/customer/v1/connector_customers/delete'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** ID of the connector customer to delete. */
+      connector_customer_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      connector_customer: {
+        connector_customer_id: string
+        connector_id: string
+        status: 'deleted'
+      }
+    }
+    maxDuration: undefined
+  }
   '/seam/customer/v1/connector_customers/list': {
     route: '/seam/customer/v1/connector_customers/list'
     method: 'GET' | 'POST'
