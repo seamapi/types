@@ -738,15 +738,26 @@ const max_access_codes_reached = common_device_warning.extend({
     Indicates that the device has reached its maximum number of active access codes. Delete existing codes before creating new ones.
     `)
 
-const cloud_recording_not_enabled = common_device_warning
+const subscription_required_for_additional_capabilities = common_device_warning
   .extend({
     warning_code: z
-      .literal('cloud_recording_not_enabled')
+      .literal('subscription_required_for_additional_capabilities')
       .describe(warning_code_description),
   })
   .describe(
-    "Indicates that the camera's account plan does not include cloud recording, so event media such as motion clips is unavailable.",
+    'Indicates that a third-party subscription is required to enable additional device capabilities.',
   )
+
+const cloud_recording_not_enabled = common_device_warning.extend({
+  warning_code: z
+    .literal('cloud_recording_not_enabled')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    deprecated: Use \`subscription_required_for_additional_capabilities\`.
+    ---
+    Indicates that the camera's account plan does not include cloud recording, so event media such as motion clips is unavailable.
+  `)
 
 const device_warning = z.discriminatedUnion('warning_code', [
   partial_backup_access_code_pool,
@@ -778,6 +789,7 @@ const device_warning = z.discriminatedUnion('warning_code', [
   accessory_keypad_low_battery,
   unreliable_online_status,
   max_access_codes_reached,
+  subscription_required_for_additional_capabilities,
   cloud_recording_not_enabled,
 ])
 
@@ -817,6 +829,8 @@ export const device_warning_map = z.object({
   accessory_keypad_low_battery: accessory_keypad_low_battery.optional(),
   unreliable_online_status: unreliable_online_status.optional(),
   max_access_codes_reached: max_access_codes_reached.optional(),
+  subscription_required_for_additional_capabilities:
+    subscription_required_for_additional_capabilities.optional(),
   cloud_recording_not_enabled: cloud_recording_not_enabled.optional(),
 })
 
@@ -975,25 +989,25 @@ const sensor_measurements = z.object({
           `,
     )
     .optional(),
-  is_occupied: z
+  is_occupancy_detected: z
     .boolean()
     .describe(
       `
           ---
           property_group_key: sensors
           ---
-          Indicates whether the device detects that the space is occupied, if the device measures occupancy.
+          Indicates whether the device detects occupancy.
           `,
     )
     .optional(),
-  occupant_count: z
+  estimated_occupant_count: z
     .number()
     .describe(
       `
           ---
           property_group_key: sensors
           ---
-          Number of occupants the device detects, if the device counts occupants.
+          Estimated number of occupants detected by the device.
           `,
     )
     .optional(),

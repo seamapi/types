@@ -16813,6 +16813,13 @@ const openapi: OpenAPISpec = {
               thermostats: { name: 'Thermostats' },
             },
           },
+          estimated_occupant_count: {
+            description:
+              'Estimated number of occupants detected by the device.',
+            format: 'float',
+            type: 'number',
+            'x-property-group-key': 'sensors',
+          },
           is_door_locked: {
             description: 'Indicates whether the lock is locked.',
             type: 'boolean',
@@ -16825,9 +16832,8 @@ const openapi: OpenAPISpec = {
             enum: [true],
             type: 'boolean',
           },
-          is_occupied: {
-            description:
-              'Indicates whether the device detects that the space is occupied, if the device measures occupancy.',
+          is_occupancy_detected: {
+            description: 'Indicates whether the device detects occupancy.',
             type: 'boolean',
             'x-property-group-key': 'sensors',
           },
@@ -16922,9 +16928,16 @@ const openapi: OpenAPISpec = {
                   type: 'string',
                   'x-property-group-key': 'sensors',
                 },
-                is_occupied: {
+                estimated_occupant_count: {
                   description:
-                    'Indicates whether the device detects that the space is occupied, if the device measures occupancy.',
+                    'Estimated number of occupants detected by the device.',
+                  format: 'float',
+                  type: 'number',
+                  'x-property-group-key': 'sensors',
+                },
+                is_occupancy_detected: {
+                  description:
+                    'Indicates whether the device detects occupancy.',
                   type: 'boolean',
                   'x-property-group-key': 'sensors',
                 },
@@ -16950,13 +16963,6 @@ const openapi: OpenAPISpec = {
                 noise_level_nrs: {
                   description:
                     'Noise level as a Noise Risk Score (NRS), if the device reports one.',
-                  format: 'float',
-                  type: 'number',
-                  'x-property-group-key': 'sensors',
-                },
-                occupant_count: {
-                  description:
-                    'Number of occupants the device detects, if the device counts occupants.',
                   format: 'float',
                   type: 'number',
                   'x-property-group-key': 'sensors',
@@ -17013,13 +17019,6 @@ const openapi: OpenAPISpec = {
           noise_level_nrs: {
             description:
               'Noise level as a Noise Risk Score (NRS), if the device reports one.',
-            format: 'float',
-            type: 'number',
-            'x-property-group-key': 'sensors',
-          },
-          occupant_count: {
-            description:
-              'Number of occupants the device detects, if the device counts occupants.',
             format: 'float',
             type: 'number',
             'x-property-group-key': 'sensors',
@@ -21125,6 +21124,34 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
+                    'Indicates that a third-party subscription is required to enable additional device capabilities.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: [
+                        'subscription_required_for_additional_capabilities',
+                      ],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  deprecated: true,
+                  description:
                     "Indicates that the camera's account plan does not include cloud recording, so event media such as motion clips is unavailable.",
                   properties: {
                     created_at: {
@@ -21147,6 +21174,8 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-deprecated':
+                    'Use `subscription_required_for_additional_capabilities`.',
                 },
               ],
             },
@@ -34883,6 +34912,34 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
+                    'Indicates that a third-party subscription is required to enable additional device capabilities.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: [
+                        'subscription_required_for_additional_capabilities',
+                      ],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  deprecated: true,
+                  description:
                     "Indicates that the camera's account plan does not include cloud recording, so event media such as motion clips is unavailable.",
                   properties: {
                     created_at: {
@@ -34905,6 +34962,8 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-deprecated':
+                    'Use `subscription_required_for_additional_capabilities`.',
                 },
               ],
             },
@@ -43499,6 +43558,34 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
+                    'Indicates that a third-party subscription is required to enable additional device capabilities.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: [
+                        'subscription_required_for_additional_capabilities',
+                      ],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  deprecated: true,
+                  description:
                     "Indicates that the camera's account plan does not include cloud recording, so event media such as motion clips is unavailable.",
                   properties: {
                     created_at: {
@@ -43521,6 +43608,8 @@ const openapi: OpenAPISpec = {
                   },
                   required: ['message', 'created_at', 'warning_code'],
                   type: 'object',
+                  'x-deprecated':
+                    'Use `subscription_required_for_additional_capabilities`.',
                 },
               ],
             },

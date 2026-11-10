@@ -18362,6 +18362,14 @@ export type Routes = {
                     /** Date and time at which Seam created the warning. */
                     created_at: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'subscription_required_for_additional_capabilities'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'cloud_recording_not_enabled'
                   }
               )[]
@@ -18419,10 +18427,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
               /** Current setting of the device's primary temperature controller. */
@@ -18461,10 +18469,10 @@ export type Routes = {
                     air_quality_index?: number | undefined
                     /** Mold risk level as reported by the device, if the device measures it. */
                     mold_risk_level?: string | undefined
-                    /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-                    is_occupied?: boolean | undefined
-                    /** Number of occupants the device detects, if the device counts occupants. */
-                    occupant_count?: number | undefined
+                    /** Indicates whether the device detects occupancy. */
+                    is_occupancy_detected?: boolean | undefined
+                    /** Estimated number of occupants detected by the device. */
+                    estimated_occupant_count?: number | undefined
                     /** Indicates whether the device detects smoking, if the device measures it. */
                     is_smoking_detected?: boolean | undefined
                   }[]
@@ -28406,6 +28414,14 @@ export type Routes = {
                     /** Date and time at which Seam created the warning. */
                     created_at: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'subscription_required_for_additional_capabilities'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'cloud_recording_not_enabled'
                   }
               )[]
@@ -28463,10 +28479,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
               /** Current setting of the device's primary temperature controller. */
@@ -28505,10 +28521,10 @@ export type Routes = {
                     air_quality_index?: number | undefined
                     /** Mold risk level as reported by the device, if the device measures it. */
                     mold_risk_level?: string | undefined
-                    /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-                    is_occupied?: boolean | undefined
-                    /** Number of occupants the device detects, if the device counts occupants. */
-                    occupant_count?: number | undefined
+                    /** Indicates whether the device detects occupancy. */
+                    is_occupancy_detected?: boolean | undefined
+                    /** Estimated number of occupants detected by the device. */
+                    estimated_occupant_count?: number | undefined
                     /** Indicates whether the device detects smoking, if the device measures it. */
                     is_smoking_detected?: boolean | undefined
                   }[]
@@ -61066,6 +61082,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'subscription_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'cloud_recording_not_enabled'
             }
         )[]
@@ -61123,10 +61147,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -61165,10 +61189,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -63635,6 +63659,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'subscription_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'cloud_recording_not_enabled'
             }
         )[]
@@ -63692,10 +63724,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -63734,10 +63766,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -65916,6 +65948,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'subscription_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'cloud_recording_not_enabled'
             }
         )[]
@@ -66857,6 +66897,14 @@ export type Routes = {
               active_access_code_count: number
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'subscription_required_for_additional_capabilities'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -80638,6 +80686,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'subscription_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'cloud_recording_not_enabled'
             }
         )[]
@@ -80695,10 +80751,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -80737,10 +80793,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -82897,6 +82953,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'subscription_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'cloud_recording_not_enabled'
             }
         )[]
@@ -82954,10 +83018,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -82996,10 +83060,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -85294,6 +85358,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'subscription_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'cloud_recording_not_enabled'
             }
         )[]
@@ -85351,10 +85423,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -85393,10 +85465,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -87552,6 +87624,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'subscription_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'cloud_recording_not_enabled'
             }
         )[]
@@ -87609,10 +87689,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -87651,10 +87731,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -100209,6 +100289,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'subscription_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'cloud_recording_not_enabled'
             }
         )[]
@@ -100266,10 +100354,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -100308,10 +100396,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -102467,6 +102555,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'subscription_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'cloud_recording_not_enabled'
             }
         )[]
@@ -102524,10 +102620,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -102566,10 +102662,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -110956,6 +111052,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'subscription_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'cloud_recording_not_enabled'
             }
         )[]
@@ -111418,6 +111522,14 @@ export type Routes = {
               active_access_code_count: number
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'subscription_required_for_additional_capabilities'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -111914,6 +112026,14 @@ export type Routes = {
               active_access_code_count: number
               /** Maximum number of active access codes supported by the device. */
               max_active_access_code_count: number
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'subscription_required_for_additional_capabilities'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -116646,6 +116766,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'subscription_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'cloud_recording_not_enabled'
             }
         )[]
@@ -116703,10 +116831,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -116745,10 +116873,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -140084,6 +140212,14 @@ export type Routes = {
                     /** Date and time at which Seam created the warning. */
                     created_at: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'subscription_required_for_additional_capabilities'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'cloud_recording_not_enabled'
                   }
               )[]
@@ -140141,10 +140277,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
               /** Current setting of the device's primary temperature controller. */
@@ -140183,10 +140319,10 @@ export type Routes = {
                     air_quality_index?: number | undefined
                     /** Mold risk level as reported by the device, if the device measures it. */
                     mold_risk_level?: string | undefined
-                    /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-                    is_occupied?: boolean | undefined
-                    /** Number of occupants the device detects, if the device counts occupants. */
-                    occupant_count?: number | undefined
+                    /** Indicates whether the device detects occupancy. */
+                    is_occupancy_detected?: boolean | undefined
+                    /** Estimated number of occupants detected by the device. */
+                    estimated_occupant_count?: number | undefined
                     /** Indicates whether the device detects smoking, if the device measures it. */
                     is_smoking_detected?: boolean | undefined
                   }[]
@@ -174713,6 +174849,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'subscription_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'cloud_recording_not_enabled'
             }
         )[]
@@ -174770,10 +174914,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -174812,10 +174956,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -182200,6 +182344,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'subscription_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'cloud_recording_not_enabled'
             }
         )[]
@@ -182257,10 +182409,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -182299,10 +182451,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -184458,6 +184610,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'subscription_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'cloud_recording_not_enabled'
             }
         )[]
@@ -184515,10 +184675,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -184557,10 +184717,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -198231,6 +198391,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'subscription_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'cloud_recording_not_enabled'
             }
         )[]
@@ -198288,10 +198456,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -198330,10 +198498,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -200491,6 +200659,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'subscription_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'cloud_recording_not_enabled'
             }
         )[]
@@ -200548,10 +200724,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -200590,10 +200766,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -205563,6 +205739,14 @@ export type Routes = {
                     /** Date and time at which Seam created the warning. */
                     created_at: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'subscription_required_for_additional_capabilities'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'cloud_recording_not_enabled'
                   }
               )[]
@@ -205620,10 +205804,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
               /** Current setting of the device's primary temperature controller. */
@@ -205662,10 +205846,10 @@ export type Routes = {
                     air_quality_index?: number | undefined
                     /** Mold risk level as reported by the device, if the device measures it. */
                     mold_risk_level?: string | undefined
-                    /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-                    is_occupied?: boolean | undefined
-                    /** Number of occupants the device detects, if the device counts occupants. */
-                    occupant_count?: number | undefined
+                    /** Indicates whether the device detects occupancy. */
+                    is_occupancy_detected?: boolean | undefined
+                    /** Estimated number of occupants detected by the device. */
+                    estimated_occupant_count?: number | undefined
                     /** Indicates whether the device detects smoking, if the device measures it. */
                     is_smoking_detected?: boolean | undefined
                   }[]
@@ -210396,6 +210580,14 @@ export type Routes = {
                     active_access_code_count: number
                     /** Maximum number of active access codes supported by the device. */
                     max_active_access_code_count: number
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'subscription_required_for_additional_capabilities'
                   }
                 | {
                     /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
