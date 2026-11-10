@@ -1400,6 +1400,18 @@ export const device = z
         'Indicates whether Seam manages the device. See also [Managed and Unmanaged Devices](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices).',
       ),
     custom_metadata,
+    parent_device_id: z.string().uuid().optional().describe(`
+      ---
+      undocumented: Unreleased.
+      ---
+      ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent.
+      `),
+    child_device_ids: z.array(z.string().uuid()).optional().describe(`
+      ---
+      undocumented: Unreleased.
+      ---
+      IDs of the child devices that belong to this device. Only present when the device has at least one child.
+      `),
     device_provider: device_provider_info.optional().describe(`
       ---
       property_group_key: hardware
