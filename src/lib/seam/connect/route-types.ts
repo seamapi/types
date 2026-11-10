@@ -17336,6 +17336,33 @@ export type Routes = {
                           | undefined
                         )
                       | undefined
+                    /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+                    hayward_omnilogic_metadata?:
+                      | (
+                          | {
+                              /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                              msp_system_id?: (string | undefined) | undefined
+                              /** Name of the system, as set in the Hayward OmniLogic app. */
+                              backyard_name?: (string | undefined) | undefined
+                              /** ID of the body of water within its system. Only present on a pool or spa body. */
+                              body_of_water_id?:
+                                (string | undefined) | undefined
+                              /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
+                              body_of_water_name?:
+                                (string | undefined) | undefined
+                              /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
+                              virtual_heater_id?:
+                                (string | undefined) | undefined
+                              /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
+                              is_shared_equipment?:
+                                (boolean | undefined) | undefined
+                              /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
+                              shared_equipment_priority?:
+                                (('high' | 'low') | undefined) | undefined
+                            }
+                          | undefined
+                        )
+                      | undefined
                   }) &
                     ({
                       /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -27341,6 +27368,33 @@ export type Routes = {
                               /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
                               bonded_member_models?:
                                 (string[] | undefined) | undefined
+                            }
+                          | undefined
+                        )
+                      | undefined
+                    /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+                    hayward_omnilogic_metadata?:
+                      | (
+                          | {
+                              /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                              msp_system_id?: (string | undefined) | undefined
+                              /** Name of the system, as set in the Hayward OmniLogic app. */
+                              backyard_name?: (string | undefined) | undefined
+                              /** ID of the body of water within its system. Only present on a pool or spa body. */
+                              body_of_water_id?:
+                                (string | undefined) | undefined
+                              /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
+                              body_of_water_name?:
+                                (string | undefined) | undefined
+                              /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
+                              virtual_heater_id?:
+                                (string | undefined) | undefined
+                              /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
+                              is_shared_equipment?:
+                                (boolean | undefined) | undefined
+                              /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
+                              shared_equipment_priority?:
+                                (('high' | 'low') | undefined) | undefined
                             }
                           | undefined
                         )
@@ -56617,6 +56671,7 @@ export type Routes = {
             | 'aqara'
             | 'eufy'
             | 'sonos'
+            | 'hayward_omnilogic'
             | 'hid_cm'
             | 'google_nest'
             | 'slack'
@@ -59992,6 +60047,29 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
+              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              hayward_omnilogic_metadata?:
+                | (
+                    | {
+                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        msp_system_id?: (string | undefined) | undefined
+                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        backyard_name?: (string | undefined) | undefined
+                        /** ID of the body of water within its system. Only present on a pool or spa body. */
+                        body_of_water_id?: (string | undefined) | undefined
+                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
+                        body_of_water_name?: (string | undefined) | undefined
+                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
+                        virtual_heater_id?: (string | undefined) | undefined
+                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
+                        is_shared_equipment?: (boolean | undefined) | undefined
+                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
+                        shared_equipment_priority?:
+                          (('high' | 'low') | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
             }) &
               ({
                 /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -61353,6 +61431,7 @@ export type Routes = {
             | 'slack'
             | 'yacan'
             | 'sonos'
+            | 'hayward_omnilogic'
           )
         | undefined
       /** Array of device IDs for which you want to list devices. */
@@ -62533,6 +62612,29 @@ export type Routes = {
                         /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
                         bonded_member_models?:
                           (string[] | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              hayward_omnilogic_metadata?:
+                | (
+                    | {
+                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        msp_system_id?: (string | undefined) | undefined
+                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        backyard_name?: (string | undefined) | undefined
+                        /** ID of the body of water within its system. Only present on a pool or spa body. */
+                        body_of_water_id?: (string | undefined) | undefined
+                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
+                        body_of_water_name?: (string | undefined) | undefined
+                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
+                        virtual_heater_id?: (string | undefined) | undefined
+                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
+                        is_shared_equipment?: (boolean | undefined) | undefined
+                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
+                        shared_equipment_priority?:
+                          (('high' | 'low') | undefined) | undefined
                       }
                     | undefined
                   )
@@ -63802,6 +63904,7 @@ export type Routes = {
           | 'aqara'
           | 'eufy'
           | 'sonos'
+          | 'hayward_omnilogic'
         /** Display name for the device provider. */
         display_name: string
         /** Image URL for the device provider. */
@@ -66158,6 +66261,7 @@ export type Routes = {
             | 'slack'
             | 'yacan'
             | 'sonos'
+            | 'hayward_omnilogic'
           )
         | undefined
       /** Array of device IDs for which you want to list devices. */
@@ -79515,6 +79619,29 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
+              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              hayward_omnilogic_metadata?:
+                | (
+                    | {
+                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        msp_system_id?: (string | undefined) | undefined
+                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        backyard_name?: (string | undefined) | undefined
+                        /** ID of the body of water within its system. Only present on a pool or spa body. */
+                        body_of_water_id?: (string | undefined) | undefined
+                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
+                        body_of_water_name?: (string | undefined) | undefined
+                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
+                        virtual_heater_id?: (string | undefined) | undefined
+                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
+                        is_shared_equipment?: (boolean | undefined) | undefined
+                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
+                        shared_equipment_priority?:
+                          (('high' | 'low') | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
             }) &
               ({
                 /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -81747,6 +81874,29 @@ export type Routes = {
                         /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
                         bonded_member_models?:
                           (string[] | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              hayward_omnilogic_metadata?:
+                | (
+                    | {
+                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        msp_system_id?: (string | undefined) | undefined
+                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        backyard_name?: (string | undefined) | undefined
+                        /** ID of the body of water within its system. Only present on a pool or spa body. */
+                        body_of_water_id?: (string | undefined) | undefined
+                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
+                        body_of_water_name?: (string | undefined) | undefined
+                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
+                        virtual_heater_id?: (string | undefined) | undefined
+                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
+                        is_shared_equipment?: (boolean | undefined) | undefined
+                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
+                        shared_equipment_priority?:
+                          (('high' | 'low') | undefined) | undefined
                       }
                     | undefined
                   )
@@ -84125,6 +84275,29 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
+              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              hayward_omnilogic_metadata?:
+                | (
+                    | {
+                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        msp_system_id?: (string | undefined) | undefined
+                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        backyard_name?: (string | undefined) | undefined
+                        /** ID of the body of water within its system. Only present on a pool or spa body. */
+                        body_of_water_id?: (string | undefined) | undefined
+                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
+                        body_of_water_name?: (string | undefined) | undefined
+                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
+                        virtual_heater_id?: (string | undefined) | undefined
+                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
+                        is_shared_equipment?: (boolean | undefined) | undefined
+                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
+                        shared_equipment_priority?:
+                          (('high' | 'low') | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
             }) &
               ({
                 /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -86356,6 +86529,29 @@ export type Routes = {
                         /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
                         bonded_member_models?:
                           (string[] | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              hayward_omnilogic_metadata?:
+                | (
+                    | {
+                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        msp_system_id?: (string | undefined) | undefined
+                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        backyard_name?: (string | undefined) | undefined
+                        /** ID of the body of water within its system. Only present on a pool or spa body. */
+                        body_of_water_id?: (string | undefined) | undefined
+                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
+                        body_of_water_name?: (string | undefined) | undefined
+                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
+                        virtual_heater_id?: (string | undefined) | undefined
+                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
+                        is_shared_equipment?: (boolean | undefined) | undefined
+                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
+                        shared_equipment_priority?:
+                          (('high' | 'low') | undefined) | undefined
                       }
                     | undefined
                   )
@@ -98998,6 +99194,29 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
+              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              hayward_omnilogic_metadata?:
+                | (
+                    | {
+                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        msp_system_id?: (string | undefined) | undefined
+                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        backyard_name?: (string | undefined) | undefined
+                        /** ID of the body of water within its system. Only present on a pool or spa body. */
+                        body_of_water_id?: (string | undefined) | undefined
+                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
+                        body_of_water_name?: (string | undefined) | undefined
+                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
+                        virtual_heater_id?: (string | undefined) | undefined
+                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
+                        is_shared_equipment?: (boolean | undefined) | undefined
+                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
+                        shared_equipment_priority?:
+                          (('high' | 'low') | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
             }) &
               ({
                 /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -101229,6 +101448,29 @@ export type Routes = {
                         /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
                         bonded_member_models?:
                           (string[] | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              hayward_omnilogic_metadata?:
+                | (
+                    | {
+                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        msp_system_id?: (string | undefined) | undefined
+                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        backyard_name?: (string | undefined) | undefined
+                        /** ID of the body of water within its system. Only present on a pool or spa body. */
+                        body_of_water_id?: (string | undefined) | undefined
+                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
+                        body_of_water_name?: (string | undefined) | undefined
+                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
+                        virtual_heater_id?: (string | undefined) | undefined
+                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
+                        is_shared_equipment?: (boolean | undefined) | undefined
+                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
+                        shared_equipment_priority?:
+                          (('high' | 'low') | undefined) | undefined
                       }
                     | undefined
                   )
@@ -115391,6 +115633,29 @@ export type Routes = {
                         /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
                         bonded_member_models?:
                           (string[] | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              hayward_omnilogic_metadata?:
+                | (
+                    | {
+                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        msp_system_id?: (string | undefined) | undefined
+                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        backyard_name?: (string | undefined) | undefined
+                        /** ID of the body of water within its system. Only present on a pool or spa body. */
+                        body_of_water_id?: (string | undefined) | undefined
+                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
+                        body_of_water_name?: (string | undefined) | undefined
+                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
+                        virtual_heater_id?: (string | undefined) | undefined
+                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
+                        is_shared_equipment?: (boolean | undefined) | undefined
+                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
+                        shared_equipment_priority?:
+                          (('high' | 'low') | undefined) | undefined
                       }
                     | undefined
                   )
@@ -138750,6 +139015,33 @@ export type Routes = {
                               /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
                               bonded_member_models?:
                                 (string[] | undefined) | undefined
+                            }
+                          | undefined
+                        )
+                      | undefined
+                    /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+                    hayward_omnilogic_metadata?:
+                      | (
+                          | {
+                              /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                              msp_system_id?: (string | undefined) | undefined
+                              /** Name of the system, as set in the Hayward OmniLogic app. */
+                              backyard_name?: (string | undefined) | undefined
+                              /** ID of the body of water within its system. Only present on a pool or spa body. */
+                              body_of_water_id?:
+                                (string | undefined) | undefined
+                              /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
+                              body_of_water_name?:
+                                (string | undefined) | undefined
+                              /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
+                              virtual_heater_id?:
+                                (string | undefined) | undefined
+                              /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
+                              is_shared_equipment?:
+                                (boolean | undefined) | undefined
+                              /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
+                              shared_equipment_priority?:
+                                (('high' | 'low') | undefined) | undefined
                             }
                           | undefined
                         )
@@ -173380,6 +173672,29 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
+              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              hayward_omnilogic_metadata?:
+                | (
+                    | {
+                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        msp_system_id?: (string | undefined) | undefined
+                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        backyard_name?: (string | undefined) | undefined
+                        /** ID of the body of water within its system. Only present on a pool or spa body. */
+                        body_of_water_id?: (string | undefined) | undefined
+                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
+                        body_of_water_name?: (string | undefined) | undefined
+                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
+                        virtual_heater_id?: (string | undefined) | undefined
+                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
+                        is_shared_equipment?: (boolean | undefined) | undefined
+                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
+                        shared_equipment_priority?:
+                          (('high' | 'low') | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
             }) &
               ({
                 /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -180848,6 +181163,29 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
+              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              hayward_omnilogic_metadata?:
+                | (
+                    | {
+                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        msp_system_id?: (string | undefined) | undefined
+                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        backyard_name?: (string | undefined) | undefined
+                        /** ID of the body of water within its system. Only present on a pool or spa body. */
+                        body_of_water_id?: (string | undefined) | undefined
+                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
+                        body_of_water_name?: (string | undefined) | undefined
+                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
+                        virtual_heater_id?: (string | undefined) | undefined
+                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
+                        is_shared_equipment?: (boolean | undefined) | undefined
+                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
+                        shared_equipment_priority?:
+                          (('high' | 'low') | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
             }) &
               ({
                 /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -183079,6 +183417,29 @@ export type Routes = {
                         /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
                         bonded_member_models?:
                           (string[] | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              hayward_omnilogic_metadata?:
+                | (
+                    | {
+                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        msp_system_id?: (string | undefined) | undefined
+                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        backyard_name?: (string | undefined) | undefined
+                        /** ID of the body of water within its system. Only present on a pool or spa body. */
+                        body_of_water_id?: (string | undefined) | undefined
+                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
+                        body_of_water_name?: (string | undefined) | undefined
+                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
+                        virtual_heater_id?: (string | undefined) | undefined
+                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
+                        is_shared_equipment?: (boolean | undefined) | undefined
+                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
+                        shared_equipment_priority?:
+                          (('high' | 'low') | undefined) | undefined
                       }
                     | undefined
                   )
@@ -196837,6 +197198,29 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
+              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              hayward_omnilogic_metadata?:
+                | (
+                    | {
+                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        msp_system_id?: (string | undefined) | undefined
+                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        backyard_name?: (string | undefined) | undefined
+                        /** ID of the body of water within its system. Only present on a pool or spa body. */
+                        body_of_water_id?: (string | undefined) | undefined
+                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
+                        body_of_water_name?: (string | undefined) | undefined
+                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
+                        virtual_heater_id?: (string | undefined) | undefined
+                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
+                        is_shared_equipment?: (boolean | undefined) | undefined
+                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
+                        shared_equipment_priority?:
+                          (('high' | 'low') | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
             }) &
               ({
                 /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
@@ -199070,6 +199454,29 @@ export type Routes = {
                         /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
                         bonded_member_models?:
                           (string[] | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              hayward_omnilogic_metadata?:
+                | (
+                    | {
+                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        msp_system_id?: (string | undefined) | undefined
+                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        backyard_name?: (string | undefined) | undefined
+                        /** ID of the body of water within its system. Only present on a pool or spa body. */
+                        body_of_water_id?: (string | undefined) | undefined
+                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
+                        body_of_water_name?: (string | undefined) | undefined
+                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
+                        virtual_heater_id?: (string | undefined) | undefined
+                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
+                        is_shared_equipment?: (boolean | undefined) | undefined
+                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
+                        shared_equipment_priority?:
+                          (('high' | 'low') | undefined) | undefined
                       }
                     | undefined
                   )
@@ -204074,6 +204481,33 @@ export type Routes = {
                               /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
                               bonded_member_models?:
                                 (string[] | undefined) | undefined
+                            }
+                          | undefined
+                        )
+                      | undefined
+                    /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+                    hayward_omnilogic_metadata?:
+                      | (
+                          | {
+                              /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                              msp_system_id?: (string | undefined) | undefined
+                              /** Name of the system, as set in the Hayward OmniLogic app. */
+                              backyard_name?: (string | undefined) | undefined
+                              /** ID of the body of water within its system. Only present on a pool or spa body. */
+                              body_of_water_id?:
+                                (string | undefined) | undefined
+                              /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
+                              body_of_water_name?:
+                                (string | undefined) | undefined
+                              /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
+                              virtual_heater_id?:
+                                (string | undefined) | undefined
+                              /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
+                              is_shared_equipment?:
+                                (boolean | undefined) | undefined
+                              /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
+                              shared_equipment_priority?:
+                                (('high' | 'low') | undefined) | undefined
                             }
                           | undefined
                         )

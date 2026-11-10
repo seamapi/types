@@ -1492,6 +1492,56 @@ export const device_metadata = z
       ---
       Metadata for a Sonos speaker.
       `),
+    hayward_omnilogic_metadata: z
+      .object({
+        msp_system_id: z
+          .string()
+          .optional()
+          .describe(
+            'ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to.',
+          ),
+        backyard_name: z
+          .string()
+          .optional()
+          .describe('Name of the system, as set in the Hayward OmniLogic app.'),
+        body_of_water_id: z
+          .string()
+          .optional()
+          .describe(
+            'ID of the body of water within its system. Only present on a pool or spa body.',
+          ),
+        body_of_water_name: z
+          .string()
+          .optional()
+          .describe(
+            'Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body.',
+          ),
+        virtual_heater_id: z
+          .string()
+          .optional()
+          .describe(
+            'ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body.',
+          ),
+        is_shared_equipment: z
+          .boolean()
+          .optional()
+          .describe(
+            'Indicates whether the body of water shares its pump and heater with another body of water in the same system.',
+          ),
+        shared_equipment_priority: z
+          .enum(['high', 'low'])
+          .optional()
+          .describe(
+            'Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat.',
+          ),
+      })
+      .partial()
+      .optional().describe(`
+      ---
+      undocumented: Unreleased.
+      ---
+      Metadata for a Hayward OmniLogic pool controller or body of water.
+      `),
   })
   .partial().describe(`
           ---

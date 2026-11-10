@@ -79,6 +79,7 @@ export const DEVICE_PROVIDERS = {
   AQARA: 'aqara',
   EUFY: 'eufy',
   SONOS: 'sonos',
+  HAYWARD_OMNILOGIC: 'hayward_omnilogic',
 } as const
 
 export type DeviceProviderName =
