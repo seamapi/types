@@ -69829,6 +69829,75 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
+    '/seam/customer/v1/connector_customers/delete': {
+      post: {
+        description:
+          "Removes one customer from a connector and deactivates that customer's connection. The connector and its other customers are kept, even when this was the connector's last customer. Reservations, spaces, and other resources already synced for the customer are not deleted.",
+        operationId: 'seamCustomerV1ConnectorCustomersDeletePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connector_customer_id: {
+                    description: 'ID of the connector customer to delete.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['connector_customer_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connector_customer: {
+                      properties: {
+                        connector_customer_id: { type: 'string' },
+                        connector_id: { type: 'string' },
+                        status: { enum: ['deleted'], type: 'string' },
+                      },
+                      required: [
+                        'connector_customer_id',
+                        'connector_id',
+                        'status',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connector_customer', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ api_key: [] }, { console_session_with_workspace: [] }],
+        summary: '/seam/customer/v1/connector_customers/delete',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'connector_customers',
+        ],
+        'x-fern-sdk-method-name': 'delete',
+        'x-fern-sdk-return-value': 'connector_customer',
+        'x-response-key': 'connector_customer',
+        'x-title': 'Delete Connector Customer',
+        'x-undocumented': 'Internal endpoint for Console.',
+      },
+    },
     '/seam/customer/v1/connector_customers/list': {
       get: {
         description: 'Lists connector customers for a given connector.',
