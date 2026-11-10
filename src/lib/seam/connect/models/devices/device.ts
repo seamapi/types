@@ -8,6 +8,8 @@ import { capability_properties } from './capability-properties/index.js'
 import { device_metadata } from './device-metadata.js'
 import { any_device_type } from './device-type.js'
 import { phone_specific_properties } from './phone-properties.js'
+import { pool_fields, pool_system_fields } from './pool.js'
+import { temperature_controller_fields } from './temperature-controller.js'
 
 export const device_capability_flags = z
   .object({
@@ -158,6 +160,12 @@ export const device_capability_flags = z
       undocumented: Unreleased.
       ---
       Indicates whether the speaker supports playing an audio clip from a URL.
+      `),
+    can_control_temperature: z.boolean().describe(`
+      ---
+      undocumented: Unreleased.
+      ---
+      Indicates whether the device supports controlling its primary target temperature.
       `),
   })
   .partial()
@@ -646,6 +654,16 @@ const hub_required_for_additional_capabilities = common_device_warning.extend({
     Indicates that a hub or relay must be connected to unlock additional capabilities such as remote unlock.
     `)
 
+const service_mode = common_device_warning.extend({
+  warning_code: z.literal('service_mode').describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: pools
+    undocumented: Unreleased.
+    ---
+    Indicates that a technician has put the pool controller in service mode. Schedules and remote changes will not run until it is switched back.
+    `)
+
 const provider_issue = common_device_warning.extend({
   warning_code: z.literal('provider_issue').describe(warning_code_description),
 }).describe(`
@@ -753,6 +771,7 @@ const device_warning = z.discriminatedUnion('warning_code', [
   time_zone_mismatch,
   two_n_device_missing_timezone,
   hub_required_for_additional_capabilities,
+  service_mode,
   provider_issue,
   keynest_unsupported_locker,
   accessory_keypad_setup_required,
@@ -791,6 +810,7 @@ export const device_warning_map = z.object({
   two_n_device_missing_timezone: two_n_device_missing_timezone.optional(),
   hub_required_for_additional_capabilities:
     hub_required_for_additional_capabilities.optional(),
+  service_mode: service_mode.optional(),
   provider_issue: provider_issue.optional(),
   keynest_unsupported_locker: keynest_unsupported_locker.optional(),
   accessory_keypad_setup_required: accessory_keypad_setup_required.optional(),
@@ -1340,6 +1360,8 @@ export const device = z
             name: Hardware
           noise_sensors:
             name: Noise Sensors
+          pools:
+            name: Pools
           phones:
             name: Phones
           provider_metadata:
@@ -1360,6 +1382,8 @@ export const device = z
             name: Hardware
           noise_sensors:
             name: Noise Sensors
+          pools:
+            name: Pools
           phones:
             name: Phones
           provider_metadata:
@@ -1389,6 +1413,7 @@ export const device = z
       Manufacturer of the device. Represents the hardware brand, which may differ from the provider.
     `),
     ...sensor_measurements.shape,
+    ...temperature_controller_fields.shape,
     named_sensors: z
       .array(named_sensor)
       .describe(
@@ -1400,6 +1425,8 @@ export const device = z
           `,
       )
       .optional(),
+    ...pool_fields.shape,
+    ...pool_system_fields.shape,
   })
   .merge(device_capability_flags).describe(`
     ---
@@ -1417,8 +1444,12 @@ export const device = z
         name: Noise Sensors
       sensors:
         name: Sensors
+      temperature_controllers:
+        name: Temperature Controllers
       speakers:
         name: Speakers
+      pools:
+        name: Pools
       phones:
         name: Phones
       provider_metadata:

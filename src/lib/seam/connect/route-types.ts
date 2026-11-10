@@ -2299,6 +2299,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -5992,6 +6030,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of playing an audio clip on a speaker. */
             action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -11536,6 +11612,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -15096,6 +15210,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -16122,6 +16274,7 @@ export type Routes = {
                   )
                 | 'sonos_speaker'
                 | 'alertify_sensor'
+                | ('hayward_pool_system' | 'hayward_pool')
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -16138,6 +16291,7 @@ export type Routes = {
                 | 'thermostat'
                 | 'battery'
                 | 'phone'
+                | 'pool'
               )[]
               /** Indicates whether the device is online. */
               is_online: boolean
@@ -18131,6 +18285,14 @@ export type Routes = {
                     /** Date and time at which Seam created the warning. */
                     created_at: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'service_mode'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'provider_issue'
                   }
                 | {
@@ -18242,6 +18404,17 @@ export type Routes = {
               occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
+              /** Current setting of the device's primary temperature controller. */
+              temperature_setting?:
+                | {
+                    /** Operating mode requested from the device's primary temperature controller. */
+                    controller_mode: 'heat' | 'off'
+                    /** Temperature to which the controller should heat, in °C. The controller can retain this value while it is off. */
+                    heating_set_point_celsius?: number | undefined
+                    /** Temperature to which the controller should heat, in °F. The controller can retain this value while it is off. */
+                    heating_set_point_fahrenheit?: number | undefined
+                  }
+                | undefined
               /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
               named_sensors?:
                 | {
@@ -18275,6 +18448,12 @@ export type Routes = {
                     is_smoking_detected?: boolean | undefined
                   }[]
                 | undefined
+              /** Indicates whether the device represents spa water rather than pool water. Present only on pool and spa devices. */
+              is_spa?: boolean | undefined
+              /** Indicates whether the water is circulating. Temperature readings are only live while it is circulating. Omitted if the controller does not report it. */
+              is_water_circulating?: boolean | undefined
+              /** Salt level reported by the chlorinator, in parts per million. Omitted if the system has no salt chlorinator. */
+              salt_ppm?: number | undefined
               /** Indicates whether the device supports remote unlocking. */
               can_remotely_unlock?: boolean | undefined
               /** Indicates whether the device supports remote locking. */
@@ -18338,6 +18517,8 @@ export type Routes = {
               can_play_speaker_favorite?: boolean | undefined
               /** Indicates whether the speaker supports playing an audio clip from a URL. */
               can_play_speaker_audio_clip?: boolean | undefined
+              /** Indicates whether the device supports controlling its primary target temperature. */
+              can_control_temperature?: boolean | undefined
             }[]
           | undefined
         acs_entrances?:
@@ -18815,6 +18996,7 @@ export type Routes = {
                 | 'access_control'
                 | 'camera'
                 | 'speaker'
+                | 'pool'
               )[]
               /** Default reservation check-in time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration — set during the connect_webview for providers like Lodgify whose API does not expose check-in times. */
               default_checkin_time?: string | undefined
@@ -22790,6 +22972,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -25359,6 +25579,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -26021,6 +26279,7 @@ export type Routes = {
                   )
                 | 'sonos_speaker'
                 | 'alertify_sensor'
+                | ('hayward_pool_system' | 'hayward_pool')
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -26037,6 +26296,7 @@ export type Routes = {
                 | 'thermostat'
                 | 'battery'
                 | 'phone'
+                | 'pool'
               )[]
               /** Indicates whether the device is online. */
               is_online: boolean
@@ -28030,6 +28290,14 @@ export type Routes = {
                     /** Date and time at which Seam created the warning. */
                     created_at: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'service_mode'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'provider_issue'
                   }
                 | {
@@ -28141,6 +28409,17 @@ export type Routes = {
               occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
+              /** Current setting of the device's primary temperature controller. */
+              temperature_setting?:
+                | {
+                    /** Operating mode requested from the device's primary temperature controller. */
+                    controller_mode: 'heat' | 'off'
+                    /** Temperature to which the controller should heat, in °C. The controller can retain this value while it is off. */
+                    heating_set_point_celsius?: number | undefined
+                    /** Temperature to which the controller should heat, in °F. The controller can retain this value while it is off. */
+                    heating_set_point_fahrenheit?: number | undefined
+                  }
+                | undefined
               /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
               named_sensors?:
                 | {
@@ -28174,6 +28453,12 @@ export type Routes = {
                     is_smoking_detected?: boolean | undefined
                   }[]
                 | undefined
+              /** Indicates whether the device represents spa water rather than pool water. Present only on pool and spa devices. */
+              is_spa?: boolean | undefined
+              /** Indicates whether the water is circulating. Temperature readings are only live while it is circulating. Omitted if the controller does not report it. */
+              is_water_circulating?: boolean | undefined
+              /** Salt level reported by the chlorinator, in parts per million. Omitted if the system has no salt chlorinator. */
+              salt_ppm?: number | undefined
               /** Indicates whether the device supports remote unlocking. */
               can_remotely_unlock?: boolean | undefined
               /** Indicates whether the device supports remote locking. */
@@ -28237,6 +28522,8 @@ export type Routes = {
               can_play_speaker_favorite?: boolean | undefined
               /** Indicates whether the speaker supports playing an audio clip from a URL. */
               can_play_speaker_audio_clip?: boolean | undefined
+              /** Indicates whether the device supports controlling its primary target temperature. */
+              can_control_temperature?: boolean | undefined
             }[]
           | undefined
         acs_entrances?:
@@ -31798,6 +32085,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of playing an audio clip on a speaker. */
             action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -38647,6 +38972,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -41304,6 +41667,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -43844,6 +44245,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of playing an audio clip on a speaker. */
             action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -47293,6 +47732,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of playing an audio clip on a speaker. */
             action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -52688,6 +53165,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -55234,6 +55749,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -56094,6 +56647,7 @@ export type Routes = {
             | 'access_control'
             | 'camera'
             | 'speaker'
+            | 'pool'
           )[]
         | undefined
       /** List of provider keys to exclude from the Connect Webview. These providers will not be shown when the user tries to connect an account. */
@@ -56136,6 +56690,7 @@ export type Routes = {
           | 'access_control'
           | 'camera'
           | 'speaker'
+          | 'pool'
         )[]
         /**
          * @deprecated Unused. Will be removed.*/
@@ -56229,6 +56784,7 @@ export type Routes = {
           | 'access_control'
           | 'camera'
           | 'speaker'
+          | 'pool'
         )[]
         /**
          * @deprecated Unused. Will be removed.*/
@@ -56312,6 +56868,7 @@ export type Routes = {
           | 'access_control'
           | 'camera'
           | 'speaker'
+          | 'pool'
         )[]
         /**
          * @deprecated Unused. Will be removed.*/
@@ -56593,6 +57150,7 @@ export type Routes = {
           | 'access_control'
           | 'camera'
           | 'speaker'
+          | 'pool'
         )[]
         /** Default reservation check-in time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration — set during the connect_webview for providers like Lodgify whose API does not expose check-in times. */
         default_checkin_time?: string | undefined
@@ -56840,6 +57398,7 @@ export type Routes = {
           | 'access_control'
           | 'camera'
           | 'speaker'
+          | 'pool'
         )[]
         /** Default reservation check-in time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration — set during the connect_webview for providers like Lodgify whose API does not expose check-in times. */
         default_checkin_time?: string | undefined
@@ -56916,6 +57475,7 @@ export type Routes = {
             | 'access_control'
             | 'camera'
             | 'speaker'
+            | 'pool'
           )[]
         | undefined
       /** The customer key to associate with this connected account. If provided, the connected account and all resources under the connected account will be moved to this customer. May only be provided if the connected account is not already associated with a customer. */
@@ -57130,6 +57690,7 @@ export type Routes = {
           | 'access_control'
           | 'camera'
           | 'speaker'
+          | 'pool'
         )[]
         /** Default reservation check-in time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration — set during the connect_webview for providers like Lodgify whose API does not expose check-in times. */
         default_checkin_time?: string | undefined
@@ -58403,6 +58964,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
+          | ('hayward_pool_system' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -58419,6 +58981,7 @@ export type Routes = {
           | 'thermostat'
           | 'battery'
           | 'phone'
+          | 'pool'
         )[]
         /** Indicates whether the device is online. */
         is_online: boolean
@@ -60337,6 +60900,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'service_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'provider_issue'
             }
           | {
@@ -60448,6 +61019,17 @@ export type Routes = {
         occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
+        /** Current setting of the device's primary temperature controller. */
+        temperature_setting?:
+          | {
+              /** Operating mode requested from the device's primary temperature controller. */
+              controller_mode: 'heat' | 'off'
+              /** Temperature to which the controller should heat, in °C. The controller can retain this value while it is off. */
+              heating_set_point_celsius?: number | undefined
+              /** Temperature to which the controller should heat, in °F. The controller can retain this value while it is off. */
+              heating_set_point_fahrenheit?: number | undefined
+            }
+          | undefined
         /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
         named_sensors?:
           | {
@@ -60481,6 +61063,12 @@ export type Routes = {
               is_smoking_detected?: boolean | undefined
             }[]
           | undefined
+        /** Indicates whether the device represents spa water rather than pool water. Present only on pool and spa devices. */
+        is_spa?: boolean | undefined
+        /** Indicates whether the water is circulating. Temperature readings are only live while it is circulating. Omitted if the controller does not report it. */
+        is_water_circulating?: boolean | undefined
+        /** Salt level reported by the chlorinator, in parts per million. Omitted if the system has no salt chlorinator. */
+        salt_ppm?: number | undefined
         /** Indicates whether the device supports remote unlocking. */
         can_remotely_unlock?: boolean | undefined
         /** Indicates whether the device supports remote locking. */
@@ -60542,6 +61130,8 @@ export type Routes = {
         can_play_speaker_favorite?: boolean | undefined
         /** Indicates whether the speaker supports playing an audio clip from a URL. */
         can_play_speaker_audio_clip?: boolean | undefined
+        /** Indicates whether the device supports controlling its primary target temperature. */
+        can_control_temperature?: boolean | undefined
       }
     }
     maxDuration: undefined
@@ -60620,6 +61210,7 @@ export type Routes = {
               )
             | 'sonos_speaker'
             | 'alertify_sensor'
+            | ('hayward_pool_system' | 'hayward_pool')
           )
         | undefined
       /** Array of device types for which you want to list devices. */
@@ -60682,6 +61273,7 @@ export type Routes = {
               )
             | 'sonos_speaker'
             | 'alertify_sensor'
+            | ('hayward_pool_system' | 'hayward_pool')
           )[]
         | undefined
       /** Manufacturer for which you want to list devices. */
@@ -60800,6 +61392,7 @@ export type Routes = {
             | 'can_play_speaker_chime'
             | 'can_play_speaker_favorite'
             | 'can_play_speaker_audio_clip'
+            | 'can_control_temperature'
           )[]
         | undefined
       /**  */
@@ -60835,6 +61428,7 @@ export type Routes = {
             | 'can_play_speaker_chime'
             | 'can_play_speaker_favorite'
             | 'can_play_speaker_audio_clip'
+            | 'can_control_temperature'
           )[]
         | undefined
       /**
@@ -60909,6 +61503,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
+          | ('hayward_pool_system' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -60925,6 +61520,7 @@ export type Routes = {
           | 'thermostat'
           | 'battery'
           | 'phone'
+          | 'pool'
         )[]
         /** Indicates whether the device is online. */
         is_online: boolean
@@ -62843,6 +63439,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'service_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'provider_issue'
             }
           | {
@@ -62954,6 +63558,17 @@ export type Routes = {
         occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
+        /** Current setting of the device's primary temperature controller. */
+        temperature_setting?:
+          | {
+              /** Operating mode requested from the device's primary temperature controller. */
+              controller_mode: 'heat' | 'off'
+              /** Temperature to which the controller should heat, in °C. The controller can retain this value while it is off. */
+              heating_set_point_celsius?: number | undefined
+              /** Temperature to which the controller should heat, in °F. The controller can retain this value while it is off. */
+              heating_set_point_fahrenheit?: number | undefined
+            }
+          | undefined
         /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
         named_sensors?:
           | {
@@ -62987,6 +63602,12 @@ export type Routes = {
               is_smoking_detected?: boolean | undefined
             }[]
           | undefined
+        /** Indicates whether the device represents spa water rather than pool water. Present only on pool and spa devices. */
+        is_spa?: boolean | undefined
+        /** Indicates whether the water is circulating. Temperature readings are only live while it is circulating. Omitted if the controller does not report it. */
+        is_water_circulating?: boolean | undefined
+        /** Salt level reported by the chlorinator, in parts per million. Omitted if the system has no salt chlorinator. */
+        salt_ppm?: number | undefined
         /** Indicates whether the device supports remote unlocking. */
         can_remotely_unlock?: boolean | undefined
         /** Indicates whether the device supports remote locking. */
@@ -63048,6 +63669,8 @@ export type Routes = {
         can_play_speaker_favorite?: boolean | undefined
         /** Indicates whether the speaker supports playing an audio clip from a URL. */
         can_play_speaker_audio_clip?: boolean | undefined
+        /** Indicates whether the device supports controlling its primary target temperature. */
+        can_control_temperature?: boolean | undefined
       }[]
       /** Information about the current page of results. */
       pagination: {
@@ -63237,6 +63860,8 @@ export type Routes = {
         can_play_speaker_favorite?: boolean | undefined
         /** Indicates whether the speaker supports playing an audio clip from a URL. */
         can_play_speaker_audio_clip?: boolean | undefined
+        /** Indicates whether the device supports controlling its primary target temperature. */
+        can_control_temperature?: boolean | undefined
       }[]
     }
     maxDuration: undefined
@@ -64719,6 +65344,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
+          | ('hayward_pool_system' | 'hayward_pool')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
         /** Location information for the device. */
@@ -64748,6 +65374,7 @@ export type Routes = {
           | 'thermostat'
           | 'battery'
           | 'phone'
+          | 'pool'
         )[]
         /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
@@ -65088,6 +65715,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'service_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'provider_issue'
             }
           | {
@@ -65294,6 +65929,8 @@ export type Routes = {
         can_play_speaker_favorite?: boolean | undefined
         /** Indicates whether the speaker supports playing an audio clip from a URL. */
         can_play_speaker_audio_clip?: boolean | undefined
+        /** Indicates whether the device supports controlling its primary target temperature. */
+        can_control_temperature?: boolean | undefined
       }
     }
     maxDuration: undefined
@@ -65372,6 +66009,7 @@ export type Routes = {
               )
             | 'sonos_speaker'
             | 'alertify_sensor'
+            | ('hayward_pool_system' | 'hayward_pool')
           )
         | undefined
       /** Array of device types for which you want to list devices. */
@@ -65434,6 +66072,7 @@ export type Routes = {
               )
             | 'sonos_speaker'
             | 'alertify_sensor'
+            | ('hayward_pool_system' | 'hayward_pool')
           )[]
         | undefined
       /** Manufacturer for which you want to list devices. */
@@ -65542,6 +66181,7 @@ export type Routes = {
             | 'can_play_speaker_chime'
             | 'can_play_speaker_favorite'
             | 'can_play_speaker_audio_clip'
+            | 'can_control_temperature'
           )[]
         | undefined
       /**  */
@@ -65577,6 +66217,7 @@ export type Routes = {
             | 'can_play_speaker_chime'
             | 'can_play_speaker_favorite'
             | 'can_play_speaker_audio_clip'
+            | 'can_control_temperature'
           )[]
         | undefined
       /** String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`. */
@@ -65648,6 +66289,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
+          | ('hayward_pool_system' | 'hayward_pool')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
         /** Location information for the device. */
@@ -65677,6 +66319,7 @@ export type Routes = {
           | 'thermostat'
           | 'battery'
           | 'phone'
+          | 'pool'
         )[]
         /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
@@ -66017,6 +66660,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'service_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'provider_issue'
             }
           | {
@@ -66223,6 +66874,8 @@ export type Routes = {
         can_play_speaker_favorite?: boolean | undefined
         /** Indicates whether the speaker supports playing an audio clip from a URL. */
         can_play_speaker_audio_clip?: boolean | undefined
+        /** Indicates whether the device supports controlling its primary target temperature. */
+        can_control_temperature?: boolean | undefined
       }[]
       /** Information about the current page of results. */
       pagination: {
@@ -77425,6 +78078,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -77784,6 +78475,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
+          | ('hayward_pool_system' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -77800,6 +78492,7 @@ export type Routes = {
           | 'thermostat'
           | 'battery'
           | 'phone'
+          | 'pool'
         )[]
         /** Indicates whether the device is online. */
         is_online: boolean
@@ -79718,6 +80411,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'service_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'provider_issue'
             }
           | {
@@ -79829,6 +80530,17 @@ export type Routes = {
         occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
+        /** Current setting of the device's primary temperature controller. */
+        temperature_setting?:
+          | {
+              /** Operating mode requested from the device's primary temperature controller. */
+              controller_mode: 'heat' | 'off'
+              /** Temperature to which the controller should heat, in °C. The controller can retain this value while it is off. */
+              heating_set_point_celsius?: number | undefined
+              /** Temperature to which the controller should heat, in °F. The controller can retain this value while it is off. */
+              heating_set_point_fahrenheit?: number | undefined
+            }
+          | undefined
         /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
         named_sensors?:
           | {
@@ -79862,6 +80574,12 @@ export type Routes = {
               is_smoking_detected?: boolean | undefined
             }[]
           | undefined
+        /** Indicates whether the device represents spa water rather than pool water. Present only on pool and spa devices. */
+        is_spa?: boolean | undefined
+        /** Indicates whether the water is circulating. Temperature readings are only live while it is circulating. Omitted if the controller does not report it. */
+        is_water_circulating?: boolean | undefined
+        /** Salt level reported by the chlorinator, in parts per million. Omitted if the system has no salt chlorinator. */
+        salt_ppm?: number | undefined
         /** Indicates whether the device supports remote unlocking. */
         can_remotely_unlock?: boolean | undefined
         /** Indicates whether the device supports remote locking. */
@@ -79923,6 +80641,8 @@ export type Routes = {
         can_play_speaker_favorite?: boolean | undefined
         /** Indicates whether the speaker supports playing an audio clip from a URL. */
         can_play_speaker_audio_clip?: boolean | undefined
+        /** Indicates whether the device supports controlling its primary target temperature. */
+        can_control_temperature?: boolean | undefined
       }
       /** Represents a [device](https://www.seam.co/docs/core-concepts/devices) that has been connected to Seam. */
       device: {
@@ -79987,6 +80707,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
+          | ('hayward_pool_system' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -80003,6 +80724,7 @@ export type Routes = {
           | 'thermostat'
           | 'battery'
           | 'phone'
+          | 'pool'
         )[]
         /** Indicates whether the device is online. */
         is_online: boolean
@@ -81921,6 +82643,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'service_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'provider_issue'
             }
           | {
@@ -82032,6 +82762,17 @@ export type Routes = {
         occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
+        /** Current setting of the device's primary temperature controller. */
+        temperature_setting?:
+          | {
+              /** Operating mode requested from the device's primary temperature controller. */
+              controller_mode: 'heat' | 'off'
+              /** Temperature to which the controller should heat, in °C. The controller can retain this value while it is off. */
+              heating_set_point_celsius?: number | undefined
+              /** Temperature to which the controller should heat, in °F. The controller can retain this value while it is off. */
+              heating_set_point_fahrenheit?: number | undefined
+            }
+          | undefined
         /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
         named_sensors?:
           | {
@@ -82065,6 +82806,12 @@ export type Routes = {
               is_smoking_detected?: boolean | undefined
             }[]
           | undefined
+        /** Indicates whether the device represents spa water rather than pool water. Present only on pool and spa devices. */
+        is_spa?: boolean | undefined
+        /** Indicates whether the water is circulating. Temperature readings are only live while it is circulating. Omitted if the controller does not report it. */
+        is_water_circulating?: boolean | undefined
+        /** Salt level reported by the chlorinator, in parts per million. Omitted if the system has no salt chlorinator. */
+        salt_ppm?: number | undefined
         /** Indicates whether the device supports remote unlocking. */
         can_remotely_unlock?: boolean | undefined
         /** Indicates whether the device supports remote locking. */
@@ -82126,6 +82873,8 @@ export type Routes = {
         can_play_speaker_favorite?: boolean | undefined
         /** Indicates whether the speaker supports playing an audio clip from a URL. */
         can_play_speaker_audio_clip?: boolean | undefined
+        /** Indicates whether the device supports controlling its primary target temperature. */
+        can_control_temperature?: boolean | undefined
       }
     }
     maxDuration: undefined
@@ -82328,6 +83077,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
+          | ('hayward_pool_system' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -82344,6 +83094,7 @@ export type Routes = {
           | 'thermostat'
           | 'battery'
           | 'phone'
+          | 'pool'
         )[]
         /** Indicates whether the device is online. */
         is_online: boolean
@@ -84262,6 +85013,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'service_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'provider_issue'
             }
           | {
@@ -84373,6 +85132,17 @@ export type Routes = {
         occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
+        /** Current setting of the device's primary temperature controller. */
+        temperature_setting?:
+          | {
+              /** Operating mode requested from the device's primary temperature controller. */
+              controller_mode: 'heat' | 'off'
+              /** Temperature to which the controller should heat, in °C. The controller can retain this value while it is off. */
+              heating_set_point_celsius?: number | undefined
+              /** Temperature to which the controller should heat, in °F. The controller can retain this value while it is off. */
+              heating_set_point_fahrenheit?: number | undefined
+            }
+          | undefined
         /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
         named_sensors?:
           | {
@@ -84406,6 +85176,12 @@ export type Routes = {
               is_smoking_detected?: boolean | undefined
             }[]
           | undefined
+        /** Indicates whether the device represents spa water rather than pool water. Present only on pool and spa devices. */
+        is_spa?: boolean | undefined
+        /** Indicates whether the water is circulating. Temperature readings are only live while it is circulating. Omitted if the controller does not report it. */
+        is_water_circulating?: boolean | undefined
+        /** Salt level reported by the chlorinator, in parts per million. Omitted if the system has no salt chlorinator. */
+        salt_ppm?: number | undefined
         /** Indicates whether the device supports remote unlocking. */
         can_remotely_unlock?: boolean | undefined
         /** Indicates whether the device supports remote locking. */
@@ -84467,6 +85243,8 @@ export type Routes = {
         can_play_speaker_favorite?: boolean | undefined
         /** Indicates whether the speaker supports playing an audio clip from a URL. */
         can_play_speaker_audio_clip?: boolean | undefined
+        /** Indicates whether the device supports controlling its primary target temperature. */
+        can_control_temperature?: boolean | undefined
       }[]
       devices: {
         /** ID of the device. */
@@ -84530,6 +85308,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
+          | ('hayward_pool_system' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -84546,6 +85325,7 @@ export type Routes = {
           | 'thermostat'
           | 'battery'
           | 'phone'
+          | 'pool'
         )[]
         /** Indicates whether the device is online. */
         is_online: boolean
@@ -86464,6 +87244,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'service_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'provider_issue'
             }
           | {
@@ -86575,6 +87363,17 @@ export type Routes = {
         occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
+        /** Current setting of the device's primary temperature controller. */
+        temperature_setting?:
+          | {
+              /** Operating mode requested from the device's primary temperature controller. */
+              controller_mode: 'heat' | 'off'
+              /** Temperature to which the controller should heat, in °C. The controller can retain this value while it is off. */
+              heating_set_point_celsius?: number | undefined
+              /** Temperature to which the controller should heat, in °F. The controller can retain this value while it is off. */
+              heating_set_point_fahrenheit?: number | undefined
+            }
+          | undefined
         /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
         named_sensors?:
           | {
@@ -86608,6 +87407,12 @@ export type Routes = {
               is_smoking_detected?: boolean | undefined
             }[]
           | undefined
+        /** Indicates whether the device represents spa water rather than pool water. Present only on pool and spa devices. */
+        is_spa?: boolean | undefined
+        /** Indicates whether the water is circulating. Temperature readings are only live while it is circulating. Omitted if the controller does not report it. */
+        is_water_circulating?: boolean | undefined
+        /** Salt level reported by the chlorinator, in parts per million. Omitted if the system has no salt chlorinator. */
+        salt_ppm?: number | undefined
         /** Indicates whether the device supports remote unlocking. */
         can_remotely_unlock?: boolean | undefined
         /** Indicates whether the device supports remote locking. */
@@ -86669,6 +87474,8 @@ export type Routes = {
         can_play_speaker_favorite?: boolean | undefined
         /** Indicates whether the speaker supports playing an audio clip from a URL. */
         can_play_speaker_audio_clip?: boolean | undefined
+        /** Indicates whether the device supports controlling its primary target temperature. */
+        can_control_temperature?: boolean | undefined
       }[]
     }
     maxDuration: undefined
@@ -88921,6 +89728,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of playing an audio clip on a speaker. */
             action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -91484,6 +92329,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -94013,6 +94896,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of playing an audio clip on a speaker. */
             action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -96576,6 +97497,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -96983,6 +97942,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
+          | ('hayward_pool_system' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -96999,6 +97959,7 @@ export type Routes = {
           | 'thermostat'
           | 'battery'
           | 'phone'
+          | 'pool'
         )[]
         /** Indicates whether the device is online. */
         is_online: boolean
@@ -98917,6 +99878,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'service_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'provider_issue'
             }
           | {
@@ -99028,6 +99997,17 @@ export type Routes = {
         occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
+        /** Current setting of the device's primary temperature controller. */
+        temperature_setting?:
+          | {
+              /** Operating mode requested from the device's primary temperature controller. */
+              controller_mode: 'heat' | 'off'
+              /** Temperature to which the controller should heat, in °C. The controller can retain this value while it is off. */
+              heating_set_point_celsius?: number | undefined
+              /** Temperature to which the controller should heat, in °F. The controller can retain this value while it is off. */
+              heating_set_point_fahrenheit?: number | undefined
+            }
+          | undefined
         /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
         named_sensors?:
           | {
@@ -99061,6 +100041,12 @@ export type Routes = {
               is_smoking_detected?: boolean | undefined
             }[]
           | undefined
+        /** Indicates whether the device represents spa water rather than pool water. Present only on pool and spa devices. */
+        is_spa?: boolean | undefined
+        /** Indicates whether the water is circulating. Temperature readings are only live while it is circulating. Omitted if the controller does not report it. */
+        is_water_circulating?: boolean | undefined
+        /** Salt level reported by the chlorinator, in parts per million. Omitted if the system has no salt chlorinator. */
+        salt_ppm?: number | undefined
         /** Indicates whether the device supports remote unlocking. */
         can_remotely_unlock?: boolean | undefined
         /** Indicates whether the device supports remote locking. */
@@ -99122,6 +100108,8 @@ export type Routes = {
         can_play_speaker_favorite?: boolean | undefined
         /** Indicates whether the speaker supports playing an audio clip from a URL. */
         can_play_speaker_audio_clip?: boolean | undefined
+        /** Indicates whether the device supports controlling its primary target temperature. */
+        can_control_temperature?: boolean | undefined
       }[]
       devices: {
         /** ID of the device. */
@@ -99185,6 +100173,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
+          | ('hayward_pool_system' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -99201,6 +100190,7 @@ export type Routes = {
           | 'thermostat'
           | 'battery'
           | 'phone'
+          | 'pool'
         )[]
         /** Indicates whether the device is online. */
         is_online: boolean
@@ -101119,6 +102109,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'service_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'provider_issue'
             }
           | {
@@ -101230,6 +102228,17 @@ export type Routes = {
         occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
+        /** Current setting of the device's primary temperature controller. */
+        temperature_setting?:
+          | {
+              /** Operating mode requested from the device's primary temperature controller. */
+              controller_mode: 'heat' | 'off'
+              /** Temperature to which the controller should heat, in °C. The controller can retain this value while it is off. */
+              heating_set_point_celsius?: number | undefined
+              /** Temperature to which the controller should heat, in °F. The controller can retain this value while it is off. */
+              heating_set_point_fahrenheit?: number | undefined
+            }
+          | undefined
         /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
         named_sensors?:
           | {
@@ -101263,6 +102272,12 @@ export type Routes = {
               is_smoking_detected?: boolean | undefined
             }[]
           | undefined
+        /** Indicates whether the device represents spa water rather than pool water. Present only on pool and spa devices. */
+        is_spa?: boolean | undefined
+        /** Indicates whether the water is circulating. Temperature readings are only live while it is circulating. Omitted if the controller does not report it. */
+        is_water_circulating?: boolean | undefined
+        /** Salt level reported by the chlorinator, in parts per million. Omitted if the system has no salt chlorinator. */
+        salt_ppm?: number | undefined
         /** Indicates whether the device supports remote unlocking. */
         can_remotely_unlock?: boolean | undefined
         /** Indicates whether the device supports remote locking. */
@@ -101324,6 +102339,8 @@ export type Routes = {
         can_play_speaker_favorite?: boolean | undefined
         /** Indicates whether the speaker supports playing an audio clip from a URL. */
         can_play_speaker_audio_clip?: boolean | undefined
+        /** Indicates whether the device supports controlling its primary target temperature. */
+        can_control_temperature?: boolean | undefined
       }[]
     }
     maxDuration: undefined
@@ -103586,6 +104603,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of playing an audio clip on a speaker. */
             action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -106152,6 +107207,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of playing an audio clip on a speaker. */
             action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -108790,6 +109883,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -109469,6 +110600,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'service_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'provider_issue'
             }
           | {
@@ -109923,6 +111062,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'hub_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'service_mode'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -110418,6 +111565,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'service_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'provider_issue'
             }
           | {
@@ -110505,6 +111660,7429 @@ export type Routes = {
             | undefined
         }
       }
+    }
+    maxDuration: undefined
+  }
+  '/pools/heat': {
+    route: '/pools/heat'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** ID of the device for the pool or spa water that you want to heat. */
+      device_id: string
+      /** Target water temperature in °C. Provide exactly one of `heating_set_point_celsius` and `heating_set_point_fahrenheit`. */
+      heating_set_point_celsius?: number | undefined
+      /** Target water temperature in °F. Provide exactly one of `heating_set_point_celsius` and `heating_set_point_fahrenheit`. */
+      heating_set_point_fahrenheit?: number | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      /** Represents an action attempt that enables you to keep track of the progress of your action that affects a physical device or system.actions against a device. Action attempts are useful because the physical world is intrinsically asynchronous.
+    
+    When you request for a device to perform an action, the Seam API immediately returns an action attempt object. In the background, the Seam API performs the action.
+    
+    See also [Action Attempts](https://www.seam.co/docs/core-concepts/action-attempts). */
+      action_attempt:
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of locking a door. */
+            action_type: 'LOCK_DOOR'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of locking a door. */
+            action_type: 'LOCK_DOOR'
+            /** Result of the action. */
+            result: {
+              /** Indicates whether the device confirmed that the lock action occurred. */
+              was_confirmed_by_device?: boolean | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of locking a door. */
+            action_type: 'LOCK_DOOR'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of unlocking a door. */
+            action_type: 'UNLOCK_DOOR'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of unlocking a door. */
+            action_type: 'UNLOCK_DOOR'
+            /** Result of the action. */
+            result: {
+              /** Indicates whether the device confirmed that the unlock action occurred. */
+              was_confirmed_by_device?: boolean | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of unlocking a door. */
+            action_type: 'UNLOCK_DOOR'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of scanning a credential. */
+            action_type: 'SCAN_CREDENTIAL'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of scanning a credential. */
+            action_type: 'SCAN_CREDENTIAL'
+            /** Result of scanning a card. If the attempt was successful, includes a snapshot of credential data read from the physical encoder, the corresponding data stored on Seam and the access system, and any associated warnings. */
+            result: {
+              /** Snapshot of credential data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created. */
+                created_at: string | null
+                /** Indicates whether the credential has been issued (encoded onto a card). */
+                is_issued: boolean | null
+                /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) becomes usable. */
+                starts_at: string | null
+                /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) will stop being usable. */
+                ends_at: string | null
+                /** A number or string that physically identifies the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                card_number: string | null
+                /** Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                visionline_metadata?:
+                  | {
+                      /** Card ID for the Visionline card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                      card_id?: (string | undefined) | undefined
+                      /** Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is cancelled. */
+                      cancelled?: (boolean | undefined) | undefined
+                      /** Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is discarded. */
+                      discarded?: (boolean | undefined) | undefined
+                      /** Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is expired. */
+                      expired?: (boolean | undefined) | undefined
+                      /** Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is overwritten. */
+                      overwritten?: (boolean | undefined) | undefined
+                      /** Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is overridden. */
+                      overridden?: (boolean | undefined) | undefined
+                      /** Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is pending auto-update. */
+                      pending_auto_update?: (boolean | undefined) | undefined
+                      /** Format of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                      card_format?:
+                        (('TLCode' | 'rfid48') | undefined) | undefined
+                      /** Holder of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                      card_holder?: (string | undefined) | undefined
+                      /** Number of issued cards associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                      number_of_issued_cards?: (number | undefined) | undefined
+                      /** IDs of the guest [entrances](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                      guest_acs_entrance_ids?:
+                        (string[] | undefined) | undefined
+                      /** IDs of the common [entrances](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                      common_acs_entrance_ids?:
+                        (string[] | undefined) | undefined
+                    }
+                  | undefined
+              } | null
+              /** Corresponding credential data as stored on Seam and the access system. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        /** ID of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        acs_credential_id: string
+                        /** ID of the [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                        acs_user_id?: string | undefined
+                        /** ID of the [user identity](https://www.seam.co/docs/api/user_identities/object) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                        user_identity_id?: string | undefined
+                        /** ID of the [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) to which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                        connected_account_id: string
+                        /** ID of the credential pool to which the credential belongs. */
+                        acs_credential_pool_id?: string | undefined
+                        /** ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        acs_system_id: string
+                        /** ID of the parent [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. */
+                        display_name: string
+                        /** Access (PIN) code for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        code?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
+                        /** Number of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        card_number?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been encoded onto a card. */
+                        is_issued?: boolean | undefined
+                        /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was encoded onto a card. */
+                        issued_at?: (string | undefined) | null
+                        /** Access method for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`. */
+                        access_method:
+                          'code' | 'card' | 'mobile_key' | 'cloud_key'
+                        /** Brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                              | 'assa_abloy_vostio_key'
+                              | 'salto_space_key'
+                              | 'latch_access'
+                              | 'dormakaba_ambiance_credential'
+                              | 'hotek_card'
+                              | 'salto_ks_tag'
+                              | 'avigilon_alta_credential'
+                              | 'kisi_credential'
+                              | 'akiles_credential'
+                            )
+                          | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. */
+                        external_type_display_name?: string | undefined
+                        /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created. */
+                        created_at: string
+                        /** ID of the workspace that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        workspace_id: string
+                        /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at?: string | undefined
+                        /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                        ends_at?: string | undefined
+                        /** Errors associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        errors: {
+                          error_code: string
+                          message: string
+                          /** Date and time at which Seam created the error. */
+                          created_at: string
+                        }[]
+                        /** Warnings associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        warnings: (
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'unknown_issue_with_acs_credential'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
+                        )[]
+                        /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                        is_latest_desired_state_synced_with_provider?:
+                          (boolean | null) | undefined
+                        /** Date and time at which the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                        latest_desired_state_synced_with_provider_at?:
+                          (string | null) | undefined
+                        /** Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        visionline_metadata?:
+                          | {
+                              /** Card function type in the Visionline access system. */
+                              card_function_type?:
+                                (('guest' | 'staff') | undefined) | undefined
+                              /** IDs of the credentials to which you want to join. */
+                              joiner_acs_credential_ids?:
+                                (string[] | undefined) | undefined
+                              /** Guest entrance IDs in the Visionline access system. */
+                              guest_acs_entrance_ids?:
+                                (string[] | undefined) | undefined
+                              /** Common entrance IDs in the Visionline access system. */
+                              common_acs_entrance_ids?:
+                                (string[] | undefined) | undefined
+                              /** Indicates whether the credential is valid. */
+                              is_valid?: (boolean | undefined) | undefined
+                              /** Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors. */
+                              auto_join?: (boolean | undefined) | undefined
+                              /** ID of the card in the Visionline access system. */
+                              card_id?: (string | undefined) | undefined
+                              /** ID of the credential in the Visionline access system. */
+                              credential_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              /** Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors. */
+                              auto_join?: (boolean | undefined) | undefined
+                              /** IDs of the guest entrances to override in the Vostio access system. */
+                              override_guest_acs_entrance_ids?:
+                                (string[] | undefined) | undefined
+                              /** Key ID in the Vostio access system. */
+                              key_id?: (string | undefined) | undefined
+                              /** Key issuing request ID in the Vostio access system. */
+                              key_issuing_request_id?:
+                                (string | undefined) | undefined
+                              /** Names of the doors to which to grant access in the Vostio access system. */
+                              door_names?: (string[] | undefined) | undefined
+                              /** Endpoint ID in the Vostio access system. */
+                              endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Indicates whether Seam manages the credential. */
+                        is_managed: true
+                      }
+                    | {
+                        /** ID of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        acs_credential_id: string
+                        /** ID of the [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                        acs_user_id?: string | undefined
+                        /** ID of the [user identity](https://www.seam.co/docs/api/user_identities/object) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                        user_identity_id?: string | undefined
+                        /** ID of the [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) to which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                        connected_account_id: string
+                        /** ID of the credential pool to which the credential belongs. */
+                        acs_credential_pool_id?: string | undefined
+                        /** ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        acs_system_id: string
+                        /** ID of the parent [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. */
+                        display_name: string
+                        /** Access (PIN) code for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        code?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
+                        /** Number of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        card_number?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been encoded onto a card. */
+                        is_issued?: boolean | undefined
+                        /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was encoded onto a card. */
+                        issued_at?: (string | undefined) | null
+                        /** Access method for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`. */
+                        access_method:
+                          'code' | 'card' | 'mobile_key' | 'cloud_key'
+                        /** Brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                              | 'assa_abloy_vostio_key'
+                              | 'salto_space_key'
+                              | 'latch_access'
+                              | 'dormakaba_ambiance_credential'
+                              | 'hotek_card'
+                              | 'salto_ks_tag'
+                              | 'avigilon_alta_credential'
+                              | 'kisi_credential'
+                              | 'akiles_credential'
+                            )
+                          | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. */
+                        external_type_display_name?: string | undefined
+                        /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created. */
+                        created_at: string
+                        /** ID of the workspace that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        workspace_id: string
+                        /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at?: string | undefined
+                        /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                        ends_at?: string | undefined
+                        /** Errors associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        errors: {
+                          error_code: string
+                          message: string
+                          /** Date and time at which Seam created the error. */
+                          created_at: string
+                        }[]
+                        /** Warnings associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        warnings: (
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'unknown_issue_with_acs_credential'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
+                        )[]
+                        /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                        is_latest_desired_state_synced_with_provider?:
+                          (boolean | null) | undefined
+                        /** Date and time at which the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                        latest_desired_state_synced_with_provider_at?:
+                          (string | null) | undefined
+                        /** Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        visionline_metadata?:
+                          | {
+                              /** Card function type in the Visionline access system. */
+                              card_function_type?:
+                                (('guest' | 'staff') | undefined) | undefined
+                              /** IDs of the credentials to which you want to join. */
+                              joiner_acs_credential_ids?:
+                                (string[] | undefined) | undefined
+                              /** Guest entrance IDs in the Visionline access system. */
+                              guest_acs_entrance_ids?:
+                                (string[] | undefined) | undefined
+                              /** Common entrance IDs in the Visionline access system. */
+                              common_acs_entrance_ids?:
+                                (string[] | undefined) | undefined
+                              /** Indicates whether the credential is valid. */
+                              is_valid?: (boolean | undefined) | undefined
+                              /** Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors. */
+                              auto_join?: (boolean | undefined) | undefined
+                              /** ID of the card in the Visionline access system. */
+                              card_id?: (string | undefined) | undefined
+                              /** ID of the credential in the Visionline access system. */
+                              credential_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              /** Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors. */
+                              auto_join?: (boolean | undefined) | undefined
+                              /** IDs of the guest entrances to override in the Vostio access system. */
+                              override_guest_acs_entrance_ids?:
+                                (string[] | undefined) | undefined
+                              /** Key ID in the Vostio access system. */
+                              key_id?: (string | undefined) | undefined
+                              /** Key issuing request ID in the Vostio access system. */
+                              key_issuing_request_id?:
+                                (string | undefined) | undefined
+                              /** Names of the doors to which to grant access in the Vostio access system. */
+                              door_names?: (string[] | undefined) | undefined
+                              /** Endpoint ID in the Vostio access system. */
+                              endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
+              /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
+              warnings: {
+                /** Indicates a warning related to scanning a credential. */
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
+                /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                warning_message: string
+              }[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of scanning a credential. */
+            action_type: 'SCAN_CREDENTIAL'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that there is no credential on the encoder. */
+                  type: 'no_credential_on_encoder'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that the encoder is not online. */
+                  type: 'encoder_not_online'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that communication with the encoder timed out. */
+                  type: 'encoder_communication_timeout'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that the Seam Bridge is disconnected or cannot reach the access control system. */
+                  type: 'bridge_disconnected'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of encoding credential data from the physical encoder onto a card. */
+            action_type: 'ENCODE_CREDENTIAL'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of encoding credential data from the physical encoder onto a card. */
+            action_type: 'ENCODE_CREDENTIAL'
+            /** Result of an encoding attempt. If the attempt was successful, includes the credential data that was encoded onto the card. */
+            result:
+              | {
+                  /** ID of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  acs_credential_id: string
+                  /** ID of the [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                  acs_user_id?: string | undefined
+                  /** ID of the [user identity](https://www.seam.co/docs/api/user_identities/object) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                  user_identity_id?: string | undefined
+                  /** ID of the [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) to which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                  connected_account_id: string
+                  /** ID of the credential pool to which the credential belongs. */
+                  acs_credential_pool_id?: string | undefined
+                  /** ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  acs_system_id: string
+                  /** ID of the parent [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. */
+                  display_name: string
+                  /** Access (PIN) code for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  code?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
+                  /** Number of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  card_number?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been encoded onto a card. */
+                  is_issued?: boolean | undefined
+                  /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was encoded onto a card. */
+                  issued_at?: (string | undefined) | null
+                  /** Access method for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`. */
+                  access_method: 'code' | 'card' | 'mobile_key' | 'cloud_key'
+                  /** Brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                  external_type?:
+                    | (
+                        | 'pti_card'
+                        | 'brivo_credential'
+                        | 'hid_credential'
+                        | 'visionline_card'
+                        | 'salto_ks_credential'
+                        | 'assa_abloy_vostio_key'
+                        | 'salto_space_key'
+                        | 'latch_access'
+                        | 'dormakaba_ambiance_credential'
+                        | 'hotek_card'
+                        | 'salto_ks_tag'
+                        | 'avigilon_alta_credential'
+                        | 'kisi_credential'
+                        | 'akiles_credential'
+                      )
+                    | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. */
+                  external_type_display_name?: string | undefined
+                  /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created. */
+                  created_at: string
+                  /** ID of the workspace that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  workspace_id: string
+                  /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  starts_at?: string | undefined
+                  /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                  ends_at?: string | undefined
+                  /** Errors associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  errors: {
+                    error_code: string
+                    message: string
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                  }[]
+                  /** Warnings associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  warnings: (
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'unknown_issue_with_acs_credential'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
+                  )[]
+                  /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                  is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                  is_latest_desired_state_synced_with_provider?:
+                    (boolean | null) | undefined
+                  /** Date and time at which the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                  latest_desired_state_synced_with_provider_at?:
+                    (string | null) | undefined
+                  /** Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  visionline_metadata?:
+                    | {
+                        /** Card function type in the Visionline access system. */
+                        card_function_type?:
+                          (('guest' | 'staff') | undefined) | undefined
+                        /** IDs of the credentials to which you want to join. */
+                        joiner_acs_credential_ids?:
+                          (string[] | undefined) | undefined
+                        /** Guest entrance IDs in the Visionline access system. */
+                        guest_acs_entrance_ids?:
+                          (string[] | undefined) | undefined
+                        /** Common entrance IDs in the Visionline access system. */
+                        common_acs_entrance_ids?:
+                          (string[] | undefined) | undefined
+                        /** Indicates whether the credential is valid. */
+                        is_valid?: (boolean | undefined) | undefined
+                        /** Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors. */
+                        auto_join?: (boolean | undefined) | undefined
+                        /** ID of the card in the Visionline access system. */
+                        card_id?: (string | undefined) | undefined
+                        /** ID of the credential in the Visionline access system. */
+                        credential_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        /** Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors. */
+                        auto_join?: (boolean | undefined) | undefined
+                        /** IDs of the guest entrances to override in the Vostio access system. */
+                        override_guest_acs_entrance_ids?:
+                          (string[] | undefined) | undefined
+                        /** Key ID in the Vostio access system. */
+                        key_id?: (string | undefined) | undefined
+                        /** Key issuing request ID in the Vostio access system. */
+                        key_issuing_request_id?:
+                          (string | undefined) | undefined
+                        /** Names of the doors to which to grant access in the Vostio access system. */
+                        door_names?: (string[] | undefined) | undefined
+                        /** Endpoint ID in the Vostio access system. */
+                        endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Indicates whether Seam manages the credential. */
+                  is_managed: true
+                }
+              | {
+                  /** ID of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  acs_credential_id: string
+                  /** ID of the [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                  acs_user_id?: string | undefined
+                  /** ID of the [user identity](https://www.seam.co/docs/api/user_identities/object) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                  user_identity_id?: string | undefined
+                  /** ID of the [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) to which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                  connected_account_id: string
+                  /** ID of the credential pool to which the credential belongs. */
+                  acs_credential_pool_id?: string | undefined
+                  /** ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  acs_system_id: string
+                  /** ID of the parent [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. */
+                  display_name: string
+                  /** Access (PIN) code for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  code?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
+                  /** Number of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  card_number?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been encoded onto a card. */
+                  is_issued?: boolean | undefined
+                  /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was encoded onto a card. */
+                  issued_at?: (string | undefined) | null
+                  /** Access method for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`. */
+                  access_method: 'code' | 'card' | 'mobile_key' | 'cloud_key'
+                  /** Brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                  external_type?:
+                    | (
+                        | 'pti_card'
+                        | 'brivo_credential'
+                        | 'hid_credential'
+                        | 'visionline_card'
+                        | 'salto_ks_credential'
+                        | 'assa_abloy_vostio_key'
+                        | 'salto_space_key'
+                        | 'latch_access'
+                        | 'dormakaba_ambiance_credential'
+                        | 'hotek_card'
+                        | 'salto_ks_tag'
+                        | 'avigilon_alta_credential'
+                        | 'kisi_credential'
+                        | 'akiles_credential'
+                      )
+                    | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. */
+                  external_type_display_name?: string | undefined
+                  /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created. */
+                  created_at: string
+                  /** ID of the workspace that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  workspace_id: string
+                  /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  starts_at?: string | undefined
+                  /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                  ends_at?: string | undefined
+                  /** Errors associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  errors: {
+                    error_code: string
+                    message: string
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                  }[]
+                  /** Warnings associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  warnings: (
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'unknown_issue_with_acs_credential'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
+                  )[]
+                  /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                  is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                  is_latest_desired_state_synced_with_provider?:
+                    (boolean | null) | undefined
+                  /** Date and time at which the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                  latest_desired_state_synced_with_provider_at?:
+                    (string | null) | undefined
+                  /** Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  visionline_metadata?:
+                    | {
+                        /** Card function type in the Visionline access system. */
+                        card_function_type?:
+                          (('guest' | 'staff') | undefined) | undefined
+                        /** IDs of the credentials to which you want to join. */
+                        joiner_acs_credential_ids?:
+                          (string[] | undefined) | undefined
+                        /** Guest entrance IDs in the Visionline access system. */
+                        guest_acs_entrance_ids?:
+                          (string[] | undefined) | undefined
+                        /** Common entrance IDs in the Visionline access system. */
+                        common_acs_entrance_ids?:
+                          (string[] | undefined) | undefined
+                        /** Indicates whether the credential is valid. */
+                        is_valid?: (boolean | undefined) | undefined
+                        /** Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors. */
+                        auto_join?: (boolean | undefined) | undefined
+                        /** ID of the card in the Visionline access system. */
+                        card_id?: (string | undefined) | undefined
+                        /** ID of the credential in the Visionline access system. */
+                        credential_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        /** Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors. */
+                        auto_join?: (boolean | undefined) | undefined
+                        /** IDs of the guest entrances to override in the Vostio access system. */
+                        override_guest_acs_entrance_ids?:
+                          (string[] | undefined) | undefined
+                        /** Key ID in the Vostio access system. */
+                        key_id?: (string | undefined) | undefined
+                        /** Key issuing request ID in the Vostio access system. */
+                        key_issuing_request_id?:
+                          (string | undefined) | undefined
+                        /** Names of the doors to which to grant access in the Vostio access system. */
+                        door_names?: (string[] | undefined) | undefined
+                        /** Endpoint ID in the Vostio access system. */
+                        endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  is_managed: false
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of encoding credential data from the physical encoder onto a card. */
+            action_type: 'ENCODE_CREDENTIAL'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that there is no credential on the encoder. */
+                  type: 'no_credential_on_encoder'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate an incompatible card format. */
+                  type: 'incompatible_card_format'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that the affected credential cannot be reissued. */
+                  type: 'credential_cannot_be_reissued'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that the encoder is not online. */
+                  type: 'encoder_not_online'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that communication with the encoder timed out. */
+                  type: 'encoder_communication_timeout'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that the Seam Bridge is disconnected or cannot reach the access control system. */
+                  type: 'bridge_disconnected'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that encoding was interrupted, for example, if the card was removed from the encoder before writing was complete. */
+                  type: 'encoding_interrupted'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that the credential was deleted and can no longer be encoded. */
+                  type: 'credential_deleted'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of scanning a physical card and assigning the credential to an ACS user. */
+            action_type: 'SCAN_TO_ASSIGN_CREDENTIAL'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of scanning a physical card and assigning the credential to an ACS user. */
+            action_type: 'SCAN_TO_ASSIGN_CREDENTIAL'
+            /** Result of a scan to assign attempt. If the attempt was successful, includes the credential data that was scanned and assigned. */
+            result: {
+              /** ID of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              acs_credential_id: string
+              /** ID of the [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+              acs_user_id?: string | undefined
+              /** ID of the [user identity](https://www.seam.co/docs/api/user_identities/object) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+              user_identity_id?: string | undefined
+              /** ID of the [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) to which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+              connected_account_id: string
+              /** ID of the credential pool to which the credential belongs. */
+              acs_credential_pool_id?: string | undefined
+              /** ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              acs_system_id: string
+              /** ID of the parent [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              parent_acs_credential_id?: string | undefined
+              /** Display name that corresponds to the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. */
+              display_name: string
+              /** Access (PIN) code for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              code?: (string | undefined) | null
+              /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+              is_one_time_use?: boolean | undefined
+              /** Number of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              card_number?: (string | undefined) | null
+              /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been encoded onto a card. */
+              is_issued?: boolean | undefined
+              /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was encoded onto a card. */
+              issued_at?: (string | undefined) | null
+              /** Access method for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`. */
+              access_method: 'code' | 'card' | 'mobile_key' | 'cloud_key'
+              /** Brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+              external_type?:
+                | (
+                    | 'pti_card'
+                    | 'brivo_credential'
+                    | 'hid_credential'
+                    | 'visionline_card'
+                    | 'salto_ks_credential'
+                    | 'assa_abloy_vostio_key'
+                    | 'salto_space_key'
+                    | 'latch_access'
+                    | 'dormakaba_ambiance_credential'
+                    | 'hotek_card'
+                    | 'salto_ks_tag'
+                    | 'avigilon_alta_credential'
+                    | 'kisi_credential'
+                    | 'akiles_credential'
+                  )
+                | undefined
+              /** Display name that corresponds to the brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. */
+              external_type_display_name?: string | undefined
+              /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created. */
+              created_at: string
+              /** ID of the workspace that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              workspace_id: string
+              /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+              starts_at?: string | undefined
+              /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+              ends_at?: string | undefined
+              /** Errors associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              errors: {
+                error_code: string
+                message: string
+                /** Date and time at which Seam created the error. */
+                created_at: string
+              }[]
+              /** Warnings associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              warnings: (
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'waiting_to_be_issued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_externally_modified'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_modified'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'being_deleted'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'unknown_issue_with_acs_credential'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
+              )[]
+              /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+              is_multi_phone_sync_credential?: boolean | undefined
+              /** Indicates whether the latest state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider. */
+              is_latest_desired_state_synced_with_provider?:
+                (boolean | null) | undefined
+              /** Date and time at which the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+              latest_desired_state_synced_with_provider_at?:
+                (string | null) | undefined
+              /** Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              visionline_metadata?:
+                | {
+                    /** Card function type in the Visionline access system. */
+                    card_function_type?:
+                      (('guest' | 'staff') | undefined) | undefined
+                    /** IDs of the credentials to which you want to join. */
+                    joiner_acs_credential_ids?:
+                      (string[] | undefined) | undefined
+                    /** Guest entrance IDs in the Visionline access system. */
+                    guest_acs_entrance_ids?: (string[] | undefined) | undefined
+                    /** Common entrance IDs in the Visionline access system. */
+                    common_acs_entrance_ids?: (string[] | undefined) | undefined
+                    /** Indicates whether the credential is valid. */
+                    is_valid?: (boolean | undefined) | undefined
+                    /** Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors. */
+                    auto_join?: (boolean | undefined) | undefined
+                    /** ID of the card in the Visionline access system. */
+                    card_id?: (string | undefined) | undefined
+                    /** ID of the credential in the Visionline access system. */
+                    credential_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Vostio-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              assa_abloy_vostio_metadata?:
+                | {
+                    /** Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors. */
+                    auto_join?: (boolean | undefined) | undefined
+                    /** IDs of the guest entrances to override in the Vostio access system. */
+                    override_guest_acs_entrance_ids?:
+                      (string[] | undefined) | undefined
+                    /** Key ID in the Vostio access system. */
+                    key_id?: (string | undefined) | undefined
+                    /** Key issuing request ID in the Vostio access system. */
+                    key_issuing_request_id?: (string | undefined) | undefined
+                    /** Names of the doors to which to grant access in the Vostio access system. */
+                    door_names?: (string[] | undefined) | undefined
+                    /** Endpoint ID in the Vostio access system. */
+                    endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Indicates whether Seam manages the credential. */
+              is_managed: true
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of scanning a physical card and assigning the credential to an ACS user. */
+            action_type: 'SCAN_TO_ASSIGN_CREDENTIAL'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that there is no credential on the encoder. */
+                  type: 'no_credential_on_encoder'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of assigning a pre-registered card credential to an access method. */
+            action_type: 'ASSIGN_CREDENTIAL'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of assigning a pre-registered card credential to an access method. */
+            action_type: 'ASSIGN_CREDENTIAL'
+            /** Result of assigning a credential. If successful, includes the updated access method with the assigned credential. */
+            result: {
+              /** ID of the Seam workspace associated with the access method. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`. */
+              mode: 'code' | 'card' | 'mobile_key' | 'cloud_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at: string | null
+              /** Indicates whether the access method has been issued. */
+              is_issued: boolean
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              display_status: string
+              /** URL of the Instant Key for mobile key access methods. */
+              instant_key_url?: string | undefined
+              /** Token of the client session associated with the access method. */
+              client_session_token?: string | undefined
+              /** Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method. */
+              is_encoding_required?: boolean | undefined
+              /** Indicates whether the access method is ready to be encoded. This is true when the card has not yet been issued and the access system has received all the access the card needs. While it is false, `pending_mutations` contains `waiting_for_access_on_acs_system`. */
+              is_ready_for_encoding?: boolean | undefined
+              /** Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment. */
+              is_assignment_required?: boolean | undefined
+              /** Indicates whether the access method is ready for card assignment. This is true when the access method is in card mode, has not yet been issued, and the system supports credential assignment. */
+              is_ready_for_assignment?: boolean | undefined
+              /** The actual PIN code for code access methods. */
+              code?: (string | null) | undefined
+              /** Warnings associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
+              warnings: (
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'being_deleted'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'updating_access_times'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'pulled_backup_access_code'
+                    /** ID of the original access method from which this backup access method was split, if applicable. */
+                    original_access_method_id?: string | undefined
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'delay_in_issuing'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'user_identity_missing_email_address'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
+              )[]
+              /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
+              /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
+              pending_mutations: (
+                | {
+                    /** Date and time at which the mutation was created. */
+                    created_at: string
+                    /** Detailed description of the mutation. */
+                    message: string
+                    /** Mutation code to indicate that Seam is in the process of provisioning access for this access method on new devices. */
+                    mutation_code: 'provisioning_access'
+                    /** Previous device configuration. */
+                    from: {
+                      /** Previous device IDs where access was provisioned. */
+                      device_ids: string[]
+                    }
+                    /** New device configuration. */
+                    to: {
+                      /** New device IDs where access is being provisioned. */
+                      device_ids: string[]
+                    }
+                  }
+                | {
+                    /** Date and time at which the mutation was created. */
+                    created_at: string
+                    /** Detailed description of the mutation. */
+                    message: string
+                    /** Mutation code to indicate that Seam is in the process of revoking access for this access method from devices. */
+                    mutation_code: 'revoking_access'
+                    /** Previous device configuration. */
+                    from: {
+                      /** Previous device IDs where access existed. */
+                      device_ids: string[]
+                    }
+                    /** New device configuration. */
+                    to: {
+                      /** New device IDs where access should remain. */
+                      device_ids: string[]
+                    }
+                  }
+                | {
+                    /** Date and time at which the mutation was created. */
+                    created_at: string
+                    /** Detailed description of the mutation. */
+                    message: string
+                    /** Mutation code to indicate that Seam is in the process of updating the access times for this access method. */
+                    mutation_code: 'updating_access_times'
+                    /** Previous access time configuration. */
+                    from: {
+                      /** Previous start time for access. */
+                      starts_at: string | null
+                      /** Previous end time for access. */
+                      ends_at: string | null
+                    }
+                    /** New access time configuration. */
+                    to: {
+                      /** New start time for access. */
+                      starts_at: string | null
+                      /** New end time for access. */
+                      ends_at: string | null
+                    }
+                  }
+                | {
+                    /** Date and time at which the mutation was created. */
+                    created_at: string
+                    /** Detailed description of the mutation. */
+                    message: string
+                    /** Mutation code to indicate that the access system has not yet received all the access this card needs, so the card is not ready to be encoded. */
+                    mutation_code: 'waiting_for_access_on_acs_system'
+                  }
+              )[]
+              /** ID of the customization profile associated with the access method. */
+              customization_profile_id?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of assigning a pre-registered card credential to an access method. */
+            action_type: 'ASSIGN_CREDENTIAL'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that no matching credential was found. */
+                  type: 'credential_not_found'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resetting a sandbox workspace. */
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resetting a sandbox workspace. */
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resetting a sandbox workspace. */
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the fan mode on a thermostat. */
+            action_type: 'SET_FAN_MODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the fan mode on a thermostat. */
+            action_type: 'SET_FAN_MODE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the fan mode on a thermostat. */
+            action_type: 'SET_FAN_MODE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the HVAC mode on a thermostat. */
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the HVAC mode on a thermostat. */
+            action_type: 'SET_HVAC_MODE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the HVAC mode on a thermostat. */
+            action_type: 'SET_HVAC_MODE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of a climate preset activation. */
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of a climate preset activation. */
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of a climate preset activation. */
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of returning a thermostat to its weekly program. */
+            action_type: 'ACTIVATE_WEEKLY_PROGRAM'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of returning a thermostat to its weekly program. */
+            action_type: 'ACTIVATE_WEEKLY_PROGRAM'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of returning a thermostat to its weekly program. */
+            action_type: 'ACTIVATE_WEEKLY_PROGRAM'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of simulating a keypad code entry. */
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of simulating a keypad code entry. */
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of simulating a keypad code entry. */
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of simulating a manual lock action using a keypad. */
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of simulating a manual lock action using a keypad. */
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of simulating a manual lock action using a keypad. */
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pushing thermostat programs. */
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pushing thermostat programs. */
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pushing thermostat programs. */
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of configuring the auto-lock on a lock. */
+            action_type: 'CONFIGURE_AUTO_LOCK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of configuring the auto-lock on a lock. */
+            action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of configuring the auto-lock on a lock. */
+            action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a favorite on a speaker. */
+            action_type: 'PLAY_SPEAKER_FAVORITE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a favorite on a speaker. */
+            action_type: 'PLAY_SPEAKER_FAVORITE'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers now playing the favorite, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a favorite on a speaker. */
+            action_type: 'PLAY_SPEAKER_FAVORITE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing an audio clip on a speaker. */
+            action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing an audio clip on a speaker. */
+            action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing an audio clip on a speaker. */
+            action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Syncing access codes is pending. */
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Syncing access codes succeeded. */
+            action_type: 'SYNC_ACCESS_CODES'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Syncing access codes failed. */
+            action_type: 'SYNC_ACCESS_CODES'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Creating an access code is pending. */
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Creating an access code succeeded. */
+            action_type: 'CREATE_ACCESS_CODE'
+            /** Result of the action. */
+            result: {
+              /** Created access code. */
+              access_code: {
+                [x: string]: any
+              }
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Creating an access code failed. */
+            action_type: 'CREATE_ACCESS_CODE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Deleting an access code is pending. */
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Deleting an access code succeeded. */
+            action_type: 'DELETE_ACCESS_CODE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Deleting an access code failed. */
+            action_type: 'DELETE_ACCESS_CODE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Updating an access code is pending. */
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Updating an access code succeeded. */
+            action_type: 'UPDATE_ACCESS_CODE'
+            /** Result of the action. */
+            result: {
+              /** Updated access code. */
+              access_code?:
+                | {
+                    [x: string]: any
+                  }
+                | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Updating an access code failed. */
+            action_type: 'UPDATE_ACCESS_CODE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Creating a noise threshold is pending. */
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Creating a noise threshold succeeded. */
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            /** Result of the action. */
+            result: {
+              /** Created noise threshold. */
+              noise_threshold: {
+                [x: string]: any
+              }
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Creating a noise threshold failed. */
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Deleting a noise threshold is pending. */
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Deleting a noise threshold succeeded. */
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Deleting a noise threshold failed. */
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Updating a noise threshold is pending. */
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Updating a noise threshold succeeded. */
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            /** Result of the action. */
+            result: {
+              /** Updated noise threshold. */
+              noise_threshold: {
+                [x: string]: any
+              }
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Updating a noise threshold failed. */
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+    }
+    maxDuration: undefined
+  }
+  '/pools/list': {
+    route: '/pools/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** Customer key for which you want to list devices. */
+      customer_key?: string | undefined
+      /** ID of the connected account for which you want to list devices. */
+      connected_account_id?: string | undefined
+      /** ID of the Connect Webview for which you want to list devices. */
+      connect_webview_id?: string | undefined
+      /** Device type by which you want to filter pool devices. */
+      device_type?: ('hayward_pool_system' | 'hayward_pool') | undefined
+      /** Array of device types by which you want to filter pool devices. */
+      device_types?: ('hayward_pool_system' | 'hayward_pool')[] | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      devices: {
+        /** ID of the device. */
+        device_id: string
+        /** Type of the device. The `august_lock` and `yale_lock` values are deprecated. Use `yale_access_lock` in place of `august_lock`, and `yale_access_lock` or `yale_home_lock` in place of `yale_lock`. */
+        device_type:
+          | (
+              | 'akuvox_lock'
+              | 'august_lock'
+              | 'brivo_access_point'
+              | 'butterflymx_panel'
+              | 'avigilon_alta_entry'
+              | 'doorking_lock'
+              | 'genie_door'
+              | 'igloo_lock'
+              | 'linear_lock'
+              | 'lockly_lock'
+              | 'kwikset_lock'
+              | 'nuki_lock'
+              | 'salto_lock'
+              | 'schlage_lock'
+              | 'smartthings_lock'
+              | 'wyze_lock'
+              | 'yale_lock'
+              | 'yale_access_lock'
+              | 'yale_home_lock'
+              | 'yale_connect_lock'
+              | 'two_n_intercom'
+              | 'controlbyweb_device'
+              | 'ttlock_lock'
+              | 'igloohome_lock'
+              | 'four_suites_door'
+              | 'dormakaba_oracode_door'
+              | 'tedee_lock'
+              | 'akiles_lock'
+              | 'ultraloq_lock'
+              | 'yacan_lock'
+              | 'keyincode_lock'
+              | 'omnitec_lock'
+              | 'kisi_lock'
+              | 'aqara_lock'
+              | 'eufy_lock'
+            )
+          | 'keynest_key'
+          | ('noiseaware_activity_zone' | 'minut_sensor')
+          | (
+              | 'ecobee_thermostat'
+              | 'nest_thermostat'
+              | 'honeywell_resideo_thermostat'
+              | 'tado_thermostat'
+              | 'sensi_thermostat'
+              | 'smartthings_thermostat'
+            )
+          | ('ios_phone' | 'android_phone')
+          | (
+              | 'ring_camera'
+              | 'tapo_camera'
+              | 'arlo_camera'
+              | 'reolink_camera'
+              | 'unifi_protect_camera'
+            )
+          | 'sonos_speaker'
+          | 'alertify_sensor'
+          | ('hayward_pool_system' | 'hayward_pool')
+        /** IDs of the spaces the device is in. */
+        space_ids: string[]
+        /** Optional nickname to describe the device, settable through Seam. */
+        nickname?: string | undefined
+        /** Display name of the device, defaults to nickname (if it is set) or `properties.appearance.name`, otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+        display_name: string
+        /**
+                Collection of capabilities that the device supports when connected to Seam. Values are `access_code`, which indicates that the device can manage and utilize digital PIN codes for secure access; `lock`, which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; `noise_detection`, which indicates that the device supports monitoring and responding to ambient noise levels; `thermostat`, which indicates that the device can regulate and adjust indoor temperatures; `battery`, which indicates that the device can manage battery life and health; and `phone`, which indicates that the device is a mobile device, such as a smartphone. **Important:** Superseded by [capability flags](https://www.seam.co/docs/capability-guides/device-and-system-capabilities#capability-flags).
+                 */
+        capabilities_supported: (
+          | 'access_code'
+          | 'lock'
+          | 'noise_detection'
+          | 'thermostat'
+          | 'battery'
+          | 'phone'
+          | 'pool'
+        )[]
+        /** Indicates whether the device is online. */
+        is_online: boolean
+        /** Indicates whether the lock is locked. */
+        is_door_locked?: boolean | undefined
+        /** Properties of the device. */
+        properties?:
+          | ((({
+              /** Indicates whether the device is online. */
+              online: boolean
+              /** Name of the device.
+               * @deprecated use device.display_name instead*/
+              name: string
+              /** Accessory keypad properties and state. */
+              accessory_keypad?:
+                | {
+                    /** Indicates if an accessory keypad is connected to the device.
+                     */
+                    is_connected: boolean
+                    /** Keypad battery properties.
+                     */
+                    battery?:
+                      | {
+                          level: number
+                        }
+                      | undefined
+                  }
+                | undefined
+              /** Appearance-related properties, as reported by the device. */
+              appearance: {
+                /** Name of the device as seen from the provider API and application, not settable through Seam. */
+                name: string
+              }
+              /** Device model-related properties. */
+              model: {
+                /**
+                          Indicates whether the device can connect a accessory keypad.
+                       */
+                can_connect_accessory_keypad?: boolean | undefined
+                /**
+                          Display name of the device model.
+                       */
+                display_name: string
+                /**
+                          Display name that corresponds to the manufacturer-specific terminology for the device.
+                       */
+                manufacturer_display_name: string
+                /**
+                          Indicates whether the device has a built in accessory keypad.
+                       */
+                has_built_in_keypad?: boolean | undefined
+                /**
+                 * @deprecated use device.can_program_offline_access_codes.*/
+                offline_access_codes_supported?: boolean | undefined
+                /**
+                 * @deprecated use device.can_program_online_access_codes.*/
+                online_access_codes_supported?: boolean | undefined
+                /**
+                 * @deprecated use device.properties.model.can_connect_accessory_keypad*/
+                accessory_keypad_supported?: boolean | undefined
+              }
+              /** Indicates whether the device has direct power. */
+              has_direct_power?: boolean | undefined
+              /** Indicates the battery level of the device as a decimal value between 0 and 1, inclusive. */
+              battery_level?: number | undefined
+              /** Represents the current status of the battery charge level. */
+              battery?:
+                | {
+                    /** Battery charge level as a value between 0 and 1, inclusive.
+                     */
+                    level: number
+                    /** Represents the current status of the battery charge level. Values are `critical`, which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; `low`, which signifies that the battery is under the preferred threshold and should be charged soon; `good`, which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and `full`, which represents a battery that is fully charged, providing the maximum duration of usage.
+                     */
+                    status: 'critical' | 'low' | 'good' | 'full'
+                  }
+                | undefined
+              /** Manufacturer of the device. When a device, such as a smart lock, is connected through a smart hub, the manufacturer of the device might be different from that of the smart hub. */
+              manufacturer?: string | undefined
+              /** Image URL for the device. */
+              image_url?: string | undefined
+              /** Alt text for the device image. */
+              image_alt_text?: string | undefined
+              /** Serial number of the device. */
+              serial_number?: string | undefined
+              /** Indicates whether it is currently possible to use online access codes for the device.
+               * @deprecated use device.can_program_online_access_codes*/
+              online_access_codes_enabled?: boolean | undefined
+              /** Indicates whether it is currently possible to use offline access codes for the device.
+               * @deprecated use device.can_program_offline_access_codes*/
+              offline_access_codes_enabled?: boolean | undefined
+              /**
+               * @deprecated use device.properties.model.can_connect_accessory_keypad*/
+              supports_accessory_keypad?: boolean | undefined
+              /**
+               * @deprecated use offline_access_codes_enabled*/
+              supports_offline_access_codes?: boolean | undefined
+              /** Indicates current noise level in decibels, if the device supports noise detection. */
+              noise_level_decibels?: number | undefined
+              /** Array of noise threshold IDs that are currently triggering. */
+              currently_triggering_noise_threshold_ids?: string[] | undefined
+            } & {
+              /** ASSA ABLOY Credential Service metadata for the phone. */
+              assa_abloy_credential_service_metadata?:
+                | (
+                    | {
+                        /** Indicates whether the credential service has active endpoints associated with the phone. */
+                        has_active_endpoint?: (boolean | undefined) | undefined
+                        /** Endpoints associated with the phone. */
+                        endpoints?:
+                          | (
+                              | {
+                                  /** ID of the associated endpoint. */
+                                  endpoint_id?: (string | undefined) | undefined
+                                  /** Indicated whether the endpoint is active. */
+                                  is_active?: (boolean | undefined) | undefined
+                                }[]
+                              | undefined
+                            )
+                          | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Salto Space credential service metadata for the phone. */
+              salto_space_credential_service_metadata?:
+                | (
+                    | {
+                        /** Indicates whether the credential service has an active associated phone. */
+                        has_active_phone?: (boolean | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+            }) & {
+              /** Metadata for an August device. */
+              august_metadata?:
+                | {
+                    /** Lock ID for an August device. */
+                    lock_id?: (string | undefined) | undefined
+                    /** Lock name for an August device. */
+                    lock_name?: (string | undefined) | undefined
+                    /** House name for an August device. */
+                    house_name?: (string | undefined) | undefined
+                    /** Indicates whether an August device has a keypad. */
+                    has_keypad?: (boolean | undefined) | undefined
+                    /** Keypad battery level for an August device. */
+                    keypad_battery_level?: (string | undefined) | undefined
+                    /** Model for an August device. */
+                    model?: (string | undefined) | undefined
+                    /** House ID for an August device. */
+                    house_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for an Avigilon Alta system. */
+              avigilon_alta_metadata?:
+                | {
+                    /** Entry name for an Avigilon Alta system. */
+                    entry_name?: (string | undefined) | undefined
+                    /** Organization name for an Avigilon Alta system. */
+                    org_name?: (string | undefined) | undefined
+                    /** Zone ID for an Avigilon Alta system. */
+                    zone_id?: (number | undefined) | undefined
+                    /** Zone name for an Avigilon Alta system. */
+                    zone_name?: (string | undefined) | undefined
+                    /** Site ID for an Avigilon Alta system. */
+                    site_id?: (number | undefined) | undefined
+                    /** Site name for an Avigilon Alta system. */
+                    site_name?: (string | undefined) | undefined
+                    /** Total count of entry relays for an Avigilon Alta system. */
+                    entry_relays_total_count?: (number | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Schlage device. */
+              schlage_metadata?:
+                | {
+                    /** Device ID for a Schlage device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Schlage device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Model for a Schlage device. */
+                    model?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a SmartThings device. */
+              smartthings_metadata?:
+                | {
+                    /** Device ID for a SmartThings device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a SmartThings device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Model for a SmartThings device. */
+                    model?: (string | undefined) | undefined
+                    /** Location ID for a SmartThings device. */
+                    location_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Lockly device. */
+              lockly_metadata?:
+                | {
+                    /** Device ID for a Lockly device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Lockly device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Model for a Lockly device. */
+                    model?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Nuki device. */
+              nuki_metadata?:
+                | {
+                    /** Device ID for a Nuki device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Nuki device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Indicates whether the keypad battery is in a critical state for a Nuki device. */
+                    keypad_battery_critical?: (boolean | undefined) | undefined
+                    /** Indicates whether the keypad is paired for a Nuki device. */
+                    keypad_paired?: (boolean | undefined) | undefined
+                    /** Indicates whether keypad 2 is paired for a Nuki device. */
+                    keypad_2_paired?: (boolean | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Kwikset device. */
+              kwikset_metadata?:
+                | {
+                    /** Device ID for a Kwikset device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Kwikset device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Model number for a Kwikset device. */
+                    model_number?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metada for a Salto device.
+               * @deprecated Use `salto_ks_metadata` instead.*/
+              salto_metadata?:
+                | {
+                    /** Lock ID for a Salto device. */
+                    lock_id?: (string | undefined) | undefined
+                    /** Customer reference for a Salto device. */
+                    customer_reference?: (string | undefined) | undefined
+                    /** Lock type for a Salto device. */
+                    lock_type?: (string | undefined) | undefined
+                    /** Battery level for a Salto device. */
+                    battery_level?: (string | undefined) | undefined
+                    /** Locked state for a Salto device. */
+                    locked_state?: (string | undefined) | undefined
+                    /** Model for a Salto device. */
+                    model?: (string | undefined) | undefined
+                    /** Site ID for the Salto KS site to which the device belongs. */
+                    site_id?: (string | undefined) | undefined
+                    /** Site name for the Salto KS site to which the device belongs. */
+                    site_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Salto KS device. */
+              salto_ks_metadata?:
+                | {
+                    /** Lock ID for a Salto KS device. */
+                    lock_id?: (string | undefined) | undefined
+                    /** Customer reference for a Salto KS device. */
+                    customer_reference?: (string | undefined) | undefined
+                    /** Lock type for a Salto KS device. */
+                    lock_type?: (string | undefined) | undefined
+                    /** Battery level for a Salto KS device. */
+                    battery_level?: (string | undefined) | undefined
+                    /** Locked state for a Salto KS device. */
+                    locked_state?: (string | undefined) | undefined
+                    /** Model for a Salto KS device. */
+                    model?: (string | undefined) | undefined
+                    /** Indicates whether the site has a Salto KS subscription that supports custom PINs. */
+                    has_custom_pin_subscription?:
+                      (boolean | undefined) | undefined
+                    /** Site ID for the Salto KS site to which the device belongs. */
+                    site_id?: (string | undefined) | undefined
+                    /** Site name for the Salto KS site to which the device belongs. */
+                    site_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Genie device. */
+              genie_metadata?:
+                | {
+                    /** Lock name for a Genie device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Door name for a Genie device. */
+                    door_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Brivo device. */
+              brivo_metadata?:
+                | {
+                    /** Device name for a Brivo device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Indicates whether the Brivo access point has activation (remote unlock) enabled. */
+                    activation_enabled?: (boolean | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for an igloo device. */
+              igloo_metadata?:
+                | {
+                    /** Device ID for an igloo device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Bridge ID for an igloo device. */
+                    bridge_id?: (string | undefined) | undefined
+                    /** Model for an igloo device. */
+                    model?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a NoiseAware device. */
+              noiseaware_metadata?:
+                | {
+                    /** Device model for a NoiseAware device. */
+                    device_model?:
+                      (('indoor' | 'outdoor') | undefined) | undefined
+                    /** Noise level, expressed as a Noise Risk Score (NRS), for a NoiseAware device. */
+                    noise_level_nrs?: (number | undefined) | undefined
+                    /** Noise level, in decibels, for a NoiseAware device. */
+                    noise_level_decibel?: (number | undefined) | undefined
+                    /** Device name for a NoiseAware device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Device ID for a NoiseAware device. */
+                    device_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Minut device. */
+              minut_metadata?:
+                | {
+                    /** Device ID for a Minut device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Minut device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Latest sensor values for a Minut device. */
+                    latest_sensor_values?:
+                      | {
+                          /** Latest temperature reading for a Minut device. */
+                          temperature?:
+                            | {
+                                /** Time of latest temperature reading for a Minut device. */
+                                time?: (string | undefined) | undefined
+                                /** Value of latest temperature reading for a Minut device. */
+                                value?: (number | undefined) | undefined
+                              }
+                            | undefined
+                          /** Latest sound reading for a Minut device. */
+                          sound?:
+                            | {
+                                /** Time of latest sound reading for a Minut device. */
+                                time?: (string | undefined) | undefined
+                                /** Value of latest sound reading for a Minut device. */
+                                value?: (number | undefined) | undefined
+                              }
+                            | undefined
+                          /** Latest humidity reading for a Minut device. */
+                          humidity?:
+                            | {
+                                /** Time of latest humidity reading for a Minut device. */
+                                time?: (string | undefined) | undefined
+                                /** Value of latest humidity reading for a Minut device. */
+                                value?: (number | undefined) | undefined
+                              }
+                            | undefined
+                          /** Latest pressure reading for a Minut device. */
+                          pressure?:
+                            | {
+                                /** Time of latest pressure reading for a Minut device. */
+                                time?: (string | undefined) | undefined
+                                /** Value of latest pressure reading for a Minut device. */
+                                value?: (number | undefined) | undefined
+                              }
+                            | undefined
+                          /** Latest accelerometer Z-axis reading for a Minut device. */
+                          accelerometer_z?:
+                            | {
+                                /** Time of latest accelerometer Z-axis reading for a Minut device. */
+                                time?: (string | undefined) | undefined
+                                /** Value of latest accelerometer Z-axis reading for a Minut device. */
+                                value?: (number | undefined) | undefined
+                              }
+                            | undefined
+                        }
+                      | undefined
+                  }
+                | undefined
+              /** Metadata for a 4SUITES device. */
+              four_suites_metadata?:
+                | {
+                    /** Device ID for a 4SUITES device. */
+                    device_id?: (number | undefined) | undefined
+                    /** Device name for a 4SUITES device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Reclose delay, in seconds, for a 4SUITES device. */
+                    reclose_delay_in_seconds?: (number | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a 2N device. */
+              two_n_metadata?:
+                | {
+                    /** Device ID for a 2N device. */
+                    device_id?: (number | undefined) | undefined
+                    /** Device name for a 2N device. */
+                    device_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a ControlByWeb device. */
+              controlbyweb_metadata?:
+                | {
+                    /** Device ID for a ControlByWeb device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a ControlByWeb device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Relay name for a ControlByWeb device. */
+                    relay_name?: ((string | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a TTLock device. */
+              ttlock_metadata?:
+                | {
+                    /** Lock ID for a TTLock device. */
+                    lock_id?: (number | undefined) | undefined
+                    /** Lock alias for a TTLock device. */
+                    lock_alias?: (string | undefined) | undefined
+                    /** Feature value for a TTLock device. */
+                    feature_value?: (string | undefined) | undefined
+                    /** Features for a TTLock device. */
+                    features?:
+                      | {
+                          /** Indicates whether a TTLock device supports a passcode. */
+                          passcode?: (boolean | undefined) | undefined
+                          /** Indicates whether a TTLock device supports passcode management. */
+                          passcode_management?:
+                            (boolean | undefined) | undefined
+                          /** Indicates whether a TTLock device supports unlock via gateway. */
+                          unlock_via_gateway?: (boolean | undefined) | undefined
+                          /** Indicates whether a TTLock device supports the lock command. */
+                          lock_command?: (boolean | undefined) | undefined
+                          /** Indicates whether a TTLock device supports an incomplete keyboard passcode. */
+                          incomplete_keyboard_passcode?:
+                            (boolean | undefined) | undefined
+                          /** Indicates whether a TTLock device supports Wi-Fi. */
+                          wifi?: (boolean | undefined) | undefined
+                          /** Indicates whether a TTLock device supports auto-lock time configuration. */
+                          auto_lock_time_config?:
+                            (boolean | undefined) | undefined
+                        }
+                      | undefined
+                    /** Indicates whether a TTLock device has a gateway. */
+                    has_gateway?: (boolean | undefined) | undefined
+                    /** Wireless keypads for a TTLock device. */
+                    wireless_keypads?:
+                      | (
+                          | {
+                              /** ID for a wireless keypad for a TTLock device. */
+                              wireless_keypad_id?:
+                                (number | undefined) | undefined
+                              /** Name for a wireless keypad for a TTLock device. */
+                              wireless_keypad_name?:
+                                (string | undefined) | undefined
+                            }[]
+                          | undefined
+                        )
+                      | undefined
+                    /** Lock-side timezone offset in milliseconds east of UTC, as configured in the TTLock app. Source of truth for the lock's wall-clock interpretation of access code start/end times — a misconfigured value here is the typical cause of customer "codes offset by N hours" reports. Diagnostic only; Seam does not convert times based on this value. */
+                    timezone_raw_offset_ms?:
+                      ((number | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for Seam Bridge. */
+              seam_bridge_metadata?:
+                | {
+                    /** Unlock method for Seam Bridge. */
+                    unlock_method?:
+                      (('bridge' | 'doorking') | undefined) | undefined
+                    /** Device number for Seam Bridge. */
+                    device_num?: (number | undefined) | undefined
+                    /** Name for Seam Bridge. */
+                    name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for an igloohome device. */
+              igloohome_metadata?:
+                | {
+                    /** Device ID for an igloohome device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for an igloohome device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Bridge ID for an igloohome device. */
+                    bridge_id?: (string | undefined) | undefined
+                    /** Bridge name for an igloohome device. */
+                    bridge_name?: (string | undefined) | undefined
+                    /** Keypad ID for an igloohome device. */
+                    keypad_id?: (string | undefined) | undefined
+                    /** Indicates whether a keypad is linked to a bridge for an igloohome device. */
+                    is_accessory_keypad_linked_to_bridge?:
+                      (boolean | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Google Nest device. */
+              nest_metadata?:
+                | {
+                    /** Device ID for a Google Nest device. */
+                    nest_device_id?: (string | undefined) | undefined
+                    /** ID of the Google Nest structure containing the device. */
+                    nest_structure_id?: (string | undefined) | undefined
+                    /** Device name for a Google Nest device. Google sets this value. */
+                    device_name?: (string | undefined) | undefined
+                    /** Custom device name for a Google Nest device. The device owner sets this value. */
+                    device_custom_name?: (string | undefined) | undefined
+                    /** Name of the Google Nest structure containing the device. The device owner sets this value. */
+                    structure_name?: (string | undefined) | undefined
+                    /** Name of the Google Home room containing the device. The device owner sets this value. */
+                    display_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for an ecobee device. */
+              ecobee_metadata?:
+                | {
+                    /** Device ID for an ecobee device. */
+                    ecobee_device_id?: (string | undefined) | undefined
+                    /** Device name for an ecobee device. */
+                    device_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Honeywell Resideo device. */
+              honeywell_resideo_metadata?:
+                | {
+                    /** Device ID for a Honeywell Resideo device. */
+                    honeywell_resideo_device_id?:
+                      (string | undefined) | undefined
+                    /** Device name for a Honeywell Resideo device. */
+                    device_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a dormakaba Oracode device. */
+              dormakaba_oracode_metadata?:
+                | {
+                    /** Door ID for a dormakaba Oracode device. */
+                    door_id?: (number | undefined) | undefined
+                    /** Door name for a dormakaba Oracode device. */
+                    door_name?: (string | undefined) | undefined
+                    /** Device ID for a dormakaba Oracode device. */
+                    device_id?: ((number | string) | undefined) | undefined
+                    /** Indicates whether a door is wireless for a dormakaba Oracode device. */
+                    door_is_wireless?: (boolean | undefined) | undefined
+                    /** Site ID for a dormakaba Oracode device.
+                     * @deprecated Previously marked as "@DEPRECATED."*/
+                    site_id?: ((number | null) | undefined) | undefined
+                    /** Site name for a dormakaba Oracode device. */
+                    site_name?: (string | undefined) | undefined
+                    /** IANA time zone for a dormakaba Oracode device. */
+                    iana_timezone?: (string | undefined) | undefined
+                    /** Predefined time slots for a dormakaba Oracode device. */
+                    predefined_time_slots?:
+                      | (
+                          | {
+                              /** Name of a time slot for a dormakaba Oracode device. */
+                              name?: (string | undefined) | undefined
+                              /** Prefix for a time slot for a dormakaba Oracode device. */
+                              prefix?: (number | undefined) | undefined
+                              /** Check in time for a time slot for a dormakaba Oracode device. */
+                              check_in_time?: (string | undefined) | undefined
+                              /** Checkout time for a time slot for a dormakaba Oracode device. */
+                              check_out_time?: (string | undefined) | undefined
+                              /** Indicates whether a time slot for a dormakaba Oracode device is a 24-hour time slot. */
+                              is_24_hour?: (boolean | undefined) | undefined
+                              /** Indicates whether a time slot for a dormakaba Oracode device is in biweekly mode. */
+                              is_biweekly_mode?:
+                                (boolean | undefined) | undefined
+                              /** Indicates whether a time slot for a dormakaba Oracode device is a one-shot time slot. */
+                              is_one_shot?: (boolean | undefined) | undefined
+                              /** Indicates whether a time slot for a dormakaba Oracode device is a master time slot. */
+                              is_master?: (boolean | undefined) | undefined
+                              /** Prefix for a user level for a dormakaba Oracode device. */
+                              dormakaba_oracode_user_level_prefix?:
+                                (number | undefined) | undefined
+                              /** ID of a user level for a dormakaba Oracode device. */
+                              dormakaba_oracode_user_level_id?:
+                                (string | undefined) | undefined
+                            }[]
+                          | undefined
+                        )
+                      | undefined
+                  }
+                | undefined
+              /** Metadata for a dormakaba Oracode Homeowner's Portal device. */
+              dormakaba_oracode_iho_metadata?:
+                | {
+                    /** Name of the door for a dormakaba Oracode Homeowner's Portal device. */
+                    door_name?: (string | undefined) | undefined
+                    /** Door ID for a dormakaba Oracode Homeowner's Portal device. */
+                    door_id?: (number | undefined) | undefined
+                    /** IANA time zone for a dormakaba Oracode Homeowner's Portal device. */
+                    iana_timezone?: (string | undefined) | undefined
+                    /** User levels for a dormakaba Oracode Homeowner's Portal device. */
+                    user_levels?:
+                      | (
+                          | {
+                              user_level?: (number | undefined) | undefined
+                              user_level_name?: (string | undefined) | undefined
+                              user_level_type?: (string | undefined) | undefined
+                              user_level_check_in_time?:
+                                (string | undefined) | undefined
+                              user_level_check_out_time?:
+                                (string | undefined) | undefined
+                            }[]
+                          | undefined
+                        )
+                      | undefined
+                  }
+                | undefined
+              /** Metadata for a Wyze device. */
+              wyze_metadata?:
+                | {
+                    /** Device ID for a Wyze device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Wyze device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Product name for a Wyze device. */
+                    product_name?: (string | undefined) | undefined
+                    /** Product type for a Wyze device. */
+                    product_type?: (string | undefined) | undefined
+                    /** Product model for a Wyze device. */
+                    product_model?: (string | undefined) | undefined
+                    /** Device information model for a Wyze device. */
+                    device_info_model?: (string | undefined) | undefined
+                    /** Keypad UUID for a Wyze device. */
+                    keypad_uuid?: (string | undefined) | undefined
+                    /** Locker status (hardlock) for a Wyze device. */
+                    locker_status_hardlock?: (number | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Tedee device. */
+              tedee_metadata?:
+                | {
+                    /** Device ID for a Tedee device. */
+                    device_id?: (number | undefined) | undefined
+                    /** Serial number for a Tedee device. */
+                    serial_number?: (string | undefined) | undefined
+                    /** Device name for a Tedee device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Device model for a Tedee device. */
+                    device_model?: (string | undefined) | undefined
+                    /** Bridge ID for a Tedee device. */
+                    bridge_id?: (number | undefined) | undefined
+                    /** Bridge name for a Tedee device. */
+                    bridge_name?: (string | undefined) | undefined
+                    /** Keypad ID for a Tedee device. */
+                    keypad_id?: (number | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for an ASSA ABLOY Visionline system. */
+              visionline_metadata?:
+                | {
+                    /** Encoder ID for an ASSA ABLOY Visionline system. */
+                    encoder_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for an Akiles device. */
+              akiles_metadata?:
+                | {
+                    /** Gadget name for an Akiles device. */
+                    gadget_name?: (string | undefined) | undefined
+                    /** Gadget ID for an Akiles device. */
+                    gadget_id?: (string | undefined) | undefined
+                    /** Product name for an Akiles device. */
+                    product_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for an ASSA ABLOY Vostio system. */
+              assa_abloy_vostio_metadata?:
+                | {
+                    /** Encoder name for an ASSA ABLOY Vostio system. */
+                    encoder_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for an Omnitec device. */
+              omnitec_metadata?:
+                | {
+                    /** Lock ID for an Omnitec device. */
+                    lock_id?: (number | undefined) | undefined
+                    /** Lock name for an Omnitec device. */
+                    lock_name?: (string | undefined) | undefined
+                    /** Operator-assigned alias for an Omnitec device. */
+                    lock_alias?: (string | undefined) | undefined
+                    /** Bluetooth MAC address for an Omnitec device. */
+                    lock_mac?: (string | undefined) | undefined
+                    /** Whether the Omnitec lock has a connected gateway for remote operations. */
+                    has_gateway?: (boolean | undefined) | undefined
+                    /** Static UTC offset of the Omnitec lock in milliseconds. Does not account for DST. */
+                    timezone_raw_offset_ms?: (number | undefined) | undefined
+                    /** IANA time zone for the Omnitec device, used to schedule time-bound access codes at the correct local time (accounting for DST). */
+                    time_zone?: ((string | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a tado° device. */
+              tado_metadata?:
+                | {
+                    /** Serial number of the main tado° device in the zone, such as its wall thermostat or Smart AC Control. */
+                    serial_no?: (string | undefined) | undefined
+                    /** Device type of the main tado° device in the zone, such as `RU02`, `VA02` or `WR02`. */
+                    device_type?: (string | undefined) | undefined
+                    /** ID of the tado° home. */
+                    home_id?: (string | undefined) | undefined
+                    /** Name of the tado° home. */
+                    home_name?: (string | undefined) | undefined
+                    /** Generation of the tado° home, such as `PRE_LINE_X`. */
+                    home_generation?: (string | undefined) | undefined
+                    /** ID of the tado° zone within its home. */
+                    zone_id?: (string | undefined) | undefined
+                    /** Name of the tado° zone. */
+                    zone_name?: (string | undefined) | undefined
+                    /** Type of the tado° zone: `HEATING` or `AIR_CONDITIONING`. */
+                    zone_type?: (string | undefined) | undefined
+                    /** Serial numbers of all tado° devices in the zone. */
+                    device_serial_numbers?: (string[] | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Sensi device. */
+              sensi_metadata?:
+                | {
+                    /** Device ID for a Sensi device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Sensi device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Product type for a Sensi device. */
+                    product_type?: (string | undefined) | undefined
+                    /** Deprecated. Seam no longer sets this field. */
+                    dual_setpoints_not_supported?:
+                      (boolean | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a KeyNest device. */
+              keynest_metadata?:
+                | {
+                    /** Key ID for a KeyNest device. */
+                    key_id?: (string | undefined) | undefined
+                    /** Device name for a KeyNest device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Property ID for a KeyNest device. */
+                    property_id?: ((string | null) | undefined) | undefined
+                    /** Property postcode for a KeyNest device. */
+                    property_postcode?:
+                      ((string | null) | undefined) | undefined
+                    /** Key notes for a KeyNest device. */
+                    key_notes?: ((string | null) | undefined) | undefined
+                    /** Subscription plan for a KeyNest device. */
+                    subscription_plan?: (string | undefined) | undefined
+                    /** Status type for a KeyNest device. */
+                    status_type?: (string | undefined) | undefined
+                    /** Current or last store ID for a KeyNest device. */
+                    current_or_last_store_id?: (number | undefined) | undefined
+                    /** Last movement timestamp for a KeyNest device. */
+                    last_movement?: (string | undefined) | undefined
+                    /** Address for a KeyNest device. */
+                    address?: ((string | null) | undefined) | undefined
+                    /** Current status for a KeyNest device. */
+                    current_status?: ((string | null) | undefined) | undefined
+                    /** Current user name for a KeyNest device. */
+                    current_user_name?:
+                      ((string | null) | undefined) | undefined
+                    /** Current user email for a KeyNest device. */
+                    current_user_email?:
+                      ((string | null) | undefined) | undefined
+                    /** Current user phone number for a KeyNest device. */
+                    current_user_phone_number?:
+                      ((string | null) | undefined) | undefined
+                    /** Current user company for a KeyNest device. */
+                    current_user_company?:
+                      ((string | null) | undefined) | undefined
+                    /** Handover method for a KeyNest device. */
+                    handover_method?: ((string | null) | undefined) | undefined
+                    /** KeyNest app user for a KeyNest device. */
+                    keynest_app_user?: ((string | null) | undefined) | undefined
+                    /** Default office ID for a KeyNest device. */
+                    default_office_id?: (number | undefined) | undefined
+                    /** Fob ID for a KeyNest device. */
+                    fob_id?: (number | undefined) | undefined
+                    /** Whether the KeyNest device has a photo. */
+                    has_photo?: (boolean | undefined) | undefined
+                    /** Whether the key is in a locker that does not support the access codes API. */
+                    is_quadient_locker?: (boolean | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for an Ultraloq device. */
+              ultraloq_metadata?:
+                | {
+                    /** Device ID for an Ultraloq device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for an Ultraloq device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Device type for an Ultraloq device. */
+                    device_type?: (string | undefined) | undefined
+                    /** IANA timezone for the Ultraloq device. */
+                    time_zone?: ((string | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Yale Connect lock. */
+              yale_connect_metadata?:
+                | {
+                    /** Device ID for a Yale Connect lock. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Yale Connect lock. */
+                    device_name?: (string | undefined) | undefined
+                    /** Model reported by the Yale Connect lock. */
+                    model?: (string | undefined) | undefined
+                    /** Firmware version reported by the Yale Connect lock. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Name of the Yale Connect home that contains the lock. */
+                    home_name?: (string | undefined) | undefined
+                    /** Time zone of the Yale Connect home, as Yale reports it. */
+                    time_zone_description?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Yacan device. */
+              yacan_metadata?:
+                | {
+                    /** Device ID for a Yacan device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Yacan device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Device type for a Yacan device. */
+                    device_type?: (string | undefined) | undefined
+                    /** Serial number for a Yacan device. */
+                    serial_number?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Tapo camera. */
+              tapo_metadata?:
+                | (
+                    | {
+                        /** Model reported by the Tapo camera. */
+                        model?: (string | undefined) | undefined
+                        /** Firmware version reported by the camera. */
+                        firmware_version?: (string | undefined) | undefined
+                        /** Hardware version reported by the camera. */
+                        hardware_version?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Reolink camera. */
+              reolink_metadata?:
+                | (
+                    | {
+                        /** Model reported by the Reolink camera. */
+                        model?: (string | undefined) | undefined
+                        /** Firmware version reported by the camera. */
+                        firmware_version?: (string | undefined) | undefined
+                        /** Hardware version reported by the camera. */
+                        hardware_version?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for an Alertify sensor. */
+              alertify_metadata?:
+                | (
+                    | {
+                        /** Device ID reported by Alertify. */
+                        device_id?: (string | undefined) | undefined
+                        /** Device name, as set in the Alertify dashboard. */
+                        device_name?: (string | undefined) | undefined
+                        /** ID of the Alertify unit where the device is installed. */
+                        unit_id?: (string | undefined) | undefined
+                        /** Name of the Alertify unit where the device is installed. */
+                        unit_name?: (string | undefined) | undefined
+                        /** ID of the Alertify building that contains the unit. */
+                        building_id?: ((string | null) | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a UniFi Protect camera. */
+              unifi_protect_metadata?:
+                | (
+                    | {
+                        /** Camera ID reported by UniFi Protect. */
+                        camera_id?: (string | undefined) | undefined
+                        /** Camera name reported by UniFi Protect. */
+                        camera_name?: (string | undefined) | undefined
+                        /** Model reported by the UniFi Protect camera. */
+                        model?: (string | undefined) | undefined
+                        /** MAC address reported by the UniFi Protect camera. */
+                        mac?: (string | undefined) | undefined
+                        /** Name of the UniFi Protect console that manages the camera. */
+                        nvr_name?: (string | undefined) | undefined
+                        /** Whether the camera has a microphone. */
+                        has_mic?: (boolean | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for an Arlo camera. */
+              arlo_metadata?:
+                | (
+                    | {
+                        /** Device ID reported by Arlo. */
+                        device_id?: (string | undefined) | undefined
+                        /** Device name reported by Arlo. */
+                        device_name?: (string | undefined) | undefined
+                        /** Model ID reported by Arlo. */
+                        model_id?: (string | undefined) | undefined
+                        /** Hardware version reported by Arlo. */
+                        hardware_version?: (string | undefined) | undefined
+                        /** Firmware version reported by Arlo. */
+                        firmware_version?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Ring device. */
+              ring_metadata?:
+                | {
+                    /** Device ID for a Ring device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Ring device. */
+                    device_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Korelock device. */
+              korelock_metadata?:
+                | {
+                    /** Device ID for a Korelock device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Korelock device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Model code for a Korelock device. */
+                    model_code?: (string | undefined) | undefined
+                    /** Serial number for a Korelock device. */
+                    serial_number?: (string | undefined) | undefined
+                    /** Firmware version for a Korelock device. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** WiFi signal strength (0-1) for a Korelock device. */
+                    wifi_signal_strength?: (number | undefined) | undefined
+                    /** Location ID for a Korelock device. Required for timebound access codes. */
+                    location_id?: ((string | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Kisi device. */
+              kisi_metadata?:
+                | {
+                    /** Lock ID for a Kisi device. */
+                    lock_id?: (number | undefined) | undefined
+                    /** Lock name for a Kisi device. */
+                    lock_name?: (string | undefined) | undefined
+                    /** Place name for a Kisi device. */
+                    place_name?: ((string | null) | undefined) | undefined
+                    /** Description for a Kisi device. */
+                    description?: ((string | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for an Aqara device. */
+              aqara_metadata?:
+                | {
+                    /** Device ID (did) for an Aqara device. */
+                    did?: (string | undefined) | undefined
+                    /** Parent gateway device ID for an Aqara device. */
+                    parent_did?: (string | undefined) | undefined
+                    /** Device name for an Aqara device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Model identifier for an Aqara device. */
+                    model?: (string | undefined) | undefined
+                    /** Model type for an Aqara device. */
+                    model_type?: (number | undefined) | undefined
+                    /** Time zone reported for an Aqara device (e.g. GMT-07:00). */
+                    time_zone?: ((string | null) | undefined) | undefined
+                    /** Position (room) ID for an Aqara device. */
+                    position_id?: ((string | null) | undefined) | undefined
+                    /** Firmware version for an Aqara device. */
+                    firmware_version?: ((string | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Eufy device. */
+              eufy_metadata?:
+                | {
+                    device_id?: (string | undefined) | undefined
+                    device_name?: (string | undefined) | undefined
+                    model?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Sonos speaker. */
+              sonos_metadata?:
+                | (
+                    | {
+                        /** ID of the Sonos household that the speaker belongs to. */
+                        household_id?: (string | undefined) | undefined
+                        /** ID of the Sonos player for the speaker. */
+                        player_id?: (string | undefined) | undefined
+                        /** Name of the speaker, as set in the Sonos app. */
+                        player_name?: (string | undefined) | undefined
+                        /** Model name of the speaker, as reported by Sonos. */
+                        model_display_name?: (string | undefined) | undefined
+                        /** Color of the speaker, as reported by Sonos. */
+                        color?: (string | undefined) | undefined
+                        /** Software version running on the speaker. */
+                        software_version?: (string | undefined) | undefined
+                        /** Models of the speakers bonded to this speaker, such as surrounds or a subwoofer. */
+                        bonded_member_models?:
+                          (string[] | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+            }) &
+              ({
+                /** Constraints on access codes for the device. Seam represents each constraint as an object with a `constraint_type` property. Depending on the constraint type, there may also be additional properties. Note that some constraints are manufacturer- or device-specific. */
+                code_constraints?:
+                  | (
+                      | (
+                          | {
+                              /** Code constraint type for access codes. */
+                              constraint_type:
+                                | 'no_zeros'
+                                | 'cannot_start_with_12'
+                                | 'no_triple_consecutive_ints'
+                                | 'cannot_specify_pin_code'
+                                | 'pin_code_matches_existing_set'
+                                | 'start_date_in_future'
+                                | 'no_ascending_or_descending_sequence'
+                                | 'at_least_three_unique_digits'
+                                | 'cannot_contain_089'
+                                | 'cannot_contain_0789'
+                                | 'unique_first_four_digits'
+                                | 'no_all_same_digits'
+                            }
+                          | {
+                              constraint_type:
+                                'name_length' | 'name_must_be_unique'
+                              /** Minimum name length constraint for access codes. */
+                              min_length?: number | undefined
+                              /** Maximum name length constraint for access codes. */
+                              max_length?: number | undefined
+                            }
+                        )[]
+                      | undefined
+                    )
+                  | undefined
+                /** Supported code lengths for access codes. */
+                supported_code_lengths?: (number[] | undefined) | undefined
+                /** Time frames that may be requested when creating an offline access code, expressed as a list of options. The caller picks one option (by matching the requested duration when the options' duration ranges do not overlap, or by `display_name` when they do) and satisfies that one option's rules. When `undefined`, any time frame works. */
+                offline_time_frame_options?:
+                  | (
+                      | {
+                          /** Label for this option. For a single-option device, the product name (for example, `algoPIN` or `SmartPIN`); for a multi-option device, a label that distinguishes it (for example, `Hourly` or `Fixed start times`). */
+                          display_name: string
+                          /** Minimum duration this option covers, as an ISO 8601 duration (for example, `PT1H` or `P29D`). Omitted when there is no minimum. */
+                          min_duration?: string | undefined
+                          /** Maximum duration this option covers, as an ISO 8601 duration (for example, `PT672H` or `P367D`). Omitted when there is no maximum. */
+                          max_duration?: string | undefined
+                          /** When `true`, the start and end must fall at the same time of day (the caller picks which). Mutually exclusive with `time_pairs`. */
+                          matching_start_end_time?: true | undefined
+                          /** Fixed start/end time pairings the caller chooses from. Mutually exclusive with `matching_start_end_time`. */
+                          time_pairs?:
+                            | {
+                                /** Label for the start/end time pairing. */
+                                display_name: string
+                                /** Start time of day as a 24-hour `HH:MM` value, interpreted in the option's `time_zone`. */
+                                start_time: string
+                                /** End time of day as a 24-hour `HH:MM` value, interpreted in the option's `time_zone`. An `end_time` earlier on the clock than `start_time` means the end falls on a later date. */
+                                end_time: string
+                              }[]
+                            | undefined
+                          /** iCalendar recurrence rule (RRULE) that the start date must fall on (for example, `FREQ=MONTHLY;BYDAY=1MO,3MO`). Constrains which calendar dates are selectable, independent of the time-of-day rules. */
+                          start_date_recurrence_rule?: string | undefined
+                          /** iCalendar recurrence rule (RRULE) that the end date must fall on. Constrains which calendar dates are selectable, independent of the time-of-day rules. */
+                          end_date_recurrence_rule?: string | undefined
+                          /** IANA time zone for interpreting `time_pairs` and the date recurrence rules. Present only when the option fixes times or dates. */
+                          time_zone?: string | undefined
+                        }[]
+                      | undefined
+                    )
+                  | undefined
+                /** Time frames that may be requested when creating an online access code, expressed as a list of options. The caller picks one option (by matching the requested duration when the options' duration ranges do not overlap, or by `display_name` when they do) and satisfies that one option's rules. When `undefined`, any time frame works. */
+                online_time_frame_options?:
+                  | (
+                      | {
+                          /** Label for this option. For a single-option device, the product name (for example, `algoPIN` or `SmartPIN`); for a multi-option device, a label that distinguishes it (for example, `Hourly` or `Fixed start times`). */
+                          display_name: string
+                          /** Minimum duration this option covers, as an ISO 8601 duration (for example, `PT1H` or `P29D`). Omitted when there is no minimum. */
+                          min_duration?: string | undefined
+                          /** Maximum duration this option covers, as an ISO 8601 duration (for example, `PT672H` or `P367D`). Omitted when there is no maximum. */
+                          max_duration?: string | undefined
+                          /** When `true`, the start and end must fall at the same time of day (the caller picks which). Mutually exclusive with `time_pairs`. */
+                          matching_start_end_time?: true | undefined
+                          /** Fixed start/end time pairings the caller chooses from. Mutually exclusive with `matching_start_end_time`. */
+                          time_pairs?:
+                            | {
+                                /** Label for the start/end time pairing. */
+                                display_name: string
+                                /** Start time of day as a 24-hour `HH:MM` value, interpreted in the option's `time_zone`. */
+                                start_time: string
+                                /** End time of day as a 24-hour `HH:MM` value, interpreted in the option's `time_zone`. An `end_time` earlier on the clock than `start_time` means the end falls on a later date. */
+                                end_time: string
+                              }[]
+                            | undefined
+                          /** iCalendar recurrence rule (RRULE) that the start date must fall on (for example, `FREQ=MONTHLY;BYDAY=1MO,3MO`). Constrains which calendar dates are selectable, independent of the time-of-day rules. */
+                          start_date_recurrence_rule?: string | undefined
+                          /** iCalendar recurrence rule (RRULE) that the end date must fall on. Constrains which calendar dates are selectable, independent of the time-of-day rules. */
+                          end_date_recurrence_rule?: string | undefined
+                          /** IANA time zone for interpreting `time_pairs` and the date recurrence rules. Present only when the option fixes times or dates. */
+                          time_zone?: string | undefined
+                        }[]
+                      | undefined
+                    )
+                  | undefined
+                /** Maximum number of active access codes that the device supports. */
+                max_active_codes_supported?: (number | undefined) | undefined
+                /** Indicates whether the device supports a [backup access code pool](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/backup-access-codes). */
+                supports_backup_access_code_pool?:
+                  (boolean | undefined) | undefined
+                /** Indicates whether the [backup access code pool](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/backup-access-codes) is currently enabled for the device. To disable it, set this to `false` using [/devices/update](https://www.seam.co/docs/api/devices/update). */
+                backup_access_code_pool_enabled?:
+                  (boolean | undefined) | undefined
+                /** Indicates whether the device supports native entry events. */
+                has_native_entry_events?: (boolean | undefined) | undefined
+                /** Indicates whether the lock is locked. */
+                locked?: (boolean | undefined) | undefined
+                /** Keypad battery status. */
+                keypad_battery?:
+                  | (
+                      | {
+                          /**
+                          Keypad battery charge level.
+                           */
+                          level: number
+                        }
+                      | undefined
+                    )
+                  | undefined
+                /** Indicates whether the door is open. */
+                door_open?: (boolean | undefined) | undefined
+                /** Indicates whether automatic locking is enabled. */
+                auto_lock_enabled?: (boolean | undefined) | undefined
+                /** The delay in seconds before the lock automatically locks after being unlocked. */
+                auto_lock_delay_seconds?: (number | undefined) | undefined
+                /** Audio state and capabilities of the speaker. */
+                speaker?:
+                  | {
+                      /** Current volume of the speaker, on the speaker's native volume scale from `min_volume` to `max_volume`. This is the native volume setting, not a decibel level. */
+                      volume: number
+                      /** Indicates whether the speaker is muted. */
+                      is_muted: boolean
+                      /** Indicates whether the speaker's volume is fixed, for example, because the speaker's line-out level is controlled by an external amplifier. A speaker with a fixed volume cannot have its volume set through Seam. */
+                      has_fixed_volume: boolean
+                      /** Minimum volume that you can set on the speaker. */
+                      min_volume: number
+                      /** Maximum volume that you can set on the speaker. This is the ceiling of the speaker's native volume scale, not a limit configured for guests. */
+                      max_volume: number
+                      /** Increment between the volume values that you can set on the speaker. */
+                      volume_step: number
+                      /** Playback state of the speaker. */
+                      playback_state:
+                        'playing' | 'paused' | 'idle' | 'buffering' | 'unknown'
+                      /** Content that is currently playing on the speaker. */
+                      now_playing?:
+                        | {
+                            /** Title of the content that is currently playing. */
+                            title?: string | undefined
+                            /** Artist of the content that is currently playing. */
+                            artist?: string | undefined
+                            /** Album of the content that is currently playing. */
+                            album?: string | undefined
+                          }
+                        | undefined
+                      /** IDs of the other speakers that are currently grouped with this speaker. Pausing or resuming playback on a speaker also affects the speakers in its group. */
+                      grouped_with_device_ids: string[]
+                      /** Indicates whether the speaker can play a chime or an audio clip. */
+                      supports_chime: boolean
+                      /** Date and time at which the speaker first reported its current volume. */
+                      volume_reported_at?: string | undefined
+                    }
+                  | undefined
+              } & {
+                /** Reported temperature in °F. */
+                temperature_fahrenheit?: number | undefined
+                /** Reported temperature in °C. */
+                temperature_celsius?: number | undefined
+                /** Reported relative humidity, as a value between 0 and 1, inclusive. */
+                relative_humidity?: number | undefined
+                /** HVAC mode settings that the thermostat supports. */
+                available_hvac_mode_settings?:
+                  ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')[] | undefined
+                /** Fan mode settings that the thermostat supports. */
+                available_fan_mode_settings?:
+                  ('auto' | 'on' | 'circulate')[] | undefined
+                /** Climate preset modes that the thermostat supports, such as "home", "away", "wake", "sleep", "occupied", and "unoccupied". */
+                available_climate_preset_modes?:
+                  | (
+                      | 'home'
+                      | 'away'
+                      | 'wake'
+                      | 'sleep'
+                      | 'occupied'
+                      | 'unoccupied'
+                    )[]
+                  | undefined
+                /** Indicates whether the connected HVAC system is currently heating, as reported by the thermostat. */
+                is_heating?: boolean | undefined
+                /** Indicates whether the connected HVAC system is currently cooling, as reported by the thermostat. */
+                is_cooling?: boolean | undefined
+                /** Indicates whether the fan in the connected HVAC system is currently running, as reported by the thermostat. */
+                is_fan_running?: boolean | undefined
+                /**
+                 * @deprecated Use `current_climate_setting.fan_mode_setting` instead.*/
+                fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
+                /** Indicates whether the current thermostat settings differ from the most recent active program or schedule that Seam activated. For this condition to occur, `current_climate_setting.manual_override_allowed` must also be `true`. */
+                is_temporary_manual_override_active?: boolean | undefined
+                /** Current climate setting. */
+                current_climate_setting?:
+                  | {
+                      /** Unique key to identify the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets). */
+                      climate_preset_key?: string | undefined
+                      /** Indicates whether the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited. */
+                      can_edit?: boolean | undefined
+                      /** Indicates whether the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
+                      can_delete?: boolean | undefined
+                      /** Indicates whether the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                      can_use_with_thermostat_daily_programs?:
+                        boolean | undefined
+                      /** User-friendly name to identify the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets). */
+                      name?: ((string | null) | undefined) | undefined
+                      /** Display name for the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets). */
+                      display_name?: string | undefined
+                      /**
+                    The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.
+                   */
+                      climate_preset_mode?:
+                        | (
+                            | (
+                                | 'home'
+                                | 'away'
+                                | 'wake'
+                                | 'sleep'
+                                | 'occupied'
+                                | 'unoccupied'
+                              )
+                            | undefined
+                          )
+                        | undefined
+                      /** Desired [fan mode setting](https://www.seam.co/docs/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`. */
+                      fan_mode_setting?:
+                        (('auto' | 'on' | 'circulate') | undefined) | undefined
+                      /** Desired [HVAC mode](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
+                      hvac_mode_setting?:
+                        | (
+                            | ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')
+                            | undefined
+                          )
+                        | undefined
+                      /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
+                      cooling_set_point_celsius?:
+                        (number | undefined) | undefined
+                      /** Temperature to which the thermostat should heat (in °C). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
+                      heating_set_point_celsius?:
+                        (number | undefined) | undefined
+                      /** Temperature to which the thermostat should cool (in °F). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
+                      cooling_set_point_fahrenheit?:
+                        (number | undefined) | undefined
+                      /** Temperature to which the thermostat should heat (in °F). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
+                      heating_set_point_fahrenheit?:
+                        (number | undefined) | undefined
+                      /** Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
+                       * @deprecated Use 'thermostat_schedule.is_override_allowed'*/
+                      manual_override_allowed?: boolean | undefined
+                      /**
+                    Metadata specific to the Ecobee climate, if applicable.
+                   */
+                      ecobee_metadata?:
+                        | (
+                            | {
+                                /** Reference to the Ecobee climate, if applicable. */
+                                climate_ref?: (string | undefined) | undefined
+                                /** Indicates if the climate preset is optimized by Ecobee. */
+                                is_optimized?: (boolean | undefined) | undefined
+                                /** Indicates whether the climate preset is owned by the user or the system. */
+                                owner?:
+                                  (('user' | 'system') | undefined) | undefined
+                              }
+                            | undefined
+                          )
+                        | undefined
+                    }
+                  | undefined
+                /**
+                 * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead.*/
+                default_climate_setting?:
+                  | {
+                      /** Unique key to identify the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets). */
+                      climate_preset_key?: string | undefined
+                      /** Indicates whether the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited. */
+                      can_edit?: boolean | undefined
+                      /** Indicates whether the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
+                      can_delete?: boolean | undefined
+                      /** Indicates whether the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                      can_use_with_thermostat_daily_programs?:
+                        boolean | undefined
+                      /** User-friendly name to identify the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets). */
+                      name?: ((string | null) | undefined) | undefined
+                      /** Display name for the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets). */
+                      display_name?: string | undefined
+                      /**
+                    The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.
+                   */
+                      climate_preset_mode?:
+                        | (
+                            | (
+                                | 'home'
+                                | 'away'
+                                | 'wake'
+                                | 'sleep'
+                                | 'occupied'
+                                | 'unoccupied'
+                              )
+                            | undefined
+                          )
+                        | undefined
+                      /** Desired [fan mode setting](https://www.seam.co/docs/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`. */
+                      fan_mode_setting?:
+                        (('auto' | 'on' | 'circulate') | undefined) | undefined
+                      /** Desired [HVAC mode](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
+                      hvac_mode_setting?:
+                        | (
+                            | ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')
+                            | undefined
+                          )
+                        | undefined
+                      /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
+                      cooling_set_point_celsius?:
+                        (number | undefined) | undefined
+                      /** Temperature to which the thermostat should heat (in °C). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
+                      heating_set_point_celsius?:
+                        (number | undefined) | undefined
+                      /** Temperature to which the thermostat should cool (in °F). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
+                      cooling_set_point_fahrenheit?:
+                        (number | undefined) | undefined
+                      /** Temperature to which the thermostat should heat (in °F). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
+                      heating_set_point_fahrenheit?:
+                        (number | undefined) | undefined
+                      /** Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
+                       * @deprecated Use 'thermostat_schedule.is_override_allowed'*/
+                      manual_override_allowed?: boolean | undefined
+                      /**
+                    Metadata specific to the Ecobee climate, if applicable.
+                   */
+                      ecobee_metadata?:
+                        | (
+                            | {
+                                /** Reference to the Ecobee climate, if applicable. */
+                                climate_ref?: (string | undefined) | undefined
+                                /** Indicates if the climate preset is optimized by Ecobee. */
+                                is_optimized?: (boolean | undefined) | undefined
+                                /** Indicates whether the climate preset is owned by the user or the system. */
+                                owner?:
+                                  (('user' | 'system') | undefined) | undefined
+                              }
+                            | undefined
+                          )
+                        | undefined
+                    }
+                  | undefined
+                /** Available [climate presets](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) for the thermostat. */
+                available_climate_presets?:
+                  | {
+                      /** Unique key to identify the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets). */
+                      climate_preset_key: string
+                      /** Indicates whether the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) key can be edited. */
+                      can_edit: boolean
+                      /** Indicates whether the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) key can be deleted. */
+                      can_delete: boolean
+                      /** Indicates whether the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) key can be programmed in a thermostat daily program. */
+                      can_use_with_thermostat_daily_programs: boolean
+                      /** User-friendly name to identify the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets). */
+                      name?: (string | null) | undefined
+                      /** Display name for the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets). */
+                      display_name: string
+                      /**
+                    The climate preset mode for the thermostat, based on the available climate preset modes reported by the device.
+                   */
+                      climate_preset_mode?:
+                        | (
+                            | 'home'
+                            | 'away'
+                            | 'wake'
+                            | 'sleep'
+                            | 'occupied'
+                            | 'unoccupied'
+                          )
+                        | undefined
+                      /** Desired [fan mode setting](https://www.seam.co/docs/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings), such as `on`, `auto`, or `circulate`. */
+                      fan_mode_setting?:
+                        ('auto' | 'on' | 'circulate') | undefined
+                      /** Desired [HVAC mode](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
+                      hvac_mode_setting?:
+                        | ('off' | 'heat' | 'cool' | 'heat_cool' | 'eco')
+                        | undefined
+                      /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
+                      cooling_set_point_celsius?: number | undefined
+                      /** Temperature to which the thermostat should heat (in °C). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
+                      heating_set_point_celsius?: number | undefined
+                      /** Temperature to which the thermostat should cool (in °F). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
+                      cooling_set_point_fahrenheit?: number | undefined
+                      /** Temperature to which the thermostat should heat (in °F). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
+                      heating_set_point_fahrenheit?: number | undefined
+                      /** Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).
+                       * @deprecated Use 'thermostat_schedule.is_override_allowed'*/
+                      manual_override_allowed: boolean
+                      /**
+                    Metadata specific to the Ecobee climate, if applicable.
+                   */
+                      ecobee_metadata?:
+                        | {
+                            /** Reference to the Ecobee climate, if applicable. */
+                            climate_ref?: (string | undefined) | undefined
+                            /** Indicates if the climate preset is optimized by Ecobee. */
+                            is_optimized?: (boolean | undefined) | undefined
+                            /** Indicates whether the climate preset is owned by the user or the system. */
+                            owner?:
+                              (('user' | 'system') | undefined) | undefined
+                          }
+                        | undefined
+                    }[]
+                  | undefined
+                /** Key of the [fallback climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the thermostat. */
+                fallback_climate_preset_key?: (string | null) | undefined
+                /** Active [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
+                 * @deprecated Use `active_thermostat_schedule_id` with `/thermostats/schedules/get` instead.*/
+                active_thermostat_schedule?:
+                  | ({
+                      /** ID of the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                      thermostat_schedule_id: string
+                      /** ID of the desired [thermostat](https://www.seam.co/docs/capability-guides/thermostats) device. */
+                      device_id: string
+                      /** User-friendly name to identify the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                      name: string | null
+                      /** Key of the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                      climate_preset_key: string
+                      /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
+                      max_override_period_minutes?: (number | null) | undefined
+                      /** Date and time at which the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                      starts_at: string
+                      /** Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts. */
+                      is_override_allowed?: boolean | undefined
+                      /** Date and time at which the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                      ends_at: string
+                      /** ID of the workspace that contains the thermostat schedule. */
+                      workspace_id: string
+                      /** Date and time at which the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created. */
+                      created_at: string
+                      /** Errors associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                      errors: {
+                        /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                        error_code: string
+                        /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Date and time at which Seam created the error. */
+                        created_at: string
+                      }[]
+                    } | null)
+                  | undefined
+                /** ID of the active [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                active_thermostat_schedule_id?: (string | null) | undefined
+                /** Configured [daily programs](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat. */
+                thermostat_daily_programs?:
+                  | (
+                      | {
+                          /** ID of the thermostat daily program. */
+                          thermostat_daily_program_id: string
+                          /** ID of the thermostat device on which the thermostat daily program is configured. */
+                          device_id: string
+                          /** User-friendly name to identify the thermostat daily program. */
+                          name: string | null
+                          /** Array of thermostat daily program periods. */
+                          periods: {
+                            /** Time at which the thermostat daily program period starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                            starts_at_time: string
+                            /** Key of the [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) to activate at the `starts_at_time`. */
+                            climate_preset_key: string
+                          }[]
+                          /** ID of the workspace that contains the thermostat daily program. */
+                          workspace_id: string
+                          /** Date and time at which the thermostat daily program was created. */
+                          created_at: string
+                        }[]
+                      | undefined
+                    )
+                  | undefined
+                /** Current [weekly program](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-programs) for the thermostat. */
+                thermostat_weekly_program?:
+                  | (
+                      | ({
+                          /** ID of the thermostat daily program to run on Mondays. */
+                          monday_program_id: string | null
+                          /** ID of the thermostat daily program to run on Tuesdays. */
+                          tuesday_program_id: string | null
+                          /** ID of the thermostat daily program to run on Wednesdays. */
+                          wednesday_program_id: string | null
+                          /** ID of the thermostat daily program to run on Thursdays. */
+                          thursday_program_id: string | null
+                          /** ID of the thermostat daily program to run on Fridays. */
+                          friday_program_id: string | null
+                          /** ID of the thermostat daily program to run on Saturdays. */
+                          saturday_program_id: string | null
+                          /** ID of the thermostat daily program to run on Sundays. */
+                          sunday_program_id: string | null
+                          /** Date and time at which the thermostat weekly program was created. */
+                          created_at: string
+                        } | null)
+                      | undefined
+                    )
+                  | undefined
+                /** Minimum [cooling set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C. */
+                min_cooling_set_point_celsius?: number | undefined
+                /** Minimum [cooling set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F. */
+                min_cooling_set_point_fahrenheit?: number | undefined
+                /** Maximum [cooling set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °C. */
+                max_cooling_set_point_celsius?: number | undefined
+                /** Maximum [cooling set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points#cooling-set-point) in °F. */
+                max_cooling_set_point_fahrenheit?: number | undefined
+                /** Minimum [heating set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C. */
+                min_heating_set_point_celsius?: number | undefined
+                /** Minimum [heating set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F. */
+                min_heating_set_point_fahrenheit?: number | undefined
+                /** Maximum [heating set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °C. */
+                max_heating_set_point_celsius?: number | undefined
+                /** Maximum [heating set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points#heating-set-point) in °F. */
+                max_heating_set_point_fahrenheit?: number | undefined
+                /** Minimum [temperature difference](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °C between the cooling and heating set points when in heat-cool (auto) mode. */
+                min_heating_cooling_delta_celsius?: number | undefined
+                /** Minimum [temperature difference](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points#minimum-heating-cooling-temperature-delta) in °F between the cooling and heating set points when in heat-cool (auto) mode. */
+                min_heating_cooling_delta_fahrenheit?: number | undefined
+                /** Current [temperature threshold](https://www.seam.co/docs/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat. */
+                temperature_threshold?:
+                  | (
+                      | {
+                          /** Lower limit in °C within the current [temperature threshold](https://www.seam.co/docs/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+                           */
+                          lower_limit_celsius: number | null
+                          /** Lower limit in °F within the current [temperature threshold](https://www.seam.co/docs/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+                           */
+                          lower_limit_fahrenheit: number | null
+                          /** Upper limit in °C within the current [temperature threshold](https://www.seam.co/docs/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+                           */
+                          upper_limit_celsius: number | null
+                          /** Upper limit in °F within the current [temperature threshold](https://www.seam.co/docs/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) set for the thermostat.
+                           */
+                          upper_limit_fahrenheit: number | null
+                        }
+                      | undefined
+                    )
+                  | undefined
+                /** Precision of the thermostat's period in minutes. For example, if the thermostat supports 15-minute periods, this value is 15. All values are relative to the top of the hour, so for 15 minutes, the periods would be 0, 15, 30, and 45 minutes past the hour. */
+                thermostat_daily_program_period_precision_minutes?:
+                  (number | undefined) | undefined
+                /** Maximum number of climate presets that the thermostat can support for weekly programming. */
+                max_unique_climate_presets_per_thermostat_weekly_program?:
+                  (number | undefined) | undefined
+                /** Maximum number of periods that the thermostat can support per day. For example, if the thermostat supports 4 periods per day, this value is 4. */
+                max_thermostat_daily_program_periods_per_day?:
+                  (number | undefined) | undefined
+              }))
+          | undefined
+        /** Location information for the device. */
+        location?:
+          | {
+              /** Name of the device location.
+               */
+              location_name?: string | undefined
+              /** Name of the room within the device location, when the provider reports one.
+               */
+              room_name?: string | undefined
+              /** Time zone of the device location.
+               */
+              time_zone?: string | undefined
+              /** Time zone of the device location.
+               * @deprecated Use `time_zone` instead.*/
+              timezone?: string | undefined
+            }
+          | undefined
+        /** Unique identifier for the account associated with the device. */
+        connected_account_id: string
+        /** Unique identifier for the Seam workspace associated with the device. */
+        workspace_id: string
+        /** Array of errors associated with the device. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+        errors: (
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              /** Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              /** Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'insufficient_permissions'
+              /** Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is not a device error. */
+              is_device_error: false
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'dormakaba_sites_disconnected'
+              /** Indicates that the error is a [connected account](https://www.seam.co/docs/api/connected_accounts/object) error. */
+              is_connected_account_error: true
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates whether the error is related specifically to the connected account. */
+              is_connected_account_error?: boolean | undefined
+              /** Indicates whether the error is related to [Seam Bridge](https://www.seam.co/docs/capability-guides/seam-bridge). */
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
+            }
+        )[]
+        /** Array of warnings associated with the device. Each warning object within the array contains two fields: `warning_code` and `message`. `warning_code` is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
+        warnings: (
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'power_saving_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_office_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_privacy_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'privacy_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_lock_access_code_support_removed'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'unknown_issue_with_phone'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'lockly_time_zone_not_configured'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ultraloq_time_zone_unknown'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'time_zone_unknown'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'time_zone_mismatch'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'two_n_device_missing_timezone'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'hub_required_for_additional_capabilities'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'service_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'provider_issue'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'keynest_unsupported_locker'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_setup_required'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'unreliable_online_status'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'max_access_codes_reached'
+              /** Number of active access codes on the device when the warning was set. */
+              active_access_code_count: number
+              /** Maximum number of active access codes supported by the device. */
+              max_active_access_code_count: number
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'cloud_recording_not_enabled'
+            }
+        )[]
+        /** Date and time at which the device object was created. */
+        created_at: string
+        /** Indicates whether Seam manages the device. See also [Managed and Unmanaged Devices](https://www.seam.co/docs/core-concepts/devices/managed-and-unmanaged-devices). */
+        is_managed: true
+        /** Set of key:value pairs. Adding custom metadata to a resource, such as a [Connect Webview](https://www.seam.co/docs/core-concepts/connect-webviews/attaching-custom-data-to-the-connect-webview), [connected account](https://www.seam.co/docs/core-concepts/connected-accounts/adding-custom-metadata-to-a-connected-account), or [device](https://www.seam.co/docs/core-concepts/devices/adding-custom-metadata-to-a-device), enables you to store custom information, like customer details or internal IDs from your application. Keys set to `null` or to an empty string are omitted. */
+        custom_metadata: {
+          [x: string]: string | boolean
+        }
+        /** Provider of the device. Represents the third-party service through which the device is controlled. */
+        device_provider?:
+          | {
+              /** Provider category. Indicates the third-party provider type, such as `stable`, for stable integrations, or `internal`, for internal integrations. */
+              provider_category: string
+              /** Device provider name. Corresponds to the integration type, such as `august`, `schlage`, `yale_access`, and so on. */
+              device_provider_name: string
+              /** Display name for the device provider type. */
+              display_name: string
+              /** Image URL for the device provider. */
+              image_url?: string | undefined
+            }
+          | undefined
+        /** Manufacturer of the device. Represents the hardware brand, which may differ from the provider. */
+        device_manufacturer?:
+          | {
+              /** Manufacturer identifier, such as `august`, `yale`, `salto`, and so on. */
+              manufacturer: string
+              /** Display name for the manufacturer, such as `August`, `Yale`, `Salto`, and so on. */
+              display_name: string
+              /** Image URL for the manufacturer logo. */
+              image_url?: string | undefined
+            }
+          | undefined
+        /** Temperature in °C, if the device measures temperature. */
+        temperature_celsius?: number | undefined
+        /** Temperature in °F, if the device measures temperature. */
+        temperature_fahrenheit?: number | undefined
+        /** Relative humidity, as a value between 0 and 1, inclusive, if the device measures humidity. */
+        relative_humidity?: number | undefined
+        /** Noise level in decibels, if the device measures noise. */
+        noise_level_decibels?: number | undefined
+        /** Noise level as a Noise Risk Score (NRS), if the device reports one. */
+        noise_level_nrs?: number | undefined
+        /** Carbon dioxide concentration in parts per million, if the device measures it. */
+        co2_ppm?: number | undefined
+        /** Carbon monoxide concentration in parts per million, if the device measures it. */
+        co_ppm?: number | undefined
+        /** Air quality index, if the device measures it. */
+        air_quality_index?: number | undefined
+        /** Mold risk level as reported by the device, if the device measures it. */
+        mold_risk_level?: string | undefined
+        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
+        is_occupied?: boolean | undefined
+        /** Number of occupants the device detects, if the device counts occupants. */
+        occupant_count?: number | undefined
+        /** Indicates whether the device detects smoking, if the device measures it. */
+        is_smoking_detected?: boolean | undefined
+        /** Current setting of the device's primary temperature controller. */
+        temperature_setting?:
+          | {
+              /** Operating mode requested from the device's primary temperature controller. */
+              controller_mode: 'heat' | 'off'
+              /** Temperature to which the controller should heat, in °C. The controller can retain this value while it is off. */
+              heating_set_point_celsius?: number | undefined
+              /** Temperature to which the controller should heat, in °F. The controller can retain this value while it is off. */
+              heating_set_point_fahrenheit?: number | undefined
+            }
+          | undefined
+        /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
+        named_sensors?:
+          | {
+              /** Stable, hardware-defined name of the sensor, such as a port number. */
+              sensor_name: string
+              /** Display name of the sensor. Defaults to `sensor_name`. */
+              display_name: string
+              /** Temperature in °C, if the device measures temperature. */
+              temperature_celsius?: number | undefined
+              /** Temperature in °F, if the device measures temperature. */
+              temperature_fahrenheit?: number | undefined
+              /** Relative humidity, as a value between 0 and 1, inclusive, if the device measures humidity. */
+              relative_humidity?: number | undefined
+              /** Noise level in decibels, if the device measures noise. */
+              noise_level_decibels?: number | undefined
+              /** Noise level as a Noise Risk Score (NRS), if the device reports one. */
+              noise_level_nrs?: number | undefined
+              /** Carbon dioxide concentration in parts per million, if the device measures it. */
+              co2_ppm?: number | undefined
+              /** Carbon monoxide concentration in parts per million, if the device measures it. */
+              co_ppm?: number | undefined
+              /** Air quality index, if the device measures it. */
+              air_quality_index?: number | undefined
+              /** Mold risk level as reported by the device, if the device measures it. */
+              mold_risk_level?: string | undefined
+              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
+              is_occupied?: boolean | undefined
+              /** Number of occupants the device detects, if the device counts occupants. */
+              occupant_count?: number | undefined
+              /** Indicates whether the device detects smoking, if the device measures it. */
+              is_smoking_detected?: boolean | undefined
+            }[]
+          | undefined
+        /** Indicates whether the device represents spa water rather than pool water. Present only on pool and spa devices. */
+        is_spa?: boolean | undefined
+        /** Indicates whether the water is circulating. Temperature readings are only live while it is circulating. Omitted if the controller does not report it. */
+        is_water_circulating?: boolean | undefined
+        /** Salt level reported by the chlorinator, in parts per million. Omitted if the system has no salt chlorinator. */
+        salt_ppm?: number | undefined
+        /** Indicates whether the device supports remote unlocking. */
+        can_remotely_unlock?: boolean | undefined
+        /** Indicates whether the device supports remote locking. */
+        can_remotely_lock?: boolean | undefined
+        /** Indicates whether the device supports programming offline access codes. */
+        can_program_offline_access_codes?: boolean | undefined
+        /** Indicates whether the device supports programming online access codes. */
+        can_program_online_access_codes?: boolean | undefined
+        /** Indicates whether the thermostat supports heating. */
+        can_hvac_heat?: boolean | undefined
+        /** Indicates whether the thermostat supports cooling. */
+        can_hvac_cool?: boolean | undefined
+        /** Indicates whether the thermostat supports simultaneous heating and cooling. */
+        can_hvac_heat_cool?: boolean | undefined
+        /** Indicates whether the thermostat can be turned off. */
+        can_turn_off_hvac?: boolean | undefined
+        /** Indicates whether the thermostat can be returned to its weekly program, the schedule that is configured on the device itself, releasing any hold that Seam has set. */
+        can_activate_weekly_program?: boolean | undefined
+        /** Indicates whether the device supports simulating removal in a sandbox. */
+        can_simulate_removal?: boolean | undefined
+        /** Indicates whether the device supports simulating connection in a sandbox. */
+        can_simulate_connection?: boolean | undefined
+        /** Indicates whether the device supports simulating disconnection in a sandbox. */
+        can_simulate_disconnection?: boolean | undefined
+        /** Indicates whether the lock supports unlocking with an access code. */
+        can_unlock_with_code?: boolean | undefined
+        /** Indicates whether the thermostat supports running climate programs. */
+        can_run_thermostat_programs?: boolean | undefined
+        /** Indicates whether the thermostat supports weekday/weekend climate programs. */
+        can_program_thermostat_programs_as_weekday_weekend?: boolean | undefined
+        /** Indicates whether the thermostat supports different climate programs for each day of the week. */
+        can_program_thermostat_programs_as_different_each_day?:
+          boolean | undefined
+        /** Indicates whether the thermostat supports a single climate program applied to every day. */
+        can_program_thermostat_programs_as_same_each_day?: boolean | undefined
+        /** Indicates whether the hub supports simulating connection in a sandbox. */
+        can_simulate_hub_connection?: boolean | undefined
+        /** Indicates whether the hub supports simulating disconnection in a sandbox. */
+        can_simulate_hub_disconnection?: boolean | undefined
+        /** Indicates whether the device supports simulating a paid subscription in a sandbox. */
+        can_simulate_paid_subscription?: boolean | undefined
+        /** Indicates whether the lock supports configuring automatic locking. */
+        can_configure_auto_lock?: boolean | undefined
+        /** Indicates whether the camera can stream live video through a camera live view session. `false` while the camera is offline. */
+        can_stream_live_video?: boolean | undefined
+        /** Indicates whether the speaker supports setting its volume. */
+        can_set_speaker_volume?: boolean | undefined
+        /** Indicates whether the speaker supports muting. */
+        can_mute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports unmuting. */
+        can_unmute_speaker?: boolean | undefined
+        /** Indicates whether the speaker supports pausing playback. */
+        can_pause_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports resuming playback. */
+        can_resume_speaker_playback?: boolean | undefined
+        /** Indicates whether the speaker supports playing a chime. */
+        can_play_speaker_chime?: boolean | undefined
+        /** Indicates whether the speaker supports listing and playing the favorites saved in the speaker manufacturer's app, such as playlists and radio stations. */
+        can_play_speaker_favorite?: boolean | undefined
+        /** Indicates whether the speaker supports playing an audio clip from a URL. */
+        can_play_speaker_audio_clip?: boolean | undefined
+        /** Indicates whether the device supports controlling its primary target temperature. */
+        can_control_temperature?: boolean | undefined
+      }[]
+    }
+    maxDuration: undefined
+  }
+  '/pools/turn_off': {
+    route: '/pools/turn_off'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** ID of the device for the pool or spa water whose temperature control you want to turn off. */
+      device_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      /** Represents an action attempt that enables you to keep track of the progress of your action that affects a physical device or system.actions against a device. Action attempts are useful because the physical world is intrinsically asynchronous.
+    
+    When you request for a device to perform an action, the Seam API immediately returns an action attempt object. In the background, the Seam API performs the action.
+    
+    See also [Action Attempts](https://www.seam.co/docs/core-concepts/action-attempts). */
+      action_attempt:
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of locking a door. */
+            action_type: 'LOCK_DOOR'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of locking a door. */
+            action_type: 'LOCK_DOOR'
+            /** Result of the action. */
+            result: {
+              /** Indicates whether the device confirmed that the lock action occurred. */
+              was_confirmed_by_device?: boolean | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of locking a door. */
+            action_type: 'LOCK_DOOR'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of unlocking a door. */
+            action_type: 'UNLOCK_DOOR'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of unlocking a door. */
+            action_type: 'UNLOCK_DOOR'
+            /** Result of the action. */
+            result: {
+              /** Indicates whether the device confirmed that the unlock action occurred. */
+              was_confirmed_by_device?: boolean | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of unlocking a door. */
+            action_type: 'UNLOCK_DOOR'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of scanning a credential. */
+            action_type: 'SCAN_CREDENTIAL'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of scanning a credential. */
+            action_type: 'SCAN_CREDENTIAL'
+            /** Result of scanning a card. If the attempt was successful, includes a snapshot of credential data read from the physical encoder, the corresponding data stored on Seam and the access system, and any associated warnings. */
+            result: {
+              /** Snapshot of credential data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created. */
+                created_at: string | null
+                /** Indicates whether the credential has been issued (encoded onto a card). */
+                is_issued: boolean | null
+                /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) becomes usable. */
+                starts_at: string | null
+                /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) will stop being usable. */
+                ends_at: string | null
+                /** A number or string that physically identifies the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                card_number: string | null
+                /** Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                visionline_metadata?:
+                  | {
+                      /** Card ID for the Visionline card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                      card_id?: (string | undefined) | undefined
+                      /** Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is cancelled. */
+                      cancelled?: (boolean | undefined) | undefined
+                      /** Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is discarded. */
+                      discarded?: (boolean | undefined) | undefined
+                      /** Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is expired. */
+                      expired?: (boolean | undefined) | undefined
+                      /** Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is overwritten. */
+                      overwritten?: (boolean | undefined) | undefined
+                      /** Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is overridden. */
+                      overridden?: (boolean | undefined) | undefined
+                      /** Indicates whether the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is pending auto-update. */
+                      pending_auto_update?: (boolean | undefined) | undefined
+                      /** Format of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                      card_format?:
+                        (('TLCode' | 'rfid48') | undefined) | undefined
+                      /** Holder of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                      card_holder?: (string | undefined) | undefined
+                      /** Number of issued cards associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                      number_of_issued_cards?: (number | undefined) | undefined
+                      /** IDs of the guest [entrances](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                      guest_acs_entrance_ids?:
+                        (string[] | undefined) | undefined
+                      /** IDs of the common [entrances](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details) for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                      common_acs_entrance_ids?:
+                        (string[] | undefined) | undefined
+                    }
+                  | undefined
+              } | null
+              /** Corresponding credential data as stored on Seam and the access system. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        /** ID of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        acs_credential_id: string
+                        /** ID of the [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                        acs_user_id?: string | undefined
+                        /** ID of the [user identity](https://www.seam.co/docs/api/user_identities/object) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                        user_identity_id?: string | undefined
+                        /** ID of the [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) to which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                        connected_account_id: string
+                        /** ID of the credential pool to which the credential belongs. */
+                        acs_credential_pool_id?: string | undefined
+                        /** ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        acs_system_id: string
+                        /** ID of the parent [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. */
+                        display_name: string
+                        /** Access (PIN) code for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        code?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
+                        /** Number of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        card_number?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been encoded onto a card. */
+                        is_issued?: boolean | undefined
+                        /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was encoded onto a card. */
+                        issued_at?: (string | undefined) | null
+                        /** Access method for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`. */
+                        access_method:
+                          'code' | 'card' | 'mobile_key' | 'cloud_key'
+                        /** Brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                              | 'assa_abloy_vostio_key'
+                              | 'salto_space_key'
+                              | 'latch_access'
+                              | 'dormakaba_ambiance_credential'
+                              | 'hotek_card'
+                              | 'salto_ks_tag'
+                              | 'avigilon_alta_credential'
+                              | 'kisi_credential'
+                              | 'akiles_credential'
+                            )
+                          | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. */
+                        external_type_display_name?: string | undefined
+                        /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created. */
+                        created_at: string
+                        /** ID of the workspace that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        workspace_id: string
+                        /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at?: string | undefined
+                        /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                        ends_at?: string | undefined
+                        /** Errors associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        errors: {
+                          error_code: string
+                          message: string
+                          /** Date and time at which Seam created the error. */
+                          created_at: string
+                        }[]
+                        /** Warnings associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        warnings: (
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'unknown_issue_with_acs_credential'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
+                        )[]
+                        /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                        is_latest_desired_state_synced_with_provider?:
+                          (boolean | null) | undefined
+                        /** Date and time at which the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                        latest_desired_state_synced_with_provider_at?:
+                          (string | null) | undefined
+                        /** Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        visionline_metadata?:
+                          | {
+                              /** Card function type in the Visionline access system. */
+                              card_function_type?:
+                                (('guest' | 'staff') | undefined) | undefined
+                              /** IDs of the credentials to which you want to join. */
+                              joiner_acs_credential_ids?:
+                                (string[] | undefined) | undefined
+                              /** Guest entrance IDs in the Visionline access system. */
+                              guest_acs_entrance_ids?:
+                                (string[] | undefined) | undefined
+                              /** Common entrance IDs in the Visionline access system. */
+                              common_acs_entrance_ids?:
+                                (string[] | undefined) | undefined
+                              /** Indicates whether the credential is valid. */
+                              is_valid?: (boolean | undefined) | undefined
+                              /** Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors. */
+                              auto_join?: (boolean | undefined) | undefined
+                              /** ID of the card in the Visionline access system. */
+                              card_id?: (string | undefined) | undefined
+                              /** ID of the credential in the Visionline access system. */
+                              credential_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              /** Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors. */
+                              auto_join?: (boolean | undefined) | undefined
+                              /** IDs of the guest entrances to override in the Vostio access system. */
+                              override_guest_acs_entrance_ids?:
+                                (string[] | undefined) | undefined
+                              /** Key ID in the Vostio access system. */
+                              key_id?: (string | undefined) | undefined
+                              /** Key issuing request ID in the Vostio access system. */
+                              key_issuing_request_id?:
+                                (string | undefined) | undefined
+                              /** Names of the doors to which to grant access in the Vostio access system. */
+                              door_names?: (string[] | undefined) | undefined
+                              /** Endpoint ID in the Vostio access system. */
+                              endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Indicates whether Seam manages the credential. */
+                        is_managed: true
+                      }
+                    | {
+                        /** ID of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        acs_credential_id: string
+                        /** ID of the [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                        acs_user_id?: string | undefined
+                        /** ID of the [user identity](https://www.seam.co/docs/api/user_identities/object) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                        user_identity_id?: string | undefined
+                        /** ID of the [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) to which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                        connected_account_id: string
+                        /** ID of the credential pool to which the credential belongs. */
+                        acs_credential_pool_id?: string | undefined
+                        /** ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        acs_system_id: string
+                        /** ID of the parent [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. */
+                        display_name: string
+                        /** Access (PIN) code for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        code?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
+                        /** Number of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        card_number?: (string | undefined) | null
+                        /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been encoded onto a card. */
+                        is_issued?: boolean | undefined
+                        /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was encoded onto a card. */
+                        issued_at?: (string | undefined) | null
+                        /** Access method for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`. */
+                        access_method:
+                          'code' | 'card' | 'mobile_key' | 'cloud_key'
+                        /** Brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                              | 'assa_abloy_vostio_key'
+                              | 'salto_space_key'
+                              | 'latch_access'
+                              | 'dormakaba_ambiance_credential'
+                              | 'hotek_card'
+                              | 'salto_ks_tag'
+                              | 'avigilon_alta_credential'
+                              | 'kisi_credential'
+                              | 'akiles_credential'
+                            )
+                          | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. */
+                        external_type_display_name?: string | undefined
+                        /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created. */
+                        created_at: string
+                        /** ID of the workspace that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        workspace_id: string
+                        /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at?: string | undefined
+                        /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                        ends_at?: string | undefined
+                        /** Errors associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        errors: {
+                          error_code: string
+                          message: string
+                          /** Date and time at which Seam created the error. */
+                          created_at: string
+                        }[]
+                        /** Warnings associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        warnings: (
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'unknown_issue_with_acs_credential'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'needs_to_be_reissued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'requested_code_unavailable'
+                              /** The originally requested PIN code that could not be used. */
+                              original_code: string
+                              /** The PIN code that was assigned instead. */
+                              new_code: string
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_rounded_up'
+                            }
+                        )[]
+                        /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                        is_latest_desired_state_synced_with_provider?:
+                          (boolean | null) | undefined
+                        /** Date and time at which the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                        latest_desired_state_synced_with_provider_at?:
+                          (string | null) | undefined
+                        /** Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        visionline_metadata?:
+                          | {
+                              /** Card function type in the Visionline access system. */
+                              card_function_type?:
+                                (('guest' | 'staff') | undefined) | undefined
+                              /** IDs of the credentials to which you want to join. */
+                              joiner_acs_credential_ids?:
+                                (string[] | undefined) | undefined
+                              /** Guest entrance IDs in the Visionline access system. */
+                              guest_acs_entrance_ids?:
+                                (string[] | undefined) | undefined
+                              /** Common entrance IDs in the Visionline access system. */
+                              common_acs_entrance_ids?:
+                                (string[] | undefined) | undefined
+                              /** Indicates whether the credential is valid. */
+                              is_valid?: (boolean | undefined) | undefined
+                              /** Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors. */
+                              auto_join?: (boolean | undefined) | undefined
+                              /** ID of the card in the Visionline access system. */
+                              card_id?: (string | undefined) | undefined
+                              /** ID of the credential in the Visionline access system. */
+                              credential_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              /** Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors. */
+                              auto_join?: (boolean | undefined) | undefined
+                              /** IDs of the guest entrances to override in the Vostio access system. */
+                              override_guest_acs_entrance_ids?:
+                                (string[] | undefined) | undefined
+                              /** Key ID in the Vostio access system. */
+                              key_id?: (string | undefined) | undefined
+                              /** Key issuing request ID in the Vostio access system. */
+                              key_issuing_request_id?:
+                                (string | undefined) | undefined
+                              /** Names of the doors to which to grant access in the Vostio access system. */
+                              door_names?: (string[] | undefined) | undefined
+                              /** Endpoint ID in the Vostio access system. */
+                              endpoint_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        /** Akiles-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                        akiles_metadata?:
+                          | {
+                              /** ID of the Akiles member PIN. */
+                              member_pin_id?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
+              /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
+              warnings: {
+                /** Indicates a warning related to scanning a credential. */
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
+                /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                warning_message: string
+              }[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of scanning a credential. */
+            action_type: 'SCAN_CREDENTIAL'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that there is no credential on the encoder. */
+                  type: 'no_credential_on_encoder'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that the encoder is not online. */
+                  type: 'encoder_not_online'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that communication with the encoder timed out. */
+                  type: 'encoder_communication_timeout'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that the Seam Bridge is disconnected or cannot reach the access control system. */
+                  type: 'bridge_disconnected'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of encoding credential data from the physical encoder onto a card. */
+            action_type: 'ENCODE_CREDENTIAL'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of encoding credential data from the physical encoder onto a card. */
+            action_type: 'ENCODE_CREDENTIAL'
+            /** Result of an encoding attempt. If the attempt was successful, includes the credential data that was encoded onto the card. */
+            result:
+              | {
+                  /** ID of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  acs_credential_id: string
+                  /** ID of the [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                  acs_user_id?: string | undefined
+                  /** ID of the [user identity](https://www.seam.co/docs/api/user_identities/object) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                  user_identity_id?: string | undefined
+                  /** ID of the [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) to which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                  connected_account_id: string
+                  /** ID of the credential pool to which the credential belongs. */
+                  acs_credential_pool_id?: string | undefined
+                  /** ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  acs_system_id: string
+                  /** ID of the parent [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. */
+                  display_name: string
+                  /** Access (PIN) code for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  code?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
+                  /** Number of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  card_number?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been encoded onto a card. */
+                  is_issued?: boolean | undefined
+                  /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was encoded onto a card. */
+                  issued_at?: (string | undefined) | null
+                  /** Access method for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`. */
+                  access_method: 'code' | 'card' | 'mobile_key' | 'cloud_key'
+                  /** Brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                  external_type?:
+                    | (
+                        | 'pti_card'
+                        | 'brivo_credential'
+                        | 'hid_credential'
+                        | 'visionline_card'
+                        | 'salto_ks_credential'
+                        | 'assa_abloy_vostio_key'
+                        | 'salto_space_key'
+                        | 'latch_access'
+                        | 'dormakaba_ambiance_credential'
+                        | 'hotek_card'
+                        | 'salto_ks_tag'
+                        | 'avigilon_alta_credential'
+                        | 'kisi_credential'
+                        | 'akiles_credential'
+                      )
+                    | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. */
+                  external_type_display_name?: string | undefined
+                  /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created. */
+                  created_at: string
+                  /** ID of the workspace that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  workspace_id: string
+                  /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  starts_at?: string | undefined
+                  /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                  ends_at?: string | undefined
+                  /** Errors associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  errors: {
+                    error_code: string
+                    message: string
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                  }[]
+                  /** Warnings associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  warnings: (
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'unknown_issue_with_acs_credential'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
+                  )[]
+                  /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                  is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                  is_latest_desired_state_synced_with_provider?:
+                    (boolean | null) | undefined
+                  /** Date and time at which the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                  latest_desired_state_synced_with_provider_at?:
+                    (string | null) | undefined
+                  /** Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  visionline_metadata?:
+                    | {
+                        /** Card function type in the Visionline access system. */
+                        card_function_type?:
+                          (('guest' | 'staff') | undefined) | undefined
+                        /** IDs of the credentials to which you want to join. */
+                        joiner_acs_credential_ids?:
+                          (string[] | undefined) | undefined
+                        /** Guest entrance IDs in the Visionline access system. */
+                        guest_acs_entrance_ids?:
+                          (string[] | undefined) | undefined
+                        /** Common entrance IDs in the Visionline access system. */
+                        common_acs_entrance_ids?:
+                          (string[] | undefined) | undefined
+                        /** Indicates whether the credential is valid. */
+                        is_valid?: (boolean | undefined) | undefined
+                        /** Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors. */
+                        auto_join?: (boolean | undefined) | undefined
+                        /** ID of the card in the Visionline access system. */
+                        card_id?: (string | undefined) | undefined
+                        /** ID of the credential in the Visionline access system. */
+                        credential_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        /** Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors. */
+                        auto_join?: (boolean | undefined) | undefined
+                        /** IDs of the guest entrances to override in the Vostio access system. */
+                        override_guest_acs_entrance_ids?:
+                          (string[] | undefined) | undefined
+                        /** Key ID in the Vostio access system. */
+                        key_id?: (string | undefined) | undefined
+                        /** Key issuing request ID in the Vostio access system. */
+                        key_issuing_request_id?:
+                          (string | undefined) | undefined
+                        /** Names of the doors to which to grant access in the Vostio access system. */
+                        door_names?: (string[] | undefined) | undefined
+                        /** Endpoint ID in the Vostio access system. */
+                        endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Indicates whether Seam manages the credential. */
+                  is_managed: true
+                }
+              | {
+                  /** ID of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  acs_credential_id: string
+                  /** ID of the [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                  acs_user_id?: string | undefined
+                  /** ID of the [user identity](https://www.seam.co/docs/api/user_identities/object) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                  user_identity_id?: string | undefined
+                  /** ID of the [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) to which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+                  connected_account_id: string
+                  /** ID of the credential pool to which the credential belongs. */
+                  acs_credential_pool_id?: string | undefined
+                  /** ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  acs_system_id: string
+                  /** ID of the parent [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. */
+                  display_name: string
+                  /** Access (PIN) code for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  code?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
+                  /** Number of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  card_number?: (string | undefined) | null
+                  /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been encoded onto a card. */
+                  is_issued?: boolean | undefined
+                  /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was encoded onto a card. */
+                  issued_at?: (string | undefined) | null
+                  /** Access method for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`. */
+                  access_method: 'code' | 'card' | 'mobile_key' | 'cloud_key'
+                  /** Brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                  external_type?:
+                    | (
+                        | 'pti_card'
+                        | 'brivo_credential'
+                        | 'hid_credential'
+                        | 'visionline_card'
+                        | 'salto_ks_credential'
+                        | 'assa_abloy_vostio_key'
+                        | 'salto_space_key'
+                        | 'latch_access'
+                        | 'dormakaba_ambiance_credential'
+                        | 'hotek_card'
+                        | 'salto_ks_tag'
+                        | 'avigilon_alta_credential'
+                        | 'kisi_credential'
+                        | 'akiles_credential'
+                      )
+                    | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. */
+                  external_type_display_name?: string | undefined
+                  /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created. */
+                  created_at: string
+                  /** ID of the workspace that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  workspace_id: string
+                  /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  starts_at?: string | undefined
+                  /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                  ends_at?: string | undefined
+                  /** Errors associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  errors: {
+                    error_code: string
+                    message: string
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                  }[]
+                  /** Warnings associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  warnings: (
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'unknown_issue_with_acs_credential'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'needs_to_be_reissued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'requested_code_unavailable'
+                        /** The originally requested PIN code that could not be used. */
+                        original_code: string
+                        /** The PIN code that was assigned instead. */
+                        new_code: string
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_rounded_up'
+                      }
+                  )[]
+                  /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                  is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider. */
+                  is_latest_desired_state_synced_with_provider?:
+                    (boolean | null) | undefined
+                  /** Date and time at which the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+                  latest_desired_state_synced_with_provider_at?:
+                    (string | null) | undefined
+                  /** Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  visionline_metadata?:
+                    | {
+                        /** Card function type in the Visionline access system. */
+                        card_function_type?:
+                          (('guest' | 'staff') | undefined) | undefined
+                        /** IDs of the credentials to which you want to join. */
+                        joiner_acs_credential_ids?:
+                          (string[] | undefined) | undefined
+                        /** Guest entrance IDs in the Visionline access system. */
+                        guest_acs_entrance_ids?:
+                          (string[] | undefined) | undefined
+                        /** Common entrance IDs in the Visionline access system. */
+                        common_acs_entrance_ids?:
+                          (string[] | undefined) | undefined
+                        /** Indicates whether the credential is valid. */
+                        is_valid?: (boolean | undefined) | undefined
+                        /** Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors. */
+                        auto_join?: (boolean | undefined) | undefined
+                        /** ID of the card in the Visionline access system. */
+                        card_id?: (string | undefined) | undefined
+                        /** ID of the credential in the Visionline access system. */
+                        credential_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        /** Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors. */
+                        auto_join?: (boolean | undefined) | undefined
+                        /** IDs of the guest entrances to override in the Vostio access system. */
+                        override_guest_acs_entrance_ids?:
+                          (string[] | undefined) | undefined
+                        /** Key ID in the Vostio access system. */
+                        key_id?: (string | undefined) | undefined
+                        /** Key issuing request ID in the Vostio access system. */
+                        key_issuing_request_id?:
+                          (string | undefined) | undefined
+                        /** Names of the doors to which to grant access in the Vostio access system. */
+                        door_names?: (string[] | undefined) | undefined
+                        /** Endpoint ID in the Vostio access system. */
+                        endpoint_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  /** Akiles-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+                  akiles_metadata?:
+                    | {
+                        /** ID of the Akiles member PIN. */
+                        member_pin_id?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  is_managed: false
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of encoding credential data from the physical encoder onto a card. */
+            action_type: 'ENCODE_CREDENTIAL'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that there is no credential on the encoder. */
+                  type: 'no_credential_on_encoder'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate an incompatible card format. */
+                  type: 'incompatible_card_format'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that the affected credential cannot be reissued. */
+                  type: 'credential_cannot_be_reissued'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that the encoder is not online. */
+                  type: 'encoder_not_online'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that communication with the encoder timed out. */
+                  type: 'encoder_communication_timeout'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that the Seam Bridge is disconnected or cannot reach the access control system. */
+                  type: 'bridge_disconnected'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that encoding was interrupted, for example, if the card was removed from the encoder before writing was complete. */
+                  type: 'encoding_interrupted'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that the credential was deleted and can no longer be encoded. */
+                  type: 'credential_deleted'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of scanning a physical card and assigning the credential to an ACS user. */
+            action_type: 'SCAN_TO_ASSIGN_CREDENTIAL'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of scanning a physical card and assigning the credential to an ACS user. */
+            action_type: 'SCAN_TO_ASSIGN_CREDENTIAL'
+            /** Result of a scan to assign attempt. If the attempt was successful, includes the credential data that was scanned and assigned. */
+            result: {
+              /** ID of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              acs_credential_id: string
+              /** ID of the [ACS user](https://www.seam.co/docs/low-level-apis/access-systems/user-management) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+              acs_user_id?: string | undefined
+              /** ID of the [user identity](https://www.seam.co/docs/api/user_identities/object) to whom the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+              user_identity_id?: string | undefined
+              /** ID of the [connected account](https://www.seam.co/docs/core-concepts/connected-accounts) to which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) belongs. */
+              connected_account_id: string
+              /** ID of the credential pool to which the credential belongs. */
+              acs_credential_pool_id?: string | undefined
+              /** ID of the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              acs_system_id: string
+              /** ID of the parent [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              parent_acs_credential_id?: string | undefined
+              /** Display name that corresponds to the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. */
+              display_name: string
+              /** Access (PIN) code for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              code?: (string | undefined) | null
+              /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) can only be used once. If `true`, the code becomes invalid after the first use. */
+              is_one_time_use?: boolean | undefined
+              /** Number of the card associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              card_number?: (string | undefined) | null
+              /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been encoded onto a card. */
+              is_issued?: boolean | undefined
+              /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was encoded onto a card. */
+              issued_at?: (string | undefined) | null
+              /** Access method for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). Supported values: `code`, `card`, `mobile_key`, `cloud_key`. */
+              access_method: 'code' | 'card' | 'mobile_key' | 'cloud_key'
+              /** Brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+              external_type?:
+                | (
+                    | 'pti_card'
+                    | 'brivo_credential'
+                    | 'hid_credential'
+                    | 'visionline_card'
+                    | 'salto_ks_credential'
+                    | 'assa_abloy_vostio_key'
+                    | 'salto_space_key'
+                    | 'latch_access'
+                    | 'dormakaba_ambiance_credential'
+                    | 'hotek_card'
+                    | 'salto_ks_tag'
+                    | 'avigilon_alta_credential'
+                    | 'kisi_credential'
+                    | 'akiles_credential'
+                  )
+                | undefined
+              /** Display name that corresponds to the brand-specific terminology for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) type. */
+              external_type_display_name?: string | undefined
+              /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was created. */
+              created_at: string
+              /** ID of the workspace that contains the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              workspace_id: string
+              /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+              starts_at?: string | undefined
+              /** Date and time at which the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+              ends_at?: string | undefined
+              /** Errors associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              errors: {
+                error_code: string
+                message: string
+                /** Date and time at which Seam created the error. */
+                created_at: string
+              }[]
+              /** Warnings associated with the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              warnings: (
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'waiting_to_be_issued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_externally_modified'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_modified'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'being_deleted'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'unknown_issue_with_acs_credential'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'needs_to_be_reissued'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
+              )[]
+              /** Indicates whether the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) is a [multi-phone sync credential](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+              is_multi_phone_sync_credential?: boolean | undefined
+              /** Indicates whether the latest state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) has been synced from Seam to the provider. */
+              is_latest_desired_state_synced_with_provider?:
+                (boolean | null) | undefined
+              /** Date and time at which the state of the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials) was most recently synced from Seam to the provider. */
+              latest_desired_state_synced_with_provider_at?:
+                (string | null) | undefined
+              /** Visionline-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              visionline_metadata?:
+                | {
+                    /** Card function type in the Visionline access system. */
+                    card_function_type?:
+                      (('guest' | 'staff') | undefined) | undefined
+                    /** IDs of the credentials to which you want to join. */
+                    joiner_acs_credential_ids?:
+                      (string[] | undefined) | undefined
+                    /** Guest entrance IDs in the Visionline access system. */
+                    guest_acs_entrance_ids?: (string[] | undefined) | undefined
+                    /** Common entrance IDs in the Visionline access system. */
+                    common_acs_entrance_ids?: (string[] | undefined) | undefined
+                    /** Indicates whether the credential is valid. */
+                    is_valid?: (boolean | undefined) | undefined
+                    /** Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors. */
+                    auto_join?: (boolean | undefined) | undefined
+                    /** ID of the card in the Visionline access system. */
+                    card_id?: (string | undefined) | undefined
+                    /** ID of the credential in the Visionline access system. */
+                    credential_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Vostio-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              assa_abloy_vostio_metadata?:
+                | {
+                    /** Indicates whether the credential should auto-join. For an auto-join credential, Seam automatically issues an override card if there are no other cards and a joiner card if there are existing cards on the doors. */
+                    auto_join?: (boolean | undefined) | undefined
+                    /** IDs of the guest entrances to override in the Vostio access system. */
+                    override_guest_acs_entrance_ids?:
+                      (string[] | undefined) | undefined
+                    /** Key ID in the Vostio access system. */
+                    key_id?: (string | undefined) | undefined
+                    /** Key issuing request ID in the Vostio access system. */
+                    key_issuing_request_id?: (string | undefined) | undefined
+                    /** Names of the doors to which to grant access in the Vostio access system. */
+                    door_names?: (string[] | undefined) | undefined
+                    /** Endpoint ID in the Vostio access system. */
+                    endpoint_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Akiles-specific metadata for the [credential](https://www.seam.co/docs/low-level-apis/access-systems/managing-credentials). */
+              akiles_metadata?:
+                | {
+                    /** ID of the Akiles member PIN. */
+                    member_pin_id?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Indicates whether Seam manages the credential. */
+              is_managed: true
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of scanning a physical card and assigning the credential to an ACS user. */
+            action_type: 'SCAN_TO_ASSIGN_CREDENTIAL'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that there is no credential on the encoder. */
+                  type: 'no_credential_on_encoder'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of assigning a pre-registered card credential to an access method. */
+            action_type: 'ASSIGN_CREDENTIAL'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of assigning a pre-registered card credential to an access method. */
+            action_type: 'ASSIGN_CREDENTIAL'
+            /** Result of assigning a credential. If successful, includes the updated access method with the assigned credential. */
+            result: {
+              /** ID of the Seam workspace associated with the access method. */
+              workspace_id: string
+              /** ID of the access method. */
+              access_method_id: string
+              /** Display name of the access method. */
+              display_name: string
+              /** Access method mode. Supported values: `code`, `card`, `mobile_key`, `cloud_key`. */
+              mode: 'code' | 'card' | 'mobile_key' | 'cloud_key'
+              /** Date and time at which the access method was created. */
+              created_at: string
+              /** Date and time at which the access method was issued. */
+              issued_at: string | null
+              /** Indicates whether the access method has been issued. */
+              is_issued: boolean
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              display_status: string
+              /** URL of the Instant Key for mobile key access methods. */
+              instant_key_url?: string | undefined
+              /** Token of the client session associated with the access method. */
+              client_session_token?: string | undefined
+              /** Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method. */
+              is_encoding_required?: boolean | undefined
+              /** Indicates whether the access method is ready to be encoded. This is true when the card has not yet been issued and the access system has received all the access the card needs. While it is false, `pending_mutations` contains `waiting_for_access_on_acs_system`. */
+              is_ready_for_encoding?: boolean | undefined
+              /** Indicates whether an existing card credential must be assigned to this access method before it can be issued. Only applies to card-mode access methods on systems that support credential assignment. */
+              is_assignment_required?: boolean | undefined
+              /** Indicates whether the access method is ready for card assignment. This is true when the access method is in card mode, has not yet been issued, and the system supports credential assignment. */
+              is_ready_for_assignment?: boolean | undefined
+              /** The actual PIN code for code access methods. */
+              code?: (string | null) | undefined
+              /** Warnings associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
+              warnings: (
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'being_deleted'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'updating_access_times'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'pulled_backup_access_code'
+                    /** ID of the original access method from which this backup access method was split, if applicable. */
+                    original_access_method_id?: string | undefined
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'delay_in_issuing'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'user_identity_missing_email_address'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'user_identity_missing_phone_number'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'requested_code_unavailable'
+                    /** The originally requested PIN code that could not be used. */
+                    original_code: string
+                    /** The PIN code that was assigned instead. */
+                    new_code: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'schedule_rounded_up'
+                  }
+              )[]
+              /** Errors associated with the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). */
+              errors: (
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'failed_to_issue'
+                  }
+                | {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'access_not_provisioned'
+                  }
+              )[]
+              /** Pending mutations for the [access method](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant). Indicates operations that are in progress. */
+              pending_mutations: (
+                | {
+                    /** Date and time at which the mutation was created. */
+                    created_at: string
+                    /** Detailed description of the mutation. */
+                    message: string
+                    /** Mutation code to indicate that Seam is in the process of provisioning access for this access method on new devices. */
+                    mutation_code: 'provisioning_access'
+                    /** Previous device configuration. */
+                    from: {
+                      /** Previous device IDs where access was provisioned. */
+                      device_ids: string[]
+                    }
+                    /** New device configuration. */
+                    to: {
+                      /** New device IDs where access is being provisioned. */
+                      device_ids: string[]
+                    }
+                  }
+                | {
+                    /** Date and time at which the mutation was created. */
+                    created_at: string
+                    /** Detailed description of the mutation. */
+                    message: string
+                    /** Mutation code to indicate that Seam is in the process of revoking access for this access method from devices. */
+                    mutation_code: 'revoking_access'
+                    /** Previous device configuration. */
+                    from: {
+                      /** Previous device IDs where access existed. */
+                      device_ids: string[]
+                    }
+                    /** New device configuration. */
+                    to: {
+                      /** New device IDs where access should remain. */
+                      device_ids: string[]
+                    }
+                  }
+                | {
+                    /** Date and time at which the mutation was created. */
+                    created_at: string
+                    /** Detailed description of the mutation. */
+                    message: string
+                    /** Mutation code to indicate that Seam is in the process of updating the access times for this access method. */
+                    mutation_code: 'updating_access_times'
+                    /** Previous access time configuration. */
+                    from: {
+                      /** Previous start time for access. */
+                      starts_at: string | null
+                      /** Previous end time for access. */
+                      ends_at: string | null
+                    }
+                    /** New access time configuration. */
+                    to: {
+                      /** New start time for access. */
+                      starts_at: string | null
+                      /** New end time for access. */
+                      ends_at: string | null
+                    }
+                  }
+                | {
+                    /** Date and time at which the mutation was created. */
+                    created_at: string
+                    /** Detailed description of the mutation. */
+                    message: string
+                    /** Mutation code to indicate that the access system has not yet received all the access this card needs, so the card is not ready to be encoded. */
+                    mutation_code: 'waiting_for_access_on_acs_system'
+                  }
+              )[]
+              /** ID of the customization profile associated with the access method. */
+              customization_profile_id?: string | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of assigning a pre-registered card credential to an access method. */
+            action_type: 'ASSIGN_CREDENTIAL'
+            error:
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Type of the error associated with the action attempt. */
+                  type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
+                  message: string
+                }
+              | {
+                  /** Error type to indicate that no matching credential was found. */
+                  type: 'credential_not_found'
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resetting a sandbox workspace. */
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resetting a sandbox workspace. */
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resetting a sandbox workspace. */
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the fan mode on a thermostat. */
+            action_type: 'SET_FAN_MODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the fan mode on a thermostat. */
+            action_type: 'SET_FAN_MODE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the fan mode on a thermostat. */
+            action_type: 'SET_FAN_MODE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the HVAC mode on a thermostat. */
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the HVAC mode on a thermostat. */
+            action_type: 'SET_HVAC_MODE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the HVAC mode on a thermostat. */
+            action_type: 'SET_HVAC_MODE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of a climate preset activation. */
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of a climate preset activation. */
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of a climate preset activation. */
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of returning a thermostat to its weekly program. */
+            action_type: 'ACTIVATE_WEEKLY_PROGRAM'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of returning a thermostat to its weekly program. */
+            action_type: 'ACTIVATE_WEEKLY_PROGRAM'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of returning a thermostat to its weekly program. */
+            action_type: 'ACTIVATE_WEEKLY_PROGRAM'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of simulating a keypad code entry. */
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of simulating a keypad code entry. */
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of simulating a keypad code entry. */
+            action_type: 'SIMULATE_KEYPAD_CODE_ENTRY'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of simulating a manual lock action using a keypad. */
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of simulating a manual lock action using a keypad. */
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of simulating a manual lock action using a keypad. */
+            action_type: 'SIMULATE_MANUAL_LOCK_VIA_KEYPAD'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pushing thermostat programs. */
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pushing thermostat programs. */
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pushing thermostat programs. */
+            action_type: 'PUSH_THERMOSTAT_PROGRAMS'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of configuring the auto-lock on a lock. */
+            action_type: 'CONFIGURE_AUTO_LOCK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of configuring the auto-lock on a lock. */
+            action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of configuring the auto-lock on a lock. */
+            action_type: 'CONFIGURE_AUTO_LOCK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of converting an unmanaged access code to a managed access code. */
+            action_type: 'CONVERT_ACCESS_CODE_TO_MANAGED'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of setting the volume on a speaker. */
+            action_type: 'SET_SPEAKER_VOLUME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of muting or unmuting a speaker. */
+            action_type: 'SET_SPEAKER_MUTE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was paused, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of pausing playback on a speaker. */
+            action_type: 'PAUSE_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers whose playback was resumed, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of resuming playback on a speaker. */
+            action_type: 'RESUME_SPEAKER_PLAYBACK'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a chime on a speaker. */
+            action_type: 'PLAY_SPEAKER_CHIME'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a favorite on a speaker. */
+            action_type: 'PLAY_SPEAKER_FAVORITE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing a favorite on a speaker. */
+            action_type: 'PLAY_SPEAKER_FAVORITE'
+            /** Result of the action. */
+            result: {
+              /** IDs of the speakers now playing the favorite, including speakers grouped with the requested speaker. */
+              affected_device_ids: string[]
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing a favorite on a speaker. */
+            action_type: 'PLAY_SPEAKER_FAVORITE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of playing an audio clip on a speaker. */
+            action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of playing an audio clip on a speaker. */
+            action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of playing an audio clip on a speaker. */
+            action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Syncing access codes is pending. */
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Syncing access codes succeeded. */
+            action_type: 'SYNC_ACCESS_CODES'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Syncing access codes failed. */
+            action_type: 'SYNC_ACCESS_CODES'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Creating an access code is pending. */
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Creating an access code succeeded. */
+            action_type: 'CREATE_ACCESS_CODE'
+            /** Result of the action. */
+            result: {
+              /** Created access code. */
+              access_code: {
+                [x: string]: any
+              }
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Creating an access code failed. */
+            action_type: 'CREATE_ACCESS_CODE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Deleting an access code is pending. */
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Deleting an access code succeeded. */
+            action_type: 'DELETE_ACCESS_CODE'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Deleting an access code failed. */
+            action_type: 'DELETE_ACCESS_CODE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Updating an access code is pending. */
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Updating an access code succeeded. */
+            action_type: 'UPDATE_ACCESS_CODE'
+            /** Result of the action. */
+            result: {
+              /** Updated access code. */
+              access_code?:
+                | {
+                    [x: string]: any
+                  }
+                | undefined
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Updating an access code failed. */
+            action_type: 'UPDATE_ACCESS_CODE'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Creating a noise threshold is pending. */
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Creating a noise threshold succeeded. */
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            /** Result of the action. */
+            result: {
+              /** Created noise threshold. */
+              noise_threshold: {
+                [x: string]: any
+              }
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Creating a noise threshold failed. */
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Deleting a noise threshold is pending. */
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Deleting a noise threshold succeeded. */
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Deleting a noise threshold failed. */
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Updating a noise threshold is pending. */
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Updating a noise threshold succeeded. */
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            /** Result of the action. */
+            result: {
+              /** Updated noise threshold. */
+              noise_threshold: {
+                [x: string]: any
+              }
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Updating a noise threshold failed. */
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
     }
     maxDuration: undefined
   }
@@ -115473,6 +124051,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of playing an audio clip on a speaker. */
             action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -129028,6 +137644,7 @@ export type Routes = {
                   )
                 | 'sonos_speaker'
                 | 'alertify_sensor'
+                | ('hayward_pool_system' | 'hayward_pool')
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -129044,6 +137661,7 @@ export type Routes = {
                 | 'thermostat'
                 | 'battery'
                 | 'phone'
+                | 'pool'
               )[]
               /** Indicates whether the device is online. */
               is_online: boolean
@@ -131037,6 +139655,14 @@ export type Routes = {
                     /** Date and time at which Seam created the warning. */
                     created_at: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'service_mode'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'provider_issue'
                   }
                 | {
@@ -131148,6 +139774,17 @@ export type Routes = {
               occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
+              /** Current setting of the device's primary temperature controller. */
+              temperature_setting?:
+                | {
+                    /** Operating mode requested from the device's primary temperature controller. */
+                    controller_mode: 'heat' | 'off'
+                    /** Temperature to which the controller should heat, in °C. The controller can retain this value while it is off. */
+                    heating_set_point_celsius?: number | undefined
+                    /** Temperature to which the controller should heat, in °F. The controller can retain this value while it is off. */
+                    heating_set_point_fahrenheit?: number | undefined
+                  }
+                | undefined
               /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
               named_sensors?:
                 | {
@@ -131181,6 +139818,12 @@ export type Routes = {
                     is_smoking_detected?: boolean | undefined
                   }[]
                 | undefined
+              /** Indicates whether the device represents spa water rather than pool water. Present only on pool and spa devices. */
+              is_spa?: boolean | undefined
+              /** Indicates whether the water is circulating. Temperature readings are only live while it is circulating. Omitted if the controller does not report it. */
+              is_water_circulating?: boolean | undefined
+              /** Salt level reported by the chlorinator, in parts per million. Omitted if the system has no salt chlorinator. */
+              salt_ppm?: number | undefined
               /** Indicates whether the device supports remote unlocking. */
               can_remotely_unlock?: boolean | undefined
               /** Indicates whether the device supports remote locking. */
@@ -131244,6 +139887,8 @@ export type Routes = {
               can_play_speaker_favorite?: boolean | undefined
               /** Indicates whether the speaker supports playing an audio clip from a URL. */
               can_play_speaker_audio_clip?: boolean | undefined
+              /** Indicates whether the device supports controlling its primary target temperature. */
+              can_control_temperature?: boolean | undefined
             }[]
           | undefined
         acs_entrances?:
@@ -131721,6 +140366,7 @@ export type Routes = {
                 | 'access_control'
                 | 'camera'
                 | 'speaker'
+                | 'pool'
               )[]
               /** Default reservation check-in time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration — set during the connect_webview for providers like Lodgify whose API does not expose check-in times. */
               default_checkin_time?: string | undefined
@@ -134698,6 +143344,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -137227,6 +145911,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of playing an audio clip on a speaker. */
             action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -139792,6 +148514,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -142323,6 +151083,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of playing an audio clip on a speaker. */
             action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -144888,6 +153686,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -147417,6 +156253,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of playing an audio clip on a speaker. */
             action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -149980,6 +158854,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -152509,6 +161421,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of playing an audio clip on a speaker. */
             action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -155072,6 +164022,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -157603,6 +166591,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of playing an audio clip on a speaker. */
             action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -160154,6 +169180,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of playing an audio clip on a speaker. */
             action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -162832,6 +171896,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -163206,6 +172308,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
+          | ('hayward_pool_system' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -163222,6 +172325,7 @@ export type Routes = {
           | 'thermostat'
           | 'battery'
           | 'phone'
+          | 'pool'
         )[]
         /** Indicates whether the device is online. */
         is_online: boolean
@@ -165140,6 +174244,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'service_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'provider_issue'
             }
           | {
@@ -165251,6 +174363,17 @@ export type Routes = {
         occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
+        /** Current setting of the device's primary temperature controller. */
+        temperature_setting?:
+          | {
+              /** Operating mode requested from the device's primary temperature controller. */
+              controller_mode: 'heat' | 'off'
+              /** Temperature to which the controller should heat, in °C. The controller can retain this value while it is off. */
+              heating_set_point_celsius?: number | undefined
+              /** Temperature to which the controller should heat, in °F. The controller can retain this value while it is off. */
+              heating_set_point_fahrenheit?: number | undefined
+            }
+          | undefined
         /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
         named_sensors?:
           | {
@@ -165284,6 +174407,12 @@ export type Routes = {
               is_smoking_detected?: boolean | undefined
             }[]
           | undefined
+        /** Indicates whether the device represents spa water rather than pool water. Present only on pool and spa devices. */
+        is_spa?: boolean | undefined
+        /** Indicates whether the water is circulating. Temperature readings are only live while it is circulating. Omitted if the controller does not report it. */
+        is_water_circulating?: boolean | undefined
+        /** Salt level reported by the chlorinator, in parts per million. Omitted if the system has no salt chlorinator. */
+        salt_ppm?: number | undefined
         /** Indicates whether the device supports remote unlocking. */
         can_remotely_unlock?: boolean | undefined
         /** Indicates whether the device supports remote locking. */
@@ -165345,6 +174474,8 @@ export type Routes = {
         can_play_speaker_favorite?: boolean | undefined
         /** Indicates whether the speaker supports playing an audio clip from a URL. */
         can_play_speaker_audio_clip?: boolean | undefined
+        /** Indicates whether the device supports controlling its primary target temperature. */
+        can_control_temperature?: boolean | undefined
       }
     }
     maxDuration: undefined
@@ -167601,6 +176732,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of playing an audio clip on a speaker. */
             action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -170172,6 +179341,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -170565,6 +179772,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
+          | ('hayward_pool_system' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -170581,6 +179789,7 @@ export type Routes = {
           | 'thermostat'
           | 'battery'
           | 'phone'
+          | 'pool'
         )[]
         /** Indicates whether the device is online. */
         is_online: boolean
@@ -172499,6 +181708,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'service_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'provider_issue'
             }
           | {
@@ -172610,6 +181827,17 @@ export type Routes = {
         occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
+        /** Current setting of the device's primary temperature controller. */
+        temperature_setting?:
+          | {
+              /** Operating mode requested from the device's primary temperature controller. */
+              controller_mode: 'heat' | 'off'
+              /** Temperature to which the controller should heat, in °C. The controller can retain this value while it is off. */
+              heating_set_point_celsius?: number | undefined
+              /** Temperature to which the controller should heat, in °F. The controller can retain this value while it is off. */
+              heating_set_point_fahrenheit?: number | undefined
+            }
+          | undefined
         /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
         named_sensors?:
           | {
@@ -172643,6 +181871,12 @@ export type Routes = {
               is_smoking_detected?: boolean | undefined
             }[]
           | undefined
+        /** Indicates whether the device represents spa water rather than pool water. Present only on pool and spa devices. */
+        is_spa?: boolean | undefined
+        /** Indicates whether the water is circulating. Temperature readings are only live while it is circulating. Omitted if the controller does not report it. */
+        is_water_circulating?: boolean | undefined
+        /** Salt level reported by the chlorinator, in parts per million. Omitted if the system has no salt chlorinator. */
+        salt_ppm?: number | undefined
         /** Indicates whether the device supports remote unlocking. */
         can_remotely_unlock?: boolean | undefined
         /** Indicates whether the device supports remote locking. */
@@ -172704,6 +181938,8 @@ export type Routes = {
         can_play_speaker_favorite?: boolean | undefined
         /** Indicates whether the speaker supports playing an audio clip from a URL. */
         can_play_speaker_audio_clip?: boolean | undefined
+        /** Indicates whether the device supports controlling its primary target temperature. */
+        can_control_temperature?: boolean | undefined
       }[]
       devices: {
         /** ID of the device. */
@@ -172767,6 +182003,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
+          | ('hayward_pool_system' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -172783,6 +182020,7 @@ export type Routes = {
           | 'thermostat'
           | 'battery'
           | 'phone'
+          | 'pool'
         )[]
         /** Indicates whether the device is online. */
         is_online: boolean
@@ -174701,6 +183939,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'service_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'provider_issue'
             }
           | {
@@ -174812,6 +184058,17 @@ export type Routes = {
         occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
+        /** Current setting of the device's primary temperature controller. */
+        temperature_setting?:
+          | {
+              /** Operating mode requested from the device's primary temperature controller. */
+              controller_mode: 'heat' | 'off'
+              /** Temperature to which the controller should heat, in °C. The controller can retain this value while it is off. */
+              heating_set_point_celsius?: number | undefined
+              /** Temperature to which the controller should heat, in °F. The controller can retain this value while it is off. */
+              heating_set_point_fahrenheit?: number | undefined
+            }
+          | undefined
         /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
         named_sensors?:
           | {
@@ -174845,6 +184102,12 @@ export type Routes = {
               is_smoking_detected?: boolean | undefined
             }[]
           | undefined
+        /** Indicates whether the device represents spa water rather than pool water. Present only on pool and spa devices. */
+        is_spa?: boolean | undefined
+        /** Indicates whether the water is circulating. Temperature readings are only live while it is circulating. Omitted if the controller does not report it. */
+        is_water_circulating?: boolean | undefined
+        /** Salt level reported by the chlorinator, in parts per million. Omitted if the system has no salt chlorinator. */
+        salt_ppm?: number | undefined
         /** Indicates whether the device supports remote unlocking. */
         can_remotely_unlock?: boolean | undefined
         /** Indicates whether the device supports remote locking. */
@@ -174906,6 +184169,8 @@ export type Routes = {
         can_play_speaker_favorite?: boolean | undefined
         /** Indicates whether the speaker supports playing an audio clip from a URL. */
         can_play_speaker_audio_clip?: boolean | undefined
+        /** Indicates whether the device supports controlling its primary target temperature. */
+        can_control_temperature?: boolean | undefined
       }[]
     }
     maxDuration: undefined
@@ -177158,6 +186423,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of playing an audio clip on a speaker. */
             action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -179930,6 +189233,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -182497,6 +191838,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of playing an audio clip on a speaker. */
             action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -185212,6 +194591,44 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
             /** Syncing access codes is pending. */
             action_type: 'SYNC_ACCESS_CODES'
           }
@@ -186336,6 +195753,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
+          | ('hayward_pool_system' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -186352,6 +195770,7 @@ export type Routes = {
           | 'thermostat'
           | 'battery'
           | 'phone'
+          | 'pool'
         )[]
         /** Indicates whether the device is online. */
         is_online: boolean
@@ -188270,6 +197689,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'service_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'provider_issue'
             }
           | {
@@ -188381,6 +197808,17 @@ export type Routes = {
         occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
+        /** Current setting of the device's primary temperature controller. */
+        temperature_setting?:
+          | {
+              /** Operating mode requested from the device's primary temperature controller. */
+              controller_mode: 'heat' | 'off'
+              /** Temperature to which the controller should heat, in °C. The controller can retain this value while it is off. */
+              heating_set_point_celsius?: number | undefined
+              /** Temperature to which the controller should heat, in °F. The controller can retain this value while it is off. */
+              heating_set_point_fahrenheit?: number | undefined
+            }
+          | undefined
         /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
         named_sensors?:
           | {
@@ -188414,6 +197852,12 @@ export type Routes = {
               is_smoking_detected?: boolean | undefined
             }[]
           | undefined
+        /** Indicates whether the device represents spa water rather than pool water. Present only on pool and spa devices. */
+        is_spa?: boolean | undefined
+        /** Indicates whether the water is circulating. Temperature readings are only live while it is circulating. Omitted if the controller does not report it. */
+        is_water_circulating?: boolean | undefined
+        /** Salt level reported by the chlorinator, in parts per million. Omitted if the system has no salt chlorinator. */
+        salt_ppm?: number | undefined
         /** Indicates whether the device supports remote unlocking. */
         can_remotely_unlock?: boolean | undefined
         /** Indicates whether the device supports remote locking. */
@@ -188475,6 +197919,8 @@ export type Routes = {
         can_play_speaker_favorite?: boolean | undefined
         /** Indicates whether the speaker supports playing an audio clip from a URL. */
         can_play_speaker_audio_clip?: boolean | undefined
+        /** Indicates whether the device supports controlling its primary target temperature. */
+        can_control_temperature?: boolean | undefined
       }[]
       /**
        * @deprecated Use devices.*/
@@ -188540,6 +197986,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
+          | ('hayward_pool_system' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -188556,6 +198003,7 @@ export type Routes = {
           | 'thermostat'
           | 'battery'
           | 'phone'
+          | 'pool'
         )[]
         /** Indicates whether the device is online. */
         is_online: boolean
@@ -190474,6 +199922,14 @@ export type Routes = {
               /** Date and time at which Seam created the warning. */
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'service_mode'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'provider_issue'
             }
           | {
@@ -190585,6 +200041,17 @@ export type Routes = {
         occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
+        /** Current setting of the device's primary temperature controller. */
+        temperature_setting?:
+          | {
+              /** Operating mode requested from the device's primary temperature controller. */
+              controller_mode: 'heat' | 'off'
+              /** Temperature to which the controller should heat, in °C. The controller can retain this value while it is off. */
+              heating_set_point_celsius?: number | undefined
+              /** Temperature to which the controller should heat, in °F. The controller can retain this value while it is off. */
+              heating_set_point_fahrenheit?: number | undefined
+            }
+          | undefined
         /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
         named_sensors?:
           | {
@@ -190618,6 +200085,12 @@ export type Routes = {
               is_smoking_detected?: boolean | undefined
             }[]
           | undefined
+        /** Indicates whether the device represents spa water rather than pool water. Present only on pool and spa devices. */
+        is_spa?: boolean | undefined
+        /** Indicates whether the water is circulating. Temperature readings are only live while it is circulating. Omitted if the controller does not report it. */
+        is_water_circulating?: boolean | undefined
+        /** Salt level reported by the chlorinator, in parts per million. Omitted if the system has no salt chlorinator. */
+        salt_ppm?: number | undefined
         /** Indicates whether the device supports remote unlocking. */
         can_remotely_unlock?: boolean | undefined
         /** Indicates whether the device supports remote locking. */
@@ -190679,6 +200152,8 @@ export type Routes = {
         can_play_speaker_favorite?: boolean | undefined
         /** Indicates whether the speaker supports playing an audio clip from a URL. */
         can_play_speaker_audio_clip?: boolean | undefined
+        /** Indicates whether the device supports controlling its primary target temperature. */
+        can_control_temperature?: boolean | undefined
       }[]
     }
     maxDuration: undefined
@@ -193469,6 +202944,7 @@ export type Routes = {
                   )
                 | 'sonos_speaker'
                 | 'alertify_sensor'
+                | ('hayward_pool_system' | 'hayward_pool')
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -193485,6 +202961,7 @@ export type Routes = {
                 | 'thermostat'
                 | 'battery'
                 | 'phone'
+                | 'pool'
               )[]
               /** Indicates whether the device is online. */
               is_online: boolean
@@ -195478,6 +204955,14 @@ export type Routes = {
                     /** Date and time at which Seam created the warning. */
                     created_at: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'service_mode'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'provider_issue'
                   }
                 | {
@@ -195589,6 +205074,17 @@ export type Routes = {
               occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
+              /** Current setting of the device's primary temperature controller. */
+              temperature_setting?:
+                | {
+                    /** Operating mode requested from the device's primary temperature controller. */
+                    controller_mode: 'heat' | 'off'
+                    /** Temperature to which the controller should heat, in °C. The controller can retain this value while it is off. */
+                    heating_set_point_celsius?: number | undefined
+                    /** Temperature to which the controller should heat, in °F. The controller can retain this value while it is off. */
+                    heating_set_point_fahrenheit?: number | undefined
+                  }
+                | undefined
               /** Additional sensors of the same kind on the device, each with a stable `sensor_name`. Present only when the device has more than one sensor of a kind or no single main sensor. */
               named_sensors?:
                 | {
@@ -195622,6 +205118,12 @@ export type Routes = {
                     is_smoking_detected?: boolean | undefined
                   }[]
                 | undefined
+              /** Indicates whether the device represents spa water rather than pool water. Present only on pool and spa devices. */
+              is_spa?: boolean | undefined
+              /** Indicates whether the water is circulating. Temperature readings are only live while it is circulating. Omitted if the controller does not report it. */
+              is_water_circulating?: boolean | undefined
+              /** Salt level reported by the chlorinator, in parts per million. Omitted if the system has no salt chlorinator. */
+              salt_ppm?: number | undefined
               /** Indicates whether the device supports remote unlocking. */
               can_remotely_unlock?: boolean | undefined
               /** Indicates whether the device supports remote locking. */
@@ -195685,6 +205187,8 @@ export type Routes = {
               can_play_speaker_favorite?: boolean | undefined
               /** Indicates whether the speaker supports playing an audio clip from a URL. */
               can_play_speaker_audio_clip?: boolean | undefined
+              /** Indicates whether the device supports controlling its primary target temperature. */
+              can_control_temperature?: boolean | undefined
             }[]
           | undefined
         acs_entrances?:
@@ -198984,6 +208488,44 @@ export type Routes = {
                   result: null
                   /** Errors associated with the action attempt. Null for pending action attempts. */
                   error: null
+                  /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+                  action_type: 'SET_POOL_HEATING'
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'success'
+                  /** Errors associated with the action attempt. Null for successful action attempts. */
+                  error: null
+                  /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+                  action_type: 'SET_POOL_HEATING'
+                  /** Result of the action. */
+                  result: {}
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'error'
+                  /** Result of the action attempt. Null for failed action attempts. */
+                  result: null
+                  /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+                  action_type: 'SET_POOL_HEATING'
+                  /** Error associated with the action. */
+                  error: {
+                    /** Type of the error. */
+                    type: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                  }
+                }
+              | {
+                  /** ID of the action attempt. */
+                  action_attempt_id: string
+                  status: 'pending'
+                  /** Result of the action attempt. Null for pending action attempts. */
+                  result: null
+                  /** Errors associated with the action attempt. Null for pending action attempts. */
+                  error: null
                   /** Syncing access codes is pending. */
                   action_type: 'SYNC_ACCESS_CODES'
                 }
@@ -199870,6 +209412,7 @@ export type Routes = {
                   )
                 | 'sonos_speaker'
                 | 'alertify_sensor'
+                | ('hayward_pool_system' | 'hayward_pool')
               /** Unique identifier for the account associated with the device. */
               connected_account_id: string
               /** Location information for the device. */
@@ -199899,6 +209442,7 @@ export type Routes = {
                 | 'thermostat'
                 | 'battery'
                 | 'phone'
+                | 'pool'
               )[]
               /** Unique identifier for the Seam workspace associated with the device. */
               workspace_id: string
@@ -200239,6 +209783,14 @@ export type Routes = {
                     /** Date and time at which Seam created the warning. */
                     created_at: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'service_mode'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'provider_issue'
                   }
                 | {
@@ -200447,6 +209999,8 @@ export type Routes = {
               can_play_speaker_favorite?: boolean | undefined
               /** Indicates whether the speaker supports playing an audio clip from a URL. */
               can_play_speaker_audio_clip?: boolean | undefined
+              /** Indicates whether the device supports controlling its primary target temperature. */
+              can_control_temperature?: boolean | undefined
             }[]
           | undefined
         connect_webviews?:
@@ -200473,6 +210027,7 @@ export type Routes = {
                 | 'access_control'
                 | 'camera'
                 | 'speaker'
+                | 'pool'
               )[]
               /**
                * @deprecated Unused. Will be removed.*/
@@ -201199,6 +210754,7 @@ export type Routes = {
                 | 'access_control'
                 | 'camera'
                 | 'speaker'
+                | 'pool'
               )[]
               /** Default reservation check-in time for this connected account, as `HH:mm` (24-hour). Sourced from the connector configuration — set during the connect_webview for providers like Lodgify whose API does not expose check-in times. */
               default_checkin_time?: string | undefined
@@ -209547,6 +219103,44 @@ export type Routes = {
             result: null
             /** Action attempt to track the status of playing an audio clip on a speaker. */
             action_type: 'PLAY_SPEAKER_AUDIO_CLIP'
+            /** Error associated with the action. */
+            error: {
+              /** Type of the error. */
+              type: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+            }
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
+            result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
+            error: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
+            /** Result of the action. */
+            result: {}
+          }
+        | {
+            /** ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
+            result: null
+            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_POOL_HEATING'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
