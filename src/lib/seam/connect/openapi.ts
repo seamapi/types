@@ -32361,11 +32361,6 @@ const openapi: OpenAPISpec = {
             description:
               'A camera was activated, for example, by motion detection. For Ring cameras, this event is available only in the Seam Console, not through the API or webhooks.',
             properties: {
-              activation_reason: {
-                description: 'The reason the camera was activated.',
-                enum: ['motion_detected'],
-                type: 'string',
-              },
               connected_account_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -32420,6 +32415,11 @@ const openapi: OpenAPISpec = {
                 format: 'uri',
                 type: 'string',
               },
+              is_motion_detected: {
+                description:
+                  'Whether motion detection activated the camera, if known.',
+                type: 'boolean',
+              },
               media_ids: {
                 description:
                   'IDs of the media, such as a video clip and a thumbnail image, captured for this activation. Use `/media/get` to retrieve each one.',
@@ -32456,7 +32456,6 @@ const openapi: OpenAPISpec = {
               'device_id',
               'connected_account_id',
               'event_type',
-              'activation_reason',
             ],
             type: 'object',
             'x-route-path': '/devices',
