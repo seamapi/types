@@ -18356,6 +18356,10 @@ export type Routes = {
               custom_metadata: {
                 [x: string]: string | boolean
               }
+              /** ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent. */
+              parent_device_id?: string | undefined
+              /** IDs of the child devices that belong to this device. Only present when the device has at least one child. */
+              child_device_ids?: string[] | undefined
               /** Provider of the device. Represents the third-party service through which the device is controlled. */
               device_provider?:
                 | {
@@ -28361,6 +28365,10 @@ export type Routes = {
               custom_metadata: {
                 [x: string]: string | boolean
               }
+              /** ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent. */
+              parent_device_id?: string | undefined
+              /** IDs of the child devices that belong to this device. Only present when the device has at least one child. */
+              child_device_ids?: string[] | undefined
               /** Provider of the device. Represents the third-party service through which the device is controlled. */
               device_provider?:
                 | {
@@ -60971,6 +60979,10 @@ export type Routes = {
         custom_metadata: {
           [x: string]: string | boolean
         }
+        /** ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent. */
+        parent_device_id?: string | undefined
+        /** IDs of the child devices that belong to this device. Only present when the device has at least one child. */
+        child_device_ids?: string[] | undefined
         /** Provider of the device. Represents the third-party service through which the device is controlled. */
         device_provider?:
           | {
@@ -61438,6 +61450,8 @@ export type Routes = {
       space_id?: string | undefined
       /** String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`. */
       search?: string | undefined
+      /** ID of the parent device whose child devices you want to list. */
+      parent_device_id?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -63510,6 +63524,10 @@ export type Routes = {
         custom_metadata: {
           [x: string]: string | boolean
         }
+        /** ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent. */
+        parent_device_id?: string | undefined
+        /** IDs of the child devices that belong to this device. Only present when the device has at least one child. */
+        child_device_ids?: string[] | undefined
         /** Provider of the device. Represents the third-party service through which the device is controlled. */
         device_provider?:
           | {
@@ -66222,6 +66240,8 @@ export type Routes = {
         | undefined
       /** String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`. */
       search?: string | undefined
+      /** ID of the parent device whose child devices you want to list. */
+      parent_device_id?: string | undefined
       /** Numerical limit on the number of devices to return. */
       limit?: number
     }
@@ -80482,6 +80502,10 @@ export type Routes = {
         custom_metadata: {
           [x: string]: string | boolean
         }
+        /** ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent. */
+        parent_device_id?: string | undefined
+        /** IDs of the child devices that belong to this device. Only present when the device has at least one child. */
+        child_device_ids?: string[] | undefined
         /** Provider of the device. Represents the third-party service through which the device is controlled. */
         device_provider?:
           | {
@@ -82714,6 +82738,10 @@ export type Routes = {
         custom_metadata: {
           [x: string]: string | boolean
         }
+        /** ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent. */
+        parent_device_id?: string | undefined
+        /** IDs of the child devices that belong to this device. Only present when the device has at least one child. */
+        child_device_ids?: string[] | undefined
         /** Provider of the device. Represents the third-party service through which the device is controlled. */
         device_provider?:
           | {
@@ -85084,6 +85112,10 @@ export type Routes = {
         custom_metadata: {
           [x: string]: string | boolean
         }
+        /** ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent. */
+        parent_device_id?: string | undefined
+        /** IDs of the child devices that belong to this device. Only present when the device has at least one child. */
+        child_device_ids?: string[] | undefined
         /** Provider of the device. Represents the third-party service through which the device is controlled. */
         device_provider?:
           | {
@@ -87315,6 +87347,10 @@ export type Routes = {
         custom_metadata: {
           [x: string]: string | boolean
         }
+        /** ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent. */
+        parent_device_id?: string | undefined
+        /** IDs of the child devices that belong to this device. Only present when the device has at least one child. */
+        child_device_ids?: string[] | undefined
         /** Provider of the device. Represents the third-party service through which the device is controlled. */
         device_provider?:
           | {
@@ -99949,6 +99985,10 @@ export type Routes = {
         custom_metadata: {
           [x: string]: string | boolean
         }
+        /** ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent. */
+        parent_device_id?: string | undefined
+        /** IDs of the child devices that belong to this device. Only present when the device has at least one child. */
+        child_device_ids?: string[] | undefined
         /** Provider of the device. Represents the third-party service through which the device is controlled. */
         device_provider?:
           | {
@@ -102180,6 +102220,10 @@ export type Routes = {
         custom_metadata: {
           [x: string]: string | boolean
         }
+        /** ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent. */
+        parent_device_id?: string | undefined
+        /** IDs of the child devices that belong to this device. Only present when the device has at least one child. */
+        child_device_ids?: string[] | undefined
         /** Provider of the device. Represents the third-party service through which the device is controlled. */
         device_provider?:
           | {
@@ -116338,6 +116382,10 @@ export type Routes = {
         custom_metadata: {
           [x: string]: string | boolean
         }
+        /** ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent. */
+        parent_device_id?: string | undefined
+        /** IDs of the child devices that belong to this device. Only present when the device has at least one child. */
+        child_device_ids?: string[] | undefined
         /** Provider of the device. Represents the third-party service through which the device is controlled. */
         device_provider?:
           | {
@@ -139726,6 +139774,10 @@ export type Routes = {
               custom_metadata: {
                 [x: string]: string | boolean
               }
+              /** ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent. */
+              parent_device_id?: string | undefined
+              /** IDs of the child devices that belong to this device. Only present when the device has at least one child. */
+              child_device_ids?: string[] | undefined
               /** Provider of the device. Represents the third-party service through which the device is controlled. */
               device_provider?:
                 | {
@@ -174315,6 +174367,10 @@ export type Routes = {
         custom_metadata: {
           [x: string]: string | boolean
         }
+        /** ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent. */
+        parent_device_id?: string | undefined
+        /** IDs of the child devices that belong to this device. Only present when the device has at least one child. */
+        child_device_ids?: string[] | undefined
         /** Provider of the device. Represents the third-party service through which the device is controlled. */
         device_provider?:
           | {
@@ -181779,6 +181835,10 @@ export type Routes = {
         custom_metadata: {
           [x: string]: string | boolean
         }
+        /** ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent. */
+        parent_device_id?: string | undefined
+        /** IDs of the child devices that belong to this device. Only present when the device has at least one child. */
+        child_device_ids?: string[] | undefined
         /** Provider of the device. Represents the third-party service through which the device is controlled. */
         device_provider?:
           | {
@@ -184010,6 +184070,10 @@ export type Routes = {
         custom_metadata: {
           [x: string]: string | boolean
         }
+        /** ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent. */
+        parent_device_id?: string | undefined
+        /** IDs of the child devices that belong to this device. Only present when the device has at least one child. */
+        child_device_ids?: string[] | undefined
         /** Provider of the device. Represents the third-party service through which the device is controlled. */
         device_provider?:
           | {
@@ -197760,6 +197824,10 @@ export type Routes = {
         custom_metadata: {
           [x: string]: string | boolean
         }
+        /** ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent. */
+        parent_device_id?: string | undefined
+        /** IDs of the child devices that belong to this device. Only present when the device has at least one child. */
+        child_device_ids?: string[] | undefined
         /** Provider of the device. Represents the third-party service through which the device is controlled. */
         device_provider?:
           | {
@@ -199993,6 +200061,10 @@ export type Routes = {
         custom_metadata: {
           [x: string]: string | boolean
         }
+        /** ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent. */
+        parent_device_id?: string | undefined
+        /** IDs of the child devices that belong to this device. Only present when the device has at least one child. */
+        child_device_ids?: string[] | undefined
         /** Provider of the device. Represents the third-party service through which the device is controlled. */
         device_provider?:
           | {
@@ -205026,6 +205098,10 @@ export type Routes = {
               custom_metadata: {
                 [x: string]: string | boolean
               }
+              /** ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent. */
+              parent_device_id?: string | undefined
+              /** IDs of the child devices that belong to this device. Only present when the device has at least one child. */
+              child_device_ids?: string[] | undefined
               /** Provider of the device. Represents the third-party service through which the device is controlled. */
               device_provider?:
                 | {

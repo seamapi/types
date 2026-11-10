@@ -16014,6 +16014,13 @@ const openapi: OpenAPISpec = {
             },
             type: 'array',
           },
+          child_device_ids: {
+            description:
+              'IDs of the child devices that belong to this device. Only present when the device has at least one child.',
+            items: { format: 'uuid', type: 'string' },
+            type: 'array',
+            'x-undocumented': 'Unreleased.',
+          },
           co2_ppm: {
             description:
               'Carbon dioxide concentration in parts per million, if the device measures it.',
@@ -16991,6 +16998,13 @@ const openapi: OpenAPISpec = {
             format: 'float',
             type: 'number',
             'x-property-group-key': 'sensors',
+          },
+          parent_device_id: {
+            description:
+              'ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent.',
+            format: 'uuid',
+            type: 'string',
+            'x-undocumented': 'Unreleased.',
           },
           properties: {
             allOf: [
@@ -57199,6 +57213,17 @@ const openapi: OpenAPISpec = {
               type: 'string',
             },
           },
+          {
+            in: 'query',
+            name: 'parent_device_id',
+            schema: {
+              description:
+                'ID of the parent device whose child devices you want to list.',
+              format: 'uuid',
+              type: 'string',
+              'x-undocumented': 'Unreleased.',
+            },
+          },
         ],
         responses: {
           '200': {
@@ -59527,6 +59552,17 @@ const openapi: OpenAPISpec = {
                 'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
               minLength: 1,
               type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'parent_device_id',
+            schema: {
+              description:
+                'ID of the parent device whose child devices you want to list.',
+              format: 'uuid',
+              type: 'string',
+              'x-undocumented': 'Unreleased.',
             },
           },
           {
@@ -62139,7 +62175,8 @@ const openapi: OpenAPISpec = {
     },
     '/pools/list': {
       get: {
-        description: 'Returns a list of all pool controllers, pools, and spas.',
+        description:
+          'Returns a list of all pool controllers, pools, and spas. Each controller lists its pools and spas in `child_device_ids`, and each pool or spa carries its controller in `parent_device_id`.',
         operationId: 'poolsListGet',
         parameters: [
           {
