@@ -17740,6 +17740,50 @@ const openapi: OpenAPISpec = {
                         },
                         type: 'object',
                       },
+                      hayward_omnilogic_metadata: {
+                        description:
+                          'Metadata for a Hayward OmniLogic pool controller or body of water.',
+                        properties: {
+                          backyard_name: {
+                            description:
+                              'Name of the system, as set in the Hayward OmniLogic app.',
+                            type: 'string',
+                          },
+                          body_of_water_id: {
+                            description:
+                              'ID of the body of water within its system. Only present on a pool or spa body.',
+                            type: 'string',
+                          },
+                          body_of_water_name: {
+                            description:
+                              'Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body.',
+                            type: 'string',
+                          },
+                          is_shared_equipment: {
+                            description:
+                              'Indicates whether the body of water shares its pump and heater with another body of water in the same system.',
+                            type: 'boolean',
+                          },
+                          msp_system_id: {
+                            description:
+                              'ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to.',
+                            type: 'string',
+                          },
+                          shared_equipment_priority: {
+                            description:
+                              'Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat.',
+                            enum: ['high', 'low'],
+                            type: 'string',
+                          },
+                          virtual_heater_id: {
+                            description:
+                              'ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body.',
+                            type: 'string',
+                          },
+                        },
+                        type: 'object',
+                        'x-undocumented': 'Unreleased.',
+                      },
                       honeywell_resideo_metadata: {
                         description: 'Metadata for a Honeywell Resideo device.',
                         properties: {
@@ -21370,6 +21414,7 @@ const openapi: OpenAPISpec = {
               'aqara',
               'eufy',
               'sonos',
+              'hayward_omnilogic',
             ],
             type: 'string',
           },
@@ -52851,6 +52896,7 @@ const openapi: OpenAPISpec = {
                         'aqara',
                         'eufy',
                         'sonos',
+                        'hayward_omnilogic',
                         'hid_cm',
                         'google_nest',
                         'slack',
@@ -57026,6 +57072,7 @@ const openapi: OpenAPISpec = {
                 'slack',
                 'yacan',
                 'sonos',
+                'hayward_omnilogic',
               ],
               type: 'string',
             },
@@ -59422,6 +59469,7 @@ const openapi: OpenAPISpec = {
                 'slack',
                 'yacan',
                 'sonos',
+                'hayward_omnilogic',
               ],
               type: 'string',
             },
