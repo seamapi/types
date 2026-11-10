@@ -85,6 +85,7 @@ export {
   room_resource,
   space,
   space_customer_data,
+  space_geolocation,
   neutral_resource as space_resource,
   speaker_device_type,
   staff_member_resource,

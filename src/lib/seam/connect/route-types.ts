@@ -141380,6 +141380,15 @@ export type Routes = {
             address?: (string | null) | undefined
           }
         | undefined
+      /** Geographic coordinates of the space. Pass null to clear them. Seam keeps this value until the connected PMS reports different coordinates for the space. */
+      geolocation?:
+        | ({
+            /** Latitude of the space, in decimal degrees. */
+            latitude: number
+            /** Longitude of the space, in decimal degrees. */
+            longitude: number
+          } | null)
+        | undefined
       /** Reassign this space to the parent space (site) with this `parent_space_id`. */
       parent_space_id?: string | undefined
       /** Reassign this space to the parent space (site) with this `parent_space_key`. */
