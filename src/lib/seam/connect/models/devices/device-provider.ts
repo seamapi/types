@@ -250,5 +250,6 @@ export const PROVIDER_CATEGORY_CAPABILITY_MAP: Record<
     'access_control',
     'camera',
     'speaker',
+    'pool',
   ],
 }

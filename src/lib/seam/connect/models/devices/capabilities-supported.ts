@@ -7,6 +7,7 @@ export const capabilities = z.enum([
   'thermostat',
   'battery',
   'phone',
+  'pool',
 ]).describe(`
         Collection of capabilities that the device supports when connected to Seam. **Important:** Superseded by [capability flags](https://www.seam.co/docs/capability-guides/device-and-system-capabilities#capability-flags).
         `)
