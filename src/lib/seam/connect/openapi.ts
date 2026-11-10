@@ -13001,6 +13001,127 @@ const openapi: OpenAPISpec = {
             'x-undocumented': 'Unreleased.',
           },
           {
+            description:
+              'Setting the pool heating is pending. The controller has not yet reported the requested state back.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back.',
+                enum: ['SET_POOL_HEATING'],
+                type: 'string',
+                'x-undocumented': 'Unreleased.',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+            'x-undocumented': 'Unreleased.',
+          },
+          {
+            description:
+              'Setting the pool heating succeeded. The controller reported the requested state back.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back.',
+                enum: ['SET_POOL_HEATING'],
+                type: 'string',
+                'x-undocumented': 'Unreleased.',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
+              result: {
+                description: 'Result of the action.',
+                properties: {},
+                type: 'object',
+              },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+            'x-undocumented': 'Unreleased.',
+          },
+          {
+            description: 'Setting the pool heating failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                description:
+                  'Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back.',
+                enum: ['SET_POOL_HEATING'],
+                type: 'string',
+                'x-undocumented': 'Unreleased.',
+              },
+              error: {
+                description: 'Error associated with the action.',
+                properties: {
+                  message: {
+                    description:
+                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                    type: 'string',
+                  },
+                  type: { description: 'Type of the error.', type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+            'x-undocumented': 'Unreleased.',
+          },
+          {
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -14315,6 +14436,7 @@ const openapi: OpenAPISpec = {
                 'access_control',
                 'camera',
                 'speaker',
+                'pool',
               ],
               type: 'string',
             },
@@ -14483,6 +14605,7 @@ const openapi: OpenAPISpec = {
                 'access_control',
                 'camera',
                 'speaker',
+                'pool',
               ],
               type: 'string',
             },
@@ -15723,6 +15846,12 @@ const openapi: OpenAPISpec = {
               'Indicates whether the lock supports configuring automatic locking.',
             type: 'boolean',
           },
+          can_control_temperature: {
+            description:
+              'Indicates whether the device supports controlling its primary target temperature.',
+            type: 'boolean',
+            'x-undocumented': 'Unreleased.',
+          },
           can_hvac_cool: {
             description: 'Indicates whether the thermostat supports cooling.',
             type: 'boolean',
@@ -15879,10 +16008,18 @@ const openapi: OpenAPISpec = {
                 'thermostat',
                 'battery',
                 'phone',
+                'pool',
               ],
               type: 'string',
             },
             type: 'array',
+          },
+          child_device_ids: {
+            description:
+              'IDs of the child devices that belong to this device. Only present when the device has at least one child.',
+            items: { format: 'uuid', type: 'string' },
+            type: 'array',
+            'x-undocumented': 'Unreleased.',
           },
           co2_ppm: {
             description:
@@ -16071,6 +16208,13 @@ const openapi: OpenAPISpec = {
                 description: 'Device type for environmental sensors.',
                 enum: ['alertify_sensor'],
                 type: 'string',
+              },
+              {
+                description:
+                  'Device type for pool controllers, pools, and spas.',
+                enum: ['hayward_pool_system', 'hayward_pool'],
+                type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
             ],
           },
@@ -16639,6 +16783,7 @@ const openapi: OpenAPISpec = {
               locks: { name: 'Locks' },
               noise_sensors: { name: 'Noise Sensors' },
               phones: { name: 'Phones' },
+              pools: { name: 'Pools' },
               provider_metadata: { name: 'Provider Metadata' },
               thermostats: { name: 'Thermostats' },
             },
@@ -16672,6 +16817,20 @@ const openapi: OpenAPISpec = {
               'Indicates whether the device detects smoking, if the device measures it.',
             type: 'boolean',
             'x-property-group-key': 'sensors',
+          },
+          is_spa: {
+            description:
+              'Indicates whether the device represents spa water rather than pool water. Present only on pool and spa devices.',
+            type: 'boolean',
+            'x-property-group-key': 'pools',
+            'x-undocumented': 'Unreleased.',
+          },
+          is_water_circulating: {
+            description:
+              'Indicates whether the water is circulating. Temperature readings are only live while it is circulating. Omitted if the controller does not report it.',
+            type: 'boolean',
+            'x-property-group-key': 'pools',
+            'x-undocumented': 'Unreleased.',
           },
           location: {
             description: 'Location information for the device.',
@@ -16839,6 +16998,13 @@ const openapi: OpenAPISpec = {
             format: 'float',
             type: 'number',
             'x-property-group-key': 'sensors',
+          },
+          parent_device_id: {
+            description:
+              'ID of the parent device that this device belongs to, such as the pool controller of a pool or spa body of water. Omitted if the device does not have a parent.',
+            format: 'uuid',
+            type: 'string',
+            'x-undocumented': 'Unreleased.',
           },
           properties: {
             allOf: [
@@ -20059,6 +20225,14 @@ const openapi: OpenAPISpec = {
             type: 'number',
             'x-property-group-key': 'sensors',
           },
+          salt_ppm: {
+            description:
+              'Salt level reported by the chlorinator, in parts per million. Omitted if the system has no salt chlorinator.',
+            format: 'float',
+            type: 'number',
+            'x-property-group-key': 'pools',
+            'x-undocumented': 'Unreleased.',
+          },
           space_ids: {
             description: 'IDs of the spaces the device is in.',
             items: { format: 'uuid', type: 'string' },
@@ -20077,6 +20251,34 @@ const openapi: OpenAPISpec = {
             format: 'float',
             type: 'number',
             'x-property-group-key': 'sensors',
+          },
+          temperature_setting: {
+            description:
+              "Current setting of the device's primary temperature controller.",
+            properties: {
+              controller_mode: {
+                description:
+                  "Operating mode requested from the device's primary temperature controller.",
+                enum: ['heat', 'off'],
+                type: 'string',
+              },
+              heating_set_point_celsius: {
+                description:
+                  'Temperature to which the controller should heat, in °C. The controller can retain this value while it is off.',
+                format: 'float',
+                type: 'number',
+              },
+              heating_set_point_fahrenheit: {
+                description:
+                  'Temperature to which the controller should heat, in °F. The controller can retain this value while it is off.',
+                format: 'float',
+                type: 'number',
+              },
+            },
+            required: ['controller_mode'],
+            type: 'object',
+            'x-property-group-key': 'temperature_controllers',
+            'x-undocumented': 'Unreleased.',
           },
           warnings: {
             description:
@@ -20655,6 +20857,33 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
+                    'Indicates that a technician has put the pool controller in service mode. Schedules and remote changes will not run until it is switched back.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['service_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-undocumented': 'Unreleased.',
+                  'x-variant-group-key': 'pools',
+                },
+                {
+                  description:
                     'Indicates a provider-specific issue that may affect device functionality.',
                   properties: {
                     created_at: {
@@ -20859,6 +21088,7 @@ const openapi: OpenAPISpec = {
               locks: { name: 'Locks' },
               noise_sensors: { name: 'Noise Sensors' },
               phones: { name: 'Phones' },
+              pools: { name: 'Pools' },
               provider_metadata: { name: 'Provider Metadata' },
               thermostats: { name: 'Thermostats' },
             },
@@ -20892,9 +21122,11 @@ const openapi: OpenAPISpec = {
           locks: { name: 'Locks' },
           noise_sensors: { name: 'Noise Sensors' },
           phones: { name: 'Phones' },
+          pools: { name: 'Pools' },
           provider_metadata: { name: 'Provider Metadata' },
           sensors: { name: 'Sensors' },
           speakers: { name: 'Speakers' },
+          temperature_controllers: { name: 'Temperature Controllers' },
           thermostats: { name: 'Thermostats' },
         },
         'x-route-path': '/devices',
@@ -20910,6 +21142,12 @@ const openapi: OpenAPISpec = {
             description:
               'Indicates whether the lock supports configuring automatic locking.',
             type: 'boolean',
+          },
+          can_control_temperature: {
+            description:
+              'Indicates whether the device supports controlling its primary target temperature.',
+            type: 'boolean',
+            'x-undocumented': 'Unreleased.',
           },
           can_hvac_cool: {
             description: 'Indicates whether the thermostat supports cooling.',
@@ -33742,6 +33980,7 @@ const openapi: OpenAPISpec = {
               locks: { name: 'Locks' },
               noise_sensors: { name: 'Noise Sensors' },
               phones: { name: 'Phones' },
+              pools: { name: 'Pools' },
               provider_metadata: { name: 'Provider Metadata' },
               thermostats: { name: 'Thermostats' },
             },
@@ -34376,6 +34615,33 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
+                    'Indicates that a technician has put the pool controller in service mode. Schedules and remote changes will not run until it is switched back.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['service_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-undocumented': 'Unreleased.',
+                  'x-variant-group-key': 'pools',
+                },
+                {
+                  description:
                     'Indicates a provider-specific issue that may affect device functionality.',
                   properties: {
                     created_at: {
@@ -34580,6 +34846,7 @@ const openapi: OpenAPISpec = {
               locks: { name: 'Locks' },
               noise_sensors: { name: 'Noise Sensors' },
               phones: { name: 'Phones' },
+              pools: { name: 'Pools' },
               provider_metadata: { name: 'Provider Metadata' },
               thermostats: { name: 'Thermostats' },
             },
@@ -41323,6 +41590,12 @@ const openapi: OpenAPISpec = {
               'Indicates whether the lock supports configuring automatic locking.',
             type: 'boolean',
           },
+          can_control_temperature: {
+            description:
+              'Indicates whether the device supports controlling its primary target temperature.',
+            type: 'boolean',
+            'x-undocumented': 'Unreleased.',
+          },
           can_hvac_cool: {
             description: 'Indicates whether the thermostat supports cooling.',
             type: 'boolean',
@@ -41479,6 +41752,7 @@ const openapi: OpenAPISpec = {
                 'thermostat',
                 'battery',
                 'phone',
+                'pool',
               ],
               type: 'string',
             },
@@ -41601,6 +41875,13 @@ const openapi: OpenAPISpec = {
                 description: 'Device type for environmental sensors.',
                 enum: ['alertify_sensor'],
                 type: 'string',
+              },
+              {
+                description:
+                  'Device type for pool controllers, pools, and spas.',
+                enum: ['hayward_pool_system', 'hayward_pool'],
+                type: 'string',
+                'x-undocumented': 'Unreleased.',
               },
             ],
           },
@@ -42169,6 +42450,7 @@ const openapi: OpenAPISpec = {
               locks: { name: 'Locks' },
               noise_sensors: { name: 'Noise Sensors' },
               phones: { name: 'Phones' },
+              pools: { name: 'Pools' },
               provider_metadata: { name: 'Provider Metadata' },
               thermostats: { name: 'Thermostats' },
             },
@@ -42949,6 +43231,33 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
+                    'Indicates that a technician has put the pool controller in service mode. Schedules and remote changes will not run until it is switched back.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['service_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-undocumented': 'Unreleased.',
+                  'x-variant-group-key': 'pools',
+                },
+                {
+                  description:
                     'Indicates a provider-specific issue that may affect device functionality.',
                   properties: {
                     created_at: {
@@ -43153,6 +43462,7 @@ const openapi: OpenAPISpec = {
               locks: { name: 'Locks' },
               noise_sensors: { name: 'Noise Sensors' },
               phones: { name: 'Phones' },
+              pools: { name: 'Pools' },
               provider_metadata: { name: 'Provider Metadata' },
               thermostats: { name: 'Thermostats' },
             },
@@ -52455,6 +52765,7 @@ const openapi: OpenAPISpec = {
                         'access_control',
                         'camera',
                         'speaker',
+                        'pool',
                       ],
                       type: 'string',
                     },
@@ -53243,6 +53554,7 @@ const openapi: OpenAPISpec = {
                         'access_control',
                         'camera',
                         'speaker',
+                        'pool',
                       ],
                       type: 'string',
                     },
@@ -56527,6 +56839,13 @@ const openapi: OpenAPISpec = {
                   enum: ['alertify_sensor'],
                   type: 'string',
                 },
+                {
+                  description:
+                    'Device type for pool controllers, pools, and spas.',
+                  enum: ['hayward_pool_system', 'hayward_pool'],
+                  type: 'string',
+                  'x-undocumented': 'Unreleased.',
+                },
               ],
             },
           },
@@ -56626,6 +56945,13 @@ const openapi: OpenAPISpec = {
                     description: 'Device type for environmental sensors.',
                     enum: ['alertify_sensor'],
                     type: 'string',
+                  },
+                  {
+                    description:
+                      'Device type for pool controllers, pools, and spas.',
+                    enum: ['hayward_pool_system', 'hayward_pool'],
+                    type: 'string',
+                    'x-undocumented': 'Unreleased.',
                   },
                 ],
               },
@@ -56804,6 +57130,7 @@ const openapi: OpenAPISpec = {
                   'can_play_speaker_chime',
                   'can_play_speaker_favorite',
                   'can_play_speaker_audio_clip',
+                  'can_control_temperature',
                 ],
                 type: 'string',
               },
@@ -56847,6 +57174,7 @@ const openapi: OpenAPISpec = {
                   'can_play_speaker_chime',
                   'can_play_speaker_favorite',
                   'can_play_speaker_audio_clip',
+                  'can_control_temperature',
                 ],
                 type: 'string',
               },
@@ -56883,6 +57211,17 @@ const openapi: OpenAPISpec = {
                 'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
               minLength: 1,
               type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'parent_device_id',
+            schema: {
+              description:
+                'ID of the parent device whose child devices you want to list.',
+              format: 'uuid',
+              type: 'string',
+              'x-undocumented': 'Unreleased.',
             },
           },
         ],
@@ -58896,6 +59235,13 @@ const openapi: OpenAPISpec = {
                   enum: ['alertify_sensor'],
                   type: 'string',
                 },
+                {
+                  description:
+                    'Device type for pool controllers, pools, and spas.',
+                  enum: ['hayward_pool_system', 'hayward_pool'],
+                  type: 'string',
+                  'x-undocumented': 'Unreleased.',
+                },
               ],
             },
           },
@@ -58995,6 +59341,13 @@ const openapi: OpenAPISpec = {
                     description: 'Device type for environmental sensors.',
                     enum: ['alertify_sensor'],
                     type: 'string',
+                  },
+                  {
+                    description:
+                      'Device type for pool controllers, pools, and spas.',
+                    enum: ['hayward_pool_system', 'hayward_pool'],
+                    type: 'string',
+                    'x-undocumented': 'Unreleased.',
                   },
                 ],
               },
@@ -59139,6 +59492,7 @@ const openapi: OpenAPISpec = {
                   'can_play_speaker_chime',
                   'can_play_speaker_favorite',
                   'can_play_speaker_audio_clip',
+                  'can_control_temperature',
                 ],
                 type: 'string',
               },
@@ -59182,6 +59536,7 @@ const openapi: OpenAPISpec = {
                   'can_play_speaker_chime',
                   'can_play_speaker_favorite',
                   'can_play_speaker_audio_clip',
+                  'can_control_temperature',
                 ],
                 type: 'string',
               },
@@ -59197,6 +59552,17 @@ const openapi: OpenAPISpec = {
                 'String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`.',
               minLength: 1,
               type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'parent_device_id',
+            schema: {
+              description:
+                'ID of the parent device whose child devices you want to list.',
+              format: 'uuid',
+              type: 'string',
+              'x-undocumented': 'Unreleased.',
             },
           },
           {
@@ -61732,6 +62098,242 @@ const openapi: OpenAPISpec = {
         'x-fern-sdk-return-value': 'phone',
         'x-response-key': 'phone',
         'x-title': 'Create a Sandbox Phone',
+      },
+    },
+    '/pools/heat': {
+      post: {
+        description:
+          "Requests heating of specified pool or spa water to a set point. The set point must be within the range reported by the device's `properties.min_heating_set_point_*` and `properties.max_heating_set_point_*` fields. The returned action attempt stays `pending` until the pool controller reports the requested state back, which can take up to 90 seconds, and fails with `pool_heating_confirmation_timeout` if it never does. To check whether the water supports temperature control, use `device.can_control_temperature`.",
+        operationId: 'poolsHeatPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the device for the pool or spa water that you want to heat.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  heating_set_point_celsius: {
+                    description:
+                      'Target water temperature in °C. Provide exactly one of `heating_set_point_celsius` and `heating_set_point_fahrenheit`.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  heating_set_point_fahrenheit: {
+                    description:
+                      'Target water temperature in °F. Provide exactly one of `heating_set_point_celsius` and `heating_set_point_fahrenheit`.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/pools/heat',
+        tags: [],
+        'x-action-attempt-type': 'SET_POOL_HEATING',
+        'x-fern-sdk-group-name': ['pools'],
+        'x-fern-sdk-method-name': 'heat',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Heat a Pool or Spa',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/pools/list': {
+      get: {
+        description:
+          'Returns a list of all pool controllers, pools, and spas. Each controller lists its pools and spas in `child_device_ids`, and each pool or spa carries its controller in `parent_device_id`.',
+        operationId: 'poolsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'customer_key',
+            schema: {
+              description: 'Customer key for which you want to list devices.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connected_account_id',
+            schema: {
+              description:
+                'ID of the connected account for which you want to list devices.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'connect_webview_id',
+            schema: {
+              description:
+                'ID of the Connect Webview for which you want to list devices.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_type',
+            schema: {
+              description:
+                'Device type by which you want to filter pool devices.',
+              enum: ['hayward_pool_system', 'hayward_pool'],
+              type: 'string',
+              'x-undocumented': 'Unreleased.',
+            },
+          },
+          {
+            in: 'query',
+            name: 'device_types',
+            schema: {
+              description:
+                'Array of device types by which you want to filter pool devices.',
+              items: {
+                description:
+                  'Device type for pool controllers, pools, and spas.',
+                enum: ['hayward_pool_system', 'hayward_pool'],
+                type: 'string',
+                'x-undocumented': 'Unreleased.',
+              },
+              type: 'array',
+            },
+          },
+        ],
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    devices: {
+                      items: { $ref: '#/components/schemas/device' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['devices', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { client_session: [] },
+          { support_read_only_token: [] },
+        ],
+        summary: '/pools/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['pools'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'devices',
+        'x-response-key': 'devices',
+        'x-title': 'List Pool Devices',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
+    '/pools/turn_off': {
+      post: {
+        description:
+          'Turns off the temperature controller of specified pool or spa water. The set point is left unchanged, and other equipment such as pumps, lights, and chlorinators is not affected. The returned action attempt stays `pending` until the pool controller reports temperature control as off, which can take up to 90 seconds, and fails with `pool_heating_confirmation_timeout` if it never does. To check whether the water supports temperature control, use `device.can_control_temperature`.',
+        operationId: 'poolsTurnOffPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description:
+                      'ID of the device for the pool or spa water whose temperature control you want to turn off.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/pools/turn_off',
+        tags: [],
+        'x-action-attempt-type': 'SET_POOL_HEATING',
+        'x-fern-sdk-group-name': ['pools'],
+        'x-fern-sdk-method-name': 'turn_off',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Turn Off Temperature Control of a Pool or Spa',
+        'x-undocumented': 'Unreleased.',
       },
     },
     '/seam/bridge/v1/bridge_client_sessions/create': {
