@@ -77584,6 +77584,31 @@ const openapi: OpenAPISpec = {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
+                  geolocation: {
+                    description:
+                      'Geographic coordinates of the space. Pass null to clear them. Seam keeps this value until the connected PMS reports different coordinates for the space.',
+                    nullable: true,
+                    properties: {
+                      latitude: {
+                        description:
+                          'Latitude of the space, in decimal degrees.',
+                        format: 'float',
+                        maximum: 90,
+                        minimum: -90,
+                        type: 'number',
+                      },
+                      longitude: {
+                        description:
+                          'Longitude of the space, in decimal degrees.',
+                        format: 'float',
+                        maximum: 180,
+                        minimum: -180,
+                        type: 'number',
+                      },
+                    },
+                    required: ['latitude', 'longitude'],
+                    type: 'object',
+                  },
                   name: { description: 'Name of the space.', type: 'string' },
                   parent_space_id: {
                     description:
