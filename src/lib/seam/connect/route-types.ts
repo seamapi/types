@@ -19236,6 +19236,14 @@ export type Routes = {
                     /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'salto_ks_custom_pins_not_supported'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'time_zone_does_not_match_location'
                     /**
                      * @deprecated this field is deprecated.*/
@@ -48340,6 +48348,14 @@ export type Routes = {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_custom_pins_not_supported'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'time_zone_does_not_match_location'
               /**
                * @deprecated this field is deprecated.*/
@@ -48574,6 +48590,14 @@ export type Routes = {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_custom_pins_not_supported'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'time_zone_does_not_match_location'
               /**
                * @deprecated this field is deprecated.*/
@@ -48797,6 +48821,14 @@ export type Routes = {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_ks_subscription_limit_almost_reached'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_custom_pins_not_supported'
             }
           | {
               /** Date and time at which Seam created the warning. */
@@ -140919,6 +140951,14 @@ export type Routes = {
                     /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'salto_ks_custom_pins_not_supported'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'time_zone_does_not_match_location'
                     /**
                      * @deprecated this field is deprecated.*/
@@ -201117,6 +201157,14 @@ export type Routes = {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_custom_pins_not_supported'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'time_zone_does_not_match_location'
               /**
                * @deprecated this field is deprecated.*/
@@ -206158,6 +206206,14 @@ export type Routes = {
                     message: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'salto_ks_subscription_limit_almost_reached'
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'salto_ks_custom_pins_not_supported'
                   }
                 | {
                     /** Date and time at which Seam created the warning. */

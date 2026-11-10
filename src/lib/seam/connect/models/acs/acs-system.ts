@@ -223,6 +223,16 @@ const salto_ks_subscription_limit_almost_reached = common_acs_system_warning
     'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site to rectify the issue.',
   )
 
+const salto_ks_custom_pins_not_supported = common_acs_system_warning
+  .extend({
+    warning_code: z
+      .literal('salto_ks_custom_pins_not_supported')
+      .describe(warning_code_description),
+  })
+  .describe(
+    "Indicates that the Salto KS site does not accept custom PIN codes, either because its Salto subscription does not include the Custom PIN feature or because Custom PIN is turned off in the site's settings. Salto KS generates every PIN on the site, so a PIN code requested on an access grant or reservation is replaced with a Salto-generated one. The message says which of the two applies.",
+  )
+
 const time_zone_does_not_match_location = common_acs_system_warning
   .extend({
     warning_code: z
@@ -267,6 +277,7 @@ const unknown_issue_with_acs_system = common_acs_system_warning.extend({
 const acs_system_warning = z
   .discriminatedUnion('warning_code', [
     salto_ks_subscription_limit_almost_reached,
+    salto_ks_custom_pins_not_supported,
     time_zone_does_not_match_location,
     setup_required,
     unknown_issue_with_acs_system,
@@ -278,6 +289,8 @@ const acs_system_warning = z
 const _acs_system_warning_map = z.object({
   salto_ks_subscription_limit_almost_reached:
     salto_ks_subscription_limit_almost_reached.optional(),
+  salto_ks_custom_pins_not_supported:
+    salto_ks_custom_pins_not_supported.optional(),
   time_zone_does_not_match_location:
     time_zone_does_not_match_location.optional(),
   setup_required: setup_required.optional(),
