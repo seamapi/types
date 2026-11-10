@@ -75,6 +75,7 @@ export {
   phone_number,
   phone_registration,
   phone_session,
+  pool_device_type,
   portal_configuration,
   property_resource,
   provider_capability,

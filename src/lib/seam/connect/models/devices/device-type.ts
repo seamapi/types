@@ -179,6 +179,30 @@ export const sensor_device_type = z
   .describe('Device type for environmental sensors.')
 
 export type SensorDeviceType = z.infer<typeof sensor_device_type>
+export const POOL_SYSTEM_DEVICE_TYPE = {
+  HAYWARD_POOL_SYSTEM: 'hayward_pool_system',
+} as const
+
+export const POOL_DEVICE_TYPE = {
+  ...POOL_SYSTEM_DEVICE_TYPE,
+  HAYWARD_POOL: 'hayward_pool',
+} as const
+
+type PoolDeviceTypeFromMapping =
+  (typeof POOL_DEVICE_TYPE)[keyof typeof POOL_DEVICE_TYPE]
+
+export const POOL_DEVICE_TYPE_LIST = Object.values(POOL_DEVICE_TYPE)
+
+export const pool_device_type = z.enum(
+  Object.values(POOL_DEVICE_TYPE) as [PoolDeviceTypeFromMapping],
+).describe(`
+    ---
+    undocumented: Unreleased.
+    ---
+    Device type for pool controllers, pools, and spas.
+    `)
+
+export type PoolDeviceType = z.infer<typeof pool_device_type>
 
 export const any_device_type = z.union([
   lock_device_type,
@@ -189,6 +213,7 @@ export const any_device_type = z.union([
   camera_device_type,
   speaker_device_type,
   sensor_device_type,
+  pool_device_type,
 ])
 
 export type AnyDeviceType = z.infer<typeof any_device_type>
