@@ -5418,6 +5418,31 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
+                    "Indicates that the Salto KS site does not accept custom PIN codes, either because its Salto subscription does not include the Custom PIN feature or because Custom PIN is turned off in the site's settings. Salto KS generates every PIN on the site, so a PIN code requested on an access grant or reservation is replaced with a Salto-generated one. The message says which of the two applies.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_ks_custom_pins_not_supported'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
                     'Indicates the [access control system](https://www.seam.co/docs/low-level-apis/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](https://www.seam.co/docs/low-level-apis/access-systems/retrieving-entrance-details).',
                   properties: {
                     created_at: {
