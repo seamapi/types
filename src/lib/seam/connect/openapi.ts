@@ -16813,6 +16813,13 @@ const openapi: OpenAPISpec = {
               thermostats: { name: 'Thermostats' },
             },
           },
+          estimated_occupant_count: {
+            description:
+              'Estimated number of occupants detected by the device.',
+            format: 'float',
+            type: 'number',
+            'x-property-group-key': 'sensors',
+          },
           is_door_locked: {
             description: 'Indicates whether the lock is locked.',
             type: 'boolean',
@@ -16825,9 +16832,8 @@ const openapi: OpenAPISpec = {
             enum: [true],
             type: 'boolean',
           },
-          is_occupied: {
-            description:
-              'Indicates whether the device detects that the space is occupied, if the device measures occupancy.',
+          is_occupancy_detected: {
+            description: 'Indicates whether the device detects occupancy.',
             type: 'boolean',
             'x-property-group-key': 'sensors',
           },
@@ -16922,9 +16928,16 @@ const openapi: OpenAPISpec = {
                   type: 'string',
                   'x-property-group-key': 'sensors',
                 },
-                is_occupied: {
+                estimated_occupant_count: {
                   description:
-                    'Indicates whether the device detects that the space is occupied, if the device measures occupancy.',
+                    'Estimated number of occupants detected by the device.',
+                  format: 'float',
+                  type: 'number',
+                  'x-property-group-key': 'sensors',
+                },
+                is_occupancy_detected: {
+                  description:
+                    'Indicates whether the device detects occupancy.',
                   type: 'boolean',
                   'x-property-group-key': 'sensors',
                 },
@@ -16950,13 +16963,6 @@ const openapi: OpenAPISpec = {
                 noise_level_nrs: {
                   description:
                     'Noise level as a Noise Risk Score (NRS), if the device reports one.',
-                  format: 'float',
-                  type: 'number',
-                  'x-property-group-key': 'sensors',
-                },
-                occupant_count: {
-                  description:
-                    'Number of occupants the device detects, if the device counts occupants.',
                   format: 'float',
                   type: 'number',
                   'x-property-group-key': 'sensors',
@@ -17013,13 +17019,6 @@ const openapi: OpenAPISpec = {
           noise_level_nrs: {
             description:
               'Noise level as a Noise Risk Score (NRS), if the device reports one.',
-            format: 'float',
-            type: 'number',
-            'x-property-group-key': 'sensors',
-          },
-          occupant_count: {
-            description:
-              'Number of occupants the device detects, if the device counts occupants.',
             format: 'float',
             type: 'number',
             'x-property-group-key': 'sensors',
@@ -32361,11 +32360,6 @@ const openapi: OpenAPISpec = {
             description:
               'A camera was activated, for example, by motion detection. For Ring cameras, this event is available only in the Seam Console, not through the API or webhooks.',
             properties: {
-              activation_reason: {
-                description: 'The reason the camera was activated.',
-                enum: ['motion_detected'],
-                type: 'string',
-              },
               connected_account_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -32420,6 +32414,11 @@ const openapi: OpenAPISpec = {
                 format: 'uri',
                 type: 'string',
               },
+              is_motion_detected: {
+                description:
+                  'Whether motion detection activated the camera, if known.',
+                type: 'boolean',
+              },
               media_ids: {
                 description:
                   'IDs of the media, such as a video clip and a thumbnail image, captured for this activation. Use `/media/get` to retrieve each one.',
@@ -32456,7 +32455,6 @@ const openapi: OpenAPISpec = {
               'device_id',
               'connected_account_id',
               'event_type',
-              'activation_reason',
             ],
             type: 'object',
             'x-route-path': '/devices',

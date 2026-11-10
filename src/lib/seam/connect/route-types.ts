@@ -18419,10 +18419,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
               /** Current setting of the device's primary temperature controller. */
@@ -18461,10 +18461,10 @@ export type Routes = {
                     air_quality_index?: number | undefined
                     /** Mold risk level as reported by the device, if the device measures it. */
                     mold_risk_level?: string | undefined
-                    /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-                    is_occupied?: boolean | undefined
-                    /** Number of occupants the device detects, if the device counts occupants. */
-                    occupant_count?: number | undefined
+                    /** Indicates whether the device detects occupancy. */
+                    is_occupancy_detected?: boolean | undefined
+                    /** Estimated number of occupants detected by the device. */
+                    estimated_occupant_count?: number | undefined
                     /** Indicates whether the device detects smoking, if the device measures it. */
                     is_smoking_detected?: boolean | undefined
                   }[]
@@ -28463,10 +28463,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
               /** Current setting of the device's primary temperature controller. */
@@ -28505,10 +28505,10 @@ export type Routes = {
                     air_quality_index?: number | undefined
                     /** Mold risk level as reported by the device, if the device measures it. */
                     mold_risk_level?: string | undefined
-                    /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-                    is_occupied?: boolean | undefined
-                    /** Number of occupants the device detects, if the device counts occupants. */
-                    occupant_count?: number | undefined
+                    /** Indicates whether the device detects occupancy. */
+                    is_occupancy_detected?: boolean | undefined
+                    /** Estimated number of occupants detected by the device. */
+                    estimated_occupant_count?: number | undefined
                     /** Indicates whether the device detects smoking, if the device measures it. */
                     is_smoking_detected?: boolean | undefined
                   }[]
@@ -61123,10 +61123,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -61165,10 +61165,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -63692,10 +63692,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -63734,10 +63734,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -71042,8 +71042,8 @@ export type Routes = {
                     }
                   | undefined
                 event_type: 'camera.activated'
-                /** The reason the camera was activated. */
-                activation_reason: 'motion_detected'
+                /** Whether motion detection activated the camera, if known. */
+                is_motion_detected?: boolean | undefined
                 /** Sub-type of motion detected, if available. */
                 motion_sub_type?:
                   ('human' | 'vehicle' | 'package' | 'other') | undefined
@@ -75439,8 +75439,8 @@ export type Routes = {
                 }
               | undefined
             event_type: 'camera.activated'
-            /** The reason the camera was activated. */
-            activation_reason: 'motion_detected'
+            /** Whether motion detection activated the camera, if known. */
+            is_motion_detected?: boolean | undefined
             /** Sub-type of motion detected, if available. */
             motion_sub_type?:
               ('human' | 'vehicle' | 'package' | 'other') | undefined
@@ -80695,10 +80695,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -80737,10 +80737,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -82954,10 +82954,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -82996,10 +82996,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -85351,10 +85351,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -85393,10 +85393,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -87609,10 +87609,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -87651,10 +87651,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -100266,10 +100266,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -100308,10 +100308,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -102524,10 +102524,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -102566,10 +102566,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -116703,10 +116703,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -116745,10 +116745,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -130437,8 +130437,8 @@ export type Routes = {
                 }
               | undefined
             event_type: 'camera.activated'
-            /** The reason the camera was activated. */
-            activation_reason: 'motion_detected'
+            /** Whether motion detection activated the camera, if known. */
+            is_motion_detected?: boolean | undefined
             /** Sub-type of motion detected, if available. */
             motion_sub_type?:
               ('human' | 'vehicle' | 'package' | 'other') | undefined
@@ -137384,8 +137384,8 @@ export type Routes = {
                 }
               | undefined
             event_type: 'camera.activated'
-            /** The reason the camera was activated. */
-            activation_reason: 'motion_detected'
+            /** Whether motion detection activated the camera, if known. */
+            is_motion_detected?: boolean | undefined
             /** Sub-type of motion detected, if available. */
             motion_sub_type?:
               ('human' | 'vehicle' | 'package' | 'other') | undefined
@@ -140141,10 +140141,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
               /** Current setting of the device's primary temperature controller. */
@@ -140183,10 +140183,10 @@ export type Routes = {
                     air_quality_index?: number | undefined
                     /** Mold risk level as reported by the device, if the device measures it. */
                     mold_risk_level?: string | undefined
-                    /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-                    is_occupied?: boolean | undefined
-                    /** Number of occupants the device detects, if the device counts occupants. */
-                    occupant_count?: number | undefined
+                    /** Indicates whether the device detects occupancy. */
+                    is_occupancy_detected?: boolean | undefined
+                    /** Estimated number of occupants detected by the device. */
+                    estimated_occupant_count?: number | undefined
                     /** Indicates whether the device detects smoking, if the device measures it. */
                     is_smoking_detected?: boolean | undefined
                   }[]
@@ -174770,10 +174770,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -174812,10 +174812,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -182257,10 +182257,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -182299,10 +182299,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -184515,10 +184515,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -184557,10 +184557,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -198288,10 +198288,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -198330,10 +198330,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -200548,10 +200548,10 @@ export type Routes = {
         air_quality_index?: number | undefined
         /** Mold risk level as reported by the device, if the device measures it. */
         mold_risk_level?: string | undefined
-        /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-        is_occupied?: boolean | undefined
-        /** Number of occupants the device detects, if the device counts occupants. */
-        occupant_count?: number | undefined
+        /** Indicates whether the device detects occupancy. */
+        is_occupancy_detected?: boolean | undefined
+        /** Estimated number of occupants detected by the device. */
+        estimated_occupant_count?: number | undefined
         /** Indicates whether the device detects smoking, if the device measures it. */
         is_smoking_detected?: boolean | undefined
         /** Current setting of the device's primary temperature controller. */
@@ -200590,10 +200590,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
             }[]
@@ -205620,10 +205620,10 @@ export type Routes = {
               air_quality_index?: number | undefined
               /** Mold risk level as reported by the device, if the device measures it. */
               mold_risk_level?: string | undefined
-              /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-              is_occupied?: boolean | undefined
-              /** Number of occupants the device detects, if the device counts occupants. */
-              occupant_count?: number | undefined
+              /** Indicates whether the device detects occupancy. */
+              is_occupancy_detected?: boolean | undefined
+              /** Estimated number of occupants detected by the device. */
+              estimated_occupant_count?: number | undefined
               /** Indicates whether the device detects smoking, if the device measures it. */
               is_smoking_detected?: boolean | undefined
               /** Current setting of the device's primary temperature controller. */
@@ -205662,10 +205662,10 @@ export type Routes = {
                     air_quality_index?: number | undefined
                     /** Mold risk level as reported by the device, if the device measures it. */
                     mold_risk_level?: string | undefined
-                    /** Indicates whether the device detects that the space is occupied, if the device measures occupancy. */
-                    is_occupied?: boolean | undefined
-                    /** Number of occupants the device detects, if the device counts occupants. */
-                    occupant_count?: number | undefined
+                    /** Indicates whether the device detects occupancy. */
+                    is_occupancy_detected?: boolean | undefined
+                    /** Estimated number of occupants detected by the device. */
+                    estimated_occupant_count?: number | undefined
                     /** Indicates whether the device detects smoking, if the device measures it. */
                     is_smoking_detected?: boolean | undefined
                   }[]
@@ -215269,8 +215269,8 @@ export type Routes = {
                       }
                     | undefined
                   event_type: 'camera.activated'
-                  /** The reason the camera was activated. */
-                  activation_reason: 'motion_detected'
+                  /** Whether motion detection activated the camera, if known. */
+                  is_motion_detected?: boolean | undefined
                   /** Sub-type of motion detected, if available. */
                   motion_sub_type?:
                     ('human' | 'vehicle' | 'package' | 'other') | undefined

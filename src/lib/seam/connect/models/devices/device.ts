@@ -975,25 +975,25 @@ const sensor_measurements = z.object({
           `,
     )
     .optional(),
-  is_occupied: z
+  is_occupancy_detected: z
     .boolean()
     .describe(
       `
           ---
           property_group_key: sensors
           ---
-          Indicates whether the device detects that the space is occupied, if the device measures occupancy.
+          Indicates whether the device detects occupancy.
           `,
     )
     .optional(),
-  occupant_count: z
+  estimated_occupant_count: z
     .number()
     .describe(
       `
           ---
           property_group_key: sensors
           ---
-          Number of occupants the device detects, if the device counts occupants.
+          Estimated number of occupants detected by the device.
           `,
     )
     .optional(),
