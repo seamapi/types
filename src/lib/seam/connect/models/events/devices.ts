@@ -868,9 +868,10 @@ export type DeviceNameChangedEvent = z.infer<typeof device_name_changed_event>
 
 export const camera_activated_event = device_event.extend({
   event_type: z.literal('camera.activated'),
-  activation_reason: z
-    .enum(['motion_detected'])
-    .describe('The reason the camera was activated.'),
+  is_motion_detected: z
+    .boolean()
+    .optional()
+    .describe('Whether motion detection activated the camera, if known.'),
   motion_sub_type: z
     .enum(['human', 'vehicle', 'package', 'other'])
     .optional()

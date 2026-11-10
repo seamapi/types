@@ -71042,8 +71042,8 @@ export type Routes = {
                     }
                   | undefined
                 event_type: 'camera.activated'
-                /** The reason the camera was activated. */
-                activation_reason: 'motion_detected'
+                /** Whether motion detection activated the camera, if known. */
+                is_motion_detected?: boolean | undefined
                 /** Sub-type of motion detected, if available. */
                 motion_sub_type?:
                   ('human' | 'vehicle' | 'package' | 'other') | undefined
@@ -75439,8 +75439,8 @@ export type Routes = {
                 }
               | undefined
             event_type: 'camera.activated'
-            /** The reason the camera was activated. */
-            activation_reason: 'motion_detected'
+            /** Whether motion detection activated the camera, if known. */
+            is_motion_detected?: boolean | undefined
             /** Sub-type of motion detected, if available. */
             motion_sub_type?:
               ('human' | 'vehicle' | 'package' | 'other') | undefined
@@ -130437,8 +130437,8 @@ export type Routes = {
                 }
               | undefined
             event_type: 'camera.activated'
-            /** The reason the camera was activated. */
-            activation_reason: 'motion_detected'
+            /** Whether motion detection activated the camera, if known. */
+            is_motion_detected?: boolean | undefined
             /** Sub-type of motion detected, if available. */
             motion_sub_type?:
               ('human' | 'vehicle' | 'package' | 'other') | undefined
@@ -137384,8 +137384,8 @@ export type Routes = {
                 }
               | undefined
             event_type: 'camera.activated'
-            /** The reason the camera was activated. */
-            activation_reason: 'motion_detected'
+            /** Whether motion detection activated the camera, if known. */
+            is_motion_detected?: boolean | undefined
             /** Sub-type of motion detected, if available. */
             motion_sub_type?:
               ('human' | 'vehicle' | 'package' | 'other') | undefined
@@ -215269,8 +215269,8 @@ export type Routes = {
                       }
                     | undefined
                   event_type: 'camera.activated'
-                  /** The reason the camera was activated. */
-                  activation_reason: 'motion_detected'
+                  /** Whether motion detection activated the camera, if known. */
+                  is_motion_detected?: boolean | undefined
                   /** Sub-type of motion detected, if available. */
                   motion_sub_type?:
                     ('human' | 'vehicle' | 'package' | 'other') | undefined
