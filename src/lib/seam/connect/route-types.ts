@@ -20,8 +20,6 @@ export type Routes = {
       ends_at?: string | undefined
       /** Code to be used for access. */
       code?: string | undefined
-      /**  */
-      sync?: boolean
       attempt_for_offline_device?: boolean
       /** Key to identify access codes that should have the same code. Any two access codes with the same `common_code_key` are guaranteed to have the same `code`. See also [Creating and Updating Multiple Linked Access Codes](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/creating-and-updating-multiple-linked-access-codes). */
       common_code_key?: string | undefined
@@ -3790,8 +3788,6 @@ export type Routes = {
       device_id?: string | undefined
       /** ID of the access code that you want to delete. */
       access_code_id: string
-      /**  */
-      sync?: boolean
     }
     formData: {}
     jsonResponse: {
@@ -9340,8 +9336,6 @@ export type Routes = {
       allow_external_modification?: boolean | undefined
       /** Indicates whether to force the access code conversion. To switch management of an access code from one Seam workspace to another, set `force` to `true`. */
       force?: boolean | undefined
-      /**  */
-      sync?: boolean
     }
     commonParams: {}
     formData: {}
@@ -9356,8 +9350,6 @@ export type Routes = {
     commonParams: {
       /** ID of the unmanaged access code that you want to delete. */
       access_code_id: string
-      /**  */
-      sync?: boolean
     }
     formData: {}
     jsonResponse: {
@@ -12940,8 +12932,6 @@ export type Routes = {
       ends_at?: string | undefined
       /** Code to be used for access. */
       code?: string | undefined
-      /**  */
-      sync?: boolean
       attempt_for_offline_device?: boolean
       /** Indicates whether [external modification](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#external-modification) of the code is allowed. Default: `false`. */
       allow_external_modification?: boolean | undefined
@@ -57016,8 +57006,6 @@ export type Routes = {
     commonParams: {
       /** ID of the connected account that you want to delete. */
       connected_account_id: string
-      /**  */
-      sync?: boolean
     }
     formData: {}
     jsonResponse: {}
@@ -87751,8 +87739,6 @@ export type Routes = {
     jsonBody: {
       /** ID of the lock that you want to lock. */
       device_id: string
-      /**  */
-      sync?: boolean
     }
     commonParams: {}
     formData: {}
@@ -95504,8 +95490,6 @@ export type Routes = {
     jsonBody: {
       /** ID of the lock that you want to unlock. */
       device_id: string
-      /**  */
-      sync?: boolean
     }
     commonParams: {}
     formData: {}
@@ -102670,8 +102654,6 @@ export type Routes = {
     jsonBody: {
       /** ID of the device for which you want to create a noise threshold. */
       device_id: string
-      /**  */
-      sync?: boolean
       /** Name of the new noise threshold. */
       name?: string | undefined
       /** Time at which the new noise threshold should become active daily. */
@@ -105285,8 +105267,6 @@ export type Routes = {
       noise_threshold_id: string
       /** ID of the device that contains the noise threshold that you want to delete. */
       device_id: string
-      /**  */
-      sync?: boolean
     }
     formData: {}
     jsonResponse: {
@@ -107934,8 +107914,6 @@ export type Routes = {
       noise_threshold_id: string
       /** ID of the device that contains the noise threshold that you want to update. */
       device_id: string
-      /**  */
-      sync?: boolean
       /** Name of the noise threshold that you want to update. */
       name?: string | undefined
       /** Time at which the noise threshold should become active daily. */
@@ -164762,8 +164740,6 @@ export type Routes = {
     jsonBody: {
       /** ID of the thermostat device that you want to return to its weekly program. */
       device_id: string
-      /**  */
-      sync?: boolean
     }
     commonParams: {}
     formData: {}
@@ -167351,8 +167327,6 @@ export type Routes = {
       cooling_set_point_celsius?: number | undefined
       /** [Cooling set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters. */
       cooling_set_point_fahrenheit?: number | undefined
-      /**  */
-      sync?: boolean
     }
     commonParams: {}
     formData: {}
@@ -174930,8 +174904,6 @@ export type Routes = {
       heating_set_point_celsius?: number | undefined
       /** [Heating set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters. */
       heating_set_point_fahrenheit?: number | undefined
-      /**  */
-      sync?: boolean
     }
     commonParams: {}
     formData: {}
@@ -177523,8 +177495,6 @@ export type Routes = {
       cooling_set_point_celsius?: number | undefined
       /** [Cooling set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `cooling_set_point` parameters. */
       cooling_set_point_fahrenheit?: number | undefined
-      /**  */
-      sync?: boolean
     }
     commonParams: {}
     formData: {}
@@ -184675,8 +184645,6 @@ export type Routes = {
     jsonBody: {
       /** ID of the thermostat device that you want to set to off mode. */
       device_id: string
-      /**  */
-      sync?: boolean
     }
     commonParams: {}
     formData: {}
@@ -187469,8 +187437,6 @@ export type Routes = {
       fan_mode?: ('auto' | 'on' | 'circulate') | undefined
       /** [Fan mode setting](https://www.seam.co/docs/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) that you want to set for the thermostat. */
       fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
-      /**  */
-      sync?: boolean
     }
     commonParams: {}
     formData: {}

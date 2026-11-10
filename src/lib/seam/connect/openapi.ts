@@ -44291,11 +44291,6 @@ const openapi: OpenAPISpec = {
                       'Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
-                  sync: {
-                    default: false,
-                    type: 'boolean',
-                    'x-undocumented': 'Only used internally.',
-                  },
                   use_backup_access_code_pool: {
                     description:
                       'Indicates whether to use a [backup access code pool](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes/backup-access-codes) provided by Seam. If `true`, you can use [`/access_codes/pull_backup_access_code`](https://www.seam.co/docs/api/access_codes/pull_backup_access_code).',
@@ -44497,16 +44492,6 @@ const openapi: OpenAPISpec = {
               description: 'ID of the access code that you want to delete.',
               format: 'uuid',
               type: 'string',
-            },
-          },
-          {
-            in: 'query',
-            name: 'sync',
-            required: false,
-            schema: {
-              default: false,
-              type: 'boolean',
-              'x-undocumented': 'Only used internally.',
             },
           },
         ],
@@ -45326,11 +45311,6 @@ const openapi: OpenAPISpec = {
                       'Indicates whether [external modification](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes#external-modification) of the access code is allowed.',
                     type: 'boolean',
                   },
-                  sync: {
-                    default: false,
-                    type: 'boolean',
-                    'x-undocumented': 'Only used internally.',
-                  },
                 },
                 required: ['access_code_id'],
                 type: 'object',
@@ -45385,16 +45365,6 @@ const openapi: OpenAPISpec = {
                 'ID of the unmanaged access code that you want to delete.',
               format: 'uuid',
               type: 'string',
-            },
-          },
-          {
-            in: 'query',
-            name: 'sync',
-            required: false,
-            schema: {
-              default: false,
-              type: 'boolean',
-              'x-undocumented': 'Only used internally.',
             },
           },
         ],
@@ -45750,11 +45720,6 @@ const openapi: OpenAPISpec = {
                     description:
                       'Date and time at which the validity of the new access code starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
-                  },
-                  sync: {
-                    default: false,
-                    type: 'boolean',
-                    'x-undocumented': 'Only used internally.',
                   },
                   type: {
                     description:
@@ -53267,16 +53232,6 @@ const openapi: OpenAPISpec = {
                 'ID of the connected account that you want to delete.',
               format: 'uuid',
               type: 'string',
-            },
-          },
-          {
-            in: 'query',
-            name: 'sync',
-            required: false,
-            schema: {
-              default: false,
-              type: 'boolean',
-              'x-undocumented': 'Only used internally.',
             },
           },
         ],
@@ -61021,11 +60976,6 @@ const openapi: OpenAPISpec = {
                     format: 'uuid',
                     type: 'string',
                   },
-                  sync: {
-                    default: false,
-                    type: 'boolean',
-                    'x-undocumented': 'Only used internally.',
-                  },
                 },
                 required: ['device_id'],
                 type: 'object',
@@ -61208,11 +61158,6 @@ const openapi: OpenAPISpec = {
                     description: 'ID of the lock that you want to unlock.',
                     format: 'uuid',
                     type: 'string',
-                  },
-                  sync: {
-                    default: false,
-                    type: 'boolean',
-                    'x-undocumented': 'Only used internally.',
                   },
                 },
                 required: ['device_id'],
@@ -61479,11 +61424,6 @@ const openapi: OpenAPISpec = {
                       'Time at which the new noise threshold should become active daily.',
                     type: 'string',
                   },
-                  sync: {
-                    default: false,
-                    type: 'boolean',
-                    'x-undocumented': 'Only used internally.',
-                  },
                 },
                 required: ['device_id', 'starts_daily_at', 'ends_daily_at'],
                 type: 'object',
@@ -61555,16 +61495,6 @@ const openapi: OpenAPISpec = {
                 'ID of the device that contains the noise threshold that you want to delete.',
               format: 'uuid',
               type: 'string',
-            },
-          },
-          {
-            in: 'query',
-            name: 'sync',
-            required: false,
-            schema: {
-              default: false,
-              type: 'boolean',
-              'x-undocumented': 'Only used internally.',
             },
           },
         ],
@@ -61772,11 +61702,6 @@ const openapi: OpenAPISpec = {
                     description:
                       'Time at which the noise threshold should become active daily.',
                     type: 'string',
-                  },
-                  sync: {
-                    default: false,
-                    type: 'boolean',
-                    'x-undocumented': 'Only used internally.',
                   },
                 },
                 required: ['noise_threshold_id', 'device_id'],
@@ -78362,11 +78287,6 @@ const openapi: OpenAPISpec = {
                     format: 'uuid',
                     type: 'string',
                   },
-                  sync: {
-                    default: false,
-                    type: 'boolean',
-                    'x-undocumented': 'Only used internally.',
-                  },
                 },
                 required: ['device_id'],
                 type: 'object',
@@ -78438,11 +78358,6 @@ const openapi: OpenAPISpec = {
                       'ID of the thermostat device that you want to set to cool mode.',
                     format: 'uuid',
                     type: 'string',
-                  },
-                  sync: {
-                    default: false,
-                    type: 'boolean',
-                    'x-undocumented': 'Only used internally.',
                   },
                 },
                 required: ['device_id'],
@@ -79007,11 +78922,6 @@ const openapi: OpenAPISpec = {
                     format: 'float',
                     type: 'number',
                   },
-                  sync: {
-                    default: false,
-                    type: 'boolean',
-                    'x-undocumented': 'Only used internally.',
-                  },
                 },
                 required: ['device_id'],
                 type: 'object',
@@ -79095,11 +79005,6 @@ const openapi: OpenAPISpec = {
                       '[Heating set point](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F that you want to set for the thermostat. You must set one of the `heating_set_point` parameters.',
                     format: 'float',
                     type: 'number',
-                  },
-                  sync: {
-                    default: false,
-                    type: 'boolean',
-                    'x-undocumented': 'Only used internally.',
                   },
                 },
                 required: ['device_id'],
@@ -79293,11 +79198,6 @@ const openapi: OpenAPISpec = {
                       'ID of the thermostat device that you want to set to off mode.',
                     format: 'uuid',
                     type: 'string',
-                  },
-                  sync: {
-                    default: false,
-                    type: 'boolean',
-                    'x-undocumented': 'Only used internally.',
                   },
                 },
                 required: ['device_id'],
@@ -79787,11 +79687,6 @@ const openapi: OpenAPISpec = {
                       '[Fan mode setting](https://www.seam.co/docs/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) that you want to set for the thermostat.',
                     enum: ['auto', 'on', 'circulate'],
                     type: 'string',
-                  },
-                  sync: {
-                    default: false,
-                    type: 'boolean',
-                    'x-undocumented': 'Only used internally.',
                   },
                 },
                 required: ['device_id'],
