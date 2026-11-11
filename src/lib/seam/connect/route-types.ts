@@ -16242,6 +16242,7 @@ export type Routes = {
                     | 'omnitec_lock'
                     | 'kisi_lock'
                     | 'aqara_lock'
+                    | 'tuya_lock'
                     | 'eufy_lock'
                   )
                 | 'keynest_key'
@@ -17291,6 +17292,25 @@ export type Routes = {
                           /** Firmware version for an Aqara device. */
                           firmware_version?:
                             ((string | null) | undefined) | undefined
+                        }
+                      | undefined
+                    /** Metadata for a Tuya device. */
+                    tuya_metadata?:
+                      | {
+                          /** Device ID for a Tuya device. */
+                          device_id?: (string | undefined) | undefined
+                          /** Device name for a Tuya device. */
+                          device_name?: (string | undefined) | undefined
+                          /** Tuya product category code for the device (e.g. ms). */
+                          category?: (string | undefined) | undefined
+                          /** Tuya product ID for the device. */
+                          product_id?: (string | undefined) | undefined
+                          /** Tuya product name for the device. */
+                          product_name?: (string | undefined) | undefined
+                          /** Model reported for a Tuya device. */
+                          model?: ((string | null) | undefined) | undefined
+                          /** Time zone reported for a Tuya device (e.g. +08:00). */
+                          time_zone?: ((string | null) | undefined) | undefined
                         }
                       | undefined
                     /** Metadata for a Eufy device. */
@@ -26294,6 +26314,7 @@ export type Routes = {
                     | 'omnitec_lock'
                     | 'kisi_lock'
                     | 'aqara_lock'
+                    | 'tuya_lock'
                     | 'eufy_lock'
                   )
                 | 'keynest_key'
@@ -27343,6 +27364,25 @@ export type Routes = {
                           /** Firmware version for an Aqara device. */
                           firmware_version?:
                             ((string | null) | undefined) | undefined
+                        }
+                      | undefined
+                    /** Metadata for a Tuya device. */
+                    tuya_metadata?:
+                      | {
+                          /** Device ID for a Tuya device. */
+                          device_id?: (string | undefined) | undefined
+                          /** Device name for a Tuya device. */
+                          device_name?: (string | undefined) | undefined
+                          /** Tuya product category code for the device (e.g. ms). */
+                          category?: (string | undefined) | undefined
+                          /** Tuya product ID for the device. */
+                          product_id?: (string | undefined) | undefined
+                          /** Tuya product name for the device. */
+                          product_name?: (string | undefined) | undefined
+                          /** Model reported for a Tuya device. */
+                          model?: ((string | null) | undefined) | undefined
+                          /** Time zone reported for a Tuya device (e.g. +08:00). */
+                          time_zone?: ((string | null) | undefined) | undefined
                         }
                       | undefined
                     /** Metadata for a Eufy device. */
@@ -56710,6 +56750,7 @@ export type Routes = {
             | 'eufy'
             | 'sonos'
             | 'hayward_omnilogic'
+            | 'tuya'
             | 'hid_cm'
             | 'google_nest'
             | 'slack'
@@ -59041,6 +59082,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'tuya_lock'
               | 'eufy_lock'
             )
           | 'keynest_key'
@@ -60050,6 +60092,25 @@ export type Routes = {
                     position_id?: ((string | null) | undefined) | undefined
                     /** Firmware version for an Aqara device. */
                     firmware_version?: ((string | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Tuya device. */
+              tuya_metadata?:
+                | {
+                    /** Device ID for a Tuya device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Tuya device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Tuya product category code for the device (e.g. ms). */
+                    category?: (string | undefined) | undefined
+                    /** Tuya product ID for the device. */
+                    product_id?: (string | undefined) | undefined
+                    /** Tuya product name for the device. */
+                    product_name?: (string | undefined) | undefined
+                    /** Model reported for a Tuya device. */
+                    model?: ((string | null) | undefined) | undefined
+                    /** Time zone reported for a Tuya device (e.g. +08:00). */
+                    time_zone?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a Eufy device. */
@@ -61322,6 +61383,7 @@ export type Routes = {
                 | 'omnitec_lock'
                 | 'kisi_lock'
                 | 'aqara_lock'
+                | 'tuya_lock'
                 | 'eufy_lock'
               )
             | 'keynest_key'
@@ -61385,6 +61447,7 @@ export type Routes = {
                 | 'omnitec_lock'
                 | 'kisi_lock'
                 | 'aqara_lock'
+                | 'tuya_lock'
                 | 'eufy_lock'
               )
             | 'keynest_key'
@@ -61476,6 +61539,7 @@ export type Routes = {
             | 'yacan'
             | 'sonos'
             | 'hayward_omnilogic'
+            | 'tuya'
           )
         | undefined
       /** Array of device IDs for which you want to list devices. */
@@ -61618,6 +61682,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'tuya_lock'
               | 'eufy_lock'
             )
           | 'keynest_key'
@@ -62627,6 +62692,25 @@ export type Routes = {
                     position_id?: ((string | null) | undefined) | undefined
                     /** Firmware version for an Aqara device. */
                     firmware_version?: ((string | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Tuya device. */
+              tuya_metadata?:
+                | {
+                    /** Device ID for a Tuya device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Tuya device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Tuya product category code for the device (e.g. ms). */
+                    category?: (string | undefined) | undefined
+                    /** Tuya product ID for the device. */
+                    product_id?: (string | undefined) | undefined
+                    /** Tuya product name for the device. */
+                    product_name?: (string | undefined) | undefined
+                    /** Model reported for a Tuya device. */
+                    model?: ((string | null) | undefined) | undefined
+                    /** Time zone reported for a Tuya device (e.g. +08:00). */
+                    time_zone?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a Eufy device. */
@@ -63957,6 +64041,7 @@ export type Routes = {
           | 'eufy'
           | 'sonos'
           | 'hayward_omnilogic'
+          | 'tuya'
         /** Display name for the device provider. */
         display_name: string
         /** Image URL for the device provider. */
@@ -65495,6 +65580,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'tuya_lock'
               | 'eufy_lock'
             )
           | 'keynest_key'
@@ -66168,6 +66254,7 @@ export type Routes = {
                 | 'omnitec_lock'
                 | 'kisi_lock'
                 | 'aqara_lock'
+                | 'tuya_lock'
                 | 'eufy_lock'
               )
             | 'keynest_key'
@@ -66231,6 +66318,7 @@ export type Routes = {
                 | 'omnitec_lock'
                 | 'kisi_lock'
                 | 'aqara_lock'
+                | 'tuya_lock'
                 | 'eufy_lock'
               )
             | 'keynest_key'
@@ -66322,6 +66410,7 @@ export type Routes = {
             | 'yacan'
             | 'sonos'
             | 'hayward_omnilogic'
+            | 'tuya'
           )
         | undefined
       /** Array of device IDs for which you want to list devices. */
@@ -66451,6 +66540,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'tuya_lock'
               | 'eufy_lock'
             )
           | 'keynest_key'
@@ -78645,6 +78735,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'tuya_lock'
               | 'eufy_lock'
             )
           | 'keynest_key'
@@ -79654,6 +79745,25 @@ export type Routes = {
                     position_id?: ((string | null) | undefined) | undefined
                     /** Firmware version for an Aqara device. */
                     firmware_version?: ((string | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Tuya device. */
+              tuya_metadata?:
+                | {
+                    /** Device ID for a Tuya device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Tuya device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Tuya product category code for the device (e.g. ms). */
+                    category?: (string | undefined) | undefined
+                    /** Tuya product ID for the device. */
+                    product_id?: (string | undefined) | undefined
+                    /** Tuya product name for the device. */
+                    product_name?: (string | undefined) | undefined
+                    /** Model reported for a Tuya device. */
+                    model?: ((string | null) | undefined) | undefined
+                    /** Time zone reported for a Tuya device (e.g. +08:00). */
+                    time_zone?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a Eufy device. */
@@ -80912,6 +81022,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'tuya_lock'
               | 'eufy_lock'
             )
           | 'keynest_key'
@@ -81921,6 +82032,25 @@ export type Routes = {
                     position_id?: ((string | null) | undefined) | undefined
                     /** Firmware version for an Aqara device. */
                     firmware_version?: ((string | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Tuya device. */
+              tuya_metadata?:
+                | {
+                    /** Device ID for a Tuya device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Tuya device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Tuya product category code for the device (e.g. ms). */
+                    category?: (string | undefined) | undefined
+                    /** Tuya product ID for the device. */
+                    product_id?: (string | undefined) | undefined
+                    /** Tuya product name for the device. */
+                    product_name?: (string | undefined) | undefined
+                    /** Model reported for a Tuya device. */
+                    model?: ((string | null) | undefined) | undefined
+                    /** Time zone reported for a Tuya device (e.g. +08:00). */
+                    time_zone?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a Eufy device. */
@@ -83190,6 +83320,7 @@ export type Routes = {
             | 'omnitec_lock'
             | 'kisi_lock'
             | 'aqara_lock'
+            | 'tuya_lock'
             | 'eufy_lock'
           )
         | undefined
@@ -83230,6 +83361,7 @@ export type Routes = {
             | 'omnitec_lock'
             | 'kisi_lock'
             | 'aqara_lock'
+            | 'tuya_lock'
             | 'eufy_lock'
           )[]
         | undefined
@@ -83272,6 +83404,7 @@ export type Routes = {
             | 'omnitec'
             | 'kisi'
             | 'yacan'
+            | 'tuya'
           )
         | undefined
     }
@@ -83317,6 +83450,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'tuya_lock'
               | 'eufy_lock'
             )
           | 'keynest_key'
@@ -84326,6 +84460,25 @@ export type Routes = {
                     position_id?: ((string | null) | undefined) | undefined
                     /** Firmware version for an Aqara device. */
                     firmware_version?: ((string | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Tuya device. */
+              tuya_metadata?:
+                | {
+                    /** Device ID for a Tuya device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Tuya device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Tuya product category code for the device (e.g. ms). */
+                    category?: (string | undefined) | undefined
+                    /** Tuya product ID for the device. */
+                    product_id?: (string | undefined) | undefined
+                    /** Tuya product name for the device. */
+                    product_name?: (string | undefined) | undefined
+                    /** Model reported for a Tuya device. */
+                    model?: ((string | null) | undefined) | undefined
+                    /** Time zone reported for a Tuya device (e.g. +08:00). */
+                    time_zone?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a Eufy device. */
@@ -85583,6 +85736,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'tuya_lock'
               | 'eufy_lock'
             )
           | 'keynest_key'
@@ -86592,6 +86746,25 @@ export type Routes = {
                     position_id?: ((string | null) | undefined) | undefined
                     /** Firmware version for an Aqara device. */
                     firmware_version?: ((string | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Tuya device. */
+              tuya_metadata?:
+                | {
+                    /** Device ID for a Tuya device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Tuya device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Tuya product category code for the device (e.g. ms). */
+                    category?: (string | undefined) | undefined
+                    /** Tuya product ID for the device. */
+                    product_id?: (string | undefined) | undefined
+                    /** Tuya product name for the device. */
+                    product_name?: (string | undefined) | undefined
+                    /** Model reported for a Tuya device. */
+                    model?: ((string | null) | undefined) | undefined
+                    /** Time zone reported for a Tuya device (e.g. +08:00). */
+                    time_zone?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a Eufy device. */
@@ -98248,6 +98421,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'tuya_lock'
               | 'eufy_lock'
             )
           | 'keynest_key'
@@ -99257,6 +99431,25 @@ export type Routes = {
                     position_id?: ((string | null) | undefined) | undefined
                     /** Firmware version for an Aqara device. */
                     firmware_version?: ((string | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Tuya device. */
+              tuya_metadata?:
+                | {
+                    /** Device ID for a Tuya device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Tuya device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Tuya product category code for the device (e.g. ms). */
+                    category?: (string | undefined) | undefined
+                    /** Tuya product ID for the device. */
+                    product_id?: (string | undefined) | undefined
+                    /** Tuya product name for the device. */
+                    product_name?: (string | undefined) | undefined
+                    /** Model reported for a Tuya device. */
+                    model?: ((string | null) | undefined) | undefined
+                    /** Time zone reported for a Tuya device (e.g. +08:00). */
+                    time_zone?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a Eufy device. */
@@ -100514,6 +100707,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'tuya_lock'
               | 'eufy_lock'
             )
           | 'keynest_key'
@@ -101523,6 +101717,25 @@ export type Routes = {
                     position_id?: ((string | null) | undefined) | undefined
                     /** Firmware version for an Aqara device. */
                     firmware_version?: ((string | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Tuya device. */
+              tuya_metadata?:
+                | {
+                    /** Device ID for a Tuya device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Tuya device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Tuya product category code for the device (e.g. ms). */
+                    category?: (string | undefined) | undefined
+                    /** Tuya product ID for the device. */
+                    product_id?: (string | undefined) | undefined
+                    /** Tuya product name for the device. */
+                    product_name?: (string | undefined) | undefined
+                    /** Model reported for a Tuya device. */
+                    model?: ((string | null) | undefined) | undefined
+                    /** Time zone reported for a Tuya device (e.g. +08:00). */
+                    time_zone?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a Eufy device. */
@@ -114725,6 +114938,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'tuya_lock'
               | 'eufy_lock'
             )
           | 'keynest_key'
@@ -115734,6 +115948,25 @@ export type Routes = {
                     position_id?: ((string | null) | undefined) | undefined
                     /** Firmware version for an Aqara device. */
                     firmware_version?: ((string | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Tuya device. */
+              tuya_metadata?:
+                | {
+                    /** Device ID for a Tuya device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Tuya device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Tuya product category code for the device (e.g. ms). */
+                    category?: (string | undefined) | undefined
+                    /** Tuya product ID for the device. */
+                    product_id?: (string | undefined) | undefined
+                    /** Tuya product name for the device. */
+                    product_name?: (string | undefined) | undefined
+                    /** Model reported for a Tuya device. */
+                    model?: ((string | null) | undefined) | undefined
+                    /** Time zone reported for a Tuya device (e.g. +08:00). */
+                    time_zone?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a Eufy device. */
@@ -138092,6 +138325,7 @@ export type Routes = {
                     | 'omnitec_lock'
                     | 'kisi_lock'
                     | 'aqara_lock'
+                    | 'tuya_lock'
                     | 'eufy_lock'
                   )
                 | 'keynest_key'
@@ -139141,6 +139375,25 @@ export type Routes = {
                           /** Firmware version for an Aqara device. */
                           firmware_version?:
                             ((string | null) | undefined) | undefined
+                        }
+                      | undefined
+                    /** Metadata for a Tuya device. */
+                    tuya_metadata?:
+                      | {
+                          /** Device ID for a Tuya device. */
+                          device_id?: (string | undefined) | undefined
+                          /** Device name for a Tuya device. */
+                          device_name?: (string | undefined) | undefined
+                          /** Tuya product category code for the device (e.g. ms). */
+                          category?: (string | undefined) | undefined
+                          /** Tuya product ID for the device. */
+                          product_id?: (string | undefined) | undefined
+                          /** Tuya product name for the device. */
+                          product_name?: (string | undefined) | undefined
+                          /** Model reported for a Tuya device. */
+                          model?: ((string | null) | undefined) | undefined
+                          /** Time zone reported for a Tuya device (e.g. +08:00). */
+                          time_zone?: ((string | null) | undefined) | undefined
                         }
                       | undefined
                     /** Metadata for a Eufy device. */
@@ -172808,6 +173061,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'tuya_lock'
               | 'eufy_lock'
             )
           | 'keynest_key'
@@ -173817,6 +174071,25 @@ export type Routes = {
                     position_id?: ((string | null) | undefined) | undefined
                     /** Firmware version for an Aqara device. */
                     firmware_version?: ((string | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Tuya device. */
+              tuya_metadata?:
+                | {
+                    /** Device ID for a Tuya device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Tuya device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Tuya product category code for the device (e.g. ms). */
+                    category?: (string | undefined) | undefined
+                    /** Tuya product ID for the device. */
+                    product_id?: (string | undefined) | undefined
+                    /** Tuya product name for the device. */
+                    product_name?: (string | undefined) | undefined
+                    /** Model reported for a Tuya device. */
+                    model?: ((string | null) | undefined) | undefined
+                    /** Time zone reported for a Tuya device (e.g. +08:00). */
+                    time_zone?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a Eufy device. */
@@ -180303,6 +180576,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'tuya_lock'
               | 'eufy_lock'
             )
           | 'keynest_key'
@@ -181312,6 +181586,25 @@ export type Routes = {
                     position_id?: ((string | null) | undefined) | undefined
                     /** Firmware version for an Aqara device. */
                     firmware_version?: ((string | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Tuya device. */
+              tuya_metadata?:
+                | {
+                    /** Device ID for a Tuya device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Tuya device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Tuya product category code for the device (e.g. ms). */
+                    category?: (string | undefined) | undefined
+                    /** Tuya product ID for the device. */
+                    product_id?: (string | undefined) | undefined
+                    /** Tuya product name for the device. */
+                    product_name?: (string | undefined) | undefined
+                    /** Model reported for a Tuya device. */
+                    model?: ((string | null) | undefined) | undefined
+                    /** Time zone reported for a Tuya device (e.g. +08:00). */
+                    time_zone?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a Eufy device. */
@@ -182569,6 +182862,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'tuya_lock'
               | 'eufy_lock'
             )
           | 'keynest_key'
@@ -183578,6 +183872,25 @@ export type Routes = {
                     position_id?: ((string | null) | undefined) | undefined
                     /** Firmware version for an Aqara device. */
                     firmware_version?: ((string | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Tuya device. */
+              tuya_metadata?:
+                | {
+                    /** Device ID for a Tuya device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Tuya device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Tuya product category code for the device (e.g. ms). */
+                    category?: (string | undefined) | undefined
+                    /** Tuya product ID for the device. */
+                    product_id?: (string | undefined) | undefined
+                    /** Tuya product name for the device. */
+                    product_name?: (string | undefined) | undefined
+                    /** Model reported for a Tuya device. */
+                    model?: ((string | null) | undefined) | undefined
+                    /** Time zone reported for a Tuya device (e.g. +08:00). */
+                    time_zone?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a Eufy device. */
@@ -196350,6 +196663,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'tuya_lock'
               | 'eufy_lock'
             )
           | 'keynest_key'
@@ -197359,6 +197673,25 @@ export type Routes = {
                     position_id?: ((string | null) | undefined) | undefined
                     /** Firmware version for an Aqara device. */
                     firmware_version?: ((string | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Tuya device. */
+              tuya_metadata?:
+                | {
+                    /** Device ID for a Tuya device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Tuya device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Tuya product category code for the device (e.g. ms). */
+                    category?: (string | undefined) | undefined
+                    /** Tuya product ID for the device. */
+                    product_id?: (string | undefined) | undefined
+                    /** Tuya product name for the device. */
+                    product_name?: (string | undefined) | undefined
+                    /** Model reported for a Tuya device. */
+                    model?: ((string | null) | undefined) | undefined
+                    /** Time zone reported for a Tuya device (e.g. +08:00). */
+                    time_zone?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a Eufy device. */
@@ -198618,6 +198951,7 @@ export type Routes = {
               | 'omnitec_lock'
               | 'kisi_lock'
               | 'aqara_lock'
+              | 'tuya_lock'
               | 'eufy_lock'
             )
           | 'keynest_key'
@@ -199627,6 +199961,25 @@ export type Routes = {
                     position_id?: ((string | null) | undefined) | undefined
                     /** Firmware version for an Aqara device. */
                     firmware_version?: ((string | null) | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Tuya device. */
+              tuya_metadata?:
+                | {
+                    /** Device ID for a Tuya device. */
+                    device_id?: (string | undefined) | undefined
+                    /** Device name for a Tuya device. */
+                    device_name?: (string | undefined) | undefined
+                    /** Tuya product category code for the device (e.g. ms). */
+                    category?: (string | undefined) | undefined
+                    /** Tuya product ID for the device. */
+                    product_id?: (string | undefined) | undefined
+                    /** Tuya product name for the device. */
+                    product_name?: (string | undefined) | undefined
+                    /** Model reported for a Tuya device. */
+                    model?: ((string | null) | undefined) | undefined
+                    /** Time zone reported for a Tuya device (e.g. +08:00). */
+                    time_zone?: ((string | null) | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a Eufy device. */
@@ -203619,6 +203972,7 @@ export type Routes = {
                     | 'omnitec_lock'
                     | 'kisi_lock'
                     | 'aqara_lock'
+                    | 'tuya_lock'
                     | 'eufy_lock'
                   )
                 | 'keynest_key'
@@ -204668,6 +205022,25 @@ export type Routes = {
                           /** Firmware version for an Aqara device. */
                           firmware_version?:
                             ((string | null) | undefined) | undefined
+                        }
+                      | undefined
+                    /** Metadata for a Tuya device. */
+                    tuya_metadata?:
+                      | {
+                          /** Device ID for a Tuya device. */
+                          device_id?: (string | undefined) | undefined
+                          /** Device name for a Tuya device. */
+                          device_name?: (string | undefined) | undefined
+                          /** Tuya product category code for the device (e.g. ms). */
+                          category?: (string | undefined) | undefined
+                          /** Tuya product ID for the device. */
+                          product_id?: (string | undefined) | undefined
+                          /** Tuya product name for the device. */
+                          product_name?: (string | undefined) | undefined
+                          /** Model reported for a Tuya device. */
+                          model?: ((string | null) | undefined) | undefined
+                          /** Time zone reported for a Tuya device (e.g. +08:00). */
+                          time_zone?: ((string | null) | undefined) | undefined
                         }
                       | undefined
                     /** Metadata for a Eufy device. */
@@ -210134,6 +210507,7 @@ export type Routes = {
                     | 'omnitec_lock'
                     | 'kisi_lock'
                     | 'aqara_lock'
+                    | 'tuya_lock'
                     | 'eufy_lock'
                   )
                 | 'keynest_key'
