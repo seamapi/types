@@ -1443,6 +1443,42 @@ export const device_metadata = z
       .partial()
       .describe(`Metadata for an Aqara device.`),
 
+    tuya_metadata: z
+      .object({
+        device_id: z
+          .string()
+          .optional()
+          .describe(`Device ID for a Tuya device.`),
+        device_name: z
+          .string()
+          .optional()
+          .describe(`Device name for a Tuya device.`),
+        category: z
+          .string()
+          .optional()
+          .describe(`Tuya product category code for the device (e.g. ms).`),
+        product_id: z
+          .string()
+          .optional()
+          .describe(`Tuya product ID for the device.`),
+        product_name: z
+          .string()
+          .optional()
+          .describe(`Tuya product name for the device.`),
+        model: z
+          .string()
+          .nullable()
+          .optional()
+          .describe(`Model reported for a Tuya device.`),
+        time_zone: z
+          .string()
+          .nullable()
+          .optional()
+          .describe(`Time zone reported for a Tuya device (e.g. +08:00).`),
+      })
+      .partial()
+      .describe(`Metadata for a Tuya device.`),
+
     eufy_metadata: z
       .object({
         device_id: z.string().optional(),

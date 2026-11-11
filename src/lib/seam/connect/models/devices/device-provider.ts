@@ -80,6 +80,7 @@ export const DEVICE_PROVIDERS = {
   EUFY: 'eufy',
   SONOS: 'sonos',
   HAYWARD_OMNILOGIC: 'hayward_omnilogic',
+  TUYA: 'tuya',
 } as const
 
 export type DeviceProviderName =
@@ -173,6 +174,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'unifi_protect',
     'yale_connect',
     'alertify',
+    'tuya',
   ],
 
   thermostats: [
