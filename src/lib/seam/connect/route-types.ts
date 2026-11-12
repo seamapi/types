@@ -17031,7 +17031,8 @@ export type Routes = {
                           device_name?: (string | undefined) | undefined
                           /** Product type for a Sensi device. */
                           product_type?: (string | undefined) | undefined
-                          /** Deprecated. Seam no longer sets this field. */
+                          /**
+                           * @deprecated Seam no longer sets this field.*/
                           dual_setpoints_not_supported?:
                             (boolean | undefined) | undefined
                         }
@@ -27123,7 +27124,8 @@ export type Routes = {
                           device_name?: (string | undefined) | undefined
                           /** Product type for a Sensi device. */
                           product_type?: (string | undefined) | undefined
-                          /** Deprecated. Seam no longer sets this field. */
+                          /**
+                           * @deprecated Seam no longer sets this field.*/
                           dual_setpoints_not_supported?:
                             (boolean | undefined) | undefined
                         }
@@ -58063,9 +58065,7 @@ export type Routes = {
                 }
               | undefined
             /** Configuration for the manage devices feature.
-        ---
-        deprecated: Use `manage` instead.
-        --- */
+             * @deprecated Use `manage` instead.*/
             manage_devices?:
               | {
                   /** Whether to exclude this feature from the portal. */
@@ -59890,7 +59890,8 @@ export type Routes = {
                     device_name?: (string | undefined) | undefined
                     /** Product type for a Sensi device. */
                     product_type?: (string | undefined) | undefined
-                    /** Deprecated. Seam no longer sets this field. */
+                    /**
+                     * @deprecated Seam no longer sets this field.*/
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
                   }
@@ -62513,7 +62514,8 @@ export type Routes = {
                     device_name?: (string | undefined) | undefined
                     /** Product type for a Sensi device. */
                     product_type?: (string | undefined) | undefined
-                    /** Deprecated. Seam no longer sets this field. */
+                    /**
+                     * @deprecated Seam no longer sets this field.*/
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
                   }
@@ -79592,7 +79594,8 @@ export type Routes = {
                     device_name?: (string | undefined) | undefined
                     /** Product type for a Sensi device. */
                     product_type?: (string | undefined) | undefined
-                    /** Deprecated. Seam no longer sets this field. */
+                    /**
+                     * @deprecated Seam no longer sets this field.*/
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
                   }
@@ -81899,7 +81902,8 @@ export type Routes = {
                     device_name?: (string | undefined) | undefined
                     /** Product type for a Sensi device. */
                     product_type?: (string | undefined) | undefined
-                    /** Deprecated. Seam no longer sets this field. */
+                    /**
+                     * @deprecated Seam no longer sets this field.*/
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
                   }
@@ -84347,7 +84351,8 @@ export type Routes = {
                     device_name?: (string | undefined) | undefined
                     /** Product type for a Sensi device. */
                     product_type?: (string | undefined) | undefined
-                    /** Deprecated. Seam no longer sets this field. */
+                    /**
+                     * @deprecated Seam no longer sets this field.*/
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
                   }
@@ -86653,7 +86658,8 @@ export type Routes = {
                     device_name?: (string | undefined) | undefined
                     /** Product type for a Sensi device. */
                     product_type?: (string | undefined) | undefined
-                    /** Deprecated. Seam no longer sets this field. */
+                    /**
+                     * @deprecated Seam no longer sets this field.*/
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
                   }
@@ -99358,7 +99364,8 @@ export type Routes = {
                     device_name?: (string | undefined) | undefined
                     /** Product type for a Sensi device. */
                     product_type?: (string | undefined) | undefined
-                    /** Deprecated. Seam no longer sets this field. */
+                    /**
+                     * @deprecated Seam no longer sets this field.*/
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
                   }
@@ -101664,7 +101671,8 @@ export type Routes = {
                     device_name?: (string | undefined) | undefined
                     /** Product type for a Sensi device. */
                     product_type?: (string | undefined) | undefined
-                    /** Deprecated. Seam no longer sets this field. */
+                    /**
+                     * @deprecated Seam no longer sets this field.*/
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
                   }
@@ -115915,7 +115923,8 @@ export type Routes = {
                     device_name?: (string | undefined) | undefined
                     /** Product type for a Sensi device. */
                     product_type?: (string | undefined) | undefined
-                    /** Deprecated. Seam no longer sets this field. */
+                    /**
+                     * @deprecated Seam no longer sets this field.*/
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
                   }
@@ -121343,9 +121352,7 @@ export type Routes = {
                   }
                 | undefined
               /** Configuration for the manage devices feature.
-            ---
-            deprecated: Use `manage` instead.
-            --- */
+               * @deprecated Use `manage` instead.*/
               manage_devices?:
                 | {
                     /** Whether to exclude this feature from the portal. */
@@ -131243,9 +131250,7 @@ export type Routes = {
               | undefined
           }
           /** Configuration for the manage devices feature.
-            ---
-            deprecated: Use `manage` instead.
-            --- */
+           * @deprecated Use `manage` instead.*/
           manage_devices?: {
             /** Whether to exclude this feature from the portal. */
             exclude?: boolean
@@ -131594,9 +131599,7 @@ export type Routes = {
                   }
                 | undefined
               /** Configuration for the manage devices feature.
-            ---
-            deprecated: Use `manage` instead.
-            --- */
+               * @deprecated Use `manage` instead.*/
               manage_devices?:
                 | {
                     /** Whether to exclude this feature from the portal. */
@@ -139344,7 +139347,8 @@ export type Routes = {
                           device_name?: (string | undefined) | undefined
                           /** Product type for a Sensi device. */
                           product_type?: (string | undefined) | undefined
-                          /** Deprecated. Seam no longer sets this field. */
+                          /**
+                           * @deprecated Seam no longer sets this field.*/
                           dual_setpoints_not_supported?:
                             (boolean | undefined) | undefined
                         }
@@ -174078,7 +174082,8 @@ export type Routes = {
                     device_name?: (string | undefined) | undefined
                     /** Product type for a Sensi device. */
                     product_type?: (string | undefined) | undefined
-                    /** Deprecated. Seam no longer sets this field. */
+                    /**
+                     * @deprecated Seam no longer sets this field.*/
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
                   }
@@ -181616,7 +181621,8 @@ export type Routes = {
                     device_name?: (string | undefined) | undefined
                     /** Product type for a Sensi device. */
                     product_type?: (string | undefined) | undefined
-                    /** Deprecated. Seam no longer sets this field. */
+                    /**
+                     * @deprecated Seam no longer sets this field.*/
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
                   }
@@ -183922,7 +183928,8 @@ export type Routes = {
                     device_name?: (string | undefined) | undefined
                     /** Product type for a Sensi device. */
                     product_type?: (string | undefined) | undefined
-                    /** Deprecated. Seam no longer sets this field. */
+                    /**
+                     * @deprecated Seam no longer sets this field.*/
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
                   }
@@ -197743,7 +197750,8 @@ export type Routes = {
                     device_name?: (string | undefined) | undefined
                     /** Product type for a Sensi device. */
                     product_type?: (string | undefined) | undefined
-                    /** Deprecated. Seam no longer sets this field. */
+                    /**
+                     * @deprecated Seam no longer sets this field.*/
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
                   }
@@ -200051,7 +200059,8 @@ export type Routes = {
                     device_name?: (string | undefined) | undefined
                     /** Product type for a Sensi device. */
                     product_type?: (string | undefined) | undefined
-                    /** Deprecated. Seam no longer sets this field. */
+                    /**
+                     * @deprecated Seam no longer sets this field.*/
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
                   }
@@ -203027,9 +203036,7 @@ export type Routes = {
                 }
               | undefined
             /** Configuration for the manage devices feature.
-        ---
-        deprecated: Use `manage` instead.
-        --- */
+             * @deprecated Use `manage` instead.*/
             manage_devices?:
               | {
                   /** Whether to exclude this feature from the portal. */
@@ -203293,9 +203300,7 @@ export type Routes = {
                   }
                 | undefined
               /** Configuration for the manage devices feature.
-            ---
-            deprecated: Use `manage` instead.
-            --- */
+               * @deprecated Use `manage` instead.*/
               manage_devices?:
                 | {
                     /** Whether to exclude this feature from the portal. */
@@ -203569,9 +203574,7 @@ export type Routes = {
                   }
                 | undefined
               /** Configuration for the manage devices feature.
-            ---
-            deprecated: Use `manage` instead.
-            --- */
+               * @deprecated Use `manage` instead.*/
               manage_devices?:
                 | {
                     /** Whether to exclude this feature from the portal. */
@@ -203845,9 +203848,7 @@ export type Routes = {
                   }
                 | undefined
               /** Configuration for the manage devices feature.
-            ---
-            deprecated: Use `manage` instead.
-            --- */
+               * @deprecated Use `manage` instead.*/
               manage_devices?:
                 | {
                     /** Whether to exclude this feature from the portal. */
@@ -204117,9 +204118,7 @@ export type Routes = {
                     }
                   | undefined
                 /** Configuration for the manage devices feature.
-        ---
-        deprecated: Use `manage` instead.
-        --- */
+                 * @deprecated Use `manage` instead.*/
                 manage_devices?:
                   | {
                       /** Whether to exclude this feature from the portal. */
@@ -205114,7 +205113,8 @@ export type Routes = {
                           device_name?: (string | undefined) | undefined
                           /** Product type for a Sensi device. */
                           product_type?: (string | undefined) | undefined
-                          /** Deprecated. Seam no longer sets this field. */
+                          /**
+                           * @deprecated Seam no longer sets this field.*/
                           dual_setpoints_not_supported?:
                             (boolean | undefined) | undefined
                         }
@@ -218222,9 +218222,7 @@ export type Routes = {
                         }
                       | undefined
                     /** Configuration for the manage devices feature.
-                ---
-                deprecated: Use `manage` instead.
-                --- */
+                     * @deprecated Use `manage` instead.*/
                     manage_devices?:
                       | {
                           /** Whether to exclude this feature from the portal. */

@@ -12,6 +12,7 @@ export const workspace = z.object({
   company_name: z.string().describe(`
       ---
       deprecated: Use \`connect_partner_name\` instead.
+      end_of_life: "2026-11-09"
       ---
       Company name associated with the [workspace](https://www.seam.co/docs/core-concepts/workspaces).
       `),

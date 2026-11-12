@@ -263,6 +263,7 @@ export const device_metadata = z
       .partial().describe(`
     ---
     deprecated: Use \`salto_ks_metadata\` instead.
+    end_of_life: "2026-11-09"
     ---
     Metada for a Salto device.
     `),
@@ -760,6 +761,7 @@ export const device_metadata = z
         site_id: z.number().nullable().optional().describe(`
           ---
           deprecated: Previously marked as "@DEPRECATED."
+          end_of_life: "2026-11-09"
           ---
           Site ID for a dormakaba Oracode device.
           `),
@@ -1023,10 +1025,12 @@ export const device_metadata = z
           .optional()
           .describe(`Product type for a Sensi device.`),
         /** @deprecated Seam no longer sets this field. */
-        dual_setpoints_not_supported: z
-          .boolean()
-          .optional()
-          .describe(`Deprecated. Seam no longer sets this field.`),
+        dual_setpoints_not_supported: z.boolean().optional().describe(`
+            ---
+            deprecated: Seam no longer sets this field.
+            end_of_life: "2026-11-09"
+            ---
+          `),
       })
       .partial()
       .describe(`Metadata for a Sensi device.`),
