@@ -127,11 +127,13 @@ const common_acs_access_group = z.object({
   access_group_type: acs_access_group_external_type.describe(`
     ---
     deprecated: Use \`external_type\`.
+    end_of_life: "2026-11-09"
     ---
   `),
   access_group_type_display_name: z.string().describe(`
     ---
     deprecated: Use \`external_type_display_name\`.
+    end_of_life: "2026-11-09"
     ---
     `),
   display_name: z.string().describe('Display name for the access group.'),

@@ -13,6 +13,7 @@ export const acs_credential_provisioning_automation = z.object({
   route_path: /acs/credential_provisioning_automations
   deprecated: Not used.
   undocumented: Deprecated. Will be removed.
+  end_of_life: "2026-11-09"
   ---
 `)
 

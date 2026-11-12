@@ -76,6 +76,7 @@ export const connected_account_successful_login_event =
   }).describe(`
     ---
     deprecated: Use \`connect_webview.login_succeeded\`.
+    end_of_life: "2026-11-09"
     route_path: /connected_accounts
     ---
     A connected account had a successful login using a Connect Webview.

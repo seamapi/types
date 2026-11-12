@@ -1948,6 +1948,7 @@ const openapi: OpenAPISpec = {
             items: { format: 'uuid', type: 'string' },
             type: 'array',
             'x-deprecated': 'Use `space_ids`.',
+            'x-end-of-life': '2026-11-09',
           },
           name: {
             description:
@@ -3162,11 +3163,13 @@ const openapi: OpenAPISpec = {
             ],
             type: 'string',
             'x-deprecated': 'Use `external_type`.',
+            'x-end-of-life': '2026-11-09',
           },
           access_group_type_display_name: {
             deprecated: true,
             type: 'string',
             'x-deprecated': 'Use `external_type_display_name`.',
+            'x-end-of-life': '2026-11-09',
           },
           access_schedule: {
             description:
@@ -4258,6 +4261,7 @@ const openapi: OpenAPISpec = {
         ],
         type: 'object',
         'x-deprecated': 'Not used.',
+        'x-end-of-life': '2026-11-09',
         'x-route-path': '/acs/credential_pools',
         'x-undocumented': 'Deprecated. Will be removed.',
       },
@@ -4282,6 +4286,7 @@ const openapi: OpenAPISpec = {
         ],
         type: 'object',
         'x-deprecated': 'Not used.',
+        'x-end-of-life': '2026-11-09',
         'x-route-path': '/acs/credential_provisioning_automations',
         'x-undocumented': 'Deprecated. Will be removed.',
       },
@@ -4978,6 +4983,7 @@ const openapi: OpenAPISpec = {
             items: { format: 'uuid', type: 'string' },
             type: 'array',
             'x-deprecated': 'Use `connected_account_id`.',
+            'x-end-of-life': '2026-11-09',
           },
           created_at: {
             description:
@@ -5355,11 +5361,13 @@ const openapi: OpenAPISpec = {
             ],
             type: 'string',
             'x-deprecated': 'Use `external_type`.',
+            'x-end-of-life': '2026-11-09',
           },
           system_type_display_name: {
             deprecated: true,
             type: 'string',
             'x-deprecated': 'Use `external_type_display_name`.',
+            'x-end-of-life': '2026-11-09',
           },
           visionline_metadata: {
             description:
@@ -5461,6 +5469,7 @@ const openapi: OpenAPISpec = {
                       items: { format: 'uuid', type: 'string' },
                       type: 'array',
                       'x-deprecated': 'this field is deprecated.',
+                      'x-end-of-life': '2026-11-09',
                     },
                     warning_code: {
                       description:
@@ -5610,6 +5619,7 @@ const openapi: OpenAPISpec = {
             format: 'email',
             type: 'string',
             'x-deprecated': 'use email_address.',
+            'x-end-of-life': '2026-11-09',
           },
           email_address: {
             description:
@@ -14421,6 +14431,7 @@ const openapi: OpenAPISpec = {
             items: { format: 'uuid', type: 'string' },
             type: 'array',
             'x-deprecated': 'Use `user_identity_id` instead.',
+            'x-end-of-life': '2026-11-09',
           },
           workspace_id: {
             description:
@@ -14472,6 +14483,7 @@ const openapi: OpenAPISpec = {
             items: { type: 'string' },
             type: 'array',
             'x-deprecated': 'Unused. Will be removed.',
+            'x-end-of-life': '2026-11-09',
             'x-undocumented': 'Unused. Will be removed.',
           },
           accepted_providers: {
@@ -14484,6 +14496,7 @@ const openapi: OpenAPISpec = {
             deprecated: true,
             type: 'boolean',
             'x-deprecated': 'Unused. Will be removed.',
+            'x-end-of-life': '2026-11-09',
             'x-undocumented': 'Unused. Will be removed.',
           },
           any_provider_allowed: {
@@ -14938,6 +14951,7 @@ const openapi: OpenAPISpec = {
             },
             type: 'object',
             'x-deprecated': 'Use `display_name` instead.',
+            'x-end-of-life': '2026-11-09',
           },
           warnings: {
             description: 'Warnings associated with the connected account.',
@@ -15469,8 +15483,8 @@ const openapi: OpenAPISpec = {
                 type: 'object',
               },
               manage_devices: {
-                description:
-                  'Configuration for the manage devices feature.\n---\ndeprecated: Use `manage` instead.\n---',
+                deprecated: true,
+                description: 'Configuration for the manage devices feature.',
                 properties: {
                   exclude: {
                     default: false,
@@ -15480,6 +15494,8 @@ const openapi: OpenAPISpec = {
                   },
                 },
                 type: 'object',
+                'x-deprecated': 'Use `manage` instead.',
+                'x-end-of-life': '2026-11-09',
               },
               organize: {
                 description: 'Configuration for the organize feature.',
@@ -16886,6 +16902,7 @@ const openapi: OpenAPISpec = {
                 description: 'Time zone of the device location.',
                 type: 'string',
                 'x-deprecated': 'Use `time_zone` instead.',
+                'x-end-of-life': '2026-11-09',
               },
             },
             type: 'object',
@@ -17152,6 +17169,7 @@ const openapi: OpenAPISpec = {
                                 type: 'boolean',
                                 'x-deprecated':
                                   'use device.properties.model.can_connect_accessory_keypad',
+                                'x-end-of-life': '2026-11-09',
                               },
                               can_connect_accessory_keypad: {
                                 description:
@@ -17178,12 +17196,14 @@ const openapi: OpenAPISpec = {
                                 type: 'boolean',
                                 'x-deprecated':
                                   'use device.can_program_offline_access_codes.',
+                                'x-end-of-life': '2026-11-09',
                               },
                               online_access_codes_supported: {
                                 deprecated: true,
                                 type: 'boolean',
                                 'x-deprecated':
                                   'use device.can_program_online_access_codes.',
+                                'x-end-of-life': '2026-11-09',
                               },
                             },
                             required: [
@@ -17212,6 +17232,7 @@ const openapi: OpenAPISpec = {
                             type: 'boolean',
                             'x-deprecated':
                               'use device.can_program_offline_access_codes',
+                            'x-end-of-life': '2026-11-09',
                             'x-property-group-key': 'access_codes',
                           },
                           online: {
@@ -17226,6 +17247,7 @@ const openapi: OpenAPISpec = {
                             type: 'boolean',
                             'x-deprecated':
                               'use device.can_program_online_access_codes',
+                            'x-end-of-life': '2026-11-09',
                             'x-property-group-key': 'access_codes',
                           },
                           serial_number: {
@@ -17238,12 +17260,14 @@ const openapi: OpenAPISpec = {
                             type: 'boolean',
                             'x-deprecated':
                               'use device.properties.model.can_connect_accessory_keypad',
+                            'x-end-of-life': '2026-11-09',
                             'x-property-group-key': 'access_codes',
                           },
                           supports_offline_access_codes: {
                             deprecated: true,
                             type: 'boolean',
                             'x-deprecated': 'use offline_access_codes_enabled',
+                            'x-end-of-life': '2026-11-09',
                             'x-property-group-key': 'access_codes',
                           },
                         },
@@ -17699,6 +17723,7 @@ const openapi: OpenAPISpec = {
                             type: 'number',
                             'x-deprecated':
                               'Previously marked as "@DEPRECATED."',
+                            'x-end-of-life': '2026-11-09',
                           },
                           site_name: {
                             description:
@@ -18464,6 +18489,7 @@ const openapi: OpenAPISpec = {
                         },
                         type: 'object',
                         'x-deprecated': 'Use `salto_ks_metadata` instead.',
+                        'x-end-of-life': '2026-11-09',
                       },
                       schlage_metadata: {
                         description: 'Metadata for a Schlage device.',
@@ -18515,9 +18541,10 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                           dual_setpoints_not_supported: {
-                            description:
-                              'Deprecated. Seam no longer sets this field.',
+                            deprecated: true,
                             type: 'boolean',
+                            'x-deprecated': 'Seam no longer sets this field.',
+                            'x-end-of-life': '2026-11-09',
                           },
                           product_type: {
                             description: 'Product type for a Sensi device.',
@@ -19570,6 +19597,7 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                         'x-deprecated':
                           'Use `active_thermostat_schedule_id` with `/thermostats/schedules/get` instead.',
+                        'x-end-of-life': '2026-11-09',
                         'x-property-group-key': 'thermostats',
                         'x-route-path': '/thermostats/schedules',
                       },
@@ -19710,6 +19738,7 @@ const openapi: OpenAPISpec = {
                               type: 'boolean',
                               'x-deprecated':
                                 "Use 'thermostat_schedule.is_override_allowed'",
+                              'x-end-of-life': '2026-11-09',
                             },
                             name: {
                               default: null,
@@ -19863,6 +19892,7 @@ const openapi: OpenAPISpec = {
                             type: 'boolean',
                             'x-deprecated':
                               "Use 'thermostat_schedule.is_override_allowed'",
+                            'x-end-of-life': '2026-11-09',
                           },
                           name: {
                             default: null,
@@ -19982,6 +20012,7 @@ const openapi: OpenAPISpec = {
                             type: 'boolean',
                             'x-deprecated':
                               "Use 'thermostat_schedule.is_override_allowed'",
+                            'x-end-of-life': '2026-11-09',
                           },
                           name: {
                             default: null,
@@ -19994,6 +20025,7 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                         'x-deprecated':
                           'use fallback_climate_preset_key to specify a fallback climate preset instead.',
+                        'x-end-of-life': '2026-11-09',
                         'x-property-group-key': 'thermostats',
                       },
                       fallback_climate_preset_key: {
@@ -20010,6 +20042,7 @@ const openapi: OpenAPISpec = {
                         type: 'string',
                         'x-deprecated':
                           'Use `current_climate_setting.fan_mode_setting` instead.',
+                        'x-end-of-life': '2026-11-09',
                         'x-property-group-key': 'thermostats',
                       },
                       is_cooling: {
@@ -27532,6 +27565,7 @@ const openapi: OpenAPISpec = {
             ],
             type: 'object',
             'x-deprecated': 'Use `connect_webview.login_succeeded`.',
+            'x-end-of-life': '2026-11-09',
             'x-route-path': '/connected_accounts',
           },
           {
@@ -29504,6 +29538,7 @@ const openapi: OpenAPISpec = {
                 type: 'number',
                 'x-deprecated':
                   "Use device_battery_level and accessory_keypad_battery_level, which distinguish the device's own battery from a paired accessory keypad's battery.",
+                'x-end-of-life': '2026-11-09',
               },
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -38623,6 +38658,7 @@ const openapi: OpenAPISpec = {
             items: { format: 'uuid', type: 'string' },
             type: 'array',
             'x-deprecated': 'Use `space_ids`.',
+            'x-end-of-life': '2026-11-09',
           },
           name: {
             description:
@@ -39816,11 +39852,13 @@ const openapi: OpenAPISpec = {
             ],
             type: 'string',
             'x-deprecated': 'Use `external_type`.',
+            'x-end-of-life': '2026-11-09',
           },
           access_group_type_display_name: {
             deprecated: true,
             type: 'string',
             'x-deprecated': 'Use `external_type_display_name`.',
+            'x-end-of-life': '2026-11-09',
           },
           access_schedule: {
             description:
@@ -40943,6 +40981,7 @@ const openapi: OpenAPISpec = {
             format: 'email',
             type: 'string',
             'x-deprecated': 'use email_address.',
+            'x-end-of-life': '2026-11-09',
           },
           email_address: {
             description:
@@ -42698,6 +42737,7 @@ const openapi: OpenAPISpec = {
                 description: 'Time zone of the device location.',
                 type: 'string',
                 'x-deprecated': 'Use `time_zone` instead.',
+                'x-end-of-life': '2026-11-09',
               },
             },
             type: 'object',
@@ -42789,6 +42829,7 @@ const openapi: OpenAPISpec = {
                     type: 'boolean',
                     'x-deprecated':
                       'use device.properties.model.can_connect_accessory_keypad',
+                    'x-end-of-life': '2026-11-09',
                   },
                   can_connect_accessory_keypad: {
                     description:
@@ -42815,12 +42856,14 @@ const openapi: OpenAPISpec = {
                     type: 'boolean',
                     'x-deprecated':
                       'use device.can_program_offline_access_codes.',
+                    'x-end-of-life': '2026-11-09',
                   },
                   online_access_codes_supported: {
                     deprecated: true,
                     type: 'boolean',
                     'x-deprecated':
                       'use device.can_program_online_access_codes.',
+                    'x-end-of-life': '2026-11-09',
                   },
                 },
                 required: ['display_name', 'manufacturer_display_name'],
@@ -42838,6 +42881,7 @@ const openapi: OpenAPISpec = {
                   'Indicates whether it is currently possible to use offline access codes for the device.',
                 type: 'boolean',
                 'x-deprecated': 'use device.can_program_offline_access_codes',
+                'x-end-of-life': '2026-11-09',
                 'x-property-group-key': 'access_codes',
               },
               online: {
@@ -42850,6 +42894,7 @@ const openapi: OpenAPISpec = {
                   'Indicates whether it is currently possible to use online access codes for the device.',
                 type: 'boolean',
                 'x-deprecated': 'use device.can_program_online_access_codes',
+                'x-end-of-life': '2026-11-09',
                 'x-property-group-key': 'access_codes',
               },
             },
@@ -44177,6 +44222,7 @@ const openapi: OpenAPISpec = {
               'Company name associated with the [workspace](https://www.seam.co/docs/core-concepts/workspaces).',
             type: 'string',
             'x-deprecated': 'Use `connect_partner_name` instead.',
+            'x-end-of-life': '2026-11-09',
           },
           connect_partner_name: {
             description:
@@ -44471,6 +44517,7 @@ const openapi: OpenAPISpec = {
                     deprecated: true,
                     type: 'boolean',
                     'x-deprecated': 'Use `is_offline_access_code` instead.',
+                    'x-end-of-life': '2026-11-09',
                   },
                 },
                 required: ['device_id'],
@@ -46122,6 +46169,7 @@ const openapi: OpenAPISpec = {
                             type: 'array',
                             'x-deprecated':
                               'Use `acs_entrance_ids` at the top level.',
+                            'x-end-of-life': '2026-11-09',
                           },
                           device_ids: {
                             default: [],
@@ -46130,6 +46178,7 @@ const openapi: OpenAPISpec = {
                             type: 'array',
                             'x-deprecated':
                               'Use `device_ids` at the top level.',
+                            'x-end-of-life': '2026-11-09',
                           },
                           name: {
                             description: 'Name of the location.',
@@ -46139,12 +46188,14 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                         'x-deprecated':
                           'Create a space first, then reference it using `space_ids`.',
+                        'x-end-of-life': '2026-11-09',
                       },
                       location_ids: {
                         deprecated: true,
                         items: { format: 'uuid', type: 'string' },
                         type: 'array',
                         'x-deprecated': 'Use `space_ids`.',
+                        'x-end-of-life': '2026-11-09',
                       },
                       name: {
                         description: 'Name for the access grant.',
@@ -46599,6 +46650,7 @@ const openapi: OpenAPISpec = {
               format: 'uuid',
               type: 'string',
               'x-deprecated': 'Use `space_id`.',
+              'x-end-of-life': '2026-11-09',
             },
           },
           {
@@ -48442,6 +48494,7 @@ const openapi: OpenAPISpec = {
         tags: ['/acs'],
         'x-deprecated':
           'Use `/user_identities/enrollment_automations/list` instead.',
+        'x-end-of-life': '2026-11-09',
         'x-fern-sdk-group-name': ['acs', 'credential_pools'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_credential_pools',
@@ -48528,6 +48581,7 @@ const openapi: OpenAPISpec = {
         tags: ['/acs'],
         'x-deprecated':
           'Use `/user_identities/enrollment_automations/launch` instead.',
+        'x-end-of-life': '2026-11-09',
         'x-fern-sdk-group-name': ['acs', 'credential_provisioning_automations'],
         'x-fern-sdk-method-name': 'launch',
         'x-fern-sdk-return-value': 'acs_credential_provisioning_automation',
@@ -48726,6 +48780,7 @@ const openapi: OpenAPISpec = {
                         type: 'string',
                         'x-deprecated':
                           'Read-only endpoint references moved to `endpoint`.',
+                        'x-end-of-life': '2026-11-09',
                         'x-undocumented':
                           'Deprecated. Read-only endpoint references moved to `endpoint`.',
                       },
@@ -48743,6 +48798,7 @@ const openapi: OpenAPISpec = {
                         deprecated: true,
                         type: 'boolean',
                         'x-deprecated': 'Use `override` instead.',
+                        'x-end-of-life': '2026-11-09',
                         'x-undocumented': 'Use `override` instead.',
                       },
                       joiner_acs_credential_ids: {
@@ -50322,6 +50378,7 @@ const openapi: OpenAPISpec = {
               nullable: true,
               type: 'string',
               'x-deprecated': 'Use `space_id`.',
+              'x-end-of-life': '2026-11-09',
             },
           },
           {
@@ -50963,6 +51020,7 @@ const openapi: OpenAPISpec = {
                     format: 'email',
                     type: 'string',
                     'x-deprecated': 'use email_address.',
+                    'x-end-of-life': '2026-11-09',
                   },
                   email_address: {
                     description:
@@ -51836,6 +51894,7 @@ const openapi: OpenAPISpec = {
                     format: 'email',
                     type: 'string',
                     'x-deprecated': 'use email_address.',
+                    'x-end-of-life': '2026-11-09',
                   },
                   email_address: {
                     description:
@@ -52440,6 +52499,7 @@ const openapi: OpenAPISpec = {
                     minItems: 1,
                     type: 'array',
                     'x-deprecated': 'Use `user_identity_id` instead.',
+                    'x-end-of-life': '2026-11-09',
                   },
                 },
                 type: 'object',
@@ -52640,6 +52700,7 @@ const openapi: OpenAPISpec = {
                     minItems: 1,
                     type: 'array',
                     'x-deprecated': 'Use `user_identity_id`.',
+                    'x-end-of-life': '2026-11-09',
                   },
                 },
                 type: 'object',
@@ -52730,6 +52791,7 @@ const openapi: OpenAPISpec = {
                     minItems: 1,
                     type: 'array',
                     'x-deprecated': 'Use `user_identity_id`.',
+                    'x-end-of-life': '2026-11-09',
                   },
                 },
                 type: 'object',
@@ -54115,8 +54177,9 @@ const openapi: OpenAPISpec = {
                             type: 'object',
                           },
                           manage_devices: {
+                            deprecated: true,
                             description:
-                              'Configuration for the manage devices feature.\n---\ndeprecated: Use `manage` instead.\n---',
+                              'Configuration for the manage devices feature.',
                             properties: {
                               exclude: {
                                 default: false,
@@ -54126,6 +54189,8 @@ const openapi: OpenAPISpec = {
                               },
                             },
                             type: 'object',
+                            'x-deprecated': 'Use `manage` instead.',
+                            'x-end-of-life': '2026-11-09',
                           },
                           organize: {
                             description:
@@ -57397,6 +57462,7 @@ const openapi: OpenAPISpec = {
               nullable: true,
               type: 'string',
               'x-deprecated': 'Use `space_id`.',
+              'x-end-of-life': '2026-11-09',
             },
           },
           {
@@ -68858,6 +68924,7 @@ const openapi: OpenAPISpec = {
                                   type: 'boolean',
                                   'x-deprecated':
                                     'Use `prefer_guest_phone_last_digits_as_code`.',
+                                  'x-end-of-life': '2026-11-09',
                                 },
                                 prefer_guest_phone_last_digits_as_code: {
                                   description:
@@ -69431,6 +69498,7 @@ const openapi: OpenAPISpec = {
                                 type: 'boolean',
                                 'x-deprecated':
                                   'Use `prefer_guest_phone_last_digits_as_code`.',
+                                'x-end-of-life': '2026-11-09',
                               },
                               prefer_guest_phone_last_digits_as_code: {
                                 description:
@@ -71077,6 +71145,7 @@ const openapi: OpenAPISpec = {
                                       type: 'boolean',
                                       'x-deprecated':
                                         'Use `prefer_guest_phone_last_digits_as_code`.',
+                                      'x-end-of-life': '2026-11-09',
                                     },
                                     prefer_guest_phone_last_digits_as_code: {
                                       description:
@@ -71579,6 +71648,7 @@ const openapi: OpenAPISpec = {
                                 type: 'boolean',
                                 'x-deprecated':
                                   'Use `prefer_guest_phone_last_digits_as_code`.',
+                                'x-end-of-life': '2026-11-09',
                               },
                               prefer_guest_phone_last_digits_as_code: {
                                 description:
@@ -73099,8 +73169,9 @@ const openapi: OpenAPISpec = {
                               default: {
                                 $ref: '#/components/schemas/access_code',
                               },
+                              deprecated: true,
                               description:
-                                'Configuration for the manage devices feature.\n---\ndeprecated: Use `manage` instead.\n---',
+                                'Configuration for the manage devices feature.',
                               properties: {
                                 exclude: {
                                   default: false,
@@ -73110,6 +73181,8 @@ const openapi: OpenAPISpec = {
                                 },
                               },
                               type: 'object',
+                              'x-deprecated': 'Use `manage` instead.',
+                              'x-end-of-life': '2026-11-09',
                             },
                             organize: {
                               default: {
@@ -73584,8 +73657,9 @@ const openapi: OpenAPISpec = {
                             type: 'object',
                           },
                           manage_devices: {
+                            deprecated: true,
                             description:
-                              'Configuration for the manage devices feature.\n---\ndeprecated: Use `manage` instead.\n---',
+                              'Configuration for the manage devices feature.',
                             properties: {
                               exclude: {
                                 default: false,
@@ -73595,6 +73669,8 @@ const openapi: OpenAPISpec = {
                               },
                             },
                             type: 'object',
+                            'x-deprecated': 'Use `manage` instead.',
+                            'x-end-of-life': '2026-11-09',
                           },
                           organize: {
                             description:
@@ -78692,6 +78768,7 @@ const openapi: OpenAPISpec = {
                     type: 'boolean',
                     'x-deprecated':
                       "Use 'thermostat_schedule.is_override_allowed'",
+                    'x-end-of-life': '2026-11-09',
                   },
                   name: {
                     default: null,
@@ -79073,6 +79150,7 @@ const openapi: OpenAPISpec = {
         summary: '/thermostats/get',
         tags: ['/thermostats'],
         'x-deprecated': 'Use `/devices/get` instead.',
+        'x-end-of-life': '2026-11-09',
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'thermostat',
@@ -80501,6 +80579,7 @@ const openapi: OpenAPISpec = {
                     type: 'boolean',
                     'x-deprecated':
                       "Use 'thermostat_schedule.is_override_allowed'",
+                    'x-end-of-life': '2026-11-09',
                   },
                   name: {
                     default: null,
@@ -81840,6 +81919,7 @@ const openapi: OpenAPISpec = {
                       items: { $ref: '#/components/schemas/device' },
                       type: 'array',
                       'x-deprecated': 'Use devices.',
+                      'x-end-of-life': '2026-11-09',
                     },
                     devices: {
                       items: { $ref: '#/components/schemas/device' },
@@ -82796,6 +82876,7 @@ const openapi: OpenAPISpec = {
                     description: 'Company name for the new workspace.',
                     type: 'string',
                     'x-deprecated': 'Use `connect_partner_name` instead.',
+                    'x-end-of-life': '2026-11-09',
                   },
                   connect_partner_name: {
                     description: 'Connect partner name for the new workspace.',
@@ -82856,24 +82937,28 @@ const openapi: OpenAPISpec = {
                     type: 'string',
                     'x-deprecated':
                       'Use `connect_webview_customization.webview_logo_shape` instead.',
+                    'x-end-of-life': '2026-11-09',
                   },
                   webview_primary_button_color: {
                     deprecated: true,
                     type: 'string',
                     'x-deprecated':
                       'Use `connect_webview_customization.webview_primary_button_color` instead.',
+                    'x-end-of-life': '2026-11-09',
                   },
                   webview_primary_button_text_color: {
                     deprecated: true,
                     type: 'string',
                     'x-deprecated':
                       'Use `connect_webview_customization.webview_primary_button_text_color` instead.',
+                    'x-end-of-life': '2026-11-09',
                   },
                   webview_success_message: {
                     deprecated: true,
                     type: 'string',
                     'x-deprecated':
                       'Use `connect_webview_customization.webview_success_message` instead.',
+                    'x-end-of-life': '2026-11-09',
                   },
                 },
                 required: ['name'],
@@ -83095,8 +83180,9 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                       },
                       manage_devices: {
+                        deprecated: true,
                         description:
-                          'Configuration for the manage devices feature.\n---\ndeprecated: Use `manage` instead.\n---',
+                          'Configuration for the manage devices feature.',
                         properties: {
                           exclude: {
                             default: false,
@@ -83106,6 +83192,8 @@ const openapi: OpenAPISpec = {
                           },
                         },
                         type: 'object',
+                        'x-deprecated': 'Use `manage` instead.',
+                        'x-end-of-life': '2026-11-09',
                       },
                       organize: {
                         description: 'Configuration for the organize feature.',
@@ -83782,8 +83870,9 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                       },
                       manage_devices: {
+                        deprecated: true,
                         description:
-                          'Configuration for the manage devices feature.\n---\ndeprecated: Use `manage` instead.\n---',
+                          'Configuration for the manage devices feature.',
                         properties: {
                           exclude: {
                             default: false,
@@ -83793,6 +83882,8 @@ const openapi: OpenAPISpec = {
                           },
                         },
                         type: 'object',
+                        'x-deprecated': 'Use `manage` instead.',
+                        'x-end-of-life': '2026-11-09',
                       },
                       organize: {
                         description: 'Configuration for the organize feature.',

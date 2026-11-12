@@ -289,6 +289,7 @@ export const access_grant = z.object({
   location_ids: z.array(z.string().uuid()).describe(`
     ---
     deprecated: Use \`space_ids\`.
+    end_of_life: "2026-11-09"
     ---
   `),
   space_ids: z

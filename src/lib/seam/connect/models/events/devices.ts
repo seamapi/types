@@ -202,6 +202,7 @@ export const device_low_battery_event = device_event.extend({
   battery_level: battery_level.describe(`
     ---
     deprecated: Use device_battery_level and accessory_keypad_battery_level, which distinguish the device's own battery from a paired accessory keypad's battery.
+    end_of_life: "2026-11-09"
     ---
     Number in the range 0 to 1.0 indicating the level of the battery whose drop triggered this event.
   `),

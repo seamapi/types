@@ -370,6 +370,7 @@ export const connected_account = z.object({
     .optional().describe(`
       ---
       deprecated: Use \`display_name\` instead.
+      end_of_life: "2026-11-09"
       ---
       User identifier associated with the connected account.
     `),

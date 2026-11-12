@@ -54,6 +54,7 @@ export const connect_webview = z.object({
       ---
       undocumented: Unused. Will be removed.
       deprecated: Unused. Will be removed.
+      end_of_life: "2026-11-09"
       ---
       `,
   ),
@@ -62,6 +63,7 @@ export const connect_webview = z.object({
       ---
       undocumented: Unused. Will be removed.
       deprecated: Unused. Will be removed.
+      end_of_life: "2026-11-09"
       ---
       `,
   ),

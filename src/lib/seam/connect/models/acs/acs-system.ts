@@ -245,6 +245,7 @@ const time_zone_does_not_match_location = common_acs_system_warning
         `
     ---
     deprecated: this field is deprecated.
+    end_of_life: "2026-11-09"
     ---
     `,
       ),
@@ -372,6 +373,7 @@ export const acs_system = z
         `
       ---
       deprecated: Use \`external_type\`.
+      end_of_life: "2026-11-09"
       ---
       `,
       )
@@ -379,6 +381,7 @@ export const acs_system = z
     system_type_display_name: z.string().optional().describe(`
       ---
       deprecated: Use \`external_type_display_name\`.
+      end_of_life: "2026-11-09"
       ---
       `),
     location: acs_location.describe(
@@ -401,6 +404,7 @@ export const acs_system = z
     connected_account_ids: z.array(z.string().uuid()).describe(`
       ---
       deprecated: Use \`connected_account_id\`.
+      end_of_life: "2026-11-09"
       ---
       IDs of the [connected accounts](https://www.seam.co/docs/core-concepts/connected-accounts) associated with the [access control system](https://www.seam.co/docs/low-level-apis/access-systems).
       `),
