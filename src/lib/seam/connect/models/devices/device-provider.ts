@@ -53,6 +53,7 @@ export const DEVICE_PROVIDERS = {
   TADO: 'tado',
   SALTO_SPACE: 'salto_space',
   SENSI: 'sensi',
+  SENSIBO: 'sensibo',
   KEYNEST: 'keynest',
   KORELOCK: 'korelock',
   KEYINCODE: 'keyincode',
@@ -184,6 +185,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'honeywell_resideo',
     'first_alert',
     'tado',
+    'sensibo',
   ],
   noise_sensors: ['minut', 'noiseaware'],
   access_control_systems: [

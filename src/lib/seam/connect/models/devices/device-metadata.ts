@@ -1031,6 +1031,44 @@ export const device_metadata = z
       .partial()
       .describe(`Metadata for a Sensi device.`),
 
+    sensibo_metadata: z
+      .object({
+        pod_id: z
+          .string()
+          .optional()
+          .describe(`ID of the Sensibo device, which Sensibo calls a pod.`),
+        room_name: z
+          .string()
+          .optional()
+          .describe(`Name of the room that the Sensibo device is in.`),
+        product_model: z
+          .string()
+          .optional()
+          .describe(
+            `Product model of the Sensibo device, such as \`skyv2\` or \`air\`.`,
+          ),
+        mac_address: z
+          .string()
+          .optional()
+          .describe(`MAC address of the Sensibo device.`),
+        serial_number: z
+          .string()
+          .optional()
+          .describe(`Serial number of the Sensibo device.`),
+        firmware_version: z
+          .string()
+          .optional()
+          .describe(`Firmware version of the Sensibo device.`),
+        temperature_unit: z
+          .string()
+          .optional()
+          .describe(
+            `Temperature unit that the Sensibo device displays: \`C\` or \`F\`.`,
+          ),
+      })
+      .partial()
+      .describe(`Metadata for a Sensibo device.`),
+
     keynest_metadata: z
       .object({
         key_id: z.string().optional().describe(`Key ID for a KeyNest device.`),

@@ -16253,6 +16253,7 @@ export type Routes = {
                     | 'honeywell_resideo_thermostat'
                     | 'tado_thermostat'
                     | 'sensi_thermostat'
+                    | 'sensibo_thermostat'
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
@@ -17033,6 +17034,25 @@ export type Routes = {
                           /** Deprecated. Seam no longer sets this field. */
                           dual_setpoints_not_supported?:
                             (boolean | undefined) | undefined
+                        }
+                      | undefined
+                    /** Metadata for a Sensibo device. */
+                    sensibo_metadata?:
+                      | {
+                          /** ID of the Sensibo device, which Sensibo calls a pod. */
+                          pod_id?: (string | undefined) | undefined
+                          /** Name of the room that the Sensibo device is in. */
+                          room_name?: (string | undefined) | undefined
+                          /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                          product_model?: (string | undefined) | undefined
+                          /** MAC address of the Sensibo device. */
+                          mac_address?: (string | undefined) | undefined
+                          /** Serial number of the Sensibo device. */
+                          serial_number?: (string | undefined) | undefined
+                          /** Firmware version of the Sensibo device. */
+                          firmware_version?: (string | undefined) | undefined
+                          /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                          temperature_unit?: (string | undefined) | undefined
                         }
                       | undefined
                     /** Metadata for a KeyNest device. */
@@ -26325,6 +26345,7 @@ export type Routes = {
                     | 'honeywell_resideo_thermostat'
                     | 'tado_thermostat'
                     | 'sensi_thermostat'
+                    | 'sensibo_thermostat'
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
@@ -27105,6 +27126,25 @@ export type Routes = {
                           /** Deprecated. Seam no longer sets this field. */
                           dual_setpoints_not_supported?:
                             (boolean | undefined) | undefined
+                        }
+                      | undefined
+                    /** Metadata for a Sensibo device. */
+                    sensibo_metadata?:
+                      | {
+                          /** ID of the Sensibo device, which Sensibo calls a pod. */
+                          pod_id?: (string | undefined) | undefined
+                          /** Name of the room that the Sensibo device is in. */
+                          room_name?: (string | undefined) | undefined
+                          /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                          product_model?: (string | undefined) | undefined
+                          /** MAC address of the Sensibo device. */
+                          mac_address?: (string | undefined) | undefined
+                          /** Serial number of the Sensibo device. */
+                          serial_number?: (string | undefined) | undefined
+                          /** Firmware version of the Sensibo device. */
+                          firmware_version?: (string | undefined) | undefined
+                          /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                          temperature_unit?: (string | undefined) | undefined
                         }
                       | undefined
                     /** Metadata for a KeyNest device. */
@@ -56723,6 +56763,7 @@ export type Routes = {
             | 'tado'
             | 'salto_space'
             | 'sensi'
+            | 'sensibo'
             | 'keynest'
             | 'korelock'
             | 'keyincode'
@@ -59093,6 +59134,7 @@ export type Routes = {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'sensibo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -59851,6 +59893,25 @@ export type Routes = {
                     /** Deprecated. Seam no longer sets this field. */
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Sensibo device. */
+              sensibo_metadata?:
+                | {
+                    /** ID of the Sensibo device, which Sensibo calls a pod. */
+                    pod_id?: (string | undefined) | undefined
+                    /** Name of the room that the Sensibo device is in. */
+                    room_name?: (string | undefined) | undefined
+                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    product_model?: (string | undefined) | undefined
+                    /** MAC address of the Sensibo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** Serial number of the Sensibo device. */
+                    serial_number?: (string | undefined) | undefined
+                    /** Firmware version of the Sensibo device. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a KeyNest device. */
@@ -61394,6 +61455,7 @@ export type Routes = {
                 | 'honeywell_resideo_thermostat'
                 | 'tado_thermostat'
                 | 'sensi_thermostat'
+                | 'sensibo_thermostat'
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
@@ -61458,6 +61520,7 @@ export type Routes = {
                 | 'honeywell_resideo_thermostat'
                 | 'tado_thermostat'
                 | 'sensi_thermostat'
+                | 'sensibo_thermostat'
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
@@ -61518,6 +61581,7 @@ export type Routes = {
             | 'nest'
             | 'noiseaware'
             | 'sensi'
+            | 'sensibo'
             | 'smartthings'
             | 'tado'
             | 'ultraloq'
@@ -61693,6 +61757,7 @@ export type Routes = {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'sensibo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -62451,6 +62516,25 @@ export type Routes = {
                     /** Deprecated. Seam no longer sets this field. */
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Sensibo device. */
+              sensibo_metadata?:
+                | {
+                    /** ID of the Sensibo device, which Sensibo calls a pod. */
+                    pod_id?: (string | undefined) | undefined
+                    /** Name of the room that the Sensibo device is in. */
+                    room_name?: (string | undefined) | undefined
+                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    product_model?: (string | undefined) | undefined
+                    /** MAC address of the Sensibo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** Serial number of the Sensibo device. */
+                    serial_number?: (string | undefined) | undefined
+                    /** Firmware version of the Sensibo device. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a KeyNest device. */
@@ -64014,6 +64098,7 @@ export type Routes = {
           | 'tado'
           | 'salto_space'
           | 'sensi'
+          | 'sensibo'
           | 'keynest'
           | 'korelock'
           | 'keyincode'
@@ -65591,6 +65676,7 @@ export type Routes = {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'sensibo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -66265,6 +66351,7 @@ export type Routes = {
                 | 'honeywell_resideo_thermostat'
                 | 'tado_thermostat'
                 | 'sensi_thermostat'
+                | 'sensibo_thermostat'
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
@@ -66329,6 +66416,7 @@ export type Routes = {
                 | 'honeywell_resideo_thermostat'
                 | 'tado_thermostat'
                 | 'sensi_thermostat'
+                | 'sensibo_thermostat'
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
@@ -66389,6 +66477,7 @@ export type Routes = {
             | 'nest'
             | 'noiseaware'
             | 'sensi'
+            | 'sensibo'
             | 'smartthings'
             | 'tado'
             | 'ultraloq'
@@ -66551,6 +66640,7 @@ export type Routes = {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'sensibo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -78746,6 +78836,7 @@ export type Routes = {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'sensibo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -79504,6 +79595,25 @@ export type Routes = {
                     /** Deprecated. Seam no longer sets this field. */
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Sensibo device. */
+              sensibo_metadata?:
+                | {
+                    /** ID of the Sensibo device, which Sensibo calls a pod. */
+                    pod_id?: (string | undefined) | undefined
+                    /** Name of the room that the Sensibo device is in. */
+                    room_name?: (string | undefined) | undefined
+                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    product_model?: (string | undefined) | undefined
+                    /** MAC address of the Sensibo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** Serial number of the Sensibo device. */
+                    serial_number?: (string | undefined) | undefined
+                    /** Firmware version of the Sensibo device. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a KeyNest device. */
@@ -81033,6 +81143,7 @@ export type Routes = {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'sensibo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -81791,6 +81902,25 @@ export type Routes = {
                     /** Deprecated. Seam no longer sets this field. */
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Sensibo device. */
+              sensibo_metadata?:
+                | {
+                    /** ID of the Sensibo device, which Sensibo calls a pod. */
+                    pod_id?: (string | undefined) | undefined
+                    /** Name of the room that the Sensibo device is in. */
+                    room_name?: (string | undefined) | undefined
+                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    product_model?: (string | undefined) | undefined
+                    /** MAC address of the Sensibo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** Serial number of the Sensibo device. */
+                    serial_number?: (string | undefined) | undefined
+                    /** Firmware version of the Sensibo device. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a KeyNest device. */
@@ -83461,6 +83591,7 @@ export type Routes = {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'sensibo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -84219,6 +84350,25 @@ export type Routes = {
                     /** Deprecated. Seam no longer sets this field. */
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Sensibo device. */
+              sensibo_metadata?:
+                | {
+                    /** ID of the Sensibo device, which Sensibo calls a pod. */
+                    pod_id?: (string | undefined) | undefined
+                    /** Name of the room that the Sensibo device is in. */
+                    room_name?: (string | undefined) | undefined
+                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    product_model?: (string | undefined) | undefined
+                    /** MAC address of the Sensibo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** Serial number of the Sensibo device. */
+                    serial_number?: (string | undefined) | undefined
+                    /** Firmware version of the Sensibo device. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a KeyNest device. */
@@ -85747,6 +85897,7 @@ export type Routes = {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'sensibo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -86505,6 +86656,25 @@ export type Routes = {
                     /** Deprecated. Seam no longer sets this field. */
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Sensibo device. */
+              sensibo_metadata?:
+                | {
+                    /** ID of the Sensibo device, which Sensibo calls a pod. */
+                    pod_id?: (string | undefined) | undefined
+                    /** Name of the room that the Sensibo device is in. */
+                    room_name?: (string | undefined) | undefined
+                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    product_model?: (string | undefined) | undefined
+                    /** MAC address of the Sensibo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** Serial number of the Sensibo device. */
+                    serial_number?: (string | undefined) | undefined
+                    /** Firmware version of the Sensibo device. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a KeyNest device. */
@@ -98432,6 +98602,7 @@ export type Routes = {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'sensibo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -99190,6 +99361,25 @@ export type Routes = {
                     /** Deprecated. Seam no longer sets this field. */
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Sensibo device. */
+              sensibo_metadata?:
+                | {
+                    /** ID of the Sensibo device, which Sensibo calls a pod. */
+                    pod_id?: (string | undefined) | undefined
+                    /** Name of the room that the Sensibo device is in. */
+                    room_name?: (string | undefined) | undefined
+                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    product_model?: (string | undefined) | undefined
+                    /** MAC address of the Sensibo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** Serial number of the Sensibo device. */
+                    serial_number?: (string | undefined) | undefined
+                    /** Firmware version of the Sensibo device. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a KeyNest device. */
@@ -100718,6 +100908,7 @@ export type Routes = {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'sensibo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -101476,6 +101667,25 @@ export type Routes = {
                     /** Deprecated. Seam no longer sets this field. */
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Sensibo device. */
+              sensibo_metadata?:
+                | {
+                    /** ID of the Sensibo device, which Sensibo calls a pod. */
+                    pod_id?: (string | undefined) | undefined
+                    /** Name of the room that the Sensibo device is in. */
+                    room_name?: (string | undefined) | undefined
+                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    product_model?: (string | undefined) | undefined
+                    /** MAC address of the Sensibo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** Serial number of the Sensibo device. */
+                    serial_number?: (string | undefined) | undefined
+                    /** Firmware version of the Sensibo device. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a KeyNest device. */
@@ -114949,6 +115159,7 @@ export type Routes = {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'sensibo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -115707,6 +115918,25 @@ export type Routes = {
                     /** Deprecated. Seam no longer sets this field. */
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Sensibo device. */
+              sensibo_metadata?:
+                | {
+                    /** ID of the Sensibo device, which Sensibo calls a pod. */
+                    pod_id?: (string | undefined) | undefined
+                    /** Name of the room that the Sensibo device is in. */
+                    room_name?: (string | undefined) | undefined
+                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    product_model?: (string | undefined) | undefined
+                    /** MAC address of the Sensibo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** Serial number of the Sensibo device. */
+                    serial_number?: (string | undefined) | undefined
+                    /** Firmware version of the Sensibo device. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a KeyNest device. */
@@ -138336,6 +138566,7 @@ export type Routes = {
                     | 'honeywell_resideo_thermostat'
                     | 'tado_thermostat'
                     | 'sensi_thermostat'
+                    | 'sensibo_thermostat'
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
@@ -139116,6 +139347,25 @@ export type Routes = {
                           /** Deprecated. Seam no longer sets this field. */
                           dual_setpoints_not_supported?:
                             (boolean | undefined) | undefined
+                        }
+                      | undefined
+                    /** Metadata for a Sensibo device. */
+                    sensibo_metadata?:
+                      | {
+                          /** ID of the Sensibo device, which Sensibo calls a pod. */
+                          pod_id?: (string | undefined) | undefined
+                          /** Name of the room that the Sensibo device is in. */
+                          room_name?: (string | undefined) | undefined
+                          /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                          product_model?: (string | undefined) | undefined
+                          /** MAC address of the Sensibo device. */
+                          mac_address?: (string | undefined) | undefined
+                          /** Serial number of the Sensibo device. */
+                          serial_number?: (string | undefined) | undefined
+                          /** Firmware version of the Sensibo device. */
+                          firmware_version?: (string | undefined) | undefined
+                          /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                          temperature_unit?: (string | undefined) | undefined
                         }
                       | undefined
                     /** Metadata for a KeyNest device. */
@@ -173072,6 +173322,7 @@ export type Routes = {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'sensibo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -173830,6 +174081,25 @@ export type Routes = {
                     /** Deprecated. Seam no longer sets this field. */
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Sensibo device. */
+              sensibo_metadata?:
+                | {
+                    /** ID of the Sensibo device, which Sensibo calls a pod. */
+                    pod_id?: (string | undefined) | undefined
+                    /** Name of the room that the Sensibo device is in. */
+                    room_name?: (string | undefined) | undefined
+                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    product_model?: (string | undefined) | undefined
+                    /** MAC address of the Sensibo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** Serial number of the Sensibo device. */
+                    serial_number?: (string | undefined) | undefined
+                    /** Firmware version of the Sensibo device. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a KeyNest device. */
@@ -180508,6 +180778,7 @@ export type Routes = {
             | 'honeywell_resideo_thermostat'
             | 'tado_thermostat'
             | 'sensi_thermostat'
+            | 'sensibo_thermostat'
             | 'smartthings_thermostat'
           )
         | undefined
@@ -180519,6 +180790,7 @@ export type Routes = {
             | 'honeywell_resideo_thermostat'
             | 'tado_thermostat'
             | 'sensi_thermostat'
+            | 'sensibo_thermostat'
             | 'smartthings_thermostat'
           )[]
         | undefined
@@ -180529,6 +180801,7 @@ export type Routes = {
             | 'honeywell_resideo'
             | 'nest'
             | 'sensi'
+            | 'sensibo'
             | 'smartthings'
             | 'tado'
           )
@@ -180587,6 +180860,7 @@ export type Routes = {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'sensibo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -181345,6 +181619,25 @@ export type Routes = {
                     /** Deprecated. Seam no longer sets this field. */
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Sensibo device. */
+              sensibo_metadata?:
+                | {
+                    /** ID of the Sensibo device, which Sensibo calls a pod. */
+                    pod_id?: (string | undefined) | undefined
+                    /** Name of the room that the Sensibo device is in. */
+                    room_name?: (string | undefined) | undefined
+                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    product_model?: (string | undefined) | undefined
+                    /** MAC address of the Sensibo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** Serial number of the Sensibo device. */
+                    serial_number?: (string | undefined) | undefined
+                    /** Firmware version of the Sensibo device. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a KeyNest device. */
@@ -182873,6 +183166,7 @@ export type Routes = {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'sensibo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -183631,6 +183925,25 @@ export type Routes = {
                     /** Deprecated. Seam no longer sets this field. */
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Sensibo device. */
+              sensibo_metadata?:
+                | {
+                    /** ID of the Sensibo device, which Sensibo calls a pod. */
+                    pod_id?: (string | undefined) | undefined
+                    /** Name of the room that the Sensibo device is in. */
+                    room_name?: (string | undefined) | undefined
+                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    product_model?: (string | undefined) | undefined
+                    /** MAC address of the Sensibo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** Serial number of the Sensibo device. */
+                    serial_number?: (string | undefined) | undefined
+                    /** Firmware version of the Sensibo device. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a KeyNest device. */
@@ -196674,6 +196987,7 @@ export type Routes = {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'sensibo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -197432,6 +197746,25 @@ export type Routes = {
                     /** Deprecated. Seam no longer sets this field. */
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Sensibo device. */
+              sensibo_metadata?:
+                | {
+                    /** ID of the Sensibo device, which Sensibo calls a pod. */
+                    pod_id?: (string | undefined) | undefined
+                    /** Name of the room that the Sensibo device is in. */
+                    room_name?: (string | undefined) | undefined
+                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    product_model?: (string | undefined) | undefined
+                    /** MAC address of the Sensibo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** Serial number of the Sensibo device. */
+                    serial_number?: (string | undefined) | undefined
+                    /** Firmware version of the Sensibo device. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a KeyNest device. */
@@ -198962,6 +199295,7 @@ export type Routes = {
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
               | 'sensi_thermostat'
+              | 'sensibo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -199720,6 +200054,25 @@ export type Routes = {
                     /** Deprecated. Seam no longer sets this field. */
                     dual_setpoints_not_supported?:
                       (boolean | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Sensibo device. */
+              sensibo_metadata?:
+                | {
+                    /** ID of the Sensibo device, which Sensibo calls a pod. */
+                    pod_id?: (string | undefined) | undefined
+                    /** Name of the room that the Sensibo device is in. */
+                    room_name?: (string | undefined) | undefined
+                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    product_model?: (string | undefined) | undefined
+                    /** MAC address of the Sensibo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** Serial number of the Sensibo device. */
+                    serial_number?: (string | undefined) | undefined
+                    /** Firmware version of the Sensibo device. */
+                    firmware_version?: (string | undefined) | undefined
+                    /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
               /** Metadata for a KeyNest device. */
@@ -203983,6 +204336,7 @@ export type Routes = {
                     | 'honeywell_resideo_thermostat'
                     | 'tado_thermostat'
                     | 'sensi_thermostat'
+                    | 'sensibo_thermostat'
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
@@ -204763,6 +205117,25 @@ export type Routes = {
                           /** Deprecated. Seam no longer sets this field. */
                           dual_setpoints_not_supported?:
                             (boolean | undefined) | undefined
+                        }
+                      | undefined
+                    /** Metadata for a Sensibo device. */
+                    sensibo_metadata?:
+                      | {
+                          /** ID of the Sensibo device, which Sensibo calls a pod. */
+                          pod_id?: (string | undefined) | undefined
+                          /** Name of the room that the Sensibo device is in. */
+                          room_name?: (string | undefined) | undefined
+                          /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                          product_model?: (string | undefined) | undefined
+                          /** MAC address of the Sensibo device. */
+                          mac_address?: (string | undefined) | undefined
+                          /** Serial number of the Sensibo device. */
+                          serial_number?: (string | undefined) | undefined
+                          /** Firmware version of the Sensibo device. */
+                          firmware_version?: (string | undefined) | undefined
+                          /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                          temperature_unit?: (string | undefined) | undefined
                         }
                       | undefined
                     /** Metadata for a KeyNest device. */
@@ -210518,6 +210891,7 @@ export type Routes = {
                     | 'honeywell_resideo_thermostat'
                     | 'tado_thermostat'
                     | 'sensi_thermostat'
+                    | 'sensibo_thermostat'
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
