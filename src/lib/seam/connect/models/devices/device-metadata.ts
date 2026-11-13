@@ -1576,41 +1576,25 @@ export const device_metadata = z
           .string()
           .optional()
           .describe(
-            'ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to.',
+            'ID of the Hayward OmniLogic controller that the device belongs to.',
           ),
         backyard_name: z
           .string()
           .optional()
-          .describe('Name of the system, as set in the Hayward OmniLogic app.'),
-        body_of_water_id: z
+          .describe(
+            'Name of the controller, as set in the Hayward OmniLogic app.',
+          ),
+        system_id: z
           .string()
           .optional()
           .describe(
-            'ID of the body of water within its system. Only present on a pool or spa body.',
+            'ID of the pool or spa within its controller. Only present on a pool or spa.',
           ),
-        body_of_water_name: z
+        system_name: z
           .string()
           .optional()
           .describe(
-            'Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body.',
-          ),
-        virtual_heater_id: z
-          .string()
-          .optional()
-          .describe(
-            'ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body.',
-          ),
-        is_shared_equipment: z
-          .boolean()
-          .optional()
-          .describe(
-            'Indicates whether the body of water shares its pump and heater with another body of water in the same system.',
-          ),
-        shared_equipment_priority: z
-          .enum(['high', 'low'])
-          .optional()
-          .describe(
-            'Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat.',
+            'Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa.',
           ),
       })
       .partial()
@@ -1618,7 +1602,7 @@ export const device_metadata = z
       ---
       undocumented: Unreleased.
       ---
-      Metadata for a Hayward OmniLogic pool controller or body of water.
+      Metadata for a Hayward OmniLogic pool controller, pool, or spa.
       `),
   })
   .partial().describe(`

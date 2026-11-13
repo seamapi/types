@@ -13037,7 +13037,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'Setting the pool heating is pending. The controller has not yet reported the requested state back.',
+              'Setting the temperature controller mode is pending. The controller has not yet reported the requested state back.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -13046,8 +13046,8 @@ const openapi: OpenAPISpec = {
               },
               action_type: {
                 description:
-                  'Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back.',
-                enum: ['SET_POOL_HEATING'],
+                  'Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back.',
+                enum: ['SET_TEMPERATURE_CONTROLLER_MODE'],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
@@ -13075,7 +13075,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'Setting the pool heating succeeded. The controller reported the requested state back.',
+              'Setting the temperature controller mode succeeded. The controller reported the requested state back.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -13084,8 +13084,8 @@ const openapi: OpenAPISpec = {
               },
               action_type: {
                 description:
-                  'Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back.',
-                enum: ['SET_POOL_HEATING'],
+                  'Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back.',
+                enum: ['SET_TEMPERATURE_CONTROLLER_MODE'],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
@@ -13112,7 +13112,7 @@ const openapi: OpenAPISpec = {
             'x-undocumented': 'Unreleased.',
           },
           {
-            description: 'Setting the pool heating failed.',
+            description: 'Setting the temperature controller mode failed.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -13121,8 +13121,8 @@ const openapi: OpenAPISpec = {
               },
               action_type: {
                 description:
-                  'Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back.',
-                enum: ['SET_POOL_HEATING'],
+                  'Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back.',
+                enum: ['SET_TEMPERATURE_CONTROLLER_MODE'],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
@@ -16255,7 +16255,7 @@ const openapi: OpenAPISpec = {
               {
                 description:
                   'Device type for pool controllers, pools, and spas.',
-                enum: ['hayward_pool_system', 'hayward_pool'],
+                enum: ['hayward_pool_controller', 'hayward_pool'],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
@@ -17793,42 +17793,26 @@ const openapi: OpenAPISpec = {
                       },
                       hayward_omnilogic_metadata: {
                         description:
-                          'Metadata for a Hayward OmniLogic pool controller or body of water.',
+                          'Metadata for a Hayward OmniLogic pool controller, pool, or spa.',
                         properties: {
                           backyard_name: {
                             description:
-                              'Name of the system, as set in the Hayward OmniLogic app.',
+                              'Name of the controller, as set in the Hayward OmniLogic app.',
                             type: 'string',
-                          },
-                          body_of_water_id: {
-                            description:
-                              'ID of the body of water within its system. Only present on a pool or spa body.',
-                            type: 'string',
-                          },
-                          body_of_water_name: {
-                            description:
-                              'Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body.',
-                            type: 'string',
-                          },
-                          is_shared_equipment: {
-                            description:
-                              'Indicates whether the body of water shares its pump and heater with another body of water in the same system.',
-                            type: 'boolean',
                           },
                           msp_system_id: {
                             description:
-                              'ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to.',
+                              'ID of the Hayward OmniLogic controller that the device belongs to.',
                             type: 'string',
                           },
-                          shared_equipment_priority: {
+                          system_id: {
                             description:
-                              'Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat.',
-                            enum: ['high', 'low'],
+                              'ID of the pool or spa within its controller. Only present on a pool or spa.',
                             type: 'string',
                           },
-                          virtual_heater_id: {
+                          system_name: {
                             description:
-                              'ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body.',
+                              'Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa.',
                             type: 'string',
                           },
                         },
@@ -42132,7 +42116,7 @@ const openapi: OpenAPISpec = {
               {
                 description:
                   'Device type for pool controllers, pools, and spas.',
-                enum: ['hayward_pool_system', 'hayward_pool'],
+                enum: ['hayward_pool_controller', 'hayward_pool'],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
@@ -57111,7 +57095,7 @@ const openapi: OpenAPISpec = {
                 {
                   description:
                     'Device type for pool controllers, pools, and spas.',
-                  enum: ['hayward_pool_system', 'hayward_pool'],
+                  enum: ['hayward_pool_controller', 'hayward_pool'],
                   type: 'string',
                   'x-undocumented': 'Unreleased.',
                 },
@@ -57220,7 +57204,7 @@ const openapi: OpenAPISpec = {
                   {
                     description:
                       'Device type for pool controllers, pools, and spas.',
-                    enum: ['hayward_pool_system', 'hayward_pool'],
+                    enum: ['hayward_pool_controller', 'hayward_pool'],
                     type: 'string',
                     'x-undocumented': 'Unreleased.',
                   },
@@ -57493,8 +57477,9 @@ const openapi: OpenAPISpec = {
             name: 'parent_device_id',
             schema: {
               description:
-                'ID of the parent device whose child devices you want to list.',
+                'ID of the parent device whose child devices you want to list. Specify `null` to list devices that have no parent device.',
               format: 'uuid',
+              nullable: true,
               type: 'string',
               'x-undocumented': 'Unreleased.',
             },
@@ -59515,7 +59500,7 @@ const openapi: OpenAPISpec = {
                 {
                   description:
                     'Device type for pool controllers, pools, and spas.',
-                  enum: ['hayward_pool_system', 'hayward_pool'],
+                  enum: ['hayward_pool_controller', 'hayward_pool'],
                   type: 'string',
                   'x-undocumented': 'Unreleased.',
                 },
@@ -59624,7 +59609,7 @@ const openapi: OpenAPISpec = {
                   {
                     description:
                       'Device type for pool controllers, pools, and spas.',
-                    enum: ['hayward_pool_system', 'hayward_pool'],
+                    enum: ['hayward_pool_controller', 'hayward_pool'],
                     type: 'string',
                     'x-undocumented': 'Unreleased.',
                   },
@@ -59841,8 +59826,9 @@ const openapi: OpenAPISpec = {
             name: 'parent_device_id',
             schema: {
               description:
-                'ID of the parent device whose child devices you want to list.',
+                'ID of the parent device whose child devices you want to list. Specify `null` to list devices that have no parent device.',
               format: 'uuid',
+              nullable: true,
               type: 'string',
               'x-undocumented': 'Unreleased.',
             },
@@ -62358,7 +62344,7 @@ const openapi: OpenAPISpec = {
     '/pools/heat': {
       post: {
         description:
-          "Requests heating of specified pool or spa water to a set point. The set point must be within the range reported by the device's `properties.min_heating_set_point_*` and `properties.max_heating_set_point_*` fields. The returned action attempt stays `pending` until the pool controller reports the requested state back, which can take up to 90 seconds, and fails with `pool_heating_confirmation_timeout` if it never does. To check whether the water supports temperature control, use `device.can_control_temperature`.",
+          "Requests heating of specified pool or spa water to a set point. The set point must be within the range reported by the device's `properties.min_heating_set_point_*` and `properties.max_heating_set_point_*` fields. The returned action attempt stays `pending` until the pool controller reports the requested state back, which can take up to 90 seconds, and fails with `temperature_setting_not_confirmed` if it never does. To check whether the water supports temperature control, use `device.can_control_temperature`.",
         operationId: 'poolsHeatPost',
         requestBody: {
           content: {
@@ -62419,7 +62405,7 @@ const openapi: OpenAPISpec = {
         ],
         summary: '/pools/heat',
         tags: [],
-        'x-action-attempt-type': 'SET_POOL_HEATING',
+        'x-action-attempt-type': 'SET_TEMPERATURE_CONTROLLER_MODE',
         'x-fern-sdk-group-name': ['pools'],
         'x-fern-sdk-method-name': 'heat',
         'x-fern-sdk-return-value': 'action_attempt',
@@ -62469,7 +62455,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Device type by which you want to filter pool devices.',
-              enum: ['hayward_pool_system', 'hayward_pool'],
+              enum: ['hayward_pool_controller', 'hayward_pool'],
               type: 'string',
               'x-undocumented': 'Unreleased.',
             },
@@ -62483,7 +62469,7 @@ const openapi: OpenAPISpec = {
               items: {
                 description:
                   'Device type for pool controllers, pools, and spas.',
-                enum: ['hayward_pool_system', 'hayward_pool'],
+                enum: ['hayward_pool_controller', 'hayward_pool'],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
@@ -62533,7 +62519,7 @@ const openapi: OpenAPISpec = {
     '/pools/turn_off': {
       post: {
         description:
-          'Turns off the temperature controller of specified pool or spa water. The set point is left unchanged, and other equipment such as pumps, lights, and chlorinators is not affected. The returned action attempt stays `pending` until the pool controller reports temperature control as off, which can take up to 90 seconds, and fails with `pool_heating_confirmation_timeout` if it never does. To check whether the water supports temperature control, use `device.can_control_temperature`.',
+          'Turns off the temperature controller of specified pool or spa water. The set point is left unchanged, and other equipment such as pumps, lights, and chlorinators is not affected. The returned action attempt stays `pending` until the pool controller reports temperature control as off, which can take up to 90 seconds, and fails with `temperature_setting_not_confirmed` if it never does. To check whether the water supports temperature control, use `device.can_control_temperature`.',
         operationId: 'poolsTurnOffPost',
         requestBody: {
           content: {
@@ -62582,7 +62568,7 @@ const openapi: OpenAPISpec = {
         ],
         summary: '/pools/turn_off',
         tags: [],
-        'x-action-attempt-type': 'SET_POOL_HEATING',
+        'x-action-attempt-type': 'SET_TEMPERATURE_CONTROLLER_MODE',
         'x-fern-sdk-group-name': ['pools'],
         'x-fern-sdk-method-name': 'turn_off',
         'x-fern-sdk-return-value': 'action_attempt',

@@ -2297,8 +2297,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -2306,8 +2306,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -2317,8 +2317,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -6042,8 +6042,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -6051,8 +6051,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -6062,8 +6062,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -11604,8 +11604,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -11613,8 +11613,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -11624,8 +11624,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -15200,8 +15200,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -15209,8 +15209,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -15220,8 +15220,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -16266,7 +16266,7 @@ export type Routes = {
                   )
                 | 'sonos_speaker'
                 | 'alertify_sensor'
-                | ('hayward_pool_system' | 'hayward_pool')
+                | ('hayward_pool_controller' | 'hayward_pool')
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -17367,29 +17367,18 @@ export type Routes = {
                           | undefined
                         )
                       | undefined
-                    /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+                    /** Metadata for a Hayward OmniLogic pool controller, pool, or spa. */
                     hayward_omnilogic_metadata?:
                       | (
                           | {
-                              /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                              /** ID of the Hayward OmniLogic controller that the device belongs to. */
                               msp_system_id?: (string | undefined) | undefined
-                              /** Name of the system, as set in the Hayward OmniLogic app. */
+                              /** Name of the controller, as set in the Hayward OmniLogic app. */
                               backyard_name?: (string | undefined) | undefined
-                              /** ID of the body of water within its system. Only present on a pool or spa body. */
-                              body_of_water_id?:
-                                (string | undefined) | undefined
-                              /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
-                              body_of_water_name?:
-                                (string | undefined) | undefined
-                              /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
-                              virtual_heater_id?:
-                                (string | undefined) | undefined
-                              /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
-                              is_shared_equipment?:
-                                (boolean | undefined) | undefined
-                              /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
-                              shared_equipment_priority?:
-                                (('high' | 'low') | undefined) | undefined
+                              /** ID of the pool or spa within its controller. Only present on a pool or spa. */
+                              system_id?: (string | undefined) | undefined
+                              /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                              system_name?: (string | undefined) | undefined
                             }
                           | undefined
                         )
@@ -23051,8 +23040,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -23060,8 +23049,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -23071,8 +23060,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -25658,8 +25647,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -25667,8 +25656,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -25678,8 +25667,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -26360,7 +26349,7 @@ export type Routes = {
                   )
                 | 'sonos_speaker'
                 | 'alertify_sensor'
-                | ('hayward_pool_system' | 'hayward_pool')
+                | ('hayward_pool_controller' | 'hayward_pool')
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -27461,29 +27450,18 @@ export type Routes = {
                           | undefined
                         )
                       | undefined
-                    /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+                    /** Metadata for a Hayward OmniLogic pool controller, pool, or spa. */
                     hayward_omnilogic_metadata?:
                       | (
                           | {
-                              /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                              /** ID of the Hayward OmniLogic controller that the device belongs to. */
                               msp_system_id?: (string | undefined) | undefined
-                              /** Name of the system, as set in the Hayward OmniLogic app. */
+                              /** Name of the controller, as set in the Hayward OmniLogic app. */
                               backyard_name?: (string | undefined) | undefined
-                              /** ID of the body of water within its system. Only present on a pool or spa body. */
-                              body_of_water_id?:
-                                (string | undefined) | undefined
-                              /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
-                              body_of_water_name?:
-                                (string | undefined) | undefined
-                              /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
-                              virtual_heater_id?:
-                                (string | undefined) | undefined
-                              /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
-                              is_shared_equipment?:
-                                (boolean | undefined) | undefined
-                              /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
-                              shared_equipment_priority?:
-                                (('high' | 'low') | undefined) | undefined
+                              /** ID of the pool or spa within its controller. Only present on a pool or spa. */
+                              system_id?: (string | undefined) | undefined
+                              /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                              system_name?: (string | undefined) | undefined
                             }
                           | undefined
                         )
@@ -32261,8 +32239,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -32270,8 +32248,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -32281,8 +32259,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -39132,8 +39110,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -39141,8 +39119,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -39152,8 +39130,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -41827,8 +41805,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -41836,8 +41814,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -41847,8 +41825,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -44421,8 +44399,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -44430,8 +44408,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -44441,8 +44419,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -47908,8 +47886,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -47917,8 +47895,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -47928,8 +47906,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -53349,8 +53327,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -53358,8 +53336,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -53369,8 +53347,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -55933,8 +55911,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -55942,8 +55920,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -55953,8 +55931,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -59149,7 +59127,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_system' | 'hayward_pool')
+          | ('hayward_pool_controller' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -60208,25 +60186,18 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
-              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              /** Metadata for a Hayward OmniLogic pool controller, pool, or spa. */
               hayward_omnilogic_metadata?:
                 | (
                     | {
-                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        /** ID of the Hayward OmniLogic controller that the device belongs to. */
                         msp_system_id?: (string | undefined) | undefined
-                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        /** Name of the controller, as set in the Hayward OmniLogic app. */
                         backyard_name?: (string | undefined) | undefined
-                        /** ID of the body of water within its system. Only present on a pool or spa body. */
-                        body_of_water_id?: (string | undefined) | undefined
-                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
-                        body_of_water_name?: (string | undefined) | undefined
-                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
-                        virtual_heater_id?: (string | undefined) | undefined
-                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
-                        is_shared_equipment?: (boolean | undefined) | undefined
-                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
-                        shared_equipment_priority?:
-                          (('high' | 'low') | undefined) | undefined
+                        /** ID of the pool or spa within its controller. Only present on a pool or spa. */
+                        system_id?: (string | undefined) | undefined
+                        /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
                       }
                     | undefined
                   )
@@ -61472,7 +61443,7 @@ export type Routes = {
               )
             | 'sonos_speaker'
             | 'alertify_sensor'
-            | ('hayward_pool_system' | 'hayward_pool')
+            | ('hayward_pool_controller' | 'hayward_pool')
           )
         | undefined
       /** Array of device types for which you want to list devices. */
@@ -61537,7 +61508,7 @@ export type Routes = {
               )
             | 'sonos_speaker'
             | 'alertify_sensor'
-            | ('hayward_pool_system' | 'hayward_pool')
+            | ('hayward_pool_controller' | 'hayward_pool')
           )[]
         | undefined
       /** Manufacturer for which you want to list devices. */
@@ -61705,8 +61676,8 @@ export type Routes = {
       space_id?: string | undefined
       /** String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`. */
       search?: string | undefined
-      /** ID of the parent device whose child devices you want to list. */
-      parent_device_id?: string | undefined
+      /** ID of the parent device whose child devices you want to list. Specify `null` to list devices that have no parent device. */
+      parent_device_id?: (string | null) | undefined
     }
     formData: {}
     jsonResponse: {
@@ -61774,7 +61745,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_system' | 'hayward_pool')
+          | ('hayward_pool_controller' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -62833,25 +62804,18 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
-              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              /** Metadata for a Hayward OmniLogic pool controller, pool, or spa. */
               hayward_omnilogic_metadata?:
                 | (
                     | {
-                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        /** ID of the Hayward OmniLogic controller that the device belongs to. */
                         msp_system_id?: (string | undefined) | undefined
-                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        /** Name of the controller, as set in the Hayward OmniLogic app. */
                         backyard_name?: (string | undefined) | undefined
-                        /** ID of the body of water within its system. Only present on a pool or spa body. */
-                        body_of_water_id?: (string | undefined) | undefined
-                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
-                        body_of_water_name?: (string | undefined) | undefined
-                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
-                        virtual_heater_id?: (string | undefined) | undefined
-                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
-                        is_shared_equipment?: (boolean | undefined) | undefined
-                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
-                        shared_equipment_priority?:
-                          (('high' | 'low') | undefined) | undefined
+                        /** ID of the pool or spa within its controller. Only present on a pool or spa. */
+                        system_id?: (string | undefined) | undefined
+                        /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
                       }
                     | undefined
                   )
@@ -65695,7 +65659,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_system' | 'hayward_pool')
+          | ('hayward_pool_controller' | 'hayward_pool')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
         /** Location information for the device. */
@@ -66370,7 +66334,7 @@ export type Routes = {
               )
             | 'sonos_speaker'
             | 'alertify_sensor'
-            | ('hayward_pool_system' | 'hayward_pool')
+            | ('hayward_pool_controller' | 'hayward_pool')
           )
         | undefined
       /** Array of device types for which you want to list devices. */
@@ -66435,7 +66399,7 @@ export type Routes = {
               )
             | 'sonos_speaker'
             | 'alertify_sensor'
-            | ('hayward_pool_system' | 'hayward_pool')
+            | ('hayward_pool_controller' | 'hayward_pool')
           )[]
         | undefined
       /** Manufacturer for which you want to list devices. */
@@ -66588,8 +66552,8 @@ export type Routes = {
         | undefined
       /** String for which to search. Filters returned devices to include all records that satisfy a partial match using `device_id` (full or partial UUID prefix, minimum 4 characters), `connected_account_id`, `display_name`, `custom_metadata` or `location.location_name`. */
       search?: string | undefined
-      /** ID of the parent device whose child devices you want to list. */
-      parent_device_id?: string | undefined
+      /** ID of the parent device whose child devices you want to list. Specify `null` to list devices that have no parent device. */
+      parent_device_id?: (string | null) | undefined
       /** Numerical limit on the number of devices to return. */
       limit?: number
     }
@@ -66659,7 +66623,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_system' | 'hayward_pool')
+          | ('hayward_pool_controller' | 'hayward_pool')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
         /** Location information for the device. */
@@ -78456,8 +78420,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -78465,8 +78429,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -78476,8 +78440,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -78855,7 +78819,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_system' | 'hayward_pool')
+          | ('hayward_pool_controller' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -79914,25 +79878,18 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
-              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              /** Metadata for a Hayward OmniLogic pool controller, pool, or spa. */
               hayward_omnilogic_metadata?:
                 | (
                     | {
-                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        /** ID of the Hayward OmniLogic controller that the device belongs to. */
                         msp_system_id?: (string | undefined) | undefined
-                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        /** Name of the controller, as set in the Hayward OmniLogic app. */
                         backyard_name?: (string | undefined) | undefined
-                        /** ID of the body of water within its system. Only present on a pool or spa body. */
-                        body_of_water_id?: (string | undefined) | undefined
-                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
-                        body_of_water_name?: (string | undefined) | undefined
-                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
-                        virtual_heater_id?: (string | undefined) | undefined
-                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
-                        is_shared_equipment?: (boolean | undefined) | undefined
-                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
-                        shared_equipment_priority?:
-                          (('high' | 'low') | undefined) | undefined
+                        /** ID of the pool or spa within its controller. Only present on a pool or spa. */
+                        system_id?: (string | undefined) | undefined
+                        /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
                       }
                     | undefined
                   )
@@ -81164,7 +81121,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_system' | 'hayward_pool')
+          | ('hayward_pool_controller' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -82223,25 +82180,18 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
-              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              /** Metadata for a Hayward OmniLogic pool controller, pool, or spa. */
               hayward_omnilogic_metadata?:
                 | (
                     | {
-                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        /** ID of the Hayward OmniLogic controller that the device belongs to. */
                         msp_system_id?: (string | undefined) | undefined
-                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        /** Name of the controller, as set in the Hayward OmniLogic app. */
                         backyard_name?: (string | undefined) | undefined
-                        /** ID of the body of water within its system. Only present on a pool or spa body. */
-                        body_of_water_id?: (string | undefined) | undefined
-                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
-                        body_of_water_name?: (string | undefined) | undefined
-                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
-                        virtual_heater_id?: (string | undefined) | undefined
-                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
-                        is_shared_equipment?: (boolean | undefined) | undefined
-                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
-                        shared_equipment_priority?:
-                          (('high' | 'low') | undefined) | undefined
+                        /** ID of the pool or spa within its controller. Only present on a pool or spa. */
+                        system_id?: (string | undefined) | undefined
+                        /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
                       }
                     | undefined
                   )
@@ -83614,7 +83564,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_system' | 'hayward_pool')
+          | ('hayward_pool_controller' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -84673,25 +84623,18 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
-              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              /** Metadata for a Hayward OmniLogic pool controller, pool, or spa. */
               hayward_omnilogic_metadata?:
                 | (
                     | {
-                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        /** ID of the Hayward OmniLogic controller that the device belongs to. */
                         msp_system_id?: (string | undefined) | undefined
-                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        /** Name of the controller, as set in the Hayward OmniLogic app. */
                         backyard_name?: (string | undefined) | undefined
-                        /** ID of the body of water within its system. Only present on a pool or spa body. */
-                        body_of_water_id?: (string | undefined) | undefined
-                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
-                        body_of_water_name?: (string | undefined) | undefined
-                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
-                        virtual_heater_id?: (string | undefined) | undefined
-                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
-                        is_shared_equipment?: (boolean | undefined) | undefined
-                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
-                        shared_equipment_priority?:
-                          (('high' | 'low') | undefined) | undefined
+                        /** ID of the pool or spa within its controller. Only present on a pool or spa. */
+                        system_id?: (string | undefined) | undefined
+                        /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
                       }
                     | undefined
                   )
@@ -85922,7 +85865,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_system' | 'hayward_pool')
+          | ('hayward_pool_controller' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -86981,25 +86924,18 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
-              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              /** Metadata for a Hayward OmniLogic pool controller, pool, or spa. */
               hayward_omnilogic_metadata?:
                 | (
                     | {
-                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        /** ID of the Hayward OmniLogic controller that the device belongs to. */
                         msp_system_id?: (string | undefined) | undefined
-                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        /** Name of the controller, as set in the Hayward OmniLogic app. */
                         backyard_name?: (string | undefined) | undefined
-                        /** ID of the body of water within its system. Only present on a pool or spa body. */
-                        body_of_water_id?: (string | undefined) | undefined
-                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
-                        body_of_water_name?: (string | undefined) | undefined
-                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
-                        virtual_heater_id?: (string | undefined) | undefined
-                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
-                        is_shared_equipment?: (boolean | undefined) | undefined
-                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
-                        shared_equipment_priority?:
-                          (('high' | 'low') | undefined) | undefined
+                        /** ID of the pool or spa within its controller. Only present on a pool or spa. */
+                        system_id?: (string | undefined) | undefined
+                        /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
                       }
                     | undefined
                   )
@@ -90431,8 +90367,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -90440,8 +90376,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -90451,8 +90387,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -93016,8 +92952,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -93025,8 +92961,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -93036,8 +92972,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -95599,8 +95535,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -95608,8 +95544,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -95619,8 +95555,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -98182,8 +98118,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -98191,8 +98127,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -98202,8 +98138,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -98629,7 +98565,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_system' | 'hayward_pool')
+          | ('hayward_pool_controller' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -99688,25 +99624,18 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
-              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              /** Metadata for a Hayward OmniLogic pool controller, pool, or spa. */
               hayward_omnilogic_metadata?:
                 | (
                     | {
-                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        /** ID of the Hayward OmniLogic controller that the device belongs to. */
                         msp_system_id?: (string | undefined) | undefined
-                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        /** Name of the controller, as set in the Hayward OmniLogic app. */
                         backyard_name?: (string | undefined) | undefined
-                        /** ID of the body of water within its system. Only present on a pool or spa body. */
-                        body_of_water_id?: (string | undefined) | undefined
-                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
-                        body_of_water_name?: (string | undefined) | undefined
-                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
-                        virtual_heater_id?: (string | undefined) | undefined
-                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
-                        is_shared_equipment?: (boolean | undefined) | undefined
-                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
-                        shared_equipment_priority?:
-                          (('high' | 'low') | undefined) | undefined
+                        /** ID of the pool or spa within its controller. Only present on a pool or spa. */
+                        system_id?: (string | undefined) | undefined
+                        /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
                       }
                     | undefined
                   )
@@ -100937,7 +100866,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_system' | 'hayward_pool')
+          | ('hayward_pool_controller' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -101996,25 +101925,18 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
-              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              /** Metadata for a Hayward OmniLogic pool controller, pool, or spa. */
               hayward_omnilogic_metadata?:
                 | (
                     | {
-                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        /** ID of the Hayward OmniLogic controller that the device belongs to. */
                         msp_system_id?: (string | undefined) | undefined
-                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        /** Name of the controller, as set in the Hayward OmniLogic app. */
                         backyard_name?: (string | undefined) | undefined
-                        /** ID of the body of water within its system. Only present on a pool or spa body. */
-                        body_of_water_id?: (string | undefined) | undefined
-                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
-                        body_of_water_name?: (string | undefined) | undefined
-                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
-                        virtual_heater_id?: (string | undefined) | undefined
-                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
-                        is_shared_equipment?: (boolean | undefined) | undefined
-                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
-                        shared_equipment_priority?:
-                          (('high' | 'low') | undefined) | undefined
+                        /** ID of the pool or spa within its controller. Only present on a pool or spa. */
+                        system_id?: (string | undefined) | undefined
+                        /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
                       }
                     | undefined
                   )
@@ -105456,8 +105378,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -105465,8 +105387,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -105476,8 +105398,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -108058,8 +107980,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -108067,8 +107989,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -108078,8 +108000,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -110716,8 +110638,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -110725,8 +110647,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -110736,8 +110658,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -114786,8 +114708,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -114795,8 +114717,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -114806,8 +114728,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -115120,9 +115042,9 @@ export type Routes = {
       /** ID of the Connect Webview for which you want to list devices. */
       connect_webview_id?: string | undefined
       /** Device type by which you want to filter pool devices. */
-      device_type?: ('hayward_pool_system' | 'hayward_pool') | undefined
+      device_type?: ('hayward_pool_controller' | 'hayward_pool') | undefined
       /** Array of device types by which you want to filter pool devices. */
-      device_types?: ('hayward_pool_system' | 'hayward_pool')[] | undefined
+      device_types?: ('hayward_pool_controller' | 'hayward_pool')[] | undefined
     }
     formData: {}
     jsonResponse: {
@@ -115190,7 +115112,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_system' | 'hayward_pool')
+          | ('hayward_pool_controller' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -116249,25 +116171,18 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
-              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              /** Metadata for a Hayward OmniLogic pool controller, pool, or spa. */
               hayward_omnilogic_metadata?:
                 | (
                     | {
-                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        /** ID of the Hayward OmniLogic controller that the device belongs to. */
                         msp_system_id?: (string | undefined) | undefined
-                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        /** Name of the controller, as set in the Hayward OmniLogic app. */
                         backyard_name?: (string | undefined) | undefined
-                        /** ID of the body of water within its system. Only present on a pool or spa body. */
-                        body_of_water_id?: (string | undefined) | undefined
-                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
-                        body_of_water_name?: (string | undefined) | undefined
-                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
-                        virtual_heater_id?: (string | undefined) | undefined
-                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
-                        is_shared_equipment?: (boolean | undefined) | undefined
-                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
-                        shared_equipment_priority?:
-                          (('high' | 'low') | undefined) | undefined
+                        /** ID of the pool or spa within its controller. Only present on a pool or spa. */
+                        system_id?: (string | undefined) | undefined
+                        /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
                       }
                     | undefined
                   )
@@ -119699,8 +119614,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -119708,8 +119623,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -119719,8 +119634,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -124999,8 +124914,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -125008,8 +124923,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -125019,8 +124934,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -138593,7 +138508,7 @@ export type Routes = {
                   )
                 | 'sonos_speaker'
                 | 'alertify_sensor'
-                | ('hayward_pool_system' | 'hayward_pool')
+                | ('hayward_pool_controller' | 'hayward_pool')
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -139694,29 +139609,18 @@ export type Routes = {
                           | undefined
                         )
                       | undefined
-                    /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+                    /** Metadata for a Hayward OmniLogic pool controller, pool, or spa. */
                     hayward_omnilogic_metadata?:
                       | (
                           | {
-                              /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                              /** ID of the Hayward OmniLogic controller that the device belongs to. */
                               msp_system_id?: (string | undefined) | undefined
-                              /** Name of the system, as set in the Hayward OmniLogic app. */
+                              /** Name of the controller, as set in the Hayward OmniLogic app. */
                               backyard_name?: (string | undefined) | undefined
-                              /** ID of the body of water within its system. Only present on a pool or spa body. */
-                              body_of_water_id?:
-                                (string | undefined) | undefined
-                              /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
-                              body_of_water_name?:
-                                (string | undefined) | undefined
-                              /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
-                              virtual_heater_id?:
-                                (string | undefined) | undefined
-                              /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
-                              is_shared_equipment?:
-                                (boolean | undefined) | undefined
-                              /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
-                              shared_equipment_priority?:
-                                (('high' | 'low') | undefined) | undefined
+                              /** ID of the pool or spa within its controller. Only present on a pool or spa. */
+                              system_id?: (string | undefined) | undefined
+                              /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                              system_name?: (string | undefined) | undefined
                             }
                           | undefined
                         )
@@ -144389,8 +144293,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -144398,8 +144302,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -144409,8 +144313,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -146972,8 +146876,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -146981,8 +146885,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -146992,8 +146896,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -149559,8 +149463,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -149568,8 +149472,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -149579,8 +149483,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -152144,8 +152048,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -152153,8 +152057,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -152164,8 +152068,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -154731,8 +154635,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -154740,8 +154644,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -154751,8 +154655,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -157314,8 +157218,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -157323,8 +157227,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -157334,8 +157238,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -159899,8 +159803,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -159908,8 +159812,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -159919,8 +159823,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -162482,8 +162386,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -162491,8 +162395,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -162502,8 +162406,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -165067,8 +164971,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -165076,8 +164980,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -165087,8 +164991,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -167650,8 +167554,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -167659,8 +167563,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -167670,8 +167574,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -170237,8 +170141,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -170246,8 +170150,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -170257,8 +170161,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -172937,8 +172841,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -172946,8 +172850,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -172957,8 +172861,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -173351,7 +173255,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_system' | 'hayward_pool')
+          | ('hayward_pool_controller' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -174410,25 +174314,18 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
-              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              /** Metadata for a Hayward OmniLogic pool controller, pool, or spa. */
               hayward_omnilogic_metadata?:
                 | (
                     | {
-                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        /** ID of the Hayward OmniLogic controller that the device belongs to. */
                         msp_system_id?: (string | undefined) | undefined
-                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        /** Name of the controller, as set in the Hayward OmniLogic app. */
                         backyard_name?: (string | undefined) | undefined
-                        /** ID of the body of water within its system. Only present on a pool or spa body. */
-                        body_of_water_id?: (string | undefined) | undefined
-                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
-                        body_of_water_name?: (string | undefined) | undefined
-                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
-                        virtual_heater_id?: (string | undefined) | undefined
-                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
-                        is_shared_equipment?: (boolean | undefined) | undefined
-                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
-                        shared_equipment_priority?:
-                          (('high' | 'low') | undefined) | undefined
+                        /** ID of the pool or spa within its controller. Only present on a pool or spa. */
+                        system_id?: (string | undefined) | undefined
+                        /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
                       }
                     | undefined
                   )
@@ -177864,8 +177761,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -177873,8 +177770,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -177884,8 +177781,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -180455,8 +180352,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -180464,8 +180361,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -180475,8 +180372,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -180891,7 +180788,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_system' | 'hayward_pool')
+          | ('hayward_pool_controller' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -181950,25 +181847,18 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
-              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              /** Metadata for a Hayward OmniLogic pool controller, pool, or spa. */
               hayward_omnilogic_metadata?:
                 | (
                     | {
-                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        /** ID of the Hayward OmniLogic controller that the device belongs to. */
                         msp_system_id?: (string | undefined) | undefined
-                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        /** Name of the controller, as set in the Hayward OmniLogic app. */
                         backyard_name?: (string | undefined) | undefined
-                        /** ID of the body of water within its system. Only present on a pool or spa body. */
-                        body_of_water_id?: (string | undefined) | undefined
-                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
-                        body_of_water_name?: (string | undefined) | undefined
-                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
-                        virtual_heater_id?: (string | undefined) | undefined
-                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
-                        is_shared_equipment?: (boolean | undefined) | undefined
-                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
-                        shared_equipment_priority?:
-                          (('high' | 'low') | undefined) | undefined
+                        /** ID of the pool or spa within its controller. Only present on a pool or spa. */
+                        system_id?: (string | undefined) | undefined
+                        /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
                       }
                     | undefined
                   )
@@ -183199,7 +183089,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_system' | 'hayward_pool')
+          | ('hayward_pool_controller' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -184258,25 +184148,18 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
-              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              /** Metadata for a Hayward OmniLogic pool controller, pool, or spa. */
               hayward_omnilogic_metadata?:
                 | (
                     | {
-                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        /** ID of the Hayward OmniLogic controller that the device belongs to. */
                         msp_system_id?: (string | undefined) | undefined
-                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        /** Name of the controller, as set in the Hayward OmniLogic app. */
                         backyard_name?: (string | undefined) | undefined
-                        /** ID of the body of water within its system. Only present on a pool or spa body. */
-                        body_of_water_id?: (string | undefined) | undefined
-                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
-                        body_of_water_name?: (string | undefined) | undefined
-                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
-                        virtual_heater_id?: (string | undefined) | undefined
-                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
-                        is_shared_equipment?: (boolean | undefined) | undefined
-                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
-                        shared_equipment_priority?:
-                          (('high' | 'low') | undefined) | undefined
+                        /** ID of the pool or spa within its controller. Only present on a pool or spa. */
+                        system_id?: (string | undefined) | undefined
+                        /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
                       }
                     | undefined
                   )
@@ -187708,8 +187591,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -187717,8 +187600,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -187728,8 +187611,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -190500,8 +190383,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -190509,8 +190392,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -190520,8 +190403,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -193121,8 +193004,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -193130,8 +193013,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -193141,8 +193024,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -195858,8 +195741,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -195867,8 +195750,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -195878,8 +195761,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */
@@ -197022,7 +196905,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_system' | 'hayward_pool')
+          | ('hayward_pool_controller' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -198081,25 +197964,18 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
-              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              /** Metadata for a Hayward OmniLogic pool controller, pool, or spa. */
               hayward_omnilogic_metadata?:
                 | (
                     | {
-                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        /** ID of the Hayward OmniLogic controller that the device belongs to. */
                         msp_system_id?: (string | undefined) | undefined
-                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        /** Name of the controller, as set in the Hayward OmniLogic app. */
                         backyard_name?: (string | undefined) | undefined
-                        /** ID of the body of water within its system. Only present on a pool or spa body. */
-                        body_of_water_id?: (string | undefined) | undefined
-                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
-                        body_of_water_name?: (string | undefined) | undefined
-                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
-                        virtual_heater_id?: (string | undefined) | undefined
-                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
-                        is_shared_equipment?: (boolean | undefined) | undefined
-                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
-                        shared_equipment_priority?:
-                          (('high' | 'low') | undefined) | undefined
+                        /** ID of the pool or spa within its controller. Only present on a pool or spa. */
+                        system_id?: (string | undefined) | undefined
+                        /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
                       }
                     | undefined
                   )
@@ -199332,7 +199208,7 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_system' | 'hayward_pool')
+          | ('hayward_pool_controller' | 'hayward_pool')
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -200391,25 +200267,18 @@ export type Routes = {
                     | undefined
                   )
                 | undefined
-              /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+              /** Metadata for a Hayward OmniLogic pool controller, pool, or spa. */
               hayward_omnilogic_metadata?:
                 | (
                     | {
-                        /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                        /** ID of the Hayward OmniLogic controller that the device belongs to. */
                         msp_system_id?: (string | undefined) | undefined
-                        /** Name of the system, as set in the Hayward OmniLogic app. */
+                        /** Name of the controller, as set in the Hayward OmniLogic app. */
                         backyard_name?: (string | undefined) | undefined
-                        /** ID of the body of water within its system. Only present on a pool or spa body. */
-                        body_of_water_id?: (string | undefined) | undefined
-                        /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
-                        body_of_water_name?: (string | undefined) | undefined
-                        /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
-                        virtual_heater_id?: (string | undefined) | undefined
-                        /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
-                        is_shared_equipment?: (boolean | undefined) | undefined
-                        /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
-                        shared_equipment_priority?:
-                          (('high' | 'low') | undefined) | undefined
+                        /** ID of the pool or spa within its controller. Only present on a pool or spa. */
+                        system_id?: (string | undefined) | undefined
+                        /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
                       }
                     | undefined
                   )
@@ -204365,7 +204234,7 @@ export type Routes = {
                   )
                 | 'sonos_speaker'
                 | 'alertify_sensor'
-                | ('hayward_pool_system' | 'hayward_pool')
+                | ('hayward_pool_controller' | 'hayward_pool')
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -205466,29 +205335,18 @@ export type Routes = {
                           | undefined
                         )
                       | undefined
-                    /** Metadata for a Hayward OmniLogic pool controller or body of water. */
+                    /** Metadata for a Hayward OmniLogic pool controller, pool, or spa. */
                     hayward_omnilogic_metadata?:
                       | (
                           | {
-                              /** ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to. */
+                              /** ID of the Hayward OmniLogic controller that the device belongs to. */
                               msp_system_id?: (string | undefined) | undefined
-                              /** Name of the system, as set in the Hayward OmniLogic app. */
+                              /** Name of the controller, as set in the Hayward OmniLogic app. */
                               backyard_name?: (string | undefined) | undefined
-                              /** ID of the body of water within its system. Only present on a pool or spa body. */
-                              body_of_water_id?:
-                                (string | undefined) | undefined
-                              /** Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body. */
-                              body_of_water_name?:
-                                (string | undefined) | undefined
-                              /** ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body. */
-                              virtual_heater_id?:
-                                (string | undefined) | undefined
-                              /** Indicates whether the body of water shares its pump and heater with another body of water in the same system. */
-                              is_shared_equipment?:
-                                (boolean | undefined) | undefined
-                              /** Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat. */
-                              shared_equipment_priority?:
-                                (('high' | 'low') | undefined) | undefined
+                              /** ID of the pool or spa within its controller. Only present on a pool or spa. */
+                              system_id?: (string | undefined) | undefined
+                              /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                              system_name?: (string | undefined) | undefined
                             }
                           | undefined
                         )
@@ -209996,8 +209854,8 @@ export type Routes = {
                   result: null
                   /** Errors associated with the action attempt. Null for pending action attempts. */
                   error: null
-                  /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-                  action_type: 'SET_POOL_HEATING'
+                  /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+                  action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
                 }
               | {
                   /** ID of the action attempt. */
@@ -210005,8 +209863,8 @@ export type Routes = {
                   status: 'success'
                   /** Errors associated with the action attempt. Null for successful action attempts. */
                   error: null
-                  /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-                  action_type: 'SET_POOL_HEATING'
+                  /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+                  action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
                   /** Result of the action. */
                   result: {}
                 }
@@ -210016,8 +209874,8 @@ export type Routes = {
                   status: 'error'
                   /** Result of the action attempt. Null for failed action attempts. */
                   result: null
-                  /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-                  action_type: 'SET_POOL_HEATING'
+                  /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+                  action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
                   /** Error associated with the action. */
                   error: {
                     /** Type of the error. */
@@ -210922,7 +210780,7 @@ export type Routes = {
                   )
                 | 'sonos_speaker'
                 | 'alertify_sensor'
-                | ('hayward_pool_system' | 'hayward_pool')
+                | ('hayward_pool_controller' | 'hayward_pool')
               /** Unique identifier for the account associated with the device. */
               connected_account_id: string
               /** Location information for the device. */
@@ -220635,8 +220493,8 @@ export type Routes = {
             result: null
             /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
           }
         | {
             /** ID of the action attempt. */
@@ -220644,8 +220502,8 @@ export type Routes = {
             status: 'success'
             /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Result of the action. */
             result: {}
           }
@@ -220655,8 +220513,8 @@ export type Routes = {
             status: 'error'
             /** Result of the action attempt. Null for failed action attempts. */
             result: null
-            /** Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
-            action_type: 'SET_POOL_HEATING'
+            /** Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back. */
+            action_type: 'SET_TEMPERATURE_CONTROLLER_MODE'
             /** Error associated with the action. */
             error: {
               /** Type of the error. */

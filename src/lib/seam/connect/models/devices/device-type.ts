@@ -181,12 +181,12 @@ export const sensor_device_type = z
   .describe('Device type for environmental sensors.')
 
 export type SensorDeviceType = z.infer<typeof sensor_device_type>
-export const POOL_SYSTEM_DEVICE_TYPE = {
-  HAYWARD_POOL_SYSTEM: 'hayward_pool_system',
+export const POOL_CONTROLLER_DEVICE_TYPE = {
+  HAYWARD_POOL_CONTROLLER: 'hayward_pool_controller',
 } as const
 
 export const POOL_DEVICE_TYPE = {
-  ...POOL_SYSTEM_DEVICE_TYPE,
+  ...POOL_CONTROLLER_DEVICE_TYPE,
   HAYWARD_POOL: 'hayward_pool',
 } as const
 
