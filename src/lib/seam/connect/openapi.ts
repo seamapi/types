@@ -19179,6 +19179,7 @@ const openapi: OpenAPISpec = {
                         'x-property-group-key': 'access_codes',
                       },
                       keypad_battery: {
+                        deprecated: true,
                         description: 'Keypad battery status.',
                         properties: {
                           level: {
@@ -19190,6 +19191,8 @@ const openapi: OpenAPISpec = {
                         },
                         required: ['level'],
                         type: 'object',
+                        'x-deprecated':
+                          'Use `accessory_keypad.battery` instead.',
                         'x-property-group-key': 'access_codes',
                       },
                       locked: {
