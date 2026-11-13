@@ -17511,7 +17511,8 @@ export type Routes = {
                         (boolean | undefined) | undefined
                       /** Indicates whether the lock is locked. */
                       locked?: (boolean | undefined) | undefined
-                      /** Keypad battery status. */
+                      /** Keypad battery status.
+                       * @deprecated Use `accessory_keypad.battery` instead.*/
                       keypad_battery?:
                         | (
                             | {
@@ -27604,7 +27605,8 @@ export type Routes = {
                         (boolean | undefined) | undefined
                       /** Indicates whether the lock is locked. */
                       locked?: (boolean | undefined) | undefined
-                      /** Keypad battery status. */
+                      /** Keypad battery status.
+                       * @deprecated Use `accessory_keypad.battery` instead.*/
                       keypad_battery?:
                         | (
                             | {
@@ -60343,7 +60345,8 @@ export type Routes = {
                 has_native_entry_events?: (boolean | undefined) | undefined
                 /** Indicates whether the lock is locked. */
                 locked?: (boolean | undefined) | undefined
-                /** Keypad battery status. */
+                /** Keypad battery status.
+                 * @deprecated Use `accessory_keypad.battery` instead.*/
                 keypad_battery?:
                   | (
                       | {
@@ -62967,7 +62970,8 @@ export type Routes = {
                 has_native_entry_events?: (boolean | undefined) | undefined
                 /** Indicates whether the lock is locked. */
                 locked?: (boolean | undefined) | undefined
-                /** Keypad battery status. */
+                /** Keypad battery status.
+                 * @deprecated Use `accessory_keypad.battery` instead.*/
                 keypad_battery?:
                   | (
                       | {
@@ -80047,7 +80051,8 @@ export type Routes = {
                 has_native_entry_events?: (boolean | undefined) | undefined
                 /** Indicates whether the lock is locked. */
                 locked?: (boolean | undefined) | undefined
-                /** Keypad battery status. */
+                /** Keypad battery status.
+                 * @deprecated Use `accessory_keypad.battery` instead.*/
                 keypad_battery?:
                   | (
                       | {
@@ -82355,7 +82360,8 @@ export type Routes = {
                 has_native_entry_events?: (boolean | undefined) | undefined
                 /** Indicates whether the lock is locked. */
                 locked?: (boolean | undefined) | undefined
-                /** Keypad battery status. */
+                /** Keypad battery status.
+                 * @deprecated Use `accessory_keypad.battery` instead.*/
                 keypad_battery?:
                   | (
                       | {
@@ -84804,7 +84810,8 @@ export type Routes = {
                 has_native_entry_events?: (boolean | undefined) | undefined
                 /** Indicates whether the lock is locked. */
                 locked?: (boolean | undefined) | undefined
-                /** Keypad battery status. */
+                /** Keypad battery status.
+                 * @deprecated Use `accessory_keypad.battery` instead.*/
                 keypad_battery?:
                   | (
                       | {
@@ -87111,7 +87118,8 @@ export type Routes = {
                 has_native_entry_events?: (boolean | undefined) | undefined
                 /** Indicates whether the lock is locked. */
                 locked?: (boolean | undefined) | undefined
-                /** Keypad battery status. */
+                /** Keypad battery status.
+                 * @deprecated Use `accessory_keypad.battery` instead.*/
                 keypad_battery?:
                   | (
                       | {
@@ -99817,7 +99825,8 @@ export type Routes = {
                 has_native_entry_events?: (boolean | undefined) | undefined
                 /** Indicates whether the lock is locked. */
                 locked?: (boolean | undefined) | undefined
-                /** Keypad battery status. */
+                /** Keypad battery status.
+                 * @deprecated Use `accessory_keypad.battery` instead.*/
                 keypad_battery?:
                   | (
                       | {
@@ -102124,7 +102133,8 @@ export type Routes = {
                 has_native_entry_events?: (boolean | undefined) | undefined
                 /** Indicates whether the lock is locked. */
                 locked?: (boolean | undefined) | undefined
-                /** Keypad battery status. */
+                /** Keypad battery status.
+                 * @deprecated Use `accessory_keypad.battery` instead.*/
                 keypad_battery?:
                   | (
                       | {
@@ -116376,7 +116386,8 @@ export type Routes = {
                 has_native_entry_events?: (boolean | undefined) | undefined
                 /** Indicates whether the lock is locked. */
                 locked?: (boolean | undefined) | undefined
-                /** Keypad battery status. */
+                /** Keypad battery status.
+                 * @deprecated Use `accessory_keypad.battery` instead.*/
                 keypad_battery?:
                   | (
                       | {
@@ -139827,7 +139838,8 @@ export type Routes = {
                         (boolean | undefined) | undefined
                       /** Indicates whether the lock is locked. */
                       locked?: (boolean | undefined) | undefined
-                      /** Keypad battery status. */
+                      /** Keypad battery status.
+                       * @deprecated Use `accessory_keypad.battery` instead.*/
                       keypad_battery?:
                         | (
                             | {
@@ -174535,7 +174547,8 @@ export type Routes = {
                 has_native_entry_events?: (boolean | undefined) | undefined
                 /** Indicates whether the lock is locked. */
                 locked?: (boolean | undefined) | undefined
-                /** Keypad battery status. */
+                /** Keypad battery status.
+                 * @deprecated Use `accessory_keypad.battery` instead.*/
                 keypad_battery?:
                   | (
                       | {
@@ -182074,7 +182087,8 @@ export type Routes = {
                 has_native_entry_events?: (boolean | undefined) | undefined
                 /** Indicates whether the lock is locked. */
                 locked?: (boolean | undefined) | undefined
-                /** Keypad battery status. */
+                /** Keypad battery status.
+                 * @deprecated Use `accessory_keypad.battery` instead.*/
                 keypad_battery?:
                   | (
                       | {
@@ -184381,7 +184395,8 @@ export type Routes = {
                 has_native_entry_events?: (boolean | undefined) | undefined
                 /** Indicates whether the lock is locked. */
                 locked?: (boolean | undefined) | undefined
-                /** Keypad battery status. */
+                /** Keypad battery status.
+                 * @deprecated Use `accessory_keypad.battery` instead.*/
                 keypad_battery?:
                   | (
                       | {
@@ -198203,7 +198218,8 @@ export type Routes = {
                 has_native_entry_events?: (boolean | undefined) | undefined
                 /** Indicates whether the lock is locked. */
                 locked?: (boolean | undefined) | undefined
-                /** Keypad battery status. */
+                /** Keypad battery status.
+                 * @deprecated Use `accessory_keypad.battery` instead.*/
                 keypad_battery?:
                   | (
                       | {
@@ -200512,7 +200528,8 @@ export type Routes = {
                 has_native_entry_events?: (boolean | undefined) | undefined
                 /** Indicates whether the lock is locked. */
                 locked?: (boolean | undefined) | undefined
-                /** Keypad battery status. */
+                /** Keypad battery status.
+                 * @deprecated Use `accessory_keypad.battery` instead.*/
                 keypad_battery?:
                   | (
                       | {
@@ -205593,7 +205610,8 @@ export type Routes = {
                         (boolean | undefined) | undefined
                       /** Indicates whether the lock is locked. */
                       locked?: (boolean | undefined) | undefined
-                      /** Keypad battery status. */
+                      /** Keypad battery status.
+                       * @deprecated Use `accessory_keypad.battery` instead.*/
                       keypad_battery?:
                         | (
                             | {
