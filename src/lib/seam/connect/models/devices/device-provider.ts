@@ -123,6 +123,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'latch',
     'akiles',
     'sensi',
+    'sensibo',
     'assa_abloy_vostio',
     'avigilon_alta',
     'kisi',
