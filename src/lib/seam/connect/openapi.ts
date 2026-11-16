@@ -18556,7 +18556,12 @@ const openapi: OpenAPISpec = {
                           },
                           product_model: {
                             description:
-                              'Product model of the Sensibo device, such as `skyv2` or `air`.',
+                              'Product model of the Sensibo device, such as `skyv2` or `skyplus`.',
+                            type: 'string',
+                          },
+                          product_name: {
+                            description:
+                              'Product name of the Sensibo device, such as `Sensibo Sky` or `Sensibo Air`.',
                             type: 'string',
                           },
                           room_name: {

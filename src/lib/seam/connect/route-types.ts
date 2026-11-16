@@ -17044,8 +17044,10 @@ export type Routes = {
                           pod_id?: (string | undefined) | undefined
                           /** Name of the room that the Sensibo device is in. */
                           room_name?: (string | undefined) | undefined
-                          /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                          /** Product model of the Sensibo device, such as `skyv2` or `skyplus`. */
                           product_model?: (string | undefined) | undefined
+                          /** Product name of the Sensibo device, such as `Sensibo Sky` or `Sensibo Air`. */
+                          product_name?: (string | undefined) | undefined
                           /** MAC address of the Sensibo device. */
                           mac_address?: (string | undefined) | undefined
                           /** Serial number of the Sensibo device. */
@@ -27127,8 +27129,10 @@ export type Routes = {
                           pod_id?: (string | undefined) | undefined
                           /** Name of the room that the Sensibo device is in. */
                           room_name?: (string | undefined) | undefined
-                          /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                          /** Product model of the Sensibo device, such as `skyv2` or `skyplus`. */
                           product_model?: (string | undefined) | undefined
+                          /** Product name of the Sensibo device, such as `Sensibo Sky` or `Sensibo Air`. */
+                          product_name?: (string | undefined) | undefined
                           /** MAC address of the Sensibo device. */
                           mac_address?: (string | undefined) | undefined
                           /** Serial number of the Sensibo device. */
@@ -59883,8 +59887,10 @@ export type Routes = {
                     pod_id?: (string | undefined) | undefined
                     /** Name of the room that the Sensibo device is in. */
                     room_name?: (string | undefined) | undefined
-                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    /** Product model of the Sensibo device, such as `skyv2` or `skyplus`. */
                     product_model?: (string | undefined) | undefined
+                    /** Product name of the Sensibo device, such as `Sensibo Sky` or `Sensibo Air`. */
+                    product_name?: (string | undefined) | undefined
                     /** MAC address of the Sensibo device. */
                     mac_address?: (string | undefined) | undefined
                     /** Serial number of the Sensibo device. */
@@ -62501,8 +62507,10 @@ export type Routes = {
                     pod_id?: (string | undefined) | undefined
                     /** Name of the room that the Sensibo device is in. */
                     room_name?: (string | undefined) | undefined
-                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    /** Product model of the Sensibo device, such as `skyv2` or `skyplus`. */
                     product_model?: (string | undefined) | undefined
+                    /** Product name of the Sensibo device, such as `Sensibo Sky` or `Sensibo Air`. */
+                    product_name?: (string | undefined) | undefined
                     /** MAC address of the Sensibo device. */
                     mac_address?: (string | undefined) | undefined
                     /** Serial number of the Sensibo device. */
@@ -79575,8 +79583,10 @@ export type Routes = {
                     pod_id?: (string | undefined) | undefined
                     /** Name of the room that the Sensibo device is in. */
                     room_name?: (string | undefined) | undefined
-                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    /** Product model of the Sensibo device, such as `skyv2` or `skyplus`. */
                     product_model?: (string | undefined) | undefined
+                    /** Product name of the Sensibo device, such as `Sensibo Sky` or `Sensibo Air`. */
+                    product_name?: (string | undefined) | undefined
                     /** MAC address of the Sensibo device. */
                     mac_address?: (string | undefined) | undefined
                     /** Serial number of the Sensibo device. */
@@ -81877,8 +81887,10 @@ export type Routes = {
                     pod_id?: (string | undefined) | undefined
                     /** Name of the room that the Sensibo device is in. */
                     room_name?: (string | undefined) | undefined
-                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    /** Product model of the Sensibo device, such as `skyv2` or `skyplus`. */
                     product_model?: (string | undefined) | undefined
+                    /** Product name of the Sensibo device, such as `Sensibo Sky` or `Sensibo Air`. */
+                    product_name?: (string | undefined) | undefined
                     /** MAC address of the Sensibo device. */
                     mac_address?: (string | undefined) | undefined
                     /** Serial number of the Sensibo device. */
@@ -84320,8 +84332,10 @@ export type Routes = {
                     pod_id?: (string | undefined) | undefined
                     /** Name of the room that the Sensibo device is in. */
                     room_name?: (string | undefined) | undefined
-                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    /** Product model of the Sensibo device, such as `skyv2` or `skyplus`. */
                     product_model?: (string | undefined) | undefined
+                    /** Product name of the Sensibo device, such as `Sensibo Sky` or `Sensibo Air`. */
+                    product_name?: (string | undefined) | undefined
                     /** MAC address of the Sensibo device. */
                     mac_address?: (string | undefined) | undefined
                     /** Serial number of the Sensibo device. */
@@ -86621,8 +86635,10 @@ export type Routes = {
                     pod_id?: (string | undefined) | undefined
                     /** Name of the room that the Sensibo device is in. */
                     room_name?: (string | undefined) | undefined
-                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    /** Product model of the Sensibo device, such as `skyv2` or `skyplus`. */
                     product_model?: (string | undefined) | undefined
+                    /** Product name of the Sensibo device, such as `Sensibo Sky` or `Sensibo Air`. */
+                    product_name?: (string | undefined) | undefined
                     /** MAC address of the Sensibo device. */
                     mac_address?: (string | undefined) | undefined
                     /** Serial number of the Sensibo device. */
@@ -99321,8 +99337,10 @@ export type Routes = {
                     pod_id?: (string | undefined) | undefined
                     /** Name of the room that the Sensibo device is in. */
                     room_name?: (string | undefined) | undefined
-                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    /** Product model of the Sensibo device, such as `skyv2` or `skyplus`. */
                     product_model?: (string | undefined) | undefined
+                    /** Product name of the Sensibo device, such as `Sensibo Sky` or `Sensibo Air`. */
+                    product_name?: (string | undefined) | undefined
                     /** MAC address of the Sensibo device. */
                     mac_address?: (string | undefined) | undefined
                     /** Serial number of the Sensibo device. */
@@ -101622,8 +101640,10 @@ export type Routes = {
                     pod_id?: (string | undefined) | undefined
                     /** Name of the room that the Sensibo device is in. */
                     room_name?: (string | undefined) | undefined
-                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    /** Product model of the Sensibo device, such as `skyv2` or `skyplus`. */
                     product_model?: (string | undefined) | undefined
+                    /** Product name of the Sensibo device, such as `Sensibo Sky` or `Sensibo Air`. */
+                    product_name?: (string | undefined) | undefined
                     /** MAC address of the Sensibo device. */
                     mac_address?: (string | undefined) | undefined
                     /** Serial number of the Sensibo device. */
@@ -115868,8 +115888,10 @@ export type Routes = {
                     pod_id?: (string | undefined) | undefined
                     /** Name of the room that the Sensibo device is in. */
                     room_name?: (string | undefined) | undefined
-                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    /** Product model of the Sensibo device, such as `skyv2` or `skyplus`. */
                     product_model?: (string | undefined) | undefined
+                    /** Product name of the Sensibo device, such as `Sensibo Sky` or `Sensibo Air`. */
+                    product_name?: (string | undefined) | undefined
                     /** MAC address of the Sensibo device. */
                     mac_address?: (string | undefined) | undefined
                     /** Serial number of the Sensibo device. */
@@ -139286,8 +139308,10 @@ export type Routes = {
                           pod_id?: (string | undefined) | undefined
                           /** Name of the room that the Sensibo device is in. */
                           room_name?: (string | undefined) | undefined
-                          /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                          /** Product model of the Sensibo device, such as `skyv2` or `skyplus`. */
                           product_model?: (string | undefined) | undefined
+                          /** Product name of the Sensibo device, such as `Sensibo Sky` or `Sensibo Air`. */
+                          product_name?: (string | undefined) | undefined
                           /** MAC address of the Sensibo device. */
                           mac_address?: (string | undefined) | undefined
                           /** Serial number of the Sensibo device. */
@@ -174011,8 +174035,10 @@ export type Routes = {
                     pod_id?: (string | undefined) | undefined
                     /** Name of the room that the Sensibo device is in. */
                     room_name?: (string | undefined) | undefined
-                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    /** Product model of the Sensibo device, such as `skyv2` or `skyplus`. */
                     product_model?: (string | undefined) | undefined
+                    /** Product name of the Sensibo device, such as `Sensibo Sky` or `Sensibo Air`. */
+                    product_name?: (string | undefined) | undefined
                     /** MAC address of the Sensibo device. */
                     mac_address?: (string | undefined) | undefined
                     /** Serial number of the Sensibo device. */
@@ -181544,8 +181570,10 @@ export type Routes = {
                     pod_id?: (string | undefined) | undefined
                     /** Name of the room that the Sensibo device is in. */
                     room_name?: (string | undefined) | undefined
-                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    /** Product model of the Sensibo device, such as `skyv2` or `skyplus`. */
                     product_model?: (string | undefined) | undefined
+                    /** Product name of the Sensibo device, such as `Sensibo Sky` or `Sensibo Air`. */
+                    product_name?: (string | undefined) | undefined
                     /** MAC address of the Sensibo device. */
                     mac_address?: (string | undefined) | undefined
                     /** Serial number of the Sensibo device. */
@@ -183845,8 +183873,10 @@ export type Routes = {
                     pod_id?: (string | undefined) | undefined
                     /** Name of the room that the Sensibo device is in. */
                     room_name?: (string | undefined) | undefined
-                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    /** Product model of the Sensibo device, such as `skyv2` or `skyplus`. */
                     product_model?: (string | undefined) | undefined
+                    /** Product name of the Sensibo device, such as `Sensibo Sky` or `Sensibo Air`. */
+                    product_name?: (string | undefined) | undefined
                     /** MAC address of the Sensibo device. */
                     mac_address?: (string | undefined) | undefined
                     /** Serial number of the Sensibo device. */
@@ -197661,8 +197691,10 @@ export type Routes = {
                     pod_id?: (string | undefined) | undefined
                     /** Name of the room that the Sensibo device is in. */
                     room_name?: (string | undefined) | undefined
-                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    /** Product model of the Sensibo device, such as `skyv2` or `skyplus`. */
                     product_model?: (string | undefined) | undefined
+                    /** Product name of the Sensibo device, such as `Sensibo Sky` or `Sensibo Air`. */
+                    product_name?: (string | undefined) | undefined
                     /** MAC address of the Sensibo device. */
                     mac_address?: (string | undefined) | undefined
                     /** Serial number of the Sensibo device. */
@@ -199964,8 +199996,10 @@ export type Routes = {
                     pod_id?: (string | undefined) | undefined
                     /** Name of the room that the Sensibo device is in. */
                     room_name?: (string | undefined) | undefined
-                    /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                    /** Product model of the Sensibo device, such as `skyv2` or `skyplus`. */
                     product_model?: (string | undefined) | undefined
+                    /** Product name of the Sensibo device, such as `Sensibo Sky` or `Sensibo Air`. */
+                    product_name?: (string | undefined) | undefined
                     /** MAC address of the Sensibo device. */
                     mac_address?: (string | undefined) | undefined
                     /** Serial number of the Sensibo device. */
@@ -205012,8 +205046,10 @@ export type Routes = {
                           pod_id?: (string | undefined) | undefined
                           /** Name of the room that the Sensibo device is in. */
                           room_name?: (string | undefined) | undefined
-                          /** Product model of the Sensibo device, such as `skyv2` or `air`. */
+                          /** Product model of the Sensibo device, such as `skyv2` or `skyplus`. */
                           product_model?: (string | undefined) | undefined
+                          /** Product name of the Sensibo device, such as `Sensibo Sky` or `Sensibo Air`. */
+                          product_name?: (string | undefined) | undefined
                           /** MAC address of the Sensibo device. */
                           mac_address?: (string | undefined) | undefined
                           /** Serial number of the Sensibo device. */

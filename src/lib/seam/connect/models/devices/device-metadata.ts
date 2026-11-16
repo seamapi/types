@@ -1049,7 +1049,13 @@ export const device_metadata = z
           .string()
           .optional()
           .describe(
-            `Product model of the Sensibo device, such as \`skyv2\` or \`air\`.`,
+            `Product model of the Sensibo device, such as \`skyv2\` or \`skyplus\`.`,
+          ),
+        product_name: z
+          .string()
+          .optional()
+          .describe(
+            `Product name of the Sensibo device, such as \`Sensibo Sky\` or \`Sensibo Air\`.`,
           ),
         mac_address: z
           .string()
