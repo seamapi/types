@@ -9292,7 +9292,7 @@ export type Routes = {
         /** Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational. `unset` indicates that the code exists on the provider but is not usable on the device.
          * @deprecated Use `display_status` to show a person the code's state.*/
         status: 'set' | 'unset'
-        /** Human-readable label for the code's state: `Active` or `Not active`, based on whether the code is set on the device. For display only. The wording is not stable and is not an enumeration — never compare against or branch on it. */
+        /** Human-readable label for the code's state: `Active` or `Not active`, based on whether the code is set on the device, or `Deleting` while the code is being removed from the device. For display only. The wording is not stable and is not an enumeration — never compare against or branch on it. */
         display_status: string
         /** Indicates that Seam cannot convert this unmanaged access code to a managed access code. Some providers do not support management of unmanaged access codes through API integrations. */
         cannot_be_managed?: true | undefined
@@ -12377,7 +12377,7 @@ export type Routes = {
         /** Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational. `unset` indicates that the code exists on the provider but is not usable on the device.
          * @deprecated Use `display_status` to show a person the code's state.*/
         status: 'set' | 'unset'
-        /** Human-readable label for the code's state: `Active` or `Not active`, based on whether the code is set on the device. For display only. The wording is not stable and is not an enumeration — never compare against or branch on it. */
+        /** Human-readable label for the code's state: `Active` or `Not active`, based on whether the code is set on the device, or `Deleting` while the code is being removed from the device. For display only. The wording is not stable and is not an enumeration — never compare against or branch on it. */
         display_status: string
         /** Indicates that Seam cannot convert this unmanaged access code to a managed access code. Some providers do not support management of unmanaged access codes through API integrations. */
         cannot_be_managed?: true | undefined
@@ -12853,7 +12853,7 @@ export type Routes = {
         /** Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational. `unset` indicates that the code exists on the provider but is not usable on the device.
          * @deprecated Use `display_status` to show a person the code's state.*/
         status: 'set' | 'unset'
-        /** Human-readable label for the code's state: `Active` or `Not active`, based on whether the code is set on the device. For display only. The wording is not stable and is not an enumeration — never compare against or branch on it. */
+        /** Human-readable label for the code's state: `Active` or `Not active`, based on whether the code is set on the device, or `Deleting` while the code is being removed from the device. For display only. The wording is not stable and is not an enumeration — never compare against or branch on it. */
         display_status: string
         /** Indicates that Seam cannot convert this unmanaged access code to a managed access code. Some providers do not support management of unmanaged access codes through API integrations. */
         cannot_be_managed?: true | undefined
@@ -217254,7 +217254,7 @@ export type Routes = {
               /** Current status of the access code within the operational lifecycle. `set` indicates that the code is active and operational. `unset` indicates that the code exists on the provider but is not usable on the device.
                * @deprecated Use `display_status` to show a person the code's state.*/
               status: 'set' | 'unset'
-              /** Human-readable label for the code's state: `Active` or `Not active`, based on whether the code is set on the device. For display only. The wording is not stable and is not an enumeration — never compare against or branch on it. */
+              /** Human-readable label for the code's state: `Active` or `Not active`, based on whether the code is set on the device, or `Deleting` while the code is being removed from the device. For display only. The wording is not stable and is not an enumeration — never compare against or branch on it. */
               display_status: string
               /** Indicates that Seam cannot convert this unmanaged access code to a managed access code. Some providers do not support management of unmanaged access codes through API integrations. */
               cannot_be_managed?: true | undefined
