@@ -124,6 +124,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'akiles',
     'sensi',
     'sensibo',
+    'tado',
     'assa_abloy_vostio',
     'avigilon_alta',
     'kisi',
