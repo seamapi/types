@@ -15,6 +15,7 @@ export const lock_capability_properties = z.object({
     })
     .optional().describe(`
           ---
+          deprecated: Use \`accessory_keypad.battery\` instead.
           property_group_key: access_codes
           ---
           Keypad battery status.

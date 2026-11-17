@@ -1102,16 +1102,19 @@ export const common_device_properties = z.object({
       offline_access_codes_supported: z.boolean().optional().describe(`
           ---
           deprecated: use device.can_program_offline_access_codes.
+          end_of_life: "2026-11-09"
           ---
           `),
       online_access_codes_supported: z.boolean().optional().describe(`
           ---
           deprecated: use device.can_program_online_access_codes.
+          end_of_life: "2026-11-09"
           ---
           `),
       accessory_keypad_supported: z.boolean().optional().describe(`
         ---
         deprecated: use device.properties.model.can_connect_accessory_keypad
+        end_of_life: "2026-11-09"
         ---
         `),
     })
@@ -1174,6 +1177,7 @@ export const common_device_properties = z.object({
           ---
           property_group_key: access_codes
           deprecated: use device.can_program_online_access_codes
+          end_of_life: "2026-11-09"
           ---
           Indicates whether it is currently possible to use online access codes for the device.
           `,
@@ -1186,6 +1190,7 @@ export const common_device_properties = z.object({
           ---
           property_group_key: access_codes
           deprecated: use device.can_program_offline_access_codes
+          end_of_life: "2026-11-09"
           ---
           Indicates whether it is currently possible to use offline access codes for the device.
           `,
@@ -1198,6 +1203,7 @@ export const common_device_properties = z.object({
       `
       ---
       deprecated: use device.properties.model.can_connect_accessory_keypad
+      end_of_life: "2026-11-09"
       property_group_key: access_codes
       ---
       `,
@@ -1209,6 +1215,7 @@ export const common_device_properties = z.object({
       `
       ---
       deprecated: use offline_access_codes_enabled
+      end_of_life: "2026-11-09"
       property_group_key: access_codes
       ---
       `,
@@ -1327,6 +1334,7 @@ export const device = z
         timezone: z.string().optional().describe(`
           ---
           deprecated: Use \`time_zone\` instead.
+          end_of_life: "2026-11-09"
           ---
           Time zone of the device location.
           `),

@@ -37,6 +37,7 @@ export const LOCK_DEVICE_TYPE = {
   OMNITEC_LOCK: 'omnitec_lock',
   KISI_LOCK: 'kisi_lock',
   AQARA_LOCK: 'aqara_lock',
+  TUYA_LOCK: 'tuya_lock',
   EUFY_LOCK: 'eufy_lock',
 } as const
 
@@ -95,6 +96,7 @@ export const THERMOSTAT_DEVICE_TYPE = {
   HONEYWELL_RESIDEO_THERMOSTAT: 'honeywell_resideo_thermostat',
   TADO_THERMOSTAT: 'tado_thermostat',
   SENSI_THERMOSTAT: 'sensi_thermostat',
+  SENSIBO_THERMOSTAT: 'sensibo_thermostat',
   SMARTTHINGS_THERMOSTAT: 'smartthings_thermostat',
 } as const
 
@@ -179,12 +181,12 @@ export const sensor_device_type = z
   .describe('Device type for environmental sensors.')
 
 export type SensorDeviceType = z.infer<typeof sensor_device_type>
-export const POOL_SYSTEM_DEVICE_TYPE = {
-  HAYWARD_POOL_SYSTEM: 'hayward_pool_system',
+export const POOL_CONTROLLER_DEVICE_TYPE = {
+  HAYWARD_POOL_CONTROLLER: 'hayward_pool_controller',
 } as const
 
 export const POOL_DEVICE_TYPE = {
-  ...POOL_SYSTEM_DEVICE_TYPE,
+  ...POOL_CONTROLLER_DEVICE_TYPE,
   HAYWARD_POOL: 'hayward_pool',
 } as const
 

@@ -53,6 +53,7 @@ export const DEVICE_PROVIDERS = {
   TADO: 'tado',
   SALTO_SPACE: 'salto_space',
   SENSI: 'sensi',
+  SENSIBO: 'sensibo',
   KEYNEST: 'keynest',
   KORELOCK: 'korelock',
   KEYINCODE: 'keyincode',
@@ -80,6 +81,7 @@ export const DEVICE_PROVIDERS = {
   EUFY: 'eufy',
   SONOS: 'sonos',
   HAYWARD_OMNILOGIC: 'hayward_omnilogic',
+  TUYA: 'tuya',
 } as const
 
 export type DeviceProviderName =
@@ -121,6 +123,8 @@ export const PROVIDER_CATEGORY_MAP = {
     'latch',
     'akiles',
     'sensi',
+    'sensibo',
+    'tado',
     'assa_abloy_vostio',
     'avigilon_alta',
     'kisi',
@@ -139,6 +143,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'dusaw',
     'thirty_three_lock',
     'yacan',
+    'hayward_omnilogic',
   ],
 
   consumer_smartlocks: [
@@ -173,6 +178,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'unifi_protect',
     'yale_connect',
     'alertify',
+    'tuya',
   ],
 
   thermostats: [
@@ -182,6 +188,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'honeywell_resideo',
     'first_alert',
     'tado',
+    'sensibo',
   ],
   noise_sensors: ['minut', 'noiseaware'],
   access_control_systems: [

@@ -149,10 +149,11 @@ const base_features = z.object({
     .default({})
     .describe('Configuration for the manage feature.'),
   manage_devices: base_manage_devices_feature.default({}).describe(`
-      Configuration for the manage devices feature.
       ---
       deprecated: Use \`manage\` instead.
+      end_of_life: "2026-11-09"
       ---
+      Configuration for the manage devices feature.
     `),
   organize: base_organize_feature
     .default({})
@@ -171,10 +172,11 @@ export const customer_portal_features = z
       .partial()
       .describe('Configuration for the manage feature.'),
     manage_devices: base_manage_devices_feature.partial().describe(`
-      Configuration for the manage devices feature.
       ---
       deprecated: Use \`manage\` instead.
+      end_of_life: "2026-11-09"
       ---
+      Configuration for the manage devices feature.
     `),
     organize: base_organize_feature
       .partial()

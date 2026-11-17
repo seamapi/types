@@ -213,6 +213,7 @@ const user_fields = z.object({
   email: z.string().email().optional().describe(`
     ---
     deprecated: use email_address.
+    end_of_life: "2026-11-09"
     ---
     `),
   email_address: z

@@ -1948,6 +1948,7 @@ const openapi: OpenAPISpec = {
             items: { format: 'uuid', type: 'string' },
             type: 'array',
             'x-deprecated': 'Use `space_ids`.',
+            'x-end-of-life': '2026-11-09',
           },
           name: {
             description:
@@ -3162,11 +3163,13 @@ const openapi: OpenAPISpec = {
             ],
             type: 'string',
             'x-deprecated': 'Use `external_type`.',
+            'x-end-of-life': '2026-11-09',
           },
           access_group_type_display_name: {
             deprecated: true,
             type: 'string',
             'x-deprecated': 'Use `external_type_display_name`.',
+            'x-end-of-life': '2026-11-09',
           },
           access_schedule: {
             description:
@@ -4258,6 +4261,7 @@ const openapi: OpenAPISpec = {
         ],
         type: 'object',
         'x-deprecated': 'Not used.',
+        'x-end-of-life': '2026-11-09',
         'x-route-path': '/acs/credential_pools',
         'x-undocumented': 'Deprecated. Will be removed.',
       },
@@ -4282,6 +4286,7 @@ const openapi: OpenAPISpec = {
         ],
         type: 'object',
         'x-deprecated': 'Not used.',
+        'x-end-of-life': '2026-11-09',
         'x-route-path': '/acs/credential_provisioning_automations',
         'x-undocumented': 'Deprecated. Will be removed.',
       },
@@ -4978,6 +4983,7 @@ const openapi: OpenAPISpec = {
             items: { format: 'uuid', type: 'string' },
             type: 'array',
             'x-deprecated': 'Use `connected_account_id`.',
+            'x-end-of-life': '2026-11-09',
           },
           created_at: {
             description:
@@ -5355,11 +5361,13 @@ const openapi: OpenAPISpec = {
             ],
             type: 'string',
             'x-deprecated': 'Use `external_type`.',
+            'x-end-of-life': '2026-11-09',
           },
           system_type_display_name: {
             deprecated: true,
             type: 'string',
             'x-deprecated': 'Use `external_type_display_name`.',
+            'x-end-of-life': '2026-11-09',
           },
           visionline_metadata: {
             description:
@@ -5461,6 +5469,7 @@ const openapi: OpenAPISpec = {
                       items: { format: 'uuid', type: 'string' },
                       type: 'array',
                       'x-deprecated': 'this field is deprecated.',
+                      'x-end-of-life': '2026-11-09',
                     },
                     warning_code: {
                       description:
@@ -5610,6 +5619,7 @@ const openapi: OpenAPISpec = {
             format: 'email',
             type: 'string',
             'x-deprecated': 'use email_address.',
+            'x-end-of-life': '2026-11-09',
           },
           email_address: {
             description:
@@ -13027,7 +13037,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'Setting the pool heating is pending. The controller has not yet reported the requested state back.',
+              'Setting the temperature controller mode is pending. The controller has not yet reported the requested state back.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -13036,8 +13046,8 @@ const openapi: OpenAPISpec = {
               },
               action_type: {
                 description:
-                  'Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back.',
-                enum: ['SET_POOL_HEATING'],
+                  'Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back.',
+                enum: ['SET_TEMPERATURE_CONTROLLER_MODE'],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
@@ -13065,7 +13075,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'Setting the pool heating succeeded. The controller reported the requested state back.',
+              'Setting the temperature controller mode succeeded. The controller reported the requested state back.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -13074,8 +13084,8 @@ const openapi: OpenAPISpec = {
               },
               action_type: {
                 description:
-                  'Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back.',
-                enum: ['SET_POOL_HEATING'],
+                  'Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back.',
+                enum: ['SET_TEMPERATURE_CONTROLLER_MODE'],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
@@ -13102,7 +13112,7 @@ const openapi: OpenAPISpec = {
             'x-undocumented': 'Unreleased.',
           },
           {
-            description: 'Setting the pool heating failed.',
+            description: 'Setting the temperature controller mode failed.',
             properties: {
               action_attempt_id: {
                 description: 'ID of the action attempt.',
@@ -13111,8 +13121,8 @@ const openapi: OpenAPISpec = {
               },
               action_type: {
                 description:
-                  'Action attempt to track the status of heating pool or spa water to a set point, or turning its heating off. The attempt succeeds only once the controller reports the requested state back.',
-                enum: ['SET_POOL_HEATING'],
+                  'Action attempt to track the status of setting the mode of a temperature controller, such as heating pool or spa water to a set point or turning its heating off. The attempt succeeds only once the controller reports the requested state back.',
+                enum: ['SET_TEMPERATURE_CONTROLLER_MODE'],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
@@ -14421,6 +14431,7 @@ const openapi: OpenAPISpec = {
             items: { format: 'uuid', type: 'string' },
             type: 'array',
             'x-deprecated': 'Use `user_identity_id` instead.',
+            'x-end-of-life': '2026-11-09',
           },
           workspace_id: {
             description:
@@ -14472,6 +14483,7 @@ const openapi: OpenAPISpec = {
             items: { type: 'string' },
             type: 'array',
             'x-deprecated': 'Unused. Will be removed.',
+            'x-end-of-life': '2026-11-09',
             'x-undocumented': 'Unused. Will be removed.',
           },
           accepted_providers: {
@@ -14484,6 +14496,7 @@ const openapi: OpenAPISpec = {
             deprecated: true,
             type: 'boolean',
             'x-deprecated': 'Unused. Will be removed.',
+            'x-end-of-life': '2026-11-09',
             'x-undocumented': 'Unused. Will be removed.',
           },
           any_provider_allowed: {
@@ -14938,6 +14951,7 @@ const openapi: OpenAPISpec = {
             },
             type: 'object',
             'x-deprecated': 'Use `display_name` instead.',
+            'x-end-of-life': '2026-11-09',
           },
           warnings: {
             description: 'Warnings associated with the connected account.',
@@ -15469,8 +15483,8 @@ const openapi: OpenAPISpec = {
                 type: 'object',
               },
               manage_devices: {
-                description:
-                  'Configuration for the manage devices feature.\n---\ndeprecated: Use `manage` instead.\n---',
+                deprecated: true,
+                description: 'Configuration for the manage devices feature.',
                 properties: {
                   exclude: {
                     default: false,
@@ -15480,6 +15494,8 @@ const openapi: OpenAPISpec = {
                   },
                 },
                 type: 'object',
+                'x-deprecated': 'Use `manage` instead.',
+                'x-end-of-life': '2026-11-09',
               },
               organize: {
                 description: 'Configuration for the organize feature.',
@@ -16182,6 +16198,7 @@ const openapi: OpenAPISpec = {
                   'omnitec_lock',
                   'kisi_lock',
                   'aqara_lock',
+                  'tuya_lock',
                   'eufy_lock',
                 ],
                 type: 'string',
@@ -16204,6 +16221,7 @@ const openapi: OpenAPISpec = {
                   'honeywell_resideo_thermostat',
                   'tado_thermostat',
                   'sensi_thermostat',
+                  'sensibo_thermostat',
                   'smartthings_thermostat',
                 ],
                 type: 'string',
@@ -16237,7 +16255,7 @@ const openapi: OpenAPISpec = {
               {
                 description:
                   'Device type for pool controllers, pools, and spas.',
-                enum: ['hayward_pool_system', 'hayward_pool'],
+                enum: ['hayward_pool_controller', 'hayward_pool'],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
@@ -16884,6 +16902,7 @@ const openapi: OpenAPISpec = {
                 description: 'Time zone of the device location.',
                 type: 'string',
                 'x-deprecated': 'Use `time_zone` instead.',
+                'x-end-of-life': '2026-11-09',
               },
             },
             type: 'object',
@@ -17150,6 +17169,7 @@ const openapi: OpenAPISpec = {
                                 type: 'boolean',
                                 'x-deprecated':
                                   'use device.properties.model.can_connect_accessory_keypad',
+                                'x-end-of-life': '2026-11-09',
                               },
                               can_connect_accessory_keypad: {
                                 description:
@@ -17176,12 +17196,14 @@ const openapi: OpenAPISpec = {
                                 type: 'boolean',
                                 'x-deprecated':
                                   'use device.can_program_offline_access_codes.',
+                                'x-end-of-life': '2026-11-09',
                               },
                               online_access_codes_supported: {
                                 deprecated: true,
                                 type: 'boolean',
                                 'x-deprecated':
                                   'use device.can_program_online_access_codes.',
+                                'x-end-of-life': '2026-11-09',
                               },
                             },
                             required: [
@@ -17210,6 +17232,7 @@ const openapi: OpenAPISpec = {
                             type: 'boolean',
                             'x-deprecated':
                               'use device.can_program_offline_access_codes',
+                            'x-end-of-life': '2026-11-09',
                             'x-property-group-key': 'access_codes',
                           },
                           online: {
@@ -17224,6 +17247,7 @@ const openapi: OpenAPISpec = {
                             type: 'boolean',
                             'x-deprecated':
                               'use device.can_program_online_access_codes',
+                            'x-end-of-life': '2026-11-09',
                             'x-property-group-key': 'access_codes',
                           },
                           serial_number: {
@@ -17236,12 +17260,14 @@ const openapi: OpenAPISpec = {
                             type: 'boolean',
                             'x-deprecated':
                               'use device.properties.model.can_connect_accessory_keypad',
+                            'x-end-of-life': '2026-11-09',
                             'x-property-group-key': 'access_codes',
                           },
                           supports_offline_access_codes: {
                             deprecated: true,
                             type: 'boolean',
                             'x-deprecated': 'use offline_access_codes_enabled',
+                            'x-end-of-life': '2026-11-09',
                             'x-property-group-key': 'access_codes',
                           },
                         },
@@ -17697,6 +17723,7 @@ const openapi: OpenAPISpec = {
                             type: 'number',
                             'x-deprecated':
                               'Previously marked as "@DEPRECATED."',
+                            'x-end-of-life': '2026-11-09',
                           },
                           site_name: {
                             description:
@@ -17766,42 +17793,26 @@ const openapi: OpenAPISpec = {
                       },
                       hayward_omnilogic_metadata: {
                         description:
-                          'Metadata for a Hayward OmniLogic pool controller or body of water.',
+                          'Metadata for a Hayward OmniLogic pool controller, pool, or spa.',
                         properties: {
                           backyard_name: {
                             description:
-                              'Name of the system, as set in the Hayward OmniLogic app.',
+                              'Name of the controller, as set in the Hayward OmniLogic app.',
                             type: 'string',
-                          },
-                          body_of_water_id: {
-                            description:
-                              'ID of the body of water within its system. Only present on a pool or spa body.',
-                            type: 'string',
-                          },
-                          body_of_water_name: {
-                            description:
-                              'Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body.',
-                            type: 'string',
-                          },
-                          is_shared_equipment: {
-                            description:
-                              'Indicates whether the body of water shares its pump and heater with another body of water in the same system.',
-                            type: 'boolean',
                           },
                           msp_system_id: {
                             description:
-                              'ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to.',
+                              'ID of the Hayward OmniLogic controller that the device belongs to.',
                             type: 'string',
                           },
-                          shared_equipment_priority: {
+                          system_id: {
                             description:
-                              'Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat.',
-                            enum: ['high', 'low'],
+                              'ID of the pool or spa within its controller. Only present on a pool or spa.',
                             type: 'string',
                           },
-                          virtual_heater_id: {
+                          system_name: {
                             description:
-                              'ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body.',
+                              'Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa.',
                             type: 'string',
                           },
                         },
@@ -18462,6 +18473,7 @@ const openapi: OpenAPISpec = {
                         },
                         type: 'object',
                         'x-deprecated': 'Use `salto_ks_metadata` instead.',
+                        'x-end-of-life': '2026-11-09',
                       },
                       schlage_metadata: {
                         description: 'Metadata for a Schlage device.',
@@ -18513,12 +18525,57 @@ const openapi: OpenAPISpec = {
                             type: 'string',
                           },
                           dual_setpoints_not_supported: {
-                            description:
-                              'Deprecated. Seam no longer sets this field.',
+                            deprecated: true,
                             type: 'boolean',
+                            'x-deprecated': 'Seam no longer sets this field.',
+                            'x-end-of-life': '2026-11-09',
                           },
                           product_type: {
                             description: 'Product type for a Sensi device.',
+                            type: 'string',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      sensibo_metadata: {
+                        description: 'Metadata for a Sensibo device.',
+                        properties: {
+                          firmware_version: {
+                            description:
+                              'Firmware version of the Sensibo device.',
+                            type: 'string',
+                          },
+                          mac_address: {
+                            description: 'MAC address of the Sensibo device.',
+                            type: 'string',
+                          },
+                          pod_id: {
+                            description:
+                              'ID of the Sensibo device, which Sensibo calls a pod.',
+                            type: 'string',
+                          },
+                          product_model: {
+                            description:
+                              'Product model of the Sensibo device, such as `skyv2` or `skyplus`.',
+                            type: 'string',
+                          },
+                          product_name: {
+                            description:
+                              'Product name of the Sensibo device, such as `Sensibo Sky` or `Sensibo Air`.',
+                            type: 'string',
+                          },
+                          room_name: {
+                            description:
+                              'Name of the room that the Sensibo device is in.',
+                            type: 'string',
+                          },
+                          serial_number: {
+                            description: 'Serial number of the Sensibo device.',
+                            type: 'string',
+                          },
+                          temperature_unit: {
+                            description:
+                              'Temperature unit that the Sensibo device displays: `C` or `F`.',
                             type: 'string',
                           },
                         },
@@ -18786,6 +18843,44 @@ const openapi: OpenAPISpec = {
                               type: 'object',
                             },
                             type: 'array',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      tuya_metadata: {
+                        description: 'Metadata for a Tuya device.',
+                        properties: {
+                          category: {
+                            description:
+                              'Tuya product category code for the device (e.g. ms).',
+                            type: 'string',
+                          },
+                          device_id: {
+                            description: 'Device ID for a Tuya device.',
+                            type: 'string',
+                          },
+                          device_name: {
+                            description: 'Device name for a Tuya device.',
+                            type: 'string',
+                          },
+                          model: {
+                            description: 'Model reported for a Tuya device.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          product_id: {
+                            description: 'Tuya product ID for the device.',
+                            type: 'string',
+                          },
+                          product_name: {
+                            description: 'Tuya product name for the device.',
+                            type: 'string',
+                          },
+                          time_zone: {
+                            description:
+                              'Time zone reported for a Tuya device (e.g. +08:00).',
+                            nullable: true,
+                            type: 'string',
                           },
                         },
                         type: 'object',
@@ -19073,6 +19168,7 @@ const openapi: OpenAPISpec = {
                         'x-property-group-key': 'access_codes',
                       },
                       keypad_battery: {
+                        deprecated: true,
                         description: 'Keypad battery status.',
                         properties: {
                           level: {
@@ -19084,6 +19180,8 @@ const openapi: OpenAPISpec = {
                         },
                         required: ['level'],
                         type: 'object',
+                        'x-deprecated':
+                          'Use `accessory_keypad.battery` instead.',
                         'x-property-group-key': 'access_codes',
                       },
                       locked: {
@@ -19491,6 +19589,7 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                         'x-deprecated':
                           'Use `active_thermostat_schedule_id` with `/thermostats/schedules/get` instead.',
+                        'x-end-of-life': '2026-11-09',
                         'x-property-group-key': 'thermostats',
                         'x-route-path': '/thermostats/schedules',
                       },
@@ -19631,6 +19730,7 @@ const openapi: OpenAPISpec = {
                               type: 'boolean',
                               'x-deprecated':
                                 "Use 'thermostat_schedule.is_override_allowed'",
+                              'x-end-of-life': '2026-11-09',
                             },
                             name: {
                               default: null,
@@ -19784,6 +19884,7 @@ const openapi: OpenAPISpec = {
                             type: 'boolean',
                             'x-deprecated':
                               "Use 'thermostat_schedule.is_override_allowed'",
+                            'x-end-of-life': '2026-11-09',
                           },
                           name: {
                             default: null,
@@ -19903,6 +20004,7 @@ const openapi: OpenAPISpec = {
                             type: 'boolean',
                             'x-deprecated':
                               "Use 'thermostat_schedule.is_override_allowed'",
+                            'x-end-of-life': '2026-11-09',
                           },
                           name: {
                             default: null,
@@ -19915,6 +20017,7 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                         'x-deprecated':
                           'use fallback_climate_preset_key to specify a fallback climate preset instead.',
+                        'x-end-of-life': '2026-11-09',
                         'x-property-group-key': 'thermostats',
                       },
                       fallback_climate_preset_key: {
@@ -19931,6 +20034,7 @@ const openapi: OpenAPISpec = {
                         type: 'string',
                         'x-deprecated':
                           'Use `current_climate_setting.fan_mode_setting` instead.',
+                        'x-end-of-life': '2026-11-09',
                         'x-property-group-key': 'thermostats',
                       },
                       is_cooling: {
@@ -21442,6 +21546,7 @@ const openapi: OpenAPISpec = {
               'tado',
               'salto_space',
               'sensi',
+              'sensibo',
               'keynest',
               'korelock',
               'keyincode',
@@ -21469,6 +21574,7 @@ const openapi: OpenAPISpec = {
               'eufy',
               'sonos',
               'hayward_omnilogic',
+              'tuya',
             ],
             type: 'string',
           },
@@ -27451,6 +27557,7 @@ const openapi: OpenAPISpec = {
             ],
             type: 'object',
             'x-deprecated': 'Use `connect_webview.login_succeeded`.',
+            'x-end-of-life': '2026-11-09',
             'x-route-path': '/connected_accounts',
           },
           {
@@ -29423,6 +29530,7 @@ const openapi: OpenAPISpec = {
                 type: 'number',
                 'x-deprecated':
                   "Use device_battery_level and accessory_keypad_battery_level, which distinguish the device's own battery from a paired accessory keypad's battery.",
+                'x-end-of-life': '2026-11-09',
               },
               connected_account_custom_metadata: {
                 additionalProperties: {
@@ -36975,7 +37083,7 @@ const openapi: OpenAPISpec = {
           },
           display_status: {
             description:
-              "Human-readable label for the code's state: `Active` or `Not active`, based on whether the code is set on the device. For display only. The wording is not stable and is not an enumeration — never compare against or branch on it.",
+              "Human-readable label for the code's state: `Active` or `Not active`, based on whether the code is set on the device, or `Deleting` while the code is being removed from the device. For display only. The wording is not stable and is not an enumeration — never compare against or branch on it.",
             type: 'string',
           },
           dormakaba_oracode_metadata: {
@@ -38542,6 +38650,7 @@ const openapi: OpenAPISpec = {
             items: { format: 'uuid', type: 'string' },
             type: 'array',
             'x-deprecated': 'Use `space_ids`.',
+            'x-end-of-life': '2026-11-09',
           },
           name: {
             description:
@@ -39735,11 +39844,13 @@ const openapi: OpenAPISpec = {
             ],
             type: 'string',
             'x-deprecated': 'Use `external_type`.',
+            'x-end-of-life': '2026-11-09',
           },
           access_group_type_display_name: {
             deprecated: true,
             type: 'string',
             'x-deprecated': 'Use `external_type_display_name`.',
+            'x-end-of-life': '2026-11-09',
           },
           access_schedule: {
             description:
@@ -40862,6 +40973,7 @@ const openapi: OpenAPISpec = {
             format: 'email',
             type: 'string',
             'x-deprecated': 'use email_address.',
+            'x-end-of-life': '2026-11-09',
           },
           email_address: {
             description:
@@ -41952,6 +42064,7 @@ const openapi: OpenAPISpec = {
                   'omnitec_lock',
                   'kisi_lock',
                   'aqara_lock',
+                  'tuya_lock',
                   'eufy_lock',
                 ],
                 type: 'string',
@@ -41974,6 +42087,7 @@ const openapi: OpenAPISpec = {
                   'honeywell_resideo_thermostat',
                   'tado_thermostat',
                   'sensi_thermostat',
+                  'sensibo_thermostat',
                   'smartthings_thermostat',
                 ],
                 type: 'string',
@@ -42007,7 +42121,7 @@ const openapi: OpenAPISpec = {
               {
                 description:
                   'Device type for pool controllers, pools, and spas.',
-                enum: ['hayward_pool_system', 'hayward_pool'],
+                enum: ['hayward_pool_controller', 'hayward_pool'],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
@@ -42615,6 +42729,7 @@ const openapi: OpenAPISpec = {
                 description: 'Time zone of the device location.',
                 type: 'string',
                 'x-deprecated': 'Use `time_zone` instead.',
+                'x-end-of-life': '2026-11-09',
               },
             },
             type: 'object',
@@ -42706,6 +42821,7 @@ const openapi: OpenAPISpec = {
                     type: 'boolean',
                     'x-deprecated':
                       'use device.properties.model.can_connect_accessory_keypad',
+                    'x-end-of-life': '2026-11-09',
                   },
                   can_connect_accessory_keypad: {
                     description:
@@ -42732,12 +42848,14 @@ const openapi: OpenAPISpec = {
                     type: 'boolean',
                     'x-deprecated':
                       'use device.can_program_offline_access_codes.',
+                    'x-end-of-life': '2026-11-09',
                   },
                   online_access_codes_supported: {
                     deprecated: true,
                     type: 'boolean',
                     'x-deprecated':
                       'use device.can_program_online_access_codes.',
+                    'x-end-of-life': '2026-11-09',
                   },
                 },
                 required: ['display_name', 'manufacturer_display_name'],
@@ -42755,6 +42873,7 @@ const openapi: OpenAPISpec = {
                   'Indicates whether it is currently possible to use offline access codes for the device.',
                 type: 'boolean',
                 'x-deprecated': 'use device.can_program_offline_access_codes',
+                'x-end-of-life': '2026-11-09',
                 'x-property-group-key': 'access_codes',
               },
               online: {
@@ -42767,6 +42886,7 @@ const openapi: OpenAPISpec = {
                   'Indicates whether it is currently possible to use online access codes for the device.',
                 type: 'boolean',
                 'x-deprecated': 'use device.can_program_online_access_codes',
+                'x-end-of-life': '2026-11-09',
                 'x-property-group-key': 'access_codes',
               },
             },
@@ -44094,6 +44214,7 @@ const openapi: OpenAPISpec = {
               'Company name associated with the [workspace](https://www.seam.co/docs/core-concepts/workspaces).',
             type: 'string',
             'x-deprecated': 'Use `connect_partner_name` instead.',
+            'x-end-of-life': '2026-11-09',
           },
           connect_partner_name: {
             description:
@@ -44388,6 +44509,7 @@ const openapi: OpenAPISpec = {
                     deprecated: true,
                     type: 'boolean',
                     'x-deprecated': 'Use `is_offline_access_code` instead.',
+                    'x-end-of-life': '2026-11-09',
                   },
                 },
                 required: ['device_id'],
@@ -46039,6 +46161,7 @@ const openapi: OpenAPISpec = {
                             type: 'array',
                             'x-deprecated':
                               'Use `acs_entrance_ids` at the top level.',
+                            'x-end-of-life': '2026-11-09',
                           },
                           device_ids: {
                             default: [],
@@ -46047,6 +46170,7 @@ const openapi: OpenAPISpec = {
                             type: 'array',
                             'x-deprecated':
                               'Use `device_ids` at the top level.',
+                            'x-end-of-life': '2026-11-09',
                           },
                           name: {
                             description: 'Name of the location.',
@@ -46056,12 +46180,14 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                         'x-deprecated':
                           'Create a space first, then reference it using `space_ids`.',
+                        'x-end-of-life': '2026-11-09',
                       },
                       location_ids: {
                         deprecated: true,
                         items: { format: 'uuid', type: 'string' },
                         type: 'array',
                         'x-deprecated': 'Use `space_ids`.',
+                        'x-end-of-life': '2026-11-09',
                       },
                       name: {
                         description: 'Name for the access grant.',
@@ -46516,6 +46642,7 @@ const openapi: OpenAPISpec = {
               format: 'uuid',
               type: 'string',
               'x-deprecated': 'Use `space_id`.',
+              'x-end-of-life': '2026-11-09',
             },
           },
           {
@@ -48359,6 +48486,7 @@ const openapi: OpenAPISpec = {
         tags: ['/acs'],
         'x-deprecated':
           'Use `/user_identities/enrollment_automations/list` instead.',
+        'x-end-of-life': '2026-11-09',
         'x-fern-sdk-group-name': ['acs', 'credential_pools'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_credential_pools',
@@ -48445,6 +48573,7 @@ const openapi: OpenAPISpec = {
         tags: ['/acs'],
         'x-deprecated':
           'Use `/user_identities/enrollment_automations/launch` instead.',
+        'x-end-of-life': '2026-11-09',
         'x-fern-sdk-group-name': ['acs', 'credential_provisioning_automations'],
         'x-fern-sdk-method-name': 'launch',
         'x-fern-sdk-return-value': 'acs_credential_provisioning_automation',
@@ -48643,6 +48772,7 @@ const openapi: OpenAPISpec = {
                         type: 'string',
                         'x-deprecated':
                           'Read-only endpoint references moved to `endpoint`.',
+                        'x-end-of-life': '2026-11-09',
                         'x-undocumented':
                           'Deprecated. Read-only endpoint references moved to `endpoint`.',
                       },
@@ -48660,6 +48790,7 @@ const openapi: OpenAPISpec = {
                         deprecated: true,
                         type: 'boolean',
                         'x-deprecated': 'Use `override` instead.',
+                        'x-end-of-life': '2026-11-09',
                         'x-undocumented': 'Use `override` instead.',
                       },
                       joiner_acs_credential_ids: {
@@ -50239,6 +50370,7 @@ const openapi: OpenAPISpec = {
               nullable: true,
               type: 'string',
               'x-deprecated': 'Use `space_id`.',
+              'x-end-of-life': '2026-11-09',
             },
           },
           {
@@ -50880,6 +51012,7 @@ const openapi: OpenAPISpec = {
                     format: 'email',
                     type: 'string',
                     'x-deprecated': 'use email_address.',
+                    'x-end-of-life': '2026-11-09',
                   },
                   email_address: {
                     description:
@@ -51753,6 +51886,7 @@ const openapi: OpenAPISpec = {
                     format: 'email',
                     type: 'string',
                     'x-deprecated': 'use email_address.',
+                    'x-end-of-life': '2026-11-09',
                   },
                   email_address: {
                     description:
@@ -52357,6 +52491,7 @@ const openapi: OpenAPISpec = {
                     minItems: 1,
                     type: 'array',
                     'x-deprecated': 'Use `user_identity_id` instead.',
+                    'x-end-of-life': '2026-11-09',
                   },
                 },
                 type: 'object',
@@ -52557,6 +52692,7 @@ const openapi: OpenAPISpec = {
                     minItems: 1,
                     type: 'array',
                     'x-deprecated': 'Use `user_identity_id`.',
+                    'x-end-of-life': '2026-11-09',
                   },
                 },
                 type: 'object',
@@ -52647,6 +52783,7 @@ const openapi: OpenAPISpec = {
                     minItems: 1,
                     type: 'array',
                     'x-deprecated': 'Use `user_identity_id`.',
+                    'x-end-of-life': '2026-11-09',
                   },
                 },
                 type: 'object',
@@ -52948,6 +53085,7 @@ const openapi: OpenAPISpec = {
                         'tado',
                         'salto_space',
                         'sensi',
+                        'sensibo',
                         'keynest',
                         'korelock',
                         'keyincode',
@@ -52975,6 +53113,7 @@ const openapi: OpenAPISpec = {
                         'eufy',
                         'sonos',
                         'hayward_omnilogic',
+                        'tuya',
                         'hid_cm',
                         'google_nest',
                         'slack',
@@ -54030,8 +54169,9 @@ const openapi: OpenAPISpec = {
                             type: 'object',
                           },
                           manage_devices: {
+                            deprecated: true,
                             description:
-                              'Configuration for the manage devices feature.\n---\ndeprecated: Use `manage` instead.\n---',
+                              'Configuration for the manage devices feature.',
                             properties: {
                               exclude: {
                                 default: false,
@@ -54041,6 +54181,8 @@ const openapi: OpenAPISpec = {
                               },
                             },
                             type: 'object',
+                            'x-deprecated': 'Use `manage` instead.',
+                            'x-end-of-life': '2026-11-09',
                           },
                           organize: {
                             description:
@@ -56901,6 +57043,7 @@ const openapi: OpenAPISpec = {
                     'omnitec_lock',
                     'kisi_lock',
                     'aqara_lock',
+                    'tuya_lock',
                     'eufy_lock',
                   ],
                   type: 'string',
@@ -56923,6 +57066,7 @@ const openapi: OpenAPISpec = {
                     'honeywell_resideo_thermostat',
                     'tado_thermostat',
                     'sensi_thermostat',
+                    'sensibo_thermostat',
                     'smartthings_thermostat',
                   ],
                   type: 'string',
@@ -56956,7 +57100,7 @@ const openapi: OpenAPISpec = {
                 {
                   description:
                     'Device type for pool controllers, pools, and spas.',
-                  enum: ['hayward_pool_system', 'hayward_pool'],
+                  enum: ['hayward_pool_controller', 'hayward_pool'],
                   type: 'string',
                   'x-undocumented': 'Unreleased.',
                 },
@@ -57008,6 +57152,7 @@ const openapi: OpenAPISpec = {
                       'omnitec_lock',
                       'kisi_lock',
                       'aqara_lock',
+                      'tuya_lock',
                       'eufy_lock',
                     ],
                     type: 'string',
@@ -57030,6 +57175,7 @@ const openapi: OpenAPISpec = {
                       'honeywell_resideo_thermostat',
                       'tado_thermostat',
                       'sensi_thermostat',
+                      'sensibo_thermostat',
                       'smartthings_thermostat',
                     ],
                     type: 'string',
@@ -57063,7 +57209,7 @@ const openapi: OpenAPISpec = {
                   {
                     description:
                       'Device type for pool controllers, pools, and spas.',
-                    enum: ['hayward_pool_system', 'hayward_pool'],
+                    enum: ['hayward_pool_controller', 'hayward_pool'],
                     type: 'string',
                     'x-undocumented': 'Unreleased.',
                   },
@@ -57120,6 +57266,7 @@ const openapi: OpenAPISpec = {
                 'nest',
                 'noiseaware',
                 'sensi',
+                'sensibo',
                 'smartthings',
                 'tado',
                 'ultraloq',
@@ -57141,6 +57288,7 @@ const openapi: OpenAPISpec = {
                 'yacan',
                 'sonos',
                 'hayward_omnilogic',
+                'tuya',
               ],
               type: 'string',
             },
@@ -57306,6 +57454,7 @@ const openapi: OpenAPISpec = {
               nullable: true,
               type: 'string',
               'x-deprecated': 'Use `space_id`.',
+              'x-end-of-life': '2026-11-09',
             },
           },
           {
@@ -57333,8 +57482,9 @@ const openapi: OpenAPISpec = {
             name: 'parent_device_id',
             schema: {
               description:
-                'ID of the parent device whose child devices you want to list.',
+                'ID of the parent device whose child devices you want to list. Specify `null` to list devices that have no parent device.',
               format: 'uuid',
+              nullable: true,
               type: 'string',
               'x-undocumented': 'Unreleased.',
             },
@@ -59298,6 +59448,7 @@ const openapi: OpenAPISpec = {
                     'omnitec_lock',
                     'kisi_lock',
                     'aqara_lock',
+                    'tuya_lock',
                     'eufy_lock',
                   ],
                   type: 'string',
@@ -59320,6 +59471,7 @@ const openapi: OpenAPISpec = {
                     'honeywell_resideo_thermostat',
                     'tado_thermostat',
                     'sensi_thermostat',
+                    'sensibo_thermostat',
                     'smartthings_thermostat',
                   ],
                   type: 'string',
@@ -59353,7 +59505,7 @@ const openapi: OpenAPISpec = {
                 {
                   description:
                     'Device type for pool controllers, pools, and spas.',
-                  enum: ['hayward_pool_system', 'hayward_pool'],
+                  enum: ['hayward_pool_controller', 'hayward_pool'],
                   type: 'string',
                   'x-undocumented': 'Unreleased.',
                 },
@@ -59405,6 +59557,7 @@ const openapi: OpenAPISpec = {
                       'omnitec_lock',
                       'kisi_lock',
                       'aqara_lock',
+                      'tuya_lock',
                       'eufy_lock',
                     ],
                     type: 'string',
@@ -59427,6 +59580,7 @@ const openapi: OpenAPISpec = {
                       'honeywell_resideo_thermostat',
                       'tado_thermostat',
                       'sensi_thermostat',
+                      'sensibo_thermostat',
                       'smartthings_thermostat',
                     ],
                     type: 'string',
@@ -59460,7 +59614,7 @@ const openapi: OpenAPISpec = {
                   {
                     description:
                       'Device type for pool controllers, pools, and spas.',
-                    enum: ['hayward_pool_system', 'hayward_pool'],
+                    enum: ['hayward_pool_controller', 'hayward_pool'],
                     type: 'string',
                     'x-undocumented': 'Unreleased.',
                   },
@@ -59517,6 +59671,7 @@ const openapi: OpenAPISpec = {
                 'nest',
                 'noiseaware',
                 'sensi',
+                'sensibo',
                 'smartthings',
                 'tado',
                 'ultraloq',
@@ -59538,6 +59693,7 @@ const openapi: OpenAPISpec = {
                 'yacan',
                 'sonos',
                 'hayward_omnilogic',
+                'tuya',
               ],
               type: 'string',
             },
@@ -59675,8 +59831,9 @@ const openapi: OpenAPISpec = {
             name: 'parent_device_id',
             schema: {
               description:
-                'ID of the parent device whose child devices you want to list.',
+                'ID of the parent device whose child devices you want to list. Specify `null` to list devices that have no parent device.',
               format: 'uuid',
+              nullable: true,
               type: 'string',
               'x-undocumented': 'Unreleased.',
             },
@@ -60906,6 +61063,7 @@ const openapi: OpenAPISpec = {
                 'omnitec_lock',
                 'kisi_lock',
                 'aqara_lock',
+                'tuya_lock',
                 'eufy_lock',
               ],
               type: 'string',
@@ -60953,6 +61111,7 @@ const openapi: OpenAPISpec = {
                   'omnitec_lock',
                   'kisi_lock',
                   'aqara_lock',
+                  'tuya_lock',
                   'eufy_lock',
                 ],
                 type: 'string',
@@ -61002,6 +61161,7 @@ const openapi: OpenAPISpec = {
                 'omnitec',
                 'kisi',
                 'yacan',
+                'tuya',
               ],
               type: 'string',
             },
@@ -62189,7 +62349,7 @@ const openapi: OpenAPISpec = {
     '/pools/heat': {
       post: {
         description:
-          "Requests heating of specified pool or spa water to a set point. The set point must be within the range reported by the device's `properties.min_heating_set_point_*` and `properties.max_heating_set_point_*` fields. The returned action attempt stays `pending` until the pool controller reports the requested state back, which can take up to 90 seconds, and fails with `pool_heating_confirmation_timeout` if it never does. To check whether the water supports temperature control, use `device.can_control_temperature`.",
+          "Requests heating of specified pool or spa water to a set point. The set point must be within the range reported by the device's `properties.min_heating_set_point_*` and `properties.max_heating_set_point_*` fields. The returned action attempt stays `pending` until the pool controller reports the requested state back, which can take up to 90 seconds, and fails with `temperature_setting_not_confirmed` if it never does. To check whether the water supports temperature control, use `device.can_control_temperature`.",
         operationId: 'poolsHeatPost',
         requestBody: {
           content: {
@@ -62244,13 +62404,14 @@ const openapi: OpenAPISpec = {
         },
         security: [
           { client_session: [] },
+          { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/pools/heat',
         tags: [],
-        'x-action-attempt-type': 'SET_POOL_HEATING',
+        'x-action-attempt-type': 'SET_TEMPERATURE_CONTROLLER_MODE',
         'x-fern-sdk-group-name': ['pools'],
         'x-fern-sdk-method-name': 'heat',
         'x-fern-sdk-return-value': 'action_attempt',
@@ -62300,7 +62461,7 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Device type by which you want to filter pool devices.',
-              enum: ['hayward_pool_system', 'hayward_pool'],
+              enum: ['hayward_pool_controller', 'hayward_pool'],
               type: 'string',
               'x-undocumented': 'Unreleased.',
             },
@@ -62314,7 +62475,7 @@ const openapi: OpenAPISpec = {
               items: {
                 description:
                   'Device type for pool controllers, pools, and spas.',
-                enum: ['hayward_pool_system', 'hayward_pool'],
+                enum: ['hayward_pool_controller', 'hayward_pool'],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
@@ -62364,7 +62525,7 @@ const openapi: OpenAPISpec = {
     '/pools/turn_off': {
       post: {
         description:
-          'Turns off the temperature controller of specified pool or spa water. The set point is left unchanged, and other equipment such as pumps, lights, and chlorinators is not affected. The returned action attempt stays `pending` until the pool controller reports temperature control as off, which can take up to 90 seconds, and fails with `pool_heating_confirmation_timeout` if it never does. To check whether the water supports temperature control, use `device.can_control_temperature`.',
+          'Turns off the temperature controller of specified pool or spa water. The set point is left unchanged, and other equipment such as pumps, lights, and chlorinators is not affected. The returned action attempt stays `pending` until the pool controller reports temperature control as off, which can take up to 90 seconds, and fails with `temperature_setting_not_confirmed` if it never does. To check whether the water supports temperature control, use `device.can_control_temperature`.',
         operationId: 'poolsTurnOffPost',
         requestBody: {
           content: {
@@ -62407,13 +62568,14 @@ const openapi: OpenAPISpec = {
         },
         security: [
           { client_session: [] },
+          { client_session_with_customer: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/pools/turn_off',
         tags: [],
-        'x-action-attempt-type': 'SET_POOL_HEATING',
+        'x-action-attempt-type': 'SET_TEMPERATURE_CONTROLLER_MODE',
         'x-fern-sdk-group-name': ['pools'],
         'x-fern-sdk-method-name': 'turn_off',
         'x-fern-sdk-return-value': 'action_attempt',
@@ -68758,6 +68920,7 @@ const openapi: OpenAPISpec = {
                                   type: 'boolean',
                                   'x-deprecated':
                                     'Use `prefer_guest_phone_last_digits_as_code`.',
+                                  'x-end-of-life': '2026-11-09',
                                 },
                                 prefer_guest_phone_last_digits_as_code: {
                                   description:
@@ -69331,6 +69494,7 @@ const openapi: OpenAPISpec = {
                                 type: 'boolean',
                                 'x-deprecated':
                                   'Use `prefer_guest_phone_last_digits_as_code`.',
+                                'x-end-of-life': '2026-11-09',
                               },
                               prefer_guest_phone_last_digits_as_code: {
                                 description:
@@ -70977,6 +71141,7 @@ const openapi: OpenAPISpec = {
                                       type: 'boolean',
                                       'x-deprecated':
                                         'Use `prefer_guest_phone_last_digits_as_code`.',
+                                      'x-end-of-life': '2026-11-09',
                                     },
                                     prefer_guest_phone_last_digits_as_code: {
                                       description:
@@ -71479,6 +71644,7 @@ const openapi: OpenAPISpec = {
                                 type: 'boolean',
                                 'x-deprecated':
                                   'Use `prefer_guest_phone_last_digits_as_code`.',
+                                'x-end-of-life': '2026-11-09',
                               },
                               prefer_guest_phone_last_digits_as_code: {
                                 description:
@@ -72999,8 +73165,9 @@ const openapi: OpenAPISpec = {
                               default: {
                                 $ref: '#/components/schemas/access_code',
                               },
+                              deprecated: true,
                               description:
-                                'Configuration for the manage devices feature.\n---\ndeprecated: Use `manage` instead.\n---',
+                                'Configuration for the manage devices feature.',
                               properties: {
                                 exclude: {
                                   default: false,
@@ -73010,6 +73177,8 @@ const openapi: OpenAPISpec = {
                                 },
                               },
                               type: 'object',
+                              'x-deprecated': 'Use `manage` instead.',
+                              'x-end-of-life': '2026-11-09',
                             },
                             organize: {
                               default: {
@@ -73484,8 +73653,9 @@ const openapi: OpenAPISpec = {
                             type: 'object',
                           },
                           manage_devices: {
+                            deprecated: true,
                             description:
-                              'Configuration for the manage devices feature.\n---\ndeprecated: Use `manage` instead.\n---',
+                              'Configuration for the manage devices feature.',
                             properties: {
                               exclude: {
                                 default: false,
@@ -73495,6 +73665,8 @@ const openapi: OpenAPISpec = {
                               },
                             },
                             type: 'object',
+                            'x-deprecated': 'Use `manage` instead.',
+                            'x-end-of-life': '2026-11-09',
                           },
                           organize: {
                             description:
@@ -78592,6 +78764,7 @@ const openapi: OpenAPISpec = {
                     type: 'boolean',
                     'x-deprecated':
                       "Use 'thermostat_schedule.is_override_allowed'",
+                    'x-end-of-life': '2026-11-09',
                   },
                   name: {
                     default: null,
@@ -78973,6 +79146,7 @@ const openapi: OpenAPISpec = {
         summary: '/thermostats/get',
         tags: ['/thermostats'],
         'x-deprecated': 'Use `/devices/get` instead.',
+        'x-end-of-life': '2026-11-09',
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'thermostat',
@@ -79185,6 +79359,7 @@ const openapi: OpenAPISpec = {
                 'honeywell_resideo_thermostat',
                 'tado_thermostat',
                 'sensi_thermostat',
+                'sensibo_thermostat',
                 'smartthings_thermostat',
               ],
               type: 'string',
@@ -79204,6 +79379,7 @@ const openapi: OpenAPISpec = {
                   'honeywell_resideo_thermostat',
                   'tado_thermostat',
                   'sensi_thermostat',
+                  'sensibo_thermostat',
                   'smartthings_thermostat',
                 ],
                 type: 'string',
@@ -79222,6 +79398,7 @@ const openapi: OpenAPISpec = {
                 'honeywell_resideo',
                 'nest',
                 'sensi',
+                'sensibo',
                 'smartthings',
                 'tado',
               ],
@@ -80398,6 +80575,7 @@ const openapi: OpenAPISpec = {
                     type: 'boolean',
                     'x-deprecated':
                       "Use 'thermostat_schedule.is_override_allowed'",
+                    'x-end-of-life': '2026-11-09',
                   },
                   name: {
                     default: null,
@@ -81737,6 +81915,7 @@ const openapi: OpenAPISpec = {
                       items: { $ref: '#/components/schemas/device' },
                       type: 'array',
                       'x-deprecated': 'Use devices.',
+                      'x-end-of-life': '2026-11-09',
                     },
                     devices: {
                       items: { $ref: '#/components/schemas/device' },
@@ -82693,6 +82872,7 @@ const openapi: OpenAPISpec = {
                     description: 'Company name for the new workspace.',
                     type: 'string',
                     'x-deprecated': 'Use `connect_partner_name` instead.',
+                    'x-end-of-life': '2026-11-09',
                   },
                   connect_partner_name: {
                     description: 'Connect partner name for the new workspace.',
@@ -82753,24 +82933,28 @@ const openapi: OpenAPISpec = {
                     type: 'string',
                     'x-deprecated':
                       'Use `connect_webview_customization.webview_logo_shape` instead.',
+                    'x-end-of-life': '2026-11-09',
                   },
                   webview_primary_button_color: {
                     deprecated: true,
                     type: 'string',
                     'x-deprecated':
                       'Use `connect_webview_customization.webview_primary_button_color` instead.',
+                    'x-end-of-life': '2026-11-09',
                   },
                   webview_primary_button_text_color: {
                     deprecated: true,
                     type: 'string',
                     'x-deprecated':
                       'Use `connect_webview_customization.webview_primary_button_text_color` instead.',
+                    'x-end-of-life': '2026-11-09',
                   },
                   webview_success_message: {
                     deprecated: true,
                     type: 'string',
                     'x-deprecated':
                       'Use `connect_webview_customization.webview_success_message` instead.',
+                    'x-end-of-life': '2026-11-09',
                   },
                 },
                 required: ['name'],
@@ -82992,8 +83176,9 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                       },
                       manage_devices: {
+                        deprecated: true,
                         description:
-                          'Configuration for the manage devices feature.\n---\ndeprecated: Use `manage` instead.\n---',
+                          'Configuration for the manage devices feature.',
                         properties: {
                           exclude: {
                             default: false,
@@ -83003,6 +83188,8 @@ const openapi: OpenAPISpec = {
                           },
                         },
                         type: 'object',
+                        'x-deprecated': 'Use `manage` instead.',
+                        'x-end-of-life': '2026-11-09',
                       },
                       organize: {
                         description: 'Configuration for the organize feature.',
@@ -83679,8 +83866,9 @@ const openapi: OpenAPISpec = {
                         type: 'object',
                       },
                       manage_devices: {
+                        deprecated: true,
                         description:
-                          'Configuration for the manage devices feature.\n---\ndeprecated: Use `manage` instead.\n---',
+                          'Configuration for the manage devices feature.',
                         properties: {
                           exclude: {
                             default: false,
@@ -83690,6 +83878,8 @@ const openapi: OpenAPISpec = {
                           },
                         },
                         type: 'object',
+                        'x-deprecated': 'Use `manage` instead.',
+                        'x-end-of-life': '2026-11-09',
                       },
                       organize: {
                         description: 'Configuration for the organize feature.',

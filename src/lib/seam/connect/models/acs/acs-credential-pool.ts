@@ -21,6 +21,7 @@ export const acs_credential_pool = z.object({
   route_path: /acs/credential_pools
   deprecated: Not used.
   undocumented: Deprecated. Will be removed.
+  end_of_life: "2026-11-09"
   ---
 `)
 

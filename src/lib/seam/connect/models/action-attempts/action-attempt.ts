@@ -19,9 +19,9 @@ import { scan_credential_action_attempt } from './scan-credential.js'
 import { scan_to_assign_credential_action_attempt } from './scan-to-assign-credential.js'
 import { set_fan_mode_action_attempt } from './set-fan-mode.js'
 import { set_hvac_mode_action_attempt } from './set-hvac-mode.js'
-import { set_pool_heating_action_attempt } from './set-pool-heating.js'
 import { set_speaker_mute_action_attempt } from './set-speaker-mute.js'
 import { set_speaker_volume_action_attempt } from './set-speaker-volume.js'
+import { set_temperature_controller_mode_action_attempt } from './set-temperature-controller-mode.js'
 import { simulate_keypad_code_entry_action_attempt } from './simulate-keypad-code-entry.js'
 import { simulate_manual_lock_via_keypad_action_attempt } from './simulate-manual-lock-via-keypad.js'
 import { unlock_door_action_attempt } from './unlock-door.js'
@@ -50,7 +50,7 @@ export const action_attempt = z.union([
   ...play_speaker_chime_action_attempt.options,
   ...play_speaker_favorite_action_attempt.options,
   ...play_speaker_audio_clip_action_attempt.options,
-  ...set_pool_heating_action_attempt.options,
+  ...set_temperature_controller_mode_action_attempt.options,
   ...deprecated_action_attempts,
 ]).describe(`
   ---

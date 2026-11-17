@@ -263,6 +263,7 @@ export const device_metadata = z
       .partial().describe(`
     ---
     deprecated: Use \`salto_ks_metadata\` instead.
+    end_of_life: "2026-11-09"
     ---
     Metada for a Salto device.
     `),
@@ -760,6 +761,7 @@ export const device_metadata = z
         site_id: z.number().nullable().optional().describe(`
           ---
           deprecated: Previously marked as "@DEPRECATED."
+          end_of_life: "2026-11-09"
           ---
           Site ID for a dormakaba Oracode device.
           `),
@@ -1023,13 +1025,59 @@ export const device_metadata = z
           .optional()
           .describe(`Product type for a Sensi device.`),
         /** @deprecated Seam no longer sets this field. */
-        dual_setpoints_not_supported: z
-          .boolean()
-          .optional()
-          .describe(`Deprecated. Seam no longer sets this field.`),
+        dual_setpoints_not_supported: z.boolean().optional().describe(`
+            ---
+            deprecated: Seam no longer sets this field.
+            end_of_life: "2026-11-09"
+            ---
+          `),
       })
       .partial()
       .describe(`Metadata for a Sensi device.`),
+
+    sensibo_metadata: z
+      .object({
+        pod_id: z
+          .string()
+          .optional()
+          .describe(`ID of the Sensibo device, which Sensibo calls a pod.`),
+        room_name: z
+          .string()
+          .optional()
+          .describe(`Name of the room that the Sensibo device is in.`),
+        product_model: z
+          .string()
+          .optional()
+          .describe(
+            `Product model of the Sensibo device, such as \`skyv2\` or \`skyplus\`.`,
+          ),
+        product_name: z
+          .string()
+          .optional()
+          .describe(
+            `Product name of the Sensibo device, such as \`Sensibo Sky\` or \`Sensibo Air\`.`,
+          ),
+        mac_address: z
+          .string()
+          .optional()
+          .describe(`MAC address of the Sensibo device.`),
+        serial_number: z
+          .string()
+          .optional()
+          .describe(`Serial number of the Sensibo device.`),
+        firmware_version: z
+          .string()
+          .optional()
+          .describe(`Firmware version of the Sensibo device.`),
+        temperature_unit: z
+          .string()
+          .optional()
+          .describe(
+            `Temperature unit that the Sensibo device displays: \`C\` or \`F\`.`,
+          ),
+      })
+      .partial()
+      .describe(`Metadata for a Sensibo device.`),
 
     keynest_metadata: z
       .object({
@@ -1443,6 +1491,42 @@ export const device_metadata = z
       .partial()
       .describe(`Metadata for an Aqara device.`),
 
+    tuya_metadata: z
+      .object({
+        device_id: z
+          .string()
+          .optional()
+          .describe(`Device ID for a Tuya device.`),
+        device_name: z
+          .string()
+          .optional()
+          .describe(`Device name for a Tuya device.`),
+        category: z
+          .string()
+          .optional()
+          .describe(`Tuya product category code for the device (e.g. ms).`),
+        product_id: z
+          .string()
+          .optional()
+          .describe(`Tuya product ID for the device.`),
+        product_name: z
+          .string()
+          .optional()
+          .describe(`Tuya product name for the device.`),
+        model: z
+          .string()
+          .nullable()
+          .optional()
+          .describe(`Model reported for a Tuya device.`),
+        time_zone: z
+          .string()
+          .nullable()
+          .optional()
+          .describe(`Time zone reported for a Tuya device (e.g. +08:00).`),
+      })
+      .partial()
+      .describe(`Metadata for a Tuya device.`),
+
     eufy_metadata: z
       .object({
         device_id: z.string().optional(),
@@ -1498,41 +1582,25 @@ export const device_metadata = z
           .string()
           .optional()
           .describe(
-            'ID of the Hayward OmniLogic system (the controller, called an MSP by Hayward) that the device belongs to.',
+            'ID of the Hayward OmniLogic controller that the device belongs to.',
           ),
         backyard_name: z
           .string()
           .optional()
-          .describe('Name of the system, as set in the Hayward OmniLogic app.'),
-        body_of_water_id: z
+          .describe(
+            'Name of the controller, as set in the Hayward OmniLogic app.',
+          ),
+        system_id: z
           .string()
           .optional()
           .describe(
-            'ID of the body of water within its system. Only present on a pool or spa body.',
+            'ID of the pool or spa within its controller. Only present on a pool or spa.',
           ),
-        body_of_water_name: z
+        system_name: z
           .string()
           .optional()
           .describe(
-            'Name of the body of water, as set in the Hayward OmniLogic app. Only present on a pool or spa body.',
-          ),
-        virtual_heater_id: z
-          .string()
-          .optional()
-          .describe(
-            'ID of the virtual heater that carries the set point and heating request for the body of water. Only present on a pool or spa body.',
-          ),
-        is_shared_equipment: z
-          .boolean()
-          .optional()
-          .describe(
-            'Indicates whether the body of water shares its pump and heater with another body of water in the same system.',
-          ),
-        shared_equipment_priority: z
-          .enum(['high', 'low'])
-          .optional()
-          .describe(
-            'Priority of the body of water when it shares equipment. The `high` priority body, usually the spa, takes the shared heater when both request heat.',
+            'Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa.',
           ),
       })
       .partial()
@@ -1540,7 +1608,7 @@ export const device_metadata = z
       ---
       undocumented: Unreleased.
       ---
-      Metadata for a Hayward OmniLogic pool controller or body of water.
+      Metadata for a Hayward OmniLogic pool controller, pool, or spa.
       `),
   })
   .partial().describe(`

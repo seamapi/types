@@ -71,6 +71,7 @@ export const thermostat_capability_properties = z
     fan_mode_setting: fan_mode_setting.describe(`
       ---
       deprecated: Use \`current_climate_setting.fan_mode_setting\` instead.
+      end_of_life: "2026-11-09"
       property_group_key: thermostats
       ---
     `),
@@ -91,6 +92,7 @@ export const thermostat_capability_properties = z
     default_climate_setting: climate_setting.describe(`
       ---
       deprecated: use fallback_climate_preset_key to specify a fallback climate preset instead.
+      end_of_life: "2026-11-09"
       property_group_key: thermostats
       ---
     `),
@@ -110,6 +112,7 @@ export const thermostat_capability_properties = z
           ---
           property_group_key: thermostats
           deprecated: Use \`active_thermostat_schedule_id\` with \`/thermostats/schedules/get\` instead.
+          end_of_life: "2026-11-09"
           ---
           Active [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).
           `),

@@ -81,6 +81,7 @@ export const climate_preset = z.object({
     `
       ---
       deprecated: Use 'thermostat_schedule.is_override_allowed'
+      end_of_life: "2026-11-09"
       ---
       Indicates whether a person at the thermostat can change the thermostat's settings. See [Specifying Manual Override Permissions](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).`,
   ),

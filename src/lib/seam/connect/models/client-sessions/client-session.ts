@@ -49,6 +49,7 @@ export const client_session = z.object({
   user_identity_ids: z.array(z.string().uuid()).describe(`
     ---
     deprecated: Use \`user_identity_id\` instead.
+    end_of_life: "2026-11-09"
     ---
     IDs of the [user identities](https://www.seam.co/docs/capability-guides/mobile-access/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with the client session.
   `),
