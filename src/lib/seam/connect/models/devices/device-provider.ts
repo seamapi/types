@@ -143,6 +143,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'dusaw',
     'thirty_three_lock',
     'yacan',
+    'hayward_omnilogic',
   ],
 
   consumer_smartlocks: [
