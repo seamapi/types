@@ -67321,7 +67321,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -67352,7 +67352,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -67396,7 +67396,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -67439,7 +67439,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -67482,7 +67482,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -67529,7 +67529,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -67583,7 +67583,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -67616,7 +67616,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -67649,7 +67649,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -67680,7 +67680,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -67765,7 +67765,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -67850,7 +67850,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -67883,7 +67883,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -67968,7 +67968,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -68053,7 +68053,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -68138,7 +68138,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -68223,7 +68223,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -68256,7 +68256,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -68341,7 +68341,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -68426,7 +68426,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -68457,7 +68457,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -68488,7 +68488,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -68521,7 +68521,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -68552,7 +68552,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -68637,7 +68637,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -68668,7 +68668,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access code. */
                 access_code_id: string
                 /** ID of the device associated with the affected access code. */
@@ -68699,7 +68699,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected Access Grant. */
                 access_grant_id: string
                 event_type: 'access_grant.created'
@@ -68714,7 +68714,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected Access Grant. */
                 access_grant_id: string
                 event_type: 'access_grant.deleted'
@@ -68729,7 +68729,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected Access Grant. */
                 access_grant_id: string
                 event_type: 'access_grant.access_granted_to_all_doors'
@@ -68744,7 +68744,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected Access Grant. */
                 access_grant_id: string
                 event_type: 'access_grant.access_granted_to_door'
@@ -68761,7 +68761,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected Access Grant. */
                 access_grant_id: string
                 event_type: 'access_grant.access_to_door_lost'
@@ -68778,7 +68778,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected Access Grant. */
                 access_grant_id: string
                 event_type: 'access_grant.access_times_changed'
@@ -68799,7 +68799,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected Access Grant. */
                 access_grant_id: string
                 event_type: 'access_grant.could_not_create_requested_access_methods'
@@ -68818,7 +68818,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access method. */
                 access_method_id: string
                 /** IDs of the access grants associated with this access method. */
@@ -68841,7 +68841,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access method. */
                 access_method_id: string
                 /** IDs of the access grants associated with this access method. */
@@ -68860,7 +68860,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access method. */
                 access_method_id: string
                 /** IDs of the access grants associated with this access method. */
@@ -68879,7 +68879,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access method. */
                 access_method_id: string
                 /** IDs of the access grants associated with this access method. */
@@ -68898,7 +68898,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access method. */
                 access_method_id: string
                 /** IDs of the access grants associated with this access method. */
@@ -68921,7 +68921,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access method. */
                 access_method_id: string
                 /** IDs of the access grants associated with this access method. */
@@ -68940,7 +68940,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access method. */
                 access_method_id: string
                 /** IDs of the access grants associated with this access method. */
@@ -68959,7 +68959,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected access method. */
                 access_method_id: string
                 /** IDs of the access grants associated with this access method. */
@@ -68978,7 +68978,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the connected account. */
                 connected_account_id?: string | undefined
                 /** ID of the access system. */
@@ -68995,7 +68995,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the connected account. */
                 connected_account_id?: string | undefined
                 /** ID of the access system. */
@@ -69012,7 +69012,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the connected account. */
                 connected_account_id?: string | undefined
                 /** ID of the access system. */
@@ -69065,7 +69065,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the connected account. */
                 connected_account_id?: string | undefined
                 /** ID of the access system. */
@@ -69084,7 +69084,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the connected account. */
                 connected_account_id?: string | undefined
                 /** ID of the access system. */
@@ -69103,7 +69103,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the connected account. */
                 connected_account_id?: string | undefined
                 /** ID of the access system. */
@@ -69122,7 +69122,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the connected account. */
                 connected_account_id?: string | undefined
                 /** ID of the access system. */
@@ -69141,7 +69141,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the connected account. */
                 connected_account_id?: string | undefined
                 /** ID of the access system. */
@@ -69160,7 +69160,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the connected account. */
                 connected_account_id?: string | undefined
                 /** ID of the access system. */
@@ -69179,7 +69179,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the connected account. */
                 connected_account_id?: string | undefined
                 /** ID of the access system. */
@@ -69198,7 +69198,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the connected account. */
                 connected_account_id?: string | undefined
                 /** ID of the access system. */
@@ -69217,7 +69217,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the connected account. */
                 connected_account_id?: string | undefined
                 /** ID of the access system. */
@@ -69236,7 +69236,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the connected account. */
                 connected_account_id?: string | undefined
                 /** ID of the access system. */
@@ -69255,7 +69255,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the connected account. */
                 connected_account_id?: string | undefined
                 /** ID of the access system. */
@@ -69274,7 +69274,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected client session. */
                 client_session_id: string
                 event_type: 'client_session.deleted'
@@ -69289,7 +69289,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected connected account. */
                 connected_account_id: string
                 /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -69314,7 +69314,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected connected account. */
                 connected_account_id: string
                 /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -69337,7 +69337,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected connected account. */
                 connected_account_id: string
                 /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -69360,7 +69360,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected connected account. */
                 connected_account_id: string
                 /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -69399,7 +69399,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected connected account. */
                 connected_account_id: string
                 /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -69420,7 +69420,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected connected account. */
                 connected_account_id: string
                 /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -69445,7 +69445,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected connected account. */
                 connected_account_id: string
                 /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -69466,7 +69466,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected connected account. */
                 connected_account_id: string
                 /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -69505,7 +69505,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected action attempt. */
                 action_attempt_id: string
                 /** Type of the action. */
@@ -69528,7 +69528,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected action attempt. */
                 action_attempt_id: string
                 /** Type of the action. */
@@ -69551,7 +69551,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected action attempt. */
                 action_attempt_id: string
                 /** Type of the action. */
@@ -69574,7 +69574,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected action attempt. */
                 action_attempt_id: string
                 /** Type of the action. */
@@ -69597,7 +69597,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected action attempt. */
                 action_attempt_id: string
                 /** Type of the action. */
@@ -69620,7 +69620,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected action attempt. */
                 action_attempt_id: string
                 /** Type of the action. */
@@ -69643,7 +69643,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected action attempt. */
                 action_attempt_id: string
                 /** Type of the action. */
@@ -69666,7 +69666,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected action attempt. */
                 action_attempt_id: string
                 /** Type of the action. */
@@ -69689,7 +69689,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected Connect Webview. */
                 connect_webview_id: string
                 event_type: 'connect_webview.login_succeeded'
@@ -69714,7 +69714,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected Connect Webview. */
                 connect_webview_id: string
                 event_type: 'connect_webview.login_failed'
@@ -69729,7 +69729,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -69760,7 +69760,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -69791,7 +69791,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -69822,7 +69822,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -69853,7 +69853,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -69884,7 +69884,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -69957,7 +69957,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70030,7 +70030,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70061,7 +70061,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70099,7 +70099,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70134,7 +70134,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70165,7 +70165,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70198,7 +70198,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70229,7 +70229,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70260,7 +70260,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70291,7 +70291,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70322,7 +70322,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70389,7 +70389,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70420,7 +70420,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70487,7 +70487,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70518,7 +70518,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70549,7 +70549,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70616,7 +70616,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70667,7 +70667,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70733,7 +70733,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id?: string | undefined
                 /** ID of the connected account associated with the event. */
@@ -70799,7 +70799,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id?: string | undefined
                 /** ID of the connected account associated with the event. */
@@ -70856,7 +70856,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70887,7 +70887,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70918,7 +70918,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70949,7 +70949,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -70986,7 +70986,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -71037,7 +71037,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -71080,7 +71080,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -71123,7 +71123,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -71162,7 +71162,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -71197,7 +71197,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -71232,7 +71232,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -71271,7 +71271,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -71310,7 +71310,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -71343,7 +71343,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -71385,7 +71385,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected device. */
                 device_id: string
                 /** ID of the connected account associated with the event. */
@@ -71422,7 +71422,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected enrollment automation. */
                 enrollment_automation_id: string
                 event_type: 'enrollment_automation.deleted'
@@ -71437,7 +71437,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected phone device. */
                 device_id: string
                 /** Custom metadata of the device; present when device_id is provided. */
@@ -71458,7 +71458,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected space. */
                 space_id: string
                 /** Type of the event. */
@@ -71480,7 +71480,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected space. */
                 space_id: string
                 /** Type of the event. */
@@ -71502,7 +71502,7 @@ export type Routes = {
                 /** Date and time at which the event occurred. */
                 occurred_at: string
                 /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                event_description?: string | undefined
+                event_description: string
                 /** ID of the affected space. */
                 space_id: string
                 /** Type of the event. */
@@ -71842,7 +71842,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -71873,7 +71873,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -71917,7 +71917,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -71960,7 +71960,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -72003,7 +72003,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -72050,7 +72050,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -72104,7 +72104,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -72137,7 +72137,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -72170,7 +72170,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -72201,7 +72201,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -72286,7 +72286,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -72371,7 +72371,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -72404,7 +72404,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -72489,7 +72489,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -72574,7 +72574,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -72659,7 +72659,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -72744,7 +72744,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -72777,7 +72777,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -72862,7 +72862,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -72947,7 +72947,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -72978,7 +72978,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -73009,7 +73009,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -73042,7 +73042,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -73073,7 +73073,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -73158,7 +73158,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -73189,7 +73189,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -73220,7 +73220,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.created'
@@ -73235,7 +73235,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.deleted'
@@ -73250,7 +73250,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.access_granted_to_all_doors'
@@ -73265,7 +73265,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.access_granted_to_door'
@@ -73282,7 +73282,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.access_to_door_lost'
@@ -73299,7 +73299,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.access_times_changed'
@@ -73320,7 +73320,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.could_not_create_requested_access_methods'
@@ -73339,7 +73339,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -73362,7 +73362,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -73381,7 +73381,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -73400,7 +73400,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -73419,7 +73419,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -73442,7 +73442,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -73461,7 +73461,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -73480,7 +73480,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -73499,7 +73499,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -73516,7 +73516,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -73533,7 +73533,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -73586,7 +73586,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -73605,7 +73605,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -73624,7 +73624,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -73643,7 +73643,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -73662,7 +73662,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -73681,7 +73681,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -73700,7 +73700,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -73719,7 +73719,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -73738,7 +73738,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -73757,7 +73757,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -73776,7 +73776,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -73795,7 +73795,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected client session. */
             client_session_id: string
             event_type: 'client_session.deleted'
@@ -73810,7 +73810,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -73835,7 +73835,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -73858,7 +73858,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -73881,7 +73881,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -73920,7 +73920,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -73941,7 +73941,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -73966,7 +73966,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -73987,7 +73987,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -74026,7 +74026,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -74049,7 +74049,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -74072,7 +74072,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -74095,7 +74095,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -74118,7 +74118,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -74141,7 +74141,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -74164,7 +74164,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -74187,7 +74187,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -74210,7 +74210,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Connect Webview. */
             connect_webview_id: string
             event_type: 'connect_webview.login_succeeded'
@@ -74235,7 +74235,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Connect Webview. */
             connect_webview_id: string
             event_type: 'connect_webview.login_failed'
@@ -74250,7 +74250,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -74281,7 +74281,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -74312,7 +74312,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -74343,7 +74343,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -74374,7 +74374,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -74405,7 +74405,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -74478,7 +74478,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -74551,7 +74551,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -74582,7 +74582,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -74620,7 +74620,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -74655,7 +74655,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -74686,7 +74686,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -74719,7 +74719,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -74750,7 +74750,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -74781,7 +74781,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -74812,7 +74812,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -74843,7 +74843,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -74910,7 +74910,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -74941,7 +74941,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75008,7 +75008,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75039,7 +75039,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75070,7 +75070,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75137,7 +75137,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75188,7 +75188,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75254,7 +75254,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id?: string | undefined
             /** ID of the connected account associated with the event. */
@@ -75320,7 +75320,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id?: string | undefined
             /** ID of the connected account associated with the event. */
@@ -75377,7 +75377,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75408,7 +75408,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75439,7 +75439,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75470,7 +75470,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75507,7 +75507,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75555,7 +75555,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75598,7 +75598,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75641,7 +75641,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75680,7 +75680,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75715,7 +75715,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75750,7 +75750,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75789,7 +75789,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75828,7 +75828,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75861,7 +75861,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75903,7 +75903,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -75940,7 +75940,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected enrollment automation. */
             enrollment_automation_id: string
             event_type: 'enrollment_automation.deleted'
@@ -75955,7 +75955,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected phone device. */
             device_id: string
             /** Custom metadata of the device; present when device_id is provided. */
@@ -75976,7 +75976,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected space. */
             space_id: string
             /** Type of the event. */
@@ -75998,7 +75998,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected space. */
             space_id: string
             /** Type of the event. */
@@ -76020,7 +76020,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected space. */
             space_id: string
             /** Type of the event. */
@@ -127301,7 +127301,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -127332,7 +127332,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -127376,7 +127376,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -127419,7 +127419,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -127462,7 +127462,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -127509,7 +127509,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -127563,7 +127563,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -127596,7 +127596,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -127629,7 +127629,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -127660,7 +127660,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -127745,7 +127745,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -127830,7 +127830,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -127863,7 +127863,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -127948,7 +127948,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -128033,7 +128033,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -128118,7 +128118,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -128203,7 +128203,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -128236,7 +128236,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -128321,7 +128321,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -128406,7 +128406,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -128437,7 +128437,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -128468,7 +128468,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -128501,7 +128501,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -128532,7 +128532,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -128617,7 +128617,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -128648,7 +128648,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -128679,7 +128679,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.created'
@@ -128694,7 +128694,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.deleted'
@@ -128709,7 +128709,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.access_granted_to_all_doors'
@@ -128724,7 +128724,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.access_granted_to_door'
@@ -128741,7 +128741,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.access_to_door_lost'
@@ -128758,7 +128758,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.access_times_changed'
@@ -128779,7 +128779,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.could_not_create_requested_access_methods'
@@ -128798,7 +128798,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -128821,7 +128821,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -128840,7 +128840,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -128859,7 +128859,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -128878,7 +128878,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -128901,7 +128901,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -128920,7 +128920,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -128939,7 +128939,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -128958,7 +128958,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -128975,7 +128975,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -128992,7 +128992,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -129045,7 +129045,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -129064,7 +129064,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -129083,7 +129083,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -129102,7 +129102,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -129121,7 +129121,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -129140,7 +129140,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -129159,7 +129159,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -129178,7 +129178,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -129197,7 +129197,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -129216,7 +129216,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -129235,7 +129235,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -129254,7 +129254,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected client session. */
             client_session_id: string
             event_type: 'client_session.deleted'
@@ -129269,7 +129269,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -129294,7 +129294,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -129317,7 +129317,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -129340,7 +129340,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -129379,7 +129379,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -129400,7 +129400,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -129425,7 +129425,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -129446,7 +129446,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -129485,7 +129485,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -129508,7 +129508,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -129531,7 +129531,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -129554,7 +129554,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -129577,7 +129577,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -129600,7 +129600,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -129623,7 +129623,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -129646,7 +129646,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -129669,7 +129669,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Connect Webview. */
             connect_webview_id: string
             event_type: 'connect_webview.login_succeeded'
@@ -129694,7 +129694,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Connect Webview. */
             connect_webview_id: string
             event_type: 'connect_webview.login_failed'
@@ -129709,7 +129709,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -129740,7 +129740,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -129771,7 +129771,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -129802,7 +129802,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -129833,7 +129833,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -129864,7 +129864,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -129937,7 +129937,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130010,7 +130010,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130041,7 +130041,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130079,7 +130079,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130114,7 +130114,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130145,7 +130145,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130178,7 +130178,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130209,7 +130209,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130240,7 +130240,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130271,7 +130271,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130302,7 +130302,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130369,7 +130369,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130400,7 +130400,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130467,7 +130467,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130498,7 +130498,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130529,7 +130529,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130596,7 +130596,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130647,7 +130647,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130713,7 +130713,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id?: string | undefined
             /** ID of the connected account associated with the event. */
@@ -130779,7 +130779,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id?: string | undefined
             /** ID of the connected account associated with the event. */
@@ -130836,7 +130836,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130867,7 +130867,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130898,7 +130898,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130929,7 +130929,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -130966,7 +130966,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -131014,7 +131014,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -131057,7 +131057,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -131100,7 +131100,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -131139,7 +131139,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -131174,7 +131174,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -131209,7 +131209,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -131248,7 +131248,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -131287,7 +131287,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -131320,7 +131320,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -131362,7 +131362,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -131399,7 +131399,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected enrollment automation. */
             enrollment_automation_id: string
             event_type: 'enrollment_automation.deleted'
@@ -131414,7 +131414,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected phone device. */
             device_id: string
             /** Custom metadata of the device; present when device_id is provided. */
@@ -131435,7 +131435,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected space. */
             space_id: string
             /** Type of the event. */
@@ -131457,7 +131457,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected space. */
             space_id: string
             /** Type of the event. */
@@ -131479,7 +131479,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected space. */
             space_id: string
             /** Type of the event. */
@@ -134365,7 +134365,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -134396,7 +134396,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -134440,7 +134440,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -134483,7 +134483,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -134526,7 +134526,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -134573,7 +134573,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -134627,7 +134627,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -134660,7 +134660,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -134693,7 +134693,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -134724,7 +134724,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -134809,7 +134809,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -134894,7 +134894,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -134927,7 +134927,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -135012,7 +135012,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -135097,7 +135097,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -135182,7 +135182,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -135267,7 +135267,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -135300,7 +135300,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -135385,7 +135385,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -135470,7 +135470,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -135501,7 +135501,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -135532,7 +135532,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -135565,7 +135565,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -135596,7 +135596,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -135681,7 +135681,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -135712,7 +135712,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access code. */
             access_code_id: string
             /** ID of the device associated with the affected access code. */
@@ -135743,7 +135743,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.created'
@@ -135758,7 +135758,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.deleted'
@@ -135773,7 +135773,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.access_granted_to_all_doors'
@@ -135788,7 +135788,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.access_granted_to_door'
@@ -135805,7 +135805,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.access_to_door_lost'
@@ -135822,7 +135822,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.access_times_changed'
@@ -135843,7 +135843,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Access Grant. */
             access_grant_id: string
             event_type: 'access_grant.could_not_create_requested_access_methods'
@@ -135862,7 +135862,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -135885,7 +135885,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -135904,7 +135904,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -135923,7 +135923,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -135942,7 +135942,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -135965,7 +135965,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -135984,7 +135984,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -136003,7 +136003,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected access method. */
             access_method_id: string
             /** IDs of the access grants associated with this access method. */
@@ -136022,7 +136022,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -136039,7 +136039,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -136056,7 +136056,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -136109,7 +136109,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -136128,7 +136128,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -136147,7 +136147,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -136166,7 +136166,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -136185,7 +136185,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -136204,7 +136204,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -136223,7 +136223,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -136242,7 +136242,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -136261,7 +136261,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -136280,7 +136280,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -136299,7 +136299,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the connected account. */
             connected_account_id?: string | undefined
             /** ID of the access system. */
@@ -136318,7 +136318,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected client session. */
             client_session_id: string
             event_type: 'client_session.deleted'
@@ -136333,7 +136333,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -136358,7 +136358,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -136381,7 +136381,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -136404,7 +136404,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -136443,7 +136443,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -136464,7 +136464,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -136489,7 +136489,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -136510,7 +136510,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected connected account. */
             connected_account_id: string
             /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -136549,7 +136549,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -136572,7 +136572,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -136595,7 +136595,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -136618,7 +136618,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -136641,7 +136641,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -136664,7 +136664,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -136687,7 +136687,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -136710,7 +136710,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected action attempt. */
             action_attempt_id: string
             /** Type of the action. */
@@ -136733,7 +136733,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Connect Webview. */
             connect_webview_id: string
             event_type: 'connect_webview.login_succeeded'
@@ -136758,7 +136758,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected Connect Webview. */
             connect_webview_id: string
             event_type: 'connect_webview.login_failed'
@@ -136773,7 +136773,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -136804,7 +136804,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -136835,7 +136835,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -136866,7 +136866,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -136897,7 +136897,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -136928,7 +136928,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137001,7 +137001,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137074,7 +137074,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137105,7 +137105,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137143,7 +137143,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137178,7 +137178,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137209,7 +137209,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137242,7 +137242,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137273,7 +137273,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137304,7 +137304,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137335,7 +137335,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137366,7 +137366,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137433,7 +137433,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137464,7 +137464,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137531,7 +137531,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137562,7 +137562,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137593,7 +137593,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137660,7 +137660,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137711,7 +137711,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137777,7 +137777,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id?: string | undefined
             /** ID of the connected account associated with the event. */
@@ -137843,7 +137843,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id?: string | undefined
             /** ID of the connected account associated with the event. */
@@ -137900,7 +137900,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137931,7 +137931,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137962,7 +137962,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -137993,7 +137993,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -138030,7 +138030,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -138078,7 +138078,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -138121,7 +138121,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -138164,7 +138164,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -138203,7 +138203,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -138238,7 +138238,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -138273,7 +138273,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -138312,7 +138312,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -138351,7 +138351,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -138384,7 +138384,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -138426,7 +138426,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected device. */
             device_id: string
             /** ID of the connected account associated with the event. */
@@ -138463,7 +138463,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected enrollment automation. */
             enrollment_automation_id: string
             event_type: 'enrollment_automation.deleted'
@@ -138478,7 +138478,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected phone device. */
             device_id: string
             /** Custom metadata of the device; present when device_id is provided. */
@@ -138499,7 +138499,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected space. */
             space_id: string
             /** Type of the event. */
@@ -138521,7 +138521,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected space. */
             space_id: string
             /** Type of the event. */
@@ -138543,7 +138543,7 @@ export type Routes = {
             /** Date and time at which the event occurred. */
             occurred_at: string
             /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-            event_description?: string | undefined
+            event_description: string
             /** ID of the affected space. */
             space_id: string
             /** Type of the event. */
@@ -212670,7 +212670,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -212701,7 +212701,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -212745,7 +212745,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -212788,7 +212788,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -212831,7 +212831,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -212878,7 +212878,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -212932,7 +212932,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -212965,7 +212965,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -212998,7 +212998,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -213029,7 +213029,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -213114,7 +213114,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -213199,7 +213199,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -213232,7 +213232,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -213317,7 +213317,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -213402,7 +213402,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -213487,7 +213487,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -213572,7 +213572,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -213605,7 +213605,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -213690,7 +213690,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -213775,7 +213775,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -213806,7 +213806,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -213837,7 +213837,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -213870,7 +213870,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -213901,7 +213901,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -213986,7 +213986,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -214017,7 +214017,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access code. */
                   access_code_id: string
                   /** ID of the device associated with the affected access code. */
@@ -214048,7 +214048,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected Access Grant. */
                   access_grant_id: string
                   event_type: 'access_grant.created'
@@ -214063,7 +214063,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected Access Grant. */
                   access_grant_id: string
                   event_type: 'access_grant.deleted'
@@ -214078,7 +214078,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected Access Grant. */
                   access_grant_id: string
                   event_type: 'access_grant.access_granted_to_all_doors'
@@ -214093,7 +214093,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected Access Grant. */
                   access_grant_id: string
                   event_type: 'access_grant.access_granted_to_door'
@@ -214110,7 +214110,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected Access Grant. */
                   access_grant_id: string
                   event_type: 'access_grant.access_to_door_lost'
@@ -214127,7 +214127,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected Access Grant. */
                   access_grant_id: string
                   event_type: 'access_grant.access_times_changed'
@@ -214148,7 +214148,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected Access Grant. */
                   access_grant_id: string
                   event_type: 'access_grant.could_not_create_requested_access_methods'
@@ -214167,7 +214167,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access method. */
                   access_method_id: string
                   /** IDs of the access grants associated with this access method. */
@@ -214190,7 +214190,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access method. */
                   access_method_id: string
                   /** IDs of the access grants associated with this access method. */
@@ -214209,7 +214209,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access method. */
                   access_method_id: string
                   /** IDs of the access grants associated with this access method. */
@@ -214228,7 +214228,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access method. */
                   access_method_id: string
                   /** IDs of the access grants associated with this access method. */
@@ -214247,7 +214247,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access method. */
                   access_method_id: string
                   /** IDs of the access grants associated with this access method. */
@@ -214270,7 +214270,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access method. */
                   access_method_id: string
                   /** IDs of the access grants associated with this access method. */
@@ -214289,7 +214289,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access method. */
                   access_method_id: string
                   /** IDs of the access grants associated with this access method. */
@@ -214308,7 +214308,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected access method. */
                   access_method_id: string
                   /** IDs of the access grants associated with this access method. */
@@ -214327,7 +214327,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the connected account. */
                   connected_account_id?: string | undefined
                   /** ID of the access system. */
@@ -214344,7 +214344,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the connected account. */
                   connected_account_id?: string | undefined
                   /** ID of the access system. */
@@ -214361,7 +214361,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the connected account. */
                   connected_account_id?: string | undefined
                   /** ID of the access system. */
@@ -214414,7 +214414,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the connected account. */
                   connected_account_id?: string | undefined
                   /** ID of the access system. */
@@ -214433,7 +214433,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the connected account. */
                   connected_account_id?: string | undefined
                   /** ID of the access system. */
@@ -214452,7 +214452,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the connected account. */
                   connected_account_id?: string | undefined
                   /** ID of the access system. */
@@ -214471,7 +214471,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the connected account. */
                   connected_account_id?: string | undefined
                   /** ID of the access system. */
@@ -214490,7 +214490,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the connected account. */
                   connected_account_id?: string | undefined
                   /** ID of the access system. */
@@ -214509,7 +214509,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the connected account. */
                   connected_account_id?: string | undefined
                   /** ID of the access system. */
@@ -214528,7 +214528,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the connected account. */
                   connected_account_id?: string | undefined
                   /** ID of the access system. */
@@ -214547,7 +214547,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the connected account. */
                   connected_account_id?: string | undefined
                   /** ID of the access system. */
@@ -214566,7 +214566,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the connected account. */
                   connected_account_id?: string | undefined
                   /** ID of the access system. */
@@ -214585,7 +214585,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the connected account. */
                   connected_account_id?: string | undefined
                   /** ID of the access system. */
@@ -214604,7 +214604,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the connected account. */
                   connected_account_id?: string | undefined
                   /** ID of the access system. */
@@ -214623,7 +214623,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected client session. */
                   client_session_id: string
                   event_type: 'client_session.deleted'
@@ -214638,7 +214638,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected connected account. */
                   connected_account_id: string
                   /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -214663,7 +214663,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected connected account. */
                   connected_account_id: string
                   /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -214686,7 +214686,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected connected account. */
                   connected_account_id: string
                   /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -214709,7 +214709,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected connected account. */
                   connected_account_id: string
                   /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -214748,7 +214748,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected connected account. */
                   connected_account_id: string
                   /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -214769,7 +214769,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected connected account. */
                   connected_account_id: string
                   /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -214794,7 +214794,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected connected account. */
                   connected_account_id: string
                   /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -214815,7 +214815,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected connected account. */
                   connected_account_id: string
                   /** Custom metadata of the connected account, present when connected_account_id is provided. */
@@ -214854,7 +214854,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected action attempt. */
                   action_attempt_id: string
                   /** Type of the action. */
@@ -214877,7 +214877,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected action attempt. */
                   action_attempt_id: string
                   /** Type of the action. */
@@ -214900,7 +214900,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected action attempt. */
                   action_attempt_id: string
                   /** Type of the action. */
@@ -214923,7 +214923,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected action attempt. */
                   action_attempt_id: string
                   /** Type of the action. */
@@ -214946,7 +214946,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected action attempt. */
                   action_attempt_id: string
                   /** Type of the action. */
@@ -214969,7 +214969,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected action attempt. */
                   action_attempt_id: string
                   /** Type of the action. */
@@ -214992,7 +214992,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected action attempt. */
                   action_attempt_id: string
                   /** Type of the action. */
@@ -215015,7 +215015,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected action attempt. */
                   action_attempt_id: string
                   /** Type of the action. */
@@ -215038,7 +215038,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected Connect Webview. */
                   connect_webview_id: string
                   event_type: 'connect_webview.login_succeeded'
@@ -215063,7 +215063,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected Connect Webview. */
                   connect_webview_id: string
                   event_type: 'connect_webview.login_failed'
@@ -215078,7 +215078,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215109,7 +215109,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215140,7 +215140,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215171,7 +215171,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215202,7 +215202,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215233,7 +215233,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215306,7 +215306,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215379,7 +215379,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215410,7 +215410,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215448,7 +215448,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215483,7 +215483,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215514,7 +215514,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215547,7 +215547,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215578,7 +215578,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215609,7 +215609,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215640,7 +215640,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215671,7 +215671,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215738,7 +215738,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215769,7 +215769,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215836,7 +215836,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215867,7 +215867,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215898,7 +215898,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -215965,7 +215965,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -216016,7 +216016,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -216082,7 +216082,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id?: string | undefined
                   /** ID of the connected account associated with the event. */
@@ -216148,7 +216148,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id?: string | undefined
                   /** ID of the connected account associated with the event. */
@@ -216205,7 +216205,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -216236,7 +216236,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -216267,7 +216267,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -216298,7 +216298,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -216335,7 +216335,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -216388,7 +216388,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -216431,7 +216431,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -216474,7 +216474,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -216513,7 +216513,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -216548,7 +216548,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -216583,7 +216583,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -216622,7 +216622,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -216661,7 +216661,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -216694,7 +216694,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -216736,7 +216736,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected device. */
                   device_id: string
                   /** ID of the connected account associated with the event. */
@@ -216773,7 +216773,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected enrollment automation. */
                   enrollment_automation_id: string
                   event_type: 'enrollment_automation.deleted'
@@ -216788,7 +216788,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected phone device. */
                   device_id: string
                   /** Custom metadata of the device; present when device_id is provided. */
@@ -216809,7 +216809,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected space. */
                   space_id: string
                   /** Type of the event. */
@@ -216831,7 +216831,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected space. */
                   space_id: string
                   /** Type of the event. */
@@ -216853,7 +216853,7 @@ export type Routes = {
                   /** Date and time at which the event occurred. */
                   occurred_at: string
                   /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
-                  event_description?: string | undefined
+                  event_description: string
                   /** ID of the affected space. */
                   space_id: string
                   /** Type of the event. */

@@ -14,7 +14,6 @@ export const common_event = z.object({
   occurred_at: datetime.describe('Date and time at which the event occurred.'),
   event_description: z
     .string()
-    .optional()
     .describe(
       'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
     ),
