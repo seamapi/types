@@ -41,6 +41,11 @@ const deleting = common_pending_mutation
       .describe(
         'Mutation code to indicate that Seam is in the process of removing an access code from the device.',
       ),
+    is_code_usable: z
+      .boolean()
+      .describe(
+        'Indicates whether the access code may still unlock the device while Seam removes it, based on the last state Seam observed. `false` means the device has already stopped accepting the code, for example, because a natively scheduled code passed its `ends_at`, and only cleanup remains.',
+      ),
   })
   .describe(
     'Seam is in the process of removing an access code from the device.',

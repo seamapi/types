@@ -3118,6 +3118,8 @@ export type Routes = {
               message: string
               /** Mutation code to indicate that Seam is in the process of removing an access code from the device. */
               mutation_code: 'deleting'
+              /** Indicates whether the access code may still unlock the device while Seam removes it, based on the last state Seam observed. `false` means the device has already stopped accepting the code, for example, because a natively scheduled code passed its `ends_at`, and only cleanup remains. */
+              is_code_usable: boolean
             }
           | {
               /** Date and time at which the mutation was created. */
@@ -3714,6 +3716,8 @@ export type Routes = {
               message: string
               /** Mutation code to indicate that Seam is in the process of removing an access code from the device. */
               mutation_code: 'deleting'
+              /** Indicates whether the access code may still unlock the device while Seam removes it, based on the last state Seam observed. `false` means the device has already stopped accepting the code, for example, because a natively scheduled code passed its `ends_at`, and only cleanup remains. */
+              is_code_usable: boolean
             }
           | {
               /** Date and time at which the mutation was created. */
@@ -6899,6 +6903,8 @@ export type Routes = {
               message: string
               /** Mutation code to indicate that Seam is in the process of removing an access code from the device. */
               mutation_code: 'deleting'
+              /** Indicates whether the access code may still unlock the device while Seam removes it, based on the last state Seam observed. `false` means the device has already stopped accepting the code, for example, because a natively scheduled code passed its `ends_at`, and only cleanup remains. */
+              is_code_usable: boolean
             }
           | {
               /** Date and time at which the mutation was created. */
@@ -7606,6 +7612,8 @@ export type Routes = {
               message: string
               /** Mutation code to indicate that Seam is in the process of removing an access code from the device. */
               mutation_code: 'deleting'
+              /** Indicates whether the access code may still unlock the device while Seam removes it, based on the last state Seam observed. `false` means the device has already stopped accepting the code, for example, because a natively scheduled code passed its `ends_at`, and only cleanup remains. */
+              is_code_usable: boolean
             }
           | {
               /** Date and time at which the mutation was created. */
@@ -8193,6 +8201,8 @@ export type Routes = {
               message: string
               /** Mutation code to indicate that Seam is in the process of removing an access code from the device. */
               mutation_code: 'deleting'
+              /** Indicates whether the access code may still unlock the device while Seam removes it, based on the last state Seam observed. `false` means the device has already stopped accepting the code, for example, because a natively scheduled code passed its `ends_at`, and only cleanup remains. */
+              is_code_usable: boolean
             }
           | {
               /** Date and time at which the mutation was created. */
@@ -8757,6 +8767,8 @@ export type Routes = {
               message: string
               /** Mutation code to indicate that Seam is in the process of removing an access code from the device. */
               mutation_code: 'deleting'
+              /** Indicates whether the access code may still unlock the device while Seam removes it, based on the last state Seam observed. `false` means the device has already stopped accepting the code, for example, because a natively scheduled code passed its `ends_at`, and only cleanup remains. */
+              is_code_usable: boolean
             }
           | {
               /** Date and time at which the mutation was created. */
@@ -218463,6 +218475,8 @@ export type Routes = {
                     message: string
                     /** Mutation code to indicate that Seam is in the process of removing an access code from the device. */
                     mutation_code: 'deleting'
+                    /** Indicates whether the access code may still unlock the device while Seam removes it, based on the last state Seam observed. `false` means the device has already stopped accepting the code, for example, because a natively scheduled code passed its `ends_at`, and only cleanup remains. */
+                    is_code_usable: boolean
                   }
                 | {
                     /** Date and time at which the mutation was created. */
