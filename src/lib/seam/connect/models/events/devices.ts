@@ -194,6 +194,18 @@ export type UnmanagedDeviceDisconnectedEvent = z.infer<
 
 export const device_tampered_event = device_event.extend({
   event_type: z.literal('device.tampered'),
+  is_detached_from_mounting_plate: z
+    .boolean()
+    .optional()
+    .describe(
+      'Whether the device was detached from its mounting plate at the time of the event. Omitted when the provider did not report this state.',
+    ),
+  is_casing_tampered_with: z
+    .boolean()
+    .optional()
+    .describe(
+      'Whether the device casing was tampered with at the time of the event. Omitted when the provider did not report this state.',
+    ),
 }).describe(`
   ---
   route_path: /devices

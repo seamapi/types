@@ -29582,6 +29582,16 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               event_type: { enum: ['device.tampered'], type: 'string' },
+              is_casing_tampered_with: {
+                description:
+                  'Whether the device casing was tampered with at the time of the event. Omitted when the provider did not report this state.',
+                type: 'boolean',
+              },
+              is_detached_from_mounting_plate: {
+                description:
+                  'Whether the device was detached from its mounting plate at the time of the event. Omitted when the provider did not report this state.',
+                type: 'boolean',
+              },
               occurred_at: {
                 description: 'Date and time at which the event occurred.',
                 format: 'date-time',
