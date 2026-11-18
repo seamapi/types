@@ -1294,6 +1294,20 @@ export const device = z
       ---
       Indicates whether the lock is locked.
       `),
+    is_detached_from_mounting_plate: z.boolean().optional().describe(`
+      ---
+      undocumented: Unreleased.
+      property_group_key: hardware
+      ---
+      Indicates whether the device was last reported as detached from its mounting plate. Omitted when Seam has no accepted observation, including when the device does not support mounting plate detection, reports an unknown status, or is offline. This is the last accepted provider observation, not a guarantee of current hardware state; check \`is_online\` before acting on it.
+      `),
+    is_casing_tampered_with: z.boolean().optional().describe(`
+      ---
+      undocumented: Unreleased.
+      property_group_key: hardware
+      ---
+      Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when Seam has no accepted observation, including when the device does not support casing tamper detection. This is independent of \`is_detached_from_mounting_plate\`.
+      `),
     properties: common_device_properties
       .and(phone_specific_properties.partial())
       .and(device_metadata)

@@ -413,6 +413,7 @@ export const device_metadata = z
                   ),
               })
               .partial()
+              .optional()
               .describe(`Latest temperature reading for a Minut device.`),
             sound: z
               .object({
@@ -428,6 +429,7 @@ export const device_metadata = z
                   ),
               })
               .partial()
+              .optional()
               .describe(`Latest sound reading for a Minut device.`),
             humidity: z
               .object({
@@ -445,6 +447,7 @@ export const device_metadata = z
                   ),
               })
               .partial()
+              .optional()
               .describe(`Latest humidity reading for a Minut device.`),
             pressure: z
               .object({
@@ -462,6 +465,7 @@ export const device_metadata = z
                   ),
               })
               .partial()
+              .optional()
               .describe(`Latest pressure reading for a Minut device.`),
             accelerometer_z: z
               .object({
@@ -479,14 +483,17 @@ export const device_metadata = z
                   ),
               })
               .partial()
+              .optional()
               .describe(
                 `Latest accelerometer Z-axis reading for a Minut device.`,
               ),
           })
           .partial()
+          .optional()
           .describe(`Latest sensor values for a Minut device.`),
       })
       .partial()
+      .optional()
       .describe(`Metadata for a Minut device.`),
     four_suites_metadata: z
       .object({
