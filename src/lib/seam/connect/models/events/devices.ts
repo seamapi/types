@@ -62,7 +62,12 @@ const accessory_keypad_battery_level = z
   )
 
 const disconnection_error_code = z
-  .enum(['account_disconnected', 'hub_disconnected', 'device_disconnected'])
+  .enum([
+    'account_disconnected',
+    'hub_disconnected',
+    'device_disconnected',
+    'bridge_disconnected',
+  ])
   .describe('Error code associated with the disconnection event, if any.')
 
 const device_event_issue_properties = {
