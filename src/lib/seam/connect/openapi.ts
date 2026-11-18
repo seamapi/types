@@ -33428,7 +33428,7 @@ const openapi: OpenAPISpec = {
       },
       instant_key: {
         description:
-          'Represents a Seam Instant Key. For issuing Bluetooth mobile keys, Instant Keys are the fastest way to share access. With a single API call, you can create a mobile key and send it through text or email or embed it in your own app.\n\nThere’s no app to install, nor account to create. Your user just taps a link and gets a lightweight, native-feeling experience using iOS App Clip or Instant Apps on Android. Further, Instant Keys work offline, so even in areas with poor cellular or Wi-Fi, like elevator banks or concrete-walled hallways, the Instant Keys still work.',
+          'Represents a Seam Instant Key. For issuing Bluetooth mobile keys, Instant Keys are the fastest way to share access. With a single API call, you can create a mobile key and send it through text or email or embed it in your own app.\n\nThere’s no account to create. Your user just taps a link and gets a lightweight, native-feeling experience. On iOS, the key opens in an App Clip, so there’s no app to install. On Android, Google has discontinued Google Play Instant, so the first time your user opens an Instant Key they must install the Seam Instant Key app from the Google Play Store. Further, Instant Keys work offline, so even in areas with poor cellular or Wi-Fi, like elevator banks or concrete-walled hallways, the Instant Keys still work.',
         properties: {
           client_session_id: {
             description:
