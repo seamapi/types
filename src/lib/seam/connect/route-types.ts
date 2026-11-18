@@ -16289,6 +16289,10 @@ export type Routes = {
               is_online: boolean
               /** Indicates whether the lock is locked. */
               is_door_locked?: boolean | undefined
+              /** Indicates whether the device was last reported as detached from its mounting plate. Omitted when Seam has no accepted observation, including when the device does not support mounting plate detection, reports an unknown status, or is offline. This is the last accepted provider observation, not a guarantee of current hardware state; check `is_online` before acting on it. */
+              is_detached_from_mounting_plate?: boolean | undefined
+              /** Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when Seam has no accepted observation, including when the device does not support casing tamper detection. This is independent of `is_detached_from_mounting_plate`. */
+              is_casing_tampered_with?: boolean | undefined
               /** Properties of the device. */
               properties?:
                 | ((({
@@ -16618,62 +16622,103 @@ export type Routes = {
                       | undefined
                     /** Metadata for a Minut device. */
                     minut_metadata?:
-                      | {
-                          /** Device ID for a Minut device. */
-                          device_id?: (string | undefined) | undefined
-                          /** Device name for a Minut device. */
-                          device_name?: (string | undefined) | undefined
-                          /** Latest sensor values for a Minut device. */
-                          latest_sensor_values?:
-                            | {
-                                /** Latest temperature reading for a Minut device. */
-                                temperature?:
-                                  | {
-                                      /** Time of latest temperature reading for a Minut device. */
-                                      time?: (string | undefined) | undefined
-                                      /** Value of latest temperature reading for a Minut device. */
-                                      value?: (number | undefined) | undefined
-                                    }
-                                  | undefined
-                                /** Latest sound reading for a Minut device. */
-                                sound?:
-                                  | {
-                                      /** Time of latest sound reading for a Minut device. */
-                                      time?: (string | undefined) | undefined
-                                      /** Value of latest sound reading for a Minut device. */
-                                      value?: (number | undefined) | undefined
-                                    }
-                                  | undefined
-                                /** Latest humidity reading for a Minut device. */
-                                humidity?:
-                                  | {
-                                      /** Time of latest humidity reading for a Minut device. */
-                                      time?: (string | undefined) | undefined
-                                      /** Value of latest humidity reading for a Minut device. */
-                                      value?: (number | undefined) | undefined
-                                    }
-                                  | undefined
-                                /** Latest pressure reading for a Minut device. */
-                                pressure?:
-                                  | {
-                                      /** Time of latest pressure reading for a Minut device. */
-                                      time?: (string | undefined) | undefined
-                                      /** Value of latest pressure reading for a Minut device. */
-                                      value?: (number | undefined) | undefined
-                                    }
-                                  | undefined
-                                /** Latest accelerometer Z-axis reading for a Minut device. */
-                                accelerometer_z?:
-                                  | {
-                                      /** Time of latest accelerometer Z-axis reading for a Minut device. */
-                                      time?: (string | undefined) | undefined
-                                      /** Value of latest accelerometer Z-axis reading for a Minut device. */
-                                      value?: (number | undefined) | undefined
-                                    }
-                                  | undefined
-                              }
-                            | undefined
-                        }
+                      | (
+                          | {
+                              /** Device ID for a Minut device. */
+                              device_id?: (string | undefined) | undefined
+                              /** Device name for a Minut device. */
+                              device_name?: (string | undefined) | undefined
+                              /** Latest sensor values for a Minut device. */
+                              latest_sensor_values?:
+                                | (
+                                    | {
+                                        /** Latest temperature reading for a Minut device. */
+                                        temperature?:
+                                          | (
+                                              | {
+                                                  /** Time of latest temperature reading for a Minut device. */
+                                                  time?:
+                                                    | (string | undefined)
+                                                    | undefined
+                                                  /** Value of latest temperature reading for a Minut device. */
+                                                  value?:
+                                                    | (number | undefined)
+                                                    | undefined
+                                                }
+                                              | undefined
+                                            )
+                                          | undefined
+                                        /** Latest sound reading for a Minut device. */
+                                        sound?:
+                                          | (
+                                              | {
+                                                  /** Time of latest sound reading for a Minut device. */
+                                                  time?:
+                                                    | (string | undefined)
+                                                    | undefined
+                                                  /** Value of latest sound reading for a Minut device. */
+                                                  value?:
+                                                    | (number | undefined)
+                                                    | undefined
+                                                }
+                                              | undefined
+                                            )
+                                          | undefined
+                                        /** Latest humidity reading for a Minut device. */
+                                        humidity?:
+                                          | (
+                                              | {
+                                                  /** Time of latest humidity reading for a Minut device. */
+                                                  time?:
+                                                    | (string | undefined)
+                                                    | undefined
+                                                  /** Value of latest humidity reading for a Minut device. */
+                                                  value?:
+                                                    | (number | undefined)
+                                                    | undefined
+                                                }
+                                              | undefined
+                                            )
+                                          | undefined
+                                        /** Latest pressure reading for a Minut device. */
+                                        pressure?:
+                                          | (
+                                              | {
+                                                  /** Time of latest pressure reading for a Minut device. */
+                                                  time?:
+                                                    | (string | undefined)
+                                                    | undefined
+                                                  /** Value of latest pressure reading for a Minut device. */
+                                                  value?:
+                                                    | (number | undefined)
+                                                    | undefined
+                                                }
+                                              | undefined
+                                            )
+                                          | undefined
+                                        /** Latest accelerometer Z-axis reading for a Minut device. */
+                                        accelerometer_z?:
+                                          | (
+                                              | {
+                                                  /** Time of latest accelerometer Z-axis reading for a Minut device. */
+                                                  time?:
+                                                    | (string | undefined)
+                                                    | undefined
+                                                  /** Value of latest accelerometer Z-axis reading for a Minut device. */
+                                                  value?:
+                                                    | (number | undefined)
+                                                    | undefined
+                                                }
+                                              | undefined
+                                            )
+                                          | undefined
+                                      }
+                                    | undefined
+                                  )
+                                | undefined
+                            }
+                          | undefined
+                        )
                       | undefined
                     /** Metadata for a 4SUITES device. */
                     four_suites_metadata?:
@@ -26374,6 +26419,10 @@ export type Routes = {
               is_online: boolean
               /** Indicates whether the lock is locked. */
               is_door_locked?: boolean | undefined
+              /** Indicates whether the device was last reported as detached from its mounting plate. Omitted when Seam has no accepted observation, including when the device does not support mounting plate detection, reports an unknown status, or is offline. This is the last accepted provider observation, not a guarantee of current hardware state; check `is_online` before acting on it. */
+              is_detached_from_mounting_plate?: boolean | undefined
+              /** Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when Seam has no accepted observation, including when the device does not support casing tamper detection. This is independent of `is_detached_from_mounting_plate`. */
+              is_casing_tampered_with?: boolean | undefined
               /** Properties of the device. */
               properties?:
                 | ((({
@@ -26703,62 +26752,103 @@ export type Routes = {
                       | undefined
                     /** Metadata for a Minut device. */
                     minut_metadata?:
-                      | {
-                          /** Device ID for a Minut device. */
-                          device_id?: (string | undefined) | undefined
-                          /** Device name for a Minut device. */
-                          device_name?: (string | undefined) | undefined
-                          /** Latest sensor values for a Minut device. */
-                          latest_sensor_values?:
-                            | {
-                                /** Latest temperature reading for a Minut device. */
-                                temperature?:
-                                  | {
-                                      /** Time of latest temperature reading for a Minut device. */
-                                      time?: (string | undefined) | undefined
-                                      /** Value of latest temperature reading for a Minut device. */
-                                      value?: (number | undefined) | undefined
-                                    }
-                                  | undefined
-                                /** Latest sound reading for a Minut device. */
-                                sound?:
-                                  | {
-                                      /** Time of latest sound reading for a Minut device. */
-                                      time?: (string | undefined) | undefined
-                                      /** Value of latest sound reading for a Minut device. */
-                                      value?: (number | undefined) | undefined
-                                    }
-                                  | undefined
-                                /** Latest humidity reading for a Minut device. */
-                                humidity?:
-                                  | {
-                                      /** Time of latest humidity reading for a Minut device. */
-                                      time?: (string | undefined) | undefined
-                                      /** Value of latest humidity reading for a Minut device. */
-                                      value?: (number | undefined) | undefined
-                                    }
-                                  | undefined
-                                /** Latest pressure reading for a Minut device. */
-                                pressure?:
-                                  | {
-                                      /** Time of latest pressure reading for a Minut device. */
-                                      time?: (string | undefined) | undefined
-                                      /** Value of latest pressure reading for a Minut device. */
-                                      value?: (number | undefined) | undefined
-                                    }
-                                  | undefined
-                                /** Latest accelerometer Z-axis reading for a Minut device. */
-                                accelerometer_z?:
-                                  | {
-                                      /** Time of latest accelerometer Z-axis reading for a Minut device. */
-                                      time?: (string | undefined) | undefined
-                                      /** Value of latest accelerometer Z-axis reading for a Minut device. */
-                                      value?: (number | undefined) | undefined
-                                    }
-                                  | undefined
-                              }
-                            | undefined
-                        }
+                      | (
+                          | {
+                              /** Device ID for a Minut device. */
+                              device_id?: (string | undefined) | undefined
+                              /** Device name for a Minut device. */
+                              device_name?: (string | undefined) | undefined
+                              /** Latest sensor values for a Minut device. */
+                              latest_sensor_values?:
+                                | (
+                                    | {
+                                        /** Latest temperature reading for a Minut device. */
+                                        temperature?:
+                                          | (
+                                              | {
+                                                  /** Time of latest temperature reading for a Minut device. */
+                                                  time?:
+                                                    | (string | undefined)
+                                                    | undefined
+                                                  /** Value of latest temperature reading for a Minut device. */
+                                                  value?:
+                                                    | (number | undefined)
+                                                    | undefined
+                                                }
+                                              | undefined
+                                            )
+                                          | undefined
+                                        /** Latest sound reading for a Minut device. */
+                                        sound?:
+                                          | (
+                                              | {
+                                                  /** Time of latest sound reading for a Minut device. */
+                                                  time?:
+                                                    | (string | undefined)
+                                                    | undefined
+                                                  /** Value of latest sound reading for a Minut device. */
+                                                  value?:
+                                                    | (number | undefined)
+                                                    | undefined
+                                                }
+                                              | undefined
+                                            )
+                                          | undefined
+                                        /** Latest humidity reading for a Minut device. */
+                                        humidity?:
+                                          | (
+                                              | {
+                                                  /** Time of latest humidity reading for a Minut device. */
+                                                  time?:
+                                                    | (string | undefined)
+                                                    | undefined
+                                                  /** Value of latest humidity reading for a Minut device. */
+                                                  value?:
+                                                    | (number | undefined)
+                                                    | undefined
+                                                }
+                                              | undefined
+                                            )
+                                          | undefined
+                                        /** Latest pressure reading for a Minut device. */
+                                        pressure?:
+                                          | (
+                                              | {
+                                                  /** Time of latest pressure reading for a Minut device. */
+                                                  time?:
+                                                    | (string | undefined)
+                                                    | undefined
+                                                  /** Value of latest pressure reading for a Minut device. */
+                                                  value?:
+                                                    | (number | undefined)
+                                                    | undefined
+                                                }
+                                              | undefined
+                                            )
+                                          | undefined
+                                        /** Latest accelerometer Z-axis reading for a Minut device. */
+                                        accelerometer_z?:
+                                          | (
+                                              | {
+                                                  /** Time of latest accelerometer Z-axis reading for a Minut device. */
+                                                  time?:
+                                                    | (string | undefined)
+                                                    | undefined
+                                                  /** Value of latest accelerometer Z-axis reading for a Minut device. */
+                                                  value?:
+                                                    | (number | undefined)
+                                                    | undefined
+                                                }
+                                              | undefined
+                                            )
+                                          | undefined
+                                      }
+                                    | undefined
+                                  )
+                                | undefined
+                            }
+                          | undefined
+                        )
                       | undefined
                     /** Metadata for a 4SUITES device. */
                     four_suites_metadata?:
@@ -59154,6 +59244,10 @@ export type Routes = {
         is_online: boolean
         /** Indicates whether the lock is locked. */
         is_door_locked?: boolean | undefined
+        /** Indicates whether the device was last reported as detached from its mounting plate. Omitted when Seam has no accepted observation, including when the device does not support mounting plate detection, reports an unknown status, or is offline. This is the last accepted provider observation, not a guarantee of current hardware state; check `is_online` before acting on it. */
+        is_detached_from_mounting_plate?: boolean | undefined
+        /** Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when Seam has no accepted observation, including when the device does not support casing tamper detection. This is independent of `is_detached_from_mounting_plate`. */
+        is_casing_tampered_with?: boolean | undefined
         /** Properties of the device. */
         properties?:
           | ((({
@@ -59475,62 +59569,93 @@ export type Routes = {
                 | undefined
               /** Metadata for a Minut device. */
               minut_metadata?:
-                | {
-                    /** Device ID for a Minut device. */
-                    device_id?: (string | undefined) | undefined
-                    /** Device name for a Minut device. */
-                    device_name?: (string | undefined) | undefined
-                    /** Latest sensor values for a Minut device. */
-                    latest_sensor_values?:
-                      | {
-                          /** Latest temperature reading for a Minut device. */
-                          temperature?:
-                            | {
-                                /** Time of latest temperature reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest temperature reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest sound reading for a Minut device. */
-                          sound?:
-                            | {
-                                /** Time of latest sound reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest sound reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest humidity reading for a Minut device. */
-                          humidity?:
-                            | {
-                                /** Time of latest humidity reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest humidity reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest pressure reading for a Minut device. */
-                          pressure?:
-                            | {
-                                /** Time of latest pressure reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest pressure reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest accelerometer Z-axis reading for a Minut device. */
-                          accelerometer_z?:
-                            | {
-                                /** Time of latest accelerometer Z-axis reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest accelerometer Z-axis reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                        }
-                      | undefined
-                  }
+                | (
+                    | {
+                        /** Device ID for a Minut device. */
+                        device_id?: (string | undefined) | undefined
+                        /** Device name for a Minut device. */
+                        device_name?: (string | undefined) | undefined
+                        /** Latest sensor values for a Minut device. */
+                        latest_sensor_values?:
+                          | (
+                              | {
+                                  /** Latest temperature reading for a Minut device. */
+                                  temperature?:
+                                    | (
+                                        | {
+                                            /** Time of latest temperature reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest temperature reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest sound reading for a Minut device. */
+                                  sound?:
+                                    | (
+                                        | {
+                                            /** Time of latest sound reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest sound reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest humidity reading for a Minut device. */
+                                  humidity?:
+                                    | (
+                                        | {
+                                            /** Time of latest humidity reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest humidity reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest pressure reading for a Minut device. */
+                                  pressure?:
+                                    | (
+                                        | {
+                                            /** Time of latest pressure reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest pressure reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest accelerometer Z-axis reading for a Minut device. */
+                                  accelerometer_z?:
+                                    | (
+                                        | {
+                                            /** Time of latest accelerometer Z-axis reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest accelerometer Z-axis reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                }
+                              | undefined
+                            )
+                          | undefined
+                      }
+                    | undefined
+                  )
                 | undefined
               /** Metadata for a 4SUITES device. */
               four_suites_metadata?:
@@ -61774,6 +61899,10 @@ export type Routes = {
         is_online: boolean
         /** Indicates whether the lock is locked. */
         is_door_locked?: boolean | undefined
+        /** Indicates whether the device was last reported as detached from its mounting plate. Omitted when Seam has no accepted observation, including when the device does not support mounting plate detection, reports an unknown status, or is offline. This is the last accepted provider observation, not a guarantee of current hardware state; check `is_online` before acting on it. */
+        is_detached_from_mounting_plate?: boolean | undefined
+        /** Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when Seam has no accepted observation, including when the device does not support casing tamper detection. This is independent of `is_detached_from_mounting_plate`. */
+        is_casing_tampered_with?: boolean | undefined
         /** Properties of the device. */
         properties?:
           | ((({
@@ -62095,62 +62224,93 @@ export type Routes = {
                 | undefined
               /** Metadata for a Minut device. */
               minut_metadata?:
-                | {
-                    /** Device ID for a Minut device. */
-                    device_id?: (string | undefined) | undefined
-                    /** Device name for a Minut device. */
-                    device_name?: (string | undefined) | undefined
-                    /** Latest sensor values for a Minut device. */
-                    latest_sensor_values?:
-                      | {
-                          /** Latest temperature reading for a Minut device. */
-                          temperature?:
-                            | {
-                                /** Time of latest temperature reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest temperature reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest sound reading for a Minut device. */
-                          sound?:
-                            | {
-                                /** Time of latest sound reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest sound reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest humidity reading for a Minut device. */
-                          humidity?:
-                            | {
-                                /** Time of latest humidity reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest humidity reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest pressure reading for a Minut device. */
-                          pressure?:
-                            | {
-                                /** Time of latest pressure reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest pressure reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest accelerometer Z-axis reading for a Minut device. */
-                          accelerometer_z?:
-                            | {
-                                /** Time of latest accelerometer Z-axis reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest accelerometer Z-axis reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                        }
-                      | undefined
-                  }
+                | (
+                    | {
+                        /** Device ID for a Minut device. */
+                        device_id?: (string | undefined) | undefined
+                        /** Device name for a Minut device. */
+                        device_name?: (string | undefined) | undefined
+                        /** Latest sensor values for a Minut device. */
+                        latest_sensor_values?:
+                          | (
+                              | {
+                                  /** Latest temperature reading for a Minut device. */
+                                  temperature?:
+                                    | (
+                                        | {
+                                            /** Time of latest temperature reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest temperature reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest sound reading for a Minut device. */
+                                  sound?:
+                                    | (
+                                        | {
+                                            /** Time of latest sound reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest sound reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest humidity reading for a Minut device. */
+                                  humidity?:
+                                    | (
+                                        | {
+                                            /** Time of latest humidity reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest humidity reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest pressure reading for a Minut device. */
+                                  pressure?:
+                                    | (
+                                        | {
+                                            /** Time of latest pressure reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest pressure reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest accelerometer Z-axis reading for a Minut device. */
+                                  accelerometer_z?:
+                                    | (
+                                        | {
+                                            /** Time of latest accelerometer Z-axis reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest accelerometer Z-axis reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                }
+                              | undefined
+                            )
+                          | undefined
+                      }
+                    | undefined
+                  )
                 | undefined
               /** Metadata for a 4SUITES device. */
               four_suites_metadata?:
@@ -79086,6 +79246,10 @@ export type Routes = {
         is_online: boolean
         /** Indicates whether the lock is locked. */
         is_door_locked?: boolean | undefined
+        /** Indicates whether the device was last reported as detached from its mounting plate. Omitted when Seam has no accepted observation, including when the device does not support mounting plate detection, reports an unknown status, or is offline. This is the last accepted provider observation, not a guarantee of current hardware state; check `is_online` before acting on it. */
+        is_detached_from_mounting_plate?: boolean | undefined
+        /** Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when Seam has no accepted observation, including when the device does not support casing tamper detection. This is independent of `is_detached_from_mounting_plate`. */
+        is_casing_tampered_with?: boolean | undefined
         /** Properties of the device. */
         properties?:
           | ((({
@@ -79407,62 +79571,93 @@ export type Routes = {
                 | undefined
               /** Metadata for a Minut device. */
               minut_metadata?:
-                | {
-                    /** Device ID for a Minut device. */
-                    device_id?: (string | undefined) | undefined
-                    /** Device name for a Minut device. */
-                    device_name?: (string | undefined) | undefined
-                    /** Latest sensor values for a Minut device. */
-                    latest_sensor_values?:
-                      | {
-                          /** Latest temperature reading for a Minut device. */
-                          temperature?:
-                            | {
-                                /** Time of latest temperature reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest temperature reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest sound reading for a Minut device. */
-                          sound?:
-                            | {
-                                /** Time of latest sound reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest sound reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest humidity reading for a Minut device. */
-                          humidity?:
-                            | {
-                                /** Time of latest humidity reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest humidity reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest pressure reading for a Minut device. */
-                          pressure?:
-                            | {
-                                /** Time of latest pressure reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest pressure reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest accelerometer Z-axis reading for a Minut device. */
-                          accelerometer_z?:
-                            | {
-                                /** Time of latest accelerometer Z-axis reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest accelerometer Z-axis reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                        }
-                      | undefined
-                  }
+                | (
+                    | {
+                        /** Device ID for a Minut device. */
+                        device_id?: (string | undefined) | undefined
+                        /** Device name for a Minut device. */
+                        device_name?: (string | undefined) | undefined
+                        /** Latest sensor values for a Minut device. */
+                        latest_sensor_values?:
+                          | (
+                              | {
+                                  /** Latest temperature reading for a Minut device. */
+                                  temperature?:
+                                    | (
+                                        | {
+                                            /** Time of latest temperature reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest temperature reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest sound reading for a Minut device. */
+                                  sound?:
+                                    | (
+                                        | {
+                                            /** Time of latest sound reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest sound reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest humidity reading for a Minut device. */
+                                  humidity?:
+                                    | (
+                                        | {
+                                            /** Time of latest humidity reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest humidity reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest pressure reading for a Minut device. */
+                                  pressure?:
+                                    | (
+                                        | {
+                                            /** Time of latest pressure reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest pressure reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest accelerometer Z-axis reading for a Minut device. */
+                                  accelerometer_z?:
+                                    | (
+                                        | {
+                                            /** Time of latest accelerometer Z-axis reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest accelerometer Z-axis reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                }
+                              | undefined
+                            )
+                          | undefined
+                      }
+                    | undefined
+                  )
                 | undefined
               /** Metadata for a 4SUITES device. */
               four_suites_metadata?:
@@ -81390,6 +81585,10 @@ export type Routes = {
         is_online: boolean
         /** Indicates whether the lock is locked. */
         is_door_locked?: boolean | undefined
+        /** Indicates whether the device was last reported as detached from its mounting plate. Omitted when Seam has no accepted observation, including when the device does not support mounting plate detection, reports an unknown status, or is offline. This is the last accepted provider observation, not a guarantee of current hardware state; check `is_online` before acting on it. */
+        is_detached_from_mounting_plate?: boolean | undefined
+        /** Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when Seam has no accepted observation, including when the device does not support casing tamper detection. This is independent of `is_detached_from_mounting_plate`. */
+        is_casing_tampered_with?: boolean | undefined
         /** Properties of the device. */
         properties?:
           | ((({
@@ -81711,62 +81910,93 @@ export type Routes = {
                 | undefined
               /** Metadata for a Minut device. */
               minut_metadata?:
-                | {
-                    /** Device ID for a Minut device. */
-                    device_id?: (string | undefined) | undefined
-                    /** Device name for a Minut device. */
-                    device_name?: (string | undefined) | undefined
-                    /** Latest sensor values for a Minut device. */
-                    latest_sensor_values?:
-                      | {
-                          /** Latest temperature reading for a Minut device. */
-                          temperature?:
-                            | {
-                                /** Time of latest temperature reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest temperature reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest sound reading for a Minut device. */
-                          sound?:
-                            | {
-                                /** Time of latest sound reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest sound reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest humidity reading for a Minut device. */
-                          humidity?:
-                            | {
-                                /** Time of latest humidity reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest humidity reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest pressure reading for a Minut device. */
-                          pressure?:
-                            | {
-                                /** Time of latest pressure reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest pressure reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest accelerometer Z-axis reading for a Minut device. */
-                          accelerometer_z?:
-                            | {
-                                /** Time of latest accelerometer Z-axis reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest accelerometer Z-axis reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                        }
-                      | undefined
-                  }
+                | (
+                    | {
+                        /** Device ID for a Minut device. */
+                        device_id?: (string | undefined) | undefined
+                        /** Device name for a Minut device. */
+                        device_name?: (string | undefined) | undefined
+                        /** Latest sensor values for a Minut device. */
+                        latest_sensor_values?:
+                          | (
+                              | {
+                                  /** Latest temperature reading for a Minut device. */
+                                  temperature?:
+                                    | (
+                                        | {
+                                            /** Time of latest temperature reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest temperature reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest sound reading for a Minut device. */
+                                  sound?:
+                                    | (
+                                        | {
+                                            /** Time of latest sound reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest sound reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest humidity reading for a Minut device. */
+                                  humidity?:
+                                    | (
+                                        | {
+                                            /** Time of latest humidity reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest humidity reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest pressure reading for a Minut device. */
+                                  pressure?:
+                                    | (
+                                        | {
+                                            /** Time of latest pressure reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest pressure reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest accelerometer Z-axis reading for a Minut device. */
+                                  accelerometer_z?:
+                                    | (
+                                        | {
+                                            /** Time of latest accelerometer Z-axis reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest accelerometer Z-axis reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                }
+                              | undefined
+                            )
+                          | undefined
+                      }
+                    | undefined
+                  )
                 | undefined
               /** Metadata for a 4SUITES device. */
               four_suites_metadata?:
@@ -83835,6 +84065,10 @@ export type Routes = {
         is_online: boolean
         /** Indicates whether the lock is locked. */
         is_door_locked?: boolean | undefined
+        /** Indicates whether the device was last reported as detached from its mounting plate. Omitted when Seam has no accepted observation, including when the device does not support mounting plate detection, reports an unknown status, or is offline. This is the last accepted provider observation, not a guarantee of current hardware state; check `is_online` before acting on it. */
+        is_detached_from_mounting_plate?: boolean | undefined
+        /** Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when Seam has no accepted observation, including when the device does not support casing tamper detection. This is independent of `is_detached_from_mounting_plate`. */
+        is_casing_tampered_with?: boolean | undefined
         /** Properties of the device. */
         properties?:
           | ((({
@@ -84156,62 +84390,93 @@ export type Routes = {
                 | undefined
               /** Metadata for a Minut device. */
               minut_metadata?:
-                | {
-                    /** Device ID for a Minut device. */
-                    device_id?: (string | undefined) | undefined
-                    /** Device name for a Minut device. */
-                    device_name?: (string | undefined) | undefined
-                    /** Latest sensor values for a Minut device. */
-                    latest_sensor_values?:
-                      | {
-                          /** Latest temperature reading for a Minut device. */
-                          temperature?:
-                            | {
-                                /** Time of latest temperature reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest temperature reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest sound reading for a Minut device. */
-                          sound?:
-                            | {
-                                /** Time of latest sound reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest sound reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest humidity reading for a Minut device. */
-                          humidity?:
-                            | {
-                                /** Time of latest humidity reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest humidity reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest pressure reading for a Minut device. */
-                          pressure?:
-                            | {
-                                /** Time of latest pressure reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest pressure reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest accelerometer Z-axis reading for a Minut device. */
-                          accelerometer_z?:
-                            | {
-                                /** Time of latest accelerometer Z-axis reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest accelerometer Z-axis reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                        }
-                      | undefined
-                  }
+                | (
+                    | {
+                        /** Device ID for a Minut device. */
+                        device_id?: (string | undefined) | undefined
+                        /** Device name for a Minut device. */
+                        device_name?: (string | undefined) | undefined
+                        /** Latest sensor values for a Minut device. */
+                        latest_sensor_values?:
+                          | (
+                              | {
+                                  /** Latest temperature reading for a Minut device. */
+                                  temperature?:
+                                    | (
+                                        | {
+                                            /** Time of latest temperature reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest temperature reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest sound reading for a Minut device. */
+                                  sound?:
+                                    | (
+                                        | {
+                                            /** Time of latest sound reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest sound reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest humidity reading for a Minut device. */
+                                  humidity?:
+                                    | (
+                                        | {
+                                            /** Time of latest humidity reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest humidity reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest pressure reading for a Minut device. */
+                                  pressure?:
+                                    | (
+                                        | {
+                                            /** Time of latest pressure reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest pressure reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest accelerometer Z-axis reading for a Minut device. */
+                                  accelerometer_z?:
+                                    | (
+                                        | {
+                                            /** Time of latest accelerometer Z-axis reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest accelerometer Z-axis reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                }
+                              | undefined
+                            )
+                          | undefined
+                      }
+                    | undefined
+                  )
                 | undefined
               /** Metadata for a 4SUITES device. */
               four_suites_metadata?:
@@ -86138,6 +86403,10 @@ export type Routes = {
         is_online: boolean
         /** Indicates whether the lock is locked. */
         is_door_locked?: boolean | undefined
+        /** Indicates whether the device was last reported as detached from its mounting plate. Omitted when Seam has no accepted observation, including when the device does not support mounting plate detection, reports an unknown status, or is offline. This is the last accepted provider observation, not a guarantee of current hardware state; check `is_online` before acting on it. */
+        is_detached_from_mounting_plate?: boolean | undefined
+        /** Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when Seam has no accepted observation, including when the device does not support casing tamper detection. This is independent of `is_detached_from_mounting_plate`. */
+        is_casing_tampered_with?: boolean | undefined
         /** Properties of the device. */
         properties?:
           | ((({
@@ -86459,62 +86728,93 @@ export type Routes = {
                 | undefined
               /** Metadata for a Minut device. */
               minut_metadata?:
-                | {
-                    /** Device ID for a Minut device. */
-                    device_id?: (string | undefined) | undefined
-                    /** Device name for a Minut device. */
-                    device_name?: (string | undefined) | undefined
-                    /** Latest sensor values for a Minut device. */
-                    latest_sensor_values?:
-                      | {
-                          /** Latest temperature reading for a Minut device. */
-                          temperature?:
-                            | {
-                                /** Time of latest temperature reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest temperature reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest sound reading for a Minut device. */
-                          sound?:
-                            | {
-                                /** Time of latest sound reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest sound reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest humidity reading for a Minut device. */
-                          humidity?:
-                            | {
-                                /** Time of latest humidity reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest humidity reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest pressure reading for a Minut device. */
-                          pressure?:
-                            | {
-                                /** Time of latest pressure reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest pressure reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest accelerometer Z-axis reading for a Minut device. */
-                          accelerometer_z?:
-                            | {
-                                /** Time of latest accelerometer Z-axis reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest accelerometer Z-axis reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                        }
-                      | undefined
-                  }
+                | (
+                    | {
+                        /** Device ID for a Minut device. */
+                        device_id?: (string | undefined) | undefined
+                        /** Device name for a Minut device. */
+                        device_name?: (string | undefined) | undefined
+                        /** Latest sensor values for a Minut device. */
+                        latest_sensor_values?:
+                          | (
+                              | {
+                                  /** Latest temperature reading for a Minut device. */
+                                  temperature?:
+                                    | (
+                                        | {
+                                            /** Time of latest temperature reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest temperature reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest sound reading for a Minut device. */
+                                  sound?:
+                                    | (
+                                        | {
+                                            /** Time of latest sound reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest sound reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest humidity reading for a Minut device. */
+                                  humidity?:
+                                    | (
+                                        | {
+                                            /** Time of latest humidity reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest humidity reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest pressure reading for a Minut device. */
+                                  pressure?:
+                                    | (
+                                        | {
+                                            /** Time of latest pressure reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest pressure reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest accelerometer Z-axis reading for a Minut device. */
+                                  accelerometer_z?:
+                                    | (
+                                        | {
+                                            /** Time of latest accelerometer Z-axis reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest accelerometer Z-axis reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                }
+                              | undefined
+                            )
+                          | undefined
+                      }
+                    | undefined
+                  )
                 | undefined
               /** Metadata for a 4SUITES device. */
               four_suites_metadata?:
@@ -98840,6 +99140,10 @@ export type Routes = {
         is_online: boolean
         /** Indicates whether the lock is locked. */
         is_door_locked?: boolean | undefined
+        /** Indicates whether the device was last reported as detached from its mounting plate. Omitted when Seam has no accepted observation, including when the device does not support mounting plate detection, reports an unknown status, or is offline. This is the last accepted provider observation, not a guarantee of current hardware state; check `is_online` before acting on it. */
+        is_detached_from_mounting_plate?: boolean | undefined
+        /** Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when Seam has no accepted observation, including when the device does not support casing tamper detection. This is independent of `is_detached_from_mounting_plate`. */
+        is_casing_tampered_with?: boolean | undefined
         /** Properties of the device. */
         properties?:
           | ((({
@@ -99161,62 +99465,93 @@ export type Routes = {
                 | undefined
               /** Metadata for a Minut device. */
               minut_metadata?:
-                | {
-                    /** Device ID for a Minut device. */
-                    device_id?: (string | undefined) | undefined
-                    /** Device name for a Minut device. */
-                    device_name?: (string | undefined) | undefined
-                    /** Latest sensor values for a Minut device. */
-                    latest_sensor_values?:
-                      | {
-                          /** Latest temperature reading for a Minut device. */
-                          temperature?:
-                            | {
-                                /** Time of latest temperature reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest temperature reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest sound reading for a Minut device. */
-                          sound?:
-                            | {
-                                /** Time of latest sound reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest sound reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest humidity reading for a Minut device. */
-                          humidity?:
-                            | {
-                                /** Time of latest humidity reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest humidity reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest pressure reading for a Minut device. */
-                          pressure?:
-                            | {
-                                /** Time of latest pressure reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest pressure reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest accelerometer Z-axis reading for a Minut device. */
-                          accelerometer_z?:
-                            | {
-                                /** Time of latest accelerometer Z-axis reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest accelerometer Z-axis reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                        }
-                      | undefined
-                  }
+                | (
+                    | {
+                        /** Device ID for a Minut device. */
+                        device_id?: (string | undefined) | undefined
+                        /** Device name for a Minut device. */
+                        device_name?: (string | undefined) | undefined
+                        /** Latest sensor values for a Minut device. */
+                        latest_sensor_values?:
+                          | (
+                              | {
+                                  /** Latest temperature reading for a Minut device. */
+                                  temperature?:
+                                    | (
+                                        | {
+                                            /** Time of latest temperature reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest temperature reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest sound reading for a Minut device. */
+                                  sound?:
+                                    | (
+                                        | {
+                                            /** Time of latest sound reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest sound reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest humidity reading for a Minut device. */
+                                  humidity?:
+                                    | (
+                                        | {
+                                            /** Time of latest humidity reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest humidity reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest pressure reading for a Minut device. */
+                                  pressure?:
+                                    | (
+                                        | {
+                                            /** Time of latest pressure reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest pressure reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest accelerometer Z-axis reading for a Minut device. */
+                                  accelerometer_z?:
+                                    | (
+                                        | {
+                                            /** Time of latest accelerometer Z-axis reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest accelerometer Z-axis reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                }
+                              | undefined
+                            )
+                          | undefined
+                      }
+                    | undefined
+                  )
                 | undefined
               /** Metadata for a 4SUITES device. */
               four_suites_metadata?:
@@ -101143,6 +101478,10 @@ export type Routes = {
         is_online: boolean
         /** Indicates whether the lock is locked. */
         is_door_locked?: boolean | undefined
+        /** Indicates whether the device was last reported as detached from its mounting plate. Omitted when Seam has no accepted observation, including when the device does not support mounting plate detection, reports an unknown status, or is offline. This is the last accepted provider observation, not a guarantee of current hardware state; check `is_online` before acting on it. */
+        is_detached_from_mounting_plate?: boolean | undefined
+        /** Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when Seam has no accepted observation, including when the device does not support casing tamper detection. This is independent of `is_detached_from_mounting_plate`. */
+        is_casing_tampered_with?: boolean | undefined
         /** Properties of the device. */
         properties?:
           | ((({
@@ -101464,62 +101803,93 @@ export type Routes = {
                 | undefined
               /** Metadata for a Minut device. */
               minut_metadata?:
-                | {
-                    /** Device ID for a Minut device. */
-                    device_id?: (string | undefined) | undefined
-                    /** Device name for a Minut device. */
-                    device_name?: (string | undefined) | undefined
-                    /** Latest sensor values for a Minut device. */
-                    latest_sensor_values?:
-                      | {
-                          /** Latest temperature reading for a Minut device. */
-                          temperature?:
-                            | {
-                                /** Time of latest temperature reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest temperature reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest sound reading for a Minut device. */
-                          sound?:
-                            | {
-                                /** Time of latest sound reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest sound reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest humidity reading for a Minut device. */
-                          humidity?:
-                            | {
-                                /** Time of latest humidity reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest humidity reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest pressure reading for a Minut device. */
-                          pressure?:
-                            | {
-                                /** Time of latest pressure reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest pressure reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest accelerometer Z-axis reading for a Minut device. */
-                          accelerometer_z?:
-                            | {
-                                /** Time of latest accelerometer Z-axis reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest accelerometer Z-axis reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                        }
-                      | undefined
-                  }
+                | (
+                    | {
+                        /** Device ID for a Minut device. */
+                        device_id?: (string | undefined) | undefined
+                        /** Device name for a Minut device. */
+                        device_name?: (string | undefined) | undefined
+                        /** Latest sensor values for a Minut device. */
+                        latest_sensor_values?:
+                          | (
+                              | {
+                                  /** Latest temperature reading for a Minut device. */
+                                  temperature?:
+                                    | (
+                                        | {
+                                            /** Time of latest temperature reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest temperature reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest sound reading for a Minut device. */
+                                  sound?:
+                                    | (
+                                        | {
+                                            /** Time of latest sound reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest sound reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest humidity reading for a Minut device. */
+                                  humidity?:
+                                    | (
+                                        | {
+                                            /** Time of latest humidity reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest humidity reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest pressure reading for a Minut device. */
+                                  pressure?:
+                                    | (
+                                        | {
+                                            /** Time of latest pressure reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest pressure reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest accelerometer Z-axis reading for a Minut device. */
+                                  accelerometer_z?:
+                                    | (
+                                        | {
+                                            /** Time of latest accelerometer Z-axis reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest accelerometer Z-axis reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                }
+                              | undefined
+                            )
+                          | undefined
+                      }
+                    | undefined
+                  )
                 | undefined
               /** Metadata for a 4SUITES device. */
               four_suites_metadata?:
@@ -115391,6 +115761,10 @@ export type Routes = {
         is_online: boolean
         /** Indicates whether the lock is locked. */
         is_door_locked?: boolean | undefined
+        /** Indicates whether the device was last reported as detached from its mounting plate. Omitted when Seam has no accepted observation, including when the device does not support mounting plate detection, reports an unknown status, or is offline. This is the last accepted provider observation, not a guarantee of current hardware state; check `is_online` before acting on it. */
+        is_detached_from_mounting_plate?: boolean | undefined
+        /** Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when Seam has no accepted observation, including when the device does not support casing tamper detection. This is independent of `is_detached_from_mounting_plate`. */
+        is_casing_tampered_with?: boolean | undefined
         /** Properties of the device. */
         properties?:
           | ((({
@@ -115712,62 +116086,93 @@ export type Routes = {
                 | undefined
               /** Metadata for a Minut device. */
               minut_metadata?:
-                | {
-                    /** Device ID for a Minut device. */
-                    device_id?: (string | undefined) | undefined
-                    /** Device name for a Minut device. */
-                    device_name?: (string | undefined) | undefined
-                    /** Latest sensor values for a Minut device. */
-                    latest_sensor_values?:
-                      | {
-                          /** Latest temperature reading for a Minut device. */
-                          temperature?:
-                            | {
-                                /** Time of latest temperature reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest temperature reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest sound reading for a Minut device. */
-                          sound?:
-                            | {
-                                /** Time of latest sound reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest sound reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest humidity reading for a Minut device. */
-                          humidity?:
-                            | {
-                                /** Time of latest humidity reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest humidity reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest pressure reading for a Minut device. */
-                          pressure?:
-                            | {
-                                /** Time of latest pressure reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest pressure reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest accelerometer Z-axis reading for a Minut device. */
-                          accelerometer_z?:
-                            | {
-                                /** Time of latest accelerometer Z-axis reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest accelerometer Z-axis reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                        }
-                      | undefined
-                  }
+                | (
+                    | {
+                        /** Device ID for a Minut device. */
+                        device_id?: (string | undefined) | undefined
+                        /** Device name for a Minut device. */
+                        device_name?: (string | undefined) | undefined
+                        /** Latest sensor values for a Minut device. */
+                        latest_sensor_values?:
+                          | (
+                              | {
+                                  /** Latest temperature reading for a Minut device. */
+                                  temperature?:
+                                    | (
+                                        | {
+                                            /** Time of latest temperature reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest temperature reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest sound reading for a Minut device. */
+                                  sound?:
+                                    | (
+                                        | {
+                                            /** Time of latest sound reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest sound reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest humidity reading for a Minut device. */
+                                  humidity?:
+                                    | (
+                                        | {
+                                            /** Time of latest humidity reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest humidity reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest pressure reading for a Minut device. */
+                                  pressure?:
+                                    | (
+                                        | {
+                                            /** Time of latest pressure reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest pressure reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest accelerometer Z-axis reading for a Minut device. */
+                                  accelerometer_z?:
+                                    | (
+                                        | {
+                                            /** Time of latest accelerometer Z-axis reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest accelerometer Z-axis reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                }
+                              | undefined
+                            )
+                          | undefined
+                      }
+                    | undefined
+                  )
                 | undefined
               /** Metadata for a 4SUITES device. */
               four_suites_metadata?:
@@ -139031,6 +139436,10 @@ export type Routes = {
               is_online: boolean
               /** Indicates whether the lock is locked. */
               is_door_locked?: boolean | undefined
+              /** Indicates whether the device was last reported as detached from its mounting plate. Omitted when Seam has no accepted observation, including when the device does not support mounting plate detection, reports an unknown status, or is offline. This is the last accepted provider observation, not a guarantee of current hardware state; check `is_online` before acting on it. */
+              is_detached_from_mounting_plate?: boolean | undefined
+              /** Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when Seam has no accepted observation, including when the device does not support casing tamper detection. This is independent of `is_detached_from_mounting_plate`. */
+              is_casing_tampered_with?: boolean | undefined
               /** Properties of the device. */
               properties?:
                 | ((({
@@ -139360,62 +139769,103 @@ export type Routes = {
                       | undefined
                     /** Metadata for a Minut device. */
                     minut_metadata?:
-                      | {
-                          /** Device ID for a Minut device. */
-                          device_id?: (string | undefined) | undefined
-                          /** Device name for a Minut device. */
-                          device_name?: (string | undefined) | undefined
-                          /** Latest sensor values for a Minut device. */
-                          latest_sensor_values?:
-                            | {
-                                /** Latest temperature reading for a Minut device. */
-                                temperature?:
-                                  | {
-                                      /** Time of latest temperature reading for a Minut device. */
-                                      time?: (string | undefined) | undefined
-                                      /** Value of latest temperature reading for a Minut device. */
-                                      value?: (number | undefined) | undefined
-                                    }
-                                  | undefined
-                                /** Latest sound reading for a Minut device. */
-                                sound?:
-                                  | {
-                                      /** Time of latest sound reading for a Minut device. */
-                                      time?: (string | undefined) | undefined
-                                      /** Value of latest sound reading for a Minut device. */
-                                      value?: (number | undefined) | undefined
-                                    }
-                                  | undefined
-                                /** Latest humidity reading for a Minut device. */
-                                humidity?:
-                                  | {
-                                      /** Time of latest humidity reading for a Minut device. */
-                                      time?: (string | undefined) | undefined
-                                      /** Value of latest humidity reading for a Minut device. */
-                                      value?: (number | undefined) | undefined
-                                    }
-                                  | undefined
-                                /** Latest pressure reading for a Minut device. */
-                                pressure?:
-                                  | {
-                                      /** Time of latest pressure reading for a Minut device. */
-                                      time?: (string | undefined) | undefined
-                                      /** Value of latest pressure reading for a Minut device. */
-                                      value?: (number | undefined) | undefined
-                                    }
-                                  | undefined
-                                /** Latest accelerometer Z-axis reading for a Minut device. */
-                                accelerometer_z?:
-                                  | {
-                                      /** Time of latest accelerometer Z-axis reading for a Minut device. */
-                                      time?: (string | undefined) | undefined
-                                      /** Value of latest accelerometer Z-axis reading for a Minut device. */
-                                      value?: (number | undefined) | undefined
-                                    }
-                                  | undefined
-                              }
-                            | undefined
-                        }
+                      | (
+                          | {
+                              /** Device ID for a Minut device. */
+                              device_id?: (string | undefined) | undefined
+                              /** Device name for a Minut device. */
+                              device_name?: (string | undefined) | undefined
+                              /** Latest sensor values for a Minut device. */
+                              latest_sensor_values?:
+                                | (
+                                    | {
+                                        /** Latest temperature reading for a Minut device. */
+                                        temperature?:
+                                          | (
+                                              | {
+                                                  /** Time of latest temperature reading for a Minut device. */
+                                                  time?:
+                                                    | (string | undefined)
+                                                    | undefined
+                                                  /** Value of latest temperature reading for a Minut device. */
+                                                  value?:
+                                                    | (number | undefined)
+                                                    | undefined
+                                                }
+                                              | undefined
+                                            )
+                                          | undefined
+                                        /** Latest sound reading for a Minut device. */
+                                        sound?:
+                                          | (
+                                              | {
+                                                  /** Time of latest sound reading for a Minut device. */
+                                                  time?:
+                                                    | (string | undefined)
+                                                    | undefined
+                                                  /** Value of latest sound reading for a Minut device. */
+                                                  value?:
+                                                    | (number | undefined)
+                                                    | undefined
+                                                }
+                                              | undefined
+                                            )
+                                          | undefined
+                                        /** Latest humidity reading for a Minut device. */
+                                        humidity?:
+                                          | (
+                                              | {
+                                                  /** Time of latest humidity reading for a Minut device. */
+                                                  time?:
+                                                    | (string | undefined)
+                                                    | undefined
+                                                  /** Value of latest humidity reading for a Minut device. */
+                                                  value?:
+                                                    | (number | undefined)
+                                                    | undefined
+                                                }
+                                              | undefined
+                                            )
+                                          | undefined
+                                        /** Latest pressure reading for a Minut device. */
+                                        pressure?:
+                                          | (
+                                              | {
+                                                  /** Time of latest pressure reading for a Minut device. */
+                                                  time?:
+                                                    | (string | undefined)
+                                                    | undefined
+                                                  /** Value of latest pressure reading for a Minut device. */
+                                                  value?:
+                                                    | (number | undefined)
+                                                    | undefined
+                                                }
+                                              | undefined
+                                            )
+                                          | undefined
+                                        /** Latest accelerometer Z-axis reading for a Minut device. */
+                                        accelerometer_z?:
+                                          | (
+                                              | {
+                                                  /** Time of latest accelerometer Z-axis reading for a Minut device. */
+                                                  time?:
+                                                    | (string | undefined)
+                                                    | undefined
+                                                  /** Value of latest accelerometer Z-axis reading for a Minut device. */
+                                                  value?:
+                                                    | (number | undefined)
+                                                    | undefined
+                                                }
+                                              | undefined
+                                            )
+                                          | undefined
+                                      }
+                                    | undefined
+                                  )
+                                | undefined
+                            }
+                          | undefined
+                        )
                       | undefined
                     /** Metadata for a 4SUITES device. */
                     four_suites_metadata?:
@@ -173780,6 +174230,10 @@ export type Routes = {
         is_online: boolean
         /** Indicates whether the lock is locked. */
         is_door_locked?: boolean | undefined
+        /** Indicates whether the device was last reported as detached from its mounting plate. Omitted when Seam has no accepted observation, including when the device does not support mounting plate detection, reports an unknown status, or is offline. This is the last accepted provider observation, not a guarantee of current hardware state; check `is_online` before acting on it. */
+        is_detached_from_mounting_plate?: boolean | undefined
+        /** Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when Seam has no accepted observation, including when the device does not support casing tamper detection. This is independent of `is_detached_from_mounting_plate`. */
+        is_casing_tampered_with?: boolean | undefined
         /** Properties of the device. */
         properties?:
           | ((({
@@ -174101,62 +174555,93 @@ export type Routes = {
                 | undefined
               /** Metadata for a Minut device. */
               minut_metadata?:
-                | {
-                    /** Device ID for a Minut device. */
-                    device_id?: (string | undefined) | undefined
-                    /** Device name for a Minut device. */
-                    device_name?: (string | undefined) | undefined
-                    /** Latest sensor values for a Minut device. */
-                    latest_sensor_values?:
-                      | {
-                          /** Latest temperature reading for a Minut device. */
-                          temperature?:
-                            | {
-                                /** Time of latest temperature reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest temperature reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest sound reading for a Minut device. */
-                          sound?:
-                            | {
-                                /** Time of latest sound reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest sound reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest humidity reading for a Minut device. */
-                          humidity?:
-                            | {
-                                /** Time of latest humidity reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest humidity reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest pressure reading for a Minut device. */
-                          pressure?:
-                            | {
-                                /** Time of latest pressure reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest pressure reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest accelerometer Z-axis reading for a Minut device. */
-                          accelerometer_z?:
-                            | {
-                                /** Time of latest accelerometer Z-axis reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest accelerometer Z-axis reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                        }
-                      | undefined
-                  }
+                | (
+                    | {
+                        /** Device ID for a Minut device. */
+                        device_id?: (string | undefined) | undefined
+                        /** Device name for a Minut device. */
+                        device_name?: (string | undefined) | undefined
+                        /** Latest sensor values for a Minut device. */
+                        latest_sensor_values?:
+                          | (
+                              | {
+                                  /** Latest temperature reading for a Minut device. */
+                                  temperature?:
+                                    | (
+                                        | {
+                                            /** Time of latest temperature reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest temperature reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest sound reading for a Minut device. */
+                                  sound?:
+                                    | (
+                                        | {
+                                            /** Time of latest sound reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest sound reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest humidity reading for a Minut device. */
+                                  humidity?:
+                                    | (
+                                        | {
+                                            /** Time of latest humidity reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest humidity reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest pressure reading for a Minut device. */
+                                  pressure?:
+                                    | (
+                                        | {
+                                            /** Time of latest pressure reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest pressure reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest accelerometer Z-axis reading for a Minut device. */
+                                  accelerometer_z?:
+                                    | (
+                                        | {
+                                            /** Time of latest accelerometer Z-axis reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest accelerometer Z-axis reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                }
+                              | undefined
+                            )
+                          | undefined
+                      }
+                    | undefined
+                  )
                 | undefined
               /** Metadata for a 4SUITES device. */
               four_suites_metadata?:
@@ -181315,6 +181800,10 @@ export type Routes = {
         is_online: boolean
         /** Indicates whether the lock is locked. */
         is_door_locked?: boolean | undefined
+        /** Indicates whether the device was last reported as detached from its mounting plate. Omitted when Seam has no accepted observation, including when the device does not support mounting plate detection, reports an unknown status, or is offline. This is the last accepted provider observation, not a guarantee of current hardware state; check `is_online` before acting on it. */
+        is_detached_from_mounting_plate?: boolean | undefined
+        /** Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when Seam has no accepted observation, including when the device does not support casing tamper detection. This is independent of `is_detached_from_mounting_plate`. */
+        is_casing_tampered_with?: boolean | undefined
         /** Properties of the device. */
         properties?:
           | ((({
@@ -181636,62 +182125,93 @@ export type Routes = {
                 | undefined
               /** Metadata for a Minut device. */
               minut_metadata?:
-                | {
-                    /** Device ID for a Minut device. */
-                    device_id?: (string | undefined) | undefined
-                    /** Device name for a Minut device. */
-                    device_name?: (string | undefined) | undefined
-                    /** Latest sensor values for a Minut device. */
-                    latest_sensor_values?:
-                      | {
-                          /** Latest temperature reading for a Minut device. */
-                          temperature?:
-                            | {
-                                /** Time of latest temperature reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest temperature reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest sound reading for a Minut device. */
-                          sound?:
-                            | {
-                                /** Time of latest sound reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest sound reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest humidity reading for a Minut device. */
-                          humidity?:
-                            | {
-                                /** Time of latest humidity reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest humidity reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest pressure reading for a Minut device. */
-                          pressure?:
-                            | {
-                                /** Time of latest pressure reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest pressure reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest accelerometer Z-axis reading for a Minut device. */
-                          accelerometer_z?:
-                            | {
-                                /** Time of latest accelerometer Z-axis reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest accelerometer Z-axis reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                        }
-                      | undefined
-                  }
+                | (
+                    | {
+                        /** Device ID for a Minut device. */
+                        device_id?: (string | undefined) | undefined
+                        /** Device name for a Minut device. */
+                        device_name?: (string | undefined) | undefined
+                        /** Latest sensor values for a Minut device. */
+                        latest_sensor_values?:
+                          | (
+                              | {
+                                  /** Latest temperature reading for a Minut device. */
+                                  temperature?:
+                                    | (
+                                        | {
+                                            /** Time of latest temperature reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest temperature reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest sound reading for a Minut device. */
+                                  sound?:
+                                    | (
+                                        | {
+                                            /** Time of latest sound reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest sound reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest humidity reading for a Minut device. */
+                                  humidity?:
+                                    | (
+                                        | {
+                                            /** Time of latest humidity reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest humidity reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest pressure reading for a Minut device. */
+                                  pressure?:
+                                    | (
+                                        | {
+                                            /** Time of latest pressure reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest pressure reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest accelerometer Z-axis reading for a Minut device. */
+                                  accelerometer_z?:
+                                    | (
+                                        | {
+                                            /** Time of latest accelerometer Z-axis reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest accelerometer Z-axis reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                }
+                              | undefined
+                            )
+                          | undefined
+                      }
+                    | undefined
+                  )
                 | undefined
               /** Metadata for a 4SUITES device. */
               four_suites_metadata?:
@@ -183618,6 +184138,10 @@ export type Routes = {
         is_online: boolean
         /** Indicates whether the lock is locked. */
         is_door_locked?: boolean | undefined
+        /** Indicates whether the device was last reported as detached from its mounting plate. Omitted when Seam has no accepted observation, including when the device does not support mounting plate detection, reports an unknown status, or is offline. This is the last accepted provider observation, not a guarantee of current hardware state; check `is_online` before acting on it. */
+        is_detached_from_mounting_plate?: boolean | undefined
+        /** Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when Seam has no accepted observation, including when the device does not support casing tamper detection. This is independent of `is_detached_from_mounting_plate`. */
+        is_casing_tampered_with?: boolean | undefined
         /** Properties of the device. */
         properties?:
           | ((({
@@ -183939,62 +184463,93 @@ export type Routes = {
                 | undefined
               /** Metadata for a Minut device. */
               minut_metadata?:
-                | {
-                    /** Device ID for a Minut device. */
-                    device_id?: (string | undefined) | undefined
-                    /** Device name for a Minut device. */
-                    device_name?: (string | undefined) | undefined
-                    /** Latest sensor values for a Minut device. */
-                    latest_sensor_values?:
-                      | {
-                          /** Latest temperature reading for a Minut device. */
-                          temperature?:
-                            | {
-                                /** Time of latest temperature reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest temperature reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest sound reading for a Minut device. */
-                          sound?:
-                            | {
-                                /** Time of latest sound reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest sound reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest humidity reading for a Minut device. */
-                          humidity?:
-                            | {
-                                /** Time of latest humidity reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest humidity reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest pressure reading for a Minut device. */
-                          pressure?:
-                            | {
-                                /** Time of latest pressure reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest pressure reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest accelerometer Z-axis reading for a Minut device. */
-                          accelerometer_z?:
-                            | {
-                                /** Time of latest accelerometer Z-axis reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest accelerometer Z-axis reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                        }
-                      | undefined
-                  }
+                | (
+                    | {
+                        /** Device ID for a Minut device. */
+                        device_id?: (string | undefined) | undefined
+                        /** Device name for a Minut device. */
+                        device_name?: (string | undefined) | undefined
+                        /** Latest sensor values for a Minut device. */
+                        latest_sensor_values?:
+                          | (
+                              | {
+                                  /** Latest temperature reading for a Minut device. */
+                                  temperature?:
+                                    | (
+                                        | {
+                                            /** Time of latest temperature reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest temperature reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest sound reading for a Minut device. */
+                                  sound?:
+                                    | (
+                                        | {
+                                            /** Time of latest sound reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest sound reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest humidity reading for a Minut device. */
+                                  humidity?:
+                                    | (
+                                        | {
+                                            /** Time of latest humidity reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest humidity reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest pressure reading for a Minut device. */
+                                  pressure?:
+                                    | (
+                                        | {
+                                            /** Time of latest pressure reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest pressure reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest accelerometer Z-axis reading for a Minut device. */
+                                  accelerometer_z?:
+                                    | (
+                                        | {
+                                            /** Time of latest accelerometer Z-axis reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest accelerometer Z-axis reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                }
+                              | undefined
+                            )
+                          | undefined
+                      }
+                    | undefined
+                  )
                 | undefined
               /** Metadata for a 4SUITES device. */
               four_suites_metadata?:
@@ -197436,6 +197991,10 @@ export type Routes = {
         is_online: boolean
         /** Indicates whether the lock is locked. */
         is_door_locked?: boolean | undefined
+        /** Indicates whether the device was last reported as detached from its mounting plate. Omitted when Seam has no accepted observation, including when the device does not support mounting plate detection, reports an unknown status, or is offline. This is the last accepted provider observation, not a guarantee of current hardware state; check `is_online` before acting on it. */
+        is_detached_from_mounting_plate?: boolean | undefined
+        /** Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when Seam has no accepted observation, including when the device does not support casing tamper detection. This is independent of `is_detached_from_mounting_plate`. */
+        is_casing_tampered_with?: boolean | undefined
         /** Properties of the device. */
         properties?:
           | ((({
@@ -197757,62 +198316,93 @@ export type Routes = {
                 | undefined
               /** Metadata for a Minut device. */
               minut_metadata?:
-                | {
-                    /** Device ID for a Minut device. */
-                    device_id?: (string | undefined) | undefined
-                    /** Device name for a Minut device. */
-                    device_name?: (string | undefined) | undefined
-                    /** Latest sensor values for a Minut device. */
-                    latest_sensor_values?:
-                      | {
-                          /** Latest temperature reading for a Minut device. */
-                          temperature?:
-                            | {
-                                /** Time of latest temperature reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest temperature reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest sound reading for a Minut device. */
-                          sound?:
-                            | {
-                                /** Time of latest sound reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest sound reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest humidity reading for a Minut device. */
-                          humidity?:
-                            | {
-                                /** Time of latest humidity reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest humidity reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest pressure reading for a Minut device. */
-                          pressure?:
-                            | {
-                                /** Time of latest pressure reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest pressure reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest accelerometer Z-axis reading for a Minut device. */
-                          accelerometer_z?:
-                            | {
-                                /** Time of latest accelerometer Z-axis reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest accelerometer Z-axis reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                        }
-                      | undefined
-                  }
+                | (
+                    | {
+                        /** Device ID for a Minut device. */
+                        device_id?: (string | undefined) | undefined
+                        /** Device name for a Minut device. */
+                        device_name?: (string | undefined) | undefined
+                        /** Latest sensor values for a Minut device. */
+                        latest_sensor_values?:
+                          | (
+                              | {
+                                  /** Latest temperature reading for a Minut device. */
+                                  temperature?:
+                                    | (
+                                        | {
+                                            /** Time of latest temperature reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest temperature reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest sound reading for a Minut device. */
+                                  sound?:
+                                    | (
+                                        | {
+                                            /** Time of latest sound reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest sound reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest humidity reading for a Minut device. */
+                                  humidity?:
+                                    | (
+                                        | {
+                                            /** Time of latest humidity reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest humidity reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest pressure reading for a Minut device. */
+                                  pressure?:
+                                    | (
+                                        | {
+                                            /** Time of latest pressure reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest pressure reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest accelerometer Z-axis reading for a Minut device. */
+                                  accelerometer_z?:
+                                    | (
+                                        | {
+                                            /** Time of latest accelerometer Z-axis reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest accelerometer Z-axis reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                }
+                              | undefined
+                            )
+                          | undefined
+                      }
+                    | undefined
+                  )
                 | undefined
               /** Metadata for a 4SUITES device. */
               four_suites_metadata?:
@@ -199741,6 +200331,10 @@ export type Routes = {
         is_online: boolean
         /** Indicates whether the lock is locked. */
         is_door_locked?: boolean | undefined
+        /** Indicates whether the device was last reported as detached from its mounting plate. Omitted when Seam has no accepted observation, including when the device does not support mounting plate detection, reports an unknown status, or is offline. This is the last accepted provider observation, not a guarantee of current hardware state; check `is_online` before acting on it. */
+        is_detached_from_mounting_plate?: boolean | undefined
+        /** Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when Seam has no accepted observation, including when the device does not support casing tamper detection. This is independent of `is_detached_from_mounting_plate`. */
+        is_casing_tampered_with?: boolean | undefined
         /** Properties of the device. */
         properties?:
           | ((({
@@ -200062,62 +200656,93 @@ export type Routes = {
                 | undefined
               /** Metadata for a Minut device. */
               minut_metadata?:
-                | {
-                    /** Device ID for a Minut device. */
-                    device_id?: (string | undefined) | undefined
-                    /** Device name for a Minut device. */
-                    device_name?: (string | undefined) | undefined
-                    /** Latest sensor values for a Minut device. */
-                    latest_sensor_values?:
-                      | {
-                          /** Latest temperature reading for a Minut device. */
-                          temperature?:
-                            | {
-                                /** Time of latest temperature reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest temperature reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest sound reading for a Minut device. */
-                          sound?:
-                            | {
-                                /** Time of latest sound reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest sound reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest humidity reading for a Minut device. */
-                          humidity?:
-                            | {
-                                /** Time of latest humidity reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest humidity reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest pressure reading for a Minut device. */
-                          pressure?:
-                            | {
-                                /** Time of latest pressure reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest pressure reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                          /** Latest accelerometer Z-axis reading for a Minut device. */
-                          accelerometer_z?:
-                            | {
-                                /** Time of latest accelerometer Z-axis reading for a Minut device. */
-                                time?: (string | undefined) | undefined
-                                /** Value of latest accelerometer Z-axis reading for a Minut device. */
-                                value?: (number | undefined) | undefined
-                              }
-                            | undefined
-                        }
-                      | undefined
-                  }
+                | (
+                    | {
+                        /** Device ID for a Minut device. */
+                        device_id?: (string | undefined) | undefined
+                        /** Device name for a Minut device. */
+                        device_name?: (string | undefined) | undefined
+                        /** Latest sensor values for a Minut device. */
+                        latest_sensor_values?:
+                          | (
+                              | {
+                                  /** Latest temperature reading for a Minut device. */
+                                  temperature?:
+                                    | (
+                                        | {
+                                            /** Time of latest temperature reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest temperature reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest sound reading for a Minut device. */
+                                  sound?:
+                                    | (
+                                        | {
+                                            /** Time of latest sound reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest sound reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest humidity reading for a Minut device. */
+                                  humidity?:
+                                    | (
+                                        | {
+                                            /** Time of latest humidity reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest humidity reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest pressure reading for a Minut device. */
+                                  pressure?:
+                                    | (
+                                        | {
+                                            /** Time of latest pressure reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest pressure reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                  /** Latest accelerometer Z-axis reading for a Minut device. */
+                                  accelerometer_z?:
+                                    | (
+                                        | {
+                                            /** Time of latest accelerometer Z-axis reading for a Minut device. */
+                                            time?:
+                                              (string | undefined) | undefined
+                                            /** Value of latest accelerometer Z-axis reading for a Minut device. */
+                                            value?:
+                                              (number | undefined) | undefined
+                                          }
+                                        | undefined
+                                      )
+                                    | undefined
+                                }
+                              | undefined
+                            )
+                          | undefined
+                      }
+                    | undefined
+                  )
                 | undefined
               /** Metadata for a 4SUITES device. */
               four_suites_metadata?:
@@ -204769,6 +205394,10 @@ export type Routes = {
               is_online: boolean
               /** Indicates whether the lock is locked. */
               is_door_locked?: boolean | undefined
+              /** Indicates whether the device was last reported as detached from its mounting plate. Omitted when Seam has no accepted observation, including when the device does not support mounting plate detection, reports an unknown status, or is offline. This is the last accepted provider observation, not a guarantee of current hardware state; check `is_online` before acting on it. */
+              is_detached_from_mounting_plate?: boolean | undefined
+              /** Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when Seam has no accepted observation, including when the device does not support casing tamper detection. This is independent of `is_detached_from_mounting_plate`. */
+              is_casing_tampered_with?: boolean | undefined
               /** Properties of the device. */
               properties?:
                 | ((({
@@ -205098,62 +205727,103 @@ export type Routes = {
                       | undefined
                     /** Metadata for a Minut device. */
                     minut_metadata?:
-                      | {
-                          /** Device ID for a Minut device. */
-                          device_id?: (string | undefined) | undefined
-                          /** Device name for a Minut device. */
-                          device_name?: (string | undefined) | undefined
-                          /** Latest sensor values for a Minut device. */
-                          latest_sensor_values?:
-                            | {
-                                /** Latest temperature reading for a Minut device. */
-                                temperature?:
-                                  | {
-                                      /** Time of latest temperature reading for a Minut device. */
-                                      time?: (string | undefined) | undefined
-                                      /** Value of latest temperature reading for a Minut device. */
-                                      value?: (number | undefined) | undefined
-                                    }
-                                  | undefined
-                                /** Latest sound reading for a Minut device. */
-                                sound?:
-                                  | {
-                                      /** Time of latest sound reading for a Minut device. */
-                                      time?: (string | undefined) | undefined
-                                      /** Value of latest sound reading for a Minut device. */
-                                      value?: (number | undefined) | undefined
-                                    }
-                                  | undefined
-                                /** Latest humidity reading for a Minut device. */
-                                humidity?:
-                                  | {
-                                      /** Time of latest humidity reading for a Minut device. */
-                                      time?: (string | undefined) | undefined
-                                      /** Value of latest humidity reading for a Minut device. */
-                                      value?: (number | undefined) | undefined
-                                    }
-                                  | undefined
-                                /** Latest pressure reading for a Minut device. */
-                                pressure?:
-                                  | {
-                                      /** Time of latest pressure reading for a Minut device. */
-                                      time?: (string | undefined) | undefined
-                                      /** Value of latest pressure reading for a Minut device. */
-                                      value?: (number | undefined) | undefined
-                                    }
-                                  | undefined
-                                /** Latest accelerometer Z-axis reading for a Minut device. */
-                                accelerometer_z?:
-                                  | {
-                                      /** Time of latest accelerometer Z-axis reading for a Minut device. */
-                                      time?: (string | undefined) | undefined
-                                      /** Value of latest accelerometer Z-axis reading for a Minut device. */
-                                      value?: (number | undefined) | undefined
-                                    }
-                                  | undefined
-                              }
-                            | undefined
-                        }
+                      | (
+                          | {
+                              /** Device ID for a Minut device. */
+                              device_id?: (string | undefined) | undefined
+                              /** Device name for a Minut device. */
+                              device_name?: (string | undefined) | undefined
+                              /** Latest sensor values for a Minut device. */
+                              latest_sensor_values?:
+                                | (
+                                    | {
+                                        /** Latest temperature reading for a Minut device. */
+                                        temperature?:
+                                          | (
+                                              | {
+                                                  /** Time of latest temperature reading for a Minut device. */
+                                                  time?:
+                                                    | (string | undefined)
+                                                    | undefined
+                                                  /** Value of latest temperature reading for a Minut device. */
+                                                  value?:
+                                                    | (number | undefined)
+                                                    | undefined
+                                                }
+                                              | undefined
+                                            )
+                                          | undefined
+                                        /** Latest sound reading for a Minut device. */
+                                        sound?:
+                                          | (
+                                              | {
+                                                  /** Time of latest sound reading for a Minut device. */
+                                                  time?:
+                                                    | (string | undefined)
+                                                    | undefined
+                                                  /** Value of latest sound reading for a Minut device. */
+                                                  value?:
+                                                    | (number | undefined)
+                                                    | undefined
+                                                }
+                                              | undefined
+                                            )
+                                          | undefined
+                                        /** Latest humidity reading for a Minut device. */
+                                        humidity?:
+                                          | (
+                                              | {
+                                                  /** Time of latest humidity reading for a Minut device. */
+                                                  time?:
+                                                    | (string | undefined)
+                                                    | undefined
+                                                  /** Value of latest humidity reading for a Minut device. */
+                                                  value?:
+                                                    | (number | undefined)
+                                                    | undefined
+                                                }
+                                              | undefined
+                                            )
+                                          | undefined
+                                        /** Latest pressure reading for a Minut device. */
+                                        pressure?:
+                                          | (
+                                              | {
+                                                  /** Time of latest pressure reading for a Minut device. */
+                                                  time?:
+                                                    | (string | undefined)
+                                                    | undefined
+                                                  /** Value of latest pressure reading for a Minut device. */
+                                                  value?:
+                                                    | (number | undefined)
+                                                    | undefined
+                                                }
+                                              | undefined
+                                            )
+                                          | undefined
+                                        /** Latest accelerometer Z-axis reading for a Minut device. */
+                                        accelerometer_z?:
+                                          | (
+                                              | {
+                                                  /** Time of latest accelerometer Z-axis reading for a Minut device. */
+                                                  time?:
+                                                    | (string | undefined)
+                                                    | undefined
+                                                  /** Value of latest accelerometer Z-axis reading for a Minut device. */
+                                                  value?:
+                                                    | (number | undefined)
+                                                    | undefined
+                                                }
+                                              | undefined
+                                            )
+                                          | undefined
+                                      }
+                                    | undefined
+                                  )
+                                | undefined
+                            }
+                          | undefined
+                        )
                       | undefined
                     /** Metadata for a 4SUITES device. */
                     four_suites_metadata?:
