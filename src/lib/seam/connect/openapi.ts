@@ -1176,6 +1176,11 @@ const openapi: OpenAPISpec = {
                       format: 'date-time',
                       type: 'string',
                     },
+                    is_code_usable: {
+                      description:
+                        'Indicates whether the access code may still unlock the device while Seam removes it, based on the last state Seam observed. `false` means the device has already stopped accepting the code, for example, because a natively scheduled code passed its `ends_at`, and only cleanup remains.',
+                      type: 'boolean',
+                    },
                     message: {
                       description: 'Detailed description of the mutation.',
                       type: 'string',
@@ -1187,7 +1192,12 @@ const openapi: OpenAPISpec = {
                       type: 'string',
                     },
                   },
-                  required: ['created_at', 'message', 'mutation_code'],
+                  required: [
+                    'created_at',
+                    'message',
+                    'mutation_code',
+                    'is_code_usable',
+                  ],
                   type: 'object',
                 },
                 {
