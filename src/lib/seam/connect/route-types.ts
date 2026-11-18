@@ -69909,6 +69909,7 @@ export type Routes = {
                   | 'account_disconnected'
                   | 'hub_disconnected'
                   | 'device_disconnected'
+                  | 'bridge_disconnected'
                 /** Errors associated with the connected account. */
                 connected_account_errors: {
                   /** Date and time at which Seam created the error. */
@@ -69981,6 +69982,7 @@ export type Routes = {
                   | 'account_disconnected'
                   | 'hub_disconnected'
                   | 'device_disconnected'
+                  | 'bridge_disconnected'
                 /** Errors associated with the connected account. */
                 connected_account_errors: {
                   /** Date and time at which Seam created the error. */
@@ -74309,6 +74311,7 @@ export type Routes = {
               | 'account_disconnected'
               | 'hub_disconnected'
               | 'device_disconnected'
+              | 'bridge_disconnected'
             /** Errors associated with the connected account. */
             connected_account_errors: {
               /** Date and time at which Seam created the error. */
@@ -74381,6 +74384,7 @@ export type Routes = {
               | 'account_disconnected'
               | 'hub_disconnected'
               | 'device_disconnected'
+              | 'bridge_disconnected'
             /** Errors associated with the connected account. */
             connected_account_errors: {
               /** Date and time at which Seam created the error. */
@@ -129647,6 +129651,7 @@ export type Routes = {
               | 'account_disconnected'
               | 'hub_disconnected'
               | 'device_disconnected'
+              | 'bridge_disconnected'
             /** Errors associated with the connected account. */
             connected_account_errors: {
               /** Date and time at which Seam created the error. */
@@ -129719,6 +129724,7 @@ export type Routes = {
               | 'account_disconnected'
               | 'hub_disconnected'
               | 'device_disconnected'
+              | 'bridge_disconnected'
             /** Errors associated with the connected account. */
             connected_account_errors: {
               /** Date and time at which Seam created the error. */
@@ -136590,6 +136596,7 @@ export type Routes = {
               | 'account_disconnected'
               | 'hub_disconnected'
               | 'device_disconnected'
+              | 'bridge_disconnected'
             /** Errors associated with the connected account. */
             connected_account_errors: {
               /** Date and time at which Seam created the error. */
@@ -136662,6 +136669,7 @@ export type Routes = {
               | 'account_disconnected'
               | 'hub_disconnected'
               | 'device_disconnected'
+              | 'bridge_disconnected'
             /** Errors associated with the connected account. */
             connected_account_errors: {
               /** Date and time at which Seam created the error. */
@@ -214780,6 +214788,7 @@ export type Routes = {
                     | 'account_disconnected'
                     | 'hub_disconnected'
                     | 'device_disconnected'
+                    | 'bridge_disconnected'
                   /** Errors associated with the connected account. */
                   connected_account_errors: {
                     /** Date and time at which Seam created the error. */
@@ -214852,6 +214861,7 @@ export type Routes = {
                     | 'account_disconnected'
                     | 'hub_disconnected'
                     | 'device_disconnected'
+                    | 'bridge_disconnected'
                   /** Errors associated with the connected account. */
                   connected_account_errors: {
                     /** Date and time at which Seam created the error. */
