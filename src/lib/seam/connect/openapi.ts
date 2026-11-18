@@ -32418,6 +32418,307 @@ const openapi: OpenAPISpec = {
             'x-route-path': '/thermostats',
           },
           {
+            description:
+              'The water temperature of a pool or spa changed by at least 1 °C. Seam reports water temperature only while the water is circulating.',
+            properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
+              },
+              device_id: {
+                description: 'ID of the affected device.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['pool.temperature_changed'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              temperature_celsius: {
+                description:
+                  'Water temperature, in °C, reported by the affected pool or spa.',
+                format: 'float',
+                type: 'number',
+              },
+              temperature_fahrenheit: {
+                description:
+                  'Water temperature, in °F, reported by the affected pool or spa.',
+                format: 'float',
+                type: 'number',
+              },
+              workspace_id: {
+                description: 'ID of the workspace associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+              'temperature_celsius',
+              'temperature_fahrenheit',
+            ],
+            type: 'object',
+            'x-route-path': '/pools',
+            'x-undocumented': 'Unreleased.',
+          },
+          {
+            description:
+              'A heated pool or spa reached its heating set point: heating is on and the water temperature is within 1 °C of the set point or above it. Fires again only after the water falls more than 1 °C below the set point or heating is turned off.',
+            properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
+              desired_temperature_celsius: {
+                description:
+                  'Desired water temperature, in °C, defined by the heating set point of the affected pool or spa.',
+                format: 'float',
+                type: 'number',
+              },
+              desired_temperature_fahrenheit: {
+                description:
+                  'Desired water temperature, in °F, defined by the heating set point of the affected pool or spa.',
+                format: 'float',
+                type: 'number',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
+              },
+              device_id: {
+                description: 'ID of the affected device.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['pool.temperature_reached_set_point'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              temperature_celsius: {
+                description:
+                  'Water temperature, in °C, reported by the affected pool or spa.',
+                format: 'float',
+                type: 'number',
+              },
+              temperature_fahrenheit: {
+                description:
+                  'Water temperature, in °F, reported by the affected pool or spa.',
+                format: 'float',
+                type: 'number',
+              },
+              workspace_id: {
+                description: 'ID of the workspace associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+              'temperature_celsius',
+              'temperature_fahrenheit',
+              'desired_temperature_celsius',
+              'desired_temperature_fahrenheit',
+            ],
+            type: 'object',
+            'x-route-path': '/pools',
+            'x-undocumented': 'Unreleased.',
+          },
+          {
+            description:
+              'The heating mode or heating set point of a pool or spa changed.',
+            properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              controller_mode: {
+                description:
+                  'New heating mode of the affected pool or spa. Present only if the mode changed.',
+                enum: ['heat', 'off'],
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
+              },
+              device_id: {
+                description: 'ID of the affected device.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: { enum: ['pool.manually_adjusted'], type: 'string' },
+              heating_set_point_celsius: {
+                description:
+                  'New heating set point, in °C, of the affected pool or spa. Present only if the set point changed.',
+                format: 'float',
+                type: 'number',
+              },
+              heating_set_point_fahrenheit: {
+                description:
+                  'New heating set point, in °F, of the affected pool or spa. Present only if the set point changed.',
+                format: 'float',
+                type: 'number',
+              },
+              method: {
+                description:
+                  "Method used to adjust the affected pool or spa. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used. `external` indicates a change made outside Seam, such as in the manufacturer's app or on the controller panel.",
+                enum: ['seam', 'external'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description: 'ID of the workspace associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+              'method',
+            ],
+            type: 'object',
+            'x-route-path': '/pools',
+            'x-undocumented': 'Unreleased.',
+          },
+          {
             description: 'The name of a device was changed.',
             properties: {
               connected_account_custom_metadata: {
@@ -60349,6 +60650,9 @@ const openapi: OpenAPISpec = {
                 'thermostat.temperature_threshold_no_longer_exceeded',
                 'thermostat.temperature_reached_set_point',
                 'thermostat.temperature_changed',
+                'pool.temperature_changed',
+                'pool.temperature_reached_set_point',
+                'pool.manually_adjusted',
                 'device.name_changed',
                 'camera.activated',
                 'device.doorbell_rang',
@@ -60477,6 +60781,9 @@ const openapi: OpenAPISpec = {
                   'thermostat.temperature_threshold_no_longer_exceeded',
                   'thermostat.temperature_reached_set_point',
                   'thermostat.temperature_changed',
+                  'pool.temperature_changed',
+                  'pool.temperature_reached_set_point',
+                  'pool.manually_adjusted',
                   'device.name_changed',
                   'camera.activated',
                   'device.doorbell_rang',
@@ -72660,6 +72967,9 @@ const openapi: OpenAPISpec = {
                 'thermostat.temperature_threshold_no_longer_exceeded',
                 'thermostat.temperature_reached_set_point',
                 'thermostat.temperature_changed',
+                'pool.temperature_changed',
+                'pool.temperature_reached_set_point',
+                'pool.manually_adjusted',
                 'device.name_changed',
                 'camera.activated',
                 'device.doorbell_rang',
@@ -72789,6 +73099,9 @@ const openapi: OpenAPISpec = {
                   'thermostat.temperature_threshold_no_longer_exceeded',
                   'thermostat.temperature_reached_set_point',
                   'thermostat.temperature_changed',
+                  'pool.temperature_changed',
+                  'pool.temperature_reached_set_point',
+                  'pool.manually_adjusted',
                   'device.name_changed',
                   'camera.activated',
                   'device.doorbell_rang',
@@ -76497,6 +76810,9 @@ const openapi: OpenAPISpec = {
                       'thermostat.temperature_threshold_no_longer_exceeded',
                       'thermostat.temperature_reached_set_point',
                       'thermostat.temperature_changed',
+                      'pool.temperature_changed',
+                      'pool.temperature_reached_set_point',
+                      'pool.manually_adjusted',
                       'device.name_changed',
                       'camera.activated',
                       'device.doorbell_rang',
@@ -76711,6 +77027,9 @@ const openapi: OpenAPISpec = {
                       'thermostat.temperature_threshold_no_longer_exceeded',
                       'thermostat.temperature_reached_set_point',
                       'thermostat.temperature_changed',
+                      'pool.temperature_changed',
+                      'pool.temperature_reached_set_point',
+                      'pool.manually_adjusted',
                       'device.name_changed',
                       'camera.activated',
                       'device.doorbell_rang',

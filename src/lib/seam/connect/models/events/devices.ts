@@ -1,6 +1,7 @@
 import * as z from 'zod/v3'
 
 import { custom_metadata } from '../custom-metadata.js'
+import { temperature_controller_mode } from '../devices/temperature-controller.js'
 import { climate_setting } from '../thermostats/climate-preset.js'
 import {
   common_event,
@@ -860,6 +861,102 @@ export const temperature_changed_event = device_event.extend({
 
 export type TemperatureChangedEvent = z.infer<typeof temperature_changed_event>
 
+export const pool_temperature_changed_event = device_event.extend({
+  event_type: z.literal('pool.temperature_changed'),
+  temperature_celsius: z
+    .number()
+    .describe(
+      'Water temperature, in °C, reported by the affected pool or spa.',
+    ),
+  temperature_fahrenheit: z
+    .number()
+    .describe(
+      'Water temperature, in °F, reported by the affected pool or spa.',
+    ),
+}).describe(`
+  ---
+  route_path: /pools
+  undocumented: Unreleased.
+  ---
+  The water temperature of a pool or spa changed by at least 1 °C. Seam reports water temperature only while the water is circulating.
+`)
+
+export type PoolTemperatureChangedEvent = z.infer<
+  typeof pool_temperature_changed_event
+>
+
+export const pool_temperature_reached_set_point_event = device_event.extend({
+  event_type: z.literal('pool.temperature_reached_set_point'),
+  temperature_celsius: z
+    .number()
+    .describe(
+      'Water temperature, in °C, reported by the affected pool or spa.',
+    ),
+  temperature_fahrenheit: z
+    .number()
+    .describe(
+      'Water temperature, in °F, reported by the affected pool or spa.',
+    ),
+  desired_temperature_celsius: z
+    .number()
+    .describe(
+      'Desired water temperature, in °C, defined by the heating set point of the affected pool or spa.',
+    ),
+  desired_temperature_fahrenheit: z
+    .number()
+    .describe(
+      'Desired water temperature, in °F, defined by the heating set point of the affected pool or spa.',
+    ),
+}).describe(`
+  ---
+  route_path: /pools
+  undocumented: Unreleased.
+  ---
+  A heated pool or spa reached its heating set point: heating is on and the water temperature is within 1 °C of the set point or above it. Fires again only after the water falls more than 1 °C below the set point or heating is turned off.
+`)
+
+export type PoolTemperatureReachedSetPointEvent = z.infer<
+  typeof pool_temperature_reached_set_point_event
+>
+
+export const pool_manually_adjusted_method = z
+  .enum(['seam', 'external'])
+  .describe(
+    "Method used to adjust the affected pool or spa. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used. `external` indicates a change made outside Seam, such as in the manufacturer's app or on the controller panel.",
+  )
+
+export const pool_manually_adjusted_event = device_event.extend({
+  event_type: z.literal('pool.manually_adjusted'),
+  method: pool_manually_adjusted_method,
+  controller_mode: temperature_controller_mode
+    .optional()
+    .describe(
+      'New heating mode of the affected pool or spa. Present only if the mode changed.',
+    ),
+  heating_set_point_celsius: z
+    .number()
+    .optional()
+    .describe(
+      'New heating set point, in °C, of the affected pool or spa. Present only if the set point changed.',
+    ),
+  heating_set_point_fahrenheit: z
+    .number()
+    .optional()
+    .describe(
+      'New heating set point, in °F, of the affected pool or spa. Present only if the set point changed.',
+    ),
+}).describe(`
+  ---
+  route_path: /pools
+  undocumented: Unreleased.
+  ---
+  The heating mode or heating set point of a pool or spa changed.
+`)
+
+export type PoolManuallyAdjustedEvent = z.infer<
+  typeof pool_manually_adjusted_event
+>
+
 export const device_name_changed_event = device_event.extend({
   event_type: z.literal('device.name_changed'),
   device_name: z.string().describe('The new name of the affected device.'),
@@ -974,6 +1071,9 @@ export const device_events = [
   temperature_threshold_no_longer_exceeded_event,
   temperature_reached_set_point_event,
   temperature_changed_event,
+  pool_temperature_changed_event,
+  pool_temperature_reached_set_point_event,
+  pool_manually_adjusted_event,
   device_name_changed_event,
   camera_activated_event,
   device_doorbell_rang_event,
