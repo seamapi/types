@@ -71216,6 +71216,119 @@ export type Routes = {
                       [x: string]: string | boolean
                     }
                   | undefined
+                event_type: 'pool.temperature_changed'
+                /** Water temperature, in °C, reported by the affected pool or spa. */
+                temperature_celsius: number
+                /** Water temperature, in °F, reported by the affected pool or spa. */
+                temperature_fahrenheit: number
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the workspace associated with the event. */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                event_description?: string | undefined
+                /** ID of the affected device. */
+                device_id: string
+                /** ID of the connected account associated with the event. */
+                connected_account_id: string
+                /** The customer key associated with the device, if any. */
+                customer_key?: string | undefined
+                /** Custom metadata of the device, present when device_id is provided. */
+                device_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                connected_account_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                event_type: 'pool.temperature_reached_set_point'
+                /** Water temperature, in °C, reported by the affected pool or spa. */
+                temperature_celsius: number
+                /** Water temperature, in °F, reported by the affected pool or spa. */
+                temperature_fahrenheit: number
+                /** Desired water temperature, in °C, defined by the heating set point of the affected pool or spa. */
+                desired_temperature_celsius: number
+                /** Desired water temperature, in °F, defined by the heating set point of the affected pool or spa. */
+                desired_temperature_fahrenheit: number
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the workspace associated with the event. */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                event_description?: string | undefined
+                /** ID of the affected device. */
+                device_id: string
+                /** ID of the connected account associated with the event. */
+                connected_account_id: string
+                /** The customer key associated with the device, if any. */
+                customer_key?: string | undefined
+                /** Custom metadata of the device, present when device_id is provided. */
+                device_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                connected_account_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                event_type: 'pool.manually_adjusted'
+                /** Method used to adjust the affected pool or spa. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used. `external` indicates a change made outside Seam, such as in the manufacturer's app or on the controller panel. */
+                method: 'seam' | 'external'
+                /** New heating mode of the affected pool or spa. Present only if the mode changed. */
+                controller_mode?: ('heat' | 'off') | undefined
+                /** New heating set point, in °C, of the affected pool or spa. Present only if the set point changed. */
+                heating_set_point_celsius?: number | undefined
+                /** New heating set point, in °F, of the affected pool or spa. Present only if the set point changed. */
+                heating_set_point_fahrenheit?: number | undefined
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the workspace associated with the event. */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                event_description?: string | undefined
+                /** ID of the affected device. */
+                device_id: string
+                /** ID of the connected account associated with the event. */
+                connected_account_id: string
+                /** The customer key associated with the device, if any. */
+                customer_key?: string | undefined
+                /** Custom metadata of the device, present when device_id is provided. */
+                device_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                connected_account_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
                 event_type: 'device.name_changed'
                 /** The new name of the affected device. */
                 device_name: string
@@ -71545,6 +71658,9 @@ export type Routes = {
             | 'thermostat.temperature_threshold_no_longer_exceeded'
             | 'thermostat.temperature_reached_set_point'
             | 'thermostat.temperature_changed'
+            | 'pool.temperature_changed'
+            | 'pool.temperature_reached_set_point'
+            | 'pool.manually_adjusted'
             | 'device.name_changed'
             | 'camera.activated'
             | 'device.doorbell_rang'
@@ -71667,6 +71783,9 @@ export type Routes = {
             | 'thermostat.temperature_threshold_no_longer_exceeded'
             | 'thermostat.temperature_reached_set_point'
             | 'thermostat.temperature_changed'
+            | 'pool.temperature_changed'
+            | 'pool.temperature_reached_set_point'
+            | 'pool.manually_adjusted'
             | 'device.name_changed'
             | 'camera.activated'
             | 'device.doorbell_rang'
@@ -75585,6 +75704,119 @@ export type Routes = {
             temperature_celsius: number
             /** Temperature, in °F, reported by the affected thermostat. */
             temperature_fahrenheit: number
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'pool.temperature_changed'
+            /** Water temperature, in °C, reported by the affected pool or spa. */
+            temperature_celsius: number
+            /** Water temperature, in °F, reported by the affected pool or spa. */
+            temperature_fahrenheit: number
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'pool.temperature_reached_set_point'
+            /** Water temperature, in °C, reported by the affected pool or spa. */
+            temperature_celsius: number
+            /** Water temperature, in °F, reported by the affected pool or spa. */
+            temperature_fahrenheit: number
+            /** Desired water temperature, in °C, defined by the heating set point of the affected pool or spa. */
+            desired_temperature_celsius: number
+            /** Desired water temperature, in °F, defined by the heating set point of the affected pool or spa. */
+            desired_temperature_fahrenheit: number
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'pool.manually_adjusted'
+            /** Method used to adjust the affected pool or spa. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used. `external` indicates a change made outside Seam, such as in the manufacturer's app or on the controller panel. */
+            method: 'seam' | 'external'
+            /** New heating mode of the affected pool or spa. Present only if the mode changed. */
+            controller_mode?: ('heat' | 'off') | undefined
+            /** New heating set point, in °C, of the affected pool or spa. Present only if the set point changed. */
+            heating_set_point_celsius?: number | undefined
+            /** New heating set point, in °F, of the affected pool or spa. Present only if the set point changed. */
+            heating_set_point_fahrenheit?: number | undefined
           }
         | {
             /** ID of the event. */
@@ -126915,6 +127147,9 @@ export type Routes = {
             | 'thermostat.temperature_threshold_no_longer_exceeded'
             | 'thermostat.temperature_reached_set_point'
             | 'thermostat.temperature_changed'
+            | 'pool.temperature_changed'
+            | 'pool.temperature_reached_set_point'
+            | 'pool.manually_adjusted'
             | 'device.name_changed'
             | 'camera.activated'
             | 'device.doorbell_rang'
@@ -127037,6 +127272,9 @@ export type Routes = {
             | 'thermostat.temperature_threshold_no_longer_exceeded'
             | 'thermostat.temperature_reached_set_point'
             | 'thermostat.temperature_changed'
+            | 'pool.temperature_changed'
+            | 'pool.temperature_reached_set_point'
+            | 'pool.manually_adjusted'
             | 'device.name_changed'
             | 'camera.activated'
             | 'device.doorbell_rang'
@@ -130955,6 +131193,119 @@ export type Routes = {
                   [x: string]: string | boolean
                 }
               | undefined
+            event_type: 'pool.temperature_changed'
+            /** Water temperature, in °C, reported by the affected pool or spa. */
+            temperature_celsius: number
+            /** Water temperature, in °F, reported by the affected pool or spa. */
+            temperature_fahrenheit: number
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'pool.temperature_reached_set_point'
+            /** Water temperature, in °C, reported by the affected pool or spa. */
+            temperature_celsius: number
+            /** Water temperature, in °F, reported by the affected pool or spa. */
+            temperature_fahrenheit: number
+            /** Desired water temperature, in °C, defined by the heating set point of the affected pool or spa. */
+            desired_temperature_celsius: number
+            /** Desired water temperature, in °F, defined by the heating set point of the affected pool or spa. */
+            desired_temperature_fahrenheit: number
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'pool.manually_adjusted'
+            /** Method used to adjust the affected pool or spa. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used. `external` indicates a change made outside Seam, such as in the manufacturer's app or on the controller panel. */
+            method: 'seam' | 'external'
+            /** New heating mode of the affected pool or spa. Present only if the mode changed. */
+            controller_mode?: ('heat' | 'off') | undefined
+            /** New heating set point, in °C, of the affected pool or spa. Present only if the set point changed. */
+            heating_set_point_celsius?: number | undefined
+            /** New heating set point, in °F, of the affected pool or spa. Present only if the set point changed. */
+            heating_set_point_fahrenheit?: number | undefined
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
             event_type: 'device.name_changed'
             /** The new name of the affected device. */
             device_name: string
@@ -133833,6 +134184,9 @@ export type Routes = {
         | 'thermostat.temperature_threshold_no_longer_exceeded'
         | 'thermostat.temperature_reached_set_point'
         | 'thermostat.temperature_changed'
+        | 'pool.temperature_changed'
+        | 'pool.temperature_reached_set_point'
+        | 'pool.manually_adjusted'
         | 'device.name_changed'
         | 'camera.activated'
         | 'device.doorbell_rang'
@@ -133978,6 +134332,9 @@ export type Routes = {
         | 'thermostat.temperature_threshold_no_longer_exceeded'
         | 'thermostat.temperature_reached_set_point'
         | 'thermostat.temperature_changed'
+        | 'pool.temperature_changed'
+        | 'pool.temperature_reached_set_point'
+        | 'pool.manually_adjusted'
         | 'device.name_changed'
         | 'camera.activated'
         | 'device.doorbell_rang'
@@ -137870,6 +138227,119 @@ export type Routes = {
             temperature_celsius: number
             /** Temperature, in °F, reported by the affected thermostat. */
             temperature_fahrenheit: number
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'pool.temperature_changed'
+            /** Water temperature, in °C, reported by the affected pool or spa. */
+            temperature_celsius: number
+            /** Water temperature, in °F, reported by the affected pool or spa. */
+            temperature_fahrenheit: number
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'pool.temperature_reached_set_point'
+            /** Water temperature, in °C, reported by the affected pool or spa. */
+            temperature_celsius: number
+            /** Water temperature, in °F, reported by the affected pool or spa. */
+            temperature_fahrenheit: number
+            /** Desired water temperature, in °C, defined by the heating set point of the affected pool or spa. */
+            desired_temperature_celsius: number
+            /** Desired water temperature, in °F, defined by the heating set point of the affected pool or spa. */
+            desired_temperature_fahrenheit: number
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description?: string | undefined
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'pool.manually_adjusted'
+            /** Method used to adjust the affected pool or spa. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used. `external` indicates a change made outside Seam, such as in the manufacturer's app or on the controller panel. */
+            method: 'seam' | 'external'
+            /** New heating mode of the affected pool or spa. Present only if the mode changed. */
+            controller_mode?: ('heat' | 'off') | undefined
+            /** New heating set point, in °C, of the affected pool or spa. Present only if the set point changed. */
+            heating_set_point_celsius?: number | undefined
+            /** New heating set point, in °F, of the affected pool or spa. Present only if the set point changed. */
+            heating_set_point_fahrenheit?: number | undefined
           }
         | {
             /** ID of the event. */
@@ -216067,6 +216537,119 @@ export type Routes = {
                   temperature_celsius: number
                   /** Temperature, in °F, reported by the affected thermostat. */
                   temperature_fahrenheit: number
+                }
+              | {
+                  /** ID of the event. */
+                  event_id: string
+                  /** ID of the workspace associated with the event. */
+                  workspace_id: string
+                  /** Date and time at which the event was created. */
+                  created_at: string
+                  /** Date and time at which the event occurred. */
+                  occurred_at: string
+                  /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                  event_description?: string | undefined
+                  /** ID of the affected device. */
+                  device_id: string
+                  /** ID of the connected account associated with the event. */
+                  connected_account_id: string
+                  /** The customer key associated with the device, if any. */
+                  customer_key?: string | undefined
+                  /** Custom metadata of the device, present when device_id is provided. */
+                  device_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                  connected_account_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  event_type: 'pool.temperature_changed'
+                  /** Water temperature, in °C, reported by the affected pool or spa. */
+                  temperature_celsius: number
+                  /** Water temperature, in °F, reported by the affected pool or spa. */
+                  temperature_fahrenheit: number
+                }
+              | {
+                  /** ID of the event. */
+                  event_id: string
+                  /** ID of the workspace associated with the event. */
+                  workspace_id: string
+                  /** Date and time at which the event was created. */
+                  created_at: string
+                  /** Date and time at which the event occurred. */
+                  occurred_at: string
+                  /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                  event_description?: string | undefined
+                  /** ID of the affected device. */
+                  device_id: string
+                  /** ID of the connected account associated with the event. */
+                  connected_account_id: string
+                  /** The customer key associated with the device, if any. */
+                  customer_key?: string | undefined
+                  /** Custom metadata of the device, present when device_id is provided. */
+                  device_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                  connected_account_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  event_type: 'pool.temperature_reached_set_point'
+                  /** Water temperature, in °C, reported by the affected pool or spa. */
+                  temperature_celsius: number
+                  /** Water temperature, in °F, reported by the affected pool or spa. */
+                  temperature_fahrenheit: number
+                  /** Desired water temperature, in °C, defined by the heating set point of the affected pool or spa. */
+                  desired_temperature_celsius: number
+                  /** Desired water temperature, in °F, defined by the heating set point of the affected pool or spa. */
+                  desired_temperature_fahrenheit: number
+                }
+              | {
+                  /** ID of the event. */
+                  event_id: string
+                  /** ID of the workspace associated with the event. */
+                  workspace_id: string
+                  /** Date and time at which the event was created. */
+                  created_at: string
+                  /** Date and time at which the event occurred. */
+                  occurred_at: string
+                  /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                  event_description?: string | undefined
+                  /** ID of the affected device. */
+                  device_id: string
+                  /** ID of the connected account associated with the event. */
+                  connected_account_id: string
+                  /** The customer key associated with the device, if any. */
+                  customer_key?: string | undefined
+                  /** Custom metadata of the device, present when device_id is provided. */
+                  device_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                  connected_account_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  event_type: 'pool.manually_adjusted'
+                  /** Method used to adjust the affected pool or spa. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used. `external` indicates a change made outside Seam, such as in the manufacturer's app or on the controller panel. */
+                  method: 'seam' | 'external'
+                  /** New heating mode of the affected pool or spa. Present only if the mode changed. */
+                  controller_mode?: ('heat' | 'off') | undefined
+                  /** New heating set point, in °C, of the affected pool or spa. Present only if the set point changed. */
+                  heating_set_point_celsius?: number | undefined
+                  /** New heating set point, in °F, of the affected pool or spa. Present only if the set point changed. */
+                  heating_set_point_fahrenheit?: number | undefined
                 }
               | {
                   /** ID of the event. */
