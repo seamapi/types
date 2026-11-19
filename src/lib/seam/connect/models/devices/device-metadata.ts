@@ -1079,6 +1079,38 @@ export const device_metadata = z
       .partial()
       .describe(`Metadata for a Sensibo device.`),
 
+    cielo_metadata: z
+      .object({
+        device_name: z
+          .string()
+          .optional()
+          .describe(`Name of the device in the Cielo Home app.`),
+        mac_address: z
+          .string()
+          .optional()
+          .describe(`MAC address of the Cielo device.`),
+        appliance_id: z
+          .string()
+          .optional()
+          .describe(
+            `ID of the air conditioner or heat pump model that the Cielo device is set up to control.`,
+          ),
+        cielo_device_type: z
+          .string()
+          .optional()
+          .describe(
+            `Device type that Cielo reports, such as \`Thermostat\` for a Cielo thermostat.`,
+          ),
+        temperature_unit: z
+          .string()
+          .optional()
+          .describe(
+            `Temperature unit that the Cielo device displays: \`C\` or \`F\`.`,
+          ),
+      })
+      .partial()
+      .describe(`Metadata for a Cielo device.`),
+
     keynest_metadata: z
       .object({
         key_id: z.string().optional().describe(`Key ID for a KeyNest device.`),
