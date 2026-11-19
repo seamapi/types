@@ -63013,6 +63013,8 @@ const openapi: OpenAPISpec = {
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { client_session: [] },
+          { client_session_with_customer: [] },
+          { client_session_with_customer_ro: [] },
           { support_read_only_token: [] },
         ],
         summary: '/pools/list',
