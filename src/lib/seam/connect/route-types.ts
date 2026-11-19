@@ -122684,6 +122684,8 @@ export type Routes = {
           | undefined
         /** Customer the console was last scoped to. `null` means all customers. */
         selected_customer_key?: (string | null) | undefined
+        /** How the console assistant carries out actions. `null` asks each time. */
+        assistant_mode?: (('show_me' | 'do_it') | null) | undefined
       }
     }
     maxDuration: undefined
@@ -122714,6 +122716,8 @@ export type Routes = {
         | undefined
       /** Customer the console was last scoped to. `null` means all customers. */
       selected_customer_key?: (string | null) | undefined
+      /** How the console assistant carries out actions. `null` asks each time. */
+      assistant_mode?: (('show_me' | 'do_it') | null) | undefined
     }
     commonParams: {}
     formData: {}
@@ -122740,6 +122744,8 @@ export type Routes = {
           | undefined
         /** Customer the console was last scoped to. `null` means all customers. */
         selected_customer_key?: (string | null) | undefined
+        /** How the console assistant carries out actions. `null` asks each time. */
+        assistant_mode?: (('show_me' | 'do_it') | null) | undefined
       }
     }
     maxDuration: undefined

@@ -68008,7 +68008,7 @@ const openapi: OpenAPISpec = {
     '/seam/console/v1/workspace/console_settings/get': {
       get: {
         description:
-          "Gets the signed-in user's console settings for the workspace: the sidebar shortcuts and pinned resources, in order, and the customer the console was last scoped to.",
+          "Gets the signed-in user's console settings for the workspace: the sidebar shortcuts and pinned resources, in order, the customer the console was last scoped to, and how the console assistant carries out actions.",
         operationId: 'seamConsoleV1WorkspaceConsoleSettingsGetGet',
         responses: {
           '200': {
@@ -68018,6 +68018,13 @@ const openapi: OpenAPISpec = {
                   properties: {
                     console_settings: {
                       properties: {
+                        assistant_mode: {
+                          description:
+                            'How the console assistant carries out actions. `null` asks each time.',
+                          enum: ['show_me', 'do_it'],
+                          nullable: true,
+                          type: 'string',
+                        },
                         pinned_resources: {
                           description:
                             'Resources pinned in the console sidebar, in order.',
@@ -68107,6 +68114,13 @@ const openapi: OpenAPISpec = {
             'application/json': {
               schema: {
                 properties: {
+                  assistant_mode: {
+                    description:
+                      'How the console assistant carries out actions. `null` asks each time.',
+                    enum: ['show_me', 'do_it'],
+                    nullable: true,
+                    type: 'string',
+                  },
                   pinned_resources: {
                     description:
                       'Resources pinned in the console sidebar, in order.',
@@ -68169,6 +68183,13 @@ const openapi: OpenAPISpec = {
                   properties: {
                     console_settings: {
                       properties: {
+                        assistant_mode: {
+                          description:
+                            'How the console assistant carries out actions. `null` asks each time.',
+                          enum: ['show_me', 'do_it'],
+                          nullable: true,
+                          type: 'string',
+                        },
                         pinned_resources: {
                           description:
                             'Resources pinned in the console sidebar, in order.',
