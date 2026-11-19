@@ -54,6 +54,7 @@ export const DEVICE_PROVIDERS = {
   SALTO_SPACE: 'salto_space',
   SENSI: 'sensi',
   SENSIBO: 'sensibo',
+  CIELO: 'cielo',
   KEYNEST: 'keynest',
   KORELOCK: 'korelock',
   KEYINCODE: 'keyincode',
@@ -189,6 +190,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'first_alert',
     'tado',
     'sensibo',
+    'cielo',
   ],
   noise_sensors: ['minut', 'noiseaware'],
   access_control_systems: [

@@ -16266,6 +16266,7 @@ export type Routes = {
                     | 'tado_thermostat'
                     | 'sensi_thermostat'
                     | 'sensibo_thermostat'
+                    | 'cielo_thermostat'
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
@@ -17071,6 +17072,21 @@ export type Routes = {
                           /** Firmware version of the Sensibo device. */
                           firmware_version?: (string | undefined) | undefined
                           /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                          temperature_unit?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    /** Metadata for a Cielo device. */
+                    cielo_metadata?:
+                      | {
+                          /** Name of the device in the Cielo Home app. */
+                          device_name?: (string | undefined) | undefined
+                          /** MAC address of the Cielo device. */
+                          mac_address?: (string | undefined) | undefined
+                          /** ID of the air conditioner or heat pump model that the Cielo device is set up to control. */
+                          appliance_id?: (string | undefined) | undefined
+                          /** Device type that Cielo reports, such as `Thermostat` for a Cielo thermostat. */
+                          cielo_device_type?: (string | undefined) | undefined
+                          /** Temperature unit that the Cielo device displays: `C` or `F`. */
                           temperature_unit?: (string | undefined) | undefined
                         }
                       | undefined
@@ -26355,6 +26371,7 @@ export type Routes = {
                     | 'tado_thermostat'
                     | 'sensi_thermostat'
                     | 'sensibo_thermostat'
+                    | 'cielo_thermostat'
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
@@ -27160,6 +27177,21 @@ export type Routes = {
                           /** Firmware version of the Sensibo device. */
                           firmware_version?: (string | undefined) | undefined
                           /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                          temperature_unit?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    /** Metadata for a Cielo device. */
+                    cielo_metadata?:
+                      | {
+                          /** Name of the device in the Cielo Home app. */
+                          device_name?: (string | undefined) | undefined
+                          /** MAC address of the Cielo device. */
+                          mac_address?: (string | undefined) | undefined
+                          /** ID of the air conditioner or heat pump model that the Cielo device is set up to control. */
+                          appliance_id?: (string | undefined) | undefined
+                          /** Device type that Cielo reports, such as `Thermostat` for a Cielo thermostat. */
+                          cielo_device_type?: (string | undefined) | undefined
+                          /** Temperature unit that the Cielo device displays: `C` or `F`. */
                           temperature_unit?: (string | undefined) | undefined
                         }
                       | undefined
@@ -56770,6 +56802,7 @@ export type Routes = {
             | 'salto_space'
             | 'sensi'
             | 'sensibo'
+            | 'cielo'
             | 'keynest'
             | 'korelock'
             | 'keyincode'
@@ -59139,6 +59172,7 @@ export type Routes = {
               | 'tado_thermostat'
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
+              | 'cielo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -59922,6 +59956,21 @@ export type Routes = {
                     /** Firmware version of the Sensibo device. */
                     firmware_version?: (string | undefined) | undefined
                     /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Cielo device. */
+              cielo_metadata?:
+                | {
+                    /** Name of the device in the Cielo Home app. */
+                    device_name?: (string | undefined) | undefined
+                    /** MAC address of the Cielo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the air conditioner or heat pump model that the Cielo device is set up to control. */
+                    appliance_id?: (string | undefined) | undefined
+                    /** Device type that Cielo reports, such as `Thermostat` for a Cielo thermostat. */
+                    cielo_device_type?: (string | undefined) | undefined
+                    /** Temperature unit that the Cielo device displays: `C` or `F`. */
                     temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
@@ -61461,6 +61510,7 @@ export type Routes = {
                 | 'tado_thermostat'
                 | 'sensi_thermostat'
                 | 'sensibo_thermostat'
+                | 'cielo_thermostat'
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
@@ -61526,6 +61576,7 @@ export type Routes = {
                 | 'tado_thermostat'
                 | 'sensi_thermostat'
                 | 'sensibo_thermostat'
+                | 'cielo_thermostat'
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
@@ -61583,6 +61634,7 @@ export type Routes = {
             | 'korelock'
             | 'lockly'
             | 'minut'
+            | 'cielo'
             | 'nest'
             | 'noiseaware'
             | 'sensi'
@@ -61763,6 +61815,7 @@ export type Routes = {
               | 'tado_thermostat'
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
+              | 'cielo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -62546,6 +62599,21 @@ export type Routes = {
                     /** Firmware version of the Sensibo device. */
                     firmware_version?: (string | undefined) | undefined
                     /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Cielo device. */
+              cielo_metadata?:
+                | {
+                    /** Name of the device in the Cielo Home app. */
+                    device_name?: (string | undefined) | undefined
+                    /** MAC address of the Cielo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the air conditioner or heat pump model that the Cielo device is set up to control. */
+                    appliance_id?: (string | undefined) | undefined
+                    /** Device type that Cielo reports, such as `Thermostat` for a Cielo thermostat. */
+                    cielo_device_type?: (string | undefined) | undefined
+                    /** Temperature unit that the Cielo device displays: `C` or `F`. */
                     temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
@@ -64105,6 +64173,7 @@ export type Routes = {
           | 'salto_space'
           | 'sensi'
           | 'sensibo'
+          | 'cielo'
           | 'keynest'
           | 'korelock'
           | 'keyincode'
@@ -65683,6 +65752,7 @@ export type Routes = {
               | 'tado_thermostat'
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
+              | 'cielo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -66358,6 +66428,7 @@ export type Routes = {
                 | 'tado_thermostat'
                 | 'sensi_thermostat'
                 | 'sensibo_thermostat'
+                | 'cielo_thermostat'
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
@@ -66423,6 +66494,7 @@ export type Routes = {
                 | 'tado_thermostat'
                 | 'sensi_thermostat'
                 | 'sensibo_thermostat'
+                | 'cielo_thermostat'
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
@@ -66480,6 +66552,7 @@ export type Routes = {
             | 'korelock'
             | 'lockly'
             | 'minut'
+            | 'cielo'
             | 'nest'
             | 'noiseaware'
             | 'sensi'
@@ -66647,6 +66720,7 @@ export type Routes = {
               | 'tado_thermostat'
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
+              | 'cielo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -79087,6 +79161,7 @@ export type Routes = {
               | 'tado_thermostat'
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
+              | 'cielo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -79870,6 +79945,21 @@ export type Routes = {
                     /** Firmware version of the Sensibo device. */
                     firmware_version?: (string | undefined) | undefined
                     /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Cielo device. */
+              cielo_metadata?:
+                | {
+                    /** Name of the device in the Cielo Home app. */
+                    device_name?: (string | undefined) | undefined
+                    /** MAC address of the Cielo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the air conditioner or heat pump model that the Cielo device is set up to control. */
+                    appliance_id?: (string | undefined) | undefined
+                    /** Device type that Cielo reports, such as `Thermostat` for a Cielo thermostat. */
+                    cielo_device_type?: (string | undefined) | undefined
+                    /** Temperature unit that the Cielo device displays: `C` or `F`. */
                     temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
@@ -81395,6 +81485,7 @@ export type Routes = {
               | 'tado_thermostat'
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
+              | 'cielo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -82178,6 +82269,21 @@ export type Routes = {
                     /** Firmware version of the Sensibo device. */
                     firmware_version?: (string | undefined) | undefined
                     /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Cielo device. */
+              cielo_metadata?:
+                | {
+                    /** Name of the device in the Cielo Home app. */
+                    device_name?: (string | undefined) | undefined
+                    /** MAC address of the Cielo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the air conditioner or heat pump model that the Cielo device is set up to control. */
+                    appliance_id?: (string | undefined) | undefined
+                    /** Device type that Cielo reports, such as `Thermostat` for a Cielo thermostat. */
+                    cielo_device_type?: (string | undefined) | undefined
+                    /** Temperature unit that the Cielo device displays: `C` or `F`. */
                     temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
@@ -83844,6 +83950,7 @@ export type Routes = {
               | 'tado_thermostat'
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
+              | 'cielo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -84627,6 +84734,21 @@ export type Routes = {
                     /** Firmware version of the Sensibo device. */
                     firmware_version?: (string | undefined) | undefined
                     /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Cielo device. */
+              cielo_metadata?:
+                | {
+                    /** Name of the device in the Cielo Home app. */
+                    device_name?: (string | undefined) | undefined
+                    /** MAC address of the Cielo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the air conditioner or heat pump model that the Cielo device is set up to control. */
+                    appliance_id?: (string | undefined) | undefined
+                    /** Device type that Cielo reports, such as `Thermostat` for a Cielo thermostat. */
+                    cielo_device_type?: (string | undefined) | undefined
+                    /** Temperature unit that the Cielo device displays: `C` or `F`. */
                     temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
@@ -86151,6 +86273,7 @@ export type Routes = {
               | 'tado_thermostat'
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
+              | 'cielo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -86934,6 +87057,21 @@ export type Routes = {
                     /** Firmware version of the Sensibo device. */
                     firmware_version?: (string | undefined) | undefined
                     /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Cielo device. */
+              cielo_metadata?:
+                | {
+                    /** Name of the device in the Cielo Home app. */
+                    device_name?: (string | undefined) | undefined
+                    /** MAC address of the Cielo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the air conditioner or heat pump model that the Cielo device is set up to control. */
+                    appliance_id?: (string | undefined) | undefined
+                    /** Device type that Cielo reports, such as `Thermostat` for a Cielo thermostat. */
+                    cielo_device_type?: (string | undefined) | undefined
+                    /** Temperature unit that the Cielo device displays: `C` or `F`. */
                     temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
@@ -98857,6 +98995,7 @@ export type Routes = {
               | 'tado_thermostat'
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
+              | 'cielo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -99640,6 +99779,21 @@ export type Routes = {
                     /** Firmware version of the Sensibo device. */
                     firmware_version?: (string | undefined) | undefined
                     /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Cielo device. */
+              cielo_metadata?:
+                | {
+                    /** Name of the device in the Cielo Home app. */
+                    device_name?: (string | undefined) | undefined
+                    /** MAC address of the Cielo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the air conditioner or heat pump model that the Cielo device is set up to control. */
+                    appliance_id?: (string | undefined) | undefined
+                    /** Device type that Cielo reports, such as `Thermostat` for a Cielo thermostat. */
+                    cielo_device_type?: (string | undefined) | undefined
+                    /** Temperature unit that the Cielo device displays: `C` or `F`. */
                     temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
@@ -101164,6 +101318,7 @@ export type Routes = {
               | 'tado_thermostat'
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
+              | 'cielo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -101947,6 +102102,21 @@ export type Routes = {
                     /** Firmware version of the Sensibo device. */
                     firmware_version?: (string | undefined) | undefined
                     /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Cielo device. */
+              cielo_metadata?:
+                | {
+                    /** Name of the device in the Cielo Home app. */
+                    device_name?: (string | undefined) | undefined
+                    /** MAC address of the Cielo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the air conditioner or heat pump model that the Cielo device is set up to control. */
+                    appliance_id?: (string | undefined) | undefined
+                    /** Device type that Cielo reports, such as `Thermostat` for a Cielo thermostat. */
+                    cielo_device_type?: (string | undefined) | undefined
+                    /** Temperature unit that the Cielo device displays: `C` or `F`. */
                     temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
@@ -115416,6 +115586,7 @@ export type Routes = {
               | 'tado_thermostat'
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
+              | 'cielo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -116199,6 +116370,21 @@ export type Routes = {
                     /** Firmware version of the Sensibo device. */
                     firmware_version?: (string | undefined) | undefined
                     /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Cielo device. */
+              cielo_metadata?:
+                | {
+                    /** Name of the device in the Cielo Home app. */
+                    device_name?: (string | undefined) | undefined
+                    /** MAC address of the Cielo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the air conditioner or heat pump model that the Cielo device is set up to control. */
+                    appliance_id?: (string | undefined) | undefined
+                    /** Device type that Cielo reports, such as `Thermostat` for a Cielo thermostat. */
+                    cielo_device_type?: (string | undefined) | undefined
+                    /** Temperature unit that the Cielo device displays: `C` or `F`. */
                     temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
@@ -139068,6 +139254,7 @@ export type Routes = {
                     | 'tado_thermostat'
                     | 'sensi_thermostat'
                     | 'sensibo_thermostat'
+                    | 'cielo_thermostat'
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
@@ -139873,6 +140060,21 @@ export type Routes = {
                           /** Firmware version of the Sensibo device. */
                           firmware_version?: (string | undefined) | undefined
                           /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                          temperature_unit?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    /** Metadata for a Cielo device. */
+                    cielo_metadata?:
+                      | {
+                          /** Name of the device in the Cielo Home app. */
+                          device_name?: (string | undefined) | undefined
+                          /** MAC address of the Cielo device. */
+                          mac_address?: (string | undefined) | undefined
+                          /** ID of the air conditioner or heat pump model that the Cielo device is set up to control. */
+                          appliance_id?: (string | undefined) | undefined
+                          /** Device type that Cielo reports, such as `Thermostat` for a Cielo thermostat. */
+                          cielo_device_type?: (string | undefined) | undefined
+                          /** Temperature unit that the Cielo device displays: `C` or `F`. */
                           temperature_unit?: (string | undefined) | undefined
                         }
                       | undefined
@@ -173821,6 +174023,7 @@ export type Routes = {
               | 'tado_thermostat'
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
+              | 'cielo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -174604,6 +174807,21 @@ export type Routes = {
                     /** Firmware version of the Sensibo device. */
                     firmware_version?: (string | undefined) | undefined
                     /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Cielo device. */
+              cielo_metadata?:
+                | {
+                    /** Name of the device in the Cielo Home app. */
+                    device_name?: (string | undefined) | undefined
+                    /** MAC address of the Cielo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the air conditioner or heat pump model that the Cielo device is set up to control. */
+                    appliance_id?: (string | undefined) | undefined
+                    /** Device type that Cielo reports, such as `Thermostat` for a Cielo thermostat. */
+                    cielo_device_type?: (string | undefined) | undefined
+                    /** Temperature unit that the Cielo device displays: `C` or `F`. */
                     temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
@@ -181278,6 +181496,7 @@ export type Routes = {
             | 'tado_thermostat'
             | 'sensi_thermostat'
             | 'sensibo_thermostat'
+            | 'cielo_thermostat'
             | 'smartthings_thermostat'
           )
         | undefined
@@ -181290,6 +181509,7 @@ export type Routes = {
             | 'tado_thermostat'
             | 'sensi_thermostat'
             | 'sensibo_thermostat'
+            | 'cielo_thermostat'
             | 'smartthings_thermostat'
           )[]
         | undefined
@@ -181298,6 +181518,7 @@ export type Routes = {
         | (
             | 'ecobee'
             | 'honeywell_resideo'
+            | 'cielo'
             | 'nest'
             | 'sensi'
             | 'sensibo'
@@ -181360,6 +181581,7 @@ export type Routes = {
               | 'tado_thermostat'
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
+              | 'cielo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -182143,6 +182365,21 @@ export type Routes = {
                     /** Firmware version of the Sensibo device. */
                     firmware_version?: (string | undefined) | undefined
                     /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Cielo device. */
+              cielo_metadata?:
+                | {
+                    /** Name of the device in the Cielo Home app. */
+                    device_name?: (string | undefined) | undefined
+                    /** MAC address of the Cielo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the air conditioner or heat pump model that the Cielo device is set up to control. */
+                    appliance_id?: (string | undefined) | undefined
+                    /** Device type that Cielo reports, such as `Thermostat` for a Cielo thermostat. */
+                    cielo_device_type?: (string | undefined) | undefined
+                    /** Temperature unit that the Cielo device displays: `C` or `F`. */
                     temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
@@ -183667,6 +183904,7 @@ export type Routes = {
               | 'tado_thermostat'
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
+              | 'cielo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -184450,6 +184688,21 @@ export type Routes = {
                     /** Firmware version of the Sensibo device. */
                     firmware_version?: (string | undefined) | undefined
                     /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Cielo device. */
+              cielo_metadata?:
+                | {
+                    /** Name of the device in the Cielo Home app. */
+                    device_name?: (string | undefined) | undefined
+                    /** MAC address of the Cielo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the air conditioner or heat pump model that the Cielo device is set up to control. */
+                    appliance_id?: (string | undefined) | undefined
+                    /** Device type that Cielo reports, such as `Thermostat` for a Cielo thermostat. */
+                    cielo_device_type?: (string | undefined) | undefined
+                    /** Temperature unit that the Cielo device displays: `C` or `F`. */
                     temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
@@ -197489,6 +197742,7 @@ export type Routes = {
               | 'tado_thermostat'
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
+              | 'cielo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -198272,6 +198526,21 @@ export type Routes = {
                     /** Firmware version of the Sensibo device. */
                     firmware_version?: (string | undefined) | undefined
                     /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Cielo device. */
+              cielo_metadata?:
+                | {
+                    /** Name of the device in the Cielo Home app. */
+                    device_name?: (string | undefined) | undefined
+                    /** MAC address of the Cielo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the air conditioner or heat pump model that the Cielo device is set up to control. */
+                    appliance_id?: (string | undefined) | undefined
+                    /** Device type that Cielo reports, such as `Thermostat` for a Cielo thermostat. */
+                    cielo_device_type?: (string | undefined) | undefined
+                    /** Temperature unit that the Cielo device displays: `C` or `F`. */
                     temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
@@ -199798,6 +200067,7 @@ export type Routes = {
               | 'tado_thermostat'
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
+              | 'cielo_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -200581,6 +200851,21 @@ export type Routes = {
                     /** Firmware version of the Sensibo device. */
                     firmware_version?: (string | undefined) | undefined
                     /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                    temperature_unit?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Cielo device. */
+              cielo_metadata?:
+                | {
+                    /** Name of the device in the Cielo Home app. */
+                    device_name?: (string | undefined) | undefined
+                    /** MAC address of the Cielo device. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the air conditioner or heat pump model that the Cielo device is set up to control. */
+                    appliance_id?: (string | undefined) | undefined
+                    /** Device type that Cielo reports, such as `Thermostat` for a Cielo thermostat. */
+                    cielo_device_type?: (string | undefined) | undefined
+                    /** Temperature unit that the Cielo device displays: `C` or `F`. */
                     temperature_unit?: (string | undefined) | undefined
                   }
                 | undefined
@@ -204830,6 +205115,7 @@ export type Routes = {
                     | 'tado_thermostat'
                     | 'sensi_thermostat'
                     | 'sensibo_thermostat'
+                    | 'cielo_thermostat'
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
@@ -205635,6 +205921,21 @@ export type Routes = {
                           /** Firmware version of the Sensibo device. */
                           firmware_version?: (string | undefined) | undefined
                           /** Temperature unit that the Sensibo device displays: `C` or `F`. */
+                          temperature_unit?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    /** Metadata for a Cielo device. */
+                    cielo_metadata?:
+                      | {
+                          /** Name of the device in the Cielo Home app. */
+                          device_name?: (string | undefined) | undefined
+                          /** MAC address of the Cielo device. */
+                          mac_address?: (string | undefined) | undefined
+                          /** ID of the air conditioner or heat pump model that the Cielo device is set up to control. */
+                          appliance_id?: (string | undefined) | undefined
+                          /** Device type that Cielo reports, such as `Thermostat` for a Cielo thermostat. */
+                          cielo_device_type?: (string | undefined) | undefined
+                          /** Temperature unit that the Cielo device displays: `C` or `F`. */
                           temperature_unit?: (string | undefined) | undefined
                         }
                       | undefined
@@ -211382,6 +211683,7 @@ export type Routes = {
                     | 'tado_thermostat'
                     | 'sensi_thermostat'
                     | 'sensibo_thermostat'
+                    | 'cielo_thermostat'
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
