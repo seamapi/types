@@ -340,7 +340,9 @@ const being_deleted = common_access_code_warning
   .extend({
     warning_code: z.literal('being_deleted').describe(warning_code_description),
   })
-  .describe('Access code is being deleted.')
+  .describe(
+    'Access code is being deleted, because it was deleted or passed its `ends_at`. It can no longer be updated.',
+  )
 
 const device_unreachable_for_extended_period = common_access_code_warning
   .extend({

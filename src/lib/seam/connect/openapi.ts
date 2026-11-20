@@ -1702,7 +1702,8 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
-                  description: 'Access code is being deleted.',
+                  description:
+                    'Access code is being deleted, because it was deleted or passed its `ends_at`. It can no longer be updated.',
                   properties: {
                     created_at: {
                       description:
@@ -38916,7 +38917,8 @@ const openapi: OpenAPISpec = {
                   type: 'object',
                 },
                 {
-                  description: 'Access code is being deleted.',
+                  description:
+                    'Access code is being deleted, because it was deleted or passed its `ends_at`. It can no longer be updated.',
                   properties: {
                     created_at: {
                       description:
