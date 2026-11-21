@@ -47749,6 +47749,8 @@ const openapi: OpenAPISpec = {
         ],
         summary: '/access_methods/delete',
         tags: [],
+        'x-deprecated':
+          'Access methods are managed by their access grant. Some workflows still need this endpoint today; access grant routes will replace it for them soon.',
         'x-fern-sdk-group-name': ['access_methods'],
         'x-fern-sdk-method-name': 'delete',
         'x-has-required-parameters': true,
