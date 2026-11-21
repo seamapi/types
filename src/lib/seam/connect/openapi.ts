@@ -897,6 +897,44 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
+                  description:
+                    "Indicates that the lock has about one week, two days, or a critically low amount of battery life remaining. Replace the lock's batteries promptly to avoid losing access.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['low_battery'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'device',
+                  'x-variant-group-key': 'locks',
+                },
+                {
                   description: 'Indicates that device credentials are missing.',
                   properties: {
                     created_at: {
@@ -16683,6 +16721,44 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
+                  description:
+                    "Indicates that the lock has about one week, two days, or a critically low amount of battery life remaining. Replace the lock's batteries promptly to avoid losing access.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['low_battery'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'device',
+                  'x-variant-group-key': 'locks',
+                },
+                {
                   description: 'Indicates that device credentials are missing.',
                   properties: {
                     created_at: {
@@ -21206,6 +21282,32 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['accessory_keypad_low_battery'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    "Indicates that the lock has about two weeks of battery life remaining or the provider otherwise recommends replacing the lock's batteries soon.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['battery_replacement_recommended'],
                       type: 'string',
                     },
                   },
@@ -34520,6 +34622,44 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
+                  description:
+                    "Indicates that the lock has about one week, two days, or a critically low amount of battery life remaining. Replace the lock's batteries promptly to avoid losing access.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['low_battery'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'device',
+                  'x-variant-group-key': 'locks',
+                },
+                {
                   description: 'Indicates that device credentials are missing.',
                   properties: {
                     created_at: {
@@ -35431,6 +35571,32 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['accessory_keypad_low_battery'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    "Indicates that the lock has about two weeks of battery life remaining or the provider otherwise recommends replacing the lock's batteries soon.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['battery_replacement_recommended'],
                       type: 'string',
                     },
                   },
@@ -38406,6 +38572,44 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['august_lock_not_authorized'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'device',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    "Indicates that the lock has about one week, two days, or a critically low amount of battery life remaining. Replace the lock's batteries promptly to avoid losing access.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['low_battery'],
                       type: 'string',
                     },
                     is_device_error: {
@@ -43027,6 +43231,44 @@ const openapi: OpenAPISpec = {
                   'x-variant-group-key': 'locks',
                 },
                 {
+                  description:
+                    "Indicates that the lock has about one week, two days, or a critically low amount of battery life remaining. Replace the lock's batteries promptly to avoid losing access.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['low_battery'],
+                      type: 'string',
+                    },
+                    is_device_error: {
+                      description:
+                        'Indicates that the error is a device error.',
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'message',
+                    'is_device_error',
+                    'created_at',
+                    'error_code',
+                  ],
+                  type: 'object',
+                  'x-resource-type': 'device',
+                  'x-variant-group-key': 'locks',
+                },
+                {
                   description: 'Indicates that device credentials are missing.',
                   properties: {
                     created_at: {
@@ -44090,6 +44332,32 @@ const openapi: OpenAPISpec = {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['accessory_keypad_low_battery'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                  'x-variant-group-key': 'locks',
+                },
+                {
+                  description:
+                    "Indicates that the lock has about two weeks of battery life remaining or the provider otherwise recommends replacing the lock's batteries soon.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['battery_replacement_recommended'],
                       type: 'string',
                     },
                   },

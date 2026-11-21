@@ -2890,6 +2890,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -3479,6 +3489,16 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -6675,6 +6695,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -7384,6 +7414,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -7973,6 +8013,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -8530,6 +8580,16 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -9129,6 +9189,16 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -12223,6 +12293,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -12690,6 +12770,16 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
             }
           | {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
@@ -18148,6 +18238,16 @@ export type Routes = {
                     /** Date and time at which Seam created the error. */
                     created_at: string
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'low_battery'
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Indicates that the error is a device error. */
+                    is_device_error: true
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'missing_device_credentials'
                   }
                 | {
@@ -18400,6 +18500,14 @@ export type Routes = {
                     created_at: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'accessory_keypad_low_battery'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'battery_replacement_recommended'
                   }
                 | {
                     /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -28253,6 +28361,16 @@ export type Routes = {
                     /** Date and time at which Seam created the error. */
                     created_at: string
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'low_battery'
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Indicates that the error is a device error. */
+                    is_device_error: true
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'missing_device_credentials'
                   }
                 | {
@@ -28505,6 +28623,14 @@ export type Routes = {
                     created_at: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'accessory_keypad_low_battery'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'battery_replacement_recommended'
                   }
                 | {
                     /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -60979,6 +61105,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -61231,6 +61367,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'battery_replacement_recommended'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -63622,6 +63766,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -63874,6 +64028,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'battery_replacement_recommended'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -65917,6 +66079,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -66169,6 +66341,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'battery_replacement_recommended'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -66885,6 +67065,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -67137,6 +67327,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'battery_replacement_recommended'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -80968,6 +81166,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -81220,6 +81428,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'battery_replacement_recommended'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -83292,6 +83508,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -83544,6 +83770,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'battery_replacement_recommended'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -85757,6 +85991,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -86009,6 +86253,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'battery_replacement_recommended'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -88080,6 +88332,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -88332,6 +88594,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'battery_replacement_recommended'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -100802,6 +101072,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -101054,6 +101334,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'battery_replacement_recommended'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -103125,6 +103413,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -103377,6 +103675,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'battery_replacement_recommended'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -111622,6 +111928,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -111874,6 +112190,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'battery_replacement_recommended'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -112099,6 +112423,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -112351,6 +112685,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'battery_replacement_recommended'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -112603,6 +112945,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -112855,6 +113207,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'battery_replacement_recommended'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -117393,6 +117753,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -117645,6 +118015,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'battery_replacement_recommended'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -141142,6 +141520,16 @@ export type Routes = {
                     /** Date and time at which Seam created the error. */
                     created_at: string
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'low_battery'
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Indicates that the error is a device error. */
+                    is_device_error: true
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'missing_device_credentials'
                   }
                 | {
@@ -141394,6 +141782,14 @@ export type Routes = {
                     created_at: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'accessory_keypad_low_battery'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'battery_replacement_recommended'
                   }
                 | {
                     /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -175836,6 +176232,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -176088,6 +176494,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'battery_replacement_recommended'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -183394,6 +183808,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -183646,6 +184070,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'battery_replacement_recommended'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -185717,6 +186149,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -185969,6 +186411,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'battery_replacement_recommended'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -199555,6 +200005,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -199807,6 +200267,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'battery_replacement_recommended'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -201880,6 +202348,16 @@ export type Routes = {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'low_battery'
+            }
+          | {
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the error is a device error. */
+              is_device_error: true
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
@@ -202132,6 +202610,14 @@ export type Routes = {
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'accessory_keypad_low_battery'
+            }
+          | {
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'battery_replacement_recommended'
             }
           | {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -207003,6 +207489,16 @@ export type Routes = {
                     /** Date and time at which Seam created the error. */
                     created_at: string
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'low_battery'
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Indicates that the error is a device error. */
+                    is_device_error: true
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'missing_device_credentials'
                   }
                 | {
@@ -207255,6 +207751,14 @@ export type Routes = {
                     created_at: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'accessory_keypad_low_battery'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'battery_replacement_recommended'
                   }
                 | {
                     /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -211854,6 +212358,16 @@ export type Routes = {
                     /** Date and time at which Seam created the error. */
                     created_at: string
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'low_battery'
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Indicates that the error is a device error. */
+                    is_device_error: true
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'missing_device_credentials'
                   }
                 | {
@@ -212106,6 +212620,14 @@ export type Routes = {
                     created_at: string
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'accessory_keypad_low_battery'
+                  }
+                | {
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'battery_replacement_recommended'
                   }
                 | {
                     /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
@@ -218093,6 +218615,16 @@ export type Routes = {
                     /** Date and time at which Seam created the error. */
                     created_at: string
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'low_battery'
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Indicates that the error is a device error. */
+                    is_device_error: true
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'missing_device_credentials'
                   }
                 | {
@@ -218546,6 +219078,16 @@ export type Routes = {
                     created_at: string
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'august_lock_not_authorized'
+                  }
+                | {
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Indicates that the error is a device error. */
+                    is_device_error: true
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: 'low_battery'
                   }
                 | {
                     /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */

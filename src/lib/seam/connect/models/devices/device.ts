@@ -277,6 +277,16 @@ const august_lock_not_authorized = common_device_error.extend({
     Indicates that the user is not authorized to use the August lock.
     `)
 
+const low_battery = common_device_error.extend({
+  error_code: z.literal('low_battery').describe(error_code_description),
+}).describe(`
+    ---
+    resource_type: device
+    variant_group_key: locks
+    ---
+    Indicates that the lock has about one week, two days, or a critically low amount of battery life remaining. Replace the lock's batteries promptly to avoid losing access.
+    `)
+
 const salto_ks_subscription_limit_exceeded = common_device_error.extend({
   error_code: z
     .literal('salto_ks_subscription_limit_exceeded')
@@ -382,6 +392,7 @@ export const device_error = z
     device_disconnected,
     empty_backup_access_code_pool,
     august_lock_not_authorized,
+    low_battery,
     missing_device_credentials,
     auxiliary_heat_running,
     subscription_required,
@@ -398,6 +409,7 @@ export const device_error_map = z.object({
   account_disconnected: account_disconnected.optional(),
   empty_backup_access_code_pool: empty_backup_access_code_pool.optional(),
   august_lock_not_authorized: august_lock_not_authorized.optional(),
+  low_battery: low_battery.optional(),
   salto_ks_subscription_limit_exceeded:
     salto_ks_subscription_limit_exceeded.optional(),
   insufficient_permissions: insufficient_permissions.optional(),
@@ -706,6 +718,17 @@ const accessory_keypad_low_battery = common_device_warning.extend({
     Indicates that the accessory keypad paired with this lock has a low or critically low battery. Replace its batteries so guests can keep entering their access codes.
     `)
 
+const battery_replacement_recommended = common_device_warning.extend({
+  warning_code: z
+    .literal('battery_replacement_recommended')
+    .describe(warning_code_description),
+}).describe(`
+    ---
+    variant_group_key: locks
+    ---
+    Indicates that the lock has about two weeks of battery life remaining or the provider otherwise recommends replacing the lock's batteries soon.
+    `)
+
 const unreliable_online_status = common_device_warning.extend({
   warning_code: z
     .literal('unreliable_online_status')
@@ -787,6 +810,7 @@ const device_warning = z.discriminatedUnion('warning_code', [
   keynest_unsupported_locker,
   accessory_keypad_setup_required,
   accessory_keypad_low_battery,
+  battery_replacement_recommended,
   unreliable_online_status,
   max_access_codes_reached,
   subscription_required_for_additional_capabilities,
@@ -827,6 +851,7 @@ export const device_warning_map = z.object({
   keynest_unsupported_locker: keynest_unsupported_locker.optional(),
   accessory_keypad_setup_required: accessory_keypad_setup_required.optional(),
   accessory_keypad_low_battery: accessory_keypad_low_battery.optional(),
+  battery_replacement_recommended: battery_replacement_recommended.optional(),
   unreliable_online_status: unreliable_online_status.optional(),
   max_access_codes_reached: max_access_codes_reached.optional(),
   subscription_required_for_additional_capabilities:
