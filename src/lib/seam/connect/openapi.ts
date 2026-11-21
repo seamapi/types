@@ -467,7 +467,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'This access code is still active on the device even though its `ends_at` has passed, so the recipient may still be able to unlock the device after their access window ended. Seam is attempting to delete it, and this error clears automatically once the access code is no longer active.',
+                    'Seam was unable to remove this access code from the device in time after it was deleted or its `ends_at` passed, so the recipient may still be able to unlock the device. Seam keeps trying to delete it, and this error clears automatically once the access code is no longer usable on the device.',
                   properties: {
                     created_at: {
                       description:
@@ -496,7 +496,6 @@ const openapi: OpenAPISpec = {
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
                   'x-resource-type': 'access_code',
-                  'x-undocumented': 'Unreleased.',
                 },
                 {
                   description: 'Indicates that the account is disconnected.',
@@ -23996,7 +23995,7 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
-              'An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) is still active on the device even though its `ends_at` has passed, so the recipient may still be able to unlock the device after their access window ended. Seam is attempting to delete it, and the accompanying `failed_to_delete` error clears automatically once the access code is no longer active.',
+              'Seam was unable to remove an [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) from the device in time after it was deleted or its `ends_at` passed, so the recipient may still be able to unlock the device. Seam keeps trying to delete it, and the accompanying `failed_to_delete` error clears automatically once the access code is no longer usable on the device.',
             properties: {
               access_code_errors: {
                 description: 'Errors associated with the access code.',
@@ -24248,7 +24247,6 @@ const openapi: OpenAPISpec = {
             ],
             type: 'object',
             'x-route-path': '/access_codes',
-            'x-undocumented': 'Unreleased.',
           },
           {
             description:
@@ -38003,7 +38001,7 @@ const openapi: OpenAPISpec = {
                 },
                 {
                   description:
-                    'This access code is still active on the device even though its `ends_at` has passed, so the recipient may still be able to unlock the device after their access window ended. Seam is attempting to delete it, and this error clears automatically once the access code is no longer active.',
+                    'Seam was unable to remove this access code from the device in time after it was deleted or its `ends_at` passed, so the recipient may still be able to unlock the device. Seam keeps trying to delete it, and this error clears automatically once the access code is no longer usable on the device.',
                   properties: {
                     created_at: {
                       description:
@@ -38032,7 +38030,6 @@ const openapi: OpenAPISpec = {
                   required: ['message', 'is_access_code_error', 'error_code'],
                   type: 'object',
                   'x-resource-type': 'access_code',
-                  'x-undocumented': 'Unreleased.',
                 },
                 {
                   description: 'Indicates that the account is disconnected.',
