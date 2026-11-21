@@ -148,9 +148,8 @@ const failed_to_delete = common_access_code_error.extend({
 }).describe(`
     ---
     resource_type: access_code
-    undocumented: Unreleased.
     ---
-    This access code is still active on the device even though its \`ends_at\` has passed, so the recipient may still be able to unlock the device after their access window ended. Seam is attempting to delete it, and this error clears automatically once the access code is no longer active.
+    Seam was unable to remove this access code from the device in time after it was deleted or its \`ends_at\` passed, so the recipient may still be able to unlock the device. Seam keeps trying to delete it, and this error clears automatically once the access code is no longer usable on the device.
     `)
 
 const access_code_inactive_error = common_access_code_error.extend({

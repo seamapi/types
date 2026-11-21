@@ -368,9 +368,8 @@ export const access_code_failed_to_delete_event = access_code_event
   .extend(access_code_event_issue_properties).describe(`
     ---
     route_path: /access_codes
-    undocumented: Unreleased.
     ---
-    An [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) is still active on the device even though its \`ends_at\` has passed, so the recipient may still be able to unlock the device after their access window ended. Seam is attempting to delete it, and the accompanying \`failed_to_delete\` error clears automatically once the access code is no longer active.
+    Seam was unable to remove an [access code](https://www.seam.co/docs/low-level-apis/smart-locks/access-codes) from the device in time after it was deleted or its \`ends_at\` passed, so the recipient may still be able to unlock the device. Seam keeps trying to delete it, and the accompanying \`failed_to_delete\` error clears automatically once the access code is no longer usable on the device.
   `)
 
 export type AccessCodeFailedToDeleteEvent = z.infer<
