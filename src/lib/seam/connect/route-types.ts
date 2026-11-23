@@ -126127,6 +126127,40 @@ export type Routes = {
     }
     maxDuration: undefined
   }
+  '/seam/customer/v1/automation_device_actions/list': {
+    route: '/seam/customer/v1/automation_device_actions/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** The customer_key identifying the customer. Required when not using client_session_with_customer auth. */
+      customer_key?: string | undefined
+      /** ID of the reservation whose device automation actions to list. */
+      reservation_id?: string | undefined
+      /** Key of the reservation whose device automation actions to list. */
+      reservation_key?: string | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      automation_device_actions: {
+        automation_device_action_id: string
+        reservation_id: string
+        device_id: string
+        rule_type: 'sound' | 'sensor' | 'pool'
+        phase: string
+        run_at: string
+        status: 'pending' | 'running' | 'succeeded' | 'skipped' | 'failed'
+        completed_at: string | null
+        action_attempt_id?: string | undefined
+        message?: string | undefined
+        skip_reason?: string | undefined
+        warnings: {
+          message: string
+        }[]
+      }[]
+    }
+    maxDuration: undefined
+  }
   '/seam/customer/v1/automation_runs/create': {
     route: '/seam/customer/v1/automation_runs/create'
     method: 'POST'
