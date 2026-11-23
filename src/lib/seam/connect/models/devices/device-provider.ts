@@ -126,6 +126,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'sensi',
     'sensibo',
     'tado',
+    'cielo',
     'assa_abloy_vostio',
     'avigilon_alta',
     'kisi',
