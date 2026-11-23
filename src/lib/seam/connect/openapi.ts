@@ -15431,6 +15431,12 @@ const openapi: OpenAPISpec = {
                       'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
                     type: 'boolean',
                   },
+                  allow_pool_automation_rule_customization: {
+                    default: false,
+                    description:
+                      'Indicates whether the customer can customize the pool heating automation rules for their properties.',
+                    type: 'boolean',
+                  },
                   allow_sensor_automation_rule_customization: {
                     default: false,
                     description:
@@ -54849,6 +54855,12 @@ const openapi: OpenAPISpec = {
                                   'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
                                 type: 'boolean',
                               },
+                              allow_pool_automation_rule_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize the pool heating automation rules for their properties.',
+                                type: 'boolean',
+                              },
                               allow_sensor_automation_rule_customization: {
                                 default: false,
                                 description:
@@ -70127,6 +70139,76 @@ const openapi: OpenAPISpec = {
                       type: 'object',
                     },
                     ok: { type: 'boolean' },
+                    pool_rules: {
+                      properties: {
+                        rules: {
+                          properties: {
+                            reservation_created: {
+                              properties: {
+                                on_check_out: {
+                                  properties: {
+                                    minutes_after_check_out: {
+                                      maximum: 1440,
+                                      minimum: 0,
+                                      type: 'integer',
+                                    },
+                                    turn_off: { enum: [true], type: 'boolean' },
+                                  },
+                                  required: [
+                                    'minutes_after_check_out',
+                                    'turn_off',
+                                  ],
+                                  type: 'object',
+                                },
+                                on_heat_up: {
+                                  properties: {
+                                    heating_set_point_celsius: {
+                                      format: 'float',
+                                      type: 'number',
+                                    },
+                                    heating_set_point_fahrenheit: {
+                                      format: 'float',
+                                      type: 'number',
+                                    },
+                                    minutes_before_check_in: {
+                                      maximum: 10_080,
+                                      minimum: 0,
+                                      type: 'integer',
+                                    },
+                                  },
+                                  required: ['minutes_before_check_in'],
+                                  type: 'object',
+                                },
+                                water_bodies: {
+                                  description:
+                                    "Which water in the reservation's spaces to heat: pools, spas, or both.",
+                                  enum: ['pools', 'spas', 'pools_and_spas'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'water_bodies',
+                                'on_heat_up',
+                                'on_check_out',
+                              ],
+                              type: 'object',
+                            },
+                            reservation_deleted: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            reservation_spaces_updated: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                            reservation_time_updated: {
+                              $ref: '#/components/schemas/access_code',
+                            },
+                          },
+                          type: 'object',
+                        },
+                      },
+                      required: ['rules'],
+                      type: 'object',
+                    },
                     sensor_rules: {
                       properties: {
                         rules: {
@@ -70705,6 +70787,84 @@ const openapi: OpenAPISpec = {
                       'Key of the customer to update automation config for.',
                     minLength: 1,
                     type: 'string',
+                  },
+                  pool_rules: {
+                    description:
+                      'Pool heating automation rules configuration. Requires pool devices to be enabled for the workspace.',
+                    properties: {
+                      rules: {
+                        properties: {
+                          reservation_created: {
+                            nullable: true,
+                            properties: {
+                              on_check_out: {
+                                properties: {
+                                  minutes_after_check_out: {
+                                    maximum: 1440,
+                                    minimum: 0,
+                                    type: 'integer',
+                                  },
+                                  turn_off: { enum: [true], type: 'boolean' },
+                                },
+                                required: [
+                                  'minutes_after_check_out',
+                                  'turn_off',
+                                ],
+                                type: 'object',
+                              },
+                              on_heat_up: {
+                                properties: {
+                                  heating_set_point_celsius: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  heating_set_point_fahrenheit: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  minutes_before_check_in: {
+                                    maximum: 10_080,
+                                    minimum: 0,
+                                    type: 'integer',
+                                  },
+                                },
+                                required: ['minutes_before_check_in'],
+                                type: 'object',
+                              },
+                              water_bodies: {
+                                description:
+                                  "Which water in the reservation's spaces to heat: pools, spas, or both.",
+                                enum: ['pools', 'spas', 'pools_and_spas'],
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'water_bodies',
+                              'on_heat_up',
+                              'on_check_out',
+                            ],
+                            type: 'object',
+                          },
+                          reservation_deleted: {
+                            nullable: true,
+                            properties: {},
+                            type: 'object',
+                          },
+                          reservation_spaces_updated: {
+                            nullable: true,
+                            properties: {},
+                            type: 'object',
+                          },
+                          reservation_time_updated: {
+                            nullable: true,
+                            properties: {},
+                            type: 'object',
+                          },
+                        },
+                        type: 'object',
+                      },
+                    },
+                    type: 'object',
                   },
                   sensor_rules: {
                     description:
@@ -72351,6 +72511,79 @@ const openapi: OpenAPISpec = {
                           required: ['rules'],
                           type: 'object',
                         },
+                        pool_rules: {
+                          properties: {
+                            rules: {
+                              properties: {
+                                reservation_created: {
+                                  properties: {
+                                    on_check_out: {
+                                      properties: {
+                                        minutes_after_check_out: {
+                                          maximum: 1440,
+                                          minimum: 0,
+                                          type: 'integer',
+                                        },
+                                        turn_off: {
+                                          enum: [true],
+                                          type: 'boolean',
+                                        },
+                                      },
+                                      required: [
+                                        'minutes_after_check_out',
+                                        'turn_off',
+                                      ],
+                                      type: 'object',
+                                    },
+                                    on_heat_up: {
+                                      properties: {
+                                        heating_set_point_celsius: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        heating_set_point_fahrenheit: {
+                                          format: 'float',
+                                          type: 'number',
+                                        },
+                                        minutes_before_check_in: {
+                                          maximum: 10_080,
+                                          minimum: 0,
+                                          type: 'integer',
+                                        },
+                                      },
+                                      required: ['minutes_before_check_in'],
+                                      type: 'object',
+                                    },
+                                    water_bodies: {
+                                      description:
+                                        "Which water in the reservation's spaces to heat: pools, spas, or both.",
+                                      enum: ['pools', 'spas', 'pools_and_spas'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'water_bodies',
+                                    'on_heat_up',
+                                    'on_check_out',
+                                  ],
+                                  type: 'object',
+                                },
+                                reservation_deleted: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                                reservation_spaces_updated: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                                reservation_time_updated: {
+                                  $ref: '#/components/schemas/access_code',
+                                },
+                              },
+                              type: 'object',
+                            },
+                          },
+                          required: ['rules'],
+                          type: 'object',
+                        },
                         sensor_rules: {
                           properties: {
                             rules: {
@@ -72566,7 +72799,7 @@ const openapi: OpenAPISpec = {
     '/seam/customer/v1/customers/automations/update': {
       patch: {
         description:
-          'Updates the automation configuration for a specific customer.\nCreates a customer-level override if one does not already exist.',
+          'Updates the automation configuration for a specific customer.\nCreates a customer-level override if one does not already exist.\nWriting `pool_rules` requires a customer portal with `features.configure.allow_pool_automation_rule_customization` enabled.',
         operationId: 'seamCustomerV1CustomersAutomationsUpdatePatch',
         requestBody: {
           content: {
@@ -72835,6 +73068,83 @@ const openapi: OpenAPISpec = {
                             type: 'object',
                           },
                           reservation_deleted: {
+                            nullable: true,
+                            properties: {},
+                            type: 'object',
+                          },
+                          reservation_time_updated: {
+                            nullable: true,
+                            properties: {},
+                            type: 'object',
+                          },
+                        },
+                        type: 'object',
+                      },
+                    },
+                    type: 'object',
+                  },
+                  pool_rules: {
+                    description: 'Pool heating automation rules configuration.',
+                    properties: {
+                      rules: {
+                        properties: {
+                          reservation_created: {
+                            nullable: true,
+                            properties: {
+                              on_check_out: {
+                                properties: {
+                                  minutes_after_check_out: {
+                                    maximum: 1440,
+                                    minimum: 0,
+                                    type: 'integer',
+                                  },
+                                  turn_off: { enum: [true], type: 'boolean' },
+                                },
+                                required: [
+                                  'minutes_after_check_out',
+                                  'turn_off',
+                                ],
+                                type: 'object',
+                              },
+                              on_heat_up: {
+                                properties: {
+                                  heating_set_point_celsius: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  heating_set_point_fahrenheit: {
+                                    format: 'float',
+                                    type: 'number',
+                                  },
+                                  minutes_before_check_in: {
+                                    maximum: 10_080,
+                                    minimum: 0,
+                                    type: 'integer',
+                                  },
+                                },
+                                required: ['minutes_before_check_in'],
+                                type: 'object',
+                              },
+                              water_bodies: {
+                                description:
+                                  "Which water in the reservation's spaces to heat: pools, spas, or both.",
+                                enum: ['pools', 'spas', 'pools_and_spas'],
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'water_bodies',
+                              'on_heat_up',
+                              'on_check_out',
+                            ],
+                            type: 'object',
+                          },
+                          reservation_deleted: {
+                            nullable: true,
+                            properties: {},
+                            type: 'object',
+                          },
+                          reservation_spaces_updated: {
                             nullable: true,
                             properties: {},
                             type: 'object',
@@ -74010,6 +74320,12 @@ const openapi: OpenAPISpec = {
                                     'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
                                   type: 'boolean',
                                 },
+                                allow_pool_automation_rule_customization: {
+                                  default: false,
+                                  description:
+                                    'Indicates whether the customer can customize the pool heating automation rules for their properties.',
+                                  type: 'boolean',
+                                },
                                 allow_sensor_automation_rule_customization: {
                                   default: false,
                                   description:
@@ -74505,6 +74821,12 @@ const openapi: OpenAPISpec = {
                                 default: false,
                                 description:
                                   'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
+                                type: 'boolean',
+                              },
+                              allow_pool_automation_rule_customization: {
+                                default: false,
+                                description:
+                                  'Indicates whether the customer can customize the pool heating automation rules for their properties.',
                                 type: 'boolean',
                               },
                               allow_sensor_automation_rule_customization: {
@@ -84040,6 +84362,12 @@ const openapi: OpenAPISpec = {
                               'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
                             type: 'boolean',
                           },
+                          allow_pool_automation_rule_customization: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can customize the pool heating automation rules for their properties.',
+                            type: 'boolean',
+                          },
                           allow_sensor_automation_rule_customization: {
                             default: false,
                             description:
@@ -84728,6 +85056,12 @@ const openapi: OpenAPISpec = {
                             default: false,
                             description:
                               'Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold.',
+                            type: 'boolean',
+                          },
+                          allow_pool_automation_rule_customization: {
+                            default: false,
+                            description:
+                              'Indicates whether the customer can customize the pool heating automation rules for their properties.',
                             type: 'boolean',
                           },
                           allow_sensor_automation_rule_customization: {

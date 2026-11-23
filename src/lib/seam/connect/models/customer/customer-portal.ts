@@ -121,6 +121,12 @@ const base_configure_feature = base_feature.extend({
     .describe(
       'Indicates whether the customer can customize the sensor automation rules for their properties.',
     ),
+  allow_pool_automation_rule_customization: z
+    .boolean()
+    .default(false)
+    .describe(
+      'Indicates whether the customer can customize the pool heating automation rules for their properties.',
+    ),
   allow_instant_key_customization: z
     .boolean()
     .default(false)
@@ -322,6 +328,7 @@ export const portal_configuration = portal_configuration_base
         allow_climate_automation_rule_customization: false,
         allow_sound_automation_rule_customization: false,
         allow_sensor_automation_rule_customization: false,
+        allow_pool_automation_rule_customization: false,
         allow_notification_customization: false,
         allow_bridge_replacement: false,
       },

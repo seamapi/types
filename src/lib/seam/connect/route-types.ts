@@ -58315,6 +58315,8 @@ export type Routes = {
                   /** Indicates whether the customer can customize the sensor automation rules for their properties. */
                   allow_sensor_automation_rule_customization?:
                     boolean | undefined
+                  /** Indicates whether the customer can customize the pool heating automation rules for their properties. */
+                  allow_pool_automation_rule_customization?: boolean | undefined
                   /** Indicates whether the customer can customize the Instant Key profile for their properties. */
                   allow_instant_key_customization?: boolean | undefined
                   /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
@@ -122251,6 +122253,9 @@ export type Routes = {
                     /** Indicates whether the customer can customize the sensor automation rules for their properties. */
                     allow_sensor_automation_rule_customization?:
                       boolean | undefined
+                    /** Indicates whether the customer can customize the pool heating automation rules for their properties. */
+                    allow_pool_automation_rule_customization?:
+                      boolean | undefined
                     /** Indicates whether the customer can customize the Instant Key profile for their properties. */
                     allow_instant_key_customization?: boolean | undefined
                     /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
@@ -126538,6 +126543,30 @@ export type Routes = {
             }
           }
         | undefined
+      pool_rules?:
+        | {
+            rules: {
+              reservation_created?:
+                | {
+                    /** Which water in the reservation's spaces to heat: pools, spas, or both. */
+                    water_bodies: 'pools' | 'spas' | 'pools_and_spas'
+                    on_heat_up: {
+                      minutes_before_check_in: number
+                      heating_set_point_fahrenheit?: number | undefined
+                      heating_set_point_celsius?: number | undefined
+                    }
+                    on_check_out: {
+                      minutes_after_check_out: number
+                      turn_off: true
+                    }
+                  }
+                | undefined
+              reservation_time_updated?: {} | undefined
+              reservation_spaces_updated?: {} | undefined
+              reservation_deleted?: {} | undefined
+            }
+          }
+        | undefined
     }
     maxDuration: undefined
   }
@@ -126774,6 +126803,33 @@ export type Routes = {
                           | undefined
                       } | null)
                     | undefined
+                }
+              | undefined
+          }
+        | undefined
+      /** Pool heating automation rules configuration. Requires pool devices to be enabled for the workspace. */
+      pool_rules?:
+        | {
+            rules?:
+              | {
+                  reservation_created?:
+                    | ({
+                        /** Which water in the reservation's spaces to heat: pools, spas, or both. */
+                        water_bodies: 'pools' | 'spas' | 'pools_and_spas'
+                        on_heat_up: {
+                          minutes_before_check_in: number
+                          heating_set_point_fahrenheit?: number | undefined
+                          heating_set_point_celsius?: number | undefined
+                        }
+                        on_check_out: {
+                          minutes_after_check_out: number
+                          turn_off: true
+                        }
+                      } | null)
+                    | undefined
+                  reservation_time_updated?: ({} | null) | undefined
+                  reservation_spaces_updated?: ({} | null) | undefined
+                  reservation_deleted?: ({} | null) | undefined
                 }
               | undefined
           }
@@ -127367,6 +127423,30 @@ export type Routes = {
               }
             }
           | undefined
+        pool_rules?:
+          | {
+              rules: {
+                reservation_created?:
+                  | {
+                      /** Which water in the reservation's spaces to heat: pools, spas, or both. */
+                      water_bodies: 'pools' | 'spas' | 'pools_and_spas'
+                      on_heat_up: {
+                        minutes_before_check_in: number
+                        heating_set_point_fahrenheit?: number | undefined
+                        heating_set_point_celsius?: number | undefined
+                      }
+                      on_check_out: {
+                        minutes_after_check_out: number
+                        turn_off: true
+                      }
+                    }
+                  | undefined
+                reservation_time_updated?: {} | undefined
+                reservation_spaces_updated?: {} | undefined
+                reservation_deleted?: {} | undefined
+              }
+            }
+          | undefined
       }
     }
     maxDuration: undefined
@@ -127574,6 +127654,33 @@ export type Routes = {
                           | undefined
                       } | null)
                     | undefined
+                }
+              | undefined
+          }
+        | undefined
+      /** Pool heating automation rules configuration. */
+      pool_rules?:
+        | {
+            rules?:
+              | {
+                  reservation_created?:
+                    | ({
+                        /** Which water in the reservation's spaces to heat: pools, spas, or both. */
+                        water_bodies: 'pools' | 'spas' | 'pools_and_spas'
+                        on_heat_up: {
+                          minutes_before_check_in: number
+                          heating_set_point_fahrenheit?: number | undefined
+                          heating_set_point_celsius?: number | undefined
+                        }
+                        on_check_out: {
+                          minutes_after_check_out: number
+                          turn_off: true
+                        }
+                      } | null)
+                    | undefined
+                  reservation_time_updated?: ({} | null) | undefined
+                  reservation_spaces_updated?: ({} | null) | undefined
+                  reservation_deleted?: ({} | null) | undefined
                 }
               | undefined
           }
@@ -132313,6 +132420,8 @@ export type Routes = {
             allow_sound_automation_rule_customization?: boolean
             /** Indicates whether the customer can customize the sensor automation rules for their properties. */
             allow_sensor_automation_rule_customization?: boolean
+            /** Indicates whether the customer can customize the pool heating automation rules for their properties. */
+            allow_pool_automation_rule_customization?: boolean
             /** Indicates whether the customer can customize the Instant Key profile for their properties. */
             allow_instant_key_customization?: boolean
             /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
@@ -132670,6 +132779,9 @@ export type Routes = {
                       boolean | undefined
                     /** Indicates whether the customer can customize the sensor automation rules for their properties. */
                     allow_sensor_automation_rule_customization?:
+                      boolean | undefined
+                    /** Indicates whether the customer can customize the pool heating automation rules for their properties. */
+                    allow_pool_automation_rule_customization?:
                       boolean | undefined
                     /** Indicates whether the customer can customize the Instant Key profile for their properties. */
                     allow_instant_key_customization?: boolean | undefined
@@ -204452,6 +204564,8 @@ export type Routes = {
                   /** Indicates whether the customer can customize the sensor automation rules for their properties. */
                   allow_sensor_automation_rule_customization?:
                     boolean | undefined
+                  /** Indicates whether the customer can customize the pool heating automation rules for their properties. */
+                  allow_pool_automation_rule_customization?: boolean | undefined
                   /** Indicates whether the customer can customize the Instant Key profile for their properties. */
                   allow_instant_key_customization?: boolean | undefined
                   /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
@@ -204715,6 +204829,9 @@ export type Routes = {
                       boolean | undefined
                     /** Indicates whether the customer can customize the sensor automation rules for their properties. */
                     allow_sensor_automation_rule_customization?:
+                      boolean | undefined
+                    /** Indicates whether the customer can customize the pool heating automation rules for their properties. */
+                    allow_pool_automation_rule_customization?:
                       boolean | undefined
                     /** Indicates whether the customer can customize the Instant Key profile for their properties. */
                     allow_instant_key_customization?: boolean | undefined
@@ -204990,6 +205107,9 @@ export type Routes = {
                     /** Indicates whether the customer can customize the sensor automation rules for their properties. */
                     allow_sensor_automation_rule_customization?:
                       boolean | undefined
+                    /** Indicates whether the customer can customize the pool heating automation rules for their properties. */
+                    allow_pool_automation_rule_customization?:
+                      boolean | undefined
                     /** Indicates whether the customer can customize the Instant Key profile for their properties. */
                     allow_instant_key_customization?: boolean | undefined
                     /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
@@ -205264,6 +205384,9 @@ export type Routes = {
                     /** Indicates whether the customer can customize the sensor automation rules for their properties. */
                     allow_sensor_automation_rule_customization?:
                       boolean | undefined
+                    /** Indicates whether the customer can customize the pool heating automation rules for their properties. */
+                    allow_pool_automation_rule_customization?:
+                      boolean | undefined
                     /** Indicates whether the customer can customize the Instant Key profile for their properties. */
                     allow_instant_key_customization?: boolean | undefined
                     /** Indicates whether the customer can customize their notification settings, such as the low-battery alert threshold. */
@@ -205533,6 +205656,9 @@ export type Routes = {
                         boolean | undefined
                       /** Indicates whether the customer can customize the sensor automation rules for their properties. */
                       allow_sensor_automation_rule_customization?:
+                        boolean | undefined
+                      /** Indicates whether the customer can customize the pool heating automation rules for their properties. */
+                      allow_pool_automation_rule_customization?:
                         boolean | undefined
                       /** Indicates whether the customer can customize the Instant Key profile for their properties. */
                       allow_instant_key_customization?: boolean | undefined
@@ -219835,6 +219961,9 @@ export type Routes = {
                             boolean | undefined
                           /** Indicates whether the customer can customize the sensor automation rules for their properties. */
                           allow_sensor_automation_rule_customization?:
+                            boolean | undefined
+                          /** Indicates whether the customer can customize the pool heating automation rules for their properties. */
+                          allow_pool_automation_rule_customization?:
                             boolean | undefined
                           /** Indicates whether the customer can customize the Instant Key profile for their properties. */
                           allow_instant_key_customization?: boolean | undefined
