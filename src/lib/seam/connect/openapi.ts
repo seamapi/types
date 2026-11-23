@@ -69300,6 +69300,139 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
+    '/seam/customer/v1/automation_device_actions/list': {
+      get: {
+        description:
+          'Returns the device automation actions planned or run for a reservation, ordered by when they run.',
+        operationId: 'seamCustomerV1AutomationDeviceActionsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'customer_key',
+            schema: {
+              description:
+                'The customer_key identifying the customer. Required when not using client_session_with_customer auth.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'reservation_id',
+            schema: {
+              description:
+                'ID of the reservation whose device automation actions to list.',
+              format: 'uuid',
+              type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'reservation_key',
+            schema: {
+              description:
+                'Key of the reservation whose device automation actions to list.',
+              minLength: 1,
+              type: 'string',
+            },
+          },
+        ],
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    automation_device_actions: {
+                      items: {
+                        properties: {
+                          action_attempt_id: { format: 'uuid', type: 'string' },
+                          automation_device_action_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          completed_at: {
+                            format: 'date-time',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          device_id: { format: 'uuid', type: 'string' },
+                          message: { type: 'string' },
+                          phase: { type: 'string' },
+                          reservation_id: { format: 'uuid', type: 'string' },
+                          rule_type: {
+                            enum: ['sound', 'sensor', 'pool'],
+                            type: 'string',
+                          },
+                          run_at: { format: 'date-time', type: 'string' },
+                          skip_reason: { type: 'string' },
+                          status: {
+                            enum: [
+                              'pending',
+                              'running',
+                              'succeeded',
+                              'skipped',
+                              'failed',
+                            ],
+                            type: 'string',
+                          },
+                          warnings: {
+                            items: {
+                              properties: { message: { type: 'string' } },
+                              required: ['message'],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
+                        },
+                        required: [
+                          'automation_device_action_id',
+                          'reservation_id',
+                          'device_id',
+                          'rule_type',
+                          'phase',
+                          'run_at',
+                          'status',
+                          'completed_at',
+                          'warnings',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['automation_device_actions', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session_with_customer: [] },
+          { client_session_with_customer_ro: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/seam/customer/v1/automation_device_actions/list',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'customer',
+          'v1',
+          'automation_device_actions',
+        ],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'automation_device_actions',
+        'x-has-required-parameters': true,
+        'x-response-key': 'automation_device_actions',
+        'x-title': 'List Device Automation Actions for a Reservation',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
     '/seam/customer/v1/automation_runs/create': {
       post: {
         description:
