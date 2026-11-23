@@ -16958,17 +16958,15 @@ const openapi: OpenAPISpec = {
           },
           is_casing_tampered_with: {
             description:
-              'Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when Seam has no accepted observation, including when the device does not support casing tamper detection. This is independent of `is_detached_from_mounting_plate`.',
+              'Indicates whether the device was last reported as having its casing opened or tampered with. Omitted when the provider reports no casing state, including when the device does not support casing tamper detection. This is independent of `is_detached_from_mounting_plate`.',
             type: 'boolean',
             'x-property-group-key': 'hardware',
-            'x-undocumented': 'Unreleased.',
           },
           is_detached_from_mounting_plate: {
             description:
               'Indicates whether the device was last reported as detached from its mounting plate. Omitted when Seam has no accepted observation, including when the device does not support mounting plate detection, reports an unknown status, or is offline. This is the last accepted provider observation, not a guarantee of current hardware state; check `is_online` before acting on it.',
             type: 'boolean',
             'x-property-group-key': 'hardware',
-            'x-undocumented': 'Unreleased.',
           },
           is_door_locked: {
             description: 'Indicates whether the lock is locked.',
@@ -16991,7 +16989,6 @@ const openapi: OpenAPISpec = {
             description: 'Indicates whether the device is online.',
             type: 'boolean',
             'x-property-group-key': 'hardware',
-            'x-undocumented': 'Unreleased.',
           },
           is_smoking_detected: {
             description:
@@ -43493,7 +43490,6 @@ const openapi: OpenAPISpec = {
             description: 'Indicates whether the device is online.',
             type: 'boolean',
             'x-property-group-key': 'hardware',
-            'x-undocumented': 'Unreleased.',
           },
           location: {
             description: 'Location information for the device.',
