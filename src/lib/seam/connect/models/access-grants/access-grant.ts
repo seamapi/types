@@ -229,6 +229,16 @@ const access_revoked = common_access_grant_warning
     "Indicates that one of this access grant's access methods no longer grants access because of a change outside Seam, for example its card was encoded again for another credential. Seam does not replace the access method; issue a new one if the user still needs it.",
   )
 
+const mobile_key_withheld = common_access_grant_warning
+  .extend({
+    warning_code: z
+      .literal('mobile_key_withheld')
+      .describe(warning_code_description),
+  })
+  .describe(
+    "Indicates that Seam did not issue the mobile key requested for this access grant, because the user's email address or phone number belongs to other user identities and Seam cannot tell which person's app should receive it. The other requested access methods were issued.",
+  )
+
 const access_grant_warning = z
   .discriminatedUnion('warning_code', [
     being_deleted,
@@ -239,6 +249,7 @@ const access_grant_warning = z
     device_does_not_support_access_codes,
     device_time_constraints_violated,
     access_revoked,
+    mobile_key_withheld,
   ])
   .describe(
     'Warning associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access).',
@@ -264,6 +275,7 @@ const _access_grant_warning_map = z.object({
   access_revoked_by_access_method: z
     .record(z.string().uuid(), access_revoked)
     .optional(),
+  mobile_key_withheld: mobile_key_withheld.optional(),
 })
 
 export type AccessGrantWarningMap = z.infer<typeof _access_grant_warning_map>
