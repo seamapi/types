@@ -2541,6 +2541,31 @@ const openapi: OpenAPISpec = {
                   ],
                   type: 'object',
                 },
+                {
+                  description:
+                    "Indicates that Seam did not issue the mobile key requested for this access grant, because the user's email address or phone number belongs to other user identities and Seam cannot tell which person's app should receive it. The other requested access methods were issued.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['mobile_key_withheld'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -39885,6 +39910,31 @@ const openapi: OpenAPISpec = {
                     'warning_code',
                     'access_method_id',
                   ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    "Indicates that Seam did not issue the mobile key requested for this access grant, because the user's email address or phone number belongs to other user identities and Seam cannot tell which person's app should receive it. The other requested access methods were issued.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['mobile_key_withheld'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
               ],

@@ -15868,6 +15868,14 @@ export type Routes = {
               /** ID of the access method whose access was revoked. */
               access_method_id: string
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'mobile_key_withheld'
+            }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
         errors: (
@@ -16119,6 +16127,14 @@ export type Routes = {
               warning_code: 'access_revoked'
               /** ID of the access method whose access was revoked. */
               access_method_id: string
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'mobile_key_withheld'
             }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
@@ -20085,6 +20101,14 @@ export type Routes = {
               /** ID of the access method whose access was revoked. */
               access_method_id: string
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'mobile_key_withheld'
+            }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
         errors: (
@@ -20337,6 +20361,14 @@ export type Routes = {
               /** ID of the access method whose access was revoked. */
               access_method_id: string
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'mobile_key_withheld'
+            }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
         errors: (
@@ -20560,6 +20592,14 @@ export type Routes = {
               warning_code: 'access_revoked'
               /** ID of the access method whose access was revoked. */
               access_method_id: string
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'mobile_key_withheld'
             }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
@@ -20795,6 +20835,14 @@ export type Routes = {
               warning_code: 'access_revoked'
               /** ID of the access method whose access was revoked. */
               access_method_id: string
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'mobile_key_withheld'
             }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
@@ -29262,6 +29310,14 @@ export type Routes = {
                     warning_code: 'access_revoked'
                     /** ID of the access method whose access was revoked. */
                     access_method_id: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'mobile_key_withheld'
                   }
               )[]
               /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
@@ -123452,6 +123508,14 @@ export type Routes = {
               /** ID of the access method whose access was revoked. */
               access_method_id: string
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'mobile_key_withheld'
+            }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
         errors: (
@@ -133006,6 +133070,14 @@ export type Routes = {
               /** ID of the access method whose access was revoked. */
               access_method_id: string
             }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'mobile_key_withheld'
+            }
         )[]
         /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
         errors: (
@@ -133634,6 +133706,14 @@ export type Routes = {
                   warning_code: 'access_revoked'
                   /** ID of the access method whose access was revoked. */
                   access_method_id: string
+                }
+              | {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: 'mobile_key_withheld'
                 }
             )[]
             /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
@@ -213328,6 +213408,14 @@ export type Routes = {
                     warning_code: 'access_revoked'
                     /** ID of the access method whose access was revoked. */
                     access_method_id: string
+                  }
+                | {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: 'mobile_key_withheld'
                   }
               )[]
               /** Errors associated with the [access grant](https://www.seam.co/docs/use-cases/granting-access). */
