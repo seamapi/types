@@ -6557,6 +6557,12 @@ const openapi: OpenAPISpec = {
                 enum: ['LOCK_DOOR'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -6572,6 +6578,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -6590,6 +6597,12 @@ const openapi: OpenAPISpec = {
                 description:
                   'Action attempt to track the status of locking a door.',
                 enum: ['LOCK_DOOR'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -6613,6 +6626,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -6631,6 +6645,12 @@ const openapi: OpenAPISpec = {
                 description:
                   'Action attempt to track the status of locking a door.',
                 enum: ['LOCK_DOOR'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -6656,6 +6676,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -6676,6 +6697,12 @@ const openapi: OpenAPISpec = {
                 enum: ['UNLOCK_DOOR'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -6691,6 +6718,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -6709,6 +6737,12 @@ const openapi: OpenAPISpec = {
                 description:
                   'Action attempt to track the status of unlocking a door.',
                 enum: ['UNLOCK_DOOR'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -6732,6 +6766,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -6750,6 +6785,12 @@ const openapi: OpenAPISpec = {
                 description:
                   'Action attempt to track the status of unlocking a door.',
                 enum: ['UNLOCK_DOOR'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -6775,6 +6816,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -6796,6 +6838,12 @@ const openapi: OpenAPISpec = {
                 enum: ['SCAN_CREDENTIAL'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -6811,6 +6859,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -6830,6 +6879,12 @@ const openapi: OpenAPISpec = {
                 description:
                   'Action attempt to track the status of scanning a credential.',
                 enum: ['SCAN_CREDENTIAL'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -8109,6 +8164,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -8128,6 +8184,12 @@ const openapi: OpenAPISpec = {
                 description:
                   'Action attempt to track the status of scanning a credential.',
                 enum: ['SCAN_CREDENTIAL'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -8257,6 +8319,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -8278,6 +8341,12 @@ const openapi: OpenAPISpec = {
                 enum: ['ENCODE_CREDENTIAL'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -8293,6 +8362,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -8312,6 +8382,12 @@ const openapi: OpenAPISpec = {
                 description:
                   'Action attempt to track the status of encoding credential data from the physical encoder onto a card.',
                 enum: ['ENCODE_CREDENTIAL'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -9426,6 +9502,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -9445,6 +9522,12 @@ const openapi: OpenAPISpec = {
                 description:
                   'Action attempt to track the status of encoding credential data from the physical encoder onto a card.',
                 enum: ['ENCODE_CREDENTIAL'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -9650,6 +9733,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -9671,6 +9755,12 @@ const openapi: OpenAPISpec = {
                 enum: ['SCAN_TO_ASSIGN_CREDENTIAL'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -9686,6 +9776,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -9705,6 +9796,12 @@ const openapi: OpenAPISpec = {
                 description:
                   'Action attempt to track the status of scanning a physical card and assigning the credential to an ACS user.',
                 enum: ['SCAN_TO_ASSIGN_CREDENTIAL'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -10237,6 +10334,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -10256,6 +10354,12 @@ const openapi: OpenAPISpec = {
                 description:
                   'Action attempt to track the status of scanning a physical card and assigning the credential to an ACS user.',
                 enum: ['SCAN_TO_ASSIGN_CREDENTIAL'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -10328,6 +10432,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -10349,6 +10454,12 @@ const openapi: OpenAPISpec = {
                 enum: ['ASSIGN_CREDENTIAL'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -10364,6 +10475,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -10383,6 +10495,12 @@ const openapi: OpenAPISpec = {
                 description:
                   'Action attempt to track the status of assigning a pre-registered card credential to an access method.',
                 enum: ['ASSIGN_CREDENTIAL'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -11019,6 +11137,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -11037,6 +11156,12 @@ const openapi: OpenAPISpec = {
                 description:
                   'Action attempt to track the status of assigning a pre-registered card credential to an access method.',
                 enum: ['ASSIGN_CREDENTIAL'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -11109,6 +11234,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -11129,6 +11255,12 @@ const openapi: OpenAPISpec = {
                 enum: ['RESET_SANDBOX_WORKSPACE'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -11144,6 +11276,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -11164,6 +11297,12 @@ const openapi: OpenAPISpec = {
                 enum: ['RESET_SANDBOX_WORKSPACE'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
@@ -11179,6 +11318,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -11199,6 +11339,12 @@ const openapi: OpenAPISpec = {
                 enum: ['RESET_SANDBOX_WORKSPACE'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description: 'Error associated with the action.',
                 properties: {
@@ -11222,6 +11368,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -11242,6 +11389,12 @@ const openapi: OpenAPISpec = {
                 enum: ['SET_FAN_MODE'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -11257,6 +11410,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -11277,6 +11431,12 @@ const openapi: OpenAPISpec = {
                 enum: ['SET_FAN_MODE'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
@@ -11292,6 +11452,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -11312,6 +11473,12 @@ const openapi: OpenAPISpec = {
                 enum: ['SET_FAN_MODE'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description: 'Error associated with the action.',
                 properties: {
@@ -11335,6 +11502,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -11355,6 +11523,12 @@ const openapi: OpenAPISpec = {
                 enum: ['SET_HVAC_MODE'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -11370,6 +11544,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -11390,6 +11565,12 @@ const openapi: OpenAPISpec = {
                 enum: ['SET_HVAC_MODE'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
@@ -11405,6 +11586,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -11425,6 +11607,12 @@ const openapi: OpenAPISpec = {
                 enum: ['SET_HVAC_MODE'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description: 'Error associated with the action.',
                 properties: {
@@ -11448,6 +11636,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -11468,6 +11657,12 @@ const openapi: OpenAPISpec = {
                 enum: ['ACTIVATE_CLIMATE_PRESET'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -11483,6 +11678,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -11503,6 +11699,12 @@ const openapi: OpenAPISpec = {
                 enum: ['ACTIVATE_CLIMATE_PRESET'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
@@ -11518,6 +11720,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -11538,6 +11741,12 @@ const openapi: OpenAPISpec = {
                 enum: ['ACTIVATE_CLIMATE_PRESET'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description: 'Error associated with the action.',
                 properties: {
@@ -11561,6 +11770,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -11581,6 +11791,12 @@ const openapi: OpenAPISpec = {
                 enum: ['ACTIVATE_WEEKLY_PROGRAM'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -11596,6 +11812,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -11616,6 +11833,12 @@ const openapi: OpenAPISpec = {
                 enum: ['ACTIVATE_WEEKLY_PROGRAM'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
@@ -11631,6 +11854,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -11651,6 +11875,12 @@ const openapi: OpenAPISpec = {
                 enum: ['ACTIVATE_WEEKLY_PROGRAM'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description: 'Error associated with the action.',
                 properties: {
@@ -11674,6 +11904,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -11694,6 +11925,12 @@ const openapi: OpenAPISpec = {
                 enum: ['SIMULATE_KEYPAD_CODE_ENTRY'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -11709,6 +11946,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -11729,6 +11967,12 @@ const openapi: OpenAPISpec = {
                 enum: ['SIMULATE_KEYPAD_CODE_ENTRY'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
@@ -11744,6 +11988,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -11762,6 +12007,12 @@ const openapi: OpenAPISpec = {
                 description:
                   'Action attempt to track the status of simulating a keypad code entry.',
                 enum: ['SIMULATE_KEYPAD_CODE_ENTRY'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -11787,6 +12038,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -11808,6 +12060,12 @@ const openapi: OpenAPISpec = {
                 enum: ['SIMULATE_MANUAL_LOCK_VIA_KEYPAD'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -11823,6 +12081,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -11844,6 +12103,12 @@ const openapi: OpenAPISpec = {
                 enum: ['SIMULATE_MANUAL_LOCK_VIA_KEYPAD'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
@@ -11859,6 +12124,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -11880,6 +12146,12 @@ const openapi: OpenAPISpec = {
                 enum: ['SIMULATE_MANUAL_LOCK_VIA_KEYPAD'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description: 'Error associated with the action.',
                 properties: {
@@ -11903,6 +12175,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -11923,6 +12196,12 @@ const openapi: OpenAPISpec = {
                 enum: ['PUSH_THERMOSTAT_PROGRAMS'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -11938,6 +12217,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -11958,6 +12238,12 @@ const openapi: OpenAPISpec = {
                 enum: ['PUSH_THERMOSTAT_PROGRAMS'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
@@ -11973,6 +12259,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -11993,6 +12280,12 @@ const openapi: OpenAPISpec = {
                 enum: ['PUSH_THERMOSTAT_PROGRAMS'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description: 'Error associated with the action.',
                 properties: {
@@ -12016,6 +12309,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -12036,6 +12330,12 @@ const openapi: OpenAPISpec = {
                 enum: ['CONFIGURE_AUTO_LOCK'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -12051,6 +12351,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -12071,6 +12372,12 @@ const openapi: OpenAPISpec = {
                 enum: ['CONFIGURE_AUTO_LOCK'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
@@ -12086,6 +12393,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -12104,6 +12412,12 @@ const openapi: OpenAPISpec = {
                 description:
                   'Action attempt to track the status of configuring the auto-lock on a lock.',
                 enum: ['CONFIGURE_AUTO_LOCK'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -12129,6 +12443,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -12150,6 +12465,12 @@ const openapi: OpenAPISpec = {
                 enum: ['CONVERT_ACCESS_CODE_TO_MANAGED'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -12165,6 +12486,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -12186,6 +12508,12 @@ const openapi: OpenAPISpec = {
                 enum: ['CONVERT_ACCESS_CODE_TO_MANAGED'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
@@ -12201,6 +12529,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -12220,6 +12549,12 @@ const openapi: OpenAPISpec = {
                 description:
                   'Action attempt to track the status of converting an unmanaged access code to a managed access code.',
                 enum: ['CONVERT_ACCESS_CODE_TO_MANAGED'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -12245,6 +12580,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -12266,6 +12602,12 @@ const openapi: OpenAPISpec = {
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -12281,6 +12623,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -12303,6 +12646,12 @@ const openapi: OpenAPISpec = {
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
@@ -12318,6 +12667,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -12340,6 +12690,12 @@ const openapi: OpenAPISpec = {
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description: 'Error associated with the action.',
                 properties: {
@@ -12363,6 +12719,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -12385,6 +12742,12 @@ const openapi: OpenAPISpec = {
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -12400,6 +12763,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -12422,6 +12786,12 @@ const openapi: OpenAPISpec = {
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
@@ -12437,6 +12807,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -12458,6 +12829,12 @@ const openapi: OpenAPISpec = {
                 enum: ['SET_SPEAKER_MUTE'],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
               },
               error: {
                 description: 'Error associated with the action.',
@@ -12482,6 +12859,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -12504,6 +12882,12 @@ const openapi: OpenAPISpec = {
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -12519,6 +12903,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -12540,6 +12925,12 @@ const openapi: OpenAPISpec = {
                 enum: ['PAUSE_SPEAKER_PLAYBACK'],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
               },
               error: {
                 description:
@@ -12564,6 +12955,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -12585,6 +12977,12 @@ const openapi: OpenAPISpec = {
                 enum: ['PAUSE_SPEAKER_PLAYBACK'],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
               },
               error: {
                 description: 'Error associated with the action.',
@@ -12609,6 +13007,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -12631,6 +13030,12 @@ const openapi: OpenAPISpec = {
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -12646,6 +13051,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -12667,6 +13073,12 @@ const openapi: OpenAPISpec = {
                 enum: ['RESUME_SPEAKER_PLAYBACK'],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
               },
               error: {
                 description:
@@ -12691,6 +13103,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -12713,6 +13126,12 @@ const openapi: OpenAPISpec = {
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description: 'Error associated with the action.',
                 properties: {
@@ -12736,6 +13155,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -12758,6 +13178,12 @@ const openapi: OpenAPISpec = {
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -12773,6 +13199,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -12795,6 +13222,12 @@ const openapi: OpenAPISpec = {
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
@@ -12810,6 +13243,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -12831,6 +13265,12 @@ const openapi: OpenAPISpec = {
                 enum: ['PLAY_SPEAKER_CHIME'],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
               },
               error: {
                 description: 'Error associated with the action.',
@@ -12855,6 +13295,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -12877,6 +13318,12 @@ const openapi: OpenAPISpec = {
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -12892,6 +13339,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -12913,6 +13361,12 @@ const openapi: OpenAPISpec = {
                 enum: ['PLAY_SPEAKER_FAVORITE'],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
               },
               error: {
                 description:
@@ -12937,6 +13391,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -12959,6 +13414,12 @@ const openapi: OpenAPISpec = {
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description: 'Error associated with the action.',
                 properties: {
@@ -12982,6 +13443,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -13004,6 +13466,12 @@ const openapi: OpenAPISpec = {
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -13019,6 +13487,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -13041,6 +13510,12 @@ const openapi: OpenAPISpec = {
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
@@ -13056,6 +13531,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -13077,6 +13553,12 @@ const openapi: OpenAPISpec = {
                 enum: ['PLAY_SPEAKER_AUDIO_CLIP'],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
               },
               error: {
                 description: 'Error associated with the action.',
@@ -13101,6 +13583,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -13124,6 +13607,12 @@ const openapi: OpenAPISpec = {
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -13139,6 +13628,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -13162,6 +13652,12 @@ const openapi: OpenAPISpec = {
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
@@ -13177,6 +13673,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -13199,6 +13696,12 @@ const openapi: OpenAPISpec = {
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description: 'Error associated with the action.',
                 properties: {
@@ -13222,6 +13725,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -13241,6 +13745,12 @@ const openapi: OpenAPISpec = {
                 enum: ['SYNC_ACCESS_CODES'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -13256,6 +13766,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -13274,6 +13785,12 @@ const openapi: OpenAPISpec = {
                 enum: ['SYNC_ACCESS_CODES'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
@@ -13289,6 +13806,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -13305,6 +13823,12 @@ const openapi: OpenAPISpec = {
               action_type: {
                 description: 'Syncing access codes failed.',
                 enum: ['SYNC_ACCESS_CODES'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -13330,6 +13854,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -13348,6 +13873,12 @@ const openapi: OpenAPISpec = {
                 enum: ['CREATE_ACCESS_CODE'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -13363,6 +13894,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -13379,6 +13911,12 @@ const openapi: OpenAPISpec = {
               action_type: {
                 description: 'Creating an access code succeeded.',
                 enum: ['CREATE_ACCESS_CODE'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -13403,6 +13941,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -13421,6 +13960,12 @@ const openapi: OpenAPISpec = {
                 enum: ['CREATE_ACCESS_CODE'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description: 'Error associated with the action.',
                 properties: {
@@ -13444,6 +13989,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -13462,6 +14008,12 @@ const openapi: OpenAPISpec = {
                 enum: ['DELETE_ACCESS_CODE'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -13477,6 +14029,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -13495,6 +14048,12 @@ const openapi: OpenAPISpec = {
                 enum: ['DELETE_ACCESS_CODE'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
@@ -13510,6 +14069,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -13526,6 +14086,12 @@ const openapi: OpenAPISpec = {
               action_type: {
                 description: 'Deleting an access code failed.',
                 enum: ['DELETE_ACCESS_CODE'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -13551,6 +14117,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -13569,6 +14136,12 @@ const openapi: OpenAPISpec = {
                 enum: ['UPDATE_ACCESS_CODE'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -13584,6 +14157,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -13600,6 +14174,12 @@ const openapi: OpenAPISpec = {
               action_type: {
                 description: 'Updating an access code succeeded.',
                 enum: ['UPDATE_ACCESS_CODE'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -13623,6 +14203,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -13639,6 +14220,12 @@ const openapi: OpenAPISpec = {
               action_type: {
                 description: 'Updating an access code failed.',
                 enum: ['UPDATE_ACCESS_CODE'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -13664,6 +14251,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -13682,6 +14270,12 @@ const openapi: OpenAPISpec = {
                 enum: ['CREATE_NOISE_THRESHOLD'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -13697,6 +14291,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -13713,6 +14308,12 @@ const openapi: OpenAPISpec = {
               action_type: {
                 description: 'Creating a noise threshold succeeded.',
                 enum: ['CREATE_NOISE_THRESHOLD'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -13737,6 +14338,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -13755,6 +14357,12 @@ const openapi: OpenAPISpec = {
                 enum: ['CREATE_NOISE_THRESHOLD'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description: 'Error associated with the action.',
                 properties: {
@@ -13778,6 +14386,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -13796,6 +14405,12 @@ const openapi: OpenAPISpec = {
                 enum: ['DELETE_NOISE_THRESHOLD'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -13811,6 +14426,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -13829,6 +14445,12 @@ const openapi: OpenAPISpec = {
                 enum: ['DELETE_NOISE_THRESHOLD'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for successful action attempts.',
@@ -13844,6 +14466,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -13860,6 +14483,12 @@ const openapi: OpenAPISpec = {
               action_type: {
                 description: 'Deleting a noise threshold failed.',
                 enum: ['DELETE_NOISE_THRESHOLD'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -13885,6 +14514,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -13903,6 +14533,12 @@ const openapi: OpenAPISpec = {
                 enum: ['UPDATE_NOISE_THRESHOLD'],
                 type: 'string',
               },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
+                type: 'string',
+              },
               error: {
                 description:
                   'Errors associated with the action attempt. Null for pending action attempts.',
@@ -13918,6 +14554,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'error',
               'action_type',
@@ -13934,6 +14571,12 @@ const openapi: OpenAPISpec = {
               action_type: {
                 description: 'Updating a noise threshold succeeded.',
                 enum: ['UPDATE_NOISE_THRESHOLD'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -13958,6 +14601,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'error',
               'action_type',
               'result',
@@ -13974,6 +14618,12 @@ const openapi: OpenAPISpec = {
               action_type: {
                 description: 'Updating a noise threshold failed.',
                 enum: ['UPDATE_NOISE_THRESHOLD'],
+                type: 'string',
+              },
+              created_at: {
+                description:
+                  'Date and time at which the action attempt was created.',
+                format: 'date-time',
                 type: 'string',
               },
               error: {
@@ -13999,6 +14649,7 @@ const openapi: OpenAPISpec = {
             required: [
               'action_attempt_id',
               'status',
+              'created_at',
               'result',
               'action_type',
               'error',
@@ -53126,7 +53777,7 @@ const openapi: OpenAPISpec = {
     '/action_attempts/list': {
       get: {
         description:
-          'Returns a list of the [action attempts](https://www.seam.co/docs/core-concepts/action-attempts) that you specify as an array of `action_attempt_id`s.',
+          'Returns a list of the [action attempts](https://www.seam.co/docs/core-concepts/action-attempts) that you specify as an array of `action_attempt_id`s or by `device_id`, newest first.',
         operationId: 'actionAttemptsListGet',
         parameters: [
           {
@@ -53146,6 +53797,52 @@ const openapi: OpenAPISpec = {
               description: 'ID of the device to filter action attempts by.',
               format: 'uuid',
               type: 'string',
+            },
+          },
+          {
+            in: 'query',
+            name: 'action_types',
+            schema: {
+              description:
+                'Types of the action attempts that you want to list, such as `LOCK_DOOR` and `UNLOCK_DOOR`.',
+              items: {
+                enum: [
+                  'LOCK_DOOR',
+                  'UNLOCK_DOOR',
+                  'SCAN_CREDENTIAL',
+                  'ENCODE_CREDENTIAL',
+                  'SCAN_TO_ASSIGN_CREDENTIAL',
+                  'ASSIGN_CREDENTIAL',
+                  'RESET_SANDBOX_WORKSPACE',
+                  'SET_FAN_MODE',
+                  'SET_HVAC_MODE',
+                  'ACTIVATE_CLIMATE_PRESET',
+                  'ACTIVATE_WEEKLY_PROGRAM',
+                  'SIMULATE_KEYPAD_CODE_ENTRY',
+                  'SIMULATE_MANUAL_LOCK_VIA_KEYPAD',
+                  'PUSH_THERMOSTAT_PROGRAMS',
+                  'CONFIGURE_AUTO_LOCK',
+                  'CONVERT_ACCESS_CODE_TO_MANAGED',
+                  'SET_SPEAKER_VOLUME',
+                  'SET_SPEAKER_MUTE',
+                  'PAUSE_SPEAKER_PLAYBACK',
+                  'RESUME_SPEAKER_PLAYBACK',
+                  'PLAY_SPEAKER_CHIME',
+                  'PLAY_SPEAKER_FAVORITE',
+                  'PLAY_SPEAKER_AUDIO_CLIP',
+                  'SET_TEMPERATURE_CONTROLLER_MODE',
+                  'SYNC_ACCESS_CODES',
+                  'CREATE_ACCESS_CODE',
+                  'DELETE_ACCESS_CODE',
+                  'UPDATE_ACCESS_CODE',
+                  'CREATE_NOISE_THRESHOLD',
+                  'DELETE_NOISE_THRESHOLD',
+                  'UPDATE_NOISE_THRESHOLD',
+                ],
+                type: 'string',
+              },
+              maxItems: 100,
+              type: 'array',
             },
           },
           {
