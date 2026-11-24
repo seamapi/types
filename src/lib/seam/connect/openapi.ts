@@ -16987,7 +16987,12 @@ const openapi: OpenAPISpec = {
               {
                 description:
                   'Device type for pool controllers, pools, and spas.',
-                enum: ['hayward_pool_controller', 'hayward_pool'],
+                enum: [
+                  'hayward_pool_controller',
+                  'jandy_pool_controller',
+                  'hayward_pool',
+                  'jandy_pool',
+                ],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
@@ -18694,6 +18699,24 @@ const openapi: OpenAPISpec = {
                           },
                         },
                         type: 'object',
+                      },
+                      jandy_iaqualink_metadata: {
+                        description:
+                          'Metadata for a Jandy iAquaLink pool controller, pool, or spa.',
+                        properties: {
+                          serial_number: {
+                            description:
+                              'Serial number of the Jandy iAquaLink controller that the device belongs to.',
+                            type: 'string',
+                          },
+                          system_name: {
+                            description:
+                              'Name of the controller, as set in the Jandy iAquaLink app.',
+                            type: 'string',
+                          },
+                        },
+                        type: 'object',
+                        'x-undocumented': 'Unreleased.',
                       },
                       keynest_metadata: {
                         description: 'Metadata for a KeyNest device.',
@@ -43821,7 +43844,12 @@ const openapi: OpenAPISpec = {
               {
                 description:
                   'Device type for pool controllers, pools, and spas.',
-                enum: ['hayward_pool_controller', 'hayward_pool'],
+                enum: [
+                  'hayward_pool_controller',
+                  'jandy_pool_controller',
+                  'hayward_pool',
+                  'jandy_pool',
+                ],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },
@@ -58919,7 +58947,12 @@ const openapi: OpenAPISpec = {
                 {
                   description:
                     'Device type for pool controllers, pools, and spas.',
-                  enum: ['hayward_pool_controller', 'hayward_pool'],
+                  enum: [
+                    'hayward_pool_controller',
+                    'jandy_pool_controller',
+                    'hayward_pool',
+                    'jandy_pool',
+                  ],
                   type: 'string',
                   'x-undocumented': 'Unreleased.',
                 },
@@ -59029,7 +59062,12 @@ const openapi: OpenAPISpec = {
                   {
                     description:
                       'Device type for pool controllers, pools, and spas.',
-                    enum: ['hayward_pool_controller', 'hayward_pool'],
+                    enum: [
+                      'hayward_pool_controller',
+                      'jandy_pool_controller',
+                      'hayward_pool',
+                      'jandy_pool',
+                    ],
                     type: 'string',
                     'x-undocumented': 'Unreleased.',
                   },
@@ -61327,7 +61365,12 @@ const openapi: OpenAPISpec = {
                 {
                   description:
                     'Device type for pool controllers, pools, and spas.',
-                  enum: ['hayward_pool_controller', 'hayward_pool'],
+                  enum: [
+                    'hayward_pool_controller',
+                    'jandy_pool_controller',
+                    'hayward_pool',
+                    'jandy_pool',
+                  ],
                   type: 'string',
                   'x-undocumented': 'Unreleased.',
                 },
@@ -61437,7 +61480,12 @@ const openapi: OpenAPISpec = {
                   {
                     description:
                       'Device type for pool controllers, pools, and spas.',
-                    enum: ['hayward_pool_controller', 'hayward_pool'],
+                    enum: [
+                      'hayward_pool_controller',
+                      'jandy_pool_controller',
+                      'hayward_pool',
+                      'jandy_pool',
+                    ],
                     type: 'string',
                     'x-undocumented': 'Unreleased.',
                   },
@@ -64293,7 +64341,12 @@ const openapi: OpenAPISpec = {
             schema: {
               description:
                 'Device type by which you want to filter pool devices.',
-              enum: ['hayward_pool_controller', 'hayward_pool'],
+              enum: [
+                'hayward_pool_controller',
+                'jandy_pool_controller',
+                'hayward_pool',
+                'jandy_pool',
+              ],
               type: 'string',
               'x-undocumented': 'Unreleased.',
             },
@@ -64307,7 +64360,12 @@ const openapi: OpenAPISpec = {
               items: {
                 description:
                   'Device type for pool controllers, pools, and spas.',
-                enum: ['hayward_pool_controller', 'hayward_pool'],
+                enum: [
+                  'hayward_pool_controller',
+                  'jandy_pool_controller',
+                  'hayward_pool',
+                  'jandy_pool',
+                ],
                 type: 'string',
                 'x-undocumented': 'Unreleased.',
               },

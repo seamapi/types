@@ -17129,7 +17129,12 @@ export type Routes = {
                   )
                 | 'sonos_speaker'
                 | 'alertify_sensor'
-                | ('hayward_pool_controller' | 'hayward_pool')
+                | (
+                    | 'hayward_pool_controller'
+                    | 'jandy_pool_controller'
+                    | 'hayward_pool'
+                    | 'jandy_pool'
+                  )
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -18262,6 +18267,18 @@ export type Routes = {
                               /** ID of the pool or spa within its controller. Only present on a pool or spa. */
                               system_id?: (string | undefined) | undefined
                               /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                              system_name?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        )
+                      | undefined
+                    /** Metadata for a Jandy iAquaLink pool controller, pool, or spa. */
+                    jandy_iaqualink_metadata?:
+                      | (
+                          | {
+                              /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
+                              serial_number?: (string | undefined) | undefined
+                              /** Name of the controller, as set in the Jandy iAquaLink app. */
                               system_name?: (string | undefined) | undefined
                             }
                           | undefined
@@ -27665,7 +27682,12 @@ export type Routes = {
                   )
                 | 'sonos_speaker'
                 | 'alertify_sensor'
-                | ('hayward_pool_controller' | 'hayward_pool')
+                | (
+                    | 'hayward_pool_controller'
+                    | 'jandy_pool_controller'
+                    | 'hayward_pool'
+                    | 'jandy_pool'
+                  )
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -28798,6 +28820,18 @@ export type Routes = {
                               /** ID of the pool or spa within its controller. Only present on a pool or spa. */
                               system_id?: (string | undefined) | undefined
                               /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                              system_name?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        )
+                      | undefined
+                    /** Metadata for a Jandy iAquaLink pool controller, pool, or spa. */
+                    jandy_iaqualink_metadata?:
+                      | (
+                          | {
+                              /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
+                              serial_number?: (string | undefined) | undefined
+                              /** Name of the controller, as set in the Jandy iAquaLink app. */
                               system_name?: (string | undefined) | undefined
                             }
                           | undefined
@@ -61841,7 +61875,12 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_controller' | 'hayward_pool')
+          | (
+              | 'hayward_pool_controller'
+              | 'jandy_pool_controller'
+              | 'hayward_pool'
+              | 'jandy_pool'
+            )
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -62932,6 +62971,18 @@ export type Routes = {
                         /** ID of the pool or spa within its controller. Only present on a pool or spa. */
                         system_id?: (string | undefined) | undefined
                         /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Jandy iAquaLink pool controller, pool, or spa. */
+              jandy_iaqualink_metadata?:
+                | (
+                    | {
+                        /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
+                        serial_number?: (string | undefined) | undefined
+                        /** Name of the controller, as set in the Jandy iAquaLink app. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -64206,7 +64257,12 @@ export type Routes = {
               )
             | 'sonos_speaker'
             | 'alertify_sensor'
-            | ('hayward_pool_controller' | 'hayward_pool')
+            | (
+                | 'hayward_pool_controller'
+                | 'jandy_pool_controller'
+                | 'hayward_pool'
+                | 'jandy_pool'
+              )
           )
         | undefined
       /** Array of device types for which you want to list devices. */
@@ -64272,7 +64328,12 @@ export type Routes = {
               )
             | 'sonos_speaker'
             | 'alertify_sensor'
-            | ('hayward_pool_controller' | 'hayward_pool')
+            | (
+                | 'hayward_pool_controller'
+                | 'jandy_pool_controller'
+                | 'hayward_pool'
+                | 'jandy_pool'
+              )
           )[]
         | undefined
       /** Manufacturer for which you want to list devices. */
@@ -64511,7 +64572,12 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_controller' | 'hayward_pool')
+          | (
+              | 'hayward_pool_controller'
+              | 'jandy_pool_controller'
+              | 'hayward_pool'
+              | 'jandy_pool'
+            )
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -65602,6 +65668,18 @@ export type Routes = {
                         /** ID of the pool or spa within its controller. Only present on a pool or spa. */
                         system_id?: (string | undefined) | undefined
                         /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Jandy iAquaLink pool controller, pool, or spa. */
+              jandy_iaqualink_metadata?:
+                | (
+                    | {
+                        /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
+                        serial_number?: (string | undefined) | undefined
+                        /** Name of the controller, as set in the Jandy iAquaLink app. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -68475,7 +68553,12 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_controller' | 'hayward_pool')
+          | (
+              | 'hayward_pool_controller'
+              | 'jandy_pool_controller'
+              | 'hayward_pool'
+              | 'jandy_pool'
+            )
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
         /** Location information for the device. */
@@ -69169,7 +69252,12 @@ export type Routes = {
               )
             | 'sonos_speaker'
             | 'alertify_sensor'
-            | ('hayward_pool_controller' | 'hayward_pool')
+            | (
+                | 'hayward_pool_controller'
+                | 'jandy_pool_controller'
+                | 'hayward_pool'
+                | 'jandy_pool'
+              )
           )
         | undefined
       /** Array of device types for which you want to list devices. */
@@ -69235,7 +69323,12 @@ export type Routes = {
               )
             | 'sonos_speaker'
             | 'alertify_sensor'
-            | ('hayward_pool_controller' | 'hayward_pool')
+            | (
+                | 'hayward_pool_controller'
+                | 'jandy_pool_controller'
+                | 'hayward_pool'
+                | 'jandy_pool'
+              )
           )[]
         | undefined
       /** Manufacturer for which you want to list devices. */
@@ -69461,7 +69554,12 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_controller' | 'hayward_pool')
+          | (
+              | 'hayward_pool_controller'
+              | 'jandy_pool_controller'
+              | 'hayward_pool'
+              | 'jandy_pool'
+            )
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
         /** Location information for the device. */
@@ -82254,7 +82352,12 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_controller' | 'hayward_pool')
+          | (
+              | 'hayward_pool_controller'
+              | 'jandy_pool_controller'
+              | 'hayward_pool'
+              | 'jandy_pool'
+            )
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -83345,6 +83448,18 @@ export type Routes = {
                         /** ID of the pool or spa within its controller. Only present on a pool or spa. */
                         system_id?: (string | undefined) | undefined
                         /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Jandy iAquaLink pool controller, pool, or spa. */
+              jandy_iaqualink_metadata?:
+                | (
+                    | {
+                        /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
+                        serial_number?: (string | undefined) | undefined
+                        /** Name of the controller, as set in the Jandy iAquaLink app. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -84605,7 +84720,12 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_controller' | 'hayward_pool')
+          | (
+              | 'hayward_pool_controller'
+              | 'jandy_pool_controller'
+              | 'hayward_pool'
+              | 'jandy_pool'
+            )
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -85696,6 +85816,18 @@ export type Routes = {
                         /** ID of the pool or spa within its controller. Only present on a pool or spa. */
                         system_id?: (string | undefined) | undefined
                         /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Jandy iAquaLink pool controller, pool, or spa. */
+              jandy_iaqualink_metadata?:
+                | (
+                    | {
+                        /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
+                        serial_number?: (string | undefined) | undefined
+                        /** Name of the controller, as set in the Jandy iAquaLink app. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -87097,7 +87229,12 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_controller' | 'hayward_pool')
+          | (
+              | 'hayward_pool_controller'
+              | 'jandy_pool_controller'
+              | 'hayward_pool'
+              | 'jandy_pool'
+            )
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -88188,6 +88325,18 @@ export type Routes = {
                         /** ID of the pool or spa within its controller. Only present on a pool or spa. */
                         system_id?: (string | undefined) | undefined
                         /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Jandy iAquaLink pool controller, pool, or spa. */
+              jandy_iaqualink_metadata?:
+                | (
+                    | {
+                        /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
+                        serial_number?: (string | undefined) | undefined
+                        /** Name of the controller, as set in the Jandy iAquaLink app. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -89447,7 +89596,12 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_controller' | 'hayward_pool')
+          | (
+              | 'hayward_pool_controller'
+              | 'jandy_pool_controller'
+              | 'hayward_pool'
+              | 'jandy_pool'
+            )
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -90538,6 +90692,18 @@ export type Routes = {
                         /** ID of the pool or spa within its controller. Only present on a pool or spa. */
                         system_id?: (string | undefined) | undefined
                         /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Jandy iAquaLink pool controller, pool, or spa. */
+              jandy_iaqualink_metadata?:
+                | (
+                    | {
+                        /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
+                        serial_number?: (string | undefined) | undefined
+                        /** Name of the controller, as set in the Jandy iAquaLink app. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -102940,7 +103106,12 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_controller' | 'hayward_pool')
+          | (
+              | 'hayward_pool_controller'
+              | 'jandy_pool_controller'
+              | 'hayward_pool'
+              | 'jandy_pool'
+            )
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -104031,6 +104202,18 @@ export type Routes = {
                         /** ID of the pool or spa within its controller. Only present on a pool or spa. */
                         system_id?: (string | undefined) | undefined
                         /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Jandy iAquaLink pool controller, pool, or spa. */
+              jandy_iaqualink_metadata?:
+                | (
+                    | {
+                        /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
+                        serial_number?: (string | undefined) | undefined
+                        /** Name of the controller, as set in the Jandy iAquaLink app. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -105290,7 +105473,12 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_controller' | 'hayward_pool')
+          | (
+              | 'hayward_pool_controller'
+              | 'jandy_pool_controller'
+              | 'hayward_pool'
+              | 'jandy_pool'
+            )
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -106381,6 +106569,18 @@ export type Routes = {
                         /** ID of the pool or spa within its controller. Only present on a pool or spa. */
                         system_id?: (string | undefined) | undefined
                         /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Jandy iAquaLink pool controller, pool, or spa. */
+              jandy_iaqualink_metadata?:
+                | (
+                    | {
+                        /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
+                        serial_number?: (string | undefined) | undefined
+                        /** Name of the controller, as set in the Jandy iAquaLink app. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -120312,9 +120512,23 @@ export type Routes = {
       /** ID of the Connect Webview for which you want to list devices. */
       connect_webview_id?: string | undefined
       /** Device type by which you want to filter pool devices. */
-      device_type?: ('hayward_pool_controller' | 'hayward_pool') | undefined
+      device_type?:
+        | (
+            | 'hayward_pool_controller'
+            | 'jandy_pool_controller'
+            | 'hayward_pool'
+            | 'jandy_pool'
+          )
+        | undefined
       /** Array of device types by which you want to filter pool devices. */
-      device_types?: ('hayward_pool_controller' | 'hayward_pool')[] | undefined
+      device_types?:
+        | (
+            | 'hayward_pool_controller'
+            | 'jandy_pool_controller'
+            | 'hayward_pool'
+            | 'jandy_pool'
+          )[]
+        | undefined
     }
     formData: {}
     jsonResponse: {
@@ -120383,7 +120597,12 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_controller' | 'hayward_pool')
+          | (
+              | 'hayward_pool_controller'
+              | 'jandy_pool_controller'
+              | 'hayward_pool'
+              | 'jandy_pool'
+            )
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -121474,6 +121693,18 @@ export type Routes = {
                         /** ID of the pool or spa within its controller. Only present on a pool or spa. */
                         system_id?: (string | undefined) | undefined
                         /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Jandy iAquaLink pool controller, pool, or spa. */
+              jandy_iaqualink_metadata?:
+                | (
+                    | {
+                        /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
+                        serial_number?: (string | undefined) | undefined
+                        /** Name of the controller, as set in the Jandy iAquaLink app. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -144855,7 +145086,12 @@ export type Routes = {
                   )
                 | 'sonos_speaker'
                 | 'alertify_sensor'
-                | ('hayward_pool_controller' | 'hayward_pool')
+                | (
+                    | 'hayward_pool_controller'
+                    | 'jandy_pool_controller'
+                    | 'hayward_pool'
+                    | 'jandy_pool'
+                  )
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -145988,6 +146224,18 @@ export type Routes = {
                               /** ID of the pool or spa within its controller. Only present on a pool or spa. */
                               system_id?: (string | undefined) | undefined
                               /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                              system_name?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        )
+                      | undefined
+                    /** Metadata for a Jandy iAquaLink pool controller, pool, or spa. */
+                    jandy_iaqualink_metadata?:
+                      | (
+                          | {
+                              /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
+                              serial_number?: (string | undefined) | undefined
+                              /** Name of the controller, as set in the Jandy iAquaLink app. */
                               system_name?: (string | undefined) | undefined
                             }
                           | undefined
@@ -181883,7 +182131,12 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_controller' | 'hayward_pool')
+          | (
+              | 'hayward_pool_controller'
+              | 'jandy_pool_controller'
+              | 'hayward_pool'
+              | 'jandy_pool'
+            )
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -182974,6 +183227,18 @@ export type Routes = {
                         /** ID of the pool or spa within its controller. Only present on a pool or spa. */
                         system_id?: (string | undefined) | undefined
                         /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Jandy iAquaLink pool controller, pool, or spa. */
+              jandy_iaqualink_metadata?:
+                | (
+                    | {
+                        /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
+                        serial_number?: (string | undefined) | undefined
+                        /** Name of the controller, as set in the Jandy iAquaLink app. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -189840,7 +190105,12 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_controller' | 'hayward_pool')
+          | (
+              | 'hayward_pool_controller'
+              | 'jandy_pool_controller'
+              | 'hayward_pool'
+              | 'jandy_pool'
+            )
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -190931,6 +191201,18 @@ export type Routes = {
                         /** ID of the pool or spa within its controller. Only present on a pool or spa. */
                         system_id?: (string | undefined) | undefined
                         /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Jandy iAquaLink pool controller, pool, or spa. */
+              jandy_iaqualink_metadata?:
+                | (
+                    | {
+                        /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
+                        serial_number?: (string | undefined) | undefined
+                        /** Name of the controller, as set in the Jandy iAquaLink app. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -192190,7 +192472,12 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_controller' | 'hayward_pool')
+          | (
+              | 'hayward_pool_controller'
+              | 'jandy_pool_controller'
+              | 'hayward_pool'
+              | 'jandy_pool'
+            )
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -193281,6 +193568,18 @@ export type Routes = {
                         /** ID of the pool or spa within its controller. Only present on a pool or spa. */
                         system_id?: (string | undefined) | undefined
                         /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Jandy iAquaLink pool controller, pool, or spa. */
+              jandy_iaqualink_metadata?:
+                | (
+                    | {
+                        /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
+                        serial_number?: (string | undefined) | undefined
+                        /** Name of the controller, as set in the Jandy iAquaLink app. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -206826,7 +207125,12 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_controller' | 'hayward_pool')
+          | (
+              | 'hayward_pool_controller'
+              | 'jandy_pool_controller'
+              | 'hayward_pool'
+              | 'jandy_pool'
+            )
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -207917,6 +208221,18 @@ export type Routes = {
                         /** ID of the pool or spa within its controller. Only present on a pool or spa. */
                         system_id?: (string | undefined) | undefined
                         /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Jandy iAquaLink pool controller, pool, or spa. */
+              jandy_iaqualink_metadata?:
+                | (
+                    | {
+                        /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
+                        serial_number?: (string | undefined) | undefined
+                        /** Name of the controller, as set in the Jandy iAquaLink app. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -209178,7 +209494,12 @@ export type Routes = {
             )
           | 'sonos_speaker'
           | 'alertify_sensor'
-          | ('hayward_pool_controller' | 'hayward_pool')
+          | (
+              | 'hayward_pool_controller'
+              | 'jandy_pool_controller'
+              | 'hayward_pool'
+              | 'jandy_pool'
+            )
         /** IDs of the spaces the device is in. */
         space_ids: string[]
         /** Optional nickname to describe the device, settable through Seam. */
@@ -210269,6 +210590,18 @@ export type Routes = {
                         /** ID of the pool or spa within its controller. Only present on a pool or spa. */
                         system_id?: (string | undefined) | undefined
                         /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                        system_name?: (string | undefined) | undefined
+                      }
+                    | undefined
+                  )
+                | undefined
+              /** Metadata for a Jandy iAquaLink pool controller, pool, or spa. */
+              jandy_iaqualink_metadata?:
+                | (
+                    | {
+                        /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
+                        serial_number?: (string | undefined) | undefined
+                        /** Name of the controller, as set in the Jandy iAquaLink app. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -214267,7 +214600,12 @@ export type Routes = {
                   )
                 | 'sonos_speaker'
                 | 'alertify_sensor'
-                | ('hayward_pool_controller' | 'hayward_pool')
+                | (
+                    | 'hayward_pool_controller'
+                    | 'jandy_pool_controller'
+                    | 'hayward_pool'
+                    | 'jandy_pool'
+                  )
               /** IDs of the spaces the device is in. */
               space_ids: string[]
               /** Optional nickname to describe the device, settable through Seam. */
@@ -215400,6 +215738,18 @@ export type Routes = {
                               /** ID of the pool or spa within its controller. Only present on a pool or spa. */
                               system_id?: (string | undefined) | undefined
                               /** Name of the pool or spa, as set in the Hayward OmniLogic app. Only present on a pool or spa. */
+                              system_name?: (string | undefined) | undefined
+                            }
+                          | undefined
+                        )
+                      | undefined
+                    /** Metadata for a Jandy iAquaLink pool controller, pool, or spa. */
+                    jandy_iaqualink_metadata?:
+                      | (
+                          | {
+                              /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
+                              serial_number?: (string | undefined) | undefined
+                              /** Name of the controller, as set in the Jandy iAquaLink app. */
                               system_name?: (string | undefined) | undefined
                             }
                           | undefined
@@ -221048,7 +221398,12 @@ export type Routes = {
                   )
                 | 'sonos_speaker'
                 | 'alertify_sensor'
-                | ('hayward_pool_controller' | 'hayward_pool')
+                | (
+                    | 'hayward_pool_controller'
+                    | 'jandy_pool_controller'
+                    | 'hayward_pool'
+                    | 'jandy_pool'
+                  )
               /** Unique identifier for the account associated with the device. */
               connected_account_id: string
               /** Location information for the device. */
