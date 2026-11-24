@@ -1642,6 +1642,28 @@ export const device_metadata = z
       ---
       Metadata for a Hayward OmniLogic pool controller, pool, or spa.
       `),
+    jandy_iaqualink_metadata: z
+      .object({
+        serial_number: z
+          .string()
+          .optional()
+          .describe(
+            'Serial number of the Jandy iAquaLink controller that the device belongs to.',
+          ),
+        system_name: z
+          .string()
+          .optional()
+          .describe(
+            'Name of the controller, as set in the Jandy iAquaLink app.',
+          ),
+      })
+      .partial()
+      .optional().describe(`
+      ---
+      undocumented: Unreleased.
+      ---
+      Metadata for a Jandy iAquaLink pool controller, pool, or spa.
+      `),
   })
   .partial().describe(`
           ---

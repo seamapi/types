@@ -184,11 +184,13 @@ export const sensor_device_type = z
 export type SensorDeviceType = z.infer<typeof sensor_device_type>
 export const POOL_CONTROLLER_DEVICE_TYPE = {
   HAYWARD_POOL_CONTROLLER: 'hayward_pool_controller',
+  JANDY_POOL_CONTROLLER: 'jandy_pool_controller',
 } as const
 
 export const POOL_DEVICE_TYPE = {
   ...POOL_CONTROLLER_DEVICE_TYPE,
   HAYWARD_POOL: 'hayward_pool',
+  JANDY_POOL: 'jandy_pool',
 } as const
 
 type PoolDeviceTypeFromMapping =
