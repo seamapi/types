@@ -65920,6 +65920,85 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for Console',
       },
     },
+    '/seam/console/v1/customer_portals/list': {
+      get: {
+        description:
+          'Lists the most recent customer portal for each customer in the workspace.',
+        operationId: 'seamConsoleV1CustomerPortalsListGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'customer_key',
+            schema: { minLength: 1, type: 'string' },
+          },
+          {
+            in: 'query',
+            name: 'limit',
+            schema: { default: 25, maximum: 100, minimum: 1, type: 'integer' },
+          },
+          { in: 'query', name: 'page_cursor', schema: { type: 'string' } },
+        ],
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    customer_portals: {
+                      items: {
+                        properties: {
+                          created_at: { format: 'date-time', type: 'string' },
+                          customer_key: { minLength: 1, type: 'string' },
+                          customer_portal_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          expires_at: {
+                            format: 'date-time',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          is_reopenable: { type: 'boolean' },
+                        },
+                        required: [
+                          'customer_portal_id',
+                          'customer_key',
+                          'created_at',
+                          'expires_at',
+                          'is_reopenable',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
+                  },
+                  required: ['customer_portals', 'pagination', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { console_session_with_workspace: [] },
+          { pat_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/seam/console/v1/customer_portals/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'customer_portals'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'customer_portals',
+        'x-response-key': 'customer_portals',
+        'x-title': 'List Customer Portals',
+        'x-undocumented': 'Internal endpoint for Console.',
+      },
+    },
     '/seam/console/v1/get_resource_locator': {
       get: {
         description:

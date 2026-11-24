@@ -121837,6 +121837,37 @@ export type Routes = {
     }
     maxDuration: undefined
   }
+  '/seam/console/v1/customer_portals/list': {
+    route: '/seam/console/v1/customer_portals/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      customer_key?: string | undefined
+      limit?: number
+      page_cursor?: string | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      customer_portals: {
+        customer_portal_id: string
+        customer_key: string
+        created_at: string
+        expires_at: string | null
+        is_reopenable: boolean
+      }[]
+      /** Information about the current page of results. */
+      pagination: {
+        /** Opaque value that can be used to select the next page of results via the `page_cursor` parameter. */
+        next_page_cursor: string | null
+        /** Indicates whether there is another page of results after this one. */
+        has_next_page: boolean
+        /** URL to get the next page of results. */
+        next_page_url: string | null
+      }
+    }
+    maxDuration: undefined
+  }
   '/seam/console/v1/get_resource_locator': {
     route: '/seam/console/v1/get_resource_locator'
     method: 'GET' | 'POST'
