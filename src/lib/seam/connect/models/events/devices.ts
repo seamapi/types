@@ -1,6 +1,7 @@
 import * as z from 'zod/v3'
 
 import { custom_metadata } from '../custom-metadata.js'
+import { datetime } from '../datetime.js'
 import { temperature_controller_mode } from '../devices/temperature-controller.js'
 import { climate_setting } from '../thermostats/climate-preset.js'
 import {
@@ -713,6 +714,36 @@ export type ThermostatClimatePresetActivatedEvent = z.infer<
   typeof thermostat_climate_preset_activated_event
 >
 
+export const thermostat_schedule_climate_preset_activation_may_fail_event =
+  device_event
+    .extend({
+      event_type: z.literal(
+        'thermostat_schedule.climate_preset_activation_may_fail',
+      ),
+      thermostat_schedule_id: z
+        .string()
+        .uuid()
+        .describe(
+          'ID of the thermostat schedule whose climate preset activation may fail.',
+        ),
+      thermostat_schedule_starts_at: datetime.describe(
+        'Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+      ),
+      thermostat_schedule_ends_at: datetime.describe(
+        'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+      ),
+    })
+    .extend(device_event_issue_properties).describe(`
+  ---
+  route_path: /thermostats
+  ---
+  A [thermostat](https://www.seam.co/docs/capability-guides/thermostats) may fail to activate a [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) when a [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts or ends, because the thermostat was offline shortly before the scheduled time. While the thermostat stays offline, the thermostat schedule carries a \`climate_preset_activation_may_fail\` warning until the scheduled time.
+`)
+
+export type ThermostatScheduleClimatePresetActivationMayFailEvent = z.infer<
+  typeof thermostat_schedule_climate_preset_activation_may_fail_event
+>
+
 export const thermostat_manually_adjusted_method = z
   .enum(['seam', 'external'])
   .describe(
@@ -1079,6 +1110,7 @@ export const device_events = [
   lock_door_closed_event,
   thermostat_climate_preset_activated_event,
   thermostat_manually_adjusted_event,
+  thermostat_schedule_climate_preset_activation_may_fail_event,
   temperature_threshold_exceeded_event,
   temperature_threshold_no_longer_exceeded_event,
   temperature_reached_set_point_event,

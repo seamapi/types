@@ -2,6 +2,34 @@ import * as z from 'zod/v3'
 
 import { datetime } from '../datetime.js'
 
+const climate_preset_activation_may_fail_warning = z
+  .object({
+    created_at: datetime.describe(
+      'Date and time at which Seam created the warning.',
+    ),
+    message: z
+      .string()
+      .describe(
+        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+      ),
+    warning_code: z
+      .literal('climate_preset_activation_may_fail')
+      .describe(
+        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+      ),
+  })
+  .describe(
+    'Indicates that the [thermostat](https://www.seam.co/docs/capability-guides/thermostats) may fail to activate a climate preset when the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts or ends. The warning message explains the cause. Currently present while the thermostat is offline and the next start or end of the thermostat schedule is less than an hour away; it clears automatically once the thermostat is back online or that time passes.',
+  )
+
+const thermostat_schedule_warning = z
+  .discriminatedUnion('warning_code', [
+    climate_preset_activation_may_fail_warning,
+  ])
+  .describe(
+    'Warning associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+  )
+
 export const thermostat_schedule = z.object({
   thermostat_schedule_id: z
     .string()
@@ -74,6 +102,11 @@ export const thermostat_schedule = z.object({
     )
     .describe(
       'Errors associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+    ),
+  warnings: z
+    .array(thermostat_schedule_warning)
+    .describe(
+      'Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
     ),
 }).describe(`
   ---
