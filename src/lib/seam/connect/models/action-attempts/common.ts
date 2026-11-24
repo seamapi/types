@@ -1,10 +1,15 @@
 import * as z from 'zod/v3'
 
+import { datetime } from '../datetime.js'
+
 export const common_action_attempt = z.object({
   action_attempt_id: z.string().uuid().describe('ID of the action attempt.'),
   status: z
     .enum(['pending', 'success', 'error'])
     .describe('Status of the action attempt.'),
+  created_at: datetime.describe(
+    'Date and time at which the action attempt was created.',
+  ),
 })
 
 export const common_pending_action_attempt = common_action_attempt.extend({
