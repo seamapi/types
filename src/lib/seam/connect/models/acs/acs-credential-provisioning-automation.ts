@@ -45,6 +45,7 @@ export const enrollment_automation = z.object({
   ---
   route_path: /user_identities/enrollment_automations
   undocumented: Will be removed.
+  end_of_life: "2026-11-24"
   ---
   Represents an [enrollment automation](https://www.seam.co/docs/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system) within the [Seam mobile access solution](https://www.seam.co/docs/capability-guides/mobile-access).
 `)

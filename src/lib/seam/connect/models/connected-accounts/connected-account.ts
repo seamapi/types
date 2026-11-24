@@ -290,6 +290,7 @@ const dormakaba_sites_unapproved = common_connected_account_warning
     `
     ---
     deprecated: Seam no longer sets this warning.
+    end_of_life: "2026-11-24"
     ---
     Indicates that one or more dormakaba sites associated with the connected account are not approved. Contact support@getseam.com to finish setting up your account.
     `,
