@@ -68749,6 +68749,147 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for Console',
       },
     },
+    '/seam/console/v1/referrals/code/create': {
+      post: {
+        description:
+          "Creates the organization's referral code if it has none, and returns the referral program. Calling it again returns the same code.",
+        operationId: 'seamConsoleV1ReferralsCodeCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  organization_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['organization_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    referral_program: {
+                      properties: {
+                        is_available: {
+                          description:
+                            'Whether the referral program is available to the organization.',
+                          type: 'boolean',
+                        },
+                        referral_code: {
+                          description:
+                            "The organization's referral code, or null if it has none yet.",
+                          nullable: true,
+                          type: 'string',
+                        },
+                        referred_signup_count: {
+                          description:
+                            "Number of signups that used the organization's referral code.",
+                          type: 'integer',
+                        },
+                      },
+                      required: [
+                        'is_available',
+                        'referral_code',
+                        'referred_signup_count',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['referral_program', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/referrals/code/create',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'referrals', 'code'],
+        'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'referral_program',
+        'x-response-key': 'referral_program',
+        'x-title': "Create an Organization's Referral Code",
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
+    '/seam/console/v1/referrals/get': {
+      get: {
+        description:
+          'Returns whether the referral program is available to the organization, its referral code if it has one, and how many signups used that code.',
+        operationId: 'seamConsoleV1ReferralsGetGet',
+        parameters: [
+          {
+            in: 'query',
+            name: 'organization_id',
+            required: true,
+            schema: { format: 'uuid', type: 'string' },
+          },
+        ],
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    referral_program: {
+                      properties: {
+                        is_available: {
+                          description:
+                            'Whether the referral program is available to the organization.',
+                          type: 'boolean',
+                        },
+                        referral_code: {
+                          description:
+                            "The organization's referral code, or null if it has none yet.",
+                          nullable: true,
+                          type: 'string',
+                        },
+                        referred_signup_count: {
+                          description:
+                            "Number of signups that used the organization's referral code.",
+                          type: 'integer',
+                        },
+                      },
+                      required: [
+                        'is_available',
+                        'referral_code',
+                        'referred_signup_count',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['referral_program', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/referrals/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'referrals'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'referral_program',
+        'x-response-key': 'referral_program',
+        'x-title': "Get an Organization's Referral Program",
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
     '/seam/console/v1/sites/create': {
       post: {
         description:

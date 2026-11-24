@@ -127276,6 +127276,48 @@ export type Routes = {
     }
     maxDuration: undefined
   }
+  '/seam/console/v1/referrals/code/create': {
+    route: '/seam/console/v1/referrals/code/create'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      organization_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      referral_program: {
+        /** Whether the referral program is available to the organization. */
+        is_available: boolean
+        /** The organization's referral code, or null if it has none yet. */
+        referral_code: string | null
+        /** Number of signups that used the organization's referral code. */
+        referred_signup_count: number
+      }
+    }
+    maxDuration: undefined
+  }
+  '/seam/console/v1/referrals/get': {
+    route: '/seam/console/v1/referrals/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      organization_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      referral_program: {
+        /** Whether the referral program is available to the organization. */
+        is_available: boolean
+        /** The organization's referral code, or null if it has none yet. */
+        referral_code: string | null
+        /** Number of signups that used the organization's referral code. */
+        referred_signup_count: number
+      }
+    }
+    maxDuration: undefined
+  }
   '/seam/console/v1/sites/create': {
     route: '/seam/console/v1/sites/create'
     method: 'POST'
