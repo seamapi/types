@@ -18010,6 +18010,15 @@ export type Routes = {
                               /** Date and time at which Seam created the error. */
                               created_at: string
                             }[]
+                            /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                            warnings: {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'climate_preset_activation_may_fail'
+                            }[]
                           } | null)
                         | undefined
                       /** ID of the active [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -28164,6 +28173,15 @@ export type Routes = {
                               message: string
                               /** Date and time at which Seam created the error. */
                               created_at: string
+                            }[]
+                            /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                            warnings: {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'climate_preset_activation_may_fail'
                             }[]
                           } | null)
                         | undefined
@@ -60920,6 +60938,15 @@ export type Routes = {
                         /** Date and time at which Seam created the error. */
                         created_at: string
                       }[]
+                      /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                      warnings: {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'climate_preset_activation_may_fail'
+                      }[]
                     } | null)
                   | undefined
                 /** ID of the active [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -63580,6 +63607,15 @@ export type Routes = {
                         message: string
                         /** Date and time at which Seam created the error. */
                         created_at: string
+                      }[]
+                      /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                      warnings: {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'climate_preset_activation_may_fail'
                       }[]
                     } | null)
                   | undefined
@@ -71418,6 +71454,79 @@ export type Routes = {
                       [x: string]: string | boolean
                     }
                   | undefined
+                event_type: 'thermostat_schedule.climate_preset_activation_may_fail'
+                /** ID of the thermostat schedule whose climate preset activation may fail. */
+                thermostat_schedule_id: string
+                /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                thermostat_schedule_starts_at: string
+                /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                thermostat_schedule_ends_at: string
+                /** Errors associated with the connected account. */
+                connected_account_errors: {
+                  /** Date and time at which Seam created the error. */
+                  created_at: string
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: string
+                }[]
+                /** Warnings associated with the connected account. */
+                connected_account_warnings: {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: string
+                }[]
+                /** Errors associated with the device. */
+                device_errors: {
+                  /** Date and time at which Seam created the error. */
+                  created_at: string
+                  /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: string
+                }[]
+                /** Warnings associated with the device. */
+                device_warnings: {
+                  /** Date and time at which Seam created the warning. */
+                  created_at: string
+                  /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                  message: string
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  warning_code: string
+                }[]
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the workspace associated with the event. */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                event_description: string
+                /** ID of the affected device. */
+                device_id: string
+                /** ID of the connected account associated with the event. */
+                connected_account_id: string
+                /** The customer key associated with the device, if any. */
+                customer_key?: string | undefined
+                /** Custom metadata of the device, present when device_id is provided. */
+                device_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                connected_account_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
                 event_type: 'thermostat.temperature_threshold_exceeded'
                 /** Temperature, in °C, reported by the affected thermostat. */
                 temperature_celsius: number
@@ -72016,6 +72125,7 @@ export type Routes = {
             | 'lock.door_closed'
             | 'thermostat.climate_preset_activated'
             | 'thermostat.manually_adjusted'
+            | 'thermostat_schedule.climate_preset_activation_may_fail'
             | 'thermostat.temperature_threshold_exceeded'
             | 'thermostat.temperature_threshold_no_longer_exceeded'
             | 'thermostat.temperature_reached_set_point'
@@ -72141,6 +72251,7 @@ export type Routes = {
             | 'lock.door_closed'
             | 'thermostat.climate_preset_activated'
             | 'thermostat.manually_adjusted'
+            | 'thermostat_schedule.climate_preset_activation_may_fail'
             | 'thermostat.temperature_threshold_exceeded'
             | 'thermostat.temperature_threshold_no_longer_exceeded'
             | 'thermostat.temperature_reached_set_point'
@@ -75910,6 +76021,79 @@ export type Routes = {
             cooling_set_point_fahrenheit?: (number | undefined) | undefined
             /** Temperature to which the thermostat should heat (in °F). See also [Set Points](https://www.seam.co/docs/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
             heating_set_point_fahrenheit?: (number | undefined) | undefined
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description: string
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'thermostat_schedule.climate_preset_activation_may_fail'
+            /** ID of the thermostat schedule whose climate preset activation may fail. */
+            thermostat_schedule_id: string
+            /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+            thermostat_schedule_starts_at: string
+            /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+            thermostat_schedule_ends_at: string
+            /** Errors associated with the connected account. */
+            connected_account_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the connected account. */
+            connected_account_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the device. */
+            device_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the device. */
+            device_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
           }
         | {
             /** ID of the event. */
@@ -80981,6 +81165,15 @@ export type Routes = {
                         /** Date and time at which Seam created the error. */
                         created_at: string
                       }[]
+                      /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                      warnings: {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'climate_preset_activation_may_fail'
+                      }[]
                     } | null)
                   | undefined
                 /** ID of the active [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -83322,6 +83515,15 @@ export type Routes = {
                         message: string
                         /** Date and time at which Seam created the error. */
                         created_at: string
+                      }[]
+                      /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                      warnings: {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'climate_preset_activation_may_fail'
                       }[]
                     } | null)
                   | undefined
@@ -85806,6 +86008,15 @@ export type Routes = {
                         /** Date and time at which Seam created the error. */
                         created_at: string
                       }[]
+                      /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                      warnings: {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'climate_preset_activation_may_fail'
+                      }[]
                     } | null)
                   | undefined
                 /** ID of the active [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -88146,6 +88357,15 @@ export type Routes = {
                         message: string
                         /** Date and time at which Seam created the error. */
                         created_at: string
+                      }[]
+                      /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                      warnings: {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'climate_preset_activation_may_fail'
                       }[]
                     } | null)
                   | undefined
@@ -100887,6 +101107,15 @@ export type Routes = {
                         /** Date and time at which Seam created the error. */
                         created_at: string
                       }[]
+                      /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                      warnings: {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'climate_preset_activation_may_fail'
+                      }[]
                     } | null)
                   | undefined
                 /** ID of the active [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -103227,6 +103456,15 @@ export type Routes = {
                         message: string
                         /** Date and time at which Seam created the error. */
                         created_at: string
+                      }[]
+                      /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                      warnings: {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'climate_preset_activation_may_fail'
                       }[]
                     } | null)
                   | undefined
@@ -117568,6 +117806,15 @@ export type Routes = {
                         /** Date and time at which Seam created the error. */
                         created_at: string
                       }[]
+                      /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                      warnings: {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'climate_preset_activation_may_fail'
+                      }[]
                     } | null)
                   | undefined
                 /** ID of the active [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -128021,6 +128268,7 @@ export type Routes = {
             | 'lock.door_closed'
             | 'thermostat.climate_preset_activated'
             | 'thermostat.manually_adjusted'
+            | 'thermostat_schedule.climate_preset_activation_may_fail'
             | 'thermostat.temperature_threshold_exceeded'
             | 'thermostat.temperature_threshold_no_longer_exceeded'
             | 'thermostat.temperature_reached_set_point'
@@ -128146,6 +128394,7 @@ export type Routes = {
             | 'lock.door_closed'
             | 'thermostat.climate_preset_activated'
             | 'thermostat.manually_adjusted'
+            | 'thermostat_schedule.climate_preset_activation_may_fail'
             | 'thermostat.temperature_threshold_exceeded'
             | 'thermostat.temperature_threshold_no_longer_exceeded'
             | 'thermostat.temperature_reached_set_point'
@@ -131915,6 +132164,79 @@ export type Routes = {
                   [x: string]: string | boolean
                 }
               | undefined
+            event_type: 'thermostat_schedule.climate_preset_activation_may_fail'
+            /** ID of the thermostat schedule whose climate preset activation may fail. */
+            thermostat_schedule_id: string
+            /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+            thermostat_schedule_starts_at: string
+            /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+            thermostat_schedule_ends_at: string
+            /** Errors associated with the connected account. */
+            connected_account_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the connected account. */
+            connected_account_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the device. */
+            device_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the device. */
+            device_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description: string
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
             event_type: 'thermostat.temperature_threshold_exceeded'
             /** Temperature, in °C, reported by the affected thermostat. */
             temperature_celsius: number
@@ -135083,6 +135405,7 @@ export type Routes = {
         | 'lock.door_closed'
         | 'thermostat.climate_preset_activated'
         | 'thermostat.manually_adjusted'
+        | 'thermostat_schedule.climate_preset_activation_may_fail'
         | 'thermostat.temperature_threshold_exceeded'
         | 'thermostat.temperature_threshold_no_longer_exceeded'
         | 'thermostat.temperature_reached_set_point'
@@ -135231,6 +135554,7 @@ export type Routes = {
         | 'lock.door_closed'
         | 'thermostat.climate_preset_activated'
         | 'thermostat.manually_adjusted'
+        | 'thermostat_schedule.climate_preset_activation_may_fail'
         | 'thermostat.temperature_threshold_exceeded'
         | 'thermostat.temperature_threshold_no_longer_exceeded'
         | 'thermostat.temperature_reached_set_point'
@@ -139004,6 +139328,79 @@ export type Routes = {
                   [x: string]: string | boolean
                 }
               | undefined
+            event_type: 'thermostat_schedule.climate_preset_activation_may_fail'
+            /** ID of the thermostat schedule whose climate preset activation may fail. */
+            thermostat_schedule_id: string
+            /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+            thermostat_schedule_starts_at: string
+            /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+            thermostat_schedule_ends_at: string
+            /** Errors associated with the connected account. */
+            connected_account_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the connected account. */
+            connected_account_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+            /** Errors associated with the device. */
+            device_errors: {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: string
+            }[]
+            /** Warnings associated with the device. */
+            device_warnings: {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: string
+            }[]
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description: string
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
             event_type: 'thermostat.temperature_threshold_exceeded'
             /** Temperature, in °C, reported by the affected thermostat. */
             temperature_celsius: number
@@ -141540,6 +141937,15 @@ export type Routes = {
                               message: string
                               /** Date and time at which Seam created the error. */
                               created_at: string
+                            }[]
+                            /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                            warnings: {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'climate_preset_activation_may_fail'
                             }[]
                           } | null)
                         | undefined
@@ -176254,6 +176660,15 @@ export type Routes = {
                         /** Date and time at which Seam created the error. */
                         created_at: string
                       }[]
+                      /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                      warnings: {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'climate_preset_activation_may_fail'
+                      }[]
                     } | null)
                   | undefined
                 /** ID of the active [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -183830,6 +184245,15 @@ export type Routes = {
                         /** Date and time at which Seam created the error. */
                         created_at: string
                       }[]
+                      /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                      warnings: {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'climate_preset_activation_may_fail'
+                      }[]
                     } | null)
                   | undefined
                 /** ID of the active [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -186170,6 +186594,15 @@ export type Routes = {
                         message: string
                         /** Date and time at which Seam created the error. */
                         created_at: string
+                      }[]
+                      /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                      warnings: {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'climate_preset_activation_may_fail'
                       }[]
                     } | null)
                   | undefined
@@ -189536,6 +189969,15 @@ export type Routes = {
           /** Date and time at which Seam created the error. */
           created_at: string
         }[]
+        /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+        warnings: {
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+          warning_code: 'climate_preset_activation_may_fail'
+        }[]
       }
     }
     maxDuration: undefined
@@ -189595,6 +190037,15 @@ export type Routes = {
           /** Date and time at which Seam created the error. */
           created_at: string
         }[]
+        /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+        warnings: {
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+          warning_code: 'climate_preset_activation_may_fail'
+        }[]
       }
     }
     maxDuration: undefined
@@ -189641,6 +190092,15 @@ export type Routes = {
           message: string
           /** Date and time at which Seam created the error. */
           created_at: string
+        }[]
+        /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+        warnings: {
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+          warning_code: 'climate_preset_activation_may_fail'
         }[]
       }[]
     }
@@ -200027,6 +200487,15 @@ export type Routes = {
                         /** Date and time at which Seam created the error. */
                         created_at: string
                       }[]
+                      /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                      warnings: {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'climate_preset_activation_may_fail'
+                      }[]
                     } | null)
                   | undefined
                 /** ID of the active [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
@@ -202369,6 +202838,15 @@ export type Routes = {
                         message: string
                         /** Date and time at which Seam created the error. */
                         created_at: string
+                      }[]
+                      /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                      warnings: {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'climate_preset_activation_may_fail'
                       }[]
                     } | null)
                   | undefined
@@ -207523,6 +208001,15 @@ export type Routes = {
                               message: string
                               /** Date and time at which Seam created the error. */
                               created_at: string
+                            }[]
+                            /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+                            warnings: {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'climate_preset_activation_may_fail'
                             }[]
                           } | null)
                         | undefined
@@ -217628,6 +218115,79 @@ export type Routes = {
                         [x: string]: string | boolean
                       }
                     | undefined
+                  event_type: 'thermostat_schedule.climate_preset_activation_may_fail'
+                  /** ID of the thermostat schedule whose climate preset activation may fail. */
+                  thermostat_schedule_id: string
+                  /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  thermostat_schedule_starts_at: string
+                  /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  thermostat_schedule_ends_at: string
+                  /** Errors associated with the connected account. */
+                  connected_account_errors: {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: string
+                  }[]
+                  /** Warnings associated with the connected account. */
+                  connected_account_warnings: {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: string
+                  }[]
+                  /** Errors associated with the device. */
+                  device_errors: {
+                    /** Date and time at which Seam created the error. */
+                    created_at: string
+                    /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                    error_code: string
+                  }[]
+                  /** Warnings associated with the device. */
+                  device_warnings: {
+                    /** Date and time at which Seam created the warning. */
+                    created_at: string
+                    /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                    message: string
+                    /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                    warning_code: string
+                  }[]
+                }
+              | {
+                  /** ID of the event. */
+                  event_id: string
+                  /** ID of the workspace associated with the event. */
+                  workspace_id: string
+                  /** Date and time at which the event was created. */
+                  created_at: string
+                  /** Date and time at which the event occurred. */
+                  occurred_at: string
+                  /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                  event_description: string
+                  /** ID of the affected device. */
+                  device_id: string
+                  /** ID of the connected account associated with the event. */
+                  connected_account_id: string
+                  /** The customer key associated with the device, if any. */
+                  customer_key?: string | undefined
+                  /** Custom metadata of the device, present when device_id is provided. */
+                  device_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                  connected_account_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
                   event_type: 'thermostat.temperature_threshold_exceeded'
                   /** Temperature, in °C, reported by the affected thermostat. */
                   temperature_celsius: number
@@ -219727,6 +220287,15 @@ export type Routes = {
                 message: string
                 /** Date and time at which Seam created the error. */
                 created_at: string
+              }[]
+              /** Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules). */
+              warnings: {
+                /** Date and time at which Seam created the warning. */
+                created_at: string
+                /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                message: string
+                /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                warning_code: 'climate_preset_activation_may_fail'
               }[]
             }[]
           | undefined

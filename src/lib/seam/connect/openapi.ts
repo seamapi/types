@@ -19727,6 +19727,49 @@ const openapi: OpenAPISpec = {
                             format: 'uuid',
                             type: 'string',
                           },
+                          warnings: {
+                            description:
+                              'Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+                            items: {
+                              description:
+                                'Warning associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+                              discriminator: { propertyName: 'warning_code' },
+                              oneOf: [
+                                {
+                                  description:
+                                    'Indicates that the [thermostat](https://www.seam.co/docs/capability-guides/thermostats) may fail to activate a climate preset when the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts or ends. The warning message explains the cause. Currently present while the thermostat is offline and the next start or end of the thermostat schedule is less than an hour away; it clears automatically once the thermostat is back online or that time passes.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: [
+                                        'climate_preset_activation_may_fail',
+                                      ],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                              ],
+                            },
+                            type: 'array',
+                          },
                           workspace_id: {
                             description:
                               'ID of the workspace that contains the thermostat schedule.',
@@ -19744,6 +19787,7 @@ const openapi: OpenAPISpec = {
                           'workspace_id',
                           'created_at',
                           'errors',
+                          'warnings',
                         ],
                         type: 'object',
                         'x-deprecated':
@@ -32275,6 +32319,224 @@ const openapi: OpenAPISpec = {
           },
           {
             description:
+              'A [thermostat](https://www.seam.co/docs/capability-guides/thermostats) may fail to activate a [climate preset](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-climate-presets) when a [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts or ends, because the thermostat was offline shortly before the scheduled time. While the thermostat stays offline, the thermostat schedule carries a `climate_preset_activation_may_fail` warning until the scheduled time.',
+            properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_errors: {
+                description: 'Errors associated with the connected account.',
+                items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              connected_account_warnings: {
+                description: 'Warnings associated with the connected account.',
+                items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
+              },
+              device_errors: {
+                description: 'Errors associated with the device.',
+                items: {
+                  description:
+                    'Error associated with the resource, including the error code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              device_id: {
+                description: 'ID of the affected device.',
+                format: 'uuid',
+                type: 'string',
+              },
+              device_warnings: {
+                description: 'Warnings associated with the device.',
+                items: {
+                  description:
+                    'Warning associated with the resource, including the warning code, message, and creation timestamp.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: [
+                  'thermostat_schedule.climate_preset_activation_may_fail',
+                ],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              thermostat_schedule_ends_at: {
+                description:
+                  'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                format: 'date-time',
+                type: 'string',
+              },
+              thermostat_schedule_id: {
+                description:
+                  'ID of the thermostat schedule whose climate preset activation may fail.',
+                format: 'uuid',
+                type: 'string',
+              },
+              thermostat_schedule_starts_at: {
+                description:
+                  'Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description: 'ID of the workspace associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'event_description',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+              'thermostat_schedule_id',
+              'thermostat_schedule_starts_at',
+              'thermostat_schedule_ends_at',
+              'connected_account_errors',
+              'connected_account_warnings',
+              'device_errors',
+              'device_warnings',
+            ],
+            type: 'object',
+            'x-route-path': '/thermostats',
+          },
+          {
+            description:
               "A [thermostat's](https://www.seam.co/docs/capability-guides/thermostats) temperature reading exceeded the set [threshold](https://www.seam.co/docs/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).",
             properties: {
               connected_account_custom_metadata: {
@@ -37704,6 +37966,43 @@ const openapi: OpenAPISpec = {
             format: 'uuid',
             type: 'string',
           },
+          warnings: {
+            description:
+              'Warnings associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+            items: {
+              description:
+                'Warning associated with the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+              discriminator: { propertyName: 'warning_code' },
+              oneOf: [
+                {
+                  description:
+                    'Indicates that the [thermostat](https://www.seam.co/docs/capability-guides/thermostats) may fail to activate a climate preset when the [thermostat schedule](https://www.seam.co/docs/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts or ends. The warning message explains the cause. Currently present while the thermostat is offline and the next start or end of the thermostat schedule is less than an hour away; it clears automatically once the thermostat is back online or that time passes.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['climate_preset_activation_may_fail'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
           workspace_id: {
             description:
               'ID of the workspace that contains the thermostat schedule.',
@@ -37721,6 +38020,7 @@ const openapi: OpenAPISpec = {
           'workspace_id',
           'created_at',
           'errors',
+          'warnings',
         ],
         type: 'object',
         'x-route-path': '/thermostats/schedules',
@@ -61167,6 +61467,7 @@ const openapi: OpenAPISpec = {
                 'lock.door_closed',
                 'thermostat.climate_preset_activated',
                 'thermostat.manually_adjusted',
+                'thermostat_schedule.climate_preset_activation_may_fail',
                 'thermostat.temperature_threshold_exceeded',
                 'thermostat.temperature_threshold_no_longer_exceeded',
                 'thermostat.temperature_reached_set_point',
@@ -61298,6 +61599,7 @@ const openapi: OpenAPISpec = {
                   'lock.door_closed',
                   'thermostat.climate_preset_activated',
                   'thermostat.manually_adjusted',
+                  'thermostat_schedule.climate_preset_activation_may_fail',
                   'thermostat.temperature_threshold_exceeded',
                   'thermostat.temperature_threshold_no_longer_exceeded',
                   'thermostat.temperature_reached_set_point',
@@ -74038,6 +74340,7 @@ const openapi: OpenAPISpec = {
                 'lock.door_closed',
                 'thermostat.climate_preset_activated',
                 'thermostat.manually_adjusted',
+                'thermostat_schedule.climate_preset_activation_may_fail',
                 'thermostat.temperature_threshold_exceeded',
                 'thermostat.temperature_threshold_no_longer_exceeded',
                 'thermostat.temperature_reached_set_point',
@@ -74170,6 +74473,7 @@ const openapi: OpenAPISpec = {
                   'lock.door_closed',
                   'thermostat.climate_preset_activated',
                   'thermostat.manually_adjusted',
+                  'thermostat_schedule.climate_preset_activation_may_fail',
                   'thermostat.temperature_threshold_exceeded',
                   'thermostat.temperature_threshold_no_longer_exceeded',
                   'thermostat.temperature_reached_set_point',
@@ -77893,6 +78197,7 @@ const openapi: OpenAPISpec = {
                       'lock.door_closed',
                       'thermostat.climate_preset_activated',
                       'thermostat.manually_adjusted',
+                      'thermostat_schedule.climate_preset_activation_may_fail',
                       'thermostat.temperature_threshold_exceeded',
                       'thermostat.temperature_threshold_no_longer_exceeded',
                       'thermostat.temperature_reached_set_point',
@@ -78110,6 +78415,7 @@ const openapi: OpenAPISpec = {
                       'lock.door_closed',
                       'thermostat.climate_preset_activated',
                       'thermostat.manually_adjusted',
+                      'thermostat_schedule.climate_preset_activation_may_fail',
                       'thermostat.temperature_threshold_exceeded',
                       'thermostat.temperature_threshold_no_longer_exceeded',
                       'thermostat.temperature_reached_set_point',
