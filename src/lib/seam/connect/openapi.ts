@@ -68414,7 +68414,7 @@ const openapi: OpenAPISpec = {
     '/seam/console/v1/workspace/console_settings/get': {
       get: {
         description:
-          "Gets the signed-in user's console settings for the workspace: the sidebar shortcuts and pinned resources, in order, the customer the console was last scoped to, and how the console assistant carries out actions.",
+          "Gets the signed-in user's console settings for the workspace: the sidebar shortcuts and pinned resources, in order, the customer the console was last scoped to, how the console assistant carries out actions, and the access list it opens.",
         operationId: 'seamConsoleV1WorkspaceConsoleSettingsGetGet',
         responses: {
           '200': {
@@ -68424,6 +68424,13 @@ const openapi: OpenAPISpec = {
                   properties: {
                     console_settings: {
                       properties: {
+                        access_list_page: {
+                          description:
+                            "Access list the console's Access opens: the one last used. `null` opens access grants.",
+                          enum: ['access_grants', 'access_codes'],
+                          nullable: true,
+                          type: 'string',
+                        },
                         assistant_mode: {
                           description:
                             'How the console assistant carries out actions. `null` asks each time.',
@@ -68520,6 +68527,13 @@ const openapi: OpenAPISpec = {
             'application/json': {
               schema: {
                 properties: {
+                  access_list_page: {
+                    description:
+                      "Access list the console's Access opens: the one last used. `null` opens access grants.",
+                    enum: ['access_grants', 'access_codes'],
+                    nullable: true,
+                    type: 'string',
+                  },
                   assistant_mode: {
                     description:
                       'How the console assistant carries out actions. `null` asks each time.',
@@ -68589,6 +68603,13 @@ const openapi: OpenAPISpec = {
                   properties: {
                     console_settings: {
                       properties: {
+                        access_list_page: {
+                          description:
+                            "Access list the console's Access opens: the one last used. `null` opens access grants.",
+                          enum: ['access_grants', 'access_codes'],
+                          nullable: true,
+                          type: 'string',
+                        },
                         assistant_mode: {
                           description:
                             'How the console assistant carries out actions. `null` asks each time.',

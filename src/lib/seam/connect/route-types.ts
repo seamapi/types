@@ -123156,6 +123156,9 @@ export type Routes = {
         selected_customer_key?: (string | null) | undefined
         /** How the console assistant carries out actions. `null` asks each time. */
         assistant_mode?: (('show_me' | 'do_it') | null) | undefined
+        /** Access list the console's Access opens: the one last used. `null` opens access grants. */
+        access_list_page?:
+          (('access_grants' | 'access_codes') | null) | undefined
       }
     }
     maxDuration: undefined
@@ -123188,6 +123191,8 @@ export type Routes = {
       selected_customer_key?: (string | null) | undefined
       /** How the console assistant carries out actions. `null` asks each time. */
       assistant_mode?: (('show_me' | 'do_it') | null) | undefined
+      /** Access list the console's Access opens: the one last used. `null` opens access grants. */
+      access_list_page?: (('access_grants' | 'access_codes') | null) | undefined
     }
     commonParams: {}
     formData: {}
@@ -123216,6 +123221,9 @@ export type Routes = {
         selected_customer_key?: (string | null) | undefined
         /** How the console assistant carries out actions. `null` asks each time. */
         assistant_mode?: (('show_me' | 'do_it') | null) | undefined
+        /** Access list the console's Access opens: the one last used. `null` opens access grants. */
+        access_list_page?:
+          (('access_grants' | 'access_codes') | null) | undefined
       }
     }
     maxDuration: undefined
