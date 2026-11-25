@@ -19384,7 +19384,7 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level as reported by the device, if the device measures it. */
+              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
               mold_risk_level?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
@@ -19426,7 +19426,7 @@ export type Routes = {
                     co_ppm?: number | undefined
                     /** Air quality index, if the device measures it. */
                     air_quality_index?: number | undefined
-                    /** Mold risk level as reported by the device, if the device measures it. */
+                    /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
                     mold_risk_level?: string | undefined
                     /** Indicates whether the device detects occupancy. */
                     is_occupancy_detected?: boolean | undefined
@@ -29937,7 +29937,7 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level as reported by the device, if the device measures it. */
+              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
               mold_risk_level?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
@@ -29979,7 +29979,7 @@ export type Routes = {
                     co_ppm?: number | undefined
                     /** Air quality index, if the device measures it. */
                     air_quality_index?: number | undefined
-                    /** Mold risk level as reported by the device, if the device measures it. */
+                    /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
                     mold_risk_level?: string | undefined
                     /** Indicates whether the device detects occupancy. */
                     is_occupancy_detected?: boolean | undefined
@@ -64056,7 +64056,7 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level as reported by the device, if the device measures it. */
+        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
         mold_risk_level?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
@@ -64098,7 +64098,7 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level as reported by the device, if the device measures it. */
+              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
               mold_risk_level?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
@@ -66807,7 +66807,7 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level as reported by the device, if the device measures it. */
+        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
         mold_risk_level?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
@@ -66849,7 +66849,7 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level as reported by the device, if the device measures it. */
+              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
               mold_risk_level?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
@@ -84597,7 +84597,7 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level as reported by the device, if the device measures it. */
+        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
         mold_risk_level?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
@@ -84639,7 +84639,7 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level as reported by the device, if the device measures it. */
+              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
               mold_risk_level?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
@@ -86965,7 +86965,7 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level as reported by the device, if the device measures it. */
+        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
         mold_risk_level?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
@@ -87007,7 +87007,7 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level as reported by the device, if the device measures it. */
+              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
               mold_risk_level?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
@@ -89474,7 +89474,7 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level as reported by the device, if the device measures it. */
+        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
         mold_risk_level?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
@@ -89516,7 +89516,7 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level as reported by the device, if the device measures it. */
+              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
               mold_risk_level?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
@@ -91841,7 +91841,7 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level as reported by the device, if the device measures it. */
+        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
         mold_risk_level?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
@@ -91883,7 +91883,7 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level as reported by the device, if the device measures it. */
+              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
               mold_risk_level?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
@@ -105351,7 +105351,7 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level as reported by the device, if the device measures it. */
+        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
         mold_risk_level?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
@@ -105393,7 +105393,7 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level as reported by the device, if the device measures it. */
+              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
               mold_risk_level?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
@@ -107718,7 +107718,7 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level as reported by the device, if the device measures it. */
+        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
         mold_risk_level?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
@@ -107760,7 +107760,7 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level as reported by the device, if the device measures it. */
+              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
               mold_risk_level?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
@@ -122842,7 +122842,7 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level as reported by the device, if the device measures it. */
+        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
         mold_risk_level?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
@@ -122884,7 +122884,7 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level as reported by the device, if the device measures it. */
+              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
               mold_risk_level?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
@@ -147414,7 +147414,7 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level as reported by the device, if the device measures it. */
+              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
               mold_risk_level?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
@@ -147456,7 +147456,7 @@ export type Routes = {
                     co_ppm?: number | undefined
                     /** Air quality index, if the device measures it. */
                     air_quality_index?: number | undefined
-                    /** Mold risk level as reported by the device, if the device measures it. */
+                    /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
                     mold_risk_level?: string | undefined
                     /** Indicates whether the device detects occupancy. */
                     is_occupancy_detected?: boolean | undefined
@@ -184384,7 +184384,7 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level as reported by the device, if the device measures it. */
+        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
         mold_risk_level?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
@@ -184426,7 +184426,7 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level as reported by the device, if the device measures it. */
+              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
               mold_risk_level?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
@@ -192358,7 +192358,7 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level as reported by the device, if the device measures it. */
+        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
         mold_risk_level?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
@@ -192400,7 +192400,7 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level as reported by the device, if the device measures it. */
+              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
               mold_risk_level?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
@@ -194725,7 +194725,7 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level as reported by the device, if the device measures it. */
+        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
         mold_risk_level?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
@@ -194767,7 +194767,7 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level as reported by the device, if the device measures it. */
+              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
               mold_risk_level?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
@@ -209378,7 +209378,7 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level as reported by the device, if the device measures it. */
+        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
         mold_risk_level?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
@@ -209420,7 +209420,7 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level as reported by the device, if the device measures it. */
+              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
               mold_risk_level?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
@@ -211747,7 +211747,7 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level as reported by the device, if the device measures it. */
+        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
         mold_risk_level?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
@@ -211789,7 +211789,7 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level as reported by the device, if the device measures it. */
+              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
               mold_risk_level?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
@@ -216928,7 +216928,7 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level as reported by the device, if the device measures it. */
+              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
               mold_risk_level?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
@@ -216970,7 +216970,7 @@ export type Routes = {
                     co_ppm?: number | undefined
                     /** Air quality index, if the device measures it. */
                     air_quality_index?: number | undefined
-                    /** Mold risk level as reported by the device, if the device measures it. */
+                    /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
                     mold_risk_level?: string | undefined
                     /** Indicates whether the device detects occupancy. */
                     is_occupancy_detected?: boolean | undefined

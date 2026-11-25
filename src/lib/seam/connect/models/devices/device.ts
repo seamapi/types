@@ -1010,7 +1010,7 @@ const sensor_measurements = z.object({
           ---
           property_group_key: sensors
           ---
-          Mold risk level as reported by the device, if the device measures it.
+          Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown".
           `,
     )
     .optional(),

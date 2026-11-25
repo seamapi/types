@@ -17696,7 +17696,7 @@ const openapi: OpenAPISpec = {
           },
           mold_risk_level: {
             description:
-              'Mold risk level as reported by the device, if the device measures it.',
+              'Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown".',
             type: 'string',
             'x-property-group-key': 'sensors',
           },
@@ -17754,7 +17754,7 @@ const openapi: OpenAPISpec = {
                 },
                 mold_risk_level: {
                   description:
-                    'Mold risk level as reported by the device, if the device measures it.',
+                    'Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown".',
                   type: 'string',
                   'x-property-group-key': 'sensors',
                 },
