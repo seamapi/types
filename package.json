@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
   "name": "@seamapi/types",
-  "version": "1.1242.0",
+  "version": "1.1243.0",
   "description": "TypeScript types for the Seam API.",
   "type": "module",
   "main": "index.js",
