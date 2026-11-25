@@ -18278,7 +18278,7 @@ export type Routes = {
                           | {
                               /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
                               serial_number?: (string | undefined) | undefined
-                              /** Name of the controller, as set in the Jandy iAquaLink app. */
+                              /** Name of the device: the controller's name as set in the Jandy iAquaLink app (or its serial number if none is set), followed by Pool or Spa on a pool or spa. */
                               system_name?: (string | undefined) | undefined
                             }
                           | undefined
@@ -28831,7 +28831,7 @@ export type Routes = {
                           | {
                               /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
                               serial_number?: (string | undefined) | undefined
-                              /** Name of the controller, as set in the Jandy iAquaLink app. */
+                              /** Name of the device: the controller's name as set in the Jandy iAquaLink app (or its serial number if none is set), followed by Pool or Spa on a pool or spa. */
                               system_name?: (string | undefined) | undefined
                             }
                           | undefined
@@ -62983,7 +62983,7 @@ export type Routes = {
                     | {
                         /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
                         serial_number?: (string | undefined) | undefined
-                        /** Name of the controller, as set in the Jandy iAquaLink app. */
+                        /** Name of the device: the controller's name as set in the Jandy iAquaLink app (or its serial number if none is set), followed by Pool or Spa on a pool or spa. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -65681,7 +65681,7 @@ export type Routes = {
                     | {
                         /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
                         serial_number?: (string | undefined) | undefined
-                        /** Name of the controller, as set in the Jandy iAquaLink app. */
+                        /** Name of the device: the controller's name as set in the Jandy iAquaLink app (or its serial number if none is set), followed by Pool or Spa on a pool or spa. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -83467,7 +83467,7 @@ export type Routes = {
                     | {
                         /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
                         serial_number?: (string | undefined) | undefined
-                        /** Name of the controller, as set in the Jandy iAquaLink app. */
+                        /** Name of the device: the controller's name as set in the Jandy iAquaLink app (or its serial number if none is set), followed by Pool or Spa on a pool or spa. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -85835,7 +85835,7 @@ export type Routes = {
                     | {
                         /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
                         serial_number?: (string | undefined) | undefined
-                        /** Name of the controller, as set in the Jandy iAquaLink app. */
+                        /** Name of the device: the controller's name as set in the Jandy iAquaLink app (or its serial number if none is set), followed by Pool or Spa on a pool or spa. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -88344,7 +88344,7 @@ export type Routes = {
                     | {
                         /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
                         serial_number?: (string | undefined) | undefined
-                        /** Name of the controller, as set in the Jandy iAquaLink app. */
+                        /** Name of the device: the controller's name as set in the Jandy iAquaLink app (or its serial number if none is set), followed by Pool or Spa on a pool or spa. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -90711,7 +90711,7 @@ export type Routes = {
                     | {
                         /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
                         serial_number?: (string | undefined) | undefined
-                        /** Name of the controller, as set in the Jandy iAquaLink app. */
+                        /** Name of the device: the controller's name as set in the Jandy iAquaLink app (or its serial number if none is set), followed by Pool or Spa on a pool or spa. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -104221,7 +104221,7 @@ export type Routes = {
                     | {
                         /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
                         serial_number?: (string | undefined) | undefined
-                        /** Name of the controller, as set in the Jandy iAquaLink app. */
+                        /** Name of the device: the controller's name as set in the Jandy iAquaLink app (or its serial number if none is set), followed by Pool or Spa on a pool or spa. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -106588,7 +106588,7 @@ export type Routes = {
                     | {
                         /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
                         serial_number?: (string | undefined) | undefined
-                        /** Name of the controller, as set in the Jandy iAquaLink app. */
+                        /** Name of the device: the controller's name as set in the Jandy iAquaLink app (or its serial number if none is set), followed by Pool or Spa on a pool or spa. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -121712,7 +121712,7 @@ export type Routes = {
                     | {
                         /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
                         serial_number?: (string | undefined) | undefined
-                        /** Name of the controller, as set in the Jandy iAquaLink app. */
+                        /** Name of the device: the controller's name as set in the Jandy iAquaLink app (or its serial number if none is set), followed by Pool or Spa on a pool or spa. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -146247,7 +146247,7 @@ export type Routes = {
                           | {
                               /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
                               serial_number?: (string | undefined) | undefined
-                              /** Name of the controller, as set in the Jandy iAquaLink app. */
+                              /** Name of the device: the controller's name as set in the Jandy iAquaLink app (or its serial number if none is set), followed by Pool or Spa on a pool or spa. */
                               system_name?: (string | undefined) | undefined
                             }
                           | undefined
@@ -183250,7 +183250,7 @@ export type Routes = {
                     | {
                         /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
                         serial_number?: (string | undefined) | undefined
-                        /** Name of the controller, as set in the Jandy iAquaLink app. */
+                        /** Name of the device: the controller's name as set in the Jandy iAquaLink app (or its serial number if none is set), followed by Pool or Spa on a pool or spa. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -191224,7 +191224,7 @@ export type Routes = {
                     | {
                         /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
                         serial_number?: (string | undefined) | undefined
-                        /** Name of the controller, as set in the Jandy iAquaLink app. */
+                        /** Name of the device: the controller's name as set in the Jandy iAquaLink app (or its serial number if none is set), followed by Pool or Spa on a pool or spa. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -193591,7 +193591,7 @@ export type Routes = {
                     | {
                         /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
                         serial_number?: (string | undefined) | undefined
-                        /** Name of the controller, as set in the Jandy iAquaLink app. */
+                        /** Name of the device: the controller's name as set in the Jandy iAquaLink app (or its serial number if none is set), followed by Pool or Spa on a pool or spa. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -208244,7 +208244,7 @@ export type Routes = {
                     | {
                         /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
                         serial_number?: (string | undefined) | undefined
-                        /** Name of the controller, as set in the Jandy iAquaLink app. */
+                        /** Name of the device: the controller's name as set in the Jandy iAquaLink app (or its serial number if none is set), followed by Pool or Spa on a pool or spa. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -210613,7 +210613,7 @@ export type Routes = {
                     | {
                         /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
                         serial_number?: (string | undefined) | undefined
-                        /** Name of the controller, as set in the Jandy iAquaLink app. */
+                        /** Name of the device: the controller's name as set in the Jandy iAquaLink app (or its serial number if none is set), followed by Pool or Spa on a pool or spa. */
                         system_name?: (string | undefined) | undefined
                       }
                     | undefined
@@ -215761,7 +215761,7 @@ export type Routes = {
                           | {
                               /** Serial number of the Jandy iAquaLink controller that the device belongs to. */
                               serial_number?: (string | undefined) | undefined
-                              /** Name of the controller, as set in the Jandy iAquaLink app. */
+                              /** Name of the device: the controller's name as set in the Jandy iAquaLink app (or its serial number if none is set), followed by Pool or Spa on a pool or spa. */
                               system_name?: (string | undefined) | undefined
                             }
                           | undefined

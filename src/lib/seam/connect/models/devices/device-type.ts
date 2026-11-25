@@ -187,6 +187,10 @@ export const POOL_CONTROLLER_DEVICE_TYPE = {
   JANDY_POOL_CONTROLLER: 'jandy_pool_controller',
 } as const
 
+export const POOL_CONTROLLER_DEVICE_TYPE_LIST = Object.values(
+  POOL_CONTROLLER_DEVICE_TYPE,
+)
+
 export const POOL_DEVICE_TYPE = {
   ...POOL_CONTROLLER_DEVICE_TYPE,
   HAYWARD_POOL: 'hayward_pool',
