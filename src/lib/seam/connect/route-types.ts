@@ -2896,8 +2896,8 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'conflicting_external_modification'
-              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-              change_type?: ('modified' | 'removed') | undefined
+              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+              change_type?: ('modified' | 'removed' | 'deactivated') | undefined
               /** List of fields that were changed externally, with their previous and new values. */
               modified_fields?:
                 | {
@@ -3146,8 +3146,8 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'external_modification_in_effect'
-              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-              change_type?: ('modified' | 'removed') | undefined
+              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+              change_type?: ('modified' | 'removed' | 'deactivated') | undefined
               /** List of fields that were changed externally, with their previous and new values. */
               modified_fields?:
                 | {
@@ -3504,8 +3504,8 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'conflicting_external_modification'
-              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-              change_type?: ('modified' | 'removed') | undefined
+              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+              change_type?: ('modified' | 'removed' | 'deactivated') | undefined
               /** List of fields that were changed externally, with their previous and new values. */
               modified_fields?:
                 | {
@@ -3754,8 +3754,8 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'external_modification_in_effect'
-              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-              change_type?: ('modified' | 'removed') | undefined
+              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+              change_type?: ('modified' | 'removed' | 'deactivated') | undefined
               /** List of fields that were changed externally, with their previous and new values. */
               modified_fields?:
                 | {
@@ -6887,8 +6887,8 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'conflicting_external_modification'
-              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-              change_type?: ('modified' | 'removed') | undefined
+              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+              change_type?: ('modified' | 'removed' | 'deactivated') | undefined
               /** List of fields that were changed externally, with their previous and new values. */
               modified_fields?:
                 | {
@@ -7137,8 +7137,8 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'external_modification_in_effect'
-              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-              change_type?: ('modified' | 'removed') | undefined
+              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+              change_type?: ('modified' | 'removed' | 'deactivated') | undefined
               /** List of fields that were changed externally, with their previous and new values. */
               modified_fields?:
                 | {
@@ -7606,8 +7606,8 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'conflicting_external_modification'
-              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-              change_type?: ('modified' | 'removed') | undefined
+              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+              change_type?: ('modified' | 'removed' | 'deactivated') | undefined
               /** List of fields that were changed externally, with their previous and new values. */
               modified_fields?:
                 | {
@@ -7856,8 +7856,8 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'external_modification_in_effect'
-              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-              change_type?: ('modified' | 'removed') | undefined
+              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+              change_type?: ('modified' | 'removed' | 'deactivated') | undefined
               /** List of fields that were changed externally, with their previous and new values. */
               modified_fields?:
                 | {
@@ -8205,8 +8205,8 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'conflicting_external_modification'
-              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-              change_type?: ('modified' | 'removed') | undefined
+              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+              change_type?: ('modified' | 'removed' | 'deactivated') | undefined
               /** List of fields that were changed externally, with their previous and new values. */
               modified_fields?:
                 | {
@@ -8455,8 +8455,8 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'external_modification_in_effect'
-              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-              change_type?: ('modified' | 'removed') | undefined
+              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+              change_type?: ('modified' | 'removed' | 'deactivated') | undefined
               /** List of fields that were changed externally, with their previous and new values. */
               modified_fields?:
                 | {
@@ -8781,8 +8781,8 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'conflicting_external_modification'
-              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-              change_type?: ('modified' | 'removed') | undefined
+              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+              change_type?: ('modified' | 'removed' | 'deactivated') | undefined
               /** List of fields that were changed externally, with their previous and new values. */
               modified_fields?:
                 | {
@@ -9031,8 +9031,8 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'external_modification_in_effect'
-              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-              change_type?: ('modified' | 'removed') | undefined
+              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+              change_type?: ('modified' | 'removed' | 'deactivated') | undefined
               /** List of fields that were changed externally, with their previous and new values. */
               modified_fields?:
                 | {
@@ -9390,8 +9390,8 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'conflicting_external_modification'
-              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-              change_type?: ('modified' | 'removed') | undefined
+              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+              change_type?: ('modified' | 'removed' | 'deactivated') | undefined
               /** List of fields that were changed externally, with their previous and new values. */
               modified_fields?:
                 | {
@@ -9640,8 +9640,8 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'external_modification_in_effect'
-              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-              change_type?: ('modified' | 'removed') | undefined
+              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+              change_type?: ('modified' | 'removed' | 'deactivated') | undefined
               /** List of fields that were changed externally, with their previous and new values. */
               modified_fields?:
                 | {
@@ -12671,8 +12671,8 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'conflicting_external_modification'
-              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-              change_type?: ('modified' | 'removed') | undefined
+              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+              change_type?: ('modified' | 'removed' | 'deactivated') | undefined
               /** List of fields that were changed externally, with their previous and new values. */
               modified_fields?:
                 | {
@@ -12921,8 +12921,8 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'external_modification_in_effect'
-              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-              change_type?: ('modified' | 'removed') | undefined
+              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+              change_type?: ('modified' | 'removed' | 'deactivated') | undefined
               /** List of fields that were changed externally, with their previous and new values. */
               modified_fields?:
                 | {
@@ -13157,8 +13157,8 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'conflicting_external_modification'
-              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-              change_type?: ('modified' | 'removed') | undefined
+              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+              change_type?: ('modified' | 'removed' | 'deactivated') | undefined
               /** List of fields that were changed externally, with their previous and new values. */
               modified_fields?:
                 | {
@@ -13407,8 +13407,8 @@ export type Routes = {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'external_modification_in_effect'
-              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-              change_type?: ('modified' | 'removed') | undefined
+              /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+              change_type?: ('modified' | 'removed' | 'deactivated') | undefined
               /** List of fields that were changed externally, with their previous and new values. */
               modified_fields?:
                 | {
@@ -71248,6 +71248,8 @@ export type Routes = {
                 event_type: 'access_code.deleted'
                 /** Code for the affected access code. */
                 code: string | null
+                /** Human-readable description of the deletion and its source. */
+                description?: string | undefined
               }
             | {
                 /** ID of the event. */
@@ -75850,6 +75852,8 @@ export type Routes = {
             event_type: 'access_code.deleted'
             /** Code for the affected access code. */
             code: string | null
+            /** Human-readable description of the deletion and its source. */
+            description?: string | undefined
           }
         | {
             /** ID of the event. */
@@ -134186,6 +134190,8 @@ export type Routes = {
             event_type: 'access_code.deleted'
             /** Code for the affected access code. */
             code: string | null
+            /** Human-readable description of the deletion and its source. */
+            description?: string | undefined
           }
         | {
             /** ID of the event. */
@@ -141352,6 +141358,8 @@ export type Routes = {
             event_type: 'access_code.deleted'
             /** Code for the affected access code. */
             code: string | null
+            /** Human-readable description of the deletion and its source. */
+            description?: string | undefined
           }
         | {
             /** ID of the event. */
@@ -223794,6 +223802,8 @@ export type Routes = {
                   event_type: 'access_code.deleted'
                   /** Code for the affected access code. */
                   code: string | null
+                  /** Human-readable description of the deletion and its source. */
+                  description?: string | undefined
                 }
               | {
                   /** ID of the event. */
@@ -227780,8 +227790,9 @@ export type Routes = {
                     created_at?: string | undefined
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'conflicting_external_modification'
-                    /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-                    change_type?: ('modified' | 'removed') | undefined
+                    /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+                    change_type?:
+                      ('modified' | 'removed' | 'deactivated') | undefined
                     /** List of fields that were changed externally, with their previous and new values. */
                     modified_fields?:
                       | {
@@ -228030,8 +228041,9 @@ export type Routes = {
                     created_at?: string | undefined
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'external_modification_in_effect'
-                    /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-                    change_type?: ('modified' | 'removed') | undefined
+                    /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+                    change_type?:
+                      ('modified' | 'removed' | 'deactivated') | undefined
                     /** List of fields that were changed externally, with their previous and new values. */
                     modified_fields?:
                       | {
@@ -228252,8 +228264,9 @@ export type Routes = {
                     created_at?: string | undefined
                     /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
                     error_code: 'conflicting_external_modification'
-                    /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-                    change_type?: ('modified' | 'removed') | undefined
+                    /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+                    change_type?:
+                      ('modified' | 'removed' | 'deactivated') | undefined
                     /** List of fields that were changed externally, with their previous and new values. */
                     modified_fields?:
                       | {
@@ -228502,8 +228515,9 @@ export type Routes = {
                     created_at?: string | undefined
                     /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
                     warning_code: 'external_modification_in_effect'
-                    /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. */
-                    change_type?: ('modified' | 'removed') | undefined
+                    /** Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended. */
+                    change_type?:
+                      ('modified' | 'removed' | 'deactivated') | undefined
                     /** List of fields that were changed externally, with their previous and new values. */
                     modified_fields?:
                       | {

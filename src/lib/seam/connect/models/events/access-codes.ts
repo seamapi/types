@@ -379,6 +379,10 @@ export type AccessCodeFailedToDeleteEvent = z.infer<
 export const access_code_deleted_event = access_code_event.extend({
   event_type: z.literal('access_code.deleted'),
   code: code.nullable(),
+  description: z
+    .string()
+    .optional()
+    .describe('Human-readable description of the deletion and its source.'),
 }).describe(`
     ---
     route_path: /access_codes
