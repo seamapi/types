@@ -59518,6 +59518,7 @@ export type Routes = {
             | 'eufy'
             | 'sonos'
             | 'hayward_omnilogic'
+            | 'jandy_iaqualink'
             | 'tuya'
             | 'hid_cm'
             | 'google_nest'
@@ -64404,6 +64405,7 @@ export type Routes = {
             | 'yacan'
             | 'sonos'
             | 'hayward_omnilogic'
+            | 'jandy_iaqualink'
             | 'tuya'
           )
         | undefined
@@ -66989,6 +66991,7 @@ export type Routes = {
           | 'eufy'
           | 'sonos'
           | 'hayward_omnilogic'
+          | 'jandy_iaqualink'
           | 'tuya'
         /** Display name for the device provider. */
         display_name: string
@@ -69399,6 +69402,7 @@ export type Routes = {
             | 'yacan'
             | 'sonos'
             | 'hayward_omnilogic'
+            | 'jandy_iaqualink'
             | 'tuya'
           )
         | undefined

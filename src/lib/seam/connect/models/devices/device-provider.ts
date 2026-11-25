@@ -82,6 +82,7 @@ export const DEVICE_PROVIDERS = {
   EUFY: 'eufy',
   SONOS: 'sonos',
   HAYWARD_OMNILOGIC: 'hayward_omnilogic',
+  JANDY_IAQUALINK: 'jandy_iaqualink',
   TUYA: 'tuya',
 } as const
 
@@ -146,6 +147,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'thirty_three_lock',
     'yacan',
     'hayward_omnilogic',
+    'jandy_iaqualink',
   ],
 
   consumer_smartlocks: [
