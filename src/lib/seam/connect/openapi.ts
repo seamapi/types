@@ -277,8 +277,8 @@ const openapi: OpenAPISpec = {
                   properties: {
                     change_type: {
                       description:
-                        "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.",
-                      enum: ['modified', 'removed'],
+                        "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended.",
+                      enum: ['modified', 'removed', 'deactivated'],
                       type: 'string',
                     },
                     created_at: {
@@ -1511,8 +1511,8 @@ const openapi: OpenAPISpec = {
                   properties: {
                     change_type: {
                       description:
-                        "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.",
-                      enum: ['modified', 'removed'],
+                        "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended.",
+                      enum: ['modified', 'removed', 'deactivated'],
                       type: 'string',
                     },
                     created_at: {
@@ -25132,6 +25132,11 @@ const openapi: OpenAPISpec = {
                 format: 'date-time',
                 type: 'string',
               },
+              description: {
+                description:
+                  'Human-readable description of the deletion and its source.',
+                type: 'string',
+              },
               device_custom_metadata: {
                 additionalProperties: {
                   oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -38989,8 +38994,8 @@ const openapi: OpenAPISpec = {
                   properties: {
                     change_type: {
                       description:
-                        "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.",
-                      enum: ['modified', 'removed'],
+                        "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended.",
+                      enum: ['modified', 'removed', 'deactivated'],
                       type: 'string',
                     },
                     created_at: {
@@ -39902,8 +39907,8 @@ const openapi: OpenAPISpec = {
                   properties: {
                     change_type: {
                       description:
-                        "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.",
-                      enum: ['modified', 'removed'],
+                        "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended.",
+                      enum: ['modified', 'removed', 'deactivated'],
                       type: 'string',
                     },
                     created_at: {

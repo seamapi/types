@@ -46,10 +46,10 @@ const conflicting_external_modification_error = common_access_code_error.extend(
       .literal('conflicting_external_modification')
       .describe(error_code_description),
     change_type: z
-      .enum(['modified', 'removed'])
+      .enum(['modified', 'removed', 'deactivated'])
       .optional()
       .describe(
-        "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.",
+        "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended.",
       ),
     modified_fields: z
       .array(modified_field)
@@ -232,10 +232,10 @@ const external_modification_in_effect_warning = common_access_code_warning
       .literal('external_modification_in_effect')
       .describe(warning_code_description),
     change_type: z
-      .enum(['modified', 'removed'])
+      .enum(['modified', 'removed', 'deactivated'])
       .optional()
       .describe(
-        "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device.",
+        "Indicates the type of external modification. `modified` means the code's PIN or schedule was changed. `removed` means the code was deleted from the device. `deactivated` means the code is still on the device but was disabled or suspended.",
       ),
     modified_fields: z
       .array(modified_field)
