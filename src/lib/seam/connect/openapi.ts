@@ -27060,6 +27060,12 @@ const openapi: OpenAPISpec = {
                 type: 'string',
               },
               event_type: { enum: ['access_method.deleted'], type: 'string' },
+              failed_to_delete_access_code_ids: {
+                description:
+                  'IDs of the access codes that were still set on a device when the access method was deleted. Access may still be possible with these codes until Seam removes them from the device. Each access code keeps its own deletion lifecycle, so watch it for `access_code.deleted` or `access_code.failed_to_delete`. Only present when at least one access code was still set on a device.',
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
+              },
               occurred_at: {
                 description: 'Date and time at which the event occurred.',
                 format: 'date-time',
