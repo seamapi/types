@@ -1654,7 +1654,7 @@ export const device_metadata = z
           .string()
           .optional()
           .describe(
-            'Name of the controller, as set in the Jandy iAquaLink app.',
+            "Name of the device: the controller's name as set in the Jandy iAquaLink app (or its serial number if none is set), followed by Pool or Spa on a pool or spa.",
           ),
       })
       .partial()
