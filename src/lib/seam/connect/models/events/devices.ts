@@ -216,6 +216,19 @@ export const device_tampered_event = device_event.extend({
 
 export type DeviceTamperedEvent = z.infer<typeof device_tampered_event>
 
+export const sensor_smoking_detected_event = device_event.extend({
+  event_type: z.literal('sensor.smoking_detected'),
+}).describe(`
+  ---
+  route_path: /devices
+  ---
+  A sensor reported smoking. Emitted once when \`is_smoking_detected\` becomes true. No event is emitted when it returns to false; re-read the device for the current value.
+`)
+
+export type SensorSmokingDetectedEvent = z.infer<
+  typeof sensor_smoking_detected_event
+>
+
 export const device_low_battery_event = device_event.extend({
   event_type: z.literal('device.low_battery'),
   battery_level: battery_level.describe(`
@@ -1087,6 +1100,7 @@ export const device_events = [
   device_disconnected_event,
   unmanaged_device_disconnected_event,
   device_tampered_event,
+  sensor_smoking_detected_event,
   device_low_battery_event,
   device_battery_status_changed_event,
   device_removed_event,
