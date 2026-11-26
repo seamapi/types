@@ -16581,6 +16581,27 @@ const openapi: OpenAPISpec = {
             type: 'object',
           },
           name: { nullable: true, type: 'string' },
+          page_configs: {
+            additionalProperties: false,
+            description:
+              'Configs for pages that customers using this profile see, keyed by page. Each page uses its default for any field left out.',
+            properties: {
+              reservation_details: {
+                additionalProperties: false,
+                description: 'Config for the reservation details page.',
+                properties: {
+                  style: {
+                    description:
+                      "How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom.",
+                    enum: ['portal', 'horizontal', 'compact'],
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+            type: 'object',
+          },
           primary_color: { type: 'string' },
           secondary_color: { type: 'string' },
           workspace_id: { format: 'uuid', type: 'string' },
@@ -86444,6 +86465,27 @@ const openapi: OpenAPISpec = {
                     type: 'object',
                   },
                   name: { default: null, nullable: true, type: 'string' },
+                  page_configs: {
+                    additionalProperties: false,
+                    description:
+                      "Configs for pages that customers using this profile see, keyed by page. With `base_customization_profile_id`, each page sent replaces that page's config on the base, and the base's other pages are kept.",
+                    properties: {
+                      reservation_details: {
+                        additionalProperties: false,
+                        description: 'Config for the reservation details page.',
+                        properties: {
+                          style: {
+                            description:
+                              "How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom.",
+                            enum: ['portal', 'horizontal', 'compact'],
+                            type: 'string',
+                          },
+                        },
+                        type: 'object',
+                      },
+                    },
+                    type: 'object',
+                  },
                   primary_color: { type: 'string' },
                   secondary_color: { type: 'string' },
                 },
@@ -87145,6 +87187,28 @@ const openapi: OpenAPISpec = {
                     type: 'object',
                   },
                   name: { nullable: true, type: 'string' },
+                  page_configs: {
+                    additionalProperties: false,
+                    description:
+                      "Configs for pages that customers using this profile see, keyed by page. Each page sent replaces that page's config, `null` for a page removes it, and pages left out are kept. Pass `null` for `page_configs` to remove every page's config.",
+                    nullable: true,
+                    properties: {
+                      reservation_details: {
+                        additionalProperties: false,
+                        nullable: true,
+                        properties: {
+                          style: {
+                            description:
+                              "How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom.",
+                            enum: ['portal', 'horizontal', 'compact'],
+                            type: 'string',
+                          },
+                        },
+                        type: 'object',
+                      },
+                    },
+                    type: 'object',
+                  },
                   primary_color: { type: 'string' },
                   secondary_color: { type: 'string' },
                 },
