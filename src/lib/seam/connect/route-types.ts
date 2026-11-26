@@ -128654,6 +128654,19 @@ export type Routes = {
     }
     maxDuration: undefined
   }
+  '/seam/customer/v1/access_grants/sync': {
+    route: '/seam/customer/v1/access_grants/sync'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** ID of the access grant (reservation) to push. */
+      access_grant_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+    maxDuration: undefined
+  }
   '/seam/customer/v1/access_grants/update': {
     route: '/seam/customer/v1/access_grants/update'
     method: 'POST' | 'PATCH'
