@@ -19384,8 +19384,10 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-              mold_risk_level?: string | undefined
+              /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+              mold_risk_index?: number | undefined
+              /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+              mold_display_risk?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
               /** Estimated number of occupants detected by the device. */
@@ -19426,8 +19428,10 @@ export type Routes = {
                     co_ppm?: number | undefined
                     /** Air quality index, if the device measures it. */
                     air_quality_index?: number | undefined
-                    /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-                    mold_risk_level?: string | undefined
+                    /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+                    mold_risk_index?: number | undefined
+                    /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+                    mold_display_risk?: string | undefined
                     /** Indicates whether the device detects occupancy. */
                     is_occupancy_detected?: boolean | undefined
                     /** Estimated number of occupants detected by the device. */
@@ -29937,8 +29941,10 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-              mold_risk_level?: string | undefined
+              /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+              mold_risk_index?: number | undefined
+              /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+              mold_display_risk?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
               /** Estimated number of occupants detected by the device. */
@@ -29979,8 +29985,10 @@ export type Routes = {
                     co_ppm?: number | undefined
                     /** Air quality index, if the device measures it. */
                     air_quality_index?: number | undefined
-                    /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-                    mold_risk_level?: string | undefined
+                    /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+                    mold_risk_index?: number | undefined
+                    /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+                    mold_display_risk?: string | undefined
                     /** Indicates whether the device detects occupancy. */
                     is_occupancy_detected?: boolean | undefined
                     /** Estimated number of occupants detected by the device. */
@@ -64056,8 +64064,10 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-        mold_risk_level?: string | undefined
+        /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+        mold_risk_index?: number | undefined
+        /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+        mold_display_risk?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
         /** Estimated number of occupants detected by the device. */
@@ -64098,8 +64108,10 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-              mold_risk_level?: string | undefined
+              /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+              mold_risk_index?: number | undefined
+              /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+              mold_display_risk?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
               /** Estimated number of occupants detected by the device. */
@@ -66807,8 +66819,10 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-        mold_risk_level?: string | undefined
+        /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+        mold_risk_index?: number | undefined
+        /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+        mold_display_risk?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
         /** Estimated number of occupants detected by the device. */
@@ -66849,8 +66863,10 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-              mold_risk_level?: string | undefined
+              /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+              mold_risk_index?: number | undefined
+              /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+              mold_display_risk?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
               /** Estimated number of occupants detected by the device. */
@@ -73091,6 +73107,37 @@ export type Routes = {
                       [x: string]: string | boolean
                     }
                   | undefined
+                event_type: 'sensor.smoking_detected'
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the workspace associated with the event. */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                event_description: string
+                /** ID of the affected device. */
+                device_id: string
+                /** ID of the connected account associated with the event. */
+                connected_account_id: string
+                /** The customer key associated with the device, if any. */
+                customer_key?: string | undefined
+                /** Custom metadata of the device, present when device_id is provided. */
+                device_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
+                /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                connected_account_custom_metadata?:
+                  | {
+                      [x: string]: string | boolean
+                    }
+                  | undefined
                 event_type: 'device.low_battery'
                 /** Number in the range 0 to 1.0 indicating the level of the battery whose drop triggered this event.
                  * @deprecated Use device_battery_level and accessory_keypad_battery_level, which distinguish the device's own battery from a paired accessory keypad's battery.*/
@@ -74715,6 +74762,7 @@ export type Routes = {
             | 'device.disconnected'
             | 'device.unmanaged.disconnected'
             | 'device.tampered'
+            | 'sensor.smoking_detected'
             | 'device.low_battery'
             | 'device.battery_status_changed'
             | 'device.removed'
@@ -74841,6 +74889,7 @@ export type Routes = {
             | 'device.disconnected'
             | 'device.unmanaged.disconnected'
             | 'device.tampered'
+            | 'sensor.smoking_detected'
             | 'device.low_battery'
             | 'device.battery_status_changed'
             | 'device.removed'
@@ -77665,6 +77714,37 @@ export type Routes = {
             is_detached_from_mounting_plate?: boolean | undefined
             /** Whether the device casing was tampered with at the time of the event. Omitted when the provider did not report this state. */
             is_casing_tampered_with?: boolean | undefined
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description: string
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'sensor.smoking_detected'
           }
         | {
             /** ID of the event. */
@@ -84597,8 +84677,10 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-        mold_risk_level?: string | undefined
+        /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+        mold_risk_index?: number | undefined
+        /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+        mold_display_risk?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
         /** Estimated number of occupants detected by the device. */
@@ -84639,8 +84721,10 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-              mold_risk_level?: string | undefined
+              /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+              mold_risk_index?: number | undefined
+              /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+              mold_display_risk?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
               /** Estimated number of occupants detected by the device. */
@@ -86965,8 +87049,10 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-        mold_risk_level?: string | undefined
+        /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+        mold_risk_index?: number | undefined
+        /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+        mold_display_risk?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
         /** Estimated number of occupants detected by the device. */
@@ -87007,8 +87093,10 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-              mold_risk_level?: string | undefined
+              /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+              mold_risk_index?: number | undefined
+              /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+              mold_display_risk?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
               /** Estimated number of occupants detected by the device. */
@@ -89474,8 +89562,10 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-        mold_risk_level?: string | undefined
+        /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+        mold_risk_index?: number | undefined
+        /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+        mold_display_risk?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
         /** Estimated number of occupants detected by the device. */
@@ -89516,8 +89606,10 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-              mold_risk_level?: string | undefined
+              /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+              mold_risk_index?: number | undefined
+              /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+              mold_display_risk?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
               /** Estimated number of occupants detected by the device. */
@@ -91841,8 +91933,10 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-        mold_risk_level?: string | undefined
+        /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+        mold_risk_index?: number | undefined
+        /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+        mold_display_risk?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
         /** Estimated number of occupants detected by the device. */
@@ -91883,8 +91977,10 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-              mold_risk_level?: string | undefined
+              /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+              mold_risk_index?: number | undefined
+              /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+              mold_display_risk?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
               /** Estimated number of occupants detected by the device. */
@@ -105351,8 +105447,10 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-        mold_risk_level?: string | undefined
+        /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+        mold_risk_index?: number | undefined
+        /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+        mold_display_risk?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
         /** Estimated number of occupants detected by the device. */
@@ -105393,8 +105491,10 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-              mold_risk_level?: string | undefined
+              /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+              mold_risk_index?: number | undefined
+              /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+              mold_display_risk?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
               /** Estimated number of occupants detected by the device. */
@@ -107718,8 +107818,10 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-        mold_risk_level?: string | undefined
+        /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+        mold_risk_index?: number | undefined
+        /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+        mold_display_risk?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
         /** Estimated number of occupants detected by the device. */
@@ -107760,8 +107862,10 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-              mold_risk_level?: string | undefined
+              /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+              mold_risk_index?: number | undefined
+              /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+              mold_display_risk?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
               /** Estimated number of occupants detected by the device. */
@@ -122842,8 +122946,10 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-        mold_risk_level?: string | undefined
+        /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+        mold_risk_index?: number | undefined
+        /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+        mold_display_risk?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
         /** Estimated number of occupants detected by the device. */
@@ -122884,8 +122990,10 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-              mold_risk_level?: string | undefined
+              /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+              mold_risk_index?: number | undefined
+              /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+              mold_display_risk?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
               /** Estimated number of occupants detected by the device. */
@@ -133095,6 +133203,7 @@ export type Routes = {
             | 'device.disconnected'
             | 'device.unmanaged.disconnected'
             | 'device.tampered'
+            | 'sensor.smoking_detected'
             | 'device.low_battery'
             | 'device.battery_status_changed'
             | 'device.removed'
@@ -133221,6 +133330,7 @@ export type Routes = {
             | 'device.disconnected'
             | 'device.unmanaged.disconnected'
             | 'device.tampered'
+            | 'sensor.smoking_detected'
             | 'device.low_battery'
             | 'device.battery_status_changed'
             | 'device.removed'
@@ -136015,6 +136125,37 @@ export type Routes = {
             is_detached_from_mounting_plate?: boolean | undefined
             /** Whether the device casing was tampered with at the time of the event. Omitted when the provider did not report this state. */
             is_casing_tampered_with?: boolean | undefined
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description: string
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'sensor.smoking_detected'
           }
         | {
             /** ID of the event. */
@@ -140236,6 +140377,7 @@ export type Routes = {
         | 'device.disconnected'
         | 'device.unmanaged.disconnected'
         | 'device.tampered'
+        | 'sensor.smoking_detected'
         | 'device.low_battery'
         | 'device.battery_status_changed'
         | 'device.removed'
@@ -140385,6 +140527,7 @@ export type Routes = {
         | 'device.disconnected'
         | 'device.unmanaged.disconnected'
         | 'device.tampered'
+        | 'sensor.smoking_detected'
         | 'device.low_battery'
         | 'device.battery_status_changed'
         | 'device.removed'
@@ -143183,6 +143326,37 @@ export type Routes = {
             is_detached_from_mounting_plate?: boolean | undefined
             /** Whether the device casing was tampered with at the time of the event. Omitted when the provider did not report this state. */
             is_casing_tampered_with?: boolean | undefined
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the workspace associated with the event. */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+            event_description: string
+            /** ID of the affected device. */
+            device_id: string
+            /** ID of the connected account associated with the event. */
+            connected_account_id: string
+            /** The customer key associated with the device, if any. */
+            customer_key?: string | undefined
+            /** Custom metadata of the device, present when device_id is provided. */
+            device_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            /** Custom metadata of the connected account, present when connected_account_id is provided. */
+            connected_account_custom_metadata?:
+              | {
+                  [x: string]: string | boolean
+                }
+              | undefined
+            event_type: 'sensor.smoking_detected'
           }
         | {
             /** ID of the event. */
@@ -147426,8 +147600,10 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-              mold_risk_level?: string | undefined
+              /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+              mold_risk_index?: number | undefined
+              /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+              mold_display_risk?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
               /** Estimated number of occupants detected by the device. */
@@ -147468,8 +147644,10 @@ export type Routes = {
                     co_ppm?: number | undefined
                     /** Air quality index, if the device measures it. */
                     air_quality_index?: number | undefined
-                    /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-                    mold_risk_level?: string | undefined
+                    /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+                    mold_risk_index?: number | undefined
+                    /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+                    mold_display_risk?: string | undefined
                     /** Indicates whether the device detects occupancy. */
                     is_occupancy_detected?: boolean | undefined
                     /** Estimated number of occupants detected by the device. */
@@ -184396,8 +184574,10 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-        mold_risk_level?: string | undefined
+        /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+        mold_risk_index?: number | undefined
+        /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+        mold_display_risk?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
         /** Estimated number of occupants detected by the device. */
@@ -184438,8 +184618,10 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-              mold_risk_level?: string | undefined
+              /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+              mold_risk_index?: number | undefined
+              /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+              mold_display_risk?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
               /** Estimated number of occupants detected by the device. */
@@ -192370,8 +192552,10 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-        mold_risk_level?: string | undefined
+        /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+        mold_risk_index?: number | undefined
+        /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+        mold_display_risk?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
         /** Estimated number of occupants detected by the device. */
@@ -192412,8 +192596,10 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-              mold_risk_level?: string | undefined
+              /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+              mold_risk_index?: number | undefined
+              /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+              mold_display_risk?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
               /** Estimated number of occupants detected by the device. */
@@ -194737,8 +194923,10 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-        mold_risk_level?: string | undefined
+        /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+        mold_risk_index?: number | undefined
+        /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+        mold_display_risk?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
         /** Estimated number of occupants detected by the device. */
@@ -194779,8 +194967,10 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-              mold_risk_level?: string | undefined
+              /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+              mold_risk_index?: number | undefined
+              /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+              mold_display_risk?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
               /** Estimated number of occupants detected by the device. */
@@ -209390,8 +209580,10 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-        mold_risk_level?: string | undefined
+        /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+        mold_risk_index?: number | undefined
+        /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+        mold_display_risk?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
         /** Estimated number of occupants detected by the device. */
@@ -209432,8 +209624,10 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-              mold_risk_level?: string | undefined
+              /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+              mold_risk_index?: number | undefined
+              /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+              mold_display_risk?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
               /** Estimated number of occupants detected by the device. */
@@ -211759,8 +211953,10 @@ export type Routes = {
         co_ppm?: number | undefined
         /** Air quality index, if the device measures it. */
         air_quality_index?: number | undefined
-        /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-        mold_risk_level?: string | undefined
+        /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+        mold_risk_index?: number | undefined
+        /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+        mold_display_risk?: string | undefined
         /** Indicates whether the device detects occupancy. */
         is_occupancy_detected?: boolean | undefined
         /** Estimated number of occupants detected by the device. */
@@ -211801,8 +211997,10 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-              mold_risk_level?: string | undefined
+              /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+              mold_risk_index?: number | undefined
+              /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+              mold_display_risk?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
               /** Estimated number of occupants detected by the device. */
@@ -216940,8 +217138,10 @@ export type Routes = {
               co_ppm?: number | undefined
               /** Air quality index, if the device measures it. */
               air_quality_index?: number | undefined
-              /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-              mold_risk_level?: string | undefined
+              /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+              mold_risk_index?: number | undefined
+              /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+              mold_display_risk?: string | undefined
               /** Indicates whether the device detects occupancy. */
               is_occupancy_detected?: boolean | undefined
               /** Estimated number of occupants detected by the device. */
@@ -216982,8 +217182,10 @@ export type Routes = {
                     co_ppm?: number | undefined
                     /** Air quality index, if the device measures it. */
                     air_quality_index?: number | undefined
-                    /** Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown". */
-                    mold_risk_level?: string | undefined
+                    /** Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels. */
+                    mold_risk_index?: number | undefined
+                    /** Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic. */
+                    mold_display_risk?: string | undefined
                     /** Indicates whether the device detects occupancy. */
                     is_occupancy_detected?: boolean | undefined
                     /** Estimated number of occupants detected by the device. */
@@ -225627,6 +225829,37 @@ export type Routes = {
                   is_detached_from_mounting_plate?: boolean | undefined
                   /** Whether the device casing was tampered with at the time of the event. Omitted when the provider did not report this state. */
                   is_casing_tampered_with?: boolean | undefined
+                }
+              | {
+                  /** ID of the event. */
+                  event_id: string
+                  /** ID of the workspace associated with the event. */
+                  workspace_id: string
+                  /** Date and time at which the event was created. */
+                  created_at: string
+                  /** Date and time at which the event occurred. */
+                  occurred_at: string
+                  /** Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event. */
+                  event_description: string
+                  /** ID of the affected device. */
+                  device_id: string
+                  /** ID of the connected account associated with the event. */
+                  connected_account_id: string
+                  /** The customer key associated with the device, if any. */
+                  customer_key?: string | undefined
+                  /** Custom metadata of the device, present when device_id is provided. */
+                  device_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  /** Custom metadata of the connected account, present when connected_account_id is provided. */
+                  connected_account_custom_metadata?:
+                    | {
+                        [x: string]: string | boolean
+                      }
+                    | undefined
+                  event_type: 'sensor.smoking_detected'
                 }
               | {
                   /** ID of the event. */

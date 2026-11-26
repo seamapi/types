@@ -17694,10 +17694,19 @@ const openapi: OpenAPISpec = {
             type: 'object',
             'x-property-group-key': 'hardware',
           },
-          mold_risk_level: {
+          mold_display_risk: {
             description:
-              'Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown".',
+              'Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic.',
             type: 'string',
+            'x-property-group-key': 'sensors',
+          },
+          mold_risk_index: {
+            description:
+              'Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels.',
+            format: 'float',
+            maximum: 1,
+            minimum: 0,
+            type: 'number',
             'x-property-group-key': 'sensors',
           },
           named_sensors: {
@@ -17752,10 +17761,19 @@ const openapi: OpenAPISpec = {
                   type: 'boolean',
                   'x-property-group-key': 'sensors',
                 },
-                mold_risk_level: {
+                mold_display_risk: {
                   description:
-                    'Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown".',
+                    'Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic.',
                   type: 'string',
+                  'x-property-group-key': 'sensors',
+                },
+                mold_risk_index: {
+                  description:
+                    'Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels.',
+                  format: 'float',
+                  maximum: 1,
+                  minimum: 0,
+                  type: 'number',
                   'x-property-group-key': 'sensors',
                 },
                 noise_level_decibels: {
@@ -30495,6 +30513,82 @@ const openapi: OpenAPISpec = {
                   'Whether the device was detached from its mounting plate at the time of the event. Omitted when the provider did not report this state.',
                 type: 'boolean',
               },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description: 'ID of the workspace associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'event_description',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+            ],
+            type: 'object',
+            'x-route-path': '/devices',
+          },
+          {
+            description:
+              'A sensor reported smoking. Emitted once when `is_smoking_detected` becomes true. No event is emitted when it returns to false; re-read the device for the current value.',
+            properties: {
+              connected_account_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the connected account, present when connected_account_id is provided.',
+                type: 'object',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the connected account associated with the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              customer_key: {
+                description:
+                  'The customer key associated with the device, if any.',
+                type: 'string',
+              },
+              device_custom_metadata: {
+                additionalProperties: {
+                  oneOf: [{ type: 'string' }, { type: 'boolean' }],
+                },
+                description:
+                  'Custom metadata of the device, present when device_id is provided.',
+                type: 'object',
+              },
+              device_id: {
+                description: 'ID of the affected device.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_description: {
+                description:
+                  'Human-readable description of the event. Persisted when the event is created (so the creating code, including a provider, can supply a tailored description) and otherwise derived from the event.',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: { enum: ['sensor.smoking_detected'], type: 'string' },
               occurred_at: {
                 description: 'Date and time at which the event occurred.',
                 format: 'date-time',
@@ -62276,6 +62370,7 @@ const openapi: OpenAPISpec = {
                 'device.disconnected',
                 'device.unmanaged.disconnected',
                 'device.tampered',
+                'sensor.smoking_detected',
                 'device.low_battery',
                 'device.battery_status_changed',
                 'device.removed',
@@ -62408,6 +62503,7 @@ const openapi: OpenAPISpec = {
                   'device.disconnected',
                   'device.unmanaged.disconnected',
                   'device.tampered',
+                  'sensor.smoking_detected',
                   'device.low_battery',
                   'device.battery_status_changed',
                   'device.removed',
@@ -75349,6 +75445,7 @@ const openapi: OpenAPISpec = {
                 'device.disconnected',
                 'device.unmanaged.disconnected',
                 'device.tampered',
+                'sensor.smoking_detected',
                 'device.low_battery',
                 'device.battery_status_changed',
                 'device.removed',
@@ -75482,6 +75579,7 @@ const openapi: OpenAPISpec = {
                   'device.disconnected',
                   'device.unmanaged.disconnected',
                   'device.tampered',
+                  'sensor.smoking_detected',
                   'device.low_battery',
                   'device.battery_status_changed',
                   'device.removed',
@@ -79206,6 +79304,7 @@ const openapi: OpenAPISpec = {
                       'device.disconnected',
                       'device.unmanaged.disconnected',
                       'device.tampered',
+                      'sensor.smoking_detected',
                       'device.low_battery',
                       'device.battery_status_changed',
                       'device.removed',
@@ -79424,6 +79523,7 @@ const openapi: OpenAPISpec = {
                       'device.disconnected',
                       'device.unmanaged.disconnected',
                       'device.tampered',
+                      'sensor.smoking_detected',
                       'device.low_battery',
                       'device.battery_status_changed',
                       'device.removed',

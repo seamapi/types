@@ -1003,14 +1003,27 @@ const sensor_measurements = z.object({
           `,
     )
     .optional(),
-  mold_risk_level: z
+  mold_risk_index: z
+    .number()
+    .min(0)
+    .max(1)
+    .describe(
+      `
+          ---
+          property_group_key: sensors
+          ---
+          Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels.
+          `,
+    )
+    .optional(),
+  mold_display_risk: z
     .string()
     .describe(
       `
           ---
           property_group_key: sensors
           ---
-          Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown".
+          Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic.
           `,
     )
     .optional(),
