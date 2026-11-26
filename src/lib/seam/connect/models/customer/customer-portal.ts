@@ -51,6 +51,12 @@ const base_manage_feature = base_feature.extend({
     .describe(
       'Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed.',
     ),
+  exclude_card_scanning: z
+    .boolean()
+    .default(false)
+    .describe(
+      "Indicates whether to hide the portal's card scanner, where the customer scans any card on their encoders to see what it holds and which reservation or Access Grant it belongs to. Verifying a reservation's card stays available wherever the customer can encode cards.",
+    ),
   events: z
     .object({
       allowed_events: z
@@ -288,6 +294,9 @@ export const portal_configuration_base = z.object({
         resource_type: z.literal('acs_entrance'),
         resource_id: z.string(),
       }),
+      z.object({
+        resource_type: z.literal('card_scan'),
+      }),
     ])
     .optional().describe(`
       ---
@@ -317,6 +326,7 @@ export const portal_configuration = portal_configuration_base
         exclude_reservation_technical_details: false,
         exclude_staff_management: false,
         exclude_device_management: false,
+        exclude_card_scanning: false,
       },
       manage_devices: {
         exclude: false,

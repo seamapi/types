@@ -112,6 +112,18 @@ const result = z
       .describe(
         'Corresponding credential data as stored on Seam and the access system.',
       ),
+    access_grant_ids: z
+      .array(z.string().uuid())
+      .optional()
+      .describe(
+        'IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant.',
+      ),
+    access_method_ids: z
+      .array(z.string().uuid())
+      .optional()
+      .describe(
+        'IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method.',
+      ),
     warnings: z
       .array(warning)
       .describe(

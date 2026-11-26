@@ -6896,6 +6896,18 @@ const openapi: OpenAPISpec = {
                 description:
                   'Result of scanning a card. If the attempt was successful, includes a snapshot of credential data read from the physical encoder, the corresponding data stored on Seam and the access system, and any associated warnings.',
                 properties: {
+                  access_grant_ids: {
+                    description:
+                      'IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  access_method_ids: {
+                    description:
+                      'IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
                   acs_credential_on_encoder: {
                     description:
                       'Snapshot of credential data read from the physical encoder.',
@@ -16186,6 +16198,12 @@ const openapi: OpenAPISpec = {
                       'Whether to exclude this feature from the portal.',
                     type: 'boolean',
                   },
+                  exclude_card_scanning: {
+                    default: false,
+                    description:
+                      "Indicates whether to hide the portal's card scanner, where the customer scans any card on their encoders to see what it holds and which reservation or Access Grant it belongs to. Verifying a reservation's card stays available wherever the customer can encode cards.",
+                    type: 'boolean',
+                  },
                   exclude_device_management: {
                     default: false,
                     description:
@@ -16581,6 +16599,27 @@ const openapi: OpenAPISpec = {
             type: 'object',
           },
           name: { nullable: true, type: 'string' },
+          page_configs: {
+            additionalProperties: false,
+            description:
+              'Configs for pages that customers using this profile see, keyed by page. Each page uses its default for any field left out.',
+            properties: {
+              reservation_details: {
+                additionalProperties: false,
+                description: 'Config for the reservation details page.',
+                properties: {
+                  style: {
+                    description:
+                      "How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom.",
+                    enum: ['portal', 'horizontal', 'compact'],
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+            type: 'object',
+          },
           primary_color: { type: 'string' },
           secondary_color: { type: 'string' },
           workspace_id: { format: 'uuid', type: 'string' },
@@ -51660,6 +51699,7 @@ const openapi: OpenAPISpec = {
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
+          { client_session_with_customer: [] },
         ],
         summary: '/acs/encoders/scan_credential',
         tags: ['/acs'],
@@ -55837,6 +55877,84 @@ const openapi: OpenAPISpec = {
         'x-title': 'Update a Connected Account',
       },
     },
+    '/customers/card_scans/create_deep_link': {
+      post: {
+        description:
+          "Creates a deep link URL for a customer portal page that only scans cards. Staff place a card on one of the customer's encoders to see what the card holds and which reservation or Access Grant it belongs to.\nThe portal hides its navigation so it can be embedded in an iframe, for example at a front desk.\n\nThe deep link expires after 7 days.",
+        operationId: 'customersCardScansCreateDeepLinkPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  customer_key: {
+                    description:
+                      'Key of the customer whose encoders the page scans cards with.',
+                    minLength: 1,
+                    type: 'string',
+                  },
+                },
+                required: ['customer_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    deep_link: {
+                      properties: {
+                        customer_portal_id: {
+                          description: 'The ID of the created customer portal.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        expires_at: {
+                          description: 'When the deep link expires.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        url: {
+                          description:
+                            'The deep link URL to embed in an iframe.',
+                          format: 'uri',
+                          type: 'string',
+                        },
+                      },
+                      required: ['url', 'expires_at', 'customer_portal_id'],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['deep_link', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/customers/card_scans/create_deep_link',
+        tags: [],
+        'x-fern-sdk-group-name': ['customers', 'card_scans'],
+        'x-fern-sdk-method-name': 'create_deep_link',
+        'x-fern-sdk-return-value': 'deep_link',
+        'x-response-key': 'deep_link',
+        'x-title': 'Create Card Scan Deep Link',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
     '/customers/create_portal': {
       post: {
         description:
@@ -55936,6 +56054,16 @@ const openapi: OpenAPISpec = {
                               },
                             },
                             required: ['resource_type', 'resource_id'],
+                            type: 'object',
+                          },
+                          {
+                            properties: {
+                              resource_type: {
+                                enum: ['card_scan'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['resource_type'],
                             type: 'object',
                           },
                         ],
@@ -56092,6 +56220,12 @@ const openapi: OpenAPISpec = {
                                 default: false,
                                 description:
                                   'Whether to exclude this feature from the portal.',
+                                type: 'boolean',
+                              },
+                              exclude_card_scanning: {
+                                default: false,
+                                description:
+                                  "Indicates whether to hide the portal's card scanner, where the customer scans any card on their encoders to see what it holds and which reservation or Access Grant it belongs to. Verifying a reservation's card stays available wherever the customer can encode cards.",
                                 type: 'boolean',
                               },
                               exclude_device_management: {
@@ -75845,6 +75979,16 @@ const openapi: OpenAPISpec = {
                               required: ['resource_type', 'resource_id'],
                               type: 'object',
                             },
+                            {
+                              properties: {
+                                resource_type: {
+                                  enum: ['card_scan'],
+                                  type: 'string',
+                                },
+                              },
+                              required: ['resource_type'],
+                              type: 'object',
+                            },
                           ],
                           'x-undocumented':
                             'Internal endpoint for customer portals.',
@@ -76011,6 +76155,12 @@ const openapi: OpenAPISpec = {
                                   default: false,
                                   description:
                                     'Whether to exclude this feature from the portal.',
+                                  type: 'boolean',
+                                },
+                                exclude_card_scanning: {
+                                  default: false,
+                                  description:
+                                    "Indicates whether to hide the portal's card scanner, where the customer scans any card on their encoders to see what it holds and which reservation or Access Grant it belongs to. Verifying a reservation's card stays available wherever the customer can encode cards.",
                                   type: 'boolean',
                                 },
                                 exclude_device_management: {
@@ -76354,6 +76504,16 @@ const openapi: OpenAPISpec = {
                             required: ['resource_type', 'resource_id'],
                             type: 'object',
                           },
+                          {
+                            properties: {
+                              resource_type: {
+                                enum: ['card_scan'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['resource_type'],
+                            type: 'object',
+                          },
                         ],
                         'x-undocumented':
                           'Internal endpoint for customer portals.',
@@ -76508,6 +76668,12 @@ const openapi: OpenAPISpec = {
                                 default: false,
                                 description:
                                   'Whether to exclude this feature from the portal.',
+                                type: 'boolean',
+                              },
+                              exclude_card_scanning: {
+                                default: false,
+                                description:
+                                  "Indicates whether to hide the portal's card scanner, where the customer scans any card on their encoders to see what it holds and which reservation or Access Grant it belongs to. Verifying a reservation's card stays available wherever the customer can encode cards.",
                                 type: 'boolean',
                               },
                               exclude_device_management: {
@@ -86056,6 +86222,12 @@ const openapi: OpenAPISpec = {
                               'Whether to exclude this feature from the portal.',
                             type: 'boolean',
                           },
+                          exclude_card_scanning: {
+                            default: false,
+                            description:
+                              "Indicates whether to hide the portal's card scanner, where the customer scans any card on their encoders to see what it holds and which reservation or Access Grant it belongs to. Verifying a reservation's card stays available wherever the customer can encode cards.",
+                            type: 'boolean',
+                          },
                           exclude_device_management: {
                             default: false,
                             description:
@@ -86444,6 +86616,27 @@ const openapi: OpenAPISpec = {
                     type: 'object',
                   },
                   name: { default: null, nullable: true, type: 'string' },
+                  page_configs: {
+                    additionalProperties: false,
+                    description:
+                      "Configs for pages that customers using this profile see, keyed by page. With `base_customization_profile_id`, each page sent replaces that page's config on the base, and the base's other pages are kept.",
+                    properties: {
+                      reservation_details: {
+                        additionalProperties: false,
+                        description: 'Config for the reservation details page.',
+                        properties: {
+                          style: {
+                            description:
+                              "How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom.",
+                            enum: ['portal', 'horizontal', 'compact'],
+                            type: 'string',
+                          },
+                        },
+                        type: 'object',
+                      },
+                    },
+                    type: 'object',
+                  },
                   primary_color: { type: 'string' },
                   secondary_color: { type: 'string' },
                 },
@@ -86750,6 +86943,12 @@ const openapi: OpenAPISpec = {
                             default: false,
                             description:
                               'Whether to exclude this feature from the portal.',
+                            type: 'boolean',
+                          },
+                          exclude_card_scanning: {
+                            default: false,
+                            description:
+                              "Indicates whether to hide the portal's card scanner, where the customer scans any card on their encoders to see what it holds and which reservation or Access Grant it belongs to. Verifying a reservation's card stays available wherever the customer can encode cards.",
                             type: 'boolean',
                           },
                           exclude_device_management: {
@@ -87145,6 +87344,28 @@ const openapi: OpenAPISpec = {
                     type: 'object',
                   },
                   name: { nullable: true, type: 'string' },
+                  page_configs: {
+                    additionalProperties: false,
+                    description:
+                      "Configs for pages that customers using this profile see, keyed by page. Each page sent replaces that page's config, `null` for a page removes it, and pages left out are kept. Pass `null` for `page_configs` to remove every page's config.",
+                    nullable: true,
+                    properties: {
+                      reservation_details: {
+                        additionalProperties: false,
+                        nullable: true,
+                        properties: {
+                          style: {
+                            description:
+                              "How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom.",
+                            enum: ['portal', 'horizontal', 'compact'],
+                            type: 'string',
+                          },
+                        },
+                        type: 'object',
+                      },
+                    },
+                    type: 'object',
+                  },
                   primary_color: { type: 'string' },
                   secondary_color: { type: 'string' },
                 },
