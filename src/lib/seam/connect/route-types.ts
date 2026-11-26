@@ -128023,6 +128023,18 @@ export type Routes = {
     }
     maxDuration: undefined
   }
+  '/seam/console/v1/users/set_console_surface_preference': {
+    route: '/seam/console/v1/users/set_console_surface_preference'
+    method: 'POST' | 'PATCH'
+    queryParams: {}
+    jsonBody: {
+      console_surface_preference: ('platform' | 'dashboard' | 'legacy') | null
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+    maxDuration: undefined
+  }
   '/seam/console/v1/workspace/console_settings/get': {
     route: '/seam/console/v1/workspace/console_settings/get'
     method: 'GET' | 'POST'
