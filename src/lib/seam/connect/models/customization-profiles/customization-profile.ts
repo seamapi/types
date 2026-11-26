@@ -110,6 +110,25 @@ export const message_overrides = z.record(
   z.record(z.string(), z.string()),
 )
 
+export const reservation_details_page_config = z
+  .object({
+    style: z
+      .enum(['portal', 'horizontal', 'compact'])
+      .optional()
+      .describe(
+        "How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom.",
+      ),
+  })
+  .strict()
+
+export const page_configs = z
+  .object({
+    reservation_details: reservation_details_page_config
+      .optional()
+      .describe('Config for the reservation details page.'),
+  })
+  .strict()
+
 export const customization_profile = z.object({
   workspace_id: z.string().uuid(),
   name: z.string().nullable(),
@@ -138,6 +157,11 @@ export const customization_profile = z.object({
     .optional()
     .describe(
       "Features for customer portals that use this profile. A setting passed when creating the portal takes precedence over the profile's. Changes apply to existing portals the next time they load.",
+    ),
+  page_configs: page_configs
+    .optional()
+    .describe(
+      'Configs for pages that customers using this profile see, keyed by page. Each page uses its default for any field left out.',
     ),
 }).describe(`
   ---

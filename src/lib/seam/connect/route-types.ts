@@ -618,6 +618,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -4573,6 +4577,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -10379,6 +10387,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -14181,6 +14193,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -22325,6 +22341,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -25118,6 +25138,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -31974,6 +31998,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -39031,6 +39059,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -41912,6 +41944,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -44692,6 +44728,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -48365,6 +48405,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -53992,6 +54036,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -56798,6 +56846,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -60623,6 +60675,28 @@ export type Routes = {
     }
     maxDuration: undefined
   }
+  '/customers/card_scans/create_deep_link': {
+    route: '/customers/card_scans/create_deep_link'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      /** Key of the customer whose encoders the page scans cards with. */
+      customer_key: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      deep_link: {
+        /** The deep link URL to embed in an iframe. */
+        url: string
+        /** When the deep link expires. */
+        expires_at: string
+        /** The ID of the created customer portal. */
+        customer_portal_id: string
+      }
+    }
+    maxDuration: undefined
+  }
   '/customers/create_portal': {
     route: '/customers/create_portal'
     method: 'POST'
@@ -60735,6 +60809,9 @@ export type Routes = {
                 resource_type: 'acs_entrance'
                 resource_id: string
               }
+            | {
+                resource_type: 'card_scan'
+              }
           )
         | undefined
       /** Whether the portal is in developer mode. Only available for Seam employees. */
@@ -60766,6 +60843,8 @@ export type Routes = {
                   exclude_staff_management?: boolean | undefined
                   /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
                   exclude_device_management?: boolean | undefined
+                  /** Indicates whether to hide the portal's card scanner, where the customer scans any card on their encoders to see what it holds and which reservation or Access Grant it belongs to. Verifying a reservation's card stays available wherever the customer can encode cards. */
+                  exclude_card_scanning?: boolean | undefined
                   /** Configuration for event type filtering in the manage feature. */
                   events?:
                     | (
@@ -80232,6 +80311,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -92645,6 +92728,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -95416,6 +95503,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -98185,6 +98276,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -100954,6 +101049,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -108540,6 +108639,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -111328,6 +111431,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -114172,6 +114279,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -118482,6 +118593,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -123658,6 +123773,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -127185,6 +127304,8 @@ export type Routes = {
                     exclude_staff_management?: boolean | undefined
                     /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
                     exclude_device_management?: boolean | undefined
+                    /** Indicates whether to hide the portal's card scanner, where the customer scans any card on their encoders to see what it holds and which reservation or Access Grant it belongs to. Verifying a reservation's card stays available wherever the customer can encode cards. */
+                    exclude_card_scanning?: boolean | undefined
                     /** Configuration for event type filtering in the manage feature. */
                     events?:
                       | (
@@ -127258,6 +127379,18 @@ export type Routes = {
                     allow_notification_customization?: boolean | undefined
                     /** Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected. */
                     allow_bridge_replacement?: boolean | undefined
+                  }
+                | undefined
+            }
+          | undefined
+        /** Configs for pages that customers using this profile see, keyed by page. Each page uses its default for any field left out. */
+        page_configs?:
+          | {
+              /** Config for the reservation details page. */
+              reservation_details?:
+                | {
+                    /** How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom. */
+                    style?: ('portal' | 'horizontal' | 'compact') | undefined
                   }
                 | undefined
             }
@@ -129267,6 +129400,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -137741,6 +137878,8 @@ export type Routes = {
             exclude_staff_management?: boolean
             /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
             exclude_device_management?: boolean
+            /** Indicates whether to hide the portal's card scanner, where the customer scans any card on their encoders to see what it holds and which reservation or Access Grant it belongs to. Verifying a reservation's card stays available wherever the customer can encode cards. */
+            exclude_card_scanning?: boolean
             /** Configuration for event type filtering in the manage feature. */
             events?:
               | {
@@ -137906,6 +138045,9 @@ export type Routes = {
                   resource_type: 'acs_entrance'
                   resource_id: string
                 }
+              | {
+                  resource_type: 'card_scan'
+                }
             )
           | undefined
         /** Business vertical of the customer portal. */
@@ -138054,6 +138196,9 @@ export type Routes = {
                       resource_type: 'acs_entrance'
                       resource_id: string
                     }
+                  | {
+                      resource_type: 'card_scan'
+                    }
                 )
               | undefined
             )
@@ -138085,6 +138230,8 @@ export type Routes = {
                     exclude_staff_management?: boolean | undefined
                     /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
                     exclude_device_management?: boolean | undefined
+                    /** Indicates whether to hide the portal's card scanner, where the customer scans any card on their encoders to see what it holds and which reservation or Access Grant it belongs to. Verifying a reservation's card stays available wherever the customer can encode cards. */
+                    exclude_card_scanning?: boolean | undefined
                     /** Configuration for event type filtering in the manage feature. */
                     events?:
                       | (
@@ -149533,6 +149680,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -152302,6 +152453,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -155075,6 +155230,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -157846,6 +158005,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -160619,6 +160782,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -163388,6 +163555,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -166159,6 +166330,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -168928,6 +169103,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -171699,6 +171878,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -174468,6 +174651,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -177241,6 +177428,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -180127,6 +180318,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -185303,6 +185498,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -188080,6 +188279,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -195648,6 +195851,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -198653,6 +198860,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -201460,6 +201671,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -204383,6 +204598,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
@@ -213536,6 +213755,8 @@ export type Routes = {
                   exclude_staff_management?: boolean | undefined
                   /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
                   exclude_device_management?: boolean | undefined
+                  /** Indicates whether to hide the portal's card scanner, where the customer scans any card on their encoders to see what it holds and which reservation or Access Grant it belongs to. Verifying a reservation's card stays available wherever the customer can encode cards. */
+                  exclude_card_scanning?: boolean | undefined
                   /** Configuration for event type filtering in the manage feature. */
                   events?:
                     | (
@@ -213608,6 +213829,18 @@ export type Routes = {
                   allow_notification_customization?: boolean | undefined
                   /** Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected. */
                   allow_bridge_replacement?: boolean | undefined
+                }
+              | undefined
+          }
+        | undefined
+      /** Configs for pages that customers using this profile see, keyed by page. With `base_customization_profile_id`, each page sent replaces that page's config on the base, and the base's other pages are kept. */
+      page_configs?:
+        | {
+            /** Config for the reservation details page. */
+            reservation_details?:
+              | {
+                  /** How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom. */
+                  style?: ('portal' | 'horizontal' | 'compact') | undefined
                 }
               | undefined
           }
@@ -213802,6 +214035,8 @@ export type Routes = {
                     exclude_staff_management?: boolean | undefined
                     /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
                     exclude_device_management?: boolean | undefined
+                    /** Indicates whether to hide the portal's card scanner, where the customer scans any card on their encoders to see what it holds and which reservation or Access Grant it belongs to. Verifying a reservation's card stays available wherever the customer can encode cards. */
+                    exclude_card_scanning?: boolean | undefined
                     /** Configuration for event type filtering in the manage feature. */
                     events?:
                       | (
@@ -213875,6 +214110,18 @@ export type Routes = {
                     allow_notification_customization?: boolean | undefined
                     /** Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected. */
                     allow_bridge_replacement?: boolean | undefined
+                  }
+                | undefined
+            }
+          | undefined
+        /** Configs for pages that customers using this profile see, keyed by page. Each page uses its default for any field left out. */
+        page_configs?:
+          | {
+              /** Config for the reservation details page. */
+              reservation_details?:
+                | {
+                    /** How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom. */
+                    style?: ('portal' | 'horizontal' | 'compact') | undefined
                   }
                 | undefined
             }
@@ -214079,6 +214326,8 @@ export type Routes = {
                     exclude_staff_management?: boolean | undefined
                     /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
                     exclude_device_management?: boolean | undefined
+                    /** Indicates whether to hide the portal's card scanner, where the customer scans any card on their encoders to see what it holds and which reservation or Access Grant it belongs to. Verifying a reservation's card stays available wherever the customer can encode cards. */
+                    exclude_card_scanning?: boolean | undefined
                     /** Configuration for event type filtering in the manage feature. */
                     events?:
                       | (
@@ -214152,6 +214401,18 @@ export type Routes = {
                     allow_notification_customization?: boolean | undefined
                     /** Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected. */
                     allow_bridge_replacement?: boolean | undefined
+                  }
+                | undefined
+            }
+          | undefined
+        /** Configs for pages that customers using this profile see, keyed by page. Each page uses its default for any field left out. */
+        page_configs?:
+          | {
+              /** Config for the reservation details page. */
+              reservation_details?:
+                | {
+                    /** How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom. */
+                    style?: ('portal' | 'horizontal' | 'compact') | undefined
                   }
                 | undefined
             }
@@ -214356,6 +214617,8 @@ export type Routes = {
                     exclude_staff_management?: boolean | undefined
                     /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
                     exclude_device_management?: boolean | undefined
+                    /** Indicates whether to hide the portal's card scanner, where the customer scans any card on their encoders to see what it holds and which reservation or Access Grant it belongs to. Verifying a reservation's card stays available wherever the customer can encode cards. */
+                    exclude_card_scanning?: boolean | undefined
                     /** Configuration for event type filtering in the manage feature. */
                     events?:
                       | (
@@ -214429,6 +214692,18 @@ export type Routes = {
                     allow_notification_customization?: boolean | undefined
                     /** Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected. */
                     allow_bridge_replacement?: boolean | undefined
+                  }
+                | undefined
+            }
+          | undefined
+        /** Configs for pages that customers using this profile see, keyed by page. Each page uses its default for any field left out. */
+        page_configs?:
+          | {
+              /** Config for the reservation details page. */
+              reservation_details?:
+                | {
+                    /** How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom. */
+                    style?: ('portal' | 'horizontal' | 'compact') | undefined
                   }
                 | undefined
             }
@@ -214629,6 +214904,8 @@ export type Routes = {
                       exclude_staff_management?: boolean | undefined
                       /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
                       exclude_device_management?: boolean | undefined
+                      /** Indicates whether to hide the portal's card scanner, where the customer scans any card on their encoders to see what it holds and which reservation or Access Grant it belongs to. Verifying a reservation's card stays available wherever the customer can encode cards. */
+                      exclude_card_scanning?: boolean | undefined
                       /** Configuration for event type filtering in the manage feature. */
                       events?:
                         | (
@@ -214703,6 +214980,20 @@ export type Routes = {
                       /** Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected. */
                       allow_bridge_replacement?: boolean | undefined
                     }
+                  | undefined
+              }
+            | undefined
+          )
+        | null
+      /** Configs for pages that customers using this profile see, keyed by page. Each page sent replaces that page's config, `null` for a page removes it, and pages left out are kept. Pass `null` for `page_configs` to remove every page's config. */
+      page_configs?:
+        | (
+            | {
+                reservation_details?:
+                  | ({
+                      /** How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom. */
+                      style?: ('portal' | 'horizontal' | 'compact') | undefined
+                    } | null)
                   | undefined
               }
             | undefined
@@ -218901,6 +219192,10 @@ export type Routes = {
                             }
                         )
                       | null
+                    /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+                    access_grant_ids?: string[] | undefined
+                    /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+                    access_method_ids?: string[] | undefined
                     /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
                     warnings: {
                       /** Indicates a warning related to scanning a credential. */
@@ -229276,6 +229571,8 @@ export type Routes = {
                           exclude_staff_management?: boolean | undefined
                           /** Indicates whether to prevent the customer from converting their devices between managed and unmanaged. Managed devices are billed. */
                           exclude_device_management?: boolean | undefined
+                          /** Indicates whether to hide the portal's card scanner, where the customer scans any card on their encoders to see what it holds and which reservation or Access Grant it belongs to. Verifying a reservation's card stays available wherever the customer can encode cards. */
+                          exclude_card_scanning?: boolean | undefined
                           /** Configuration for event type filtering in the manage feature. */
                           events?:
                             | (
@@ -229349,6 +229646,19 @@ export type Routes = {
                           allow_notification_customization?: boolean | undefined
                           /** Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected. */
                           allow_bridge_replacement?: boolean | undefined
+                        }
+                      | undefined
+                  }
+                | undefined
+              /** Configs for pages that customers using this profile see, keyed by page. Each page uses its default for any field left out. */
+              page_configs?:
+                | {
+                    /** Config for the reservation details page. */
+                    reservation_details?:
+                      | {
+                          /** How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom. */
+                          style?:
+                            ('portal' | 'horizontal' | 'compact') | undefined
                         }
                       | undefined
                   }
@@ -230028,6 +230338,10 @@ export type Routes = {
                       }
                   )
                 | null
+              /** IDs of the [Access Grants](https://www.seam.co/docs/use-cases/granting-access/creating-an-access-grant) whose access methods use the credential on the scanned card. Use these to find the reservation or person the card belongs to. Empty when the card does not match a credential on Seam or the credential is not part of an Access Grant. A single card can belong to more than one Access Grant. */
+              access_grant_ids?: string[] | undefined
+              /** IDs of the access methods that use the credential on the scanned card. Empty when the card does not match a credential on Seam or the credential is not used by an access method. */
+              access_method_ids?: string[] | undefined
               /** Warnings related to scanning the credential, such as mismatches between the credential data currently encoded on the card and the corresponding data stored on Seam and the access system. */
               warnings: {
                 /** Indicates a warning related to scanning a credential. */
