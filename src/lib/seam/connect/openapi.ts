@@ -17694,10 +17694,19 @@ const openapi: OpenAPISpec = {
             type: 'object',
             'x-property-group-key': 'hardware',
           },
-          mold_risk_level: {
+          mold_display_risk: {
             description:
-              'Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown".',
+              'Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic.',
             type: 'string',
+            'x-property-group-key': 'sensors',
+          },
+          mold_risk_index: {
+            description:
+              'Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels.',
+            format: 'float',
+            maximum: 1,
+            minimum: 0,
+            type: 'number',
             'x-property-group-key': 'sensors',
           },
           named_sensors: {
@@ -17752,10 +17761,19 @@ const openapi: OpenAPISpec = {
                   type: 'boolean',
                   'x-property-group-key': 'sensors',
                 },
-                mold_risk_level: {
+                mold_display_risk: {
                   description:
-                    'Mold risk level, if the device measures it. One of "low", "medium", "high" or "unknown".',
+                    'Display wording for the current mold risk, as reported by the provider or derived by Seam. The values are not stable and are only for display; use mold_risk_index for logic.',
                   type: 'string',
+                  'x-property-group-key': 'sensors',
+                },
+                mold_risk_index: {
+                  description:
+                    'Mold risk index from 0 (no risk) to 1 (high risk), if the device measures it. Seam defines this scale and maps each provider onto it: 0 = low, 0.5 = medium, 1 = high for providers that report levels.',
+                  format: 'float',
+                  maximum: 1,
+                  minimum: 0,
+                  type: 'number',
                   'x-property-group-key': 'sensors',
                 },
                 noise_level_decibels: {
