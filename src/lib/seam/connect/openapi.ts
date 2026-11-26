@@ -70772,6 +70772,55 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for customer portals.',
       },
     },
+    '/seam/customer/v1/access_grants/sync': {
+      post: {
+        description:
+          "Pushes the specified access grant (a reservation) to its access system now,\nso a card waiting to be encoded becomes ready without waiting for the next\nscheduled sync. Only the grant's own users, access groups, memberships and\ncredentials are pushed when the workspace has targeted issuance; otherwise\nits connected account is synced. Accepts one request per connected account\nper minute.",
+        operationId: 'seamCustomerV1AccessGrantsSyncPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_grant_id: {
+                    description:
+                      'ID of the access grant (reservation) to push.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['access_grant_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ client_session_with_customer: [] }],
+        summary: '/seam/customer/v1/access_grants/sync',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'customer', 'v1', 'access_grants'],
+        'x-fern-sdk-method-name': 'sync',
+        'x-response-key': null,
+        'x-title': 'Sync an Access Grant',
+        'x-undocumented': 'Internal endpoint for customer portals.',
+      },
+    },
     '/seam/customer/v1/access_grants/update': {
       patch: {
         description:
