@@ -127262,6 +127262,18 @@ export type Routes = {
                 | undefined
             }
           | undefined
+        /** Configs for pages that customers using this profile see, keyed by page. Each page uses its default for any field left out. */
+        page_configs?:
+          | {
+              /** Config for the reservation details page. */
+              reservation_details?:
+                | {
+                    /** How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom. */
+                    style?: ('portal' | 'horizontal' | 'compact') | undefined
+                  }
+                | undefined
+            }
+          | undefined
       }
     }
     maxDuration: undefined
@@ -213612,6 +213624,18 @@ export type Routes = {
               | undefined
           }
         | undefined
+      /** Configs for pages that customers using this profile see, keyed by page. With `base_customization_profile_id`, each page sent replaces that page's config on the base, and the base's other pages are kept. */
+      page_configs?:
+        | {
+            /** Config for the reservation details page. */
+            reservation_details?:
+              | {
+                  /** How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom. */
+                  style?: ('portal' | 'horizontal' | 'compact') | undefined
+                }
+              | undefined
+          }
+        | undefined
     }
     commonParams: {}
     formData: {}
@@ -213875,6 +213899,18 @@ export type Routes = {
                     allow_notification_customization?: boolean | undefined
                     /** Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected. */
                     allow_bridge_replacement?: boolean | undefined
+                  }
+                | undefined
+            }
+          | undefined
+        /** Configs for pages that customers using this profile see, keyed by page. Each page uses its default for any field left out. */
+        page_configs?:
+          | {
+              /** Config for the reservation details page. */
+              reservation_details?:
+                | {
+                    /** How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom. */
+                    style?: ('portal' | 'horizontal' | 'compact') | undefined
                   }
                 | undefined
             }
@@ -214156,6 +214192,18 @@ export type Routes = {
                 | undefined
             }
           | undefined
+        /** Configs for pages that customers using this profile see, keyed by page. Each page uses its default for any field left out. */
+        page_configs?:
+          | {
+              /** Config for the reservation details page. */
+              reservation_details?:
+                | {
+                    /** How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom. */
+                    style?: ('portal' | 'horizontal' | 'compact') | undefined
+                  }
+                | undefined
+            }
+          | undefined
       }
     }
     maxDuration: undefined
@@ -214433,6 +214481,18 @@ export type Routes = {
                 | undefined
             }
           | undefined
+        /** Configs for pages that customers using this profile see, keyed by page. Each page uses its default for any field left out. */
+        page_configs?:
+          | {
+              /** Config for the reservation details page. */
+              reservation_details?:
+                | {
+                    /** How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom. */
+                    style?: ('portal' | 'horizontal' | 'compact') | undefined
+                  }
+                | undefined
+            }
+          | undefined
       }[]
     }
     maxDuration: undefined
@@ -214703,6 +214763,20 @@ export type Routes = {
                       /** Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected. */
                       allow_bridge_replacement?: boolean | undefined
                     }
+                  | undefined
+              }
+            | undefined
+          )
+        | null
+      /** Configs for pages that customers using this profile see, keyed by page. Each page sent replaces that page's config, `null` for a page removes it, and pages left out are kept. Pass `null` for `page_configs` to remove every page's config. */
+      page_configs?:
+        | (
+            | {
+                reservation_details?:
+                  | ({
+                      /** How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom. */
+                      style?: ('portal' | 'horizontal' | 'compact') | undefined
+                    } | null)
                   | undefined
               }
             | undefined
@@ -229349,6 +229423,19 @@ export type Routes = {
                           allow_notification_customization?: boolean | undefined
                           /** Indicates whether the customer can move a connected account to a new Seam Bridge when its current bridge is disconnected. */
                           allow_bridge_replacement?: boolean | undefined
+                        }
+                      | undefined
+                  }
+                | undefined
+              /** Configs for pages that customers using this profile see, keyed by page. Each page uses its default for any field left out. */
+              page_configs?:
+                | {
+                    /** Config for the reservation details page. */
+                    reservation_details?:
+                      | {
+                          /** How the page is laid out. `portal` is the customer portal's reservation page, a centered column with Access, Space, and Guest tabs. `horizontal` keeps a summary of the stay and its devices on the left while the access methods scroll on the right. `compact` puts everything in one card, read top to bottom. */
+                          style?:
+                            ('portal' | 'horizontal' | 'compact') | undefined
                         }
                       | undefined
                   }
