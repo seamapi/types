@@ -1459,7 +1459,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -5414,7 +5414,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -11220,7 +11220,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -15022,7 +15022,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -20505,7 +20505,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -23166,7 +23166,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -25959,7 +25959,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -27331,7 +27331,7 @@ export type Routes = {
         issued_at: string | null
         /** Indicates whether the access method has been issued. */
         is_issued: boolean
-        /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+        /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
         display_status: string
         /** URL of the Instant Key for mobile key access methods. */
         instant_key_url?: string | undefined
@@ -30584,7 +30584,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -31197,7 +31197,7 @@ export type Routes = {
         issued_at: string | null
         /** Indicates whether the access method has been issued. */
         is_issued: boolean
-        /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+        /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
         display_status: string
         /** URL of the Instant Key for mobile key access methods. */
         instant_key_url?: string | undefined
@@ -32815,7 +32815,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -34187,7 +34187,7 @@ export type Routes = {
         issued_at: string | null
         /** Indicates whether the access method has been issued. */
         is_issued: boolean
-        /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+        /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
         display_status: string
         /** Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method. */
         is_encoding_required?: boolean | undefined
@@ -34396,7 +34396,7 @@ export type Routes = {
         issued_at: string | null
         /** Indicates whether the access method has been issued. */
         is_issued: boolean
-        /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+        /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
         display_status: string
         /** Indicates whether encoding with an card encoder is required to issue or reissue the plastic card associated with the access method. */
         is_encoding_required?: boolean | undefined
@@ -39872,7 +39872,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -42753,7 +42753,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -45533,7 +45533,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -49206,7 +49206,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -54833,7 +54833,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -57639,7 +57639,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -81073,7 +81073,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -93486,7 +93486,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -96257,7 +96257,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -99026,7 +99026,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -101795,7 +101795,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -109381,7 +109381,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -112169,7 +112169,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -115013,7 +115013,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -119323,7 +119323,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -124499,7 +124499,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -130095,7 +130095,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -148461,7 +148461,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -150361,7 +150361,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -153130,7 +153130,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -155903,7 +155903,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -158674,7 +158674,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -161447,7 +161447,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -164216,7 +164216,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -166987,7 +166987,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -169756,7 +169756,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -172527,7 +172527,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -175296,7 +175296,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -178069,7 +178069,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -180955,7 +180955,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -186131,7 +186131,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -188908,7 +188908,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -196476,7 +196476,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -199481,7 +199481,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -202288,7 +202288,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -205211,7 +205211,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -219734,7 +219734,7 @@ export type Routes = {
                     issued_at: string | null
                     /** Indicates whether the access method has been issued. */
                     is_issued: boolean
-                    /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+                    /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
                     display_status: string
                     /** URL of the Instant Key for mobile key access methods. */
                     instant_key_url?: string | undefined
@@ -222450,7 +222450,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
@@ -230856,7 +230856,7 @@ export type Routes = {
               issued_at: string | null
               /** Indicates whether the access method has been issued. */
               is_issued: boolean
-              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
+              /** Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`. */
               display_status: string
               /** URL of the Instant Key for mobile key access methods. */
               instant_key_url?: string | undefined
