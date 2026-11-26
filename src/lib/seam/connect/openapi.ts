@@ -69696,6 +69696,55 @@ const openapi: OpenAPISpec = {
         'x-undocumented': 'Internal endpoint for Console',
       },
     },
+    '/seam/console/v1/users/set_console_surface_preference': {
+      patch: {
+        description:
+          "Sets the signed-in user's Console surface preference. A first choice requires an assignment. Pass null to clear it.",
+        operationId: 'seamConsoleV1UsersSetConsoleSurfacePreferencePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                additionalProperties: false,
+                properties: {
+                  console_surface_preference: {
+                    enum: ['platform', 'dashboard', 'legacy'],
+                    nullable: true,
+                    type: 'string',
+                  },
+                },
+                required: ['console_surface_preference'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          '200': {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          '400': { description: 'Bad Request' },
+          '401': { description: 'Unauthorized' },
+        },
+        security: [{ console_session_without_workspace: [] }],
+        summary: '/seam/console/v1/users/set_console_surface_preference',
+        tags: [],
+        'x-fern-sdk-group-name': ['seam', 'console', 'v1', 'users'],
+        'x-fern-sdk-method-name': 'set_console_surface_preference',
+        'x-response-key': null,
+        'x-title': 'Set Console Surface Preference',
+        'x-undocumented': 'Internal endpoint for Console',
+      },
+    },
     '/seam/console/v1/workspace/console_settings/get': {
       get: {
         description:
