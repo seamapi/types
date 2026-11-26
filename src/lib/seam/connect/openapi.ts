@@ -2636,7 +2636,7 @@ const openapi: OpenAPISpec = {
           },
           display_status: {
             description:
-              'Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`.',
+              'Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`.',
             type: 'string',
           },
           errors: {
@@ -10545,7 +10545,7 @@ const openapi: OpenAPISpec = {
                   },
                   display_status: {
                     description:
-                      'Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`.',
+                      'Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`.',
                     type: 'string',
                   },
                   errors: {
@@ -41080,7 +41080,7 @@ const openapi: OpenAPISpec = {
           },
           display_status: {
             description:
-              'Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Awaiting encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`.',
+              'Human-readable sentence describing where the access method sits in its relationship with the device or access system, for example `Ready for encoding`. For display only. The wording is not stable and is not an enumeration — it may change at any time, so never compare against or branch on it. To make decisions, read `is_issued`, `errors`, and `pending_mutations`.',
             type: 'string',
           },
           errors: {
