@@ -98,6 +98,7 @@ export const THERMOSTAT_DEVICE_TYPE = {
   SENSI_THERMOSTAT: 'sensi_thermostat',
   SENSIBO_THERMOSTAT: 'sensibo_thermostat',
   CIELO_THERMOSTAT: 'cielo_thermostat',
+  HONEYWELL_TCC_THERMOSTAT: 'honeywell_tcc_thermostat',
   SMARTTHINGS_THERMOSTAT: 'smartthings_thermostat',
 } as const
 

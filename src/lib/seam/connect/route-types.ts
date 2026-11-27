@@ -17133,6 +17133,7 @@ export type Routes = {
                     | 'sensi_thermostat'
                     | 'sensibo_thermostat'
                     | 'cielo_thermostat'
+                    | 'honeywell_tcc_thermostat'
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
@@ -17711,6 +17712,19 @@ export type Routes = {
                           honeywell_resideo_device_id?:
                             (string | undefined) | undefined
                           /** Device name for a Honeywell Resideo device. */
+                          device_name?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    /** Metadata for a Honeywell Total Connect Comfort thermostat. */
+                    honeywell_tcc_metadata?:
+                      | {
+                          /** Device ID of the thermostat in Honeywell Total Connect Comfort. */
+                          device_id?: (string | undefined) | undefined
+                          /** MAC address of the thermostat, as Honeywell Total Connect Comfort reports it. */
+                          mac_address?: (string | undefined) | undefined
+                          /** ID of the Honeywell Total Connect Comfort location that the thermostat belongs to. */
+                          location_id?: (string | undefined) | undefined
+                          /** Name of the thermostat in Honeywell Total Connect Comfort. */
                           device_name?: (string | undefined) | undefined
                         }
                       | undefined
@@ -27698,6 +27712,7 @@ export type Routes = {
                     | 'sensi_thermostat'
                     | 'sensibo_thermostat'
                     | 'cielo_thermostat'
+                    | 'honeywell_tcc_thermostat'
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
@@ -28276,6 +28291,19 @@ export type Routes = {
                           honeywell_resideo_device_id?:
                             (string | undefined) | undefined
                           /** Device name for a Honeywell Resideo device. */
+                          device_name?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    /** Metadata for a Honeywell Total Connect Comfort thermostat. */
+                    honeywell_tcc_metadata?:
+                      | {
+                          /** Device ID of the thermostat in Honeywell Total Connect Comfort. */
+                          device_id?: (string | undefined) | undefined
+                          /** MAC address of the thermostat, as Honeywell Total Connect Comfort reports it. */
+                          mac_address?: (string | undefined) | undefined
+                          /** ID of the Honeywell Total Connect Comfort location that the thermostat belongs to. */
+                          location_id?: (string | undefined) | undefined
+                          /** Name of the thermostat in Honeywell Total Connect Comfort. */
                           device_name?: (string | undefined) | undefined
                         }
                       | undefined
@@ -59541,6 +59569,7 @@ export type Routes = {
             | 'assa_abloy_credential_service'
             | 'tedee'
             | 'honeywell_resideo'
+            | 'honeywell_tcc'
             | 'first_alert'
             | 'latch'
             | 'akiles'
@@ -61951,6 +61980,7 @@ export type Routes = {
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
               | 'cielo_thermostat'
+              | 'honeywell_tcc_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -62519,6 +62549,19 @@ export type Routes = {
                     honeywell_resideo_device_id?:
                       (string | undefined) | undefined
                     /** Device name for a Honeywell Resideo device. */
+                    device_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Honeywell Total Connect Comfort thermostat. */
+              honeywell_tcc_metadata?:
+                | {
+                    /** Device ID of the thermostat in Honeywell Total Connect Comfort. */
+                    device_id?: (string | undefined) | undefined
+                    /** MAC address of the thermostat, as Honeywell Total Connect Comfort reports it. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the Honeywell Total Connect Comfort location that the thermostat belongs to. */
+                    location_id?: (string | undefined) | undefined
+                    /** Name of the thermostat in Honeywell Total Connect Comfort. */
                     device_name?: (string | undefined) | undefined
                   }
                 | undefined
@@ -64337,6 +64380,7 @@ export type Routes = {
                 | 'sensi_thermostat'
                 | 'sensibo_thermostat'
                 | 'cielo_thermostat'
+                | 'honeywell_tcc_thermostat'
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
@@ -64408,6 +64452,7 @@ export type Routes = {
                 | 'sensi_thermostat'
                 | 'sensibo_thermostat'
                 | 'cielo_thermostat'
+                | 'honeywell_tcc_thermostat'
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
@@ -64466,6 +64511,7 @@ export type Routes = {
             | 'dormakaba_oracode'
             | 'dormakaba_oracode_iho'
             | 'honeywell_resideo'
+            | 'honeywell_tcc'
             | 'keynest'
             | 'korelock'
             | 'lockly'
@@ -64706,6 +64752,7 @@ export type Routes = {
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
               | 'cielo_thermostat'
+              | 'honeywell_tcc_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -65274,6 +65321,19 @@ export type Routes = {
                     honeywell_resideo_device_id?:
                       (string | undefined) | undefined
                     /** Device name for a Honeywell Resideo device. */
+                    device_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Honeywell Total Connect Comfort thermostat. */
+              honeywell_tcc_metadata?:
+                | {
+                    /** Device ID of the thermostat in Honeywell Total Connect Comfort. */
+                    device_id?: (string | undefined) | undefined
+                    /** MAC address of the thermostat, as Honeywell Total Connect Comfort reports it. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the Honeywell Total Connect Comfort location that the thermostat belongs to. */
+                    location_id?: (string | undefined) | undefined
+                    /** Name of the thermostat in Honeywell Total Connect Comfort. */
                     device_name?: (string | undefined) | undefined
                   }
                 | undefined
@@ -67102,6 +67162,7 @@ export type Routes = {
           | 'assa_abloy_credential_service'
           | 'tedee'
           | 'honeywell_resideo'
+          | 'honeywell_tcc'
           | 'first_alert'
           | 'latch'
           | 'akiles'
@@ -68692,6 +68753,7 @@ export type Routes = {
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
               | 'cielo_thermostat'
+              | 'honeywell_tcc_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -69391,6 +69453,7 @@ export type Routes = {
                 | 'sensi_thermostat'
                 | 'sensibo_thermostat'
                 | 'cielo_thermostat'
+                | 'honeywell_tcc_thermostat'
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
@@ -69462,6 +69525,7 @@ export type Routes = {
                 | 'sensi_thermostat'
                 | 'sensibo_thermostat'
                 | 'cielo_thermostat'
+                | 'honeywell_tcc_thermostat'
                 | 'smartthings_thermostat'
               )
             | ('ios_phone' | 'android_phone')
@@ -69520,6 +69584,7 @@ export type Routes = {
             | 'dormakaba_oracode'
             | 'dormakaba_oracode_iho'
             | 'honeywell_resideo'
+            | 'honeywell_tcc'
             | 'keynest'
             | 'korelock'
             | 'lockly'
@@ -69694,6 +69759,7 @@ export type Routes = {
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
               | 'cielo_thermostat'
+              | 'honeywell_tcc_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -82568,6 +82634,7 @@ export type Routes = {
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
               | 'cielo_thermostat'
+              | 'honeywell_tcc_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -83136,6 +83203,19 @@ export type Routes = {
                     honeywell_resideo_device_id?:
                       (string | undefined) | undefined
                     /** Device name for a Honeywell Resideo device. */
+                    device_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Honeywell Total Connect Comfort thermostat. */
+              honeywell_tcc_metadata?:
+                | {
+                    /** Device ID of the thermostat in Honeywell Total Connect Comfort. */
+                    device_id?: (string | undefined) | undefined
+                    /** MAC address of the thermostat, as Honeywell Total Connect Comfort reports it. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the Honeywell Total Connect Comfort location that the thermostat belongs to. */
+                    location_id?: (string | undefined) | undefined
+                    /** Name of the thermostat in Honeywell Total Connect Comfort. */
                     device_name?: (string | undefined) | undefined
                   }
                 | undefined
@@ -84940,6 +85020,7 @@ export type Routes = {
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
               | 'cielo_thermostat'
+              | 'honeywell_tcc_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -85508,6 +85589,19 @@ export type Routes = {
                     honeywell_resideo_device_id?:
                       (string | undefined) | undefined
                     /** Device name for a Honeywell Resideo device. */
+                    device_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Honeywell Total Connect Comfort thermostat. */
+              honeywell_tcc_metadata?:
+                | {
+                    /** Device ID of the thermostat in Honeywell Total Connect Comfort. */
+                    device_id?: (string | undefined) | undefined
+                    /** MAC address of the thermostat, as Honeywell Total Connect Comfort reports it. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the Honeywell Total Connect Comfort location that the thermostat belongs to. */
+                    location_id?: (string | undefined) | undefined
+                    /** Name of the thermostat in Honeywell Total Connect Comfort. */
                     device_name?: (string | undefined) | undefined
                   }
                 | undefined
@@ -87453,6 +87547,7 @@ export type Routes = {
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
               | 'cielo_thermostat'
+              | 'honeywell_tcc_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -88021,6 +88116,19 @@ export type Routes = {
                     honeywell_resideo_device_id?:
                       (string | undefined) | undefined
                     /** Device name for a Honeywell Resideo device. */
+                    device_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Honeywell Total Connect Comfort thermostat. */
+              honeywell_tcc_metadata?:
+                | {
+                    /** Device ID of the thermostat in Honeywell Total Connect Comfort. */
+                    device_id?: (string | undefined) | undefined
+                    /** MAC address of the thermostat, as Honeywell Total Connect Comfort reports it. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the Honeywell Total Connect Comfort location that the thermostat belongs to. */
+                    location_id?: (string | undefined) | undefined
+                    /** Name of the thermostat in Honeywell Total Connect Comfort. */
                     device_name?: (string | undefined) | undefined
                   }
                 | undefined
@@ -89824,6 +89932,7 @@ export type Routes = {
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
               | 'cielo_thermostat'
+              | 'honeywell_tcc_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -90392,6 +90501,19 @@ export type Routes = {
                     honeywell_resideo_device_id?:
                       (string | undefined) | undefined
                     /** Device name for a Honeywell Resideo device. */
+                    device_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Honeywell Total Connect Comfort thermostat. */
+              honeywell_tcc_metadata?:
+                | {
+                    /** Device ID of the thermostat in Honeywell Total Connect Comfort. */
+                    device_id?: (string | undefined) | undefined
+                    /** MAC address of the thermostat, as Honeywell Total Connect Comfort reports it. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the Honeywell Total Connect Comfort location that the thermostat belongs to. */
+                    location_id?: (string | undefined) | undefined
+                    /** Name of the thermostat in Honeywell Total Connect Comfort. */
                     device_name?: (string | undefined) | undefined
                   }
                 | undefined
@@ -103354,6 +103476,7 @@ export type Routes = {
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
               | 'cielo_thermostat'
+              | 'honeywell_tcc_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -103922,6 +104045,19 @@ export type Routes = {
                     honeywell_resideo_device_id?:
                       (string | undefined) | undefined
                     /** Device name for a Honeywell Resideo device. */
+                    device_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Honeywell Total Connect Comfort thermostat. */
+              honeywell_tcc_metadata?:
+                | {
+                    /** Device ID of the thermostat in Honeywell Total Connect Comfort. */
+                    device_id?: (string | undefined) | undefined
+                    /** MAC address of the thermostat, as Honeywell Total Connect Comfort reports it. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the Honeywell Total Connect Comfort location that the thermostat belongs to. */
+                    location_id?: (string | undefined) | undefined
+                    /** Name of the thermostat in Honeywell Total Connect Comfort. */
                     device_name?: (string | undefined) | undefined
                   }
                 | undefined
@@ -105725,6 +105861,7 @@ export type Routes = {
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
               | 'cielo_thermostat'
+              | 'honeywell_tcc_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -106293,6 +106430,19 @@ export type Routes = {
                     honeywell_resideo_device_id?:
                       (string | undefined) | undefined
                     /** Device name for a Honeywell Resideo device. */
+                    device_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Honeywell Total Connect Comfort thermostat. */
+              honeywell_tcc_metadata?:
+                | {
+                    /** Device ID of the thermostat in Honeywell Total Connect Comfort. */
+                    device_id?: (string | undefined) | undefined
+                    /** MAC address of the thermostat, as Honeywell Total Connect Comfort reports it. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the Honeywell Total Connect Comfort location that the thermostat belongs to. */
+                    location_id?: (string | undefined) | undefined
+                    /** Name of the thermostat in Honeywell Total Connect Comfort. */
                     device_name?: (string | undefined) | undefined
                   }
                 | undefined
@@ -120869,6 +121019,7 @@ export type Routes = {
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
               | 'cielo_thermostat'
+              | 'honeywell_tcc_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -121437,6 +121588,19 @@ export type Routes = {
                     honeywell_resideo_device_id?:
                       (string | undefined) | undefined
                     /** Device name for a Honeywell Resideo device. */
+                    device_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Honeywell Total Connect Comfort thermostat. */
+              honeywell_tcc_metadata?:
+                | {
+                    /** Device ID of the thermostat in Honeywell Total Connect Comfort. */
+                    device_id?: (string | undefined) | undefined
+                    /** MAC address of the thermostat, as Honeywell Total Connect Comfort reports it. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the Honeywell Total Connect Comfort location that the thermostat belongs to. */
+                    location_id?: (string | undefined) | undefined
+                    /** Name of the thermostat in Honeywell Total Connect Comfort. */
                     device_name?: (string | undefined) | undefined
                   }
                 | undefined
@@ -145493,6 +145657,7 @@ export type Routes = {
                     | 'sensi_thermostat'
                     | 'sensibo_thermostat'
                     | 'cielo_thermostat'
+                    | 'honeywell_tcc_thermostat'
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
@@ -146071,6 +146236,19 @@ export type Routes = {
                           honeywell_resideo_device_id?:
                             (string | undefined) | undefined
                           /** Device name for a Honeywell Resideo device. */
+                          device_name?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    /** Metadata for a Honeywell Total Connect Comfort thermostat. */
+                    honeywell_tcc_metadata?:
+                      | {
+                          /** Device ID of the thermostat in Honeywell Total Connect Comfort. */
+                          device_id?: (string | undefined) | undefined
+                          /** MAC address of the thermostat, as Honeywell Total Connect Comfort reports it. */
+                          mac_address?: (string | undefined) | undefined
+                          /** ID of the Honeywell Total Connect Comfort location that the thermostat belongs to. */
+                          location_id?: (string | undefined) | undefined
+                          /** Name of the thermostat in Honeywell Total Connect Comfort. */
                           device_name?: (string | undefined) | undefined
                         }
                       | undefined
@@ -182590,6 +182768,7 @@ export type Routes = {
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
               | 'cielo_thermostat'
+              | 'honeywell_tcc_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -183158,6 +183337,19 @@ export type Routes = {
                     honeywell_resideo_device_id?:
                       (string | undefined) | undefined
                     /** Device name for a Honeywell Resideo device. */
+                    device_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Honeywell Total Connect Comfort thermostat. */
+              honeywell_tcc_metadata?:
+                | {
+                    /** Device ID of the thermostat in Honeywell Total Connect Comfort. */
+                    device_id?: (string | undefined) | undefined
+                    /** MAC address of the thermostat, as Honeywell Total Connect Comfort reports it. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the Honeywell Total Connect Comfort location that the thermostat belongs to. */
+                    location_id?: (string | undefined) | undefined
+                    /** Name of the thermostat in Honeywell Total Connect Comfort. */
                     device_name?: (string | undefined) | undefined
                   }
                 | undefined
@@ -190491,6 +190683,7 @@ export type Routes = {
             | 'sensi_thermostat'
             | 'sensibo_thermostat'
             | 'cielo_thermostat'
+            | 'honeywell_tcc_thermostat'
             | 'smartthings_thermostat'
           )
         | undefined
@@ -190504,6 +190697,7 @@ export type Routes = {
             | 'sensi_thermostat'
             | 'sensibo_thermostat'
             | 'cielo_thermostat'
+            | 'honeywell_tcc_thermostat'
             | 'smartthings_thermostat'
           )[]
         | undefined
@@ -190512,6 +190706,7 @@ export type Routes = {
         | (
             | 'ecobee'
             | 'honeywell_resideo'
+            | 'honeywell_tcc'
             | 'cielo'
             | 'nest'
             | 'sensi'
@@ -190576,6 +190771,7 @@ export type Routes = {
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
               | 'cielo_thermostat'
+              | 'honeywell_tcc_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -191144,6 +191340,19 @@ export type Routes = {
                     honeywell_resideo_device_id?:
                       (string | undefined) | undefined
                     /** Device name for a Honeywell Resideo device. */
+                    device_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Honeywell Total Connect Comfort thermostat. */
+              honeywell_tcc_metadata?:
+                | {
+                    /** Device ID of the thermostat in Honeywell Total Connect Comfort. */
+                    device_id?: (string | undefined) | undefined
+                    /** MAC address of the thermostat, as Honeywell Total Connect Comfort reports it. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the Honeywell Total Connect Comfort location that the thermostat belongs to. */
+                    location_id?: (string | undefined) | undefined
+                    /** Name of the thermostat in Honeywell Total Connect Comfort. */
                     device_name?: (string | undefined) | undefined
                   }
                 | undefined
@@ -192947,6 +193156,7 @@ export type Routes = {
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
               | 'cielo_thermostat'
+              | 'honeywell_tcc_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -193515,6 +193725,19 @@ export type Routes = {
                     honeywell_resideo_device_id?:
                       (string | undefined) | undefined
                     /** Device name for a Honeywell Resideo device. */
+                    device_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Honeywell Total Connect Comfort thermostat. */
+              honeywell_tcc_metadata?:
+                | {
+                    /** Device ID of the thermostat in Honeywell Total Connect Comfort. */
+                    device_id?: (string | undefined) | undefined
+                    /** MAC address of the thermostat, as Honeywell Total Connect Comfort reports it. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the Honeywell Total Connect Comfort location that the thermostat belongs to. */
+                    location_id?: (string | undefined) | undefined
+                    /** Name of the thermostat in Honeywell Total Connect Comfort. */
                     device_name?: (string | undefined) | undefined
                   }
                 | undefined
@@ -207620,6 +207843,7 @@ export type Routes = {
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
               | 'cielo_thermostat'
+              | 'honeywell_tcc_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -208188,6 +208412,19 @@ export type Routes = {
                     honeywell_resideo_device_id?:
                       (string | undefined) | undefined
                     /** Device name for a Honeywell Resideo device. */
+                    device_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Honeywell Total Connect Comfort thermostat. */
+              honeywell_tcc_metadata?:
+                | {
+                    /** Device ID of the thermostat in Honeywell Total Connect Comfort. */
+                    device_id?: (string | undefined) | undefined
+                    /** MAC address of the thermostat, as Honeywell Total Connect Comfort reports it. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the Honeywell Total Connect Comfort location that the thermostat belongs to. */
+                    location_id?: (string | undefined) | undefined
+                    /** Name of the thermostat in Honeywell Total Connect Comfort. */
                     device_name?: (string | undefined) | undefined
                   }
                 | undefined
@@ -209993,6 +210230,7 @@ export type Routes = {
               | 'sensi_thermostat'
               | 'sensibo_thermostat'
               | 'cielo_thermostat'
+              | 'honeywell_tcc_thermostat'
               | 'smartthings_thermostat'
             )
           | ('ios_phone' | 'android_phone')
@@ -210561,6 +210799,19 @@ export type Routes = {
                     honeywell_resideo_device_id?:
                       (string | undefined) | undefined
                     /** Device name for a Honeywell Resideo device. */
+                    device_name?: (string | undefined) | undefined
+                  }
+                | undefined
+              /** Metadata for a Honeywell Total Connect Comfort thermostat. */
+              honeywell_tcc_metadata?:
+                | {
+                    /** Device ID of the thermostat in Honeywell Total Connect Comfort. */
+                    device_id?: (string | undefined) | undefined
+                    /** MAC address of the thermostat, as Honeywell Total Connect Comfort reports it. */
+                    mac_address?: (string | undefined) | undefined
+                    /** ID of the Honeywell Total Connect Comfort location that the thermostat belongs to. */
+                    location_id?: (string | undefined) | undefined
+                    /** Name of the thermostat in Honeywell Total Connect Comfort. */
                     device_name?: (string | undefined) | undefined
                   }
                 | undefined
@@ -215175,6 +215426,7 @@ export type Routes = {
                     | 'sensi_thermostat'
                     | 'sensibo_thermostat'
                     | 'cielo_thermostat'
+                    | 'honeywell_tcc_thermostat'
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
@@ -215753,6 +216005,19 @@ export type Routes = {
                           honeywell_resideo_device_id?:
                             (string | undefined) | undefined
                           /** Device name for a Honeywell Resideo device. */
+                          device_name?: (string | undefined) | undefined
+                        }
+                      | undefined
+                    /** Metadata for a Honeywell Total Connect Comfort thermostat. */
+                    honeywell_tcc_metadata?:
+                      | {
+                          /** Device ID of the thermostat in Honeywell Total Connect Comfort. */
+                          device_id?: (string | undefined) | undefined
+                          /** MAC address of the thermostat, as Honeywell Total Connect Comfort reports it. */
+                          mac_address?: (string | undefined) | undefined
+                          /** ID of the Honeywell Total Connect Comfort location that the thermostat belongs to. */
+                          location_id?: (string | undefined) | undefined
+                          /** Name of the thermostat in Honeywell Total Connect Comfort. */
                           device_name?: (string | undefined) | undefined
                         }
                       | undefined
@@ -221981,6 +222246,7 @@ export type Routes = {
                     | 'sensi_thermostat'
                     | 'sensibo_thermostat'
                     | 'cielo_thermostat'
+                    | 'honeywell_tcc_thermostat'
                     | 'smartthings_thermostat'
                   )
                 | ('ios_phone' | 'android_phone')
