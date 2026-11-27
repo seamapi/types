@@ -45,6 +45,7 @@ export const DEVICE_PROVIDERS = {
   ASSA_ABLOY_CREDENTIAL_SERVICE: 'assa_abloy_credential_service',
   TEDEE: 'tedee',
   HONEYWELL_RESIDEO: 'honeywell_resideo',
+  HONEYWELL_TCC: 'honeywell_tcc',
   FIRST_ALERT: 'first_alert',
   LATCH: 'latch',
   AKILES: 'akiles',
@@ -194,6 +195,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'tado',
     'sensibo',
     'cielo',
+    'honeywell_tcc',
   ],
   noise_sensors: ['minut', 'noiseaware'],
   access_control_systems: [

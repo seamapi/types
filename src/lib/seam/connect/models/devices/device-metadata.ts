@@ -737,6 +737,36 @@ export const device_metadata = z
       .partial()
       .describe(`Metadata for a Honeywell Resideo device.`),
 
+    honeywell_tcc_metadata: z
+      .object({
+        device_id: z
+          .string()
+          .optional()
+          .describe(
+            `Device ID of the thermostat in Honeywell Total Connect Comfort.`,
+          ),
+        mac_address: z
+          .string()
+          .optional()
+          .describe(
+            `MAC address of the thermostat, as Honeywell Total Connect Comfort reports it.`,
+          ),
+        location_id: z
+          .string()
+          .optional()
+          .describe(
+            `ID of the Honeywell Total Connect Comfort location that the thermostat belongs to.`,
+          ),
+        device_name: z
+          .string()
+          .optional()
+          .describe(
+            `Name of the thermostat in Honeywell Total Connect Comfort.`,
+          ),
+      })
+      .partial()
+      .describe(`Metadata for a Honeywell Total Connect Comfort thermostat.`),
+
     dormakaba_oracode_metadata: z
       .object({
         door_id: z
